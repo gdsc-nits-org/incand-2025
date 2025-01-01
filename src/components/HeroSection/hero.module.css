@@ -1,0 +1,195 @@
+.hero {
+  background: radial-gradient(#9747ff, #6731ae);
+}
+
+.cardOne {
+  box-shadow: 0.526vw 0.526vw 0px #000000;
+}
+
+.cardOne .brutalist {
+  animation: 6s brutalistSpin ease-out 1s infinite;
+}
+
+@keyframes brutalistSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cardTwoSpark1 {
+  animation: 6s cardTwoSparkAnim cubic-bezier(0.25, 1.5, 0.49, 1.27) 1s infinite;
+}
+
+.cardTwoSpark2 {
+  animation: 6s cardTwoSparkAnim cubic-bezier(0.25, 1.5, 0.49, 1.27) 1s infinite;
+}
+
+@keyframes cardTwoSparkAnim {
+  0% {
+    transform: translateX(0%);
+    }
+    10% {
+    transform: translateX(450%);
+    }
+    50% {
+    transform: translateX(450%);
+    }
+    60% {
+    transform: translateX(0%);
+    }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.comingSoonBorders {
+    text-shadow: 6px 2px 0px #000000;
+    -webkit-text-stroke: 3px #000000;
+}
+
+.cardThreeWireframe {
+  position: absolute;
+  width: 137px;
+  animation: 6s cardThreeWireframeAnim ease-out 1s infinite ;
+
+}
+
+@keyframes cardThreeWireframeAnim {
+  0%, 10%, 100% {
+    left: 10px;
+    top: 10px;
+    transform: rotateZ(0deg);
+  }
+  25%, 35% {
+    left: 30px;
+    top: calc(100% - 147px);
+    transform: rotateZ(40deg); 
+  }
+  50%, 60% {
+    left: calc(100% - 167px);
+    top: calc(100% - 147px);
+    transform: rotateZ(40deg);
+  }
+  75%, 85% {
+    left: calc(100% - 167px);
+    top: 10px;
+    transform: rotateZ(80deg);
+  }
+}
+
+
+.cardSixBrutalist{
+  animation: 6s cardSixBrutalistAnim ease-out 1s infinite;
+}
+
+@keyframes cardSixBrutalistAnim {
+  0%, 100%{
+    transform: rotateZ(0deg);
+  } 
+  25%, 75%{
+    transform: rotateZ(-45deg);
+  }
+  50%{
+    transform: rotateZ(0deg);
+  }
+}
+
+
+@keyframes wiggleTop {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-1.645vw);
+  }
+  50% {
+    transform: translateY(-0.789vw);
+  }
+  75% {
+    transform: translateY(-1.053vw);
+  }
+  100% {
+    transform: translateY(-0.987vw);
+  }
+}
+
+@keyframes wiggleDown {
+  0% {
+    transform: translateY(-0.987vw);
+  }
+  25% {
+    transform: translateY(0.658vw);
+  }
+  50% {
+    transform: translateY(-0.197vw);
+  }
+  75% {
+    transform: translateY(0.066vw);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wiggleLeft {
+    0%
+    { transform: translateX(0) 
+    }
+    25%{ transform: translateX(-100px) 
+    }
+    50% { transform: translateX(-60px) 
+    }
+    75% { transform: translateX(-75px) 
+    }
+    100% { transform: translateX(-70px) 
+    }
+
+}
+
+@keyframes wiggleRight {
+  0%
+  { transform: translateX(-70px) 
+  }
+  25%{ transform: translateX(30px) 
+  }
+  50% { transform: translateX(-10px) 
+  }
+  75% { transform: translateX(5px) 
+  }
+  100% { transform: translateX(0) 
+  }
+
+}
+
+.card4Container:hover .svgContainer {
+  animation: wiggleLeft 1.5s ease-out forwards;
+}
+
+.card4Container:not(:hover) .svgContainer {
+  animation: wiggleRight 1.5s ease-out forwards;
+}
+
+
+
+.card8Container:hover .svgIcon {
+  animation: wiggleTop 1s ease-out forwards;
+}
+
+.card8Container:not(:hover) .svgIcon {
+  animation: wiggleDown 1s ease-out forwards;
+}
+
+
+
