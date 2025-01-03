@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        'neue-haas': ['"Neue Haas Grotesk"', 'sans-serif'],
       },
     },
   },
