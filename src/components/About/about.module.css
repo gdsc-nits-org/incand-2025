@@ -1,0 +1,21 @@
+.about {
+    background-color: #FFA6F6;
+}
+
+.box1{
+    top: calc(15% + 32px);
+    left: calc(16% + 10px);
+    box-shadow: -1.2vw 1.2vw 0px #F855AC;   
+}
+
+.logo{
+    top: calc(100%+132px);
+    position: relative;
+}
+
+@font-face {
+    font-family: 'Tusker';
+    src: url('/assets/fonts/TuskerGrotesk-4600Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
