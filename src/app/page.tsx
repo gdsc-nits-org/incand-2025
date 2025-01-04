@@ -1,4 +1,5 @@
 import LandingScrollBar from "~/components/LandingScrollBar";
+export const runtime = "edge";
 const HomePage = () => {
   return (
     <main className="container bg-white">
