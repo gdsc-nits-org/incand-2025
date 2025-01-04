@@ -1,7 +1,10 @@
 import NavbarMobile from "./NavbarMobile";
-
 const Navbar = () => {
-  return <NavbarMobile />;
+  return (
+    <>
+      <NavbarMobile />
+    </>
+  );
 };
 
 export default Navbar;

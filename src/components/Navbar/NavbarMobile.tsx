@@ -2,22 +2,49 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const NavbarMobile = () => {
-  const navColors = { home: "#7139CE", about: "#FFA6F6", sponsors: "#B5FCFF" };
+  const navColors = {
+    home: "#7139CE",
+    about1: "#FFA6F6",
+    about2: "#C4FDFF",
+    sponsors: "#9EC92C",
+  };
   const [navColor, setNavColor] = useState(navColors.home);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const documentHeight = document.body.scrollHeight;
+    const windowHeight = window.innerHeight;
+    const percentage = (scrollY / (documentHeight - windowHeight)) * 100;
+    if (percentage < 25) {
+      setNavColor(navColors.home);
+    } else if (percentage < 50) {
+      setNavColor(navColors.about1);
+    } else if (percentage < 75) {
+      setNavColor(navColors.about2);
+    } else {
+      setNavColor(navColors.sponsors);
+    }
+    // console.log(window.scrollY);
+    // if (window.scrollY <= 700) {
+    //   setNavColor(navColors.home);
+    // } else if (window.scrollY <= 1400) {
+    //   setNavColor(navColors.about);
+    // } else if (window.scrollY <= 2100) {
+    //   setNavColor(navColors.sponsors);
+    // }
+  };
 
   useEffect(() => {
-    if (pathname == "/") setNavColor(navColors.home);
-    if (pathname == "/about") setNavColor(navColors.about);
-    if (pathname == "/sponsors") setNavColor(navColors.sponsors);
-  }, [pathname]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
-      className={`fixed ${isMenuOpen ? "h-screen bg-[#141414]" : "h-[76px]"} z-50 w-full transition-all duration-500 ease-linear`}
+      className={`fixed top-0 ${isMenuOpen ? "h-screen bg-[#141414]" : "h-[76px]"} z-50 w-full transition-all duration-500 ease-linear md:hidden`}
     >
       <div
         className={`flex h-[76px] w-full items-center justify-between px-6 transition-colors duration-500 ease-linear`}
@@ -48,7 +75,9 @@ const NavbarMobile = () => {
           />
         </button>
       </div>
-      {isMenuOpen && <hr className="mx-6 border-2" />}
+      <hr
+        className={`${isMenuOpen ? "mx-6 border-2 border-[#CFCFCFEB]" : "border-4 border-[#00000018]"}`}
+      />
       <div
         className={`flex w-screen flex-col items-center justify-center gap-10 py-10 ${isMenuOpen ? "h-full bg-maze-pattern opacity-100" : "h-0 opacity-0"} overflow-hidden transition-all duration-500 ease-linear`}
       >
@@ -95,7 +124,7 @@ interface NavDetailsProps {
 const NavDetails = [
   {
     title: "Home",
-    link: "/",
+    link: "#home",
     bgColor: "#FFA6F6",
     bigTextColor: "#E1067B",
     smallTextColor: "#F12390",
@@ -103,7 +132,7 @@ const NavDetails = [
   },
   {
     title: "About",
-    link: "/about",
+    link: "#about",
     bgColor: "#65C8FF",
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
@@ -111,7 +140,7 @@ const NavDetails = [
   },
   {
     title: "Sponsors",
-    link: "/sponsors",
+    link: "#sponsors",
     bgColor: "#FFF066",
     bigTextColor: "#EBB200",
     smallTextColor: "#E8B002",
@@ -132,7 +161,7 @@ const NavTab = (data: NavDetailsProps) => {
         {data.title}
       </h1>
       <p
-        className="text-[${data.smallTextColor}] font-oxygen text-md font-bold"
+        className="text-[${data.smallTextColor}] text-md font-oxygen font-bold"
         style={{ color: data.smallTextColor }}
       >
         {data.desc}
