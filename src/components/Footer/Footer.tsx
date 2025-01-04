@@ -114,7 +114,7 @@ const Footer = () => {
       {/* Text Section with Lottie Animation */}
       <div className="absolute bottom-[1.67vw] md:bottom-[1vw] lg:bottom-[0vw] flex flex-row items-center justify-center gap-0">
         <span 
-          className="font-neue-haas text-[2.08vw] md:text-[0.9vw] lg:text-[0.6vw] font-thin leading-none text-center tracking-[0.3em] m-0 p-0" 
+          className="font-neue-haas text-[2vw] md:text-[0.9vw] lg:text-[0.6vw] font-thin leading-none text-center tracking-[0.3em] m-0 p-0" 
           style={{ wordSpacing: "0.3em", margin: "0", padding: "0", lineHeight: "2" }}
         >
           MADE IN COLLABORATION WITH GDG NIT SILCHAR
