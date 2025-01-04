@@ -1,8 +1,11 @@
-import SponsorSlider from "../components/Sponsers";
+import dynamic from "next/dynamic";
+
+const Sponsors = dynamic(() => import("../components/Sponsors"), {
+  ssr: false,
+});
+
 const HomePage = () => {
-  return (
-    <SponsorSlider/>
-  );
+  return <Sponsors />;
 };
 
 export default HomePage;
