@@ -8,4 +8,12 @@
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'Tusker Grotes';
+    src: url('/fonts/TuskerGrotes.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
   
