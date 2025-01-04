@@ -1,12 +1,9 @@
-import Hero from "~/components/HeroSection/hero";
-
-
-const HomePage = () =>{
+const HomePage = () => {
   return (
-   <main className="bg-white">
-    <Hero />
+    <main className="container mx-auto bg-white">
+      <h1 className="text-black">Home Page</h1>
     </main>
   );
-}
+};
 
 export default HomePage;
