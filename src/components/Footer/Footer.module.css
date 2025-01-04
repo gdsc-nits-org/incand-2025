@@ -1,20 +1,80 @@
 /* Default styles */
 .logo {
-  width: 450px; /* Default width */
-  height: 200.43px; /* Default height */
+  width: 380px; /* Default width */
+  height: 260px; /* Default height */
 }
 
 .anima {
-  width:450px;
-  height: 200.42px;
+  width:380px;
+  height: 260px;
   left:-3%;
   top:8%;
   transform:translateY(-4%);
 
 }
+.social-icon {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: visible; /* Allow the glowing circle to extend beyond the container */
+  transition: transform 0.3s ease;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Enlarge the icon slightly */
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  bottom: -1%; /* Adjust to align the circle behind the icon */
+  
+  right:6%;
+  top:-1%;
+  width: 37px; /* Set the size of the glowing circle */
+  height: 37px;
+  border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
+  border-radius: 90%;
+   
+  transform: scale(0); /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth grow effect */
+}
+
+.social-icon::after{
+  content:"";
+  position:absolute;
+  bottom: -1%; /* Adjust to align the circle behind the icon */
+  right:9%;
+  top:3%;
+  width:39px;
+  height:39px;
+  border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
+  border-radius: 90%;
+  z-index:-1;
+  transform: scale(0); /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Smooth grow effect */
+
+}
+.social-icon:hover::after{
+  transform: scale(1); /* Circle grows to full size */
+  opacity: 1; /* Make it visible */
+}
+
+.social-icon:hover::before {
+  transform: scale(1); /* Circle grows to full size */
+  opacity: 1; /* Make it visible */
+}
+
+
 
 /* Media query for screens with a minimum width of 768px */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px ) and (max-width:1240px) {
   .logo {
     width: 800px !important;
     height: 600px !important;
@@ -27,4 +87,19 @@
     top:22% !important;
     transform:translateY(-22%) !important;
   }
+}
+@media only screen and (min-width:1240px) {
+  .logo {
+    width: 1150px !important;
+    height: 600px !important;
+  }
+
+  .anima {
+    width: 1150px !important;
+    height: 600px !important ;
+    left: -3% !important;
+    top:22% !important;
+    transform:translateY(-18%) !important;
+  }
+  
 }

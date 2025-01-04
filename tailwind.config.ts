@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         'neue-haas': ['"Neue Haas Grotesk"', 'sans-serif'],
+        oxygen: ['Oxygen', 'sans-serif'],
       },
     },
   },

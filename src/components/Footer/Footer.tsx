@@ -2,17 +2,85 @@
 "use client";
 
 import React from 'react';
-import Lottie from 'lottie-react';
-import dotsAnimation from '../../gdg-animation.json';
 import styles from './Footer.module.css';
 import Image from 'next/image';
+import LottieAnimation from './LottieAnimation';
 
-const Footer: React.FC = () => {
+
+const Footer = () => {
   return (
     <footer className="bg-black text-white h-screen flex flex-col justify-center items-center relative overflow-hidden">
+     <div
+        className={
+          "absolute lg:top-15 lg:right-10 flex flex-col items-center lg:items-end text-center lg:text-right mb-[48vw] mt-[10vw] lg:mt-[12vw] lg:mr-[4vw]"
+        }
+      >
+        <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em]">
+          CONTACT US
+        </h3>
+        <div className="flex justify-center items-center mt-4 space-x-4 lg:mt-6 md:mt-5 md:space-x-6 ">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            className={"flex justify-center items-center " + styles["social-icon"]}
+          >
+            <Image
+              src="/assets/instagram.png"
+              alt="Instagram icon"
+              width={40} // Adjusted size
+              height={40}
+              className={"block"+styles["social-icon"]}
+              priority
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            className={"flex justify-center items-center " + styles["social-icon"]}
+          >
+            <Image
+              src="/assets/linkedln.png"
+              alt="Linkedln icon"
+              width={40}
+              height={40}
+              className="block"
+              priority
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            className={"flex justify-center items-center " + styles["social-icon"]}
+          >
+            <Image
+              src="/assets/facebook.png"
+              alt="Facebook icon"
+              width={40}
+              height={40}
+              className="block"
+              priority
+            />
+          </a>
+          <a
+            href="https://x.com/"
+            target="_blank"
+            className={"flex justify-center items-center " + styles["social-icon"]}
+          >
+            <Image
+              src="/assets/twitter.png"
+              alt="Twitter icon"
+              width={40}
+              height={40}
+              className="block"
+              priority
+            />
+          </a>
+        </div>
+      </div>
+
      
       {/* Logo Section */}
-      <div className={"relative mt-[55vw] md:mt-[10vw] lg:mt-[1vw] mb-[5vw] "}>
+      <div className={"relative mt-[5vw] md:mt-[30vw] md:mb-[-15vw] lg:mt-[-16vw] mb-[-50vw] lg:mb-[-9vw]"}>
         <div className={styles.logo}>
         {/* Background Image */}
         <Image
@@ -52,11 +120,7 @@ const Footer: React.FC = () => {
           MADE IN COLLABORATION WITH GDG NIT SILCHAR
         </span>
         <div className="relative top-[1.88vw] md:top-[1vw] lg:top-[0.5vw] p-0 m-0 flex-shrink-0">
-          <Lottie 
-            animationData={dotsAnimation} 
-            loop 
-            className="h-[6vw] md:h-[5vw] lg:h-[5vw] w-[10vw] md:w-[8vw] lg:w-[8vw] left-0 right-[2.29vw] p-0 m-0" 
-          />
+          <LottieAnimation/>
         </div>
       </div>
     </footer>
@@ -64,5 +128,6 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
 
 
