@@ -1,8 +1,7 @@
+import SponsorSlider from "../components/Sponsers";
 const HomePage = () => {
   return (
-    <main className="container mx-auto bg-white">
-      <h1 className="text-black">Home Page</h1>
-    </main>
+    <SponsorSlider/>
   );
 };
 
