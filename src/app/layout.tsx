@@ -15,10 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        {/* <ScrollProvider> */}
         <Navbar />
         {children}
-        {/* </ScrollProvider> */}
       </body>
     </html>
   );
