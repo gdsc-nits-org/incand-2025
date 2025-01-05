@@ -29,14 +29,11 @@ const Sponsors: React.FC = () => {
         alt=""
         className="absolute z-0 mobile:min-w-[1400px] laptop:top-8 laptop:w-screen"
       />
-      {/* Title */}
       <img
         src="/PREVIOUS SPONSORS (5).png"
         alt=""
         className="mx-auto translate-y-16 mobile:hidden md:h-[72px] md:w-[620px] laptop:block laptop:h-[128px] laptop:w-[1096px] 4k:h-[334px] 4k:w-[2860px]"
       />
-
-      {/* Carousel */}
       <div className="relative flex h-[400px] items-center justify-center 4k:h-[1200px]">
         {sponsors.map((sponsor, index) => {
           const position =
@@ -95,8 +92,6 @@ const Sponsors: React.FC = () => {
           );
         })}
       </div>
-
-      {/* Navigation Buttons */}
       <div className="mt-8 flex justify-center mobile:translate-y-28 tablet:translate-y-[40vh] ipadpro:translate-y-[50vh] laptop:translate-y-24">
         <button
           onClick={handlePrev}
