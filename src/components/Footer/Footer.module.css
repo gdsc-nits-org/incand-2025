@@ -7,10 +7,6 @@
 .anima {
   width:380px;
   height: 260px;
-  left:-3%;
-  top:8%;
-  transform:translateY(-4%);
-
 }
 .text{
   wordSpacing: 0.3em;
@@ -83,16 +79,16 @@
 /* Media query for screens with a minimum width of 768px */
 @media only screen and (min-width: 768px ) and (max-width:1240px) {
   .logo {
-    width: 800px !important;
-    height: 600px !important;
+    width: 500px !important;
+    height: 400px !important;
   }
 
   .anima {
-    width: 800px !important;
-    height: 600px !important ;
-    left: -3% !important;
-    top:22% !important;
-    transform:translateY(-22%) !important;
+    width: 500px !important;
+    height: 400px !important ;
+    /* left: -3% !important; */
+    top:0% !important;
+    /* transform:translateY(-22%) !important; */
   }
 }
 @media only screen and (min-width:1240px) {
@@ -104,9 +100,9 @@
   .anima {
     width: 1150px !important;
     height: 600px !important ;
-    left: -3% !important;
+    /* left: -3% !important;
     top:19% !important;
-    transform:translateY(-16%) !important;
+    transform:translateY(-16%) !important; */
   }
   
 }
@@ -120,25 +116,25 @@
   .anima {
     width:380px;
     height: 260px;
-    left:-3%;
+    /* left:-3%;
     top:8%;
-    transform:translateY(-4%);
+    transform:translateY(-4%); */
   
   }
 }
 
 @media (max-height:680px) and (max-width:760px) and (min-width:530px){
   .logo {
-    width: 500px !important;
-    height: 400px !important;
+    width: 400px !important;
+    height: 300px !important;
   }
 
   .anima {
-    width: 500px !important;
-    height: 400px !important ;
-    left: -3% !important;
+    width: 400px !important;
+    height: 300px !important ;
+    /* left: -3% !important;
     top:22% !important;
-    transform:translateY(-22%) !important;
+    transform:translateY(-22%) !important; */
   }
   .text{
     font-size:10px !important;
