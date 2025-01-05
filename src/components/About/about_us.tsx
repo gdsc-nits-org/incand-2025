@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import styles from './about.module.css';
+import styles from '~/styles/AboutUs.module.css';
 
 const AboutUs = () => {
     const [isWaveHovered, setIsWaveHovered] = useState(false);
@@ -60,7 +60,7 @@ const AboutUs = () => {
                             height={400}
                         />
                         <Image
-                            src="/assets/vectors/wave.gif"
+                            src="/assets/About/wave.gif"
                             alt="Wave"
                             width={500}
                             height={1}
@@ -95,7 +95,7 @@ const AboutUs = () => {
                             </svg>
                             <br /> invites you on a journey into
                             <Image
-                                src="/assets/vectors/spidey.gif"
+                                src="/assets/About/spidey.gif"
                                 alt="animated gif"
                                 className={`inline-block w-[80.18px] h-[40.945px] rounded-[53.99px] sm:h-[57px] sm:w-[95px] mr-2 ml-2 lg:ml-3 lg:mr-3 lg:w-[90px] lg:h-[40px] ${styles.smallImage}`}
                                 width={26}
@@ -103,7 +103,7 @@ const AboutUs = () => {
                             />
                             the <br />unknown. Experience a labyrinth of culture, <br />
                             <Image
-                                src="/assets/vectors/dj.gif"
+                                src="/assets/About/dj.gif"
                                 alt="animated gif"
                                 className={`inline-block w-[80.18px] h-[40.945px] rounded-[53.99px] sm:h-[57] sm:w-[95] mr-2 ml-2 lg:ml-3 lg:mr-3  lg:w-[90px] lg:h-[40px] ${styles.smallImage}`}
                                 width={26}
