@@ -28,32 +28,36 @@ const Hero = () => {
           />
           </div>
           <div className="mt-[1.053vw] flex items-center justify-center gap-[0.755vw] md:gap-[0.526vw]">
-            <svg
-              className="absolute left-[-7.385vw] top-[17.042vw] w-[26.667vw] md:left-[-5.385vw] md:top-[1.042vw] md:w-[17.5vw]"
-              viewBox="0 0 360 219"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M329.917 7.77876C330.863 9.18142 331.191 11.2468 330.516 14.2216C329.842 17.1955 328.213 20.8361 325.603 25.0865C320.391 33.5759 311.513 44.1019 299.593 55.9747C275.775 79.697 240.101 108.512 198.214 136.764C156.328 165.017 116.248 187.3 85.3306 200.496C69.8569 207.101 56.7718 211.389 46.9479 213.042C42.0293 213.869 38.0437 214.016 35.0337 213.527C32.0228 213.038 30.2305 211.961 29.2844 210.558C28.3383 209.156 28.0109 207.09 28.6855 204.115C29.36 201.141 30.9886 197.501 33.5984 193.25C38.811 184.761 47.6886 174.235 59.6089 162.362C83.4263 138.64 119.101 109.825 160.987 81.5726C202.873 53.3199 242.954 31.0372 273.871 17.8407C289.345 11.236 302.43 6.9479 312.254 5.29507C317.172 4.46755 321.158 4.32131 324.168 4.81001C327.179 5.29885 328.971 6.3761 329.917 7.77876Z"
-                stroke="black"
-                stroke-width="3.91608"
-              />
-              <circle
-                cx="330.484"
-                cy="12.1198"
-                r="11.7482"
-                transform="rotate(56 330.484 12.1198)"
-                fill="#FAE00D"
-              />
-            </svg>
+          <div className="relative w-fit group">
+  <svg
+    className="absolute left-[-8.385vw] top-[1.042vw] w-[26.667vw] md:left-[-5.385vw] md:top-[0.042vw] md:w-[17.5vw] z-[10]"
+    viewBox="0 0 360 219"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      id="motionPath"
+      d="M329.917 7.77876C330.863 9.18142 331.191 11.2468 330.516 14.2216C329.842 17.1955 328.213 20.8361 325.603 25.0865C320.391 33.5759 311.513 44.1019 299.593 55.9747C275.775 79.697 240.101 108.512 198.214 136.764C156.328 165.017 116.248 187.3 85.3306 200.496C69.8569 207.101 56.7718 211.389 46.9479 213.042C42.0293 213.869 38.0437 214.016 35.0337 213.527C32.0228 213.038 30.2305 211.961 29.2844 210.558C28.3383 209.156 28.0109 207.09 28.6855 204.115C29.36 201.141 30.9886 197.501 33.5984 193.25C38.811 184.761 47.6886 174.235 59.6089 162.362C83.4263 138.64 119.101 109.825 160.987 81.5726C202.873 53.3199 242.954 31.0372 273.871 17.8407C289.345 11.236 302.43 6.9479 312.254 5.29507C317.172 4.46755 321.158 4.32131 324.168 4.81001C327.179 5.29885 328.971 6.3761 329.917 7.77876Z"
+      stroke="black"
+      stroke-width="3.91608"
+    />
+    <circle
+      r="11.7482"
+      fill="#FAE00D"
+    >
+      <animateMotion repeatCount="indefinite" dur="5s">
+        <mpath href="#motionPath" />
+      </animateMotion>
+    </circle>
+  </svg>
+  <p
+    className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 group-hover:text-[#FAE00D] md:text-[5.677vw]"
+    style={{ fontFamily: "Ahsing" }}
+  >
+    I
+  </p>
+</div>
 
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw] z-10"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              I
-            </p>
             <p
               className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw] z-10"
               style={{ fontFamily: "Ahsing" }}
@@ -178,7 +182,7 @@ const Hero = () => {
 </div>
         </div>
 
-        <div className="relative left-[2.945vw] top-[0.658vw] h-[90.065vw] md:h-[23.026vw]">
+        <div className="relative left-[2.945vw] top-[0.658vw] h-[90.065vw] md:h-[31.026vw]">
           {/* Card 1 */}
           <div
             className={
@@ -252,7 +256,7 @@ const Hero = () => {
             </div>
             <p
               className={
-                "absolute left-[2.368vw] top-[-9.211vw] w-[11.576vw] text-[18.197vw] font-normal leading-[15.261vw] tracking-wide text-white md:w-[8.061vw] md:text-[10.197vw] " +
+                "absolute md:left-[3.368vw] left-[2.368vw] md:top-[-10.211vw] top-[-9.211vw] w-[11.576vw] text-[17.197vw] font-normal leading-[15.261vw] tracking-wide text-white md:w-[8.061vw] md:text-[9.197vw] " +
                 styles.cText
               }
               onMouseEnter={() => setIsCHovered(true)}
@@ -264,7 +268,7 @@ const Hero = () => {
                       animation: "none",
                       scale: "0.8",
                     }
-                  : { fontFamily: "Tusker Grotes" }
+                  : { fontFamily: "Ahsing" }
               }
             >
               C
@@ -297,7 +301,7 @@ const Hero = () => {
             </div>
             <p
               className={
-                "absolute bottom-[-0.592vw] left-[-3.158vw] w-[11.576vw] text-[18.197vw] font-normal leading-[15.261vw] tracking-wide text-white md:w-[8.061vw] md:text-[10.197vw] " +
+                "absolute md:bottom-[0.392vw] md:left-[-2.158vw] bottom-[-0.592vw] left-[-3.158vw] w-[11.576vw] text-[17.197vw] font-normal leading-[15.261vw] tracking-wide text-white md:w-[8.061vw] md:text-[9.197vw] " +
                 styles.cText
               }
               onMouseEnter={() => setIsCHovered(true)}
@@ -309,14 +313,14 @@ const Hero = () => {
                       animation: "none",
                       scale: "0.8",
                     }
-                  : { fontFamily: "Tusker Grotes" }
+                  : { fontFamily: "Ahsing" }
               }
             >
               C
             </p>
             <p
               className={
-                "absolute bottom-[-2.947vw] right-[-0.87vw] w-[11.576vw] md:text-[8.197vw] text-[13.197vw] font-normal tracking-wide text-white md:w-[8.061vw] " +
+                "absolute md:bottom-[-2.947vw] bottom-[-0.947vw] md:right-[-0.87vw] right-[0.87vw] w-[11.576vw] md:text-[8.197vw] text-[15.5vw] font-normal tracking-wide text-white md:w-[8.061vw] " +
                 styles.nText
               }
               onMouseEnter={() => setIsMHovered(true)}
@@ -329,7 +333,7 @@ const Hero = () => {
                       scale: "0.8",
                       transform: "translateY(-3.947vw)",
                     }
-                  : { fontFamily: "Tusker Grotes" }
+                  : { fontFamily: "Ahsing" }
               }
             >
               M
@@ -380,14 +384,14 @@ const Hero = () => {
                         scale: "0.8",
                         transform: "translateY(-3.947vw)",
                       }
-                    : { fontFamily: "Tusker Grotes" }
+                    : { fontFamily: "Ahsing" }
                 }
               >
                 M
               </p>
               <p
                 className={
-                  "relative md:top-[-1.316vw] top-[10.316vw] h-[23.618vw] w-fit md:text-[8.197vw] text-[13.197vw] font-normal leading-[8.197vw] tracking-wide text-white hover:text-[7.197vw] md:h-[16.447vw] " +
+                  "relative md:top-[-1.316vw] md:left-[-0.5vw] left-[-1vw] top-[10.316vw] h-[23.618vw] w-fit md:text-[8.197vw] text-[15.197vw] font-normal leading-[8.197vw] tracking-wide text-white md:hover:text-[7.197vw] hover:text-[11.197vw] md:h-[16.447vw] " +
                   styles.gText
                 }
               >
@@ -409,10 +413,10 @@ const Hero = () => {
               <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black transition-[bg] duration-300 group-hover:bg-white md:h-[1.053vw] md:w-[1.053vw]"></div>
             </div>
             <div className="flex h-full flex-col justify-end">
-              <div className="absolute md:top-0 top-[9vw] flex w-full overflow-visible">
+              <div className="absolute md:top-[-1vw] top-[9vw] flex w-full overflow-visible">
                 <p
                   className={
-                    "relative left-[0.587vw] top-[1.316vw] w-[10.858vw] md:text-[9.197vw] text-[13.197vw] font-normal leading-[none] tracking-wide text-white hover:text-[7.197vw] group-hover:text-[#00FF88] md:w-[7.561vw] " +
+                    "relative md:left-[1.587vw] left-[2.587vw] top-[-5.316vw] md:top-[1.316vw] w-[10.858vw] md:text-[9.197vw] text-[15.5vw] font-normal leading-[none] tracking-wide text-white md:hover:text-[7.197vw] hover:text-[11.197vw] group-hover:text-[#00FF88] md:w-[7.561vw] " +
                     styles.nText
                   }
                 >
@@ -420,7 +424,7 @@ const Hero = () => {
                 </p>
                 <p
                   className={
-                    "relative left-[1vw] top-[3.947vw] h-[23.618vw] w-[11.576vw] md:text-[8.197vw] text-[13.197vw] font-normal leading-[none] tracking-wide text-white hover:text-[7.197vw] group-hover:text-[#00FF88] md:h-[16.447vw] md:w-[8.061vw] " +
+                    "relative md:left-[1vw] left-[4vw] top-[3.947vw] h-[23.618vw] w-[11.576vw] md:text-[8.197vw] text-[13.197vw] font-normal leading-[none] tracking-wide text-white md:hover:text-[7.197vw] hover:text-[11.197vw] group-hover:text-[#00FF88] md:h-[16.447vw] md:w-[8.061vw] " +
                     styles.gText
                   }
                 >
@@ -494,7 +498,7 @@ const Hero = () => {
               styles.cardOne
             }
           >
-            <div className="flex h-[3.75vw] w-full flex-row items-center gap-[0.755vw] rounded-t-[2.053vw] border-b-[0.132vw] border-t-[0px] border-black bg-white px-[1.526vw] md:h-[2.368vw] md:gap-[0.526vw] md:rounded-t-[1.053vw] md:border-t-[0.132vw] md:px-[0.526vw]">
+            <div className="relative flex h-[3.75vw] w-full flex-row items-center gap-[0.755vw] rounded-t-[2.053vw] border-b-[0.132vw] border-t-[0px] border-black bg-white px-[1.526vw] md:h-[2.368vw] md:gap-[0.526vw] md:rounded-t-[1.053vw] md:border-t-[0.132vw] md:px-[0.526vw] z-[2]">
               <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black md:h-[1.053vw] md:w-[1.053vw]"></div>
               <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black md:h-[1.053vw] md:w-[1.053vw]"></div>
               <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black md:h-[1.053vw] md:w-[1.053vw]"></div>
@@ -502,12 +506,12 @@ const Hero = () => {
             <div className="relative h-[85%] w-full">
 
             <svg className="absolute md:w-[9.118vw] md:left-[12.882vw] md:top-[2.882vw] left-[20.882vw] top-[13.882vw] w-[14.118vw]" viewBox="0 0 102 109" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M91.8047 61.4629L91.8047 61.4628C91.8026 61.4555 91.7591 61.3032 91.3524 61.0939C90.9443 60.884 90.3052 60.6913 89.3977 60.5565C87.5909 60.2881 85.0077 60.2887 81.7978 60.576C75.3985 61.1487 66.7602 62.8366 57.4146 65.5164C48.069 68.1962 39.8488 71.3424 34.1184 74.2478C31.244 75.7051 29.053 77.0735 27.663 78.2586C26.9648 78.8539 26.525 79.3559 26.2901 79.7502C26.0561 80.1432 26.0999 80.2954 26.102 80.3027L26.102 80.3028L26.1021 80.3029C26.1041 80.3102 26.1476 80.4625 26.5544 80.6718C26.9625 80.8817 27.6015 81.0744 28.5091 81.2092C30.3159 81.4776 32.8991 81.477 36.109 81.1897C42.5083 80.617 51.1466 78.9291 60.4922 76.2493C69.8378 73.5695 78.0579 70.4233 83.7884 67.5179C86.6627 66.0605 88.8537 64.6921 90.2438 63.5071C90.942 62.9118 91.3818 62.4097 91.6166 62.0155C91.8507 61.6225 91.8069 61.4703 91.8048 61.463L91.8047 61.4629Z" stroke="black" stroke-width="2.45"/>
-<circle cx="2.26925" cy="2.26925" r="2.26925" transform="matrix(-0.275637 -0.961262 -0.961262 0.275637 94.8535 62.1626)" fill="#E1067B"/>
-<path d="M84.2026 83.5248C84.2027 83.5248 84.2017 83.5234 84.1994 83.5209C84.2012 83.5236 84.2024 83.5249 84.2026 83.5248ZM84.107 83.6392C84.1421 83.5723 84.1598 83.5253 84.1686 83.4948C84.1429 83.4762 84.1 83.45 84.0312 83.4191C83.8225 83.3252 83.4786 83.2377 82.9689 83.1891C81.9557 83.0924 80.5026 83.1674 78.6882 83.4261C75.0747 83.9413 70.2147 85.1574 64.9764 86.9611C59.738 88.7648 55.1595 90.7986 51.9949 92.6173C50.4059 93.5305 49.2147 94.3661 48.4758 95.066C48.1041 95.4182 47.8869 95.6988 47.7803 95.9012C47.7451 95.9681 47.7274 96.0151 47.7186 96.0456C47.7443 96.0641 47.7872 96.0904 47.856 96.1213C48.0647 96.2152 48.4086 96.3027 48.9183 96.3513C49.9315 96.4479 51.3847 96.373 53.199 96.1143C56.8125 95.5991 61.6725 94.383 66.9109 92.5793C72.1492 90.7756 76.7277 88.7418 79.8923 86.9231C81.4813 86.0099 82.6725 85.1743 83.4114 84.4743C83.7832 84.1222 84.0003 83.8416 84.107 83.6392ZM47.7103 96.0901C47.7105 96.0901 47.7106 96.0883 47.7104 96.085C47.7101 96.0885 47.7102 96.0902 47.7103 96.0901ZM47.6879 96.0196C47.686 96.0168 47.6848 96.0155 47.6847 96.0156C47.6845 96.0156 47.6855 96.017 47.6879 96.0196ZM84.1768 83.4553C84.1771 83.4519 84.177 83.4502 84.1769 83.4503C84.1768 83.4503 84.1766 83.452 84.1768 83.4553Z" stroke="black" stroke-width="1.83"/>
-<circle cx="1.29532" cy="1.29532" r="1.29532" transform="matrix(-0.325568 -0.945518 -0.945518 0.325568 86.1475 83.7266)" fill="#E1067B"/>
-<path d="M3.33399 61.2922C3.41203 61.5644 3.66335 61.9151 4.35206 62.2694C5.04035 62.6234 6.05035 62.9174 7.39981 63.1179C10.0917 63.5178 13.8878 63.5117 18.5464 63.0947C27.8462 62.2624 40.3681 59.8135 53.8951 55.9347C67.4221 52.0559 79.339 47.4971 87.6667 43.2748C91.8384 41.1597 95.0609 39.1532 97.1318 37.3876C98.17 36.5025 98.8708 35.718 99.2668 35.053C99.6632 34.3876 99.6905 33.957 99.6124 33.6848C99.5344 33.4127 99.283 33.062 98.5943 32.7077C97.906 32.3536 96.8961 32.0597 95.5466 31.8592C92.8547 31.4593 89.0586 31.4654 84.4 31.8823C75.1002 32.7147 62.5783 35.1635 49.0513 39.0423C35.5243 42.9211 23.6074 47.48 15.2797 51.7023C11.108 53.8174 7.88552 55.8238 5.81456 57.5894C4.77638 58.4746 4.07563 59.2591 3.67956 59.9241C3.28324 60.5895 3.25594 61.0201 3.33399 61.2922Z" stroke="black" stroke-width="2.09"/>
-<ellipse cx="3.27719" cy="3.27719" rx="3.27719" ry="3.27719" transform="matrix(0.275637 0.961262 0.961262 -0.275637 -0.373047 60.0825)" fill="#E1067B"/>
+<path id="path1" d="M91.8047 61.4629L91.8047 61.4628C91.8026 61.4555 91.7591 61.3032 91.3524 61.0939C90.9443 60.884 90.3052 60.6913 89.3977 60.5565C87.5909 60.2881 85.0077 60.2887 81.7978 60.576C75.3985 61.1487 66.7602 62.8366 57.4146 65.5164C48.069 68.1962 39.8488 71.3424 34.1184 74.2478C31.244 75.7051 29.053 77.0735 27.663 78.2586C26.9648 78.8539 26.525 79.3559 26.2901 79.7502C26.0561 80.1432 26.0999 80.2954 26.102 80.3027L26.102 80.3028L26.1021 80.3029C26.1041 80.3102 26.1476 80.4625 26.5544 80.6718C26.9625 80.8817 27.6015 81.0744 28.5091 81.2092C30.3159 81.4776 32.8991 81.477 36.109 81.1897C42.5083 80.617 51.1466 78.9291 60.4922 76.2493C69.8378 73.5695 78.0579 70.4233 83.7884 67.5179C86.6627 66.0605 88.8537 64.6921 90.2438 63.5071C90.942 62.9118 91.3818 62.4097 91.6166 62.0155C91.8507 61.6225 91.8069 61.4703 91.8048 61.463L91.8047 61.4629Z" stroke="black" stroke-width="2.45"/>
+<circle r="2.26925" fill="#E1067B"><animateMotion repeatCount="indefinite" dur="4s"><mpath href="#path1"/></animateMotion></circle>
+<path id="path2" d="M84.2026 83.5248C84.2027 83.5248 84.2017 83.5234 84.1994 83.5209C84.2012 83.5236 84.2024 83.5249 84.2026 83.5248ZM84.107 83.6392C84.1421 83.5723 84.1598 83.5253 84.1686 83.4948C84.1429 83.4762 84.1 83.45 84.0312 83.4191C83.8225 83.3252 83.4786 83.2377 82.9689 83.1891C81.9557 83.0924 80.5026 83.1674 78.6882 83.4261C75.0747 83.9413 70.2147 85.1574 64.9764 86.9611C59.738 88.7648 55.1595 90.7986 51.9949 92.6173C50.4059 93.5305 49.2147 94.3661 48.4758 95.066C48.1041 95.4182 47.8869 95.6988 47.7803 95.9012C47.7451 95.9681 47.7274 96.0151 47.7186 96.0456C47.7443 96.0641 47.7872 96.0904 47.856 96.1213C48.0647 96.2152 48.4086 96.3027 48.9183 96.3513C49.9315 96.4479 51.3847 96.373 53.199 96.1143C56.8125 95.5991 61.6725 94.383 66.9109 92.5793C72.1492 90.7756 76.7277 88.7418 79.8923 86.9231C81.4813 86.0099 82.6725 85.1743 83.4114 84.4743C83.7832 84.1222 84.0003 83.8416 84.107 83.6392ZM47.7103 96.0901C47.7105 96.0901 47.7106 96.0883 47.7104 96.085C47.7101 96.0885 47.7102 96.0902 47.7103 96.0901ZM47.6879 96.0196C47.686 96.0168 47.6848 96.0155 47.6847 96.0156C47.6845 96.0156 47.6855 96.017 47.6879 96.0196ZM84.1768 83.4553C84.1771 83.4519 84.177 83.4502 84.1769 83.4503C84.1768 83.4503 84.1766 83.452 84.1768 83.4553Z" stroke="black" stroke-width="1.83"/>
+<circle r="1.29532" fill="#E1067B"><animateMotion repeatCount="indefinite" dur="3s"><mpath href="#path2"/></animateMotion></circle>
+<path id="path3" d="M3.33399 61.2922C3.41203 61.5644 3.66335 61.9151 4.35206 62.2694C5.04035 62.6234 6.05035 62.9174 7.39981 63.1179C10.0917 63.5178 13.8878 63.5117 18.5464 63.0947C27.8462 62.2624 40.3681 59.8135 53.8951 55.9347C67.4221 52.0559 79.339 47.4971 87.6667 43.2748C91.8384 41.1597 95.0609 39.1532 97.1318 37.3876C98.17 36.5025 98.8708 35.718 99.2668 35.053C99.6632 34.3876 99.6905 33.957 99.6124 33.6848C99.5344 33.4127 99.283 33.062 98.5943 32.7077C97.906 32.3536 96.8961 32.0597 95.5466 31.8592C92.8547 31.4593 89.0586 31.4654 84.4 31.8823C75.1002 32.7147 62.5783 35.1635 49.0513 39.0423C35.5243 42.9211 23.6074 47.48 15.2797 51.7023C11.108 53.8174 7.88552 55.8238 5.81456 57.5894C4.77638 58.4746 4.07563 59.2591 3.67956 59.9241C3.28324 60.5895 3.25594 61.0201 3.33399 61.2922Z" stroke="black" stroke-width="2.09"/>
+<ellipse rx="3.27719" ry="3.27719" fill="#E1067B"><animateMotion repeatCount="indefinite" dur="5s"><mpath href="#path3"/></animateMotion></ellipse>
 </svg>
 
               <p
@@ -520,7 +524,7 @@ const Hero = () => {
             <div className="absolute md:left-[1.645vw] left-[5.645vw] top-0 flex h-[85%] w-full overflow-hidden">
               <p
                 className={
-                  "relative md:top-[-2.961vw] top-[-8.961vw] w-[10.858vw] text-[18.197vw] font-normal leading-[none] tracking-wide text-white hover:text-[8.197vw] md:w-[7.561vw] md:text-[10.197vw] " +
+                  "relative md:top-[-8.961vw] md:left-[1vw] top-[-16.961vw] left-[0] w-[10.858vw] text-[18.197vw] font-normal tracking-wide text-white md:hover:text-[7.197vw] hover:text-[14.197vw] md:hover:top-[-6.961vw] hover:top-[-13vw] md:w-[7.561vw] md:text-[10.197vw] md:leading-[21vw] leading-[38vw] z-[2] " +
                   styles.comingSoonBorders
                 }
               >
@@ -528,7 +532,7 @@ const Hero = () => {
               </p>
               <p
                 className={
-                  "relative md:top-[-2.961vw] top-[-8.961vw] w-[10.858vw] text-[18.197vw] font-normal leading-[none] tracking-wide text-white hover:text-[8.197vw] md:w-[7.561vw] md:text-[10.197vw] " +
+                  "relative md:top-[-8.961vw] top-[-16.961vw] w-[13.858vw] text-[18.197vw] font-normal  tracking-wide text-white md:hover:text-[7.197vw] hover:text-[14.197vw] md:hover:top-[-7.961vw] hover:top-[-13vw] md:w-[7.561vw] md:text-[10.197vw] md:leading-[21.197vw] leading-[38vw] z-[1] " +
                   styles.comingSoonBorders
                 }
               >
@@ -536,7 +540,7 @@ const Hero = () => {
               </p>
               <p
                 className={
-                  "relative md:top-[-2.961vw] top-[-8.961vw] w-[10.858vw] text-[18.197vw] font-normal leading-[none] tracking-wide text-white hover:text-[8.197vw] md:w-[7.561vw] md:text-[10.197vw] " +
+                  "relative md:top-[-8.961vw] top-[-16.961vw] w-[13.858vw] text-[18.197vw] font-normal tracking-wide text-white md:hover:text-[7.197vw] hover:text-[14.197vw] md:hover:top-[-6.961vw] hover:top-[-13vw] md:w-[7.561vw] md:text-[10.197vw] md:leading-[21.197vw] leading-[38vw] z-[2] " +
                   styles.comingSoonBorders
                 }
               >
@@ -549,7 +553,7 @@ const Hero = () => {
           {/* Card 8 */}
           <div
             className={
-              "group absolute left-[26.553vw] top-[63.224vw] h-[22.778vw] w-[13.889vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#00E9F4] shadow-[0.329vw_0.329vw_0px_#000000] shadow-black transition duration-300 hover:bg-black hover:shadow-[#00E9F4] md:left-[33.553vw] md:top-[8.224vw] md:h-[12.171vw] md:w-[7.237vw] md:rounded-[1.053vw] " +
+              "group absolute left-[26.553vw] top-[63.224vw] h-[22.778vw] w-[13.889vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#00E9F4] shadow-[0.329vw_0.329vw_0px_#000000] shadow-black transition duration-300 hover:bg-black hover:shadow-[#00E9F4] md:left-[33.553vw] md:top-[8.224vw] md:h-[12.171vw] md:w-[7.237vw] md:rounded-[1.053vw] z-1 " +
               styles.card8Container
             }
           >
@@ -574,9 +578,13 @@ const Hero = () => {
               </svg>
             </div>
           </div>
+           {/* Card 8 */}
+
+
+
           <p
             className={
-              "absolute md:left-[31.508vw] md:top-[-6.579vw] left-[28.508vw] top-[33.579vw] w-[10.858vw] text-[18.197vw] font-normal leading-[none] tracking-wide text-white hover:text-[8.197vw] md:w-[7.561vw] md:text-[10.197vw] " +
+              "absolute md:left-[31.508vw] md:top-[-7vw] left-[30.508vw] top-[33.579vw] w-[10.858vw] text-[18.197vw] font-normal md:leading-[10vw] leading-[21vw] tracking-wide text-white md:hover:text-[7.197vw] hover:text-[14.197vw] md:hover:top-[-6vw] hover:top-[-12vw] md:w-[7.561vw] md:text-[10.197vw] z-[2] " +
               styles.comingSoonBorders
             }
           >
@@ -584,7 +592,7 @@ const Hero = () => {
           </p>
           <p
             className={
-              "absolute right-[20.724vw] top-[-1.974vw] z-30 w-[10.858vw] text-[16.197vw] font-normal leading-[none] tracking-wide text-white md:hover:text-[8.197vw] hover:text-[12.197vw]  md:w-[7.561vw] md:text-[10.197vw] " +
+              "absolute w-fit md:right-[20.724vw] right-[17.724vw] top-[2.974vw] md:top-[-1.974vw] z-30 text-[17.197vw] font-normal md:leading-[10vw] leading-[10vw] tracking-wide text-white md:hover:text-[8.197vw] hover:text-[12.197vw] hover:top-[0.974vw]  md:w-[7.561vw] md:text-[10.197vw] " +
               styles.comingSoonBorders
             }
           >
@@ -747,8 +755,13 @@ const Hero = () => {
 
 {/* Svg8 */}
 <svg className="absolute md:w-[4.844vw] md:top-[7vw] md:left-[38vw] hidden md:block " viewBox="0 0 101 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.17206 2.16962C7.90814 2.56089 7.81682 3.13703 8.00502 3.96686C8.19316 4.79644 8.64746 5.81198 9.37547 6.99764C10.8295 9.36579 13.306 12.302 16.6312 15.614C23.275 22.2314 33.2265 30.2693 44.9108 38.1504C56.5951 46.0316 67.7756 52.2474 76.4 55.9286C80.7164 57.7709 84.3665 58.9671 87.1069 59.4282C88.479 59.659 89.5907 59.6998 90.4304 59.5635C91.2703 59.4271 91.7703 59.1266 92.0342 58.7353C92.2981 58.3441 92.3894 57.7679 92.2012 56.9381C92.0131 56.1085 91.5588 55.093 90.8308 53.9073C89.3767 51.5392 86.9003 48.6029 83.5751 45.291C76.9312 38.6736 66.9797 30.6357 55.2954 22.7546C43.6112 14.8734 32.4307 8.6576 23.8063 4.97641C19.4899 3.13401 15.8397 1.93785 13.0993 1.47679C11.7273 1.24595 10.6155 1.20516 9.77585 1.34148C8.93596 1.47784 8.43598 1.77834 8.17206 2.16962Z" stroke="black" stroke-width="1.0924"/>
-<ellipse cx="3.27719" cy="3.27719" rx="3.27719" ry="3.27719" transform="matrix(-0.559193 0.829038 0.829038 0.559193 7.12988 -1.16895)" fill="#E1067B"/>
+<path id="motionPath2" d="M8.17206 2.16962C7.90814 2.56089 7.81682 3.13703 8.00502 3.96686C8.19316 4.79644 8.64746 5.81198 9.37547 6.99764C10.8295 9.36579 13.306 12.302 16.6312 15.614C23.275 22.2314 33.2265 30.2693 44.9108 38.1504C56.5951 46.0316 67.7756 52.2474 76.4 55.9286C80.7164 57.7709 84.3665 58.9671 87.1069 59.4282C88.479 59.659 89.5907 59.6998 90.4304 59.5635C91.2703 59.4271 91.7703 59.1266 92.0342 58.7353C92.2981 58.3441 92.3894 57.7679 92.2012 56.9381C92.0131 56.1085 91.5588 55.093 90.8308 53.9073C89.3767 51.5392 86.9003 48.6029 83.5751 45.291C76.9312 38.6736 66.9797 30.6357 55.2954 22.7546C43.6112 14.8734 32.4307 8.6576 23.8063 4.97641C19.4899 3.13401 15.8397 1.93785 13.0993 1.47679C11.7273 1.24595 10.6155 1.20516 9.77585 1.34148C8.93596 1.47784 8.43598 1.77834 8.17206 2.16962Z" stroke="black" stroke-width="1.0924"/>
+<ellipse  rx="3.27719" ry="3.27719" fill="#E1067B"> <animateMotion
+      repeatCount="indefinite"
+      dur="5s"
+    >
+      <mpath href="#motionPath2" />
+    </animateMotion></ellipse>
 </svg>
 {/* Svg8*/}
 
@@ -889,7 +902,7 @@ const Hero = () => {
 
 
 {/* Svg16*/}
-<svg className="absolute md:w-[1vw] md:top-[-9vw] md:left-[-44vw] w-[1.5vw] top-[6vw] left-[-49vw] z-[1000]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg className="absolute md:w-[1vw] md:top-[-9vw] md:left-[-46vw] w-[1.5vw] top-[6vw] left-[-49vw] z-[1000]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="10.0056" cy="10.0053" r="10" transform="rotate(6.09562 10.0056 10.0053)" fill="#FAE00D"/>
 </svg>
 {/* Svg16*/}

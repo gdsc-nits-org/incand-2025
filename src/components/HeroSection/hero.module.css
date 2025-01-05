@@ -186,7 +186,8 @@
 
 /* Soon Text Animation */
 .comingSoonBorders {
-  text-shadow: 0.895vw 0.632vw 0px #000000;
+  font-family: "Ahsing";
+  text-shadow: 0.555vw 0.332vw 0px #000000;
   -webkit-text-stroke: 0.397vw #000000;     
   animation: moveUpDown 6s ease-in-out infinite;
   animation-play-state: running;
@@ -205,13 +206,11 @@
 
 @keyframes moveUpDown {
   0%, 100% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px #000000;
+    text-shadow: 0.555vw 0.332vw 0px #000000;
     transform: translateY(0px);
   }
   50% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px transparent;
+    text-shadow: 0.555vw 0.332vw 0px transparent;
     transform: translateY(2.632vw);
   }
 }
@@ -221,7 +220,8 @@
 /* ming Text Animation */
 .nText {
   text-shadow: 0.895vw 0.632vw 0px #000000;
-  -webkit-text-stroke: 0.197vw #000000;     
+  -webkit-text-stroke: 0.197vw #000000; 
+  font-family: "Ahsing";    
   animation: nTextAnim 6s ease-in-out infinite;
   animation-play-state: running;
   display: inline-block;
@@ -233,7 +233,8 @@
 }
 
 .gText {
-  text-shadow: 0.895vw 0.632vw 0px #000000;
+  font-family: "Ahsing";
+  text-shadow: 0.555vw 0.332vw 0px #000000;
   -webkit-text-stroke: 0.397vw #000000;     
   animation: gTextAnim 6s ease-in-out infinite;
   animation-play-state: running;
@@ -248,27 +249,21 @@
 
 @keyframes nTextAnim {
   0%, 100% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px transparent;
-    transform: translateY(1.316vw);
+    text-shadow: 0.555vw 0.332vw 0px transparent;
   }
   50% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px #000000;
-    transform: translateY(1.316vw);
+    text-shadow: 0.555vw 0.332vw 0px #000000;
     scale: 1.2;
   }
 }
 @keyframes gTextAnim {
   0%, 100% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px #000000;
+    text-shadow: 0.555vw 0.332vw 0px #000000;
     transform: translateY(1.316vw);
     scale: 1.2;
   }
   50% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px transparent;
+    text-shadow: 0.555vw 0.332vw 0px transparent;
     transform: translateY(1.316vw);
     scale: 1;
     
@@ -290,21 +285,24 @@
 
 @keyframes cTextAnim {
   0%, 100% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px transparent;
-    transform: translateY(1.316vw);
+    text-shadow: 0.555vw 0.332vw 0px transparent;
+    transform: translateY(-3.316vw);
     scale: 1.2;
   }
   50% {
-    font-family: sans-serif;
-    text-shadow: 0.895vw 0.632vw 0px #000000;
-    transform: translateY(1.316vw);
+    text-shadow: 0.555vw 0.332vw 0px #000000;
+    transform: translateY(-3.316vw);
     scale: 1;
    
   }
   /* ming Text Animation */ 
 }
 
+  /* Media Queries */ 
+  /* Media Queries */ 
+  /* Media Queries */ 
+  /* Media Queries */ 
+  /* Media Queries */ 
 
 @media (min-width: 768px) {
 .hero {
@@ -475,6 +473,7 @@ animation: wiggleRight 1.5s ease-out forwards;
 
 /* Soon Text Animation */
 .comingSoonBorders {
+  font-family: "Ahsing";
   text-shadow: 0.395vw 0.132vw 0px #000000;
   -webkit-text-stroke: 0.197vw #000000;     
   animation: moveUpDown 6s ease-in-out infinite;
@@ -503,13 +502,11 @@ animation: wiggleRight 1.5s ease-out forwards;
 
 @keyframes cTextAnim {
   0%, 100% {
-    font-family: sans-serif;
     text-shadow: 0.395vw 0.132vw 0px transparent;
     transform: translateY(1.316vw);
     scale: 1.2;
   }
   50% {
-    font-family: sans-serif;
     text-shadow: 0.395vw 0.132vw 0px #000000;
     transform: translateY(1.316vw);
     scale: 1;
@@ -520,8 +517,9 @@ animation: wiggleRight 1.5s ease-out forwards;
 
 
 .nText {
-  text-shadow: 0.395vw 0.132vw 0px #000000;
-  -webkit-text-stroke: 0.197vw #000000;     
+  text-shadow: 0.295vw 0.132vw 0px #000000;
+  -webkit-text-stroke: 0.197vw #000000; 
+  font-family: "Ahsing";    
   animation: nTextAnim 6s ease-in-out infinite;
   animation-play-state: running;
   display: inline-block;
@@ -534,19 +532,16 @@ animation: wiggleRight 1.5s ease-out forwards;
 
 @keyframes nTextAnim {
   0%, 100% {
-    font-family: sans-serif;
-    text-shadow: 0.395vw 0.132vw 0px transparent;
-    transform: translateY(1.316vw);
+    text-shadow: 0.295vw 0.132vw 0px transparent;
   }
   50% {
-    font-family: sans-serif;
-    text-shadow: 0.395vw 0.132vw 0px #000000;
-    transform: translateY(1.316vw);
+    text-shadow: 0.295vw 0.132vw 0px #000000;
     scale: 1.2;
   }
 }
 
 .gText {
+  font-family: "Ahsing";
   text-shadow: 0.395vw 0.132vw 0px #000000;
   -webkit-text-stroke: 0.197vw #000000;     
   animation: gTextAnim 6s ease-in-out infinite;
@@ -561,13 +556,11 @@ animation: wiggleRight 1.5s ease-out forwards;
 
 @keyframes gTextAnim {
   0%, 100% {
-    font-family: sans-serif;
     text-shadow: 0.395vw 0.132vw 0px #000000;
     transform: translateY(1.316vw);
     scale: 1.2;
   }
   50% {
-    font-family: sans-serif;
     text-shadow: 0.395vw 0.132vw 0px transparent;
     transform: translateY(1.316vw);
     scale: 1;
@@ -577,12 +570,10 @@ animation: wiggleRight 1.5s ease-out forwards;
 
 @keyframes moveUpDown {
   0%, 100% {
-    font-family: sans-serif;
     text-shadow: 0.395vw 0.132vw 0px #000000;
     transform: translateY(0px);
   }
   50% {
-    font-family: sans-serif;
     text-shadow: 0.395vw 0.132vw 0px transparent;
     transform: translateY(2.632vw);
   }
