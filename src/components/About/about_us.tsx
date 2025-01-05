@@ -96,7 +96,6 @@ const AboutUs = () => {
                                     INCANDESCENCE
                                 </text>
                             </svg>
-
                             <br /> invites you on a journey into
                             <Image
                                 src="/assets/vectors/spidey.gif"
