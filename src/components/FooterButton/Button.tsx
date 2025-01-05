@@ -6,7 +6,7 @@ const Button = () => {
     <a href="#" className={styles.button}>
        <div className={styles['button__content']}>
        <span className={`${styles['button__text']} font-neue-haas-grotesk`}>
-        BUTTON
+        BROCHURE
        </span>
 
 
