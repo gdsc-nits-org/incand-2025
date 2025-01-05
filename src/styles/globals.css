@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("/assets/navbar/TuskerGrotesk-7600Semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oxygen";
+  src: url("/assets/navbar/Oxygen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body::-webkit-scrollbar {
+  visibility: hidden;
+}
