@@ -57,18 +57,20 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="relative bg-black text-white gap-[1rem] flex-col justify-start items-center pt-[2rem] overflow-hidden">
-      <div className="flex flex-col lg:flex-row items-center w-[100vw] justify-center lg:justify-around">
+    <footer className="relative flex-col items-center justify-start gap-[1rem] overflow-hidden bg-black pt-[2rem] text-white">
+      <div className="flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around">
         <button>Brochure</button>
         <div className="flex flex-col items-center justify-center">
           <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:text-xl">
             CONTACT US
           </h3>
-          <div className="flex justify-center items-center mt-4 space-x-4 lg:mt-6 md:mt-5 md:space-x-6 lg:space-x-8">
+          <div className="mt-4 flex items-center justify-center space-x-4 md:mt-5 md:space-x-6 lg:mt-6 lg:space-x-8">
             <a
               href="https://www.instagram.com/"
               target="_blank"
-              className={"flex justify-center items-center " + styles["social-icon"]}
+              className={
+                "flex items-center justify-center " + styles["social-icon"]
+              }
             >
               <Image
                 src="/assets/instagram.png"
@@ -82,7 +84,9 @@ const Footer: React.FC = () => {
             <a
               href="https://www.linkedin.com"
               target="_blank"
-              className={"flex justify-center items-center " + styles["social-icon"]}
+              className={
+                "flex items-center justify-center " + styles["social-icon"]
+              }
             >
               <Image
                 src="/assets/linkedln.png"
@@ -96,7 +100,9 @@ const Footer: React.FC = () => {
             <a
               href="https://www.facebook.com/"
               target="_blank"
-              className={"flex justify-center items-center " + styles["social-icon"]}
+              className={
+                "flex items-center justify-center " + styles["social-icon"]
+              }
             >
               <Image
                 src="/assets/facebook.png"
@@ -110,7 +116,9 @@ const Footer: React.FC = () => {
             <a
               href="https://x.com/"
               target="_blank"
-              className={"flex justify-center items-center " + styles["social-icon"]}
+              className={
+                "flex items-center justify-center " + styles["social-icon"]
+              }
             >
               <Image
                 src="/assets/twitter.png"
@@ -126,7 +134,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center">
-        <div className="w-[100vw] flex flex-col items-center justify-center relative top-0 left-0">
+        <div className="relative left-0 top-0 flex w-[100vw] flex-col items-center justify-center">
           <div>
             <Image
               src="/assets/footer-background.png"
@@ -150,12 +158,12 @@ const Footer: React.FC = () => {
         {/* Text Section with Lottie Animation */}
         <div
           className={
-            "flex flex-col items-center mt-[4rem] mb-[1rem] justify-center gap-0"
+            "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0"
           }
         >
           <span
             className={
-              "font-neue-haas text-[2vw] md:text-[0.9vw] lg:text-[0.6vw] font-thin leading-none text-center tracking-[0.3em] m-0 p-0 " +
+              "m-0 p-0 text-center font-neue-haas text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
               styles.text
             }
           >

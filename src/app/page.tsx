@@ -3,8 +3,8 @@ import LandingScrollBar from "~/components/LandingScrollBar";
 import Footer from "../components/Footer/Footer";
 const HomePage = () => {
   return (
-   <div className="overflow-x-hidden">
-       <LandingScrollBar />
+    <div className="overflow-x-hidden">
+      <LandingScrollBar />
       <section id="home" className="h-screen w-screen bg-[#9747ff]">
         Home
       </section>
@@ -18,9 +18,8 @@ const HomePage = () => {
         Sponsor
       </section>
       <section id="sponsors" className="w-screen bg-[#000000]">
-       <Footer/>
-      </section> 
-     
+        <Footer />
+      </section>
     </div>
   );
 };
