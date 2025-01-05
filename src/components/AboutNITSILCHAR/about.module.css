@@ -1,0 +1,23 @@
+.about {
+    background-color: #B3EFFF;
+}
+
+.box1 {
+    top: 10%;
+    left: 15%;
+    box-shadow: -2vw 2vw 0px #F855AC;
+}
+
+@font-face {
+    font-family: 'Tusker';
+    src: url('/assets/fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@media (max-width: 375px) {
+    .smallFont {
+        font-size: 16px;
+        line-height: 1.6rem;
+    }
+}
