@@ -56,10 +56,10 @@ const Footer: React.FC = () => {
       <div className="flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around">
         <button>Brochure</button>
         <div className="flex flex-col items-center justify-center">
-          <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:text-xl lg:translate-x-10">
+          <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:translate-x-10 lg:text-xl">
             CONTACT US
           </h3>
-          <div className="mt-4 flex items-center justify-center space-x-4 md:mt-5 md:space-x-6 lg:mt-6 lg:space-x-8 lg:scale-125 gap-4 md:gap-2 lg:gap-1">
+          <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:scale-125 lg:gap-1 lg:space-x-8">
             <a
               href="https://www.instagram.com/"
               target="_blank"
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
         {/* Text Section with Lottie Animation */}
         <div
           className={
-            "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0"
+            "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0 lg:flex-row"
           }
         >
           <span
