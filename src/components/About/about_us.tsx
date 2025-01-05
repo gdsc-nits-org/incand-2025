@@ -6,7 +6,6 @@ import styles from './about.module.css';
 
 const AboutUs = () => {
     const [isWaveHovered, setIsWaveHovered] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
 
 
     return (
@@ -18,7 +17,7 @@ const AboutUs = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                 >
-
+                   
                     <path
                         id="ellipsePath"
                         d="M329.917 7.77876C330.863 9.18142 331.191 11.2468 330.516 14.2216C329.842 17.1955 328.213 20.8361 325.603 25.0865C320.391 33.5759 311.513 44.1019 299.593 55.9747C275.775 79.697 240.101 108.512 198.214 136.764C156.328 165.017 116.248 187.3 85.3306 200.496C69.8569 207.101 56.7718 211.389 46.9479 213.042C42.0293 213.869 38.0437 214.016 35.0337 213.527C32.0228 213.038 30.2305 211.961 29.2844 210.558C28.3383 209.156 28.0109 207.09 28.6855 204.115C29.36 201.141 30.9886 197.501 33.5984 193.25C38.811 184.761 47.6886 174.235 59.6089 162.362C83.4263 138.64 119.101 109.825 160.987 81.5726C202.873 53.3199 242.954 31.0372 273.871 17.8407C289.345 11.236 302.43 6.9479 312.254 5.29507C317.172 4.46755 321.158 4.32131 324.168 4.81001C327.179 5.29885 328.971 6.3761 329.917 7.77876Z"
@@ -26,7 +25,7 @@ const AboutUs = () => {
                         stroke-width="3.91608"
                     />
 
-
+                    
                     <circle
                         cx="0"
                         cy="0"
@@ -73,17 +72,15 @@ const AboutUs = () => {
                             NIT Silchar&apos;s cultural extravaganza,
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className={`inline-block w-[80%] sm:w-[80%] sm:h-[50] lg:w-[25%] xl:w-[18%] ${isHovered ? styles.animate : ''}`} // Use CSS Module class
+                                className="inline-block w-[80%] sm:w-[80%] sm:h-[50]  lg:w-[25%] xl:w-[18%] "
                                 height="37"
                                 viewBox="0 0 300 100"
-                                onMouseEnter={() => setIsHovered(true)}  // Trigger animation on hover
-                                onMouseLeave={() => setIsHovered(false)} // Reset animation on mouse leave
                             >
                                 <text
-                                    x="0"
+                                    x="50%"
                                     y="50%"
                                     dominant-baseline="middle"
-                                    text-anchor="start"
+                                    text-anchor="middle"
                                     fill="#FFD23C"
                                     stroke="black"
                                     stroke-width="2.1"
