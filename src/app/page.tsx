@@ -1,9 +1,9 @@
-import dynamic from "next/dynamic";
-
-const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
-
 const HomePage = () => {
-  return <Sponsors />;
+  return (
+    <main className="container mx-auto bg-white">
+      <h1 className="text-black">Home Page</h1>
+    </main>
+  );
 };
 
 export default HomePage;
