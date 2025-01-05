@@ -12,13 +12,13 @@ const Footer = () => {
     <footer className="bg-black text-white h-screen flex flex-col justify-center items-center relative overflow-hidden">
      <div
         className={
-          "absolute lg:top-15 lg:right-10 flex flex-col items-center lg:items-end text-center lg:text-right mb-[48vw] mt-[10vw] lg:mt-[12vw] lg:mr-[4vw]"
+          "absolute lg:top-[1vw] lg:right-10 flex flex-col items-center lg:items-end text-center lg:text-right mb-[40vw] mt-[10vw] lg:mt-[2vw] lg:mr-[4vw]"
         }
       >
-        <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em]">
+        <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:text-xl">
           CONTACT US
         </h3>
-        <div className="flex justify-center items-center mt-4 space-x-4 lg:mt-6 md:mt-5 md:space-x-6 ">
+        <div className="flex justify-center items-center mt-4 space-x-4 lg:mt-6 md:mt-5 md:space-x-6 lg:space-x-8 ">
           <a
             href="https://www.instagram.com/"
             target="_blank"
@@ -27,8 +27,8 @@ const Footer = () => {
             <Image
               src="/assets/instagram.png"
               alt="Instagram icon"
-              width={40} // Adjusted size
-              height={40}
+              width={50} // Adjusted size
+              height={50}
               className={"block"+styles["social-icon"]}
               priority
             />
@@ -78,9 +78,9 @@ const Footer = () => {
         </div>
       </div>
 
-     
+     <div className='flex flex-col  items-center '>
       {/* Logo Section */}
-      <div className={"relative mt-[5vw] md:mt-[30vw] md:mb-[-15vw] lg:mt-[-16vw] mb-[-50vw] lg:mb-[-9vw]"}>
+      <div className={"relative mt-[4vw] md:mt-[30vw] md:mb-[-15vw] lg:mt-[-16vw] mb-[-28vw] lg:mb-[-9vw]"}>
         <div className={styles.logo}>
         {/* Background Image */}
         <Image
@@ -112,16 +112,15 @@ const Footer = () => {
       </div>
 
       {/* Text Section with Lottie Animation */}
-      <div className="absolute bottom-[1.67vw] md:bottom-[1vw] lg:bottom-[0vw] flex flex-row items-center justify-center gap-0">
+      <div className={"absolute bottom-[1.67vw] md:bottom-[1vw] lg:bottom-[0vw] flex flex-row items-center justify-center gap-0" + styles['text-container']}>
         <span 
-          className="font-neue-haas text-[2vw] md:text-[0.9vw] lg:text-[0.6vw] font-thin leading-none text-center tracking-[0.3em] m-0 p-0" 
-          style={{ wordSpacing: "0.3em", margin: "0", padding: "0", lineHeight: "2" }}
-        >
+          className={"font-neue-haas text-[2vw] md:text-[0.9vw] lg:text-[0.6vw] font-thin leading-none text-center tracking-[0.3em] m-0 p-0"+styles.text} >
           MADE IN COLLABORATION WITH GDG NIT SILCHAR
         </span>
         <div className="relative top-[1.88vw] md:top-[1vw] lg:top-[0.5vw] p-0 m-0 flex-shrink-0">
           <LottieAnimation/>
         </div>
+      </div>
       </div>
     </footer>
   );

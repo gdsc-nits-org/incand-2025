@@ -1,10 +1,10 @@
 import LandingScrollBar from "~/components/LandingScrollBar";
-export const runtime = "edge";
+// export const runtime = "edge";
 import Footer from "../components/Footer/Footer";
 const HomePage = () => {
   return (
-    <main className="container bg-white">
-      <LandingScrollBar />
+   <>
+       <LandingScrollBar />
       <section id="home" className="h-screen w-screen bg-[#9747ff]">
         Home
       </section>
@@ -18,10 +18,10 @@ const HomePage = () => {
         Sponsor
       </section>
       <section id="sponsors" className="h-screen w-screen bg-[#000000]">
-        Sponsor
-      </section>
-      <Footer/>
-    </main>
+       <Footer/>
+      </section> 
+     
+    </>
   );
 };
 
