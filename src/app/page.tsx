@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import LandingScrollBar from "~/components/LandingScrollBar";
+import Hero from "~/components/HeroSection/hero";
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 
 export const runtime = "edge";
@@ -11,7 +12,7 @@ const HomePage = () => {
       <main className="container bg-white">
         <LandingScrollBar />
         <section id="home" className="h-screen w-screen bg-[#9747ff]">
-          Home
+          <Hero />
         </section>
         <section id="about" className="h-screen w-screen bg-[#e23692]">
           About Incand
