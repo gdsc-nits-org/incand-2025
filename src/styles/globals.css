@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: 'Ahsing';
+    src: url('/fonts/ahsing-regular.otf') format('opentype'); /* Adjust the path */
+    font-weight: 400; /* Use appropriate weight */
+    font-style: normal; /* Use appropriate style */
+  }
+  @font-face {
+    font-family: 'Neue Haas Grotesk Display Pro';
+    src: url('/fonts/NeueHassDisplayBlack.ttf') format('truetype');
+        
+    font-weight: 400; /* Adjust as per font file */
+    font-style: normal;
+  }
+  
