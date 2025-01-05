@@ -5,8 +5,8 @@ const HomePage = () => {
   return (
     <main className="container mx-auto bg-white">
       <h1 className="text-black">Home Page</h1>
-      <HiddenQuest/>
-      <Button/>
+      <HiddenQuest />
+      <Button />
     </main>
   );
 };
