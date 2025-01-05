@@ -3,7 +3,6 @@ import LandingScrollBar from "~/components/LandingScrollBar";
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
 
-
 export const runtime = "edge";
 import Footer from "../components/Footer/Footer";
 
