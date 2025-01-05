@@ -11,7 +11,7 @@ const HomePage = () => {
     <div className="overflow-x-hidden">
       <main className="container bg-white">
         <LandingScrollBar />
-        <section id="home" className="h-screen w-screen bg-[#9747ff]">
+        <section id="home" className="w-screen bg-[#9747ff]">
           <Hero />
         </section>
         <section id="about" className="h-screen w-screen bg-[#e23692]">
