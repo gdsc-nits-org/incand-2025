@@ -2,16 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-    font-family: 'Ahsing';
-    src: url('/fonts/ahsing-regular.otf') format('opentype'); /* Adjust the path */
-    font-weight: 400; /* Use appropriate weight */
-    font-style: normal; /* Use appropriate style */
-  }
-  @font-face {
-    font-family: 'Neue Haas Grotesk Display Pro';
-    src: url('/fonts/NeueHassDisplayBlack.ttf') format('truetype');
-        
-    font-weight: 400; /* Adjust as per font file */
-    font-style: normal;
-  }
-  
+  font-family: "Ahsing";
+  src: url("/assets/fonts/ahsing-regular.otf") format("opentype"); 
+  font-weight: 400; 
+  font-style: normal; 
+}
+@font-face {
+  font-family: "Neue";
+  src: url("/assets/fonts/NHaasGroteskTXPro-55Rg.otf") format("truetype");
+  font-weight: 400; 
+  font-style: normal;
+}
+@font-face {
+  font-family: "TuskerGrotesk";
+  src: url("/assets/fonts/TuskerGrotesk-7600Semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oxygen";
+  src: url("/assets/fonts/Oxygen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("/assets/fonts/BricolageGrotesque10pt-SemiBold.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  visibility: hidden;
+}
