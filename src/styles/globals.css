@@ -14,4 +14,11 @@
     font-weight: 400; /* Adjust as per font file */
     font-style: normal;
   }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+  }
   

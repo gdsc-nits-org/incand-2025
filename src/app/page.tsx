@@ -1,13 +1,14 @@
-import Button from "~/components/FooterButton/Button";
 import HiddenQuest from "~/components/HiddenQuest/HiddenQuest";
-
-const HomePage = () =>{
+import Button from "~/components/FooterButton/Button";
+export const runtime = "edge";
+const HomePage = () => {
   return (
-   <div>
-     {/* <Button/> */}
+    <main className="container mx-auto bg-white">
+      <h1 className="text-black">Home Page</h1>
       <HiddenQuest/>
-   </div>
+      <Button/>
+    </main>
   );
-}
+};
 
 export default HomePage;

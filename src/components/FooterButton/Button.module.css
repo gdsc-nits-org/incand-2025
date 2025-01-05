@@ -11,12 +11,13 @@
  .button{
     position: relative;
     transition: transform .4s;
+    transform: scale(0.75);
  }
  
  .button__content{
        position: relative;
        background:black;
-       padding: 1rem 5rem;
+       padding: 1rem 4rem;
        border-radius: 4rem;
        border: 2px solid white;
        color: white;
@@ -159,7 +160,7 @@
  }
 
  .button:hover{
-       transform: rotate(-4deg) scale(1.1);
+       transform: rotate(-4deg) scale(0.85);
     }
   .button:hover  img{
           opacity: 1;
