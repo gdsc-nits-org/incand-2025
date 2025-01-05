@@ -12,14 +12,6 @@
     top: calc(100%+132px);
     position: relative;
 }
-
-@font-face {
-    font-family: 'Tusker';
-    src: url('/assets/fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
 .img1{
     left: 73%;
     top: calc(0% + 2px)

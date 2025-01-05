@@ -1,10 +1,34 @@
-import AboutUs from "~/components/About/about_us";
+import dynamic from "next/dynamic";
+import LandingScrollBar from "~/components/LandingScrollBar";
+const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
+const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
+
+
+export const runtime = "edge";
+import Footer from "../components/Footer/Footer";
 
 const HomePage = () => {
   return (
-    <main className="container bg-white">
-      <AboutUs />
-    </main>
+    <div className="overflow-x-hidden">
+      <main className="container bg-white">
+        <LandingScrollBar />
+        <section id="home" className="h-screen w-screen bg-[#9747ff]">
+          Home
+        </section>
+        <section id="about" className="h-screen w-screen bg-[#e23692]">
+          <AboutUs />
+        </section>
+        <section id="about" className="h-screen w-screen bg-[#00e9f4]">
+          About NITS
+        </section>
+        <section id="sponsors" className="h-screen w-screen bg-[#b7dc68]">
+          <Sponsors />
+        </section>
+        <section id="sponsors" className="w-screen bg-[#000000]">
+          <Footer />
+        </section>
+      </main>
+    </div>
   );
 };
 
