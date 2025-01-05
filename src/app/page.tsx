@@ -1,8 +1,12 @@
+import dynamic from "next/dynamic";
 import LandingScrollBar from "~/components/LandingScrollBar";
+const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
+
 export const runtime = "edge";
+
 const HomePage = () => {
   return (
-    <main className="container bg-white">
+    <main className="min-h-screen overflow-x-hidden bg-white">
       <LandingScrollBar />
       <section id="home" className="h-screen w-screen bg-[#9747ff]">
         Home
@@ -14,7 +18,7 @@ const HomePage = () => {
         About NITS
       </section>
       <section id="sponsors" className="h-screen w-screen bg-[#b7dc68]">
-        Sponsor
+        <Sponsors />
       </section>
       <section id="sponsors" className="h-screen w-screen bg-[#000000]">
         Sponsor
