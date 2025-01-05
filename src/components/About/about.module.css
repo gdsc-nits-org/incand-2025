@@ -5,7 +5,7 @@
 .box1{
     top: calc(15% + 32px);
     left: calc(16% + 10px);
-    box-shadow: -1.2vw 1.2vw 0px #F855AC;   
+    box-shadow: -2vw 2vw 0px #F855AC;   
 }
 
 .logo{
@@ -15,7 +15,26 @@
 
 @font-face {
     font-family: 'Tusker';
-    src: url('/assets/fonts/TuskerGrotesk-4600Semibold.ttf') format('truetype');
+    src: url('/assets/fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
+}
+
+.img1{
+    left: 73%;
+    top: calc(0% + 5px)
+}
+
+@media (max-width: 375px) {
+    .smallFont {
+      font-size: 18px;
+      line-height: 1.8rem;
+    
+    }
+
+    .smallImage{
+        width: 25%;
+        height: 15%;
+    }
   }
+
