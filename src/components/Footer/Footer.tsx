@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import styles from "./Footer.module.css";
+import styles from "~/styles/Footer.module.css";
 import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
 
@@ -32,24 +32,19 @@ const Footer: React.FC = () => {
         setAnimHeight(700);
         setAnimWidth(700);
       } else if (width < 1050) {
-        setAnimHeight(800);
-        setAnimWidth(800);
+        setAnimHeight(600);
+        setAnimWidth(600);
       } else {
-        setAnimHeight(1000);
-        setAnimWidth(1000);
+        setAnimHeight(750);
+        setAnimWidth(750);
       }
     }
   };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Initial call to resizeFunc
       resizeFunc();
-
-      // Attach resize listener
       window.addEventListener("resize", resizeFunc);
-
-      // Cleanup on unmount
       return () => {
         window.removeEventListener("resize", resizeFunc);
       };
@@ -61,10 +56,10 @@ const Footer: React.FC = () => {
       <div className="flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around">
         <button>Brochure</button>
         <div className="flex flex-col items-center justify-center">
-          <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:text-xl">
+          <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:text-xl lg:translate-x-10">
             CONTACT US
           </h3>
-          <div className="mt-4 flex items-center justify-center space-x-4 md:mt-5 md:space-x-6 lg:mt-6 lg:space-x-8">
+          <div className="mt-4 flex items-center justify-center space-x-4 md:mt-5 md:space-x-6 lg:mt-6 lg:space-x-8 lg:scale-125 gap-4 md:gap-2 lg:gap-1">
             <a
               href="https://www.instagram.com/"
               target="_blank"
@@ -73,7 +68,7 @@ const Footer: React.FC = () => {
               }
             >
               <Image
-                src="/assets/instagram.png"
+                src="/assets/Footer/instagram.png"
                 alt="Instagram icon"
                 width={50}
                 height={50}
@@ -89,7 +84,7 @@ const Footer: React.FC = () => {
               }
             >
               <Image
-                src="/assets/linkedln.png"
+                src="/assets/Footer/linkedln.png"
                 alt="Linkedln icon"
                 width={40}
                 height={40}
@@ -105,7 +100,7 @@ const Footer: React.FC = () => {
               }
             >
               <Image
-                src="/assets/facebook.png"
+                src="/assets/Footer/facebook.png"
                 alt="Facebook icon"
                 width={40}
                 height={40}
@@ -121,7 +116,7 @@ const Footer: React.FC = () => {
               }
             >
               <Image
-                src="/assets/twitter.png"
+                src="/assets/Footer/twitter.png"
                 alt="Twitter icon"
                 width={40}
                 height={40}
@@ -134,10 +129,10 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center">
-        <div className="relative left-0 top-0 flex w-[100vw] flex-col items-center justify-center">
+        <div className="relative left-0 top-0 flex w-[100vw] flex-col items-center justify-center xl:scale-x-125 xl:scale-y-105">
           <div>
             <Image
-              src="/assets/footer-background.png"
+              src="/assets/Footer/footer-background.png"
               alt="Incandescence Logo Background"
               height={animWidth}
               width={animWidth}
@@ -146,7 +141,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="absolute bottom-[2px]">
             <Image
-              src="/assets/incandanimation.gif"
+              src="/assets/Footer/incandanimation.gif"
               alt="Incandescence Animation"
               height={animHeight}
               width={animWidth}

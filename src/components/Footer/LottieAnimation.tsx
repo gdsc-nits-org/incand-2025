@@ -1,5 +1,5 @@
 "use client";
-import dotsAnimation from "../../gdg-animation.json";
+import dotsAnimation from "../../../public/assets/lottie/gdg-animation.json";
 import dynamic from "next/dynamic";
 
 const LottiePlayer = dynamic(() => import("lottie-react"), {

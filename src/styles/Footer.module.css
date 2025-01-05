@@ -9,17 +9,17 @@
   height: 260px;
 }
 .text{
-  wordSpacing: 0.3em;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   margin: 0;
   padding: 0;
-  lineHeight: 2;
+  line-height: 2;
 }
 .social-icon {
   position: relative;
   display: inline-block;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width:2.4rem;
+  height: 2.4rem;
   overflow: visible; /* Allow the glowing circle to extend beyond the container */
   transition: transform 0.3s ease;
   z-index: 10;
@@ -27,21 +27,19 @@
 }
 
 .social-icon:hover {
-  transform: scale(1.1); /* Enlarge the icon slightly */
+  transform: 0.3s scale(0); /* Enlarge the icon slightly */
 }
 
 .social-icon::before {
   content: "";
   position: absolute;
   bottom: -1%; /* Adjust to align the circle behind the icon */
-  
   right:6%;
   top:-1%;
-  width: 37px; /* Set the size of the glowing circle */
-  height: 37px;
+  width: 35px; /* Set the size of the glowing circle */
+  height: 35px;
   border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
   border-radius: 90%;
-   
   transform: scale(0); /* Initially hidden */
   opacity: 0; /* Initially invisible */
   transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth grow effect */
@@ -61,7 +59,7 @@
   z-index:-1;
   transform: scale(0); /* Initially hidden */
   opacity: 0; /* Initially invisible */
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Smooth grow effect */
+  transition: transform 0.3s ease-out, opacity 0.6s ease-out; /* Smooth grow effect */
 
 }
 .social-icon:hover::after{
