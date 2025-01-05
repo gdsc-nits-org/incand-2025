@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 const sponsors = [
-  { id: 1, name: "ASUS", image: "/asus.png" },
+  { id: 1, name: "ASUS", image: "/assets/sponsor/asus.png" },
   { id: 2, name: "Work, Play, Relax", image: "/sponsor1" },
   { id: 3, name: "Shop & Eat", image: "/sponsor1" },
   { id: 4, name: "WORK", image: "/sponsor1" },
@@ -25,17 +25,17 @@ const Sponsors: React.FC = () => {
   return (
     <div className="relative h-screen overflow-hidden bg-[#D6FE6B] py-10 text-center">
       <img
-        src="/sponsors.png"
+        src="/assets/sponsor/sponsors.png"
         alt=""
         className="absolute z-0 mobile:min-w-[200vh] mobile:-translate-x-[70vh] laptop:top-8 laptop:w-screen laptop:transform-none"
       />
       <img
-        src="/PREVIOUS SPONSORS (5).png"
+        src="/assets/sponsor/PREVIOUS_SPONSORS_(5).png"
         alt=""
         className="mx-auto translate-y-16 mobile:hidden laptop:block laptop:h-[128px] laptop:w-[1096px] 4k:h-[334px] 4k:w-[2860px]"
       />
       <img
-        src="/PREVIOUS SPONSORS (6).png"
+        src="/assets/sponsor/PREVIOUS_SPONSORS_(6).png"
         alt=""
         className="mx-auto translate-y-16 mobile:block mobile:h-[25vw] mobile:w-[90vw] tablet:h-[20vw] tablet:w-[80vw] laptop:hidden"
       />

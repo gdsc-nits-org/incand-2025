@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import LandingScrollBar from "~/components/LandingScrollBar";
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 const HomePage = () => {
   return (
