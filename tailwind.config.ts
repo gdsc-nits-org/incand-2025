@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        tusker: ['Tusker', 'sans-serif'],
+        tusker: ["Tusker", "sans-serif"],
       },
     },
   },
