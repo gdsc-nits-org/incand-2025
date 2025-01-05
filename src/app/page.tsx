@@ -1,13 +1,10 @@
-import Button from "~/components/FooterButton/Button";
-import HiddenQuest from "~/components/HiddenQuest/HiddenQuest";
 
-const HomePage = () =>{
+const HomePage = () => {
   return (
-   <div>
-     {/* <Button/> */}
-      <HiddenQuest/>
-   </div>
+    <main className="container mx-auto bg-white">
+      <h1 className="text-black">Home Page</h1>
+    </main>
   );
-}
+};
 
 export default HomePage;
