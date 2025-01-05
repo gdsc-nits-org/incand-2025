@@ -3,7 +3,7 @@ import Sponsors from "~/components/Sponsors";
 export const runtime = "edge";
 const HomePage = () => {
   return (
-    <main className="container bg-white">
+    <main className="bg-white min-h-screen overflow-x-hidden">
       <LandingScrollBar />
       <section id="home" className="h-screen w-screen bg-[#9747ff]">
         Home
