@@ -20,7 +20,7 @@ const HiddenQuest = () => {
       {!isVisible && (
         <div className="fixed left-1/2 top-1/2 rounded-md" onClick={handleOpen}>
           <img
-            src="/HiddenQuest&Button/yellowBox.png"
+            src="/assets/HiddenQuest&Button/yellowBox.png"
             className="scale-125"
             alt="HiddenQuest"
           />
@@ -43,10 +43,10 @@ const HiddenQuest = () => {
 
       {isVisible && (
         <div className="box-border h-[100vh] w-full bg-black">
-          <div className="relative box-border h-[50vh] w-full overflow-hidden bg-gray-100 bg-[url('/HiddenQuest&Button/bgImage.gif')] bg-[length:100%_100%]">
+          <div className="relative box-border h-[50vh] w-full overflow-hidden bg-gray-100 bg-[url('/assets/HiddenQuest&Button/bgImage.gif')] bg-[length:100%_100%]">
             <div className="fixed right-32 top-36 z-[3] box-border h-[20%] w-[8%]">
               <img
-                src="/HiddenQuest&Button/newCross.gif"
+                src="/assets/HiddenQuest&Button/newCross.gif"
                 className="h-[100%] w-[100%]"
                 onClick={() => setIsVisible(false)}
               ></img>
@@ -74,15 +74,15 @@ const HiddenQuest = () => {
             >
               <div className="group relative flex h-[100%] w-[100%] flex-row justify-between">
                 <img
-                  src="/HiddenQuest&Button/mainStar.png"
+                  src="/assets/HiddenQuest&Button/mainStar.png"
                   className="absolute bottom-7 left-[40%] inline-block h-[70%] w-[30%] transition-all duration-300 group-hover:bottom-0"
                 />
                 <img
-                  src="/HiddenQuest&Button/mainStar.png"
+                  src="/assets/HiddenQuest&Button/mainStar.png"
                   className="absolute -bottom-7 left-0 h-[70%] w-[30%] transition-all duration-300 group-hover:bottom-0"
                 />
                 <img
-                  src="/HiddenQuest&Button/mainStar.png"
+                  src="/assets/HiddenQuest&Button/mainStar.png"
                   className="absolute -bottom-7 right-0 h-[70%] w-[30%] transition-all duration-300 group-hover:bottom-0"
                 />
               </div>
@@ -94,16 +94,16 @@ const HiddenQuest = () => {
             className="relative box-border h-[50vh] w-full overflow-hidden"
           >
             <img
-              src="/HiddenQuest&Button/image1.png"
+              src="/assets/HiddenQuest&Button/image1.png"
               className="absolute -left-[10%] -top-[40%] h-[full] w-[40%] rotate-[220.26deg]"
             />
 
             <img
-              src="/HiddenQuest&Button/image1.png"
+              src="/assets/HiddenQuest&Button/image1.png"
               className="absolute -right-[10%] -top-[45%] h-[full] w-[40%] -rotate-[220.26deg]"
             />
             <img
-              src="/HiddenQuest&Button/Gif.gif"
+              src="/assets/HiddenQuest&Button/Gif.gif"
               className="absolute -top-[7%] left-[35%] h-[full] w-[30%]"
             />
 
@@ -122,11 +122,11 @@ const HiddenQuest = () => {
                 from the word
               </p>
               <img
-                src="/HiddenQuest&Button/oneStar.png"
+                src="/assets/HiddenQuest&Button/oneStar.png"
                 className="ml-[20%] mt-[5%] inline-block h-[15%] w-[15%] rotate-180 invert filter"
               />
               <img
-                src="/HiddenQuest&Button/incand.png"
+                src="/assets/HiddenQuest&Button/incand.png"
                 className="-mt-4 block h-[20%] w-[60%]"
               />
             </div>

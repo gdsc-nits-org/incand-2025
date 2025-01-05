@@ -14,49 +14,49 @@ const Button = () => {
         </div>
 
         <Image
-          src="/HiddenQuest&Button/star1.png"
+          src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 1"
           className={`${styles.button__star_1} ${styles.image}`}
           width={24} // Replace with the actual width of the image
           height={24} // Replace with the actual height of the image
         />
         <Image
-          src="/HiddenQuest&Button/star1.png"
+          src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 2"
           className={`${styles.button__star_2} ${styles.image}`}
           width={24}
           height={24}
         />
         <Image
-          src="/HiddenQuest&Button/star1.png"
+          src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 3"
           className={`${styles.button__star_3} ${styles.image}`}
           width={24}
           height={24}
         />
         <Image
-          src="/HiddenQuest&Button/star1.png"
+          src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 4"
           className={`${styles.button__star_4} ${styles.image}`}
           width={24}
           height={24}
         />
         <Image
-          src="/HiddenQuest&Button/star1.png"
+          src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 5"
           className={`${styles.button__star_5} ${styles.image}`}
           width={24}
           height={24}
         />
         <Image
-          src="/HiddenQuest&Button/star1.png"
+          src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 6"
           className={`${styles.button__star_6} ${styles.image}`}
           width={24}
           height={24}
         />
         <Image
-          src="/HiddenQuest&Button/star1.png"
+          src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 7"
           className={`${styles.button__star_7} ${styles.image}`}
           width={24}
