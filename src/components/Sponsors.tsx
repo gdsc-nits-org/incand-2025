@@ -37,13 +37,6 @@ const Sponsors: React.FC = () => {
       <img
         src="/PREVIOUS SPONSORS (6).png"
         alt=""
-        className="mx-auto translate-y-16 md:h-[72px] md:w-[620px] laptop:hidden"
-      />
-
-      {/* Carousel */}
-      <img
-        src="/PREVIOUS SPONSORS (6).png"
-        alt=""
         className="mx-auto translate-y-16 mobile:block mobile:h-[25vw] mobile:w-[90vw] tablet:h-[20vw] tablet:w-[80vw] laptop:hidden"
       />
 
