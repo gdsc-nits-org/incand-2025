@@ -29,7 +29,6 @@ const Sponsors: React.FC = () => {
         alt=""
         className="absolute z-0 mobile:min-w-[1400px] laptop:top-8 laptop:w-screen"
       />
-      {/* Title */}
       <img
         src="/PREVIOUS SPONSORS (5).png"
         alt=""
@@ -100,8 +99,6 @@ const Sponsors: React.FC = () => {
           );
         })}
       </div>
-
-      {/* Navigation Buttons */}
       <div className="mt-8 flex justify-center mobile:translate-y-28 tablet:translate-y-[40vh] ipadpro:translate-y-[50vh] laptop:translate-y-24">
         <button
           onClick={handlePrev}
