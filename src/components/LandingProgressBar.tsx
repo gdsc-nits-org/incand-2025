@@ -7,9 +7,24 @@ const LandingProgressBar = () => {
   const [value, setValue] = useState<0 | 1 | 2 | 3 | 4>(0);
   const [rangeValue, setRangeValue] = useState(0);
 
-  useEffect(() => {
-    handleScroll();
-  }, []);
+  const calValue = (value: number) => {
+    if (value < 15) {
+      setValue(0);
+      return 0;
+    } else if (value < 40) {
+      setValue(1);
+      return 1;
+    } else if (value < 65) {
+      setValue(2);
+      return 2;
+    } else if (value < 90) {
+      setValue(3);
+      return 3;
+    } else {
+      setValue(4);
+      return 4;
+    }
+  };
 
   const dynamicClass =
     value === 0
@@ -41,37 +56,22 @@ const LandingProgressBar = () => {
     calValue(percentage);
   };
 
-  const calValue = (value: number) => {
-    if (value < 15) {
-      setValue(0);
-      return 0;
-    } else if (value < 40) {
-      setValue(1);
-      return 1;
-    } else if (value < 65) {
-      setValue(2);
-      return 2;
-    } else if (value < 90) {
-      setValue(3);
-      return 3;
-    } else {
-      setValue(4);
-      return 4;
+  const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4) => {
+    if (value - idx == 1 || idx - value == 1) {
+      scrollToTarget(idx);
     }
   };
+
+  useEffect(() => {
+    handleScroll();
+  }, []);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4) => {
-    if (value - idx == 1 || idx - value == 1) {
-      setValue(idx);
-      setRangeValue(25 * idx);
-      scrollToTarget(idx);
-    }
-  };
   return (
     <div
       className={

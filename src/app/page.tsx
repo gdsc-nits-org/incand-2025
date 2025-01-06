@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import LandingProgressBar from "~/components/LandingProgressBar";
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
+const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
 import Footer from "../components/Footer/Footer";
 
 export const runtime = "edge";
@@ -18,7 +19,7 @@ const HomePage = () => {
           <Hero />
         </section>
         <section id="about" className="h-screen w-screen bg-[#e23692]">
-          About Incand
+          <AboutUs />
         </section>
         <section id="about-nits" className="h-screen w-screen bg-[#00e9f4]">
           About NITS
