@@ -13,6 +13,7 @@ export default {
         "neue-haas": ['"Neue Haas Grotesk"', "sans-serif"],
         oxygen: ["Oxygen", "sans-serif"],
         tusker: ['"Tusker Grotesk"', "sans-serif"],
+        tusker2: ["Tusker", "sans-serif"],
       },
       screens: {
         "4k": "3840px",
