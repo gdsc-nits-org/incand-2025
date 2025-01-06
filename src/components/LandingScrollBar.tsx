@@ -103,6 +103,7 @@ const LandingScrollBar = () => {
           max={100}
           step={1}
           value={rangeValue}
+          onChange={(e) => setRangeValue(Number(e.target.value))}
           className={` ${styles.scrollBar} + ${dynamicClass} `}
         />
       </label>
