@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./about.module.css";
 
-const AboutUs = () => {
+const AboutUs2 = () => {
   const [isWaveHovered, setIsWaveHovered] = useState(false);
 
   return (
     <div className="relative flex h-screen w-screen items-center justify-center md:w-screen lg:w-screen">
-      <div className="absolute inset-0 flex items-center bg-[#c4f8fc] bg-[url('/assets/MAZE.png')] bg-cover bg-no-repeat">
+      <div className="absolute inset-0 flex items-center bg-[#c4f8fc] bg-[url('/assets/aboutNITS/MAZE.png')] bg-cover bg-no-repeat">
         <svg
           className={`absolute left-[7.985vw] top-[35.042vw] z-10 w-[26.667vw] md:left-[8.385vw] md:top-[22.5vw] md:w-[17.5vw] lg:top-[20.5vw] xl:top-[7vw] ${styles.circle}`}
           viewBox="0 0 360 219"
@@ -38,7 +38,7 @@ const AboutUs = () => {
             <div className="mx-1 h-[34.7%] w-[2.07%] rotate-[-4.21deg] rounded-[50%] bg-[#2bebfa] px-3 md:px-3 lg:mx-1 lg:px-3"></div>
             <div className="mx-1 h-[34.7%] w-[2.07%] rotate-[-4.21deg] rounded-[50%] bg-[#2bebfa] px-3 md:px-3 lg:mx-1 lg:px-3"></div>
             <Image
-              src="/assets/heart.svg"
+              src="/assets/aboutNITS/heart.svg"
               alt="Heart Icon"
               className={`absolute h-[135%] w-[24%] rotate-[8deg] items-end sm:rotate-[5deg] lg:rotate-[5deg] xl:top-[60%] xl:h-[200%] xl:rotate-[2deg] ${styles.img1} `}
               width={100}
@@ -47,14 +47,14 @@ const AboutUs = () => {
           </div>
           <div className="relative top-[15%] flex justify-center xl:top-[12%]">
             <Image
-              src="/assets/AB UT NIT SILCHAR.png"
+              src="/assets/aboutNITS/AB UT NIT SILCHAR.png"
               alt="About Us Image"
               className="h-[80%] w-[84%] rotate-[4.21deg] sm:h-[15.44%] sm:w-[70%] sm:rotate-[4.21deg] md:h-[20.44%] md:w-[75%] lg:h-[60%] lg:w-[44%] lg:rotate-[4.21deg] xl:h-[24.44%] xl:w-[35%]"
               width={900}
               height={1200}
             />
             <Image
-              src="/assets/wave.gif"
+              src="/assets/AboutNITS/wave.gif"
               alt="Wave"
               width={500}
               height={1}
@@ -68,7 +68,7 @@ const AboutUs = () => {
               NIT Silchar&apos;s cultural extravaganza,INCANDESCENCE
               <br /> invites you on a journey into
               <Image
-                src="/assets/catanimation.gif"
+                src="/assets/aboutNITS/catanimation.gif"
                 alt="animated gif"
                 className={`ml-2 mr-2 inline-block h-[40.945px] w-[80.18px] rounded-[53.99px] sm:h-[57px] sm:w-[95px] lg:ml-3 lg:mr-3 lg:h-[40px] lg:w-[90px] ${styles.smallImage}`}
                 width={26}
@@ -77,7 +77,7 @@ const AboutUs = () => {
               the <br />
               unknown. Experience a labyrinth of culture, <br />
               <Image
-                src="/assets/musicanimation.gif"
+                src="/assets/aboutNITS/musicanimation.gif"
                 alt="animated gif"
                 className={`ml-2 mr-2 inline-block h-[40.945px] w-[80.18px] rounded-[53.99px] sm:h-[57] sm:w-[95] lg:ml-3 lg:mr-3 lg:h-[40px] lg:w-[90px] ${styles.smallImage}`}
                 width={26}
@@ -92,4 +92,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutUs2;
