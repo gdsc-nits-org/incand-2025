@@ -4,16 +4,30 @@
 
 @font-face {
     font-family: 'Ahsing';
-    src: url('/fonts/Ahsing-Regular.otf') format('opentype');
+    src: url('/assets/fonts/Ahsing-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Tusker Grotes';
-    src: url('/fonts/TuskerGrotes.woff') format("woff");
+    src: url('/assets/fonts/TuskerGrotes.woff') format("woff");
     font-weight: normal;
     font-style: normal;
   }
   
-  
+  @font-face {
+  font-family: "Tusker Grotesk";
+  src: url("/assets/fonts/TuskerGrotesk-7600Semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oxygen";
+  src: url("/assets/fonts/Oxygen-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body::-webkit-scrollbar {
+  visibility: hidden;
+}
