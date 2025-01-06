@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <main className="container bg-white">
       <LandingScrollBar />
-      <About/>
+      <About />
       <section id="home" className="h-screen w-screen bg-[#9747ff]">
         Home
       </section>
