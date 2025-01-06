@@ -14,6 +14,7 @@ const NavbarMobile = () => {
   useEffect(() => {
     const link = window.location.pathname + window.location.hash;
     setCurrentLink(link);
+    handleScroll();
   }, [window.location.pathname, window.location.hash]);
   const [navColor, setNavColor] = useState(navColors.home);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const NavbarMobile = () => {
       setNavColor(navColors.home);
     } else if (percentage < 50) {
       setNavColor(navColors.about1);
-    } else if (percentage < 80) {
+    } else if (percentage < 75) {
       setNavColor(navColors.about2);
     } else {
       setNavColor(navColors.sponsors);
@@ -48,9 +49,11 @@ const NavbarMobile = () => {
   }, []);
 
   return (
-    <nav>
+    <nav
+      className={`fixed top-0 ${isMenuOpen ? "h-screen w-screen bg-[#141414]" : "h-[76px]"} z-[10000] transition-all delay-100 duration-500 ease-linear ipadpro:hidden`}
+    >
       <div
-        className={`flex h-[76px] w-full items-center justify-between px-6 transition-colors duration-100 ease-linear`}
+        className={`flex h-[76px] w-full items-center justify-between px-6 transition-colors duration-500 ease-linear`}
         style={
           !isMenuOpen
             ? { backgroundColor: navColor }

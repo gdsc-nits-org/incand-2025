@@ -29,7 +29,7 @@ const HomePage = () => {
         >
           <Sponsors />
         </section>
-        <section id="footer" className="h-screen w-screen bg-[#000000]">
+        <section id="footer" className="w-screen bg-[#000000] ipadpro:h-screen">
           <Footer />
         </section>
       </main>
