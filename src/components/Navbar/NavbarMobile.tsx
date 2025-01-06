@@ -77,7 +77,7 @@ const NavbarMobile = () => {
             src={`/assets/navbar/hamburger-${isMenuOpen ? "close" : "open"}.svg`}
             width={38.7}
             height={38.7}
-            alt="hamburger-menu"
+            alt="hamburger-menu "
           />
         </button>
       </div>
@@ -92,7 +92,9 @@ const NavbarMobile = () => {
             <Link
               href={data.link}
               onClick={() => {
-                setIsMenuOpen(false);
+                setTimeout(() => {
+                  setIsMenuOpen(false);
+                }, 500);
                 setCurrentLink(data.link);
               }}
               key={data.title}
@@ -162,7 +164,6 @@ const NavDetails = [
 const NavTab = (data: NavDetailsProps) => {
   return (
     <div
-      className={`z-50 flex h-[6rem] w-[20rem] flex-col ${data.active ? `items-end` : "items-start shadow-[4px_4px_0px_black]"} justify-center rounded-xl px-6 shadow-lg transition-all duration-100 ease-linear`}
       style={
         data.active
           ? {
@@ -171,15 +172,16 @@ const NavTab = (data: NavDetailsProps) => {
             }
           : { backgroundColor: data.bgColor }
       }
+      className={`z-50 flex h-[6rem] w-[20rem] flex-col ${data.active ? `items-end` : "items-start shadow-[4px_4px_0px_black]"} justify-center rounded-xl px-6 shadow-lg transition-all duration-500 ease-in-out`}
     >
       <h1
-        className="font-tusker text-2xl uppercase"
+        className="font-tusker text-2xl uppercase transition-all duration-500 ease-in-out"
         style={{ color: data.bigTextColor }}
       >
         {data.title}
       </h1>
       <p
-        className="text-[${data.smallTextColor}] text-md font-oxygen font-bold"
+        className="text-[${data.smallTextColor}] text-md font-oxygen font-bold transition-all duration-500 ease-in-out"
         style={{ color: data.smallTextColor }}
       >
         {data.desc}
