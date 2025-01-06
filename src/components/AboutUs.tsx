@@ -63,32 +63,22 @@ const AboutUs = () => {
           </div>
           <div className="relative top-[17%] flex justify-center align-middle md:top-[14%] lg:top-[17%] xl:top-[12%]">
             <p
-              className={`w-[100%] text-center font-tusker2 text-[25px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[34px] md:leading-[3.3rem] lg:text-[34px] lg:leading-[3.2rem] xl:text-[30px] xl:leading-[3rem] xl:tracking-wide ${styles.smallFont}`}
+              className={`relative w-[100%] text-center font-tusker2 text-[25px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[34px] md:leading-[3.3rem] lg:text-[34px] lg:leading-[3.2rem] xl:text-[30px] xl:leading-[3rem] xl:tracking-wide ${styles.smallFont}`}
             >
               NIT Silchar&apos;s cultural extravaganza,
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block w-[80%] sm:h-[50] sm:w-[80%] lg:w-[25%] xl:w-[18%]"
-                height="37"
-                viewBox="0 0 300 100"
+              <span
+                className={`inline-block w-[80%] sm:h-[50] sm:w-[80%] lg:w-[25%] xl:w-[18%] ${styles.incandCont}`}
               >
-                <text
-                  x="50%"
-                  y="50%"
-                  dominant-baseline="middle"
-                  text-anchor="middle"
-                  fill="#FFD23C"
-                  stroke="black"
-                  stroke-width="2.1"
-                  font-size="70px"
-                  font-family="tusker"
-                  font-weight="600"
+                <span
                   style={{ letterSpacing: "1.2px" }}
-                  className="text-[70px] sm:text-[70px] md:text-[75px] lg:text-[55px] xl:text-[52px]"
+                  className={`text-[18px] xl:text-[25px] ${styles.incandText}`}
                 >
                   INCANDESCENCE
-                </text>
-              </svg>
+                </span>
+                <span className={styles.incandLogo}>
+                  <img src="/assets/images/incand.png" alt="incand logo" />
+                </span>
+              </span>
               <br /> invites you on a journey into
               <Image
                 src="/assets/About/spidey.gif"
