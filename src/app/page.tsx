@@ -6,7 +6,6 @@ import Footer from "../components/Footer/Footer";
 
 export const runtime = "edge";
 
-
 const HomePage = () => {
   return (
     <div className="overflow-x-hidden">
