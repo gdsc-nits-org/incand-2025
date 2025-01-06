@@ -10,8 +10,16 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        "neue-haas": ['"Neue Haas Grotesk"', "sans-serif"],
+        oxygen: ["Oxygen", "sans-serif"],
         tusker: ['"Tusker Grotesk"', "sans-serif"],
-        oxygen: ['"Oxygen"', "sans-serif"],
+      },
+      screens: {
+        "4k": "3840px",
+        laptop: "1200px",
+        mobile: "340px",
+        tablet: "750px",
+        ipadpro: "1000px",
       },
     },
   },
