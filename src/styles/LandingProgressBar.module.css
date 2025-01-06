@@ -13,15 +13,15 @@
   transform: translateY(45%) rotate(270deg);
   -webkit-appearance: none;
   appearance: none;
-  height: 4rem;
-  width: 4rem;
-  border: 4px solid #ff676b;
+  height: 4vw;
+  width: 4vw;
+  border: 0.3vw solid #ff676b;
   border-radius: 50%;
   cursor: pointer;
   background-image: url("/assets/navbar/incand-logo.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 15;
+  background-size: 0.8vw;
   z-index: 100;
 }
 
