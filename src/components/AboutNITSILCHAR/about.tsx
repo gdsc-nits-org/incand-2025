@@ -47,7 +47,7 @@ const AboutUs2 = () => {
           </div>
           <div className="relative top-[15%] flex justify-center xl:top-[12%]">
             <Image
-              src="/assets/aboutNITS/AB UT NIT SILCHAR.png"
+              src="/assets/aboutNITS/ABOUT NITS.png"
               alt="About Us Image"
               className="h-[80%] w-[84%] rotate-[4.21deg] sm:h-[15.44%] sm:w-[70%] sm:rotate-[4.21deg] md:h-[20.44%] md:w-[75%] lg:h-[60%] lg:w-[44%] lg:rotate-[4.21deg] xl:h-[24.44%] xl:w-[35%]"
               width={900}
