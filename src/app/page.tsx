@@ -1,9 +1,11 @@
 import LandingScrollBar from "~/components/LandingScrollBar";
+import About from "~/components/AboutNITSILCHAR/about";
 export const runtime = "edge";
 const HomePage = () => {
   return (
     <main className="container bg-white">
       <LandingScrollBar />
+      <About/>
       <section id="home" className="h-screen w-screen bg-[#9747ff]">
         Home
       </section>

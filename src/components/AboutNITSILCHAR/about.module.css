@@ -1,23 +1,75 @@
 .about {
-    background-color: #B3EFFF;
+    background-color: #c4f8fc ;
 }
 
-.box1 {
-    top: 10%;
-    left: 15%;
-    box-shadow: -2vw 2vw 0px #F855AC;
+.box1{
+    top: calc(15% + 32px);
+    left: calc(16% + 10px);
+    box-shadow: -2vw 2vw 0px #2bebfa ;   
 }
 
-@font-face {
-    font-family: 'Tusker';
-    src: url('/assets/fonts/TuskerGrotesk-4500Medium.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+.logo{
+    top: calc(100%+132px);
+    position: relative;
+}
+.img1{
+    left: 73%;
+    top: calc(0% + 2px)
 }
 
 @media (max-width: 375px) {
     .smallFont {
-        font-size: 16px;
-        line-height: 1.6rem;
+      font-size: 18px;
+      line-height: 1.8rem;
+    
     }
+
+    .smallImage{
+        width: 25%;
+        height: 15%;
+    }
+  }
+
+  .wave {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .waveAnimated {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .circle{
+    border: #f855ac00;
+  }
+
+  @media(max-width:375px){
+    .circle{
+    top: 29vw;
+    width: 32vw;
+
+
+  }
+}
+
+
+@media(max-width:361px){
+    .circle{
+    top: 32vw;
+    width: 32vw;
+
+
+  }
+}
+
+@media(max-width:345px){
+    .circle{
+    top: 40vw;
+    width: 32vw;
+
+
+  }
 }
