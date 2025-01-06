@@ -1,17 +1,18 @@
 import dynamic from "next/dynamic";
 import LandingScrollBar from "~/components/LandingScrollBar";
+const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
+import Footer from "../components/Footer/Footer";
 
 export const runtime = "edge";
-import Footer from "../components/Footer/Footer";
 
 const HomePage = () => {
   return (
     <div className="overflow-x-hidden">
       <main className="container bg-white">
         <LandingScrollBar />
-        <section id="home" className="h-screen w-screen bg-[#9747ff]">
-          Home
+        <section id="home" className="w-screen bg-[#9747ff]">
+          <Hero />
         </section>
         <section id="about" className="h-screen w-screen bg-[#e23692]">
           About Incand
