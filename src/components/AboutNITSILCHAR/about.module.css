@@ -19,6 +19,7 @@
 
 @media (max-width: 375px) {
     .smallFont {
+      
       font-size: 18px;
       line-height: 1.8rem;
     

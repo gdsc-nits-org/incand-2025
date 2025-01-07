@@ -40,19 +40,20 @@ const AboutUs2 = () => {
             <Image
               src="/assets/aboutNITS/heart.svg"
               alt="Heart Icon"
-              className={`absolute h-[135%] w-[24%] rotate-[8deg] items-end sm:rotate-[5deg] lg:rotate-[5deg] xl:top-[60%] xl:h-[200%] xl:rotate-[2deg] ${styles.img1} `}
-              width={100}
-              height={200}
+              className={`absolute h-[135%] w-[24%] rotate-[8deg] items-end sm:rotate-[5deg] lg:rotate-[5deg] xl:top-[40%] xl:h-[145%] xl:rotate-[2deg] ${styles.img1} `}
+              width={80}
+              height={100}
             />
           </div>
           <div className="relative top-[15%] flex justify-center xl:top-[12%]">
             <Image
-              src="/assets/aboutNITS/ABOUT NITS.png"
+              src="/assets/aboutNITS/ABOUTNITS.svg"
               alt="About Us Image"
-              className="h-[80%] w-[84%] rotate-[4.21deg] sm:h-[15.44%] sm:w-[70%] sm:rotate-[4.21deg] md:h-[20.44%] md:w-[75%] lg:h-[60%] lg:w-[44%] lg:rotate-[4.21deg] xl:h-[24.44%] xl:w-[35%]"
-              width={900}
-              height={1200}
+              className="h-[100%] w-[100%] rotate-[4.21deg] sm:h-[50%] sm:w-[80%] sm:rotate-[4.21deg] md:h-[60%] md:w-[85%] lg:h-[80%] lg:w-[70%] lg:rotate-[4.21deg] xl:h-[90%] xl:w-[60%]"
+              width={1200}
+              height={1600}
             />
+
             <Image
               src="/assets/AboutNITS/wave.gif"
               alt="Wave"
