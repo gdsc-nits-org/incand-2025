@@ -3,20 +3,26 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Ahsing';
-    src: url('/assets/fonts/Ahsing-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: "Ahsing";
+  src: url("/assets/fonts/Ahsing-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: 'Tusker Grotes';
-    src: url('/assets/fonts/TuskerGrotes.woff') format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
+@font-face {
+  font-family: "Tusker Grotes";
+  src: url("/assets/fonts/TuskerGrotes.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tusker";
+  src: url("/assets/fonts/TuskerGrotesk-4500Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Tusker Grotesk";
   src: url("/assets/fonts/TuskerGrotesk-7600Semibold.ttf") format("truetype");
   font-weight: normal;
@@ -28,6 +34,9 @@
   font-weight: normal;
   font-style: normal;
 }
+html {
+  scrollbar-width: none;
+}
 body::-webkit-scrollbar {
-  visibility: hidden;
+  display: none;
 }

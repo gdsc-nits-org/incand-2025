@@ -23,7 +23,7 @@ const AboutUs2 = () => {
             stroke-width="3.91608"
           />
 
-          <circle cx="0" cy="0" r="11.7482" fill="#FAE00D">
+          <circle cx="0" cy="0" r="11.7482" fill="#FF00FF">
             <animateMotion repeatCount="indefinite" dur="5s">
               <mpath href="#ellipsePath" />
             </animateMotion>
@@ -40,7 +40,7 @@ const AboutUs2 = () => {
             <Image
               src="/assets/aboutNITS/heart.svg"
               alt="Heart Icon"
-              className={`absolute h-[135%] w-[24%] rotate-[8deg] items-end sm:rotate-[5deg] lg:rotate-[5deg] xl:top-[40%] xl:h-[145%] xl:rotate-[2deg] ${styles.img1} `}
+              className={`absolute h-[135%] w-[24%] rotate-[8deg] items-end sm:rotate-[5deg] lg:rotate-[5deg] xl:top-[60%] xl:h-[145%] xl:rotate-[2deg] ${styles.img1} `}
               width={80}
               height={100}
             />
@@ -54,13 +54,7 @@ const AboutUs2 = () => {
               height={1600}
             />
 
-            <Image
-              src="/assets/AboutNITS/wave.gif"
-              alt="Wave"
-              width={500}
-              height={1}
-              className={`absolute top-[58%] w-[82%] opacity-0 transition-opacity duration-300 hover:opacity-100 md:top-[51%] md:w-[74%] lg:top-[55%] lg:w-[44%] xl:top-[53%] xl:w-[35%]`}
-            />
+            
           </div>
           <div className="relative top-[17%] flex justify-center align-middle md:top-[14%] lg:top-[17%] xl:top-[12%]">
             <p
