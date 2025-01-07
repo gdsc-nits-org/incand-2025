@@ -5,7 +5,7 @@ import styles from "~/styles/Footer.module.css";
 import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
 
-import FooterButton from "../FooterButton"
+import FooterButton from "../FooterButton";
 const Footer: React.FC = () => {
   const [animWidth, setAnimWidth] = useState(280);
   const [animHeight, setAnimHeight] = useState(280);
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="relative flex-col items-center justify-start gap-[1rem] overflow-hidden bg-black pt-[2rem] text-white">
       <div className="flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around">
-        <FooterButton/>
+        <FooterButton />
         <div className="flex flex-col items-center justify-center">
           <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:translate-x-10 lg:text-xl">
             CONTACT US
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
         >
           <span
             className={
-              "m-0 p-0 text-center font-neue-haas text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
+              "font-neue-haas m-0 p-0 text-center text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
               styles.text
             }
           >

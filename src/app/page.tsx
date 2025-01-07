@@ -39,10 +39,9 @@ const HomePage = () => {
         </section>  */}
         {/* <HiddenQuest /> */}
         {/* <HiddenQuestMobile/> */}
-        <HiddenQuest/>
+        <HiddenQuest />
         {/* <HiddenQuestDesktop/> */}
         {/* <FooterButton/> */}
-
       </main>
     </div>
   );

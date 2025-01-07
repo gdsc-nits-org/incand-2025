@@ -18,8 +18,8 @@ export default {
         tusker2: ["Tusker", "sans-serif"],
       },
       boxShadow: {
-        "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",     
-        'text-shadow': '2.89px 2.89px 0px 0px #FFFFFF',  
+        "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",
+        "text-shadow": "2.89px 2.89px 0px 0px #FFFFFF",
       },
       screens: {
         "4k": "3840px",

@@ -1,6 +1,6 @@
 "use client"; // Add this at the top to mark the file as a Client Component
 
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import HiddenQuestDesktop from "./HiddenQuestDesktop";
 import HiddenQuestMobile from "./HiddenQuestMobile";

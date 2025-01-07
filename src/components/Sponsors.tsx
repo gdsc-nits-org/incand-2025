@@ -90,7 +90,7 @@ const Sponsors: React.FC = () => {
                 />
               </div>
               {position === 0 && (
-                <p className="font-tusker inline-block rounded-full border-[0.2vh] border-black bg-[#F6E6E7] px-[3vw] text-black shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] mobile:mt-[4vw] mobile:text-[4.5vw] laptop:mt-[1.5vw] laptop:text-[1.3vw]">
+                <p className="inline-block rounded-full border-[0.2vh] border-black bg-[#F6E6E7] px-[3vw] font-tusker text-black shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] mobile:mt-[4vw] mobile:text-[4.5vw] laptop:mt-[1.5vw] laptop:text-[1.3vw]">
                   {sponsor.name}
                 </p>
               )}

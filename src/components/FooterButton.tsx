@@ -4,7 +4,10 @@ import styles from "~/styles/FooterButton.module.css";
 const Button = () => {
   return (
     <div className={styles.container}>
-      <a href="https://drive.google.com/file/d/124qTMYiIeShafTMsLaNjNgE2KwmJT3Pc/view?usp=drive_link" className={styles.button}>
+      <a
+        href="https://drive.google.com/file/d/124qTMYiIeShafTMsLaNjNgE2KwmJT3Pc/view?usp=drive_link"
+        className={styles.button}
+      >
         <div className={styles.button__content}>
           <span className={`${styles.button__text} font-neue-haas-grotesk`}>
             BROCHURE
@@ -17,8 +20,8 @@ const Button = () => {
           src="/assets/HiddenQuest&Button/star1.png"
           alt="Star 1"
           className={`${styles.button__star_1} ${styles.image}`}
-          width={24} 
-          height={24} 
+          width={24}
+          height={24}
         />
         <Image
           src="/assets/HiddenQuest&Button/star1.png"
