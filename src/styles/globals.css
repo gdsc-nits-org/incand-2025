@@ -14,7 +14,20 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "TuskerGrotesk";
+  font-family: "Tusker Grotes";
+  src: url("/assets/fonts/TuskerGrotes.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tusker";
+  src: url("/assets/fonts/TuskerGrotesk-4500Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tusker Grotesk";
   src: url("/assets/fonts/TuskerGrotesk-7600Semibold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -41,4 +54,10 @@
 
 body::-webkit-scrollbar {
   visibility: hidden;
+html {
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
 }

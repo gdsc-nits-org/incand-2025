@@ -13,11 +13,12 @@ export default {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         ahsing: ["Ahsing", "sans-serif"],
         bricolage: ["bricolage-grotesque", "sans-serif"],
-        tusker: ["TuskerGrotesk", "sans-serif"],
+        tusker: ["Tusker Grotesk"],
         oxygen: ["Oxygen", "sans-serif"],
+        tusker2: ["Tusker", "sans-serif"],
       },
       boxShadow: {
-        "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",
+        "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",       
       },
       screens: {
         "4k": "3840px",
