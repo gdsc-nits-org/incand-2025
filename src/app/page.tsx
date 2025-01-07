@@ -7,14 +7,11 @@ import HiddenQuest from "~/components/HiddenQuest/HiddenQuest";
 
 const HomePage = () => {
   return (
-    
-      <main className="container mx-auto bg-white">
-        <HiddenQuest/>
-       {/* <h1 className="text-black">Home Page</h1> */}
-       </main>
-    
-   
-   
+    <main className="container mx-auto bg-white">
+      <HiddenQuest />
+      {/* <h1 className="text-black">Home Page</h1> */}
+    </main>
+
     // <div>
     //    <HiddenQuest/>
     // </div>
