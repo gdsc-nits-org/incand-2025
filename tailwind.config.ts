@@ -9,15 +9,17 @@ export default {
         "maze-pattern": "url('/assets/navbar/maze.png')",
       },
       fontFamily: {
-        "neue-haas-grotesk": ['"Neue Haas Grotesk Display Pro"', "sans-serif"],
+        neue: ["Neue"],
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         ahsing: ["Ahsing", "sans-serif"],
-        bricolage: ['"Bricolage Grotesque"', "sans-serif"],
+        bricolage: ["bricolage-grotesque", "sans-serif"],
+        tusker: ["Tusker Grotesk"],
+        oxygen: ["Oxygen", "sans-serif"],
+        tusker2: ["Tusker", "sans-serif"],
       },
       boxShadow: {
-        "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",
-        tusker: ['"Tusker Grotesk"', "sans-serif"],
-        oxygen: ['"Oxygen"', "sans-serif"],
+        "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",     
+        'text-shadow': '2.89px 2.89px 0px 0px #FFFFFF',  
       },
       screens: {
         "4k": "3840px",

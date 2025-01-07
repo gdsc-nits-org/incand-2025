@@ -1,0 +1,74 @@
+.scrollBarOrange {
+  width: var(--progress);
+}
+.scrollBar {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+.scrollBar::-webkit-slider-thumb {
+  position: relative;
+  transform: translateY(45%) rotate(270deg);
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4vw;
+  width: 4vw;
+  border: 0.3vw solid #ff676b;
+  border-radius: 50%;
+  cursor: pointer;
+  background-image: url("/assets/navbar/incand-logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.8vw;
+  z-index: 100;
+}
+
+.scrollBarHome::-webkit-slider-thumb {
+  background-color: #9747ff;
+}
+.scrollBarAbout1::-webkit-slider-thumb {
+  background-color: #e23692;
+}
+.scrollBarAbout2::-webkit-slider-thumb {
+  background-color: #00e9f4;
+}
+
+.scrollBarSponsors::-webkit-slider-thumb {
+  background-color: #b7dc68;
+}
+
+.scrollBarFooter::-webkit-slider-thumb {
+  background-color: black;
+}
+
+/* .scrollBar::-moz-range-thumb {
+  position: relative;
+  z-index: 50;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4rem;
+  width: 4rem;
+  border: 4px solid #ff676b;
+  border-radius: 50%;
+  cursor: pointer;
+  background-image: url("/assets/navbar/incand-logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15;
+}
+.scrollBarHome::-moz-range-thumb {
+  background-color: #9747ff;
+}
+.scrollBarAbout::-moz-range-thumb {
+  background-color: #e23692;
+}
+
+.scrollBarSponsors::-moz-range-thumb {
+  background-color: #00e9f4;
+}
+
+.scrollBarFooter::-moz-range-thumb {
+  background-color: black;
+} */

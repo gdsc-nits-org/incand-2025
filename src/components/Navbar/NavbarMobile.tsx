@@ -10,6 +10,12 @@ const NavbarMobile = () => {
     about2: "#C4FDFF",
     sponsors: "#9EC92C",
   };
+  const [currentLink, setCurrentLink] = useState("");
+  useEffect(() => {
+    const link = window.location.pathname + window.location.hash;
+    setCurrentLink(link);
+    handleScroll();
+  }, [window.location.pathname, window.location.hash]);
   const [navColor, setNavColor] = useState(navColors.home);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -44,7 +50,7 @@ const NavbarMobile = () => {
 
   return (
     <nav
-      className={`fixed top-0 ${isMenuOpen ? "h-screen bg-[#141414]" : "h-[76px]"} z-50 w-full transition-all duration-500 ease-linear md:hidden`}
+      className={`fixed top-0 ${isMenuOpen ? "h-screen w-screen bg-[#141414]" : "h-[76px]"} z-[10000] transition-all delay-100 duration-500 ease-linear ipadpro:hidden`}
     >
       <div
         className={`flex h-[76px] w-full items-center justify-between px-6 transition-colors duration-500 ease-linear`}
@@ -79,13 +85,16 @@ const NavbarMobile = () => {
         className={`${isMenuOpen ? "mx-6 border-2 border-[#CFCFCFEB]" : "border-4 border-[#00000018]"}`}
       />
       <div
-        className={`flex w-screen flex-col items-center justify-center gap-10 py-10 ${isMenuOpen ? "h-full bg-maze-pattern opacity-100" : "h-0 opacity-0"} overflow-hidden transition-all duration-500 ease-linear`}
+        className={`flex w-screen flex-col items-center justify-center gap-10 py-10 ${isMenuOpen ? "h-full bg-maze-pattern opacity-100" : "h-0 opacity-0"} overflow-hidden transition-all delay-100 duration-500 ease-linear`}
       >
         {NavDetails.map((data) => {
           return (
             <Link
               href={data.link}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                setCurrentLink(data.link);
+              }}
               key={data.title}
             >
               <NavTab
@@ -95,6 +104,7 @@ const NavbarMobile = () => {
                 bgColor={data.bgColor}
                 bigTextColor={data.bigTextColor}
                 smallTextColor={data.smallTextColor}
+                active={data.link === currentLink}
               />
             </Link>
           );
@@ -120,11 +130,12 @@ interface NavDetailsProps {
   bgColor: string;
   bigTextColor: string;
   smallTextColor: string;
+  active: boolean;
 }
 const NavDetails = [
   {
     title: "Home",
-    link: "#home",
+    link: "/#home",
     bgColor: "#FFA6F6",
     bigTextColor: "#E1067B",
     smallTextColor: "#F12390",
@@ -132,7 +143,7 @@ const NavDetails = [
   },
   {
     title: "About",
-    link: "#about",
+    link: "/#about",
     bgColor: "#65C8FF",
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
@@ -140,7 +151,7 @@ const NavDetails = [
   },
   {
     title: "Sponsors",
-    link: "#sponsors",
+    link: "/#sponsors",
     bgColor: "#FFF066",
     bigTextColor: "#EBB200",
     smallTextColor: "#E8B002",
@@ -151,8 +162,15 @@ const NavDetails = [
 const NavTab = (data: NavDetailsProps) => {
   return (
     <div
-      className="z-50 flex h-[6rem] w-[20rem] flex-col items-start justify-center rounded-xl px-6 shadow-lg"
-      style={{ backgroundColor: data.bgColor }}
+      className={`z-50 flex h-[6rem] w-[20rem] flex-col ${data.active ? `items-end` : "items-start shadow-[4px_4px_0px_black]"} justify-center rounded-xl px-6 shadow-lg transition-all duration-100 ease-linear`}
+      style={
+        data.active
+          ? {
+              backgroundColor: "black",
+              boxShadow: "6px 6px 0px " + data.bigTextColor,
+            }
+          : { backgroundColor: data.bgColor }
+      }
     >
       <h1
         className="font-tusker text-2xl uppercase"
