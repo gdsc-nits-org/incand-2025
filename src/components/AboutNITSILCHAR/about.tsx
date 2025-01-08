@@ -11,7 +11,7 @@ const AboutUs2 = () => {
     <div className="relative flex h-screen w-screen items-center justify-center md:w-screen lg:w-screen">
       <div className="absolute inset-0 flex items-center bg-[#c4f8fc] bg-[url('/assets/aboutNITS/MAZE.png')] bg-cover bg-no-repeat">
         <svg
-          className={`relative z-10 w-[26.667vw] sm:top-[10px] md:left-[8.385vw] md:top-[20.5vw] md:w-[17.5vw] lg:top-[-13.5vw] xl:top-[-10vw] ${styles.circle}`}
+          className={`absolute z-10 w-[26.667vw] left-[8.385vw] top-[118px] mobile2:top-[150px] mobile3:top-[120px] md:top-[180px] md:w-[17.5vw] lg:top-[200px] tablet2:top-[220px] xl:top-[6rem]`}
           viewBox="0 0 360 219"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ const AboutUs2 = () => {
               where brilliance shines.
             </p>
             <div className="absolute bottom-3 right-[230px] h-20 w-20">
-              <svg
+              {/* <svg
                 className="absolute left-[20.882vw] top-[13.882vw] w-[14.118vw] md:left-[12.882vw] md:top-[2.882vw] md:w-[9.118vw]"
                 viewBox="0 0 102 109"
                 fill="none"
@@ -128,7 +128,7 @@ const AboutUs2 = () => {
                     <mpath href="#path3"></mpath>
                   </animateMotion>
                 </ellipse>
-              </svg>
+              </svg> */}
             </div>
           </div>
         </div>
