@@ -61,9 +61,9 @@ const AboutUs = () => {
               className={`absolute top-[58%] w-[82%] opacity-0 transition-opacity duration-300 hover:opacity-100 md:top-[51%] md:w-[74%] lg:top-[55%] lg:w-[44%] xl:top-[53%] xl:w-[35%]`}
             />
           </div>
-          <div className="relative top-[17%] flex justify-center align-middle md:top-[14%] lg:top-[17%] xl:top-[12%]">
+          <div className="relative top-[17%] flex justify-center items-center md:top-[14%] lg:top-[17%] xl:top-[12%]">
             <p
-              className={`relative w-[100%] text-center font-tusker2 text-[25px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[34px] md:leading-[3.3rem] lg:text-[34px] lg:leading-[3.2rem] xl:text-[30px] xl:leading-[3rem] xl:tracking-wide ${styles.smallFont}`}
+              className={`relative w-[100%] text-center font-tusker2 text-[1.1rem] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[34px] md:leading-[3.3rem] lg:text-[34px] lg:leading-[3.2rem] xl:text-[30px] xl:leading-[3rem] xl:tracking-wide ${styles.smallFont}`}
             >
               NIT Silchar&apos;s cultural extravaganza,
               <span
