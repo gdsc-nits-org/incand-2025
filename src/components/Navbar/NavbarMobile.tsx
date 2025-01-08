@@ -51,7 +51,7 @@ const NavbarMobile = () => {
 
   return (
     <nav
-      className={`fixed top-0 ${isMenuOpen ? "h-screen w-screen bg-[#121212] bg-maze-pattern bg-cover" : "h-[76px]"} z-[10000] transition-all delay-100 duration-500 ease-linear ipadpro:hidden`}
+      className={`fixed top-0 ${isMenuOpen ? "h-screen w-screen bg-[#121212] bg-maze-pattern" : "h-[76px]"} z-[10000] transition-all delay-100 duration-500 ease-linear ipadpro:hidden`}
     >
       <div
         className={`z-50 flex h-[76px] w-full items-center justify-between px-6 transition-colors duration-500 ease-linear`}
