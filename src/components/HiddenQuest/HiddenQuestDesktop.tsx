@@ -19,7 +19,7 @@ const HiddenQuest = () => {
     <>
       {!isVisible && (
         <div
-          className="fixed left-1/2 top-1/2 h-[24px] w-[24px] rounded-md"
+          className="fixed left-1/2 top-1/2 h-[24px] w-[24px] rounded-md "
           onClick={handleOpen}
         >
           <img
@@ -30,8 +30,14 @@ const HiddenQuest = () => {
         </div>
       )}
 
+{isVisible && (<div
+        className={`fixed inset-0 z-[10004] flex items-center animate-grow justify-center 
+          ${isVisible ? 'bg-black/15 backdrop-blur-sm' : ''}`}
+      > 
+
+
       {isVisible && (
-        <div className="fixed left-36 top-48 box-border h-[50vh] w-[80vw] bg-green-600 shadow-gray-600">
+        <div className="fixed left-36 top-48 box-border h-[50vh] w-[80vw] bg-green-600 shadow-gray-600  ">
           <div className="absolute -left-2 -top-2 z-[4] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
 
           <div className="absolute -right-2 -top-2 z-[2] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
@@ -159,6 +165,7 @@ const HiddenQuest = () => {
           </div>
         </div>
       )}
+       </div> )}
     </>
   );
 };

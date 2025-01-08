@@ -28,8 +28,17 @@ export default {
         tablet: "750px",
         ipadpro: "1000px",
         'xs': '450px', // Custom min-width for extra small screens
-        'xL': '1350px', // Custom min-width for extra small screens
+        'xL': '1350px', // Custom min-width for extra large screens
         'md-height': { 'raw': '(min-height: 600px)' }, // Custom min-height
+      },
+      keyframes: {
+        grow: {
+          '0%': { transform: 'scale(0)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+      },
+      animation: {
+        grow: 'grow 0.4s ease-out',
       },
     },
   },
