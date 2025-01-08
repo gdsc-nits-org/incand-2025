@@ -1,11 +1,13 @@
 import Image from "next/image";
 import styles from "~/styles/FooterButton.module.css";
 
-const Button = () => {
+const FooterButton = () => {
   return (
     <div className={styles.container}>
       <a
         href="https://drive.google.com/file/d/124qTMYiIeShafTMsLaNjNgE2KwmJT3Pc/view?usp=drive_link"
+        target="_blank"
+        rel="noreferrer"
         className={styles.button}
       >
         <div className={styles.button__content}>
@@ -72,4 +74,4 @@ const Button = () => {
   );
 };
 
-export default Button;
+export default FooterButton;

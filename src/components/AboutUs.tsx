@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "~/styles/AboutUs.module.css";
+import HiddenQuest from "./HiddenQuest/HiddenQuest";
 
 const AboutUs = () => {
   const [isWaveHovered, setIsWaveHovered] = useState(false);
@@ -87,6 +88,7 @@ const AboutUs = () => {
                 width={26}
                 height={18}
               />
+              <div className="absolute left-[39rem] lg:top-20 rotate-[4.12deg]"> <HiddenQuest /></div>
               the <br />
               unknown. Experience a labyrinth of culture, <br />
               <Image

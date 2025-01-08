@@ -7,7 +7,7 @@
     display: grid;
     place-items: center;
     background: Black;
-    
+    overflow: hidden;
 }
  
  .button{
@@ -244,3 +244,4 @@
         height: 8.77px;
     }
   }
+
