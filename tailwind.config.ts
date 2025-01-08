@@ -27,6 +27,9 @@ export default {
         mobile: "340px",
         tablet: "750px",
         ipadpro: "1000px",
+        'xs': '450px', // Custom min-width for extra small screens
+        'xL': '1350px', // Custom min-width for extra small screens
+        'md-height': { 'raw': '(min-height: 600px)' }, // Custom min-height
       },
     },
   },

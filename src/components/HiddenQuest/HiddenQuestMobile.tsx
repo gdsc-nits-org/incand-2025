@@ -33,11 +33,11 @@ const HiddenQuestMobile = () => {
       {isVisible && (
         <div className="scrollbar-hide fixed left-0 top-0 z-[10004] box-border h-screen w-full overflow-y-auto p-4">
           {/* <img  src="/assets/HiddenQuest&Button/Rectangle.png"className="absolute -left-4 -top-4 z-[4] h-14 w-14 "/> */}
-          <div className="absolute right-8 top-2 z-[4] h-4 w-4 bg-yellow-500"></div>
-          <div className="absolute left-2 top-2 z-[4] h-4 w-4 bg-yellow-500"></div>
+          <div className="absolute right-5 xs:right-8 top-2 z-[4] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
+          <div className="absolute left-2 top-2 z-[4] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
 
-          <div className="absolute bottom-6 left-2 z-[4] h-4 w-4 bg-yellow-500"></div>
-          <div className="absolute bottom-6 right-8 z-[4] h-4 w-4 bg-yellow-500"></div>
+          <div className="absolute bottom-4 md-height:bottom-6 left-2 z-[4] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
+          <div className="absolute bottom-4 md-height:bottom-6 right-5 xs:right-8 z-[4] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
 
           <div
             id="container"
@@ -54,19 +54,7 @@ const HiddenQuestMobile = () => {
                   onClick={() => setIsVisible(false)}
                 ></img>
               </div>
-
-              <div className="absolute left-10 top-96 flex h-[30%] w-[80%] flex-col gap-8">
-                <p className="mx-auto font-ahsing text-[28.49px] font-normal leading-[20.49px] tracking-[0.04em] text-white">
-                  Dive Into
-                </p>
-                <p className="text-center font-ahsing text-[62.5px] font-normal leading-[62.5px] tracking-[0.04em]">
-                  Luminis
-                  <br />
-                  Lookout
-                </p>
-              </div>
-
-              <div className="w-[70%} mt-14 flex h-[30%] flex-col justify-center">
+              <div className="w-[70%} mt-14 mx-auto flex h-[30%] flex-col justify-center">
                 <img
                   src="/assets/HiddenQuest&Button/HiddenMobile.png"
                   className="ml-14 h-[30%] w-[55%]"
@@ -78,6 +66,18 @@ const HiddenQuestMobile = () => {
                 {/* <h1 className="font-tusker2 text-[#FAE00D] shadow-text-shadow text-[36px] font-medium leading-[52.38px] tracking-[0.24em] ">Hidden</h1>
                  <h1>Quest</h1> */}
               </div>
+              <div className=" my-auto mx-auto flex h-[30%] w-[80%] flex-col items-center gap-8">
+                <p className="mx-auto font-ahsing text-[28.49px] font-normal leading-[20.49px] tracking-[0.04em] text-white">
+                  Dive Into
+                </p>
+                <p className="text-center font-ahsing text-[52.5px] sm:text-[62.5px] font-normal leading-[52.5px] sm:leading-[62.5px] tracking-[0.04em]">
+                  Luminis
+                  <br />
+                  Lookout
+                </p>
+              </div>
+
+             
 
               <button
                 className="absolute bottom-0 left-9 box-border h-[20%] w-[80%]"
@@ -101,7 +101,7 @@ const HiddenQuestMobile = () => {
 
             <div
               id="secondDiv"
-              className="relative box-border h-[100%] w-[98%] bg-black px-2 pt-8"
+              className="relative box-border h-[100%] w-[98%] bg-black px-2 pt-8 overflow-hidden"
             >
               <div className="h-[10%] w-[100%] overflow-hidden">
                 <img
@@ -109,8 +109,8 @@ const HiddenQuestMobile = () => {
                   className="h-[100%] w-[100%]"
                 />
               </div>
-              <div className="-mb-6 mt-24 flex h-[72%] w-[100%] flex-col items-center justify-center">
-                <div className="mx-auto w-full text-nowrap text-center font-ahsing text-xl tracking-wider text-[#FAE00D]">
+              <div className="-mb-6 my-auto flex h-[72%] w-[100%] flex-col items-center justify-center overflow-hidden">
+                <div className="mx-auto w-full text-wrap text-center font-ahsing text-lg  xs:text-xl tracking-wide xs:tracking-wider text-[#FAE00D]">
                   “Pictures narrate a story,”
                   <span className="font-tusker2 text-sm text-white">
                     {" "}
@@ -118,7 +118,7 @@ const HiddenQuestMobile = () => {
                   </span>
                 </div>
                 <div className="flex h-[80%] w-full flex-col items-center justify-center">
-                  <p className="text-md mb-4 w-[100%] text-center font-tusker2 font-medium leading-8 tracking-wider text-white">
+                  <p className="text-sm xs:text-md mb-4 w-[100%] text-center font-tusker2 font-medium leading-[1.75rem] xs:leading-8 tracking-normal xs:tracking-wider text-white">
                     Tell us your story, and if our stars align, together <br />{" "}
                     we might just weave another.Where, when and <br /> what you
                     ask? Patience has always been key,
@@ -133,10 +133,10 @@ const HiddenQuestMobile = () => {
                   </div>
                 </div>
               </div>
-              <div className="h-[10%] w-[100%] overflow-hidden">
+              <div className="absolute bottom-6 h-[10%] w-[100%] pr-4 overflow-hidden">
                 <img
                   src="/assets/HiddenQuest&Button/door.gif"
-                  className="h-full w-[200%]"
+                  className="h-[100%] w-[100%]"
                 />
               </div>
             </div>

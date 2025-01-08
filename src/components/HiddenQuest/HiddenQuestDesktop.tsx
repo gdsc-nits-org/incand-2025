@@ -32,13 +32,13 @@ const HiddenQuest = () => {
 
       {isVisible && (
         <div className="fixed left-36 top-48 box-border h-[50vh] w-[80vw] bg-green-600 shadow-gray-600">
-          <div className="absolute -left-2 -top-2 z-[4] h-4 w-4 bg-yellow-500"></div>
+          <div className="absolute -left-2 -top-2 z-[4] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
 
-          <div className="absolute -right-2 -top-2 z-[2] h-4 w-4 bg-yellow-500"></div>
+          <div className="absolute -right-2 -top-2 z-[2] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
 
-          <div className="absolute -bottom-1 -left-2 z-[2] h-4 w-4 bg-yellow-500"></div>
+          <div className="absolute -bottom-1 -left-2 z-[2] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
 
-          <div className="absolute -bottom-1 -right-2 z-[2] h-4 w-4 bg-yellow-500"></div>
+          <div className="absolute -bottom-1 -right-2 z-[2] h-4 w-4 bg-yellow-500 border-2 border-black"></div>
           <div className="absolute right-0 top-0 z-[3] box-border h-[25%] w-[12%]">
             <img
               src="/assets/HiddenQuest&Button/newCross.gif"
@@ -58,10 +58,10 @@ const HiddenQuest = () => {
                   className="ml-4 mt-4 h-[60%] w-[5%]"
                 />
                 <div className="flex h-[100%] w-[70%] flex-col items-center justify-center">
-                  <h1 className="w-[100%] text-left font-ahsing text-5xl text-white">
+                  <h1 className="w-[100%] text-left font-ahsing text-3xl lg:text-5xl text-white">
                     Dive into
                   </h1>
-                  <p className="w-[100%] -translate-y-6 text-left font-ahsing text-[5.5rem] text-black">
+                  <p className="w-[100%] -translate-y-6 text-left font-ahsing text-[3.25rem] lg:[4rem] xL:text-[5.5rem] text-black">
                     Luminis Lookout
                   </p>
                 </div>
@@ -92,24 +92,24 @@ const HiddenQuest = () => {
 
             <div
               id="secondDiv"
-              className="relative box-border flex h-[50vh] w-full flex-col items-center justify-between overflow-hidden border-8 border-black lg:flex-row"
+              className="relative box-border flex h-[50vh] w-full  items-center justify-between overflow-hidden border-8 border-black flex-row"
             >
-              <div className="h-full overflow-hidden lg:w-[15%]">
+              <div className="h-full overflow-hidden w-[15%]">
                 <img
                   src="/assets/HiddenQuest&Button/door.gif"
                   className="h-full w-[200%]"
                 />
               </div>
               <div className="flex h-[100%] w-[70%] flex-col items-center justify-center">
-                <div className="ml-14 w-full text-nowrap text-left font-ahsing text-lg text-[#FAE00D] md:text-3xl xl:text-5xl">
+                <div className="ml-14 w-full text-wrap text-left font-ahsing text-lg text-[#FAE00D] md:text-3xl xL:text-5xl">
                   “Pictures narrate a story,”
                   <span className="font-tusker2 text-sm text-white">
                     {" "}
                     they say
                   </span>
                 </div>
-                <div className="flex h-[80%] w-full flex-col items-center justify-center lg:flex-row">
-                  <p className="mb-4 w-[100%] font-tusker2 text-sm font-medium leading-8 tracking-widest text-white lg:w-[40%]">
+                <div className="flex h-[80%] w-full  items-center justify-center flex-row">
+                  <p className="mb-4  font-tusker2 text-sm font-medium leading-6 lg:leading-8 tracking-wide lg:tracking-widest text-white w-[40%]">
                     Tell us your story, and if our stars align, together we
                     might just weave another.
                     <br />
@@ -134,7 +134,7 @@ const HiddenQuest = () => {
             </div>
             <div
               id="thirdDiv"
-              className="relative box-border flex h-[50vh] w-full flex-col items-center justify-between overflow-hidden border-8 border-gray-700 bg-black lg:flex-row"
+              className="relative box-border flex h-[50vh] w-full  items-center justify-between overflow-hidden border-8 border-gray-700 bg-black flex-row"
             >
               <img
                 src="/assets/HiddenQuest&Button/mummy.gif"
