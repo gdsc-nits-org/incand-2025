@@ -74,7 +74,7 @@ const Sponsors: React.FC = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden bg-[#D6FE6B] py-10 text-center">
+    <div className="relative h-screen overflow-hidden bg-[#D6FE6B] pb-10 text-center">
       <img
         src="/sponsors.png"
         alt=""
