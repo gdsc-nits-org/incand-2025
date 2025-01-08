@@ -23,7 +23,7 @@ const HomePage = () => {
           <AboutUs />
         </section>
         <section id="about-nits" className="h-screen w-screen bg-[#00e9f4]">
-          <AboutUs2/>
+          <AboutUs2 />
         </section>
         <section
           id="sponsors"
