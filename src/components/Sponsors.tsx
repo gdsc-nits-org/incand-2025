@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import styles from '~/styles/Sponsors.module.css'
+import styles from "~/styles/Sponsors.module.css";
 
 const sponsors = [
   { id: 1, name: "ASUS", image: "/assets/navbar/Sponsors/asus.png" },
@@ -12,18 +12,54 @@ const sponsors = [
   { id: 6, name: "STOCK EDGE", image: "/assets/navbar/Sponsors/stockedge.png" },
   { id: 7, name: "AROMA", image: "/assets/navbar/Sponsors/Aroma.png" },
   { id: 8, name: "ASUP", image: "/assets/navbar/Sponsors/ASUP.png" },
-  { id: 9, name: "THE BISHAL", image: "/assets/navbar/Sponsors/bishalhotel.png" },
+  {
+    id: 9,
+    name: "THE BISHAL",
+    image: "/assets/navbar/Sponsors/bishalhotel.png",
+  },
   { id: 10, name: "C4", image: "/assets/navbar/Sponsors/C4logo.png" },
-  { id: 11, name: "THE CATERING ROOM", image: "/assets/navbar/Sponsors/catering.png" },
-  { id: 12, name: "FIRES AND FLAVOURS", image: "/assets/navbar/Sponsors/firesandflavours.png" },
-  { id: 13, name: "JAI HIND CAFE", image: "/assets/navbar/Sponsors/jaihind.png" },
+  {
+    id: 11,
+    name: "THE CATERING ROOM",
+    image: "/assets/navbar/Sponsors/catering.png",
+  },
+  {
+    id: 12,
+    name: "FIRES AND FLAVOURS",
+    image: "/assets/navbar/Sponsors/firesandflavours.png",
+  },
+  {
+    id: 13,
+    name: "JAI HIND CAFE",
+    image: "/assets/navbar/Sponsors/jaihind.png",
+  },
   { id: 14, name: "JOY DAZZ", image: "/assets/navbar/Sponsors/joydazz.png" },
   { id: 15, name: "KARIM'S", image: "/assets/navbar/Sponsors/Karims.png" },
-  { id: 16, name: "KURMI ENTERPRISE", image: "/assets/navbar/Sponsors/kurmi.png" },
-  { id: 17, name: "THE LONDON SHAKES", image: "/assets/navbar/Sponsors/london.png" },
-  { id: 18, name: "MAMA'S HEARTH", image: "/assets/navbar/Sponsors/Mamasheart.png" },
-  { id: 19, name: "MOMO MAGIC CAFE", image: "/assets/navbar/Sponsors/MomoMagic.png" },
-  { id: 20, name: "SKY LIGHT RESTAURANT", image: "/assets/navbar/Sponsors/Skylight.png" },
+  {
+    id: 16,
+    name: "KURMI ENTERPRISE",
+    image: "/assets/navbar/Sponsors/kurmi.png",
+  },
+  {
+    id: 17,
+    name: "THE LONDON SHAKES",
+    image: "/assets/navbar/Sponsors/london.png",
+  },
+  {
+    id: 18,
+    name: "MAMA'S HEARTH",
+    image: "/assets/navbar/Sponsors/Mamasheart.png",
+  },
+  {
+    id: 19,
+    name: "MOMO MAGIC CAFE",
+    image: "/assets/navbar/Sponsors/MomoMagic.png",
+  },
+  {
+    id: 20,
+    name: "SKY LIGHT RESTAURANT",
+    image: "/assets/navbar/Sponsors/Skylight.png",
+  },
 ];
 
 const Sponsors: React.FC = () => {
@@ -44,7 +80,11 @@ const Sponsors: React.FC = () => {
         alt=""
         className="absolute z-0 mobile:min-w-[200vh] mobile:-translate-x-[70vh] laptop:top-8 laptop:w-screen laptop:transform-none"
       />
-      <h1 className={`max-w-[90%] mx-auto mobile:!text-[40px] tablet:!text-[6vh] laptop:!text-[11vh] translate-y-12 font-tusker ${styles['text-stroke']}`}>PREVIOUS SPONSORS</h1>
+      <h1
+        className={`mx-auto max-w-[90%] translate-y-12 font-tusker mobile:!text-[40px] tablet:!text-[6vh] laptop:!text-[11vh] ${styles["text-stroke"]}`}
+      >
+        PREVIOUS SPONSORS
+      </h1>
 
       <div className="relative flex h-[400px] items-center justify-center 4k:h-[1200px]">
         {sponsors.map((sponsor, index) => {
