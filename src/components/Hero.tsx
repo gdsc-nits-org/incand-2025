@@ -18,7 +18,7 @@ const Hero = () => {
 
       if (container) {
         const containerHeight = window.innerHeight; 
-        let contentHeight = 0.5225*window.innerWidth; 
+        const contentHeight = 0.5225*window.innerWidth; 
 
         const isMobile = window.innerWidth < 768;
         let newScale = containerHeight / contentHeight;

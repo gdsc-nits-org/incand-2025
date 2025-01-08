@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { set } from "zod";
 import styles from "~/styles/LandingProgressBar.module.css";
 
 const LandingProgressBar = () => {
@@ -40,7 +39,7 @@ const LandingProgressBar = () => {
 
   const scrollToTarget = (idx: number) => {
     const sections = document.querySelectorAll("section");
-    const target = sections[idx] as HTMLElement;
+    const target = sections[idx]!;
     if (target) {
       setTimeout(() => { 
         target.style.transition=" opacity 0.5s ease-out";  
@@ -64,7 +63,7 @@ const LandingProgressBar = () => {
   const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4) => {
     if (value - idx == 1 || idx - value == 1) {
       const sections = document.querySelectorAll("section");
-      const targetPlus = sections[idx] as HTMLElement;
+      const targetPlus = sections[idx]!;
       targetPlus.style.opacity = "0";
       scrollToTarget(idx);
     }
