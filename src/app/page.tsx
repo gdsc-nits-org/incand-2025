@@ -45,7 +45,7 @@ const FadeInSection = ({
     <motion.section
       ref={ref}
       id={id}
-      className={`h-screen w-screen ${bgColor}`}
+      className={`w-screen ${bgColor}`}
       initial="hidden"
       animate={controls}
       variants={variants}
@@ -60,16 +60,16 @@ const HomePage = () => {
     <div className="overflow-x-hidden bg-black">
       <main className="container">
         <LandingProgressBar />
-        <FadeInSection id="home" bgColor="bg-[#9747ff]">
+        <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
           <Hero />
         </FadeInSection>
-        <FadeInSection id="about" bgColor="bg-[#e23692]">
+        <FadeInSection id="about" bgColor="bg-[#e23692] h-screen">
           <AboutUs />
         </FadeInSection>
-        <FadeInSection id="about-nits" bgColor="bg-[#00e9f4]">
+        <FadeInSection id="about-nits" bgColor="bg-[#00e9f4] h-screen">
           <AboutNits />
         </FadeInSection>
-        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]">
+        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-screen">
           <Sponsors />
         </FadeInSection>
         <FadeInSection
