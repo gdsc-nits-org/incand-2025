@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import styles from "~/styles/Footer.module.css";
 import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   const [animWidth, setAnimWidth] = useState(280);
@@ -156,14 +157,15 @@ const Footer: React.FC = () => {
             "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0 lg:flex-row"
           }
         >
-          <span
+          <Link
+            href="https://gdscnits.in/"
             className={
               "m-0 p-0 text-center font-neue-haas text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
               styles.text
             }
           >
             MADE IN COLLABORATION WITH GDG NIT SILCHAR
-          </span>
+          </Link>
           <div>
             <LottieAnimation />
           </div>

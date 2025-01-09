@@ -10,7 +10,6 @@ const Hero = () => {
   const [isCHovered, setIsCHovered] = useState(false);
   const [isMHovered, setIsMHovered] = useState(false);
 
-
   useEffect(() => {
     const scaleContent = () => {
       setIsScaled(false);

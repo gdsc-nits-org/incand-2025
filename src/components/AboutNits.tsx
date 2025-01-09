@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import styles from "./about.module.css";
+import styles from "~/styles/AboutNits.module.css";
 
 const AboutUs2 = () => {
   const [isWaveHovered, setIsWaveHovered] = useState(false);
@@ -11,7 +11,7 @@ const AboutUs2 = () => {
     <div className="relative flex h-screen w-screen items-center justify-center md:w-screen lg:w-screen">
       <div className="absolute inset-0 flex items-center bg-[#c4f8fc] bg-[url('/assets/aboutNITS/MAZE.png')] bg-cover bg-no-repeat">
         <svg
-          className={`absolute z-10 w-[26.667vw] left-[8.385vw] top-[118px] mobile2:top-[150px] mobile3:top-[120px] md:top-[180px] md:w-[17.5vw] lg:top-[200px] tablet2:top-[220px] xl:top-[6rem]`}
+          className={`mobile2:top-[150px] mobile3:top-[120px] tablet2:top-[220px] absolute left-[8.385vw] top-[118px] z-10 w-[26.667vw] md:top-[180px] md:w-[17.5vw] lg:top-[200px] xl:top-[6rem]`}
           viewBox="0 0 360 219"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
