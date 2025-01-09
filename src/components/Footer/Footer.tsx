@@ -54,10 +54,10 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="relative flex-col items-center justify-start gap-[1rem] overflow-hidden bg-black pt-[2rem] text-white hide">
-      <div className="flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around xl:translate-y-10 z-[1000]">
+    <footer className="hide relative flex-col items-center justify-start gap-[1rem] overflow-hidden bg-black pt-[2rem] text-white">
+      <div className="z-[1000] flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around xl:translate-y-10">
         <FooterButton />
-        <div className="flex flex-col items-center justify-center w-[65%]">
+        <div className="flex w-[65%] flex-col items-center justify-center">
           <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:translate-x-10 lg:text-xl">
             CONTACT US
           </h3>

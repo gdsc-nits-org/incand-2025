@@ -6,9 +6,10 @@ interface HiddenQuestProps {
   setIsVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-
-const HiddenQuest: React.FC<HiddenQuestProps> = ({ isVisible, setIsVisible }) => {
-
+const HiddenQuest: React.FC<HiddenQuestProps> = ({
+  isVisible,
+  setIsVisible,
+}) => {
   const handleOpen = () => {
     setIsVisible(!isVisible);
   };
@@ -22,17 +23,13 @@ const HiddenQuest: React.FC<HiddenQuestProps> = ({ isVisible, setIsVisible }) =>
 
   return (
     <>
-      <button
-        className=" h-[24px] w-[24px] rounded-md "
-        onClick={handleOpen}
-      >
+      <button className="h-[24px] w-[24px] rounded-md" onClick={handleOpen}>
         <img
           src="/assets/HiddenQuest&Button/yellowBox.png"
-          className="scale-50 cursor-pointer z-[10000000]"
+          className="z-[10000000] scale-50 cursor-pointer"
           alt="HiddenQuest"
         />
       </button>
-
     </>
   );
 };
