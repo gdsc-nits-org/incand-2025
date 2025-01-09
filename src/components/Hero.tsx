@@ -1,22 +1,56 @@
 "use client";
 
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "~/styles/Hero.module.css";
 
 const Hero = () => {
+  const [scale, setScale] = useState(1);
+  const [isScaled, setIsScaled] = useState(false);
   const [isCHovered, setIsCHovered] = useState(false);
   const [isMHovered, setIsMHovered] = useState(false);
 
+
+  useEffect(() => {
+    const scaleContent = () => {
+      setIsScaled(false);
+      const container = document.getElementById("container");
+
+      if (container) {
+        const containerHeight = window.innerHeight; 
+        const contentHeight = 0.5225*window.innerWidth; 
+
+        const isMobile = window.innerWidth < 768;
+        let newScale = containerHeight / contentHeight;
+
+        if (isMobile) {
+          newScale= 0.28*newScale;
+        }
+
+        setScale(newScale < 1 ? newScale : 1);
+      }
+     
+    };
+
+    scaleContent();
+
+    window.addEventListener("resize", scaleContent);
+
+    return () => window.removeEventListener("resize", scaleContent);
+  }, []);
+
   return (
     <div
+      id="container"
       className={
-        "relative flex h-screen min-h-[180.111vw] items-center justify-center text-white md:min-h-[56.25vw] " +
+        "relative flex h-screen items-center justify-center text-white  " +
         styles.hero
       }
     >
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-[url('/assets/landing/maze.png')] bg-cover bg-center bg-no-repeat">
-        <div className="relative flex flex-col items-center justify-center md:flex-row md:items-start md:gap-[0.789vw]">
+      <div className="absolute inset-0 bg-[url('/assets/landing/maze.png')] bg-cover bg-center bg-no-repeat "></div>
+      <div className="absolute inset-0 flex flex-col items-center md:justify-center md:py-[5.755vh]" style={{ transform: `scale(${scale})`,  transformOrigin: "top" }}>
+        
+        <div className="relative flex flex-col items-center justify-center md:flex-row md:items-start md:gap-[0.789vw] mt-[25vw] md:mt-[0] z-20" >
           <div className="relative top-[4.167vw] h-[15.115vw] w-[15.115vw] self-end md:hidden md:h-[10.526vw] md:w-[10.526vw]">
             <Image
               src="/assets/landing/spark.gif"
@@ -129,7 +163,7 @@ const Hero = () => {
           </div>
           <div
             className={
-              "z-30 mx-[0.789vw] h-[29.444vw] w-[13.888vw] self-end rounded-[2.053vw] border border-black bg-[#E1067B] md:h-[20.0vw] md:w-[9.671vw] md:rounded-[1.053vw] " +
+              "mx-[0.789vw] h-[29.444vw] w-[13.888vw] self-end rounded-[2.053vw] border border-black bg-[#E1067B] md:h-[20.0vw] md:w-[9.671vw] md:rounded-[1.053vw] " +
               styles.cardOne
             }
           >

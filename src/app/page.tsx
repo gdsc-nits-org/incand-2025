@@ -11,7 +11,7 @@ export const runtime = "edge";
 const HomePage = () => {
   return (
     <div className="overflow-x-hidden">
-      <main className="container bg-white">
+      <main className="container bg-black">
         <LandingProgressBar />
         <section
           id="home"
