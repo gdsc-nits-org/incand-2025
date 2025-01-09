@@ -1,14 +1,8 @@
 "use client";
 import dynamic from "next/dynamic";
-<<<<<<< HEAD
-
-const About1 = dynamic(() => import("~/components/About1"), { ssr: false });
-
-=======
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-
 import LandingProgressBar from "~/components/LandingProgressBar";
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
@@ -17,7 +11,6 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
   ssr: false,
 });
 import Footer from "../components/Footer/Footer";
->>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab
 
 
 
@@ -65,15 +58,6 @@ const FadeInSection = ({
 
 const HomePage = () => {
   return (
-<<<<<<< HEAD
-    <div className="overflow-x-hidden">
-      <main className="container bg-white">
-        
-        <section id="about" className="h-screen w-screen bg-[#FFA6F6]">
-          <About1 />
-        </section>
-       
-=======
     <div className="overflow-x-hidden bg-black">
       <main className="container">
         <LandingProgressBar />
@@ -95,7 +79,6 @@ const HomePage = () => {
         >
           <Footer />
         </FadeInSection>
->>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab
       </main>
     </div>
   );
