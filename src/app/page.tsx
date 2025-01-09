@@ -1,9 +1,9 @@
 "use client";
 import dynamic from "next/dynamic";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
+import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
@@ -56,15 +56,18 @@ const FadeInSection = ({
 };
 
 const HomePage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="overflow-x-hidden bg-black">
       <main className="container">
+        <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
           <Hero />
         </FadeInSection>
         <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
-          <AboutUs />
+          <AboutUs isVisible={isVisible} setIsVisible={setIsVisible} />
         </FadeInSection>
         <FadeInSection id="about-nits" bgColor="bg-[#00e9f4] h-screen">
           <AboutNits />

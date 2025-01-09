@@ -9,13 +9,22 @@ export default {
         "maze-pattern": "url('/assets/navbar/maze.png')",
       },
       fontFamily: {
+        neue: ["Neue"],
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        "neue-haas": ['"Neue Haas Grotesk"', "sans-serif"],
+        ahsing: ["Ahsing", "sans-serif"],
+        bricolage: ["bricolage-grotesque", "sans-serif"],
+        tusker: ["Tusker Grotesk"],
         oxygen: ["Oxygen", "sans-serif"],
-        tusker: ['"Tusker Grotesk"', "sans-serif"],
         tusker2: ["Tusker", "sans-serif"],
       },
+      boxShadow: {
+        "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",
+        "text-shadow": "2.89px 2.89px 0px 0px #FFFFFF",
+      },
       screens: {
+        xs: "450px", // Custom min-width for extra small screens
+        xL: "1350px", // Custom min-width for extra large screens
+        // "md-height": { 'raw': '(min-height: 600px)' }, // Custom min-height
         "4k": "3840px",
         laptop: "1200px",
         mobile: "340px",
@@ -24,6 +33,20 @@ export default {
         tablet: "750px",
         tablet2: "900px",
         ipadpro: "1000px",
+      },
+      keyframes: {
+        grow: {
+          "0%": { transform: "scale(0)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        screw: {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "100%": { transform: "scale(0)", opacity: "0" },
+        },
+      },
+      animation: {
+        grow: "grow 0.4s ease-out",
+        screw: "screw 0.4s ease-in",
       },
     },
   },

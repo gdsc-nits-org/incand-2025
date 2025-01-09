@@ -5,6 +5,7 @@ import styles from "~/styles/Footer.module.css";
 import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
 import Link from "next/link";
+import FooterButton from "../FooterButton";
 
 const Footer: React.FC = () => {
   const [animWidth, setAnimWidth] = useState(280);
@@ -53,16 +54,16 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="relative flex-col items-center justify-start gap-[1rem] overflow-hidden bg-black pt-[2rem] text-white">
-      <div className="flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around">
-        <button>Brochure</button>
-        <div className="flex flex-col items-center justify-center">
+    <footer className="hide relative flex-col items-center justify-start gap-[1rem] overflow-hidden bg-black pt-[2rem] text-white">
+      <div className="z-[1000] flex w-[100vw] flex-col items-center justify-center lg:flex-row lg:justify-around xl:translate-y-10">
+        <FooterButton />
+        <div className="flex w-[65%] flex-col items-center justify-center">
           <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:translate-x-10 lg:text-xl">
             CONTACT US
           </h3>
           <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:scale-125 lg:gap-1 lg:space-x-8">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/incandescence_2025/?__d=11"
               target="_blank"
               className={
                 "flex items-center justify-center " + styles["social-icon"]
@@ -78,7 +79,7 @@ const Footer: React.FC = () => {
               />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/incandescence23/?originalSubdomain=in"
               target="_blank"
               className={
                 "flex items-center justify-center " + styles["social-icon"]
@@ -94,7 +95,7 @@ const Footer: React.FC = () => {
               />
             </a>
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/incandescence.nits"
               target="_blank"
               className={
                 "flex items-center justify-center " + styles["social-icon"]
@@ -109,7 +110,7 @@ const Footer: React.FC = () => {
                 priority
               />
             </a>
-            <a
+            {/* <a
               href="https://x.com/"
               target="_blank"
               className={
@@ -124,7 +125,7 @@ const Footer: React.FC = () => {
                 className="block"
                 priority
               />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
@@ -160,7 +161,7 @@ const Footer: React.FC = () => {
           <Link
             href="https://gdscnits.in/"
             className={
-              "m-0 p-0 text-center font-neue-haas text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
+              "font-neue-haas m-0 p-0 text-center text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
               styles.text
             }
           >
