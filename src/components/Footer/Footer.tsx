@@ -159,16 +159,19 @@ const Footer: React.FC = () => {
           }
         >
           <Link
-            href="https://gdscnits.in/"
+            href="https://gdscnits.in/" target = "_blank"
             className={
-              "font-neue-haas m-0 p-0 text-center text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
+              "font-neue-haas m-0 cursor-pointer p-0 text-center text-[2vw] font-thin leading-none tracking-[0.3em] md:text-[0.9vw] lg:text-[0.6vw] " +
               styles.text
             }
           >
             MADE IN COLLABORATION WITH GDG NIT SILCHAR
           </Link>
-          <div>
+          <div className="cursor-pointer">
+              <Link
+            href="https://gdscnits.in/" target = "_blank">
             <LottieAnimation />
+            </Link>
           </div>
         </div>
       </div>

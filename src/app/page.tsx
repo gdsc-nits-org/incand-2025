@@ -77,7 +77,7 @@ const HomePage = () => {
         </FadeInSection>
         <FadeInSection
           id="footer"
-          bgColor="bg-[#000000] h-fit ipadpro:h-screen"
+          bgColor="bg-[#000000]  h-fit ipadpro:min-h-screen"
         >
           <Footer />
         </FadeInSection>
