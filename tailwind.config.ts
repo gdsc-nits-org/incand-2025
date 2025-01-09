@@ -40,10 +40,16 @@ export default {
           '0%': { transform: 'scale(0)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        screw: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '100%': { transform: 'scale(0)', opacity: '0' },
+        },
       },
       animation: {
         grow: 'grow 0.4s ease-out',
+        screw: 'screw 0.4s ease-in',
       },
+        
     },
   },
   plugins: [],

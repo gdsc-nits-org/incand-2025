@@ -1,31 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "~/styles/AboutUs.module.css";
-import HiddenQuest from "./HiddenQuest/HiddenQuest";
-
-const AboutUs = () => {
-  const [isWaveHovered, setIsWaveHovered] = useState(false);
-  const [isAbout, setIsAbout] = useState (false);
-
-  const handleAbout = () => {
-         setIsAbout (true);
-  }
-  const handleAbout2 = () => {
-    setIsAbout (false);
+import HiddenQuest from "./HiddenQuest/HiddenQuestDesktop";
+import Popup from "./HiddenQuest/Popup";
+interface PopupProps {
+    isVisible: boolean;
+    setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+
+const AboutUs:React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
+  
+  console.log(isVisible);
   return (
     <div className="relative flex h-screen w-screen items-center justify-center md:w-screen lg:w-screen">
-          
-        {/* {isAbout && (  <div className="z-[10010] absolute left-7 top-7">
-             <HiddenQuest/>
-          </div>
-        )} */}
+    
 
       <div className="absolute inset-0 flex items-center bg-[#FFA6F6] bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat">
-      
+
         <svg
           className={`absolute left-[7.985vw] top-[35.042vw] z-10 w-[26.667vw] md:left-[8.385vw] md:top-[22.5vw] md:w-[17.5vw] lg:top-[20.5vw] xl:top-[7vw] ${styles.circle}`}
           viewBox="0 0 360 219"
@@ -47,13 +41,9 @@ const AboutUs = () => {
         </svg>
 
         <div
-          className={`absolute h-[63%] w-[66.62%] justify-center rounded-[36px] border-4 border-black bg-[#FBFAF0] sm:rotate-[-4.21deg] lg:rotate-[-4.21deg] ${styles.box1}` } onMouseEnter={ handleAbout} onMouseLeave={handleAbout2}
+          className={`absolute h-[63%] w-[66.62%] justify-center rounded-[36px] border-4 border-black bg-[#FBFAF0] sm:rotate-[-4.21deg] lg:rotate-[-4.21deg] ${styles.box1}`} 
         >
-
-         {/* <div className="z-[10010] w-[100vw] h-[100vh] sm:rotate-[4.21deg] lg:rotate-[4.21deg] ">
-             <HiddenQuest/>
-          // </div> */}
-          {/* //  <HiddenQuest/> */}
+          
           <div className="absolute flex h-[11.23%] w-[100%] items-center rounded-tl-[36px] rounded-tr-[36px] border-b-2 border-b-black bg-[#FFF59F]">
             <div className="mx-1 ml-3 h-[34.7%] w-[2.07%] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:ml-5 lg:px-3"></div>
             <div className="mx-1 h-[34.7%] w-[2.07%] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:px-3"></div>
@@ -108,8 +98,10 @@ const AboutUs = () => {
                 width={26}
                 height={18}
               />
-              <div className="absolute left-[39rem] lg:top-20 rotate-[4.12deg]"> <HiddenQuest /></div>
-            
+              {/* <div className="absolute left-[39rem] lg:top-20 rotate-[4.12deg]"> <HiddenQuest /></div> */}
+              <span>
+                <HiddenQuest isVisible={isVisible} setIsVisible={setIsVisible} />
+              </span>
               the <br />
               unknown. Experience a labyrinth of culture, <br />
               <Image

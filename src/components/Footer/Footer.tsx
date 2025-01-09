@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
           </h3>
           <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:scale-125 lg:gap-1 lg:space-x-8">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/incandescence_2025/?__d=11"
               target="_blank"
               className={
                 "flex items-center justify-center " + styles["social-icon"]
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
               />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/incandescence23/?originalSubdomain=in"
               target="_blank"
               className={
                 "flex items-center justify-center " + styles["social-icon"]
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
               />
             </a>
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/incandescence.nits"
               target="_blank"
               className={
                 "flex items-center justify-center " + styles["social-icon"]
@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
                 priority
               />
             </a>
-            <a
+            {/* <a
               href="https://x.com/"
               target="_blank"
               className={
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
                 className="block"
                 priority
               />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
