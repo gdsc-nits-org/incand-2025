@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import LandingProgressBar from "~/components/LandingProgressBar";
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
-const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
+const About1 = dynamic(() => import("~/components/About1"), { ssr: false });
 const AboutNits = dynamic(() => import("~/components/AboutNits"), {
   ssr: false,
 });
@@ -65,7 +65,7 @@ const HomePage = () => {
           <Hero />
         </FadeInSection>
         <FadeInSection id="about" bgColor="bg-[#e23692] h-screen">
-          <AboutUs />
+          <About1 />
         </FadeInSection>
         <FadeInSection id="about-nits" bgColor="bg-[#00e9f4] h-screen">
           <AboutNits />
