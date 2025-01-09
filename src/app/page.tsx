@@ -12,7 +12,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
   ssr: false,
 });
 import Footer from "../components/Footer/Footer";
-import Loader from "./loading";
+
 
 
 export const runtime = "edge";
@@ -61,7 +61,7 @@ const HomePage = () => {
   return (
     <div className="overflow-x-hidden bg-black">
       <main className="container">
-        {/* <LandingProgressBar />
+        <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
           <Hero />
         </FadeInSection>
@@ -79,8 +79,7 @@ const HomePage = () => {
           bgColor="bg-[#000000] h-fit ipadpro:h-screen"
         >
           <Footer />
-        </FadeInSection> */}
-        <Loader/>
+        </FadeInSection>
       </main>
     </div>
   );
