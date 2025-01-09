@@ -76,7 +76,7 @@ export const HiddenQuestDesktop: React.FC<PopupProps> = ({
               >
                 <div
                   id="firstDiv"
-                  className="relative box-border h-[50vh] w-[98%] overflow-hidden border-8 border-black bg-gray-100 bg-[url('/assets/HiddenQuest&Button/bgImage.gif')] bg-[length:100%_100%]"
+                  className="relative box-border h-[50vh] w-[100%] overflow-hidden border-8 border-black bg-gray-100 bg-[url('/assets/HiddenQuest&Button/bgImage.gif')] bg-[length:100%_100%]"
                 >
                   <div className="flex h-[100%] w-full items-center justify-between">
                     <img
