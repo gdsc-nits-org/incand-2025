@@ -38,13 +38,17 @@ const LandingProgressBar = () => {
             : styles.scrollBarFooter;
 
   const scrollToTarget = (idx: number) => {
-    const documentHeight = document.body.scrollHeight;
-    const windowHeight = window.innerHeight;
-    const scrollY = (idx / 4) * (documentHeight - windowHeight);
-    window.scrollTo({
-      top: scrollY,
-      behavior: "smooth",
-    });
+    const sections = document.querySelectorAll("section");
+    const target = sections[idx]!;
+    if (target) {
+      setTimeout(() => { 
+        target.style.transition=" opacity 0.5s ease-out";  
+        target.style.opacity = "1";}, 100);
+      window.scrollTo({
+        top: target.offsetTop,
+      });
+      target.style.transition="";
+    }
   };
 
   const handleScroll = () => {
@@ -58,6 +62,9 @@ const LandingProgressBar = () => {
 
   const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4) => {
     if (value - idx == 1 || idx - value == 1) {
+      const sections = document.querySelectorAll("section");
+      const targetPlus = sections[idx]!;
+      targetPlus.style.opacity = "0";
       scrollToTarget(idx);
     }
   };
@@ -75,7 +82,7 @@ const LandingProgressBar = () => {
   return (
     <div
       className={
-        "fixed top-[50%] z-50 hidden w-[40vw] translate-y-[-50%] rotate-90 scale-95 ipadpro:left-[79%] ipadpro:block"
+        "fixed top-[50%] z-50 hidden w-[80vh] translate-y-[-50%] rotate-90 scale-95 ipadpro:left-[68%] ipadpro:block laptop:left-[78%]"
       }
     >
       <label htmlFor="scrollBar">
