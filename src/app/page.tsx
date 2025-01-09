@@ -66,7 +66,7 @@ const HomePage = () => {
         <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
           <AboutUs />
         </FadeInSection>
-        <FadeInSection id="about-nits" bgColor="bg-[#00e9f4] h-screen">
+        <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
           <AboutNits />
         </FadeInSection>
         <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-screen">
