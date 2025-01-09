@@ -95,13 +95,13 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                   height={18}
                 />
                 {/* <div className="absolute left-[39rem] lg:top-20 rotate-[4.12deg]"> <HiddenQuest /></div> */}
-              <span>
-                <HiddenQuest
-                  isVisible={isVisible}
-                  setIsVisible={setIsVisible}
-                />
-              </span>
-              the <br />
+                <span>
+                  <HiddenQuest
+                    isVisible={isVisible}
+                    setIsVisible={setIsVisible}
+                  />
+                </span>
+                the <br />
                 unknown. Experience a labyrinth of culture, <br />
                 <Image
                   src="/assets/About/dj.gif"
