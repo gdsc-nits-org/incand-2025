@@ -28,7 +28,10 @@ export default {
         "4k": "3840px",
         laptop: "1200px",
         mobile: "340px",
+        mobile2: "400px",
+        mobile3: "500px",
         tablet: "750px",
+        tablet2: "900px",
         ipadpro: "1000px",
         
       },
