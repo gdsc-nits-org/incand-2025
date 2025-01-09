@@ -11,7 +11,6 @@ interface PopupProps {
 }
 
 const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
-  console.log(isVisible);
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat md:w-screen lg:w-screen">
       <div className="relative">
