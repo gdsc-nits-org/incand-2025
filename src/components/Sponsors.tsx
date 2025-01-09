@@ -162,5 +162,4 @@ const Sponsors: React.FC = () => {
     </div>
   );
 };
-
 export default Sponsors;
