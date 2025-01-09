@@ -59,8 +59,8 @@ const FadeInSection = ({
 
 const HomePage = () => {
   return (
-    <div className="overflow-x-hidden">
-      <main className="container bg-black h-[300vh]">
+    <div className="overflow-x-hidden bg-black">
+      <main className="container bg-black md:h-[400vh] h-[700vh]">
         <LandingProgressBar />
         <section
           id="home"
