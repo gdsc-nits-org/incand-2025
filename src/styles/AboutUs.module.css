@@ -1,4 +1,5 @@
 .about {
+<<<<<<< HEAD
   background-color: #FFA6F6;
 }
 
@@ -19,6 +20,26 @@
 }
 
 /*
+=======
+    background-color: #FFA6F6;
+}
+
+.box1{
+    top: calc(15% + 32px);
+    left: calc(16% + 10px);
+    box-shadow: -2vw 2vw 0px #F855AC;   
+}
+
+.logo{
+    top: calc(100%+132px);
+    position: relative;
+}
+.img1{
+    left: 73%;
+    top: calc(0% + 2px)
+}
+
+>>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab
 @media (max-width: 375px) {
     .smallFont {
       font-size: 18px;
@@ -31,6 +52,7 @@
         height: 15%;
     }
   }
+<<<<<<< HEAD
     */
 
 .wave {
@@ -50,6 +72,24 @@
 }
 
 /*
+=======
+
+  .wave {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .waveAnimated {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .circle{
+    border: #f855ac00;
+  }
+>>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab
 
   @media(max-width:375px){
     .circle{
@@ -79,6 +119,7 @@
   }
 }
 
+<<<<<<< HEAD
 */
 
 .incandCont {
@@ -86,10 +127,18 @@
   position: relative;
   top: 0;
   height: 3rem;
+=======
+.incandCont{
+  overflow: hidden;
+  position: relative;
+  top:0;
+  height:50px;
+>>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab
   transition-duration: 500ms;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .incandCont:hover .incandText {
   top: -120%;
   transition-duration: 500ms;
@@ -129,3 +178,34 @@
   transform: scale(0.88);
 
 }
+=======
+.incandCont:hover .incandText{
+  top:-120%;
+  transition-duration: 500ms;
+}
+.incandCont:hover .incandLogo{
+  top:-60%;
+  transition-duration: 500ms;
+}
+.incandText{
+  position: absolute;
+  top:40%;
+  left:0;
+  color: #FFD23C; /* Equivalent to the fill attribute */
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Mimics the stroke */
+  font-family: "Tusker", sans-serif; /* Ensure this font is imported or replace it with an available font */
+  font-weight: 600; /* Matches font-weight="600" */
+  letter-spacing: 1.2px; /* Matches letterSpacing */
+  line-height: 1; /* Adjust as needed for vertical alignment */
+  text-align: center; /* Centers text if in a block or container */
+  transition-duration: 500ms;
+}
+
+.incandLogo{
+  position: absolute;
+  top:100%;
+  left:0;
+  transition-duration: 500ms;
+}
+
+>>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab

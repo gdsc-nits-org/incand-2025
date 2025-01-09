@@ -9,7 +9,11 @@ const AboutUs = () => {
 
   return (
     <div className="relative flex h-screen w-screen items-center justify-center md:w-screen lg:w-screen">
+<<<<<<< HEAD
       <div className="absolute inset-0 flex items-center z bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat">
+=======
+      <div className="absolute inset-0 flex items-center bg-[#FFA6F6] bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat">
+>>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab
         <svg
           className={`absolute left-[7.985vw] top-[35.042vw] z-10 w-[26.667vw] md:left-[8.385vw] md:top-[22.5vw] md:w-[17.5vw] lg:top-[20.5vw] xl:top-[7vw] ${styles.circle}`}
           viewBox="0 0 360 219"
@@ -61,9 +65,15 @@ const AboutUs = () => {
               className={`absolute top-[58%] w-[82%] opacity-0 transition-opacity duration-300 hover:opacity-100 md:top-[51%] md:w-[74%] lg:top-[55%] lg:w-[44%] xl:top-[53%] xl:w-[35%]`}
             />
           </div>
+<<<<<<< HEAD
           <div className="relative top-[17%] flex justify-center align-middle md:top-[14%] lg:top-[17%] xl:top-[12%]">
             <p
               className={`relative w-[100%] text-center font-tusker2 text-[25px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[34px] md:leading-[3.3rem] lg:text-[34px] lg:leading-[3.2rem] xl:text-[30px] xl:leading-[3rem] xl:tracking-wide ${styles.smallFont}`}
+=======
+          <div className="relative top-[17%] flex items-center justify-center md:top-[14%] lg:top-[17%] xl:top-[12%]">
+            <p
+              className={`relative w-[100%] text-center font-tusker2 text-[1.1rem] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[34px] md:leading-[3.3rem] lg:text-[34px] lg:leading-[3.2rem] xl:text-[30px] xl:leading-[3rem] xl:tracking-wide ${styles.smallFont}`}
+>>>>>>> 1615deb3d31451f60f5fca25fd917791e716e7ab
             >
               NIT Silchar&apos;s cultural extravaganza,
               <span
