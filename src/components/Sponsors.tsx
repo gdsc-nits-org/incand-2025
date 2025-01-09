@@ -4,61 +4,61 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import styles from "~/styles/Sponsors.module.css";
 
 const sponsors = [
-  { id: 1, name: "ASUS", image: "/assets/navbar/Sponsors/asus.png" },
-  { id: 2, name: "AMUL", image: "/assets/navbar/Sponsors/Amul.png" },
-  { id: 3, name: "UNSTOP", image: "/assets/navbar/Sponsors/unstop.png" },
-  { id: 4, name: "COGG", image: "/assets/navbar/Sponsors/cogg.png" },
-  { id: 5, name: "LWT", image: "/assets/navbar/Sponsors/LWT.png" },
-  { id: 6, name: "STOCK EDGE", image: "/assets/navbar/Sponsors/stockedge.png" },
-  { id: 7, name: "AROMA", image: "/assets/navbar/Sponsors/Aroma.png" },
-  { id: 8, name: "ASUP", image: "/assets/navbar/Sponsors/ASUP.png" },
+  { id: 1, name: "ASUS", image: "/assets/sponsor/asus.png" },
+  { id: 2, name: "AMUL", image: "/assets/sponsor/Amul.png" },
+  { id: 3, name: "UNSTOP", image: "/assets/sponsor/unstop.png" },
+  { id: 4, name: "COGG", image: "/assets/sponsor/cogg.png" },
+  { id: 5, name: "LWT", image: "/assets/sponsor/LWT.png" },
+  { id: 6, name: "STOCK EDGE", image: "/assets/sponsor/stockedge.png" },
+  { id: 7, name: "AROMA", image: "/assets/sponsor/Aroma.png" },
+  { id: 8, name: "ASUP", image: "/assets/sponsor/ASUP.png" },
   {
     id: 9,
     name: "THE BISHAL",
-    image: "/assets/navbar/Sponsors/bishalhotel.png",
+    image: "/assets/sponsor/bishalhotel.png",
   },
-  { id: 10, name: "C4", image: "/assets/navbar/Sponsors/C4logo.png" },
+  { id: 10, name: "C4", image: "/assets/sponsor/C4logo.png" },
   {
     id: 11,
     name: "THE CATERING ROOM",
-    image: "/assets/navbar/Sponsors/catering.png",
+    image: "/assets/sponsor/catering.png",
   },
   {
     id: 12,
     name: "FIRES AND FLAVOURS",
-    image: "/assets/navbar/Sponsors/firesandflavours.png",
+    image: "/assets/sponsor/firesandflavours.png",
   },
   {
     id: 13,
     name: "JAI HIND CAFE",
-    image: "/assets/navbar/Sponsors/jaihind.png",
+    image: "/assets/sponsor/jaihind.png",
   },
-  { id: 14, name: "JOY DAZZ", image: "/assets/navbar/Sponsors/joydazz.png" },
-  { id: 15, name: "KARIM'S", image: "/assets/navbar/Sponsors/Karims.png" },
+  { id: 14, name: "JOY DAZZ", image: "/assets/sponsor/joydazz.png" },
+  { id: 15, name: "KARIM'S", image: "/assets/sponsor/Karims.png" },
   {
     id: 16,
     name: "KURMI ENTERPRISE",
-    image: "/assets/navbar/Sponsors/kurmi.png",
+    image: "/assets/sponsor/kurmi.png",
   },
   {
     id: 17,
     name: "THE LONDON SHAKES",
-    image: "/assets/navbar/Sponsors/london.png",
+    image: "/assets/sponsor/london.png",
   },
   {
     id: 18,
     name: "MAMA'S HEARTH",
-    image: "/assets/navbar/Sponsors/Mamasheart.png",
+    image: "/assets/sponsor/Mamasheart.png",
   },
   {
     id: 19,
     name: "MOMO MAGIC CAFE",
-    image: "/assets/navbar/Sponsors/MomoMagic.png",
+    image: "/assets/sponsor/MomoMagic.png",
   },
   {
     id: 20,
     name: "SKY LIGHT RESTAURANT",
-    image: "/assets/navbar/Sponsors/Skylight.png",
+    image: "/assets/sponsor/Skylight.png",
   },
 ];
 
@@ -76,7 +76,7 @@ const Sponsors: React.FC = () => {
   return (
     <div className="relative h-screen overflow-hidden bg-[#D6FE6B] pb-10 text-center">
       <img
-        src="/sponsors.png"
+        src="/assets/sponsor/sponsors.png"
         alt=""
         className="absolute z-0 mobile:min-w-[200vh] mobile:-translate-x-[70vh] laptop:top-8 laptop:w-screen laptop:transform-none"
       />
