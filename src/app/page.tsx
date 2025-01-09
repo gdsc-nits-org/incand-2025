@@ -11,27 +11,27 @@ export const runtime = "edge";
 const HomePage = () => {
   return (
     <div className="overflow-x-hidden">
-      <main className="container bg-black">
+      <main className="container bg-black h-[300vh]">
         <LandingProgressBar />
         <section
           id="home"
-          className="h-screen w-screen overflow-hidden bg-[#9747ff]"
+          className="fixed h-screen w-screen overflow-hidden bg-[#9747ff]"
         >
           <Hero />
         </section>
-        <section id="about" className="h-screen w-screen bg-[#e23692]">
+        <section id="about" className="fixed h-screen w-screen bg-[#e23692]" style={{ opacity: 0 }}>
           <AboutUs />
         </section>
-        <section id="about-nits" className="h-screen w-screen bg-[#00e9f4]">
+        <section id="about-nits" className="fixed h-screen w-screen bg-[#00e9f4]" style={{ opacity: 0 }}>
           <AboutUs2 />
         </section>
         <section
           id="sponsors"
-          className="h-screen w-screen overflow-hidden bg-[#b7dc68]"
-        >
+          className="fixed h-screen w-screen overflow-hidden bg-[#b7dc68]"
+          style={{ opacity: 0 }}>
           <Sponsors />
         </section>
-        <section id="footer" className="w-screen bg-[#000000] ipadpro:h-screen">
+        <section id="footer" className="fixed w-screen bg-[#000000] ipadpro:h-screen" style={{ opacity: 0 }}>
           <Footer />
         </section>
       </main>

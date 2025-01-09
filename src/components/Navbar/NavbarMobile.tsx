@@ -9,6 +9,7 @@ const NavbarMobile = () => {
     about1: "#FFA6F6",
     about2: "#C4FDFF",
     sponsors: "#9EC92C",
+    footer: "#000000",
   };
   const [currentLink, setCurrentLink] = useState("");
   useEffect(() => {
@@ -24,14 +25,16 @@ const NavbarMobile = () => {
     const documentHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight;
     const percentage = (scrollY / (documentHeight - windowHeight)) * 100;
-    if (percentage < 25) {
+    if(percentage==0){
       setNavColor(navColors.home);
-    } else if (percentage < 50) {
+    }else if(percentage>=0  && percentage<=25) {
       setNavColor(navColors.about1);
-    } else if (percentage < 75) {
+    }else if (percentage>25 && percentage<=50){
       setNavColor(navColors.about2);
-    } else {
+    }else if (percentage>50 && percentage<=75){
       setNavColor(navColors.sponsors);
+    } else {
+      setNavColor(navColors.footer);
     }
     // console.log(window.scrollY);
     // if (window.scrollY <= 700) {

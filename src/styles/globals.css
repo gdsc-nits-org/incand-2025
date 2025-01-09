@@ -38,6 +38,10 @@ html {
   scrollbar-width: none;
 }
 
+section{
+  transition: opacity 0.5s ease-out;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }

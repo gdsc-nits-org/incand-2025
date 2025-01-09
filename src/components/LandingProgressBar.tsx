@@ -7,25 +7,6 @@ const LandingProgressBar = () => {
   const [value, setValue] = useState<0 | 1 | 2 | 3 | 4>(0);
   const [rangeValue, setRangeValue] = useState(0);
 
-  const calValue = (value: number) => {
-    if (value < 15) {
-      setValue(0);
-      return 0;
-    } else if (value < 40) {
-      setValue(1);
-      return 1;
-    } else if (value < 65) {
-      setValue(2);
-      return 2;
-    } else if (value < 90) {
-      setValue(3);
-      return 3;
-    } else {
-      setValue(4);
-      return 4;
-    }
-  };
-
   const dynamicClass =
     value === 0
       ? styles.scrollBarHome
@@ -37,36 +18,55 @@ const LandingProgressBar = () => {
             ? styles.scrollBarSponsors
             : styles.scrollBarFooter;
 
-  const scrollToTarget = (idx: number) => {
-    const sections = document.querySelectorAll("section");
-    const target = sections[idx]!;
-    if (target) {
-      setTimeout(() => { 
-        target.style.transition=" opacity 0.5s ease-out";  
-        target.style.opacity = "1";}, 100);
-      window.scrollTo({
-        top: target.offsetTop,
-      });
-      target.style.transition="";
-    }
+  const scrollToTarget = (idx: 0 | 1 | 2 | 3 | 4) => {
+    window.scrollTo({top: 0.5*idx*window.innerHeight})
   };
 
   const handleScroll = () => {
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section)=>{
+       section.style.opacity = "0";
+       section.style.zIndex = "0";
+    });
     const scrollY = window.scrollY;
     const documentHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight;
     const percentage = (scrollY / (documentHeight - windowHeight)) * 100;
-    setRangeValue(percentage);
-    calValue(percentage);
+    if(percentage==0){
+      const target = sections[0]!;
+      target.style.opacity = "1";
+      target.style.zIndex = "10";
+      setRangeValue(0);
+      setValue(1);
+    }else if(percentage>0  && percentage<=25){
+      const target = sections[1]!;
+      target.style.opacity = "1";
+      target.style.zIndex = "10";
+      setRangeValue(25);
+      setValue(1);
+    }else if (percentage>25 && percentage<=50){
+      const target = sections[2]!;
+      target.style.opacity = "1";
+      target.style.zIndex = "10";
+      setRangeValue(50);
+      setValue(2);
+    }else if (percentage>50 && percentage<=75){
+      const target = sections[3]!;
+      target.style.opacity = "1";
+      target.style.zIndex = "10";
+      setRangeValue(75);
+      setValue(3);
+    }else{
+      const target = sections[4]!;
+      target.style.opacity = "1";
+      target.style.zIndex = "10";
+      setRangeValue(100);
+      setValue(4);
+    }
   };
 
   const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4) => {
-    if (value - idx == 1 || idx - value == 1) {
-      const sections = document.querySelectorAll("section");
-      const targetPlus = sections[idx]!;
-      targetPlus.style.opacity = "0";
       scrollToTarget(idx);
-    }
   };
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const LandingProgressBar = () => {
   return (
     <div
       className={
-        "fixed top-[50%] z-50 hidden w-[80vh] translate-y-[-50%] rotate-90 scale-95 ipadpro:left-[68%] ipadpro:block laptop:left-[79%]"
+        "fixed top-[50%] z-[50] hidden w-[80vh] translate-y-[-50%] rotate-90 scale-95 ipadpro:left-[68%] ipadpro:block laptop:left-[79%]"
       }
     >
       <label htmlFor="scrollBar">
