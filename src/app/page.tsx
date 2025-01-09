@@ -13,8 +13,6 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 });
 import Footer from "../components/Footer/Footer";
 
-
-
 export const runtime = "edge";
 
 const FadeInSection = ({
@@ -65,7 +63,7 @@ const HomePage = () => {
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
           <Hero />
         </FadeInSection>
-        <FadeInSection id="about" bgColor="bg-[#e23692] h-screen">
+        <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
           <AboutUs />
         </FadeInSection>
         <FadeInSection id="about-nits" bgColor="bg-[#00e9f4] h-screen">
