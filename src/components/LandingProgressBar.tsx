@@ -94,7 +94,7 @@ const LandingProgressBar = () => {
   return (
     <div
       className={
-        "fixed top-[50%] z-[5] hidden w-[80vh] translate-y-[-50%] rotate-90 scale-95 ipadpro:left-[68%] ipadpro:block laptop:left-[79%]"
+        "fixed top-[50%] z-[11] hidden w-[80vh] translate-y-[-50%] rotate-90 scale-95 ipadpro:left-[68%] ipadpro:block laptop:left-[79%]"
       }
     >
       <label htmlFor="scrollBar">
