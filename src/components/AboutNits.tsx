@@ -58,7 +58,7 @@ const AboutUs2 = () => {
             </div>
           </div>
           <div className="flex items-center justify-center align-middle">
-            <div className="absolute top-[8.5rem] flex items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem]">
+            <div className="absolute top-[8.5rem] w-[100%] flex items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem]">
               <p
                 className={`relative w-[100%] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] lg:text-[38px] lg:leading-[3.8rem] xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
               >

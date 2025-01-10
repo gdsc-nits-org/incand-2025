@@ -94,16 +94,16 @@ const HomePage = () => {
         <Navbar />
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
-        <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
+        <FadeInSection id="home" bgColor="bg-[#9747ff] min-h-screen">
           <Hero />
         </FadeInSection>
-        <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
+        <FadeInSection id="about" bgColor="bg-[#FFA6F6] min-h-screen">
           <AboutUs isVisible={isVisible} setIsVisible={setIsVisible} />
         </FadeInSection>
-        <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
+        <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] min-h-screen">
           <AboutNits />
         </FadeInSection>
-        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-screen">
+        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  min-h-screen">
           <Sponsors />
         </FadeInSection>
         <FadeInSection

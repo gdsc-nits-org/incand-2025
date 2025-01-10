@@ -34,7 +34,7 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           </circle>
         </svg>
         <div
-          className={`flex h-[30rem] w-[22rem] justify-center rounded-[36px] border-4 border-black bg-[#FBFAF0] sm:w-[35rem] sm:rotate-[-4.21deg] lg:h-[30rem] lg:w-[45rem] lg:rotate-[-4.21deg] xl:h-[27rem] ${styles.box1}`}
+          className={`flex min-h-[30rem] w-[22rem] justify-center rounded-[36px] border-4 border-black bg-[#FBFAF0] sm:w-[35rem] sm:rotate-[-4.21deg] lg:min-h-[30rem] lg:w-[45rem] lg:rotate-[-4.21deg] xl:min-h-[27rem] ${styles.box1}`}
         >
           <div className="absolute flex h-[3rem] w-[98%] items-center rounded-tl-[36px] rounded-tr-[36px] border-b-2 border-black bg-[#FFF59F] sm:w-[99.7%] lg:w-[100%]">
             <div className="mx-1 ml-3 h-[1.4rem] w-[1.4rem] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:ml-5 lg:px-3"></div>
@@ -68,7 +68,7 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
             </div>
           </div>
           <div className="flex items-center justify-center align-middle">
-            <div className="absolute top-[8.5rem] flex items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem]">
+            <div className="absolute top-[8.5rem] flex items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem] w-[100%]">
               <p
                 className={`relative w-[100%] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] lg:text-[38px] lg:leading-[3.8rem] xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
               >
@@ -95,7 +95,7 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                   height={18}
                   unoptimized
                 />
-                <span className="absolute right-[10rem] mobile1:right-[1.2rem] mobile2:right-[1.5rem] sm:right-[5rem] md:right-[6rem] lg:right-[7rem] xl:right-[8rem] translate-y-4 mobile1:translate-y-2 sm:translate-y-0">
+                <span className="absolute right-[10rem] mobile1:right-[1.2rem] mobile2:right-[1.5rem] sm:right-[5rem] md:right-[7rem] lg:right-[8rem] xl:right-[10rem] translate-y-4 mobile1:translate-y-2 sm:translate-y-0">
                   <HiddenQuest
                     isVisible={isVisible}
                     setIsVisible={setIsVisible}
