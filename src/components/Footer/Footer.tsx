@@ -148,6 +148,7 @@ const Footer: React.FC = () => {
               height={animHeight}
               width={animWidth}
               priority
+              unoptimized
             />
           </div>
         </div>

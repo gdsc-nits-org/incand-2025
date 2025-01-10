@@ -75,14 +75,14 @@ const HomePage = () => {
 
     void preloadComponents().finally(() => {
       const endTime = performance.now();
-      const loadTime = Math.max(1000, endTime - startTime); 
+      const loadTime = Math.max(1000, endTime - startTime);
       setTimeout(() => setIsLoading(false), loadTime);
     });
   }, []);
 
   if (isLoading) {
     return (
-      <div className="h-screen w-screen flex items-center justify-center bg-black">
+      <div className="flex h-screen w-screen items-center justify-center bg-black">
         <Loader />
       </div>
     );

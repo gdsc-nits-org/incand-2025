@@ -58,6 +58,7 @@ const Hero = () => {
               layout="responsive"
               width={100}
               height={100}
+              unoptimized
             />
           </div>
           <div className="mt-[1.053vw] flex items-center justify-center gap-[0.755vw] md:gap-[0.526vw]">
@@ -208,6 +209,7 @@ const Hero = () => {
               layout="responsive"
               width={100}
               height={100}
+              unoptimized
             />
           </div>
         </div>
@@ -262,6 +264,7 @@ const Hero = () => {
                     layout="responsive"
                     width={100}
                     height={100}
+                    unoptimized
                   />
                 </div>
                 <div className="relative h-[4.167vw] w-[4.167vw] md:h-[2.368vw] md:w-[2.368vw]">
@@ -272,6 +275,7 @@ const Hero = () => {
                     layout="responsive"
                     width={100}
                     height={100}
+                    unoptimized
                   />
                 </div>
               </div>

@@ -41,7 +41,7 @@ export const HiddenQuestDesktop: React.FC<PopupProps> = ({
     <>
       {isVisible && (
         <div
-          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-sm" : ""}`}
+          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-md" : ""}`}
         >
           {isVisible && (
             <div className="fixed box-border h-[50vh] w-[80vw] bg-green-600 shadow-gray-600">
@@ -206,7 +206,7 @@ export const HiddenQuestMobile: React.FC<PopupProps> = ({
     <>
       {isVisible && (
         <div
-          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-sm" : ""}`}
+          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-md" : ""}`}
         >
           {isVisible && (
             <div className="scrollbar-hide fixed left-0 top-0 z-[10004] box-border h-screen w-full translate-y-4 scale-75 overflow-y-auto p-4">

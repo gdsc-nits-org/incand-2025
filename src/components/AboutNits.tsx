@@ -11,7 +11,7 @@ const AboutUs2 = () => {
     <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/aboutNITS/MAZE.png')] bg-cover bg-no-repeat mobile:scale-[.85] mobile3:scale-100 md:w-screen lg:w-screen">
       <div className="relative">
         <svg
-          className={`absolute left-[-2.4rem] z-[1000] w-[7.1rem] -translate-y-[8.5rem] mobile2:left-[-2.2rem] mobile2:top-[-1.7rem] mobile2:-translate-y-0 sm:left-[-4.4rem] sm:top-[-1.3rem] sm:w-[10rem] lg:left-[-7rem] lg:top-[-2.4rem] lg:w-[15rem] ${styles.circle}`}
+          className={`absolute left-[-2.4rem] z-[1000] w-[7.1rem] -translate-y-[8.5rem] mobile1:-translate-y-[1.5rem]  mobile2:left-[-2.2rem] mobile2:top-[-1.7rem] mobile2:-translate-y-0 sm:left-[-4.4rem] sm:top-[-1.3rem] sm:w-[10rem] lg:left-[-7rem] lg:top-[-2.4rem] lg:w-[15rem] ${styles.circle}`}
           viewBox="0 0 360 219"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +43,7 @@ const AboutUs2 = () => {
               className={`absolute left-[14rem] top-[0.1rem] h-[4rem] w-[7rem] rotate-[3.8deg] sm:left-[26.5rem] lg:left-[34rem] lg:top-[-1.3rem] lg:h-[6rem] lg:w-[9rem]`}
               width={80}
               height={100}
+              
             />
           </div>
           <div className="flex justify-center">
@@ -79,6 +80,7 @@ const AboutUs2 = () => {
                   className={`ml-2 mr-2 inline-block h-[2.5rem] w-[4.3rem] rounded-[53.99px] lg:h-[3rem] lg:w-[6.3rem] ${styles.smallImage}`}
                   width={26}
                   height={18}
+                  unoptimized
                 />
                 the <br />
                 unknown. Experience a labyrinth of culture, <br />
@@ -88,6 +90,7 @@ const AboutUs2 = () => {
                   className={`ml-2 mr-2 inline-block h-[2.5rem] w-[4.3rem] rounded-[53.99px] lg:h-[3rem] lg:w-[6.3rem] ${styles.smallImage}`}
                   width={26}
                   height={18}
+                  unoptimized
                 />
                 where brilliance shines.
               </p>
