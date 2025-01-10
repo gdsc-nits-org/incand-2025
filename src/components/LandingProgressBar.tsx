@@ -19,12 +19,14 @@ const LandingProgressBar = () => {
             : styles.scrollBarFooter;
 
   const scrollToTarget = (idx: 0 | 1 | 2 | 3 | 4) => {
-    window.scrollTo({top: 0.5*idx*window.innerHeight})
+    window.scrollTo({top: 0.6*idx*window.innerHeight})
   };
 
   const handleScroll = () => {
     const sections = document.querySelectorAll("section");
+    const parentDiv = document.getElementById("parentContainer")!;
     sections.forEach((section)=>{
+       section.style.transition = "";
        section.style.opacity = "0";
        section.style.zIndex = "0";
     });
@@ -34,30 +36,40 @@ const LandingProgressBar = () => {
     const percentage = (scrollY / (documentHeight - windowHeight)) * 100;
     if(percentage==0){
       const target = sections[0]!;
+      parentDiv.style.backgroundColor = "#7139CE"
+      target.style.transition = "opacity 0.5s linear";
       target.style.opacity = "1";
       target.style.zIndex = "10";
       setRangeValue(0);
       setValue(1);
     }else if(percentage>0  && percentage<=25){
       const target = sections[1]!;
+       parentDiv.style.backgroundColor = "#FFA6F6"
+      target.style.transition = "opacity 0.5s linear";
       target.style.opacity = "1";
       target.style.zIndex = "10";
       setRangeValue(25);
       setValue(1);
     }else if (percentage>25 && percentage<=50){
       const target = sections[2]!;
+      parentDiv.style.backgroundColor = "#C4FDFF"
+      target.style.transition = "opacity 0.5s linear";
       target.style.opacity = "1";
       target.style.zIndex = "10";
       setRangeValue(50);
       setValue(2);
     }else if (percentage>50 && percentage<=75){
       const target = sections[3]!;
+      parentDiv.style.backgroundColor = "#9EC92C"
+      target.style.transition = "opacity 0.5s linear";
       target.style.opacity = "1";
       target.style.zIndex = "10";
       setRangeValue(75);
       setValue(3);
     }else{
       const target = sections[4]!;
+      parentDiv.style.backgroundColor = "#000000"
+      target.style.transition = "opacity 0.5s linear";
       target.style.opacity = "1";
       target.style.zIndex = "10";
       setRangeValue(100);
