@@ -1,10 +1,12 @@
 "use client";
 import dynamic from "next/dynamic";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
+import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
+import Loader from "./loading";
+
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
@@ -12,8 +14,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
   ssr: false,
 });
 import Footer from "../components/Footer/Footer";
-
-
+import Navbar from "~/components/Navbar/Navbar";
 
 export const runtime = "edge";
 
@@ -58,9 +59,40 @@ const FadeInSection = ({
 };
 
 const HomePage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const startTime = performance.now();
+    const preloadComponents = async () => {
+      await Promise.all([
+        import("~/components/Hero"),
+        import("~/components/Sponsors"),
+        import("~/components/AboutUs"),
+        import("~/components/AboutNits"),
+      ]);
+    };
+
+    void preloadComponents().finally(() => {
+      const endTime = performance.now();
+      const loadTime = Math.max(1000, endTime - startTime);
+      setTimeout(() => setIsLoading(false), loadTime);
+    });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex h-screen w-screen items-center justify-center bg-black">
+        <Loader />
+      </div>
+    );
+  }
+
   return (
     <div id="parentContainer" className="overflow-x-hidden bg-[#9747ff]" style={{transition: "background-color 0.5s ease-out"}}>
       <main className="container bg-transparent h-[400vh]">
+      <Navbar />
+      <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <section
           id="home"
@@ -69,18 +101,18 @@ const HomePage = () => {
           <Hero />
         </section>
         <section id="about" className="fixed h-screen w-screen bg-[#e23692]" style={{ opacity: 0 }}>
-          <AboutUs />
+          <AboutUs isVisible={isVisible} setIsVisible={setIsVisible} />
         </section>
         <section id="about-nits" className="fixed h-screen w-screen bg-[#00e9f4]" style={{ opacity: 0 }}>
           <AboutNits />
         </section>
         <section
           id="sponsors"
-          className="fixed h-screen w-screen overflow-hidden bg-[#b7dc68]"
+          className="fixed h-screen w-screen bg-[#b7dc68]"
           style={{ opacity: 0 }}>
           <Sponsors />
         </section>
-        <section id="footer" className="fixed w-screen bg-[#000000] ipadpro:h-screen" style={{ opacity: 0 }}>
+        <section id="footer" className="fixed w-screen bg-[#000000]ipadpro:h-screen" style={{ opacity: 0 }}>
           <Footer />
         </section>  
       </main>

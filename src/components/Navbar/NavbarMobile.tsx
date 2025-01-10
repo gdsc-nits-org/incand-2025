@@ -89,7 +89,7 @@ const NavbarMobile = () => {
         className={`${isMenuOpen ? "mx-6 border-2 border-[#CFCFCFEB]" : "border-4 border-[#00000018]"}`}
       />
       <div
-        className={`flex w-screen flex-col items-center justify-center gap-10 py-10 ${isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"} overflow-hidden transition-all delay-100 duration-500 ease-linear`}
+        className={`flex w-screen flex-col items-center justify-start gap-10 py-10 ${isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"} overflow-hidden transition-all delay-100 duration-500 ease-linear`}
       >
         {NavDetails.map((data) => {
           return (

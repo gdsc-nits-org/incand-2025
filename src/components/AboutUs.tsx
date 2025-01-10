@@ -1,17 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "~/styles/AboutUs.module.css";
+import HiddenQuest from "./HiddenQuest/HiddenQuestState";
 
-const AboutUs = () => {
-  const [isWaveHovered, setIsWaveHovered] = useState(false);
+interface PopupProps {
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
   return (
-    <div className="relative flex h-screen w-screen items-center justify-center md:w-screen lg:w-screen">
-      <div className="absolute inset-0 flex items-center bg-[#FFA6F6] bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat">
+    <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat mobile:scale-[.85] mobile3:scale-100 md:w-screen lg:w-screen">
+      <div className="relative">
         <svg
-          className={`absolute left-[7.985vw] top-[35.042vw] z-10 w-[26.667vw] md:left-[8.385vw] md:top-[22.5vw] md:w-[17.5vw] lg:top-[20.5vw] xl:top-[7vw] ${styles.circle}`}
+          className={`absolute left-[-2.4rem] z-[1000] w-[7.1rem] -translate-y-[8.5rem] mobile1:-translate-y-[1.5rem] mobile2:left-[-2.2rem] mobile2:top-[-1.7rem] mobile2:-translate-y-0 sm:left-[-4.4rem] sm:top-[-1.3rem] sm:w-[10rem] lg:left-[-7rem] lg:top-[-2.4rem] lg:w-[15rem] ${styles.circle}`}
           viewBox="0 0 360 219"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -29,75 +33,87 @@ const AboutUs = () => {
             </animateMotion>
           </circle>
         </svg>
-
         <div
-          className={`absolute h-[63%] w-[66.62%] justify-center rounded-[36px] border-4 border-black bg-[#FBFAF0] sm:rotate-[-4.21deg] lg:rotate-[-4.21deg] ${styles.box1}`}
+          className={`flex min-h-[30rem] w-[22rem] justify-center rounded-[36px] border-4 border-black bg-[#FBFAF0] sm:w-[35rem] sm:rotate-[-4.21deg] lg:min-h-[30rem] lg:w-[45rem] lg:rotate-[-4.21deg] xl:min-h-[27rem] ${styles.box1}`}
         >
-          <div className="absolute flex h-[11.23%] w-[100%] items-center rounded-tl-[36px] rounded-tr-[36px] border-b-2 border-b-black bg-[#FFF59F]">
-            <div className="mx-1 ml-3 h-[34.7%] w-[2.07%] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:ml-5 lg:px-3"></div>
-            <div className="mx-1 h-[34.7%] w-[2.07%] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:px-3"></div>
-            <div className="mx-1 h-[34.7%] w-[2.07%] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:px-3"></div>
+          <div className="absolute flex h-[3rem] w-[98%] items-center rounded-tl-[36px] rounded-tr-[36px] border-b-2 border-black bg-[#FFF59F] sm:w-[99.7%] lg:w-[100%]">
+            <div className="mx-1 ml-3 h-[1.4rem] w-[1.4rem] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:ml-5 lg:px-3"></div>
+            <div className="mx-1 h-[1.4rem] w-[1.4rem] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:px-3"></div>
+            <div className="mx-1 h-[1.4rem] w-[1.4rem] rotate-[-4.21deg] rounded-[50%] bg-[#FFA6F6] px-3 md:px-3 lg:mx-1 lg:px-3"></div>
             <Image
               src="/assets/images/heart.png"
               alt="Heart Icon"
-              className={`absolute h-[135%] w-[24%] rotate-[8deg] items-end sm:rotate-[5deg] lg:rotate-[5deg] xl:top-[60%] xl:h-[145%] xl:rotate-[2deg] ${styles.img1} `}
+              className={`absolute left-[14rem] top-[0.1rem] h-[4rem] w-[7rem] rotate-[3.8deg] sm:left-[26.5rem] lg:left-[34rem] lg:top-[-1.3rem] lg:h-[6rem] lg:w-[9rem]`}
               width={80}
               height={100}
             />
           </div>
-          <div className="relative top-[15%] flex justify-center xl:top-[12%]">
-            <Image
-              src="/assets/images/about.png"
-              alt="About Us Image"
-              className="h-[40.44%] w-[84%] rotate-[4.21deg] sm:h-[15.44%] sm:w-[70%] sm:rotate-[4.21deg] md:h-[20.44%] md:w-[75%] lg:h-[19.44%] lg:w-[44%] lg:rotate-[4.21deg] xl:h-[24.44%] xl:w-[35%]"
-              width={600}
-              height={400}
-            />
-            <Image
-              src="/assets/About/wave.gif"
-              alt="Wave"
-              width={500}
-              height={1}
-              className={`absolute top-[58%] w-[82%] opacity-0 transition-opacity duration-300 hover:opacity-100 md:top-[51%] md:w-[74%] lg:top-[55%] lg:w-[44%] xl:top-[53%] xl:w-[35%]`}
-            />
+          <div className="flex justify-center">
+            <div className="absolute top-[4.3rem] flex justify-center sm:top-[3.5rem] lg:top-[3.2rem]">
+              <Image
+                src="/assets/images/about.png"
+                alt="About Us Image"
+                className="h-[4rem] w-[12rem] rotate-[4.21deg] sm:h-[5.5rem] sm:w-[16rem] lg:h-[6.7rem] lg:w-[20rem]"
+                width={600}
+                height={400}
+              />
+              <Image
+                src="/assets/About/wave.gif"
+                alt="Wave"
+                width={500}
+                height={1}
+                unoptimized
+                className={`absolute top-[2.3rem] w-[48rem] opacity-0 transition-opacity duration-300 hover:opacity-100 sm:top-[2.8rem] lg:top-[3.5rem] xl:w-[20rem]`}
+              />
+            </div>
           </div>
-          <div className="relative top-[17%] flex items-center justify-center md:top-[14%] lg:top-[17%] xl:top-[12%]">
-            <p
-              className={`relative w-[100%] text-center font-tusker2 text-[1.1rem] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[34px] md:leading-[3.3rem] lg:text-[34px] lg:leading-[3.2rem] xl:text-[30px] xl:leading-[3rem] xl:tracking-wide ${styles.smallFont}`}
-            >
-              NIT Silchar&apos;s cultural extravaganza,
-              <span
-                className={`inline-block w-[80%] sm:h-[50] sm:w-[80%] lg:w-[25%] xl:w-[18%] ${styles.incandCont}`}
+          <div className="flex items-center justify-center align-middle">
+            <div className="absolute top-[8.5rem] flex w-[100%] items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem]">
+              <p
+                className={`relative w-[100%] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] lg:text-[38px] lg:leading-[3.8rem] xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
               >
+                NIT Silchar&apos;s cultural extravaganza,
                 <span
-                  style={{ letterSpacing: "1.2px" }}
-                  className={`text-[18px] xl:text-[25px] ${styles.incandText}`}
+                  className={`inline-block w-[8rem] md:w-[10.2rem] lg:w-[10rem] xl:w-[11rem] ${styles.incandCont}`}
                 >
-                  INCANDESCENCE
+                  <span
+                    style={{ letterSpacing: "1.2px" }}
+                    className={`text-[18px] md:text-[24.8px] xl:text-[24px] ${styles.incandText}`}
+                  >
+                    INCANDESCENCE
+                  </span>
+                  <span className={` ${styles.incandLogo}`}>
+                    <img src="/assets/images/incand.png" alt="incand logo" />
+                  </span>
                 </span>
-                <span className={styles.incandLogo}>
-                  <img src="/assets/images/incand.png" alt="incand logo" />
+                <br /> invites you on a journey into
+                <Image
+                  src="/assets/About/spidey.gif"
+                  alt="animated gif"
+                  className={`ml-2 mr-2 inline-block h-[2.5rem] w-[4.3rem] rounded-[53.99px] lg:h-[3rem] lg:w-[6.3rem] ${styles.smallImage}`}
+                  width={26}
+                  height={18}
+                  unoptimized
+                />
+                <span className="absolute right-[10rem] translate-y-4 mobile1:right-[1.2rem] mobile1:translate-y-2 mobile2:right-[1.5rem] sm:right-[5rem] sm:translate-y-0 md:right-[7rem] lg:right-[8rem] xl:right-[10rem]">
+                  <HiddenQuest
+                    isVisible={isVisible}
+                    setIsVisible={setIsVisible}
+                  />
                 </span>
-              </span>
-              <br /> invites you on a journey into
-              <Image
-                src="/assets/About/spidey.gif"
-                alt="animated gif"
-                className={`ml-2 mr-2 inline-block h-[40.945px] w-[80.18px] rounded-[53.99px] sm:h-[57px] sm:w-[95px] lg:ml-3 lg:mr-3 lg:h-[40px] lg:w-[90px] ${styles.smallImage}`}
-                width={26}
-                height={18}
-              />
-              the <br />
-              unknown. Experience a labyrinth of culture, <br />
-              <Image
-                src="/assets/About/dj.gif"
-                alt="animated gif"
-                className={`ml-2 mr-2 inline-block h-[40.945px] w-[80.18px] rounded-[53.99px] sm:h-[57] sm:w-[95] lg:ml-3 lg:mr-3 lg:h-[40px] lg:w-[90px] ${styles.smallImage}`}
-                width={26}
-                height={18}
-              />
-              where brilliance shines.
-            </p>
+                the <br />
+                unknown. Experience a labyrinth of culture, <br />
+                <Image
+                  src="/assets/About/dj.gif"
+                  alt="animated gif"
+                  className={`ml-2 mr-2 inline-block h-[2.5rem] w-[4.3rem] rounded-[53.99px] lg:h-[3rem] lg:w-[6.3rem] ${styles.smallImage}`}
+                  width={26}
+                  height={18}
+                  unoptimized
+                />
+                where brilliance shines.
+              </p>
+            </div>
           </div>
         </div>
       </div>
