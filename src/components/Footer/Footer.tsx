@@ -5,7 +5,7 @@ import styles from "~/styles/Footer.module.css";
 import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
 import Link from "next/link";
-import FooterButton from "../FooterButton";
+import FooterButton from "./FooterButton";
 
 const Footer: React.FC = () => {
   const [animWidth, setAnimWidth] = useState(280);
@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center">
-        <div className="relative left-0 top-0 flex w-[100vw] flex-col items-center justify-center xl:scale-x-125 xl:scale-y-105">
+        <div className="relative left-0 top-0 flex w-[100vw] flex-col items-center justify-center xl:scale-x-150 xl:scale-y-110">
           <div>
             <Image
               src="/assets/Footer/footer-background.png"

@@ -22,9 +22,8 @@ export default {
         "text-shadow": "2.89px 2.89px 0px 0px #FFFFFF",
       },
       screens: {
-        xs: "450px", // Custom min-width for extra small screens
-        xL: "1350px", // Custom min-width for extra large screens
-        // "md-height": { 'raw': '(min-height: 600px)' }, // Custom min-height
+        xs: "450px", 
+        xL: "1350px",
         "4k": "3840px",
         laptop: "1200px",
         mobile: "340px",

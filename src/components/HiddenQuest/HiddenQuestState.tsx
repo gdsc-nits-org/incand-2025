@@ -1,5 +1,5 @@
-"use client"; // Add this at the top to mark the file as a Client Component
-import React, { Dispatch, SetStateAction } from "react";
+"use client"; 
+import type { Dispatch, SetStateAction } from "react";
 
 interface HiddenQuestProps {
   isVisible: boolean;
@@ -14,12 +14,6 @@ const HiddenQuest: React.FC<HiddenQuestProps> = ({
     setIsVisible(!isVisible);
   };
 
-  const handleScrollToNext = () => {
-    const secondDiv = document.getElementById("secondDiv");
-    if (secondDiv) {
-      secondDiv.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <>

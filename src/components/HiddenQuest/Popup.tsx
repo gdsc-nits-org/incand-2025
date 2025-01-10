@@ -228,7 +228,7 @@ export const HiddenQuestMobile: React.FC<PopupProps> = ({
                   <div className="fixed right-8 z-[3] box-border h-[20%] w-[15%]">
                     <img
                       src="/assets/HiddenQuest&Button/newCross.gif"
-                      className="ml-4 mt-4 h-[60%] w-[100%] cursor-pointer"
+                      className="ml-4 -translate-x-5 mt-4 h-[40%] w-[100%] cursor-pointer"
                       onClick={() => {
                         setAnimation("animate-screw");
                         setTimeout(() => {

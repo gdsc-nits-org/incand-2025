@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
+import Loader from "./loading";
+
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
@@ -57,6 +59,23 @@ const FadeInSection = ({
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="h-screen w-screen flex items-center justify-center bg-black">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <div className="overflow-x-hidden bg-black">

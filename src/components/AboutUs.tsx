@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "~/styles/AboutUs.module.css";
-import HiddenQuest from "./HiddenQuest/HiddenQuestDesktop";
-import Popup from "./HiddenQuest/Popup";
+import HiddenQuest from "./HiddenQuest/HiddenQuestState";
+
 interface PopupProps {
   isVisible: boolean;
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,10 +12,10 @@ interface PopupProps {
 
 const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat md:w-screen lg:w-screen">
+    <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat md:w-screen lg:w-screen mobile:scale-[.85] mobile3:scale-100">
       <div className="relative">
         <svg
-          className={`absolute left-[-2.2rem] top-[-1.7rem] z-[1000] w-[7.1rem] sm:left-[-4.4rem] sm:top-[-1.3rem] sm:w-[10rem] lg:left-[-7rem] lg:top-[-2.4rem] lg:w-[15rem] ${styles.circle}`}
+          className={`absolute -translate-y-[8.5rem] left-[-2.4rem] mobile2:-translate-y-0 mobile2:left-[-2.2rem] mobile2:top-[-1.7rem] z-[1000] w-[7.1rem] sm:left-[-4.4rem] sm:top-[-1.3rem] sm:w-[10rem] lg:left-[-7rem] lg:top-[-2.4rem] lg:w-[15rem] ${styles.circle}`}
           viewBox="0 0 360 219"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,8 +93,7 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                   width={26}
                   height={18}
                 />
-                {/* <div className="absolute left-[39rem] lg:top-20 rotate-[4.12deg]"> <HiddenQuest /></div> */}
-                <span>
+                <span className="absolute right-[10rem] mobile2:right-[1.5rem] sm:right-[5rem] md:right-[6rem] lg:right-[7rem] xl:right-[8rem]">
                   <HiddenQuest
                     isVisible={isVisible}
                     setIsVisible={setIsVisible}
