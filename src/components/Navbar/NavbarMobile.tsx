@@ -51,7 +51,7 @@ const NavbarMobile = () => {
 
   return (
     <nav
-      className={`fixed top-0 ${isMenuOpen ? "h-screen w-screen bg-[#121212] bg-maze-pattern" : "h-[76px]"} z-[10000] transition-all delay-100 duration-500 ease-linear ipadpro:hidden`}
+      className={`fixed top-0 ${isMenuOpen ? "h-screen w-screen bg-[#121212] bg-maze-pattern" : "h-[76px]"} ipadair:hidden z-[10000] transition-all delay-100 duration-500 ease-linear`}
     >
       <div
         className={`z-50 flex h-[76px] w-full items-center justify-between px-6 transition-colors duration-500 ease-linear`}
@@ -112,17 +112,24 @@ const NavbarMobile = () => {
             </Link>
           );
         })}
-        {/* <Image
-          className={`absolute bottom-0 ${isMenuOpen ? "opacity-100" : "opacity-0"} transition-opacity duration-500 ease-linear`}
-          src="/assets/navbar/navbar-bottom.svg"
-          width={1000}
-          height={100}
-          alt=""
-        /> */}
         <div
           className={`absolute bottom-0 w-full ${isMenuOpen ? "opacity-100" : "opacity-0"} transition-opacity duration-500 ease-linear`}
         >
           <Marquee speed={100} direction="left" gradientColor="transparent">
+            <Image
+              layout="responsive"
+              src="/assets/navbar/navbar-bottom.svg"
+              width={1000}
+              height={100}
+              alt=""
+            />
+            <Image
+              layout="responsive"
+              src="/assets/navbar/navbar-bottom.svg"
+              width={1000}
+              height={100}
+              alt=""
+            />
             <Image
               layout="responsive"
               src="/assets/navbar/navbar-bottom.svg"
@@ -193,7 +200,7 @@ const NavTab = (data: NavDetailsProps) => {
             }
           : { backgroundColor: data.bgColor }
       }
-      className={`z-50 flex h-[6rem] w-[20rem] items-center justify-center ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-500 ease-linear`}
+      className={`z-50 flex h-[10vh] w-[80vw] items-center justify-center ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-500 ease-linear`}
     >
       <div
         className={`flex w-full flex-col ${data.active && ""} transition-all duration-500 ease-linear`}
