@@ -22,7 +22,7 @@ export default {
         "text-shadow": "2.89px 2.89px 0px 0px #FFFFFF",
       },
       screens: {
-        xs: "450px", 
+        xs: "450px",
         xL: "1350px",
         "4k": "3840px",
         laptop: "1200px",

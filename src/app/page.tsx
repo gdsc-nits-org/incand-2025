@@ -14,6 +14,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
   ssr: false,
 });
 import Footer from "../components/Footer/Footer";
+import Navbar from "~/components/Navbar/Navbar";
 
 export const runtime = "edge";
 
@@ -62,11 +63,21 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    const startTime = performance.now();
+    const preloadComponents = async () => {
+      await Promise.all([
+        import("~/components/Hero"),
+        import("~/components/Sponsors"),
+        import("~/components/AboutUs"),
+        import("~/components/AboutNits"),
+      ]);
+    };
 
-    return () => clearTimeout(timer);
+    void preloadComponents().finally(() => {
+      const endTime = performance.now();
+      const loadTime = Math.max(1000, endTime - startTime); 
+      setTimeout(() => setIsLoading(false), loadTime);
+    });
   }, []);
 
   if (isLoading) {
@@ -80,6 +91,7 @@ const HomePage = () => {
   return (
     <div className="overflow-x-hidden bg-black">
       <main className="container">
+        <Navbar />
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">

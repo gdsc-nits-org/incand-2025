@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import type { Dispatch, SetStateAction } from "react";
 
 interface HiddenQuestProps {
@@ -13,7 +13,6 @@ const HiddenQuest: React.FC<HiddenQuestProps> = ({
   const handleOpen = () => {
     setIsVisible(!isVisible);
   };
-
 
   return (
     <>
