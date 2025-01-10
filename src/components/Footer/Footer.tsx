@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
           <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:translate-x-10 lg:text-xl">
             CONTACT US
           </h3>
-          <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:scale-125 lg:gap-1 lg:space-x-8 lg:translate-x-8">
+          <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:translate-x-8 lg:scale-125 lg:gap-1 lg:space-x-8">
             <a
               href="https://www.instagram.com/incandescence_2025/?__d=11"
               target="_blank"

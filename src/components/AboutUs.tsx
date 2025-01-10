@@ -68,7 +68,7 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
             </div>
           </div>
           <div className="flex items-center justify-center align-middle">
-            <div className="absolute top-[8.5rem] flex items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem] w-[100%]">
+            <div className="absolute top-[8.5rem] flex w-[100%] items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem]">
               <p
                 className={`relative w-[100%] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] lg:text-[38px] lg:leading-[3.8rem] xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
               >
@@ -95,7 +95,7 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                   height={18}
                   unoptimized
                 />
-                <span className="absolute right-[10rem] mobile1:right-[1.2rem] mobile2:right-[1.5rem] sm:right-[5rem] md:right-[7rem] lg:right-[8rem] xl:right-[10rem] translate-y-4 mobile1:translate-y-2 sm:translate-y-0">
+                <span className="absolute right-[10rem] translate-y-4 mobile1:right-[1.2rem] mobile1:translate-y-2 mobile2:right-[1.5rem] sm:right-[5rem] sm:translate-y-0 md:right-[7rem] lg:right-[8rem] xl:right-[10rem]">
                   <HiddenQuest
                     isVisible={isVisible}
                     setIsVisible={setIsVisible}
