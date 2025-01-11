@@ -6,6 +6,9 @@ import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
 import Link from "next/link";
 import FooterButton from "./FooterButton";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const [animWidth, setAnimWidth] = useState(280);
@@ -69,13 +72,9 @@ const Footer: React.FC = () => {
                 "flex items-center justify-center " + styles["social-icon"]
               }
             >
-              <Image
-                src="/assets/Footer/instagram.png"
-                alt="Instagram icon"
-                width={50}
-                height={50}
-                className={"block" + styles["social-icon"]}
-                priority
+              <FaInstagram
+                className={"block"}
+                style={{ width: "23px", height: "23px" }}
               />
             </a>
             <a
@@ -85,13 +84,9 @@ const Footer: React.FC = () => {
                 "flex items-center justify-center " + styles["social-icon"]
               }
             >
-              <Image
-                src="/assets/Footer/linkedln.png"
-                alt="Linkedln icon"
-                width={40}
-                height={40}
-                className="block"
-                priority
+              <FaLinkedin
+                className={"block"}
+                style={{ width: "23px", height: "23px" }}
               />
             </a>
             <a
@@ -101,13 +96,9 @@ const Footer: React.FC = () => {
                 "flex items-center justify-center " + styles["social-icon"]
               }
             >
-              <Image
-                src="/assets/Footer/facebook.png"
-                alt="Facebook icon"
-                width={40}
-                height={40}
-                className="block"
-                priority
+              <FaFacebook
+                className={"block"}
+                style={{ width: "23px", height: "23px" }}
               />
             </a>
           </div>
@@ -115,7 +106,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center">
-        <div className="relative left-0 top-0 flex w-[100vw] flex-col items-center justify-center xl:scale-x-150 xl:scale-y-110">
+        <div className="relative left-0 top-0 mt-5 flex w-[100vw] flex-col items-center justify-center xl:scale-x-150 xl:scale-y-110">
           <div>
             <Image
               src="/assets/Footer/footer-background.png"
