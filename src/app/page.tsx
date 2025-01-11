@@ -64,6 +64,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const startTime = performance.now();
+
     const preloadComponents = async () => {
       await Promise.all([
         import("~/components/Hero"),
@@ -73,16 +74,27 @@ const HomePage = () => {
       ]);
     };
 
-    void preloadComponents().finally(() => {
+    void preloadComponents();
+    const handleLoad = () => {
       const endTime = performance.now();
-      const loadTime = Math.max(1000, endTime - startTime);
+      const loadTime = Math.max(1000, endTime - startTime); 
       setTimeout(() => setIsLoading(false), loadTime);
-    });
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   if (isLoading) {
     return (
-      <div className="flex h-screen w-screen items-center justify-center bg-black">
+      <div className="h-screen w-screen flex items-center justify-center bg-black">
         <Loader />
       </div>
     );
@@ -94,16 +106,16 @@ const HomePage = () => {
         <Navbar />
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
-        <FadeInSection id="home" bgColor="bg-[#9747ff] min-h-screen">
+        <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
           <Hero />
         </FadeInSection>
-        <FadeInSection id="about" bgColor="bg-[#FFA6F6] min-h-screen">
+        <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
           <AboutUs isVisible={isVisible} setIsVisible={setIsVisible} />
         </FadeInSection>
-        <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] min-h-screen">
+        <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
           <AboutNits />
         </FadeInSection>
-        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  min-h-screen">
+        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-screen">
           <Sponsors />
         </FadeInSection>
         <FadeInSection
