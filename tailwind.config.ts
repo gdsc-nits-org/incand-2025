@@ -33,6 +33,7 @@ export default {
         tablet: "750px",
         tablet2: "900px",
         ipadpro: "1000px",
+        ipadair: "1180px",
       },
       keyframes: {
         grow: {
