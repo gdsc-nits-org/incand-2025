@@ -1,5 +1,6 @@
 .scrollBarOrange {
   width: var(--progress);
+  /* width: calc(var(--progress) + 5rem); */
 }
 .scrollBar {
   -webkit-appearance: none;
@@ -8,23 +9,6 @@
   cursor: pointer;
   width: 100%;
 }
-/* .scrollBar::-webkit-slider-thumb {
-  position: relative;
-  transform: translateY(45%) rotate(270deg);
-  -webkit-appearance: none;
-  appearance: none;
-  height: 4vw;
-  width: 4vw;
-  border: 0.3vw solid #ff676b;
-  border-radius: 50%;
-  cursor: pointer;
-  background-image: url("/assets/navbar/incand-logo.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 0.8vw;
-  z-index: 100;
-} */
-
 .scrollBar::-webkit-slider-thumb {
   position: relative;
   transform: translateY(45%) rotate(270deg);
@@ -42,7 +26,6 @@
   z-index: 100;
 }
 
-
 .scrollBarHome::-webkit-slider-thumb {
   background-color: #9747ff;
 }
@@ -56,6 +39,9 @@
 .scrollBarSponsors::-webkit-slider-thumb {
   background-color: #b7dc68;
 }
+.scrollBarMerch::-webkit-slider-thumb {
+  background-color: #3c0fd5;
+}
 
 .scrollBarFooter::-webkit-slider-thumb {
   background-color: black;
@@ -64,7 +50,7 @@
 .scrollBar::-moz-range-thumb {
   position: relative;
   z-index: 100;
-  -webkit-appearance:none;
+  -webkit-appearance: none;
   appearance: none;
   height: 4rem;
   width: 4rem;

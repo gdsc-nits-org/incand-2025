@@ -4,25 +4,28 @@ import React, { useEffect, useState } from "react";
 import styles from "~/styles/LandingProgressBar.module.css";
 
 const LandingProgressBar = () => {
-  const [value, setValue] = useState<0 | 1 | 2 | 3 | 4>(0);
+  const [value, setValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
   const [rangeValue, setRangeValue] = useState(0);
 
   const calValue = (value: number) => {
     if (value < 15) {
       setValue(0);
       return 0;
-    } else if (value < 40) {
+    } else if (value < 38) {
       setValue(1);
       return 1;
-    } else if (value < 65) {
+    } else if (value < 58) {
       setValue(2);
       return 2;
-    } else if (value < 90) {
+    } else if (value < 75) {
       setValue(3);
       return 3;
-    } else {
+    } else if (value < 98) {
       setValue(4);
       return 4;
+    } else {
+      setValue(5);
+      return 5;
     }
   };
 
@@ -35,7 +38,9 @@ const LandingProgressBar = () => {
           ? styles.scrollBarAbout2
           : value === 3
             ? styles.scrollBarSponsors
-            : styles.scrollBarFooter;
+            : value === 4
+              ? styles.scrollBarMerch
+              : styles.scrollBarFooter;
 
   const scrollToTarget = (idx: number) => {
     const sections = document.querySelectorAll("section");
@@ -61,7 +66,7 @@ const LandingProgressBar = () => {
     calValue(percentage);
   };
 
-  const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4) => {
+  const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4 | 5) => {
     if (value - idx == 1 || idx - value == 1) {
       const sections = document.querySelectorAll("section");
       const targetPlus = sections[idx]!;
@@ -83,7 +88,7 @@ const LandingProgressBar = () => {
   return (
     <div
       className={
-        "ipadair:left-[79%] ipadair:block fixed top-[50%] z-50 hidden w-[40vw] translate-y-[-50%] rotate-90 scale-95"
+        "fixed top-[50%] z-50 hidden w-[40vw] translate-y-[-50%] rotate-90 scale-95 ipadair:left-[79%] ipadair:block"
       }
     >
       <label htmlFor="scrollBar">
@@ -99,7 +104,7 @@ const LandingProgressBar = () => {
             }
             style={
               {
-                "--progress": `${Math.min(rangeValue + (rangeValue > 50 ? 12 : 15), 97)}%`,
+                "--progress": `${Math.min(rangeValue + (15 - rangeValue * 0.08), 97)}%`,
               } as React.CSSProperties
             }
           >
@@ -131,6 +136,12 @@ const LandingProgressBar = () => {
           </button>
           <button
             onClick={() => handlePointClick(4)}
+            className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
+          >
+            {" "}
+          </button>
+          <button
+            onClick={() => handlePointClick(5)}
             className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
           >
             {" "}
