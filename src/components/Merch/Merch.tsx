@@ -9,7 +9,7 @@ import styles from "~/styles/Merch.module.css";
 const StyledSection: React.FC = () => {
   return (
     <div
-      className="relative flex h-screen w-full items-center justify-center overflow-hidden text-white"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden text-white translate-y-4 sm:translate-y-0 xl:pb-9 "
       style={{
         background: `radial-gradient(
           ellipse,
@@ -226,10 +226,10 @@ const StyledSection: React.FC = () => {
           <FooterButton />
         </div>
         <h1 className="group relative z-[45] w-max -rotate-[5.44deg] bg-red-600 px-[0.5vw] font-tusker hover:shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] mobile:left-[25vw] mobile:top-[21vh] mobile:text-[1.5vh] laptop:left-[13vw] laptop:top-[19vw] laptop:text-[2vh]">
-          <GiStarShuriken className="absolute -right-[0.85vh] -top-[0.9vh] hidden group-hover:block" />
+          <GiStarShuriken className="absolute -right-[0.85v] -top-[0.9vh]  group-hover:block" />
           GRAB YOUR MERCH NOW!
         </h1>
-        <CgArrowTopLeft className="absolute z-[45] -rotate-[18deg] text-[#FAE00D] mobile:left-[70vw] mobile:top-[85vh] mobile:text-[6vh] laptop:left-[27vw] laptop:top-[25vw] laptop:text-[3.2vw]" />
+        <CgArrowTopLeft className="absolute z-[45] -rotate-[18deg] text-[#FAE00D] mobile:left-[62vw] mobile:top-[82vh] mobile:text-[6vh] laptop:left-[25vw] laptop:top-[25vw] laptop:text-[3.2vw]" />
         <div className="absolute z-50 -rotate-[65deg] mobile:-top-[2.5vh] mobile:left-[54.5vw] laptop:left-[31vw] laptop:top-[1.5vw] 4k:left-[32.5vw] 4k:top-[3.4vw]">
           <Image
             src="/assets/Merch/Figma to Lottie ✨.gif"
@@ -275,7 +275,7 @@ const StyledSection: React.FC = () => {
         <img
           src="/assets/Merch/merch.png"
           alt=""
-          className="scale-[0.72] 4k:scale-[1.8]"
+          className="scale-[0.72] 4k:scale-[1.8] xl:-translate-y-1"
         />
       </div>
     </div>

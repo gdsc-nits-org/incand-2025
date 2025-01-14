@@ -3,7 +3,7 @@ import styles from "~/styles/FooterButton.module.css";
 
 const FooterButton = () => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} scale-[1.2] mobile3:scale-100`}>
       <a
         href="https://drive.google.com/file/d/124qTMYiIeShafTMsLaNjNgE2KwmJT3Pc/view?usp=drive_link"
         target="_blank"
