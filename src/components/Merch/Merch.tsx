@@ -138,7 +138,7 @@ const StyledSection: React.FC = () => {
             className="h-[5vw] w-[10vw]"
           />
         </div>
-        <div className="absolute mobile:left-[4vw] mobile:top-[2.4vh] laptop:left-[2.7vw] laptop:top-[3.5vh] z-[40]">
+        <div className="absolute z-[40] mobile:left-[4vw] mobile:top-[2.4vh] laptop:left-[2.7vw] laptop:top-[3.5vh]">
           <Image
             src="/assets/Merch/Wear.png"
             alt="wear"
@@ -159,7 +159,7 @@ const StyledSection: React.FC = () => {
           />
         </div>
         <h1
-          className={`font-DMSerif absolute z-[45] font-semibold italic mobile:-rotate-[13deg] mobile:text-[6vh] mobile:leading-[15vw] laptop:left-[7.5vw] laptop:top-[3vw] laptop:-rotate-[18.25deg] laptop:text-[14.5vh] laptop:leading-[7.5vw] ${styles["text-stroke"]} mobile:left-[16vw] mobile:top-[8vw]`}
+          className={`absolute z-[45] font-DMSerif font-semibold italic mobile:-rotate-[13deg] mobile:text-[6vh] mobile:leading-[15vw] laptop:left-[7.5vw] laptop:top-[3vw] laptop:-rotate-[18.25deg] laptop:text-[14.5vh] laptop:leading-[7.5vw] ${styles["text-stroke"]} mobile:left-[16vw] mobile:top-[8vw]`}
         >
           Official
           <br />
@@ -237,22 +237,26 @@ const StyledSection: React.FC = () => {
             width={100}
             height={100}
             quality={100}
+            unoptimized
             className="mobile:scale-[0.7] laptop:scale-[1.4] 4k:scale-[3]"
           />
         </div>
-        <h1 className={`font-DMSerif ${styles["text-shadow"]} absolute z-50 -rotate-[18.25deg] font-semibold mobile:left-[61vw] mobile:top-[0.5vh] mobile:text-[5vh] laptop:left-[31.5vw] laptop:top-[1.3vw] laptop:text-[10vh]`}>
+        <h1
+          className={`font-DMSerif ${styles["text-shadow"]} absolute z-50 -rotate-[18.25deg] font-semibold mobile:left-[61vw] mobile:top-[0.5vh] mobile:text-[5vh] laptop:left-[31.5vw] laptop:top-[1.3vw] laptop:text-[10vh]`}
+        >
           20
         </h1>
-        <h1 className="font-DMSerif text-shadow absolute z-50 -rotate-[18.25deg] font-semibold mobile:left-[59vw] mobile:top-[9.5vh] mobile:text-[5vh] laptop:left-[30vw] laptop:top-[8.1vw] laptop:text-[10vh]">
+        <h1 className={`${styles["text-shadow"]} absolute z-50 -rotate-[18.25deg] font-DMSerif font-semibold mobile:left-[59vw] mobile:top-[9.5vh] mobile:text-[5vh] laptop:left-[30vw] laptop:top-[8.1vw] laptop:text-[10vh]`}>
           25
         </h1>
-        <div className="absolute laptop:left-[30vw] laptop:top-[8.5vw] z-[45] -rotate-[65deg] mobile:left-[52vw] mobile:top-[6vh] 4k:left-[31vw] 4k:top-[10vw]">
+        <div className="absolute z-[45] -rotate-[65deg] mobile:left-[52vw] mobile:top-[6vh] laptop:left-[30vw] laptop:top-[8.5vw] 4k:left-[31vw] 4k:top-[10vw]">
           <Image
             src="/assets/Merch/Figma to Lottie ✨.gif"
             alt="lottie"
             width={100}
             height={100}
             quality={100}
+            unoptimized
             className="mobile:scale-[0.7] laptop:scale-[1.4] 4k:scale-[3]"
           />
         </div>
@@ -268,7 +272,11 @@ const StyledSection: React.FC = () => {
         </div>
       </div>
       <div className="absolute z-50 mobile:hidden mobile:translate-y-[15vw] laptop:-right-[5vw] laptop:block laptop:transform-none 4k:right-[14vw]">
-        <img src="/assets/Merch/merch.png" alt="" className="scale-[0.72] 4k:scale-[1.8]" />
+        <img
+          src="/assets/Merch/merch.png"
+          alt=""
+          className="scale-[0.72] 4k:scale-[1.8]"
+        />
       </div>
     </div>
   );
