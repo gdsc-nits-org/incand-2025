@@ -31,7 +31,7 @@ const StyledSection: React.FC = () => {
       ></div>
       <div className="absolute -top-[2.9vw] left-[8.5vw] mobile:hidden laptop:block">
         <Image
-          src="/assets/Merch/Brutalist 89.png"
+          src="/assets/Merch/Brutalist89.png"
           alt="Brutalist 89"
           width={100}
           height={100}
@@ -41,7 +41,7 @@ const StyledSection: React.FC = () => {
       </div>
       <div className="absolute left-[0vw] top-[8.5vw] z-20 mobile:hidden laptop:block">
         <Image
-          src="/assets/Merch/Brutalist 89.png"
+          src="/assets/Merch/Brutalist89.png"
           alt="Brutalist 89"
           width={100}
           height={100}
@@ -51,7 +51,7 @@ const StyledSection: React.FC = () => {
       </div>
       <div className="absolute -bottom-[2.2vw] right-[0vw] mobile:hidden laptop:block">
         <Image
-          src="/assets/Merch/Brutalist 89.png"
+          src="/assets/Merch/Brutalist89.png"
           alt="Brutaiist 89"
           width={100}
           height={100}
@@ -61,7 +61,7 @@ const StyledSection: React.FC = () => {
       </div>
       <div className="absolute -left-[1.5vw] top-[18vw] z-10 mobile:hidden laptop:block">
         <Image
-          src="/assets/Merch/Brutalist Shape 133.png"
+          src="/assets/Merch/BrutalistShape133.png"
           alt="Brutalist Shape 133"
           width={100}
           height={100}
@@ -71,7 +71,7 @@ const StyledSection: React.FC = () => {
       </div>
       <div className="absolute -left-[1.5vw] top-[28vw] z-10 mobile:hidden laptop:block">
         <Image
-          src="/assets/Merch/Brutalist Shape 133.png"
+          src="/assets/Merch/BrutalistShape133.png"
           alt="Brutalist Shape 133"
           width={100}
           height={100}
@@ -81,7 +81,7 @@ const StyledSection: React.FC = () => {
       </div>
       <div className="absolute -bottom-[2vw] -left-[1vw] z-10 mobile:hidden laptop:block">
         <Image
-          src="/assets/Merch/Brutalist Shape 129.png"
+          src="/assets/Merch/BrutalistShape129.png"
           alt="Brutalist Shape 129"
           width={100}
           height={100}
@@ -91,7 +91,7 @@ const StyledSection: React.FC = () => {
       </div>
       <div className="absolute -bottom-[2vw] left-[13vw] z-10 mobile:hidden laptop:block">
         <Image
-          src="/assets/Merch/Brutalist Shape 129.png"
+          src="/assets/Merch/BrutalistShape129.png"
           alt="Brutalist Shape 129"
           width={100}
           height={100}
@@ -102,7 +102,7 @@ const StyledSection: React.FC = () => {
       <div className="relative z-30 w-[80vw] border-4 border-white bg-[#2D0079] shadow-[-1.5vw_1.5vw_0px_rgba(255,255,255,1)] mobile:h-[70vh] mobile:-translate-y-[20vw] laptop:h-[60vh] laptop:transform-none">
         <div className="absolute -left-[2.1vw] top-[16vw] z-40 mobile:hidden laptop:block">
           <Image
-            src="/assets/Merch/Ellipse 1499.png"
+            src="/assets/Merch/Ellipse1499.png"
             alt="Ellipse 1499"
             width={400}
             height={400}
@@ -130,7 +130,7 @@ const StyledSection: React.FC = () => {
         </div>
         <div className="absolute left-[35.5vw] z-40 mobile:hidden laptop:block">
           <Image
-            src="/assets/Merch/Vector 744.png"
+            src="/assets/Merch/Vector744.png"
             alt="Vector 744"
             width={100}
             height={100}
@@ -150,7 +150,7 @@ const StyledSection: React.FC = () => {
         </div>
         <div className="absolute z-40 mobile:left-[9vw] mobile:top-[2.5vh] mobile:scale-[0.95] laptop:left-[5vw] laptop:top-[1.8vw]">
           <Image
-            src="/assets/Merch/Rectangle 434.png"
+            src="/assets/Merch/Rectangle434.png"
             alt="Rectangle"
             width={400}
             height={300}
@@ -167,7 +167,7 @@ const StyledSection: React.FC = () => {
         </h1>
         <div className="absolute left-[23.4vw] top-[1.8vw] z-[45]">
           <Image
-            src="/assets/Merch/Vector green.png"
+            src="/assets/Merch/Vectorgreen.png"
             alt="Vector green"
             layout="responsive"
             width={100}
@@ -176,7 +176,7 @@ const StyledSection: React.FC = () => {
         </div>
         <div className="absolute left-[20vw] top-[10vw] z-[45]">
           <Image
-            src="/assets/Merch/Vector red.png"
+            src="/assets/Merch/Vectorred.png"
             alt="Vector red"
             layout="responsive"
             width={100}
@@ -185,7 +185,7 @@ const StyledSection: React.FC = () => {
         </div>
         <div className="absolute left-[7.5vw] top-[14vw] z-[45]">
           <Image
-            src="/assets/Merch/Vector yellow.png"
+            src="/assets/Merch/Vectoryellow.png"
             alt="Vector yellow"
             layout="responsive"
             width={100}
@@ -214,7 +214,7 @@ const StyledSection: React.FC = () => {
         </div>
         <div className="absolute z-50 mobile:left-[60vw] mobile:top-[26vh] laptop:left-[26.3vw] laptop:top-[15vw]">
           <Image
-            src="/assets/Merch/Spark 70.png"
+            src="/assets/Merch/Spark70.png"
             alt="Spark"
             width={400}
             height={400}
@@ -232,7 +232,7 @@ const StyledSection: React.FC = () => {
         <CgArrowTopLeft className="absolute z-[45] -rotate-[18deg] text-[#FAE00D] mobile:left-[62vw] mobile:top-[82vh] mobile:text-[6vh] laptop:left-[25vw] laptop:top-[25vw] laptop:text-[3.2vw]" />
         <div className="absolute z-50 -rotate-[65deg] mobile:-top-[2.5vh] mobile:left-[54.5vw] laptop:left-[31vw] laptop:top-[1.5vw] 4k:left-[32.5vw] 4k:top-[3.4vw]">
           <Image
-            src="/assets/Merch/Figma to Lottie ✨.gif"
+            src="/assets/Merch/FigmatoLottie.gif"
             alt="lottie"
             width={100}
             height={100}
@@ -251,7 +251,7 @@ const StyledSection: React.FC = () => {
         </h1>
         <div className="absolute z-[45] -rotate-[65deg] mobile:left-[52vw] mobile:top-[6vh] laptop:left-[30vw] laptop:top-[8.5vw] 4k:left-[31vw] 4k:top-[10vw]">
           <Image
-            src="/assets/Merch/Figma to Lottie ✨.gif"
+            src="/assets/Merch/FigmatoLottie.gif"
             alt="lottie"
             width={100}
             height={100}
