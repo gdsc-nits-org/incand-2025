@@ -3,6 +3,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "~/styles/LandingProgressBar.module.css";
 
+const navMap = new Map([
+  ["/", 0],
+  ["/#home", 0],
+  ["/#about", 1],
+  ["/#about-nits", 2],
+  ["/#sponsors", 3],
+  ["/#merch", 4],
+]);
+
 const LandingProgressBar = () => {
   const [value, setValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
   const [rangeValue, setRangeValue] = useState(0);
@@ -43,8 +52,8 @@ const LandingProgressBar = () => {
               : styles.scrollBarFooter;
 
   const scrollToTarget = (idx: number) => {
-    const sections = document.querySelectorAll("section");
-    const target = sections[idx]!;
+    const ids = ["home", "about", "about-nits", "sponsors", "merch", "footer"];
+    const target = document.getElementById(ids[idx] ?? "home");
     if (target) {
       setTimeout(() => {
         target.style.transition = " opacity 0.5s ease-out";
@@ -63,19 +72,37 @@ const LandingProgressBar = () => {
     const windowHeight = window.innerHeight;
     const percentage = (scrollY / (documentHeight - windowHeight)) * 100;
     setRangeValue(percentage);
-    calValue(percentage);
+    const v = calValue(percentage);
+    setValue(v);
+    // console.log(v);
   };
 
   const handlePointClick = (idx: 0 | 1 | 2 | 3 | 4 | 5) => {
+    console.log(value, idx);
     if (value - idx == 1 || idx - value == 1) {
       const sections = document.querySelectorAll("section");
       const targetPlus = sections[idx]!;
       targetPlus.style.opacity = "0";
       scrollToTarget(idx);
+      setValue(idx);
     }
   };
 
   useEffect(() => {
+    const link = window.location.pathname + window.location.hash;
+    const idx = navMap.get(link);
+    if (
+      idx === 0 ||
+      idx == 1 ||
+      idx === 2 ||
+      idx === 3 ||
+      idx === 4 ||
+      idx === 5
+    ) {
+      setValue(idx);
+      setRangeValue(idx * 20);
+      scrollToTarget(idx);
+    }
     handleScroll();
   }, []);
 
@@ -85,13 +112,17 @@ const LandingProgressBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const points = Array.from({ length: 6 }, (_, index) => index);
+
   return (
     <div
       className={
-        "fixed top-[50%] z-50 hidden w-[40vw] translate-y-[-50%] rotate-90 scale-95 ipadair:left-[79%] ipadair:block"
+        styles.container +
+        " fixed top-[50%] z-50 hidden w-[40vw] translate-y-[-50%] rotate-90 scale-95 ipadair:left-[79%] ipadair:block"
       }
     >
-      <label htmlFor="scrollBar">
+      <label className="cursor-default" htmlFor="scrollBar">
         <div
           className={
             "absolute bottom-1 z-10 flex h-[1vw] w-full items-center justify-between rounded-lg bg-[#FFFFFFF0]"
@@ -110,42 +141,19 @@ const LandingProgressBar = () => {
           >
             {" "}
           </div>
-          <button
-            onClick={() => handlePointClick(0)}
-            className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
-          >
-            {" "}
-          </button>
-          <button
-            onClick={() => handlePointClick(1)}
-            className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
-          >
-            {" "}
-          </button>
-          <button
-            onClick={() => handlePointClick(2)}
-            className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
-          >
-            {" "}
-          </button>
-          <button
-            onClick={() => handlePointClick(3)}
-            className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
-          >
-            {" "}
-          </button>
-          <button
-            onClick={() => handlePointClick(4)}
-            className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
-          >
-            {" "}
-          </button>
-          <button
-            onClick={() => handlePointClick(5)}
-            className="z-30 h-[2vw] w-[2vw] rounded-full border-[0.7vw] border-[#FF676B] bg-white shadow-[0.3vw_-0.2vw_0px_black]"
-          >
-            {" "}
-          </button>
+          {points.map((point) => (
+            <button
+              key={point}
+              onClick={() => {
+                handlePointClick(point as 0 | 1 | 2 | 3 | 4 | 5);
+              }}
+              className="relative z-50 flex h-[2vw] w-[2vw] items-center justify-center rounded-full bg-[#FF676B] shadow-[0.3vw_-0.2vw_0px_black]"
+            >
+              <div className="z-20 h-[0.7vw] w-[0.7vw] rounded-full bg-white">
+                {" "}
+              </div>
+            </button>
+          ))}
         </div>
         <input
           type="range"
@@ -154,8 +162,7 @@ const LandingProgressBar = () => {
           max={100}
           step={1}
           value={rangeValue}
-          // onChange={(e) => setRangeValue(Number(e.target.value))}
-          className={` ${styles.scrollBar} + ${dynamicClass} `}
+          className={` ${styles.scrollBar} + ${dynamicClass} -z-50 cursor-default`}
         />
       </label>
     </div>
