@@ -118,6 +118,10 @@ const HomePage = () => {
         <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-screen">
           <Sponsors />
         </FadeInSection>
+        <FadeInSection id="merch" bgColor="bg-[#3C0FD5]  min-h-screen">
+          {/* <Sponsors /> */}
+          Merch
+        </FadeInSection>
         <FadeInSection
           id="footer"
           bgColor="bg-[#000000]  h-fit ipadpro:min-h-screen"
