@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
 import Loader from "./loading";
+import Merch from "~/components/Merch/Merch";
 
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
@@ -119,8 +120,7 @@ const HomePage = () => {
           <Sponsors />
         </FadeInSection>
         <FadeInSection id="merch" bgColor="bg-[#3C0FD5]  min-h-screen">
-          {/* <Sponsors /> */}
-          Merch
+          <Merch />
         </FadeInSection>
         <FadeInSection
           id="footer"
