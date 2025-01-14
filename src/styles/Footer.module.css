@@ -244,3 +244,19 @@
   
 }
 
+.socialCont .circleTop{
+  border: 1px solid #ffffff;
+  transform: translate(2%,-2%);
+  scale:1.2;
+}
+
+.socialCont .circleBottom{
+  transform: translate(0%,0%);
+  transition: ease 500ms;
+  border:1px solid #ffffff;
+  scale:1.2;
+}
+.socialCont:hover .circleBottom{
+  transform: translate(-12%,12%);
+  transition: ease 500ms;
+}
