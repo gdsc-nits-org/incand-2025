@@ -5,13 +5,13 @@ const FooterButton = () => {
   return (
     <div className={styles.container}>
       <a
-        href="https://drive.google.com/file/d/124qTMYiIeShafTMsLaNjNgE2KwmJT3Pc/view?usp=drive_link"
+        href="https://forms.gle/AFs18jQPgZCfEWKf8"
         target="_blank"
         rel="noreferrer"
         className={styles.button}
       >
         <div className={styles.button__content}>
-          <span className={`${styles.button__text} font-neue-haas-grotesk`}>
+          <span className={`${styles.button__text} font-neue-haas-grotesk !text-[2vh]`}>
             GET IT NOW
           </span>
 
