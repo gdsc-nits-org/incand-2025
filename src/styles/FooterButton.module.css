@@ -6,7 +6,7 @@
     margin-inline: 1.5rem;
     display: grid;
     place-items: center;
-    background: Black;
+    background: transparent;
     overflow: hidden;
 }
  
