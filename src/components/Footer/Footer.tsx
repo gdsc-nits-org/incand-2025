@@ -65,31 +65,64 @@ const Footer: React.FC = () => {
             CONTACT US
           </h3>
           <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:translate-x-10 lg:scale-125 lg:gap-1 lg:space-x-8">
-            <a href="https://www.instagram.com/incandescence_2025/?__d=11"
-              target="_blank" className={`${styles.socialCont} relative flex flex-row justify-end items-start`}>
-              <div className={`${styles.circleBottom} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] rounded-full `}></div>
-              <div className={`${styles.circleTop} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] z-2 bg-black rounded-full`}></div>
+            <a
+              href="https://www.instagram.com/incandescence_2025/?__d=11"
+              target="_blank"
+              className={`${styles.socialCont} relative flex flex-row items-start justify-end`}
+            >
+              <div
+                className={`${styles.circleBottom} absolute right-0 top-0 min-h-[2rem] min-w-[2rem] rounded-full`}
+              ></div>
+              <div
+                className={`${styles.circleTop} z-2 absolute right-0 top-0 min-h-[2rem] min-w-[2rem] rounded-full bg-black`}
+              ></div>
               <FaInstagram
                 className={"block"}
-                style={{ width: "23px", height: "23px", transform: "translate(-4px, 4px)" }}
+                style={{
+                  width: "23px",
+                  height: "23px",
+                  transform: "translate(-4px, 4px)",
+                }}
               />
             </a>
-            <a href="https://www.facebook.com/incandescence.nits"
-              target="_blank" className={`${styles.socialCont} relative flex flex-row justify-end items-start`}>
-              <div className={`${styles.circleBottom} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] rounded-full `}></div>
-              <div className={`${styles.circleTop} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] z-2 bg-black rounded-full`}></div>
+            <a
+              href="https://www.facebook.com/incandescence.nits"
+              target="_blank"
+              className={`${styles.socialCont} relative flex flex-row items-start justify-end`}
+            >
+              <div
+                className={`${styles.circleBottom} absolute right-0 top-0 min-h-[2rem] min-w-[2rem] rounded-full`}
+              ></div>
+              <div
+                className={`${styles.circleTop} z-2 absolute right-0 top-0 min-h-[2rem] min-w-[2rem] rounded-full bg-black`}
+              ></div>
               <FaFacebook
                 className={"block"}
-                style={{ width: "23px", height: "23px", transform: "translate(-4px, 4px)" }}
+                style={{
+                  width: "23px",
+                  height: "23px",
+                  transform: "translate(-4px, 4px)",
+                }}
               />
             </a>
-            <a href="https://www.linkedin.com/company/incandescence23/?originalSubdomain=in"
-              target="_blank" className={`${styles.socialCont} relative flex flex-row justify-end items-start`}>
-              <div className={`${styles.circleBottom} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] rounded-full `}></div>
-              <div className={`${styles.circleTop} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] z-2 bg-black rounded-full`}></div>
+            <a
+              href="https://www.linkedin.com/company/incandescence23/?originalSubdomain=in"
+              target="_blank"
+              className={`${styles.socialCont} relative flex flex-row items-start justify-end`}
+            >
+              <div
+                className={`${styles.circleBottom} absolute right-0 top-0 min-h-[2rem] min-w-[2rem] rounded-full`}
+              ></div>
+              <div
+                className={`${styles.circleTop} z-2 absolute right-0 top-0 min-h-[2rem] min-w-[2rem] rounded-full bg-black`}
+              ></div>
               <FaLinkedin
                 className={"block"}
-                style={{ width: "23px", height: "23px", transform: "translate(-4px, 4px)" }}
+                style={{
+                  width: "23px",
+                  height: "23px",
+                  transform: "translate(-4px, 4px)",
+                }}
               />
             </a>
           </div>

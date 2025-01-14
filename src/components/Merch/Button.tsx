@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./FooterButton.module.css";
+import styles from "~/styles/FooterButton.module.css";
 
 const FooterButton = () => {
   return (
@@ -11,7 +11,9 @@ const FooterButton = () => {
         className={styles.button}
       >
         <div className={styles.button__content}>
-          <span className={`${styles.button__text} font-neue-haas-grotesk !text-[2vh]`}>
+          <span
+            className={`${styles.button__text} font-neue-haas-grotesk !text-[2vh]`}
+          >
             GET IT NOW
           </span>
 
