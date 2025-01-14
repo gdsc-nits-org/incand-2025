@@ -6,6 +6,9 @@ import Image from "next/image";
 import LottieAnimation from "./LottieAnimation";
 import Link from "next/link";
 import FooterButton from "./FooterButton";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const [animWidth, setAnimWidth] = useState(280);
@@ -61,53 +64,32 @@ const Footer: React.FC = () => {
           <h3 className="font-oxygen text-lg font-bold leading-[17.41px] tracking-[0.4em] md:tracking-[0.5em] lg:translate-x-10 lg:text-xl">
             CONTACT US
           </h3>
-          <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:translate-x-8 lg:scale-125 lg:gap-1 lg:space-x-8">
-            <a
-              href="https://www.instagram.com/incandescence_2025/?__d=11"
-              target="_blank"
-              className={
-                "flex items-center justify-center " + styles["social-icon"]
-              }
-            >
-              <Image
-                src="/assets/Footer/instagram.png"
-                alt="Instagram icon"
-                width={50}
-                height={50}
-                className={"block" + styles["social-icon"]}
-                priority
+          <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:translate-x-10 lg:scale-125 lg:gap-1 lg:space-x-8">
+            <a href="https://www.instagram.com/incandescence_2025/?__d=11"
+              target="_blank" className={`${styles.socialCont} relative flex flex-row justify-end items-start`}>
+              <div className={`${styles.circleBottom} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] rounded-full `}></div>
+              <div className={`${styles.circleTop} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] z-2 bg-black rounded-full`}></div>
+              <FaInstagram
+                className={"block"}
+                style={{ width: "23px", height: "23px", transform: "translate(-4px, 4px)" }}
               />
             </a>
-            <a
-              href="https://www.linkedin.com/company/incandescence23/?originalSubdomain=in"
-              target="_blank"
-              className={
-                "flex items-center justify-center " + styles["social-icon"]
-              }
-            >
-              <Image
-                src="/assets/Footer/linkedln.png"
-                alt="Linkedln icon"
-                width={40}
-                height={40}
-                className="block"
-                priority
+            <a href="https://www.facebook.com/incandescence.nits"
+              target="_blank" className={`${styles.socialCont} relative flex flex-row justify-end items-start`}>
+              <div className={`${styles.circleBottom} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] rounded-full `}></div>
+              <div className={`${styles.circleTop} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] z-2 bg-black rounded-full`}></div>
+              <FaFacebook
+                className={"block"}
+                style={{ width: "23px", height: "23px", transform: "translate(-4px, 4px)" }}
               />
             </a>
-            <a
-              href="https://www.facebook.com/incandescence.nits"
-              target="_blank"
-              className={
-                "flex items-center justify-center " + styles["social-icon"]
-              }
-            >
-              <Image
-                src="/assets/Footer/facebook.png"
-                alt="Facebook icon"
-                width={40}
-                height={40}
-                className="block"
-                priority
+            <a href="https://www.linkedin.com/company/incandescence23/?originalSubdomain=in"
+              target="_blank" className={`${styles.socialCont} relative flex flex-row justify-end items-start`}>
+              <div className={`${styles.circleBottom} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] rounded-full `}></div>
+              <div className={`${styles.circleTop} absolute top-0 right-0 min-w-[2rem] min-h-[2rem] z-2 bg-black rounded-full`}></div>
+              <FaLinkedin
+                className={"block"}
+                style={{ width: "23px", height: "23px", transform: "translate(-4px, 4px)" }}
               />
             </a>
           </div>
@@ -115,7 +97,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center">
-        <div className="relative left-0 top-0 flex w-[100vw] flex-col items-center justify-center xl:scale-x-150 xl:scale-y-110">
+        <div className="relative left-0 top-0 mt-5 flex w-[100vw] flex-col items-center justify-center xl:scale-x-150 xl:scale-y-110">
           <div>
             <Image
               src="/assets/Footer/footer-background.png"
