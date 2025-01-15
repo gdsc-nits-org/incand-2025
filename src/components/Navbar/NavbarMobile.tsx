@@ -186,8 +186,8 @@ const NavDetails = [
     title: "Merch",
     link: "/#merch",
     bgColor: "#3C0FD5",
-    bigTextColor: "#250984",
-    smallTextColor: "#2e0ba3",
+    bigTextColor: "#180569",
+    smallTextColor: "#180569",
     desc: "Claim your keepsakes from the maze of memories",
   },
 ];
@@ -203,7 +203,7 @@ const NavTab = (data: NavDetailsProps) => {
             }
           : { backgroundColor: data.bgColor }
       }
-      className={`z-50 flex h-[10vh] w-[80vw] items-center justify-center ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-200 ease-linear`}
+      className={`z-50 flex h-fit pt-2 pb-2 w-[80vw] items-center justify-center ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-200 ease-linear`}
     >
       <div
         className={`flex w-full flex-col ${data.active && ""} transition-all duration-200 ease-linear`}
@@ -224,7 +224,7 @@ const NavTab = (data: NavDetailsProps) => {
             className={`${data.active && "flex-grow"} transition-all duration-200 ease-linear`}
           ></div>
           <p
-            className={`text-[${data.smallTextColor}] text-md font-oxygen font-bold transition-all duration-200 ease-linear`}
+            className={`text-[${data.smallTextColor}] text-md font-oxygen font-bold transition-all duration-200 ease-linear leading-tight`}
             style={{ color: data.smallTextColor }}
           >
             {data.desc}
