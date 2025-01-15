@@ -164,7 +164,7 @@ const NavDetails = [
     bgColor: "#FFA6F6",
     bigTextColor: "#E1067B",
     smallTextColor: "#F12390",
-    desc: "this is the nav details",
+    desc: "Enter the maze where brilliance begins",
   },
   {
     title: "About",
@@ -172,7 +172,7 @@ const NavDetails = [
     bgColor: "#65C8FF",
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
-    desc: "this is the nav details",
+    desc: "Trace the path of creativity and culture",
   },
   {
     title: "Sponsors",
@@ -180,7 +180,7 @@ const NavDetails = [
     bgColor: "#FFF066",
     bigTextColor: "#EBB200",
     smallTextColor: "#E8B002",
-    desc: "this is the nav details",
+    desc: "The guiding beacons in our labyrinth of dreams",
   },
   {
     title: "Merch",
@@ -188,7 +188,7 @@ const NavDetails = [
     bgColor: "#3C0FD5",
     bigTextColor: "#250984",
     smallTextColor: "#2e0ba3",
-    desc: "this is the nav details",
+    desc: "Claim your keepsakes from the maze of memories",
   },
 ];
 

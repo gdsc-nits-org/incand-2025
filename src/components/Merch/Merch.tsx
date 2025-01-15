@@ -9,7 +9,7 @@ import styles from "~/styles/Merch.module.css";
 const StyledSection: React.FC = () => {
   return (
     <div
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden text-white translate-y-4 sm:translate-y-0 xl:pb-9 "
+      className="relative flex min-h-screen w-full translate-y-4 items-center justify-center overflow-hidden text-white sm:translate-y-0 xl:pb-9"
       style={{
         background: `radial-gradient(
           ellipse,
@@ -226,7 +226,7 @@ const StyledSection: React.FC = () => {
           <FooterButton />
         </div>
         <h1 className="group relative z-[45] w-max -rotate-[5.44deg] bg-red-600 px-[0.5vw] font-tusker hover:shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] mobile:left-[25vw] mobile:top-[21vh] mobile:text-[1.5vh] laptop:left-[13vw] laptop:top-[19vw] laptop:text-[2vh]">
-          <GiStarShuriken className="absolute -right-[0.85v] -top-[0.9vh]  group-hover:block" />
+          <GiStarShuriken className="absolute -right-[0.85v] -top-[0.9vh] group-hover:block" />
           GRAB YOUR MERCH NOW!
         </h1>
         <CgArrowTopLeft className="absolute z-[45] -rotate-[18deg] text-[#FAE00D] mobile:left-[62vw] mobile:top-[82vh] mobile:text-[6vh] laptop:left-[25vw] laptop:top-[25vw] laptop:text-[3.2vw]" />
@@ -246,7 +246,9 @@ const StyledSection: React.FC = () => {
         >
           20
         </h1>
-        <h1 className={`${styles["text-shadow"]} absolute z-50 -rotate-[18.25deg] font-DMSerif font-semibold mobile:left-[59vw] mobile:top-[9.5vh] mobile:text-[5vh] laptop:left-[30vw] laptop:top-[8.1vw] laptop:text-[10vh]`}>
+        <h1
+          className={`${styles["text-shadow"]} absolute z-50 -rotate-[18.25deg] font-DMSerif font-semibold mobile:left-[59vw] mobile:top-[9.5vh] mobile:text-[5vh] laptop:left-[30vw] laptop:top-[8.1vw] laptop:text-[10vh]`}
+        >
           25
         </h1>
         <div className="absolute z-[45] -rotate-[65deg] mobile:left-[52vw] mobile:top-[6vh] laptop:left-[30vw] laptop:top-[8.5vw] 4k:left-[31vw] 4k:top-[10vw]">
@@ -275,7 +277,7 @@ const StyledSection: React.FC = () => {
         <img
           src="/assets/Merch/merch.png"
           alt=""
-          className="scale-[0.72] 4k:scale-[1.8] xl:-translate-y-1"
+          className="scale-[0.72] xl:-translate-y-1 4k:scale-[1.8]"
         />
       </div>
     </div>
