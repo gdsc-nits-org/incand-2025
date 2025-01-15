@@ -246,7 +246,9 @@ const StyledSection: React.FC = () => {
         >
           20
         </h1>
-        <h1 className={`${styles["text-shadow"]} absolute z-50 -rotate-[18.25deg] font-DMSerif font-semibold mobile:left-[59vw] mobile:top-[9.5vh] mobile:text-[5vh] laptop:left-[30vw] laptop:top-[8.1vw] laptop:text-[10vh]`}>
+        <h1
+          className={`${styles["text-shadow"]} absolute z-50 -rotate-[18.25deg] font-DMSerif font-semibold mobile:left-[59vw] mobile:top-[9.5vh] mobile:text-[5vh] laptop:left-[30vw] laptop:top-[8.1vw] laptop:text-[10vh]`}
+        >
           25
         </h1>
         <div className="absolute z-[45] -rotate-[65deg] mobile:left-[52vw] mobile:top-[6vh] laptop:left-[30vw] laptop:top-[8.5vw] 4k:left-[31vw] 4k:top-[10vw]">
