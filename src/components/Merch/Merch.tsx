@@ -9,7 +9,7 @@ import styles from "~/styles/Merch.module.css";
 const StyledSection: React.FC = () => {
   return (
     <div
-      className="relative flex min-h-screen w-full translate-y-4 items-center justify-center overflow-hidden text-white sm:translate-y-0 xl:pb-9"
+      className="relative flex min-h-screen w-full translate-y-4 items-center justify-center overflow-hidden text-white sm:translate-y-0 xl:pb-1"
       style={{
         background: `radial-gradient(
           ellipse,
