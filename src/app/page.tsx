@@ -6,8 +6,8 @@ import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
 import Loader from "./loading";
-import Merch from "~/components/Merch/Merch";
 
+const Merch = dynamic(() => import("~/components/Merch/Merch"), { ssr: false });
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
@@ -17,7 +17,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 const FadeInSection = ({
   children,
@@ -72,13 +72,14 @@ const HomePage = () => {
         import("~/components/Sponsors"),
         import("~/components/AboutUs"),
         import("~/components/AboutNits"),
+        import("~/components/Merch/Merch"),
       ]);
     };
 
     void preloadComponents();
     const handleLoad = () => {
       const endTime = performance.now();
-      const loadTime = Math.max(1000, endTime - startTime);
+      const loadTime = Math.max(3000, endTime - startTime);
       setTimeout(() => setIsLoading(false), loadTime);
     };
 
@@ -116,10 +117,10 @@ const HomePage = () => {
         <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
           <AboutNits />
         </FadeInSection>
-        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-screen">
+        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-fit">
           <Sponsors />
         </FadeInSection>
-        <FadeInSection id="merch" bgColor="bg-[#3C0FD5]  min-h-screen">
+        <FadeInSection id="merch" bgColor="bg-[#3C0FD5]  min-h-screen ">
           <Merch />
         </FadeInSection>
         <FadeInSection
@@ -132,5 +133,6 @@ const HomePage = () => {
     </div>
   );
 };
+
 
 export default HomePage;

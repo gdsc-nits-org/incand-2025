@@ -3,7 +3,7 @@ import styles from "~/styles/FooterButton.module.css";
 
 const FooterButton = () => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} scale-110`}>
       <a
         href="https://forms.gle/AFs18jQPgZCfEWKf8"
         target="_blank"

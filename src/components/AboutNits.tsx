@@ -8,7 +8,7 @@ const AboutUs2 = () => {
   const [isWaveHovered, setIsWaveHovered] = useState(false);
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/aboutNITS/MAZE.png')] bg-cover bg-no-repeat mobile:scale-[.85] mobile3:scale-100 md:w-screen lg:w-screen">
+    <div className="scale-110 flex h-screen w-screen items-center justify-center bg-[url('/assets/aboutNITS/MAZE.png')] bg-cover bg-no-repeat mobile:scale-[.85] mobile3:scale-100 md:w-screen lg:w-screen">
       <div className="relative">
         <svg
           className={`absolute left-[-2.4rem] z-[1000] w-[7.1rem] -translate-y-[8.5rem] mobile1:-translate-y-[1.5rem] mobile2:left-[-2.2rem] mobile2:top-[-1.7rem] mobile2:-translate-y-0 sm:left-[-4.4rem] sm:top-[-1.3rem] sm:w-[10rem] lg:left-[-7rem] lg:top-[-2.4rem] lg:w-[15rem] ${styles.circle}`}
@@ -56,23 +56,14 @@ const AboutUs2 = () => {
               />
             </div>
           </div>
-          <div className="flex items-center justify-center align-middle">
+          <div className="flex items-center justify-center align-middle ">
             <div className="absolute top-[8.5rem] flex w-[100%] items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem]">
               <p
-                className={`relative w-[100%] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] lg:text-[38px] lg:leading-[3.8rem] xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
+                className={`scale-[.90] xl:-translate-y-8 mobile3:scale-[.80] relative w-[100%] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] lg:text-[38px] lg:leading-[3.8rem] xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
               >
-                NIT Silchar&apos;s cultural extravaganza,
-                <span
-                  className={`inline-block w-[8rem] md:w-[10.2rem] lg:w-[10rem] xl:w-[11rem] ${styles.incandCont}`}
-                >
-                  <span
-                    style={{ letterSpacing: "1.2px" }}
-                    className={`text-[18px] xl:text-[25px] ${styles.incandText}`}
-                  >
-                    INCANDESCENCE
-                  </span>
-                </span>
-                <br /> invites you on a journey into
+               One of the most premiere institutions in the country,
+                <span className={`${styles.incandText}`}>NITS</span>
+                <br /> is not just a place which shelters some of the best engineers of the future, 
                 <Image
                   src="/assets/aboutNITS/catanimation.gif"
                   alt="animated gif"
@@ -81,8 +72,7 @@ const AboutUs2 = () => {
                   height={18}
                   unoptimized
                 />
-                the <br />
-                unknown. Experience a labyrinth of culture, <br />
+               but also one which is known for embracing <br />
                 <Image
                   src="/assets/aboutNITS/musicanimation.gif"
                   alt="animated gif"
@@ -91,7 +81,7 @@ const AboutUs2 = () => {
                   height={18}
                   unoptimized
                 />
-                where brilliance shines.
+                each culture with equal respect and love.
               </p>
               <div className="absolute right-[5.2rem] top-[18.1rem] rotate-[-10deg] lg:right-[6.9rem] lg:top-[14.2rem] xl:right-[5.5rem] xl:top-[11.5rem]">
                 {
