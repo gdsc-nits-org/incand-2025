@@ -7,7 +7,7 @@ import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
 import Loader from "./loading";
 
-const Merch = dynamic(() => import ( "~/components/Merch/Merch"), { ssr: false });
+const Merch = dynamic(() => import("~/components/Merch/Merch"), { ssr: false });
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
@@ -17,7 +17,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 const FadeInSection = ({
   children,
@@ -72,14 +72,14 @@ const HomePage = () => {
         import("~/components/Sponsors"),
         import("~/components/AboutUs"),
         import("~/components/AboutNits"),
-        import("~/components/Merch/Merch")
+        import("~/components/Merch/Merch"),
       ]);
     };
 
     void preloadComponents();
     const handleLoad = () => {
       const endTime = performance.now();
-      const loadTime = Math.max(1000, endTime - startTime);
+      const loadTime = Math.max(3000, endTime - startTime);
       setTimeout(() => setIsLoading(false), loadTime);
     };
 
@@ -133,5 +133,6 @@ const HomePage = () => {
     </div>
   );
 };
+
 
 export default HomePage;
