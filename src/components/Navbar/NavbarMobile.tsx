@@ -203,7 +203,7 @@ const NavTab = (data: NavDetailsProps) => {
             }
           : { backgroundColor: data.bgColor }
       }
-      className={`z-50 flex h-fit pt-2 pb-2 w-[80vw] items-center justify-center ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-200 ease-linear`}
+      className={`z-50 flex h-fit w-[80vw] items-center justify-center pb-2 pt-2 ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-200 ease-linear`}
     >
       <div
         className={`flex w-full flex-col ${data.active && ""} transition-all duration-200 ease-linear`}
@@ -224,7 +224,7 @@ const NavTab = (data: NavDetailsProps) => {
             className={`${data.active && "flex-grow"} transition-all duration-200 ease-linear`}
           ></div>
           <p
-            className={`text-[${data.smallTextColor}] text-md font-oxygen font-bold transition-all duration-200 ease-linear leading-tight`}
+            className={`text-[${data.smallTextColor}] text-md font-oxygen font-bold leading-tight transition-all duration-200 ease-linear`}
             style={{ color: data.smallTextColor }}
           >
             {data.desc}
