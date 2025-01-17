@@ -12,6 +12,7 @@ const EnticingButton = () => {
             className="z-1 absolute -translate-x-[2rem] object-cover"
             height={250}
             width={200}
+            unoptimized
           />
           <span className={`${styles.button__text} z-2 font-tusker`}>
             CLICK ME
