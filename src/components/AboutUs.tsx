@@ -1,16 +1,8 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "~/styles/AboutUs.module.css";
-import HiddenQuest from "./HiddenQuest/HiddenQuestState";
 
-interface PopupProps {
-  isVisible: boolean;
-  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
+const AboutUs =  () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat mobile:scale-[.85] mobile3:scale-100 md:w-screen lg:w-screen">
       <div className="relative">
@@ -95,12 +87,6 @@ const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                   height={18}
                   unoptimized
                 />
-                <span className="absolute right-[10rem] translate-y-4 mobile1:right-[1.2rem] mobile1:translate-y-2 mobile2:right-[1.5rem] sm:right-[5rem] sm:translate-y-0 md:right-[7rem] lg:right-[8rem] xl:right-[10rem]">
-                  <HiddenQuest
-                    isVisible={isVisible}
-                    setIsVisible={setIsVisible}
-                  />
-                </span>
                 the <br />
                 unknown. Experience a labyrinth of culture, <br />
                 <Image

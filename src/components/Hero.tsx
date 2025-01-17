@@ -3,8 +3,14 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "~/styles/Hero.module.css";
+import HiddenQuest from "./HiddenQuest/HiddenQuestState";
 
-const Hero = () => {
+interface PopupProps {
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
   const [scale, setScale] = useState(1);
   const [isScaled, setIsScaled] = useState(false);
   const [isCHovered, setIsCHovered] = useState(false);
@@ -298,10 +304,10 @@ const Hero = () => {
               style={
                 isCHovered
                   ? {
-                      fontFamily: "Tusker Grotes",
-                      animation: "none",
-                      scale: "0.8",
-                    }
+                    fontFamily: "Tusker Grotes",
+                    animation: "none",
+                    scale: "0.8",
+                  }
                   : { fontFamily: "Ahsing" }
               }
             >
@@ -348,10 +354,10 @@ const Hero = () => {
               style={
                 isCHovered
                   ? {
-                      fontFamily: "Tusker Grotes",
-                      animation: "none",
-                      scale: "0.8",
-                    }
+                    fontFamily: "Tusker Grotes",
+                    animation: "none",
+                    scale: "0.8",
+                  }
                   : { fontFamily: "Ahsing" }
               }
             >
@@ -367,11 +373,11 @@ const Hero = () => {
               style={
                 isMHovered
                   ? {
-                      fontFamily: "Tusker Grotes",
-                      animation: "none",
-                      scale: "0.8",
-                      transform: "translateY(-3.947vw)",
-                    }
+                    fontFamily: "Tusker Grotes",
+                    animation: "none",
+                    scale: "0.8",
+                    transform: "translateY(-3.947vw)",
+                  }
                   : { fontFamily: "Ahsing" }
               }
             >
@@ -418,11 +424,11 @@ const Hero = () => {
                 style={
                   isMHovered
                     ? {
-                        fontFamily: "Tusker Grotes",
-                        animation: "none",
-                        scale: "0.8",
-                        transform: "translateY(-3.947vw)",
-                      }
+                      fontFamily: "Tusker Grotes",
+                      animation: "none",
+                      scale: "0.8",
+                      transform: "translateY(-3.947vw)",
+                    }
                     : { fontFamily: "Ahsing" }
                 }
               >
@@ -1648,6 +1654,12 @@ const Hero = () => {
 
           {/* Card 8 */}
         </div>
+      </div>
+      <div className="relative flex h-[100vh] w-[100vw] justify-center items-end scale-105 xl:items-end xl:justify-end xl:left-[16rem] xl:top-[2rem] xl:scale-90">
+        <HiddenQuest
+          isVisible={isVisible}
+          setIsVisible={setIsVisible}
+        />
       </div>
     </div>
   );
