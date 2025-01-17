@@ -3,8 +3,14 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "~/styles/Hero.module.css";
+import HiddenQuest from "./HiddenQuest/HiddenQuestState";
 
-const Hero = () => {
+interface PopupProps {
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
   const [scale, setScale] = useState(1);
   const [isScaled, setIsScaled] = useState(false);
   const [isCHovered, setIsCHovered] = useState(false);
@@ -1648,6 +1654,9 @@ const Hero = () => {
 
           {/* Card 8 */}
         </div>
+      </div>
+      <div className="relative flex h-[100vh] w-[100vw] scale-105 items-end justify-center xl:left-[16rem] xl:top-[2rem] xl:scale-90 xl:items-end xl:justify-end">
+        <HiddenQuest isVisible={isVisible} setIsVisible={setIsVisible} />
       </div>
     </div>
   );
