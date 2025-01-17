@@ -14,7 +14,9 @@
     position: relative;
     transition: transform .4s;
     transform: scale(0.75);
+   
  }
+
  
  .button__content{
        position: relative;
