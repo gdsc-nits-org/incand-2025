@@ -9,7 +9,7 @@ const EnticingButton = () => {
           <Image
             src="/assets/HiddenQuest&Button/enticingbutton.gif"
             alt="Enticing Button"
-            className="z-1 absolute object-cover -translate-x-[2rem]"
+            className="z-1 absolute -translate-x-[2rem] object-cover"
             height={250}
             width={200}
           />
