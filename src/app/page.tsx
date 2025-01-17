@@ -109,10 +109,10 @@ const HomePage = () => {
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
-          <Hero />
+          <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
         </FadeInSection>
         <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
-          <AboutUs isVisible={isVisible} setIsVisible={setIsVisible} />
+          <AboutUs />
         </FadeInSection>
         <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
           <AboutNits />
@@ -133,6 +133,5 @@ const HomePage = () => {
     </div>
   );
 };
-
 
 export default HomePage;

@@ -5,7 +5,7 @@ const FooterButton = () => {
   return (
     <div className={`${styles.container} scale-[1.2] mobile3:scale-100`}>
       <a
-        href="https://drive.google.com/file/d/124qTMYiIeShafTMsLaNjNgE2KwmJT3Pc/view?usp=drive_link"
+        href="https://drive.google.com/file/d/1exqdHIuQ4lG6tFmHhySKvvUe5bsTQj-5/view?usp=sharing"
         target="_blank"
         rel="noreferrer"
         className={styles.button}

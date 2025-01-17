@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
           </h3>
           <div className="mt-4 flex items-center justify-center gap-4 space-x-4 md:mt-5 md:gap-2 md:space-x-6 lg:mt-6 lg:translate-x-10 lg:scale-125 lg:gap-1 lg:space-x-8">
             <a
-              href="https://www.instagram.com/incandescence_2025/?__d=11"
+              href="https://www.instagram.com/incandescence_nits/"
               target="_blank"
               className={`${styles.socialCont} relative flex flex-row items-start justify-end`}
             >
