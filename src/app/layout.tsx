@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>{children}</body>
-      <OpenReplayNoSSR />
+      {process.env.NODE_ENV === "production" && <OpenReplayNoSSR />}
     </html>
   );
 }
