@@ -9,6 +9,7 @@ const data = {
   eventDate: "19.02",
   eventPhoto: "/assets/events/event-pic.png",
 };
+export const runtime = "edge";
 
 export default function Page({ params }: { params: { id: string } }) {
   const id = +params.id;
