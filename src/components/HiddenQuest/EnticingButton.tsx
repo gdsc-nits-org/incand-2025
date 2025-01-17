@@ -9,8 +9,9 @@ const EnticingButton = () => {
           <Image
             src="/assets/HiddenQuest&Button/enticingbutton.gif"
             alt="Enticing Button"
-            className="z-1 absolute h-full w-full object-cover"
-            fill
+            className="z-1 absolute object-cover -translate-x-[2rem]"
+            height={250}
+            width={200}
           />
           <span className={`${styles.button__text} z-2 font-tusker`}>
             CLICK ME
