@@ -22,7 +22,7 @@ export default function Page({ params }: { params: { id: string } }) {
           <div className="relative h-full w-[30%]">
             <Image src={data.eventPhoto} fill={true} alt="event-pic"></Image>
           </div>
-          <div className="bg-evnet-pattern flex h-full max-w-[70%] flex-grow flex-col gap-10 bg-white bg-cover bg-center p-20">
+          <div className="flex h-full max-w-[70%] flex-grow flex-col gap-10 bg-white bg-evnet-pattern bg-cover bg-center p-20">
             <h1
               className="flex h-20 w-full items-center justify-between px-4 text-8xl uppercase"
               style={{ color: textColors[(id - 1) % 6] }}
