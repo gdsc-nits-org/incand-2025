@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "prepare": "husky install"
+    "prepare": "[ \"$NODE_ENV\" != \"production\" ] && husky install"
   },
   "dependencies": {
     "@openreplay/tracker": "^15.0.3",
