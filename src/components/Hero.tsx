@@ -304,10 +304,10 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
               style={
                 isCHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
-                    animation: "none",
-                    scale: "0.8",
-                  }
+                      fontFamily: "Tusker Grotes",
+                      animation: "none",
+                      scale: "0.8",
+                    }
                   : { fontFamily: "Ahsing" }
               }
             >
@@ -354,10 +354,10 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
               style={
                 isCHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
-                    animation: "none",
-                    scale: "0.8",
-                  }
+                      fontFamily: "Tusker Grotes",
+                      animation: "none",
+                      scale: "0.8",
+                    }
                   : { fontFamily: "Ahsing" }
               }
             >
@@ -373,11 +373,11 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
               style={
                 isMHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
-                    animation: "none",
-                    scale: "0.8",
-                    transform: "translateY(-3.947vw)",
-                  }
+                      fontFamily: "Tusker Grotes",
+                      animation: "none",
+                      scale: "0.8",
+                      transform: "translateY(-3.947vw)",
+                    }
                   : { fontFamily: "Ahsing" }
               }
             >
@@ -424,11 +424,11 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                 style={
                   isMHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
-                      animation: "none",
-                      scale: "0.8",
-                      transform: "translateY(-3.947vw)",
-                    }
+                        fontFamily: "Tusker Grotes",
+                        animation: "none",
+                        scale: "0.8",
+                        transform: "translateY(-3.947vw)",
+                      }
                     : { fontFamily: "Ahsing" }
                 }
               >
@@ -1655,11 +1655,8 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           {/* Card 8 */}
         </div>
       </div>
-      <div className="relative flex h-[100vh] w-[100vw] justify-center items-end scale-105 xl:items-end xl:justify-end xl:left-[16rem] xl:top-[2rem] xl:scale-90">
-        <HiddenQuest
-          isVisible={isVisible}
-          setIsVisible={setIsVisible}
-        />
+      <div className="relative flex h-[100vh] w-[100vw] scale-105 items-end justify-center xl:left-[16rem] xl:top-[2rem] xl:scale-90 xl:items-end xl:justify-end">
+        <HiddenQuest isVisible={isVisible} setIsVisible={setIsVisible} />
       </div>
     </div>
   );

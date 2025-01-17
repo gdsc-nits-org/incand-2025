@@ -7,14 +7,12 @@ const EnticingButton = () => {
       <div className={styles.button}>
         <div className={styles.button__content}>
           <Image
-          src = "/assets/HiddenQuest&Button/enticingbutton.gif"
-          alt="Enticing Button"
-          className="absolute z-1 h-full w-full object-cover"
-          fill 
+            src="/assets/HiddenQuest&Button/enticingbutton.gif"
+            alt="Enticing Button"
+            className="z-1 absolute h-full w-full object-cover"
+            fill
           />
-          <span
-            className={`${styles.button__text} font-tusker z-2`}
-          >
+          <span className={`${styles.button__text} z-2 font-tusker`}>
             CLICK ME
           </span>
 
