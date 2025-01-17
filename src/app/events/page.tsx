@@ -1,17 +1,15 @@
 import Image from "next/image";
 import Thundermerch from "./Thundermerch";
 import AllEvents from "./EventCard";
+import EventsEffect from "./EventsEffect";
 const Page = () => {
   return (
     <section className="flex h-screen w-screen flex-col bg-[#FFEDFD] pt-20">
       <div className="flex h-[50%] w-full border-t-2 border-black">
         <div className="h-full flex-grow py-4 pl-8 pr-0">
-          <div
-            id="imageContainer"
-            className="h-full w-full rounded-3xl bg-blue-300"
-          ></div>
+          <EventsEffect />
         </div>
-        <div className="flex h-full w-[40%] flex-col gap-6 px-4 py-4 pr-8">
+        <div className="flex h-full w-[42%] flex-col gap-6 px-4 py-4 pr-8">
           <div className="h-[40%] w-full rounded-3xl bg-[#FFDD6A] drop-shadow-[8px_8px_0px_black]">
             <Thundermerch />
           </div>
