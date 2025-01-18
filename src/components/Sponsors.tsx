@@ -96,7 +96,7 @@ const Sponsors: React.FC = () => {
         PREVIOUS SPONSORS
       </h1>
 
-      <div className="relative flex h-[400px] items-center justify-center 4k:h-[1200px]">
+      <div className="relative flex h-[400px] items-center justify-center 4k:h-[1200px] scale-100 xl:scale-100 ipadair:scale-50">
         {sponsors.map((sponsor, index) => {
           const position =
             (index - current + sponsors.length) % sponsors.length;
@@ -155,7 +155,7 @@ const Sponsors: React.FC = () => {
         })}
       </div>
 
-      <div className="mt-8 flex justify-center mobile:translate-y-[7vw] tablet:translate-y-[26vh] ipadpro:translate-y-[35vh] laptop:translate-y-24">
+      <div className="mt-8 flex justify-center mobile:translate-y-[7vw] tablet:translate-y-[26vh] ipadpro:translate-y-[35vh] ipadair:translate-y-[22vh] xl:translate-y-24">
         <button
           onClick={handlePrev}
           className="z-10 mx-2 h-[6vh] w-[6vh] rounded-full bg-black px-[1.9vh] text-[2vh] text-white hover:bg-gray-800"
