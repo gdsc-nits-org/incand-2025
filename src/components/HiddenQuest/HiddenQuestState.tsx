@@ -1,5 +1,6 @@
 "use client";
 import type { Dispatch, SetStateAction } from "react";
+import EnticingButton from "./EnticingButton";
 
 interface HiddenQuestProps {
   isVisible: boolean;
@@ -16,13 +17,9 @@ const HiddenQuest: React.FC<HiddenQuestProps> = ({
 
   return (
     <>
-      <button className="h-[24px] w-[24px] rounded-md" onClick={handleOpen}>
-        <img
-          src="/assets/HiddenQuest&Button/yellowBox.png"
-          className="z-[10000000] scale-50 cursor-pointer"
-          alt="HiddenQuest"
-        />
-      </button>
+      <div onClick={handleOpen}>
+        <EnticingButton />
+      </div>
     </>
   );
 };
