@@ -1,0 +1,78 @@
+[
+    {
+      "userName": "john_doe",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1","N2", "D"]
+    },
+    {
+      "userName": "alice",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "A", "N2", "D"]
+    },
+    {
+      "userName": "bob",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["N1", "C", "A", "N2", "D"]
+    },
+    {
+      "userName": "charlie",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["C", "A", "N2", "D"]
+    },
+    {
+      "userName": "diana",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I","A", "N2", "D"]
+    },
+    {
+      "userName": "emma_w",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1","N2", "D"]
+    },
+    {
+      "userName": "frank",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1", "C", "D"]
+    },
+    {
+      "userName": "george",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1", "C", "A"]
+    },
+    {
+      "userName": "harry",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1", "N2", "D"]
+    },
+    {
+      "userName": "isabella",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "A", "D"]
+    },
+    {
+      "userName": "jack",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1", "C", "A", "N2", "D"]
+    },
+    {
+      "userName": "kate",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1", "C", "A", "N2", "D"]
+    },
+    {
+      "userName": "liam",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "N1", "C", "D"]
+    },
+    {
+      "userName": "mia",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["I", "A", "N2", "D"]
+    },
+    {
+      "userName": "noah",
+      "photo": "/assets/Game/placeholder.png",
+      "lettersHaving": ["A", "N2", "D"]
+    }
+  ]
+  

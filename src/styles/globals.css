@@ -40,6 +40,24 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Rocket Thunder";
+  src: url("/assets/fonts/RocketThunderRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Mochiy Pop P One";
+  src: url("/assets/fonts/MochiyPopPOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 html,body {
   scrollbar-width: none;
 }
