@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import dynamic from "next/dynamic";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const OpenReplayNoSSR = dynamic(
   () => import("~/components/openreplay-tracker"),
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>{children}</body>
       {process.env.NODE_ENV === "production" && <OpenReplayNoSSR />}
+      <GoogleAnalytics gaId="G-54V3WCPLRE" />
     </html>
   );
 }
