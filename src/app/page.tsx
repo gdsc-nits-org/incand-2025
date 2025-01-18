@@ -137,7 +137,7 @@ import NavbarDesktop from "~/components/Navbar/NavbarDesktop";
 //         </FadeInSection>
 //       </main>
 //     </div>
-   
+
 //   );
 // };
 
@@ -146,10 +146,10 @@ import NavbarDesktop from "~/components/Navbar/NavbarDesktop";
 const Homepage = () => {
   return (
     <div>
-      <NavbarDesktop/>
-      <CarpeDiem/>
+      <NavbarDesktop />
+      <CarpeDiem />
     </div>
-  )
-}
+  );
+};
 
 export default Homepage;
