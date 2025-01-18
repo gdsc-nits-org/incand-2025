@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
         {/* Text Section with Lottie Animation */}
         <div
           className={
-            "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0 lg:flex-row  ipadpro:-translate-y-16 xl:-translate-y-0 ipadpro:scale-x-110 xl:scale-x-100"
+            "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0 ipadpro:-translate-y-16 ipadpro:scale-x-110 lg:flex-row xl:-translate-y-0 xl:scale-x-100"
           }
         >
           <Link

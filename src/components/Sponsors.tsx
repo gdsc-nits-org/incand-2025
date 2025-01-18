@@ -96,7 +96,7 @@ const Sponsors: React.FC = () => {
         PREVIOUS SPONSORS
       </h1>
 
-      <div className="relative flex h-[400px] items-center justify-center 4k:h-[1200px] scale-100 xl:scale-100 ipadair:scale-50">
+      <div className="relative flex h-[400px] scale-100 items-center justify-center ipadair:scale-50 xl:scale-100 4k:h-[1200px]">
         {sponsors.map((sponsor, index) => {
           const position =
             (index - current + sponsors.length) % sponsors.length;

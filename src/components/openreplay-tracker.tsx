@@ -6,8 +6,9 @@
 // if anything breaks you know what to blame ^
 
 "use client";
-import { useEffect } from "react";
 import Tracker from "@openreplay/tracker";
+import { useEffect } from "react";
+import short from "short-uuid";
 
 const tracker = new Tracker({
   projectKey: process.env.NEXT_PUBLIC_OPENRELAY_PROJECT_KEY!,
@@ -17,7 +18,9 @@ const tracker = new Tracker({
 const Openreplay = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      tracker.start();
+      tracker.start({
+        userID: short.generate(),
+      });
     }
   }, []);
 

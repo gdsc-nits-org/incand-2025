@@ -59,7 +59,7 @@ const AboutUs2 = () => {
           <div className="flex items-center justify-center align-middle">
             <div className="absolute top-[8.5rem] flex w-[100%] items-center justify-center pl-[1rem] pr-[1rem] sm:top-[9rem] lg:top-[10rem]">
               <p
-                className={`relative w-[100%] scale-[.90] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal mobile3:scale-[.80] sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] lg:text-[38px] lg:leading-[3.8rem] xl:-translate-y-8 ipadpro:-translate-y-20 ipadpro:text-[1rem] xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
+                className={`relative w-[100%] scale-[.90] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal mobile3:scale-[.80] sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] ipadpro:-translate-y-20 ipadpro:text-[1rem] lg:text-[38px] lg:leading-[3.8rem] xl:-translate-y-8 xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
               >
                 One of the most premiere institutions in the country,
                 <span className={`${styles.incandText}`}>NITS</span>
