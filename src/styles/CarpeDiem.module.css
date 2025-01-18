@@ -1,0 +1,31 @@
+.carped{
+    width: 100vw;
+    display: flex;
+    height: 88vh;
+    position: relative;
+    color: white;
+    padding: 10rem 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+@keyframes moveUpAndDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+
+  .cText {
+    text-shadow: 0.5vw 0.5vw 0px #000000;
+    -webkit-text-stroke: 0.3vw #000000;
+    animation: moveUpAndDown 2s ease-in-out infinite;
+    animation-play-state: running;
+    display: inline-block;
+    transition: animation 0.3s ease-in-out; /* Smooth transition to hover animation */
+  }
