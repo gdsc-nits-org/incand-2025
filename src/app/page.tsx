@@ -16,6 +16,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 });
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
+import Team from "~/components/Team/Team";
 
 // export const runtime = "edge";
 
@@ -103,10 +104,11 @@ const HomePage = () => {
   }
 
   return (
-    <div className="overflow-x-hidden bg-black">
-      <main className="container">
+    <div className="overflow-x-hidden bg-white">
+      <main className="container h-[100vh]">
         <Navbar />
-        <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
+        <Team/>
+        {/* <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
           <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
@@ -128,7 +130,7 @@ const HomePage = () => {
           bgColor="bg-[#000000]  h-fit ipadpro:min-h-screen"
         >
           <Footer />
-        </FadeInSection>
+        </FadeInSection> */}
       </main>
     </div>
   );
