@@ -13,7 +13,7 @@ const NavbarMobile = () => {
     merch: "#3C0FD5",
   };
   const [currentLink, setCurrentLink] = useState("");
- 
+
   const [navColor, setNavColor] = useState(navColors.home);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

@@ -11,7 +11,7 @@ const NavbarDesktop = () => {
   const [isPHovered, setIsPHovered] = useState(false);
   const [isUHovered, setIsUHovered] = useState(false);
   const [isWHovered, setIsWHovered] = useState(false);
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     const navbar = document.querySelector("nav")!;
@@ -265,21 +265,23 @@ const NavbarDesktop = () => {
       <div className="mr-5 flex items-center">
         {/* Profile Icon Button */}
         {isClient && (
-  <div
-    className={`relative mb-2 mt-2 flex items-center rounded-lg bg-white shadow-md transition-transform ${
-      isHovered ? "-translate-x-2 -translate-y-2 scale-110" : "scale-100"
-    }`}
-    style={{
-      width: "115px",
-      height: "40px",
-      boxShadow: "4px 4px 0px black",
-    }}
-    onMouseEnter={() => setIsHovered(true)}
-    onMouseLeave={() => setIsHovered(false)}
-  >
-    <Login />
-  </div>
-)}
+          <div
+            className={`relative mb-2 mt-2 flex items-center rounded-lg bg-white shadow-md transition-transform ${
+              isHovered
+                ? "-translate-x-2 -translate-y-2 scale-110"
+                : "scale-100"
+            }`}
+            style={{
+              width: "115px",
+              height: "40px",
+              boxShadow: "4px 4px 0px black",
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <Login />
+          </div>
+        )}
       </div>
     </nav>
   );

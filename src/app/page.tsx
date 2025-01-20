@@ -148,7 +148,7 @@ import NavbarMobile from "~/components/Navbar/NavbarMobile";
 const Homepage = () => {
   return (
     <div>
-      <NavbarDesktop/>
+      <NavbarDesktop />
       <CarpeDiem />
     </div>
   );
