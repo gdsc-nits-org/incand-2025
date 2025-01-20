@@ -3,6 +3,8 @@
 
 import CarpeDiem from "~/components/CarpeDiem/CarpeDiem";
 import NavbarDesktop from "~/components/Navbar/NavbarDesktop";
+import NavbarMobile from "~/components/Navbar/NavbarMobile";
+// import NavbarDesktop from "~/components/Navbar/NavbarDesktop";
 
 // import dynamic from "next/dynamic";
 // import { motion, useAnimation } from "framer-motion";
@@ -146,7 +148,7 @@ import NavbarDesktop from "~/components/Navbar/NavbarDesktop";
 const Homepage = () => {
   return (
     <div>
-      <NavbarDesktop />
+      <NavbarDesktop/>
       <CarpeDiem />
     </div>
   );

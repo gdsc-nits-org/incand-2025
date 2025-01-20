@@ -7,6 +7,18 @@
     padding: 10rem 5rem;
     text-align: center;
     font-size: 1.5rem;
+    
+}
+.carped-ipad{
+  height:92vh;
+  margin-top:12%;
+  width: 100vw;
+  display: flex;
+  position: relative;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  
 }
 @keyframes moveUpAndDown {
     0% {

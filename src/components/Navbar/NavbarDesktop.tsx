@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Login from "../GoogleAuth";
 
 const NavbarDesktop = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -10,10 +11,12 @@ const NavbarDesktop = () => {
   const [isPHovered, setIsPHovered] = useState(false);
   const [isUHovered, setIsUHovered] = useState(false);
   const [isWHovered, setIsWHovered] = useState(false);
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
     const navbar = document.querySelector("nav")!;
     const bgColor = window.getComputedStyle(navbar).backgroundColor;
+    setIsClient(true);
     if (bgColor === "rgb(255, 255, 255)") {
       setIsWhite(true);
     } else {
@@ -261,78 +264,22 @@ const NavbarDesktop = () => {
 
       <div className="mr-5 flex items-center">
         {/* Profile Icon Button */}
-        <button
-          className={`relative mb-2 mt-2 flex items-center rounded-lg bg-white shadow-md transition-transform ${isHovered ? "-translate-x-2 -translate-y-2 scale-110" : "scale-100"}`}
-          style={{
-            width: "115px",
-            height: "40px",
-            boxShadow: "4px 4px 0px black",
-          }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {!isHovered ? (
-            // Default Button Content
-            <>
-              <div
-                className="relative ml-0.5 h-10 w-10 overflow-hidden rounded-l-lg"
-                style={{ backgroundColor: "#FF676B" }}
-              >
-                <Image
-                  src="/assets/NavbarDesktop/incandlogo.png" // Replace with your image path
-                  alt="Profile Icon"
-                  width={13} // Adjust width
-                  height={13} // Adjust height
-                  className="object-cover" // Ensures the image fills the circular container
-                />
-              </div>
-              <span
-                className="ml-2 font-oxygen font-semibold"
-                style={{ color: "#562828" }}
-              >
-                @Jayz
-              </span>
-            </>
-          ) : (
-            // Hovered Button Content
-            <div className="relative h-[40px] w-full">
-              {/* Blue Layer */}
-              <div
-                className="absolute h-full w-full rounded-lg bg-blue-500"
-                style={{
-                  transform: "translate(8px, 8px)",
-                  boxShadow: "2px 2px 0 black", // Proper shadow for bottom effect
-                  zIndex: 1,
-                }}
-              ></div>
-              {/* Yellow Layer */}
-              <div
-                className="absolute h-full w-full rounded-lg bg-yellow-400"
-                style={{
-                  transform: "translate(4px, 4px)",
-                  boxShadow: "0px 2px 0 black", // Proper shadow for bottom effect
-                  zIndex: 2,
-                }}
-              ></div>
-              {/* Red Layer */}
-              <div
-                className="absolute flex h-full w-full items-center justify-center rounded-lg bg-red-400"
-                style={{
-                  transform: "translate(0, 0)", // No offset for the topmost layer
-                  boxShadow: "0 2px 0 black", // Black outline
-                  zIndex: 3,
-                }}
-              >
-                <span
-                  className="font-semibold text-black"
-                  style={{ fontFamily: "'Oxygen', sans-serif" }}
-                >
-                  Sign-Up
-                </span>
-              </div>
-            </div>
-          )}
-        </button>
+        {isClient && (
+  <div
+    className={`relative mb-2 mt-2 flex items-center rounded-lg bg-white shadow-md transition-transform ${
+      isHovered ? "-translate-x-2 -translate-y-2 scale-110" : "scale-100"
+    }`}
+    style={{
+      width: "115px",
+      height: "40px",
+      boxShadow: "4px 4px 0px black",
+    }}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+  >
+    <Login />
+  </div>
+)}
       </div>
     </nav>
   );

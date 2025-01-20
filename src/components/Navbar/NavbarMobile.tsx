@@ -13,11 +13,7 @@ const NavbarMobile = () => {
     merch: "#3C0FD5",
   };
   const [currentLink, setCurrentLink] = useState("");
-  useEffect(() => {
-    const link = window.location.pathname + window.location.hash;
-    setCurrentLink(link);
-    handleScroll();
-  }, [window.location.pathname, window.location.hash]);
+ 
   const [navColor, setNavColor] = useState(navColors.home);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
