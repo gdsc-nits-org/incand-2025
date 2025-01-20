@@ -1,14 +1,29 @@
 .heroText{
-    text-shadow: 0.295vw 0.332vw 0px #E1067B;
-    -webkit-text-stroke: 0.15vw #000000;     
+    text-shadow: 0.495vw 0.432vh 0px #E1067B;
+    -webkit-text-stroke: 0.15vh #000000;     
 }
 
 
 .dashboardText{
-    text-shadow: 0.295vw 0.332vw 0px #E1067B;
-    -webkit-text-stroke: 0.15vw #000000;     
+    text-shadow: 0.895vw 0.832vw 0px #E1067B;
+    -webkit-text-stroke: 0.35vw #000000;     
 }
 
+
+@media (min-width: 1180px) {
+    .heroText{
+        text-shadow: 0.295vw 0.332vw 0px #E1067B;
+        -webkit-text-stroke: 0.15vw #000000;     
+    }
+    
+    
+    .dashboardText{
+        text-shadow: 0.295vw 0.332vw 0px #E1067B;
+        -webkit-text-stroke: 0.15vw #000000;     
+    }
+
+
+}
 
 
 
