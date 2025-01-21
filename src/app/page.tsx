@@ -1,4 +1,6 @@
+// /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+
 import dynamic from "next/dynamic";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -17,7 +19,8 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
-// export const runtime = "edge";
+
+export const runtime = "edge";
 
 const FadeInSection = ({
   children,
@@ -109,10 +112,10 @@ const HomePage = () => {
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
-          <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
+          <Hero isVisible={isVisible} setIsVisible={setIsVisible}/>
         </FadeInSection>
         <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
-          <AboutUs />
+          <AboutUs  />
         </FadeInSection>
         <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
           <AboutNits />
@@ -131,7 +134,10 @@ const HomePage = () => {
         </FadeInSection>
       </main>
     </div>
+
   );
 };
 
 export default HomePage;
+
+
