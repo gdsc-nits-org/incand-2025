@@ -1,7 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import styles from "../../styles/CarpeDiem.module.css";
+import styles from "../../../styles/CarpeDiem.module.css";
 import Image from "next/image";
+
+export const runtime = "edge";
 
 const CarpeDiem = () => {
   const [isTHovered, setIsTHovered] = useState(false);
@@ -14,19 +16,16 @@ const CarpeDiem = () => {
   const [isLap, setIsLap] = useState(false);
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
-    // Set the isClient flag to true to confirm we are in the browser
     setIsClient(true);
 
     const resizeFunc = () => {
       if (typeof window === "undefined") return;
 
       const width = window.innerWidth;
-      setIsPhone(width >= 320 && width <= 768);
-      setIsIpad(width >= 769 && width <= 1024);
+      setIsPhone(width >= 320 && width <= 900);
+      setIsIpad(width >= 901 && width <= 1024);
       setIsLap(width >= 1025);
     };
-
-    // Only add event listeners if we are in the client environment
     resizeFunc();
     window.addEventListener("resize", resizeFunc);
 
@@ -36,7 +35,6 @@ const CarpeDiem = () => {
   }, []);
 
   if (!isClient) {
-    // Render nothing until we confirm we're on the client
     return null;
   }
 
@@ -45,7 +43,7 @@ const CarpeDiem = () => {
       {isLap && (
         <>
           {" "}
-          <div className={styles.carped}>
+          <div className={styles.carped+"min-h-[100vh]"}>
             <Image
               src="/assets/CarpeDiem/background.png"
               fill={true}
@@ -398,7 +396,7 @@ const CarpeDiem = () => {
       )}
       {isPhone && (
         <>
-          <div className="h-screen bg-[#EE79BD]">
+          <div className="h-screen bg-[#EE79BD] min-h-[100vh]">
             <div className="absolute left-[17%] top-[12%] h-[12px] w-[65vw]">
               <Image
                 src="/assets/CarpeDiem/MainBorder.png" // Path to your GIF
@@ -749,7 +747,7 @@ const CarpeDiem = () => {
       )}
       {isIpad && (
         <>
-          <div className={styles["carped-ipad"]}>
+          <div className={styles["carped-ipad"]+"min-h-[100vh]"}>
             <Image
               src="/assets/CarpeDiem/background.png"
               fill={true}

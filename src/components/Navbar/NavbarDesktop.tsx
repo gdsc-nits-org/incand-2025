@@ -272,16 +272,18 @@ const NavbarDesktop = () => {
                 : "scale-100"
             }`}
             style={{
-              width: "115px",
+              width: "125px",
               height: "40px",
               boxShadow: "4px 4px 0px black",
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <Login />
+             <Login />
           </div>
         )}
+        
+       
       </div>
     </nav>
   );
