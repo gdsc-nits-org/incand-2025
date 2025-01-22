@@ -18,12 +18,20 @@
 .social-icon {
   position: relative;
   display: inline-block;
+
   width:2.4rem;
   height: 2.4rem;
   overflow: visible; /* Allow the glowing circle to extend beyond the container */
   transition: transform 0.3s ease;
   z-index: 10;
   pointer-events: auto;
+
+}
+.icons{
+  
+  border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
+  border-radius: 90%;
+ 
 }
 
 .social-icon:hover {
@@ -33,9 +41,10 @@
 .social-icon::before {
   content: "";
   position: absolute;
-  bottom: -1%; /* Adjust to align the circle behind the icon */
-  right:6%;
-  top:-1%;
+  /* Adjust to align the circle behind the icon */
+  bottom:-11% !important;
+  right:13% !important;
+  top:-11% !important;
   width: 35px; /* Set the size of the glowing circle */
   height: 35px;
   border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
@@ -49,9 +58,9 @@
 .social-icon::after{
   content:"";
   position:absolute;
-  bottom: -1%; /* Adjust to align the circle behind the icon */
-  right:9%;
-  top:3%;
+   bottom:-11% !important;/* Adjust to align the circle behind the icon */
+  right:15% !important;
+  top:-11% !important;
   width:39px;
   height:39px;
   border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
@@ -76,32 +85,124 @@
 
 /* Media query for screens with a minimum width of 768px */
 @media only screen and (min-width: 768px ) and (max-width:1240px) {
-  .logo {
-    width: 500px !important;
-    height: 400px !important;
-  }
 
-  .anima {
-    width: 500px !important;
-    height: 400px !important ;
-    /* left: -3% !important; */
-    top:0% !important;
-    /* transform:translateY(-22%) !important; */
+  .social-icon {
+    position: relative;
+    display: inline-block;
+    width:2.4rem;
+    height: 2.4rem;
+    overflow: visible; /* Allow the glowing circle to extend beyond the container */
+    transition: transform 0.3s ease;
+    z-index: 10;
+    pointer-events: auto;
   }
+  
+  .social-icon:hover {
+    transform: 0.3s scale(0); /* Enlarge the icon slightly */
+  }
+  
+  .social-icon::before {
+    content: "";
+    position: absolute;
+    bottom: -1%; /* Adjust to align the circle behind the icon */
+    right:6%;
+    top:-1%;
+    width: 35px; /* Set the size of the glowing circle */
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
+    border-radius: 90%;
+    transform: scale(0); /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth grow effect */
+  }
+  
+  
+  .social-icon::after{
+    content:"";
+    position:absolute;
+    bottom: -1%; /* Adjust to align the circle behind the icon */
+    right:9%;
+    top:3%;
+    width:39px;
+    height:39px;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
+    border-radius: 90%;
+    z-index:-1;
+    transform: scale(0); /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: transform 0.3s ease-out, opacity 0.6s ease-out; /* Smooth grow effect */
+  
+  }
+  .social-icon:hover::after{
+    transform: scale(1); /* Circle grows to full size */
+    opacity: 1; /* Make it visible */
+  }
+  
+  .social-icon:hover::before {
+    transform: scale(1); /* Circle grows to full size */
+    opacity: 1; /* Make it visible */
+  }
+  
 }
 @media only screen and (min-width:1240px) {
-  .logo {
-    width: 1150px !important;
-    height: 600px !important;
+ 
+  .social-icon {
+    position: relative;
+    display: inline-block;
+    width:2.4rem;
+    height: 2.4rem;
+    overflow: visible; /* Allow the glowing circle to extend beyond the container */
+    transition: transform 0.3s ease;
+    z-index: 10;
+    pointer-events: auto;
   }
-
-  .anima {
-    width: 1150px !important;
-    height: 600px !important ;
-    /* left: -3% !important;
-    top:19% !important;
-    transform:translateY(-16%) !important; */
+  
+  .social-icon:hover {
+    transform: 0.3s scale(0); /* Enlarge the icon slightly */
   }
+  
+  .social-icon::before {
+    content: "";
+    position: absolute;
+    bottom: -1%; /* Adjust to align the circle behind the icon */
+    right:6%;
+    top:-1%;
+    width: 35px; /* Set the size of the glowing circle */
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
+    border-radius: 90%;
+    transform: scale(0); /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth grow effect */
+  }
+  
+  
+  .social-icon::after{
+    content:"";
+    position:absolute;
+    bottom: -1%; /* Adjust to align the circle behind the icon */
+    right:9%;
+    top:3%;
+    width:39px;
+    height:39px;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* White glowing outline */
+    border-radius: 90%;
+    z-index:-1;
+    transform: scale(0); /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: transform 0.3s ease-out, opacity 0.6s ease-out; /* Smooth grow effect */
+  
+  }
+  .social-icon:hover::after{
+    transform: scale(1); /* Circle grows to full size */
+    opacity: 1; /* Make it visible */
+  }
+  
+  .social-icon:hover::before {
+    transform: scale(1); /* Circle grows to full size */
+    opacity: 1; /* Make it visible */
+  }
+  
   
 }
 
@@ -143,3 +244,19 @@
   
 }
 
+.socialCont .circleTop{
+  border: 1px solid #ffffff;
+  transform: translate(2%,-2%);
+  scale:1.2;
+}
+
+.socialCont .circleBottom{
+  transform: translate(0%,0%);
+  transition: ease 500ms;
+  border:1px solid #ffffff;
+  scale:1.2;
+}
+.socialCont:hover .circleBottom{
+  transform: translate(-12%,12%);
+  transition: ease 500ms;
+}

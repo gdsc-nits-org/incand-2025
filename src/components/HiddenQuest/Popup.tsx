@@ -41,10 +41,20 @@ export const HiddenQuestDesktop: React.FC<PopupProps> = ({
     <>
       {isVisible && (
         <div
-          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-sm" : ""}`}
+          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-md" : ""}`}
+          onClick={() => {
+            setAnimation("animate-screw");
+            setTimeout(() => {
+              setIsVisible(false);
+              setAnimation("animate-grow");
+            }, 400);
+          }}
         >
           {isVisible && (
-            <div className="fixed box-border h-[50vh] w-[80vw] bg-green-600 shadow-gray-600">
+            <div
+              className="fixed box-border h-[50vh] w-[80vw] bg-green-600 shadow-gray-600"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="absolute -left-2 -top-2 z-[4] h-4 w-4 border-2 border-black bg-yellow-500"></div>
 
               <div className="absolute -right-2 -top-2 z-[2] h-4 w-4 border-2 border-black bg-yellow-500"></div>
@@ -206,10 +216,20 @@ export const HiddenQuestMobile: React.FC<PopupProps> = ({
     <>
       {isVisible && (
         <div
-          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-sm" : ""}`}
+          className={`fixed inset-0 z-[10004] flex items-center ${animation} justify-center ${isVisible ? "bg-black/15 backdrop-blur-md" : ""}`}
+          onClick={() => {
+            setAnimation("animate-screw");
+            setTimeout(() => {
+              setIsVisible(false);
+              setAnimation("animate-grow");
+            }, 400);
+          }}
         >
           {isVisible && (
-            <div className="scrollbar-hide fixed left-0 top-0 z-[10004] box-border h-screen w-full translate-y-4 scale-75 overflow-y-auto p-4">
+            <div
+              className="scrollbar-hide fixed left-0 top-0 z-[10004] box-border h-screen w-full translate-y-4 scale-[.85] overflow-y-auto p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* <img  src="/assets/HiddenQuest&Button/Rectangle.png"className="absolute -left-4 -top-4 z-[4] h-14 w-14 "/> */}
               <div className="absolute right-5 top-2 z-[4] h-4 w-4 border-2 border-black bg-yellow-500 xs:right-8"></div>
               <div className="absolute left-2 top-2 z-[4] h-4 w-4 border-2 border-black bg-yellow-500"></div>
@@ -228,7 +248,7 @@ export const HiddenQuestMobile: React.FC<PopupProps> = ({
                   <div className="fixed right-8 z-[3] box-border h-[20%] w-[15%]">
                     <img
                       src="/assets/HiddenQuest&Button/newCross.gif"
-                      className="ml-4 mt-4 h-[60%] w-[100%] cursor-pointer"
+                      className="ml-4 mt-4 h-[40%] w-[100%] -translate-x-5 cursor-pointer"
                       onClick={() => {
                         setAnimation("animate-screw");
                         setTimeout(() => {

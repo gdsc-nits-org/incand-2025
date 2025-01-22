@@ -16,23 +16,25 @@ export default {
         tusker: ["Tusker Grotesk"],
         oxygen: ["Oxygen", "sans-serif"],
         tusker2: ["Tusker", "sans-serif"],
+        DMSerif: ["DM Serif Display", "serif"],
       },
       boxShadow: {
         "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",
         "text-shadow": "2.89px 2.89px 0px 0px #FFFFFF",
       },
       screens: {
-        xs: "450px", // Custom min-width for extra small screens
-        xL: "1350px", // Custom min-width for extra large screens
-        // "md-height": { 'raw': '(min-height: 600px)' }, // Custom min-height
+        xs: "450px",
+        xL: "1350px",
         "4k": "3840px",
         laptop: "1200px",
-        mobile: "340px",
+        mobile: "300px",
+        mobile1: "375px",
         mobile2: "400px",
         mobile3: "500px",
         tablet: "750px",
         tablet2: "900px",
         ipadpro: "1000px",
+        ipadair: "1180px",
       },
       keyframes: {
         grow: {

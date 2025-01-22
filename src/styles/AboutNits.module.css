@@ -92,17 +92,22 @@ top:-60%;
 transition-duration: 500ms;
 }
 .incandText{
+
 position: absolute;
 top:40%;
 left:0;
+
 color: #FFD23C; /* Equivalent to the fill attribute */
 text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Mimics the stroke */
 font-family: "Tusker", sans-serif; /* Ensure this font is imported or replace it with an available font */
 font-weight: 600; /* Matches font-weight="600" */
-letter-spacing: 1.2px; /* Matches letterSpacing */
+
+transition-duration: 500ms;
+
+letter-spacing: 1px; /* Matches letterSpacing */
 line-height: 1; /* Adjust as needed for vertical alignment */
 text-align: center; /* Centers text if in a block or container */
-transition-duration: 500ms;
+
 }
 
 .incandLogo{

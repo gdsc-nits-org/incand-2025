@@ -1,12 +1,23 @@
 .scrollBarOrange {
   width: var(--progress);
+  /* width: calc(var(--progress) + 5rem); */
 }
 .scrollBar {
+  position: relative;
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
   cursor: pointer;
   width: 100%;
+  z-index: 1000;
+}
+@supports (-moz-appearance: none) {
+  .scrollBar {
+    left: 2rem;
+  }
+  .container {
+    left: 78%;
+  }
 }
 .scrollBar::-webkit-slider-thumb {
   position: relative;
@@ -38,18 +49,22 @@
 .scrollBarSponsors::-webkit-slider-thumb {
   background-color: #b7dc68;
 }
+.scrollBarMerch::-webkit-slider-thumb {
+  background-color: #3c0fd5;
+}
 
 .scrollBarFooter::-webkit-slider-thumb {
   background-color: black;
 }
 
-/* .scrollBar::-moz-range-thumb {
-  position: relative;
+.scrollBar::-moz-range-thumb {
+  position: absolute;
   z-index: 50;
   -webkit-appearance: none;
   appearance: none;
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
+  -webkit-transform: translateY(0.5rem) translateX(-2rem) rotateZ(-90deg);
   border: 4px solid #ff676b;
   border-radius: 50%;
   cursor: pointer;
@@ -61,14 +76,19 @@
 .scrollBarHome::-moz-range-thumb {
   background-color: #9747ff;
 }
-.scrollBarAbout::-moz-range-thumb {
+.scrollBarAbout1::-moz-range-thumb {
   background-color: #e23692;
 }
-
-.scrollBarSponsors::-moz-range-thumb {
+.scrollBarAbout2::-moz-range-thumb {
   background-color: #00e9f4;
 }
 
+.scrollBarSponsors::-moz-range-thumb {
+  background-color: #b7dc68;
+}
+.scrollBarMerch::-moz-range-thumb {
+  background-color: #3c0fd5;
+}
 .scrollBarFooter::-moz-range-thumb {
   background-color: black;
-} */
+}

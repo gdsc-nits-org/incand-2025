@@ -7,38 +7,38 @@ const sponsors = [
   { id: 1, name: "ASUS", image: "/assets/sponsor/asus.png" },
   { id: 2, name: "AMUL", image: "/assets/sponsor/Amul.png" },
   { id: 3, name: "UNSTOP", image: "/assets/sponsor/unstop.png" },
-  { id: 4, name: "COGG", image: "/assets/sponsor/cogg.png" },
+  { id: 4, name: "BAULI", image: "/assets/sponsor/Bauli.png" },
   { id: 5, name: "LWT", image: "/assets/sponsor/LWT.png" },
-  { id: 6, name: "STOCK EDGE", image: "/assets/sponsor/stockedge.png" },
-  { id: 7, name: "AROMA", image: "/assets/sponsor/Aroma.png" },
-  { id: 8, name: "ASUP", image: "/assets/sponsor/ASUP.png" },
+  { id: 6, name: "CAMPUS TIMES", image: "/assets/sponsor/campustimes.png" },
+  { id: 7, name: "CLOVIA", image: "/assets/sponsor/cloviaaa.jpg" },
+  { id: 8, name: "COCA-COLA", image: "/assets/sponsor/coca-cola.png" },
   {
     id: 9,
     name: "THE BISHAL",
     image: "/assets/sponsor/bishalhotel.png",
   },
-  { id: 10, name: "C4", image: "/assets/sponsor/C4logo.png" },
+  { id: 10, name: "ED TIMES", image: "/assets/sponsor/ed.jpg" },
   {
     id: 11,
-    name: "THE CATERING ROOM",
-    image: "/assets/sponsor/catering.png",
+    name: "GPLUS",
+    image: "/assets/sponsor/Gplus.png",
   },
   {
     id: 12,
-    name: "FIRES AND FLAVOURS",
-    image: "/assets/sponsor/firesandflavours.png",
+    name: "THE SOULED STORE",
+    image: "/assets/sponsor/souled.png",
   },
   {
     id: 13,
-    name: "JAI HIND CAFE",
-    image: "/assets/sponsor/jaihind.png",
+    name: "WILEY",
+    image: "/assets/sponsor/wiley.png",
   },
-  { id: 14, name: "JOY DAZZ", image: "/assets/sponsor/joydazz.png" },
-  { id: 15, name: "KARIM'S", image: "/assets/sponsor/Karims.png" },
+  { id: 14, name: "WINKIES", image: "/assets/sponsor/winkies.png" },
+  { id: 15, name: "ZEBRONICS", image: "/assets/sponsor/zebronics.png" },
   {
     id: 16,
-    name: "KURMI ENTERPRISE",
-    image: "/assets/sponsor/kurmi.png",
+    name: "UNIBIC",
+    image: "/assets/sponsor/unibic.png",
   },
   {
     id: 17,
@@ -52,13 +52,23 @@ const sponsors = [
   },
   {
     id: 19,
-    name: "MOMO MAGIC CAFE",
-    image: "/assets/sponsor/MomoMagic.png",
+    name: "MUSIC TELEVISION",
+    image: "/assets/sponsor/mtv.png",
   },
   {
     id: 20,
-    name: "SKY LIGHT RESTAURANT",
-    image: "/assets/sponsor/Skylight.png",
+    name: "SBI",
+    image: "/assets/sponsor/sbi.jpg",
+  },
+  {
+    id: 21,
+    name: "BORAIL VIEW",
+    image: "/assets/sponsor/borail.png",
+  },
+  {
+    id: 22,
+    name: "THE CAMPUS MEDIA",
+    image: "/assets/sponsor/campusmedia.jpg",
   },
 ];
 
@@ -74,7 +84,7 @@ const Sponsors: React.FC = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden bg-[#D6FE6B] pb-10 text-center">
+    <div className="relative h-screen overflow-hidden bg-[#D6FE6B] text-center xl:pb-10">
       <img
         src="/assets/sponsor/sponsors.png"
         alt=""

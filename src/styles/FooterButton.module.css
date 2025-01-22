@@ -6,7 +6,7 @@
     margin-inline: 1.5rem;
     display: grid;
     place-items: center;
-    background: Black;
+    background: transparent;
     overflow: hidden;
 }
  
@@ -73,6 +73,7 @@
        position: absolute;
        opacity: 0;
        transition: transform .5s, opacity .5s;
+       background-color: transparent;
        
     }
     .button__star_1{

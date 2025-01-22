@@ -3,8 +3,14 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "~/styles/Hero.module.css";
+import HiddenQuest from "./HiddenQuest/HiddenQuestState";
 
-const Hero = () => {
+interface PopupProps {
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
   const [scale, setScale] = useState(1);
   const [isScaled, setIsScaled] = useState(false);
   const [isCHovered, setIsCHovered] = useState(false);
@@ -58,6 +64,7 @@ const Hero = () => {
               layout="responsive"
               width={100}
               height={100}
+              unoptimized
             />
           </div>
           <div className="mt-[1.053vw] flex items-center justify-center gap-[0.755vw] md:gap-[0.526vw]">
@@ -208,6 +215,7 @@ const Hero = () => {
               layout="responsive"
               width={100}
               height={100}
+              unoptimized
             />
           </div>
         </div>
@@ -262,6 +270,7 @@ const Hero = () => {
                     layout="responsive"
                     width={100}
                     height={100}
+                    unoptimized
                   />
                 </div>
                 <div className="relative h-[4.167vw] w-[4.167vw] md:h-[2.368vw] md:w-[2.368vw]">
@@ -272,6 +281,7 @@ const Hero = () => {
                     layout="responsive"
                     width={100}
                     height={100}
+                    unoptimized
                   />
                 </div>
               </div>
@@ -1644,6 +1654,9 @@ const Hero = () => {
 
           {/* Card 8 */}
         </div>
+      </div>
+      <div className="absolute left-[20vw] top-[80%] mt-12 scale-105 mobile2:mt-0 mobile2:scale-110 sm:scale-100 lg:left-[63vw] lg:top-[83%] lg:scale-90">
+        <HiddenQuest isVisible={isVisible} setIsVisible={setIsVisible} />
       </div>
     </div>
   );
