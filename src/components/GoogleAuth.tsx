@@ -1,54 +1,90 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 "use client";
 
 import { useSignInWithGoogle, useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "~/app/utils/firebase";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { env } from "~/env";
 
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
-  const [_user,] = useAuthState(auth);
+  const [_user] = useAuthState(auth);
+  const [userExists, setUserExists] = useState<boolean>(false);
   const router = useRouter();
 
+  interface UserResponse {
+    name: string;
+    email: string;
+    photo: string;
+    id: string;
+    letters: string;
+    level: number;
+  }
+  interface apiResponse {
+    status: number;
+    msg: UserResponse;
+
+  }
+
   useEffect(() => {
-    if (_user) {
-      const isFirstSignIn =
-        _user.metadata.creationTime === _user.metadata.lastSignInTime;
-
-      if (isFirstSignIn) {
-        // Create user in the database on first sign-in
-        const createUser = async () => {
-          try {
-            const payload = {
-              email: _user.email,
-              name: _user.displayName,
-              picture: _user.photoURL,
-            };
-            const token = await _user.getIdToken();
-
-            await axios.post(
-              `${env.NEXT_PUBLIC_API_URL}/api/user/create`,
-              payload,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
-            );
-          } catch (error) {
-            console.error("Error creating user:", error);
+    const checkUserExists = async () => {
+      if (_user) {
+        try {
+          const token = await _user.getIdToken();
+          const userResponse = await axios.get<apiResponse>(
+            `${env.NEXT_PUBLIC_API_URL}/api/user/me`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          if (userResponse.data.status === 404) {
+            setUserExists(false); // User does not exist
+          } else {
+            setUserExists(true); // User exists
           }
-        };
-
-       void createUser();
+        } catch (error) {
+          console.error("Error checking if user exists:", error);
+        }
       }
+    };
+
+    if (_user) {
+    void  checkUserExists();
     }
   }, [_user]);
+
+  // Second useEffect: Create user if they do not exist
+  useEffect(() => {
+    const createUser = async () => {
+      if (_user && !userExists) {
+        try {
+          const token = await _user.getIdToken();
+          await axios.post(
+            `${env.NEXT_PUBLIC_API_URL}/api/user/create`,
+            {},
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          console.log("User created successfully.");
+        } catch (error) {
+          console.error("Error creating user:", error);
+        }
+      }
+    };
+
+    if (_user && !userExists) {
+     void createUser();
+    }
+  }, [_user, userExists]);
+  
 
   if (!_user) {
     return (
