@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useSignInWithGoogle, useAuthState } from "react-firebase-hooks/auth";
@@ -26,7 +25,6 @@ const Login = () => {
   interface apiResponse {
     status: number;
     msg: UserResponse;
-
   }
 
   useEffect(() => {
@@ -40,7 +38,7 @@ const Login = () => {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
-            }
+            },
           );
           if (userResponse.data.status === 404) {
             setUserExists(false); // User does not exist
@@ -54,7 +52,7 @@ const Login = () => {
     };
 
     if (_user) {
-    void  checkUserExists();
+      void checkUserExists();
     }
   }, [_user]);
 
@@ -71,7 +69,7 @@ const Login = () => {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
-            }
+            },
           );
           console.log("User created successfully.");
         } catch (error) {
@@ -81,10 +79,9 @@ const Login = () => {
     };
 
     if (_user && !userExists) {
-     void createUser();
+      void createUser();
     }
   }, [_user, userExists]);
-  
 
   if (!_user) {
     return (
@@ -110,7 +107,7 @@ const Login = () => {
           ></div>
           {/* Red Layer */}
           <div
-            className="absolute flex h-full w-full items-center justify-center rounded-lg bg-red-400 "
+            className="absolute flex h-full w-full items-center justify-center rounded-lg bg-red-400"
             style={{
               transform: "translate(0, 0)",
               boxShadow: "0 2px 0 black",
@@ -149,7 +146,7 @@ const Login = () => {
           )}
         </div>
         <span
-          className="ml-10 font-oxygen font-semibold text-[0.5vw]"
+          className="ml-10 font-oxygen text-[0.5vw] font-semibold"
           style={{
             color: "#562828",
           }}

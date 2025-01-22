@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsClient(true);
-    setIsMobile(window.innerWidth < 768); 
+    setIsMobile(window.innerWidth < 768);
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -24,11 +24,7 @@ const Navbar = () => {
     return null;
   }
 
-  return (
-    <>
-      {isMobile ? <NavbarMobile /> : <NavbarDesktop />}
-    </>
-  );
+  return <>{isMobile ? <NavbarMobile /> : <NavbarDesktop />}</>;
 };
 
 export default Navbar;
