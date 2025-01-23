@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import styles from "~/styles/Gallery.module.css";
+import styles from "./Gallery.module.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,7 +10,9 @@ const PhotoGallery = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [aspectRatios, setAspectRatios] = useState<number[]>([]); // Default aspect ratio 1:1
   const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
-  const stampCardRef = useRef<HTMLDivElement>(null);
+  const stampCardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const masterTimeline = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -31,36 +33,80 @@ const PhotoGallery = () => {
     setAspectRatios(calculatedRatios);
   }, [imgRefs]);
 
-  // useEffect(() => {
-  //   if (stampCardRef.current) {
-  //     // GSAP ScrollTrigger animation
-  //     gsap.to(stampCardRef.current, {
-  //       x: "-100vw", // Move to the left
-  //       y: "-100vh", // Move to the top
-  //       scrollTrigger: {
-  //         trigger: stampCardRef.current, // Element to trigger the animation
-  //         start: "top 0%", // Start when the top of the element hits the center of the viewport
-  //         end: "top -100%", // End when the top of the element hits the top of the viewport
-  //         scrub: true, // Smooth scrolling effect
-  //         markers: true, // Enable markers to debug
-  //         pin:true,
-  //       },
-  //     });
-  //   }
-  // }, []);
-
+  
   const images = [
-    { src: "/assets/Gallery/bg1.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
-    { src: "/assets/Gallery/bg2.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "0.60" },
-    { src: "/assets/Gallery/bg3.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
-    { src: "/assets/Gallery/bg4.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
+    { src: "/bg1.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
+    { src: "/bg2.png", name1: "", name2: "GALLERY", bg: "", scale: "0.60" },
+    { src: "/bg3.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
+    { src: "/bg4.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
   ];
+  
+  const ANIMATION_CONFIG = {
+    duration: 2,
+    stagger: 0.1,
+    finalPosition: { x: "-200vw", y: "-240vh" },
+    ease: "sine.inOut"
+  };
+
+  useEffect(() => {
+    const setupAnimation = () => {
+      // Clear existing animations
+      masterTimeline.current?.clear().kill();
+      ScrollTrigger.getAll().forEach(st => st.kill());
+
+      // Create fresh timeline
+      masterTimeline.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=550%",
+          scrub: 1.5, // Optimal smooth scrubbing
+          pin: true,
+          anticipatePin: 1,
+          markers: true // Remove in production
+        }
+      });
+
+      // Create card animations with position tracking
+      stampCardRefs.current.forEach((card, index) => {
+        if (!card) return;
+
+        // Capture initial positions
+        const initialX = gsap.getProperty(card, "x") as number;
+        const initialY = gsap.getProperty(card, "y") as number;
+
+        // Create animation with relative movement
+        masterTimeline.current?.to(card, {
+          x: `+=${ANIMATION_CONFIG.finalPosition.x}`,
+          y: `+=${ANIMATION_CONFIG.finalPosition.y}`,
+          ease: ANIMATION_CONFIG.ease,
+          duration: ANIMATION_CONFIG.duration
+        }, index * ANIMATION_CONFIG.stagger);
+
+        // Maintain spacing relationship
+        if (index > 0) {
+          const prevCard = stampCardRefs.current[index - 1];
+          gsap.set(card, {
+            x: `+=${index * 50}`,
+            y: `+=${index * 60}`
+          });
+        }
+      });
+    };
+
+    setupAnimation();
+    window.addEventListener('resize', setupAnimation);
+    return () => {
+      window.removeEventListener('resize', setupAnimation);
+      masterTimeline.current?.kill();
+    };
+  }, []);
 
   return (
     <>
-      {images.map((image, index) => (
-        <React.Fragment key={index}>
-          <div className={`h-screen bg-[#EB6459] -inset-y-3 relative overflow-hidden flex justify-center items-center`}
+          <div 
+          ref={containerRef}
+          className={`h-screen bg-[#EB6459] -inset-y-3 relative flex justify-center items-center overflow-hidden`}
           >
             <div
               className={`absolute inset-0 transition-transform duration-1000 ease-out opacity-90 z-0`}
@@ -71,6 +117,8 @@ const PhotoGallery = () => {
               }}
             >
             </div>
+      {images.map((image, index) => (
+        <React.Fragment key={index}>
             <div className="absolute inset-0 flex flex-col justify-center items-center isolate"
             >
               <h1
@@ -94,22 +142,22 @@ const PhotoGallery = () => {
 
             {/* Stamp Section */}
             <div
-              ref={stampCardRef}
-              className={`relative flex justify-center items-center transition-all duration-500 ease-in`}
+              ref={el => { stampCardRefs.current[index] = el; }}
+              className={`absolute flex justify-center items-center transition-all duration-500 ease-in z-50`}
               style={{
-                transform: `scale(${image.scale})`,
+                left: `calc(50% + ${index * 53}%)`,
+                top: `calc(50% + ${index * 60}%)`, 
+                transform: `translate(-50%, -50%) scale(${image.scale || 1})`,
               }}>
               <div
                 className={`relative border-2 border-white w-max h-max ${styles["perforated-border"]}`}
               >
                 <div className="w-max h-max bg-white p-2">
-                  {/* Dynamically resized container */}
                   <div
                     className={`transition-all duration-500 ease-in relative overflow-hidden flex justify-center delay-[1200ms]`}
                     style={{
                       aspectRatio: aspectRatios[index] || 1,
-                      height: isLoaded ? "" : "110vh",
-                      width: isLoaded ? "45vw" : "100vw", // Dynamically adjust width
+                      width: isLoaded ? "45vw" : "100vw",
                       maxWidth: "100%",
                       maxHeight: "100%",
                     }}
@@ -118,23 +166,23 @@ const PhotoGallery = () => {
                       key={index}
                       ref={(el) => {
                         if (el) {
-                          imgRefs.current[index] = el; // Assign only if el is not null
+                          imgRefs.current[index] = el;
                         }
                       }}
                       src={image.src}
                       alt="Gallery"
                       className="absolute w-full h-full object-cover"
-                    />;
+                    />
                     {index === 0 && (
                       <>
                         <img
-                          src="/assets/Gallery/photo.png"
+                          src="/photo.png"
                           alt="Gallery"
                           className={`absolute transition-transform duration-500 ease-in ${isLoaded ? "translate-y-0" : "-translate-y-full"
                             }`}
                         />
                         <img
-                          src="/assets/Gallery/gallery.png"
+                          src="/gallery.png"
                           alt="Gallery"
                           className={`absolute transition-transform duration-500 delay-300 ease-in ${isLoaded ? "translate-y-0" : "-translate-y-full"
                             }`}
@@ -144,9 +192,9 @@ const PhotoGallery = () => {
                 </div>
               </div>
             </div>
-          </div>
         </React.Fragment>
       ))}
+      </div>
     </>
   );
 };
