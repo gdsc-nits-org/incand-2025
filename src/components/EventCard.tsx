@@ -17,11 +17,11 @@ const AllEvents = () => {
       // event.preventDefault();
       scrollContainer.scrollLeft += 2 * event.deltaY;
     };
-
-    scrollContainer.addEventListener("wheel", handleWheel);
+    const bigContainer = document.getElementById("event-page");
+    bigContainer?.addEventListener("wheel", handleWheel);
 
     return () => {
-      scrollContainer.removeEventListener("wheel", handleWheel);
+      bigContainer?.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -30,18 +30,16 @@ const AllEvents = () => {
       ref={scrollContainerRef}
       className={
         styles.scrollBar +
-        " flex h-[50%] w-full items-center justify-around gap-4 overflow-x-scroll scroll-smooth pl-8"
+        " mt-4 flex h-[50%] w-full flex-wrap items-center justify-around gap-2 overflow-x-scroll scroll-smooth px-2 ipadair:mt-0 ipadair:flex-nowrap ipadair:gap-4 ipadair:pl-8 4k:gap-16"
       }
     >
-      {/* <button className="absolute right-4 z-30 h-10 w-10 bg-red-600">
-        NEXT
-      </button> */}
       {data.map((item, key) => (
         <EventCard
           key={key}
           {...item}
           id={key + 1}
           bgColor={colors[key % 6] ?? "#FFC0F9"}
+          className="w-[calc(50%-8px)] md:w-[calc(50%-16px)] ipadpro:w-auto"
         />
       ))}
     </div>
@@ -54,19 +52,24 @@ const EventCard = ({
   eventNo,
   bgColor,
   id,
+  className,
 }: {
   moduleName: string;
   eventName: string;
   eventNo: number;
   bgColor: string;
   id: number;
+  className?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
   return (
     <button
       onClick={() => router.push(`/event/${id}`)}
-      className="relative flex h-[80%] min-w-[15rem] items-end justify-center rounded-3xl"
+      className={
+        className +
+        " relative flex h-[50%] w-[12rem] min-w-[10rem] items-end justify-center rounded-3xl ipadair:h-[80%] ipadair:w-[15rem] ipadair:min-w-[15rem] 4k:min-w-[42rem] 4k:rounded-[3rem]"
+      }
       style={{
         backgroundColor: bgColor,
       }}
@@ -77,30 +80,27 @@ const EventCard = ({
         className={`absolute flex h-full w-full items-center justify-center ${isHovered ? "opacity-100" : "opacity-0"}`}
       >
         <Link
-          className="text-2xl font-[900] uppercase text-white drop-shadow-[3px_3px_0px_black]"
+          className="text-2xl font-[900] uppercase text-white drop-shadow-[3px_3px_0px_black] 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]"
           href="/events"
         >
           View More
         </Link>
       </div>
       <div
-        className={`z-10 flex h-full w-full flex-col justify-between px-4 pb-4 pt-2 ${isHovered ? "translate-x-1 translate-y-1 opacity-0" : ""} transition-all duration-300 ease-linear`}
+        className={`z-10 flex h-full w-full flex-col justify-between p-4 pt-2 4k:p-8 4k:pt-4 ${isHovered ? "translate-x-1 translate-y-1 opacity-0" : ""} transition-all duration-300 ease-linear`}
       >
-        <h1 className="text-m font-bold uppercase text-white">{moduleName}</h1>
-        <div className="flex items-center justify-between gap-2">
-          <h1
-            className="text-stroke-black text-2xl font-[900] uppercase drop-shadow-[3px_3px_0px_black]"
-            style={{ color: bgColor }}
-          >
+        <h1 className="text-start text-2xl font-bold uppercase text-white 4k:text-6xl">
+          {moduleName}
+        </h1>
+        <div className="text-stroke-black flex items-center justify-between gap-2 text-2xl font-[900] uppercase drop-shadow-[3px_3px_0px_black] 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]">
+          <h1 className="" style={{ color: bgColor }}>
             {eventName}
           </h1>
-          <p className="text-stroke-black text-2xl font-[900] uppercase text-white drop-shadow-[3px_3px_0px_black]">
-            {eventNo < 10 ? `0${eventNo}` : eventNo}
-          </p>
+          <p className="text-white">{eventNo < 10 ? `0${eventNo}` : eventNo}</p>
         </div>
       </div>
       <Image
-        className={`transistion-all absolute duration-300 ease-linear hover:opacity-20 ${isHovered ? "opacity-20" : "opacity-100"}`}
+        className={`transistion-all absolute h-[80%] w-[80%] duration-300 ease-linear hover:opacity-20 ${isHovered ? "opacity-20" : "opacity-100"}`}
         src="/assets/events/statue.png"
         width={200}
         height={200}

@@ -1,21 +1,24 @@
 import Image from "next/image";
-import Thundermerch from "./Thundermerch";
-import AllEvents from "./EventCard";
-import EventsEffect from "./EventsEffect";
+import Thundermerch from "~/components/Thundermerch";
+import AllEvents from "~/components/EventCard";
+import EventsEffect from "~/components/EventsEffect";
 const Page = () => {
   return (
-    <section className="flex h-screen w-screen flex-col bg-[#FFEDFD] pt-20">
-      <div className="flex h-[50%] w-full border-t-2 border-black">
-        <div className="h-full flex-grow py-4 pl-8 pr-0">
+    <section
+      id="event-page"
+      className="flex h-screen w-screen flex-col gap-4 bg-[#FFEDFD] pt-20 ipadair:gap-0 4k:pt-40"
+    >
+      <div className="flex h-[50%] w-full flex-col border-t-2 border-black ipadair:flex-row 4k:gap-12">
+        <div className="h-[40%] px-4 ipadair:h-full ipadair:flex-grow ipadair:py-4 ipadair:pl-8 ipadair:pr-0 4k:rounded-[4rem] 4k:pl-16">
           <EventsEffect />
         </div>
-        <div className="flex h-full w-[42%] flex-col gap-6 px-4 py-4 pr-8">
-          <div className="h-[40%] w-full rounded-3xl bg-[#FFDD6A] drop-shadow-[8px_8px_0px_black]">
+        <div className="flex h-full w-full flex-grow flex-col gap-4 px-4 py-4 ipadair:w-[42%] ipadair:flex-grow-0 ipadair:gap-6 ipadair:pr-8 4k:gap-12 4k:pr-16">
+          <div className="h-[50%] w-full rounded-3xl bg-[#FFDD6A] drop-shadow-[8px_8px_0px_black] ipadair:h-[40%] 4k:rounded-[4rem] 4k:drop-shadow-[16px_16px_0px_black]">
             <Thundermerch />
           </div>
-          <div className="flex w-full flex-grow items-center justify-center gap-2 rounded-3xl bg-[#86CAFF] px-4 drop-shadow-[8px_8px_0px_black]">
+          <div className="flex h-[50%] w-full items-center justify-center gap-2 rounded-3xl bg-[#86CAFF] px-4 drop-shadow-[8px_8px_0px_black] ipadair:h-auto ipadair:flex-grow 4k:rounded-[4rem] 4k:drop-shadow-[16px_16px_0px_black]">
             <svg
-              className="absolute left-0 top-0 z-50 w-[7.1rem] translate-x-[-40%] translate-y-[-35%]"
+              className="absolute left-0 top-0 z-50 hidden w-[7.1rem] translate-x-[-40%] translate-y-[-35%] ipadair:block 4k:scale-[2]"
               style={{ border: "#f855ac00" }}
               width="136"
               height="76"
@@ -37,22 +40,21 @@ const Page = () => {
               </circle>
             </svg>
 
-            <div className="flex flex-col gap-2 font-tusker2">
-              <h1 className="text-5xl font-[800] uppercase tracking-[0.2rem] text-white drop-shadow-[3px_3px_0px_black]">
+            <div className="flex flex-col gap-2 font-tusker ipadair:font-tusker2">
+              <h1 className="select-none text-3xl font-[800] uppercase text-white drop-shadow-[3px_3px_0px_black] ipadair:text-5xl ipadair:tracking-[0.2rem] 4k:text-[12rem]">
                 CARPE DIEM
               </h1>
-              <h3 className="text-2xl font-semibold tracking-[0.2rem] text-[#008DFA]">
+              <h3 className="select-none text-sm font-semibold text-[#008DFA] ipadair:text-3xl ipadair:leading-[4.5vh] ipadair:tracking-[0.08vh] 4k:text-[6rem] 4k:leading-[8rem]">
                 THE INCAND FLAGSHIP
               </h3>
             </div>
-            <div>
-              <Image
-                src="/assets/events/carpediemgif.gif"
-                width={100}
-                height={100}
-                alt="dancing-boy"
-              ></Image>
-            </div>
+            <Image
+              className="scale-75 ipadair:scale-100 4k:h-[25rem] 4k:w-[25rem]"
+              src="/assets/events/carpediemgif.gif"
+              width={100}
+              height={100}
+              alt="dancing-boy"
+            ></Image>
           </div>
         </div>
       </div>

@@ -1,30 +1,36 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 const Thundermerch = () => {
-  const handleMouseEnter = () => {
-    console.log("Hovered");
-  };
+  const [hover, setHover] = useState(false);
   return (
     <div
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onClick={() => setHover(!hover)}
       className="relative flex h-full w-full items-center justify-center overflow-hidden"
     >
-      <Image
-        className="absolute top-20 z-10 h-auto w-[60%] transition-transform duration-500 ease-linear hover:-translate-y-16"
-        src="/assets/events/thundermerchgif.gif"
-        width={500}
-        height={100}
-        alt="gif"
-      ></Image>
-      <h1 className="flex items-center">
-        <span className="text-6xl font-bold text-white drop-shadow-[4px_4px_0px_black]">
+      <div
+        style={{ transform: hover ? "translateY(0vh)" : "translateY(20vh)" }}
+        className="absolute top-0 z-30 flex h-full w-full items-start justify-center transition-all duration-500 ease-linear"
+      >
+        <Image
+          className="h-auto w-[60%]"
+          src="/assets/events/thundermerchgif.gif"
+          width={500}
+          height={100}
+          alt="gif"
+        ></Image>
+      </div>
+      <h1 className="flex select-none items-center text-4xl ipadair:text-6xl 4k:text-[10rem]">
+        <span className="font-bold text-white drop-shadow-[4px_4px_0px_black]">
           TH
         </span>
         <span>
           <svg
-            className="scale-75"
+            className="scale-50 ipadair:scale-75 4k:mx-8 4k:scale-[2]"
             width="40"
             height="104"
             viewBox="0 0 40 104"
@@ -89,7 +95,7 @@ const Thundermerch = () => {
             </defs>
           </svg>
         </span>
-        <span className="text-6xl font-bold text-white drop-shadow-[4px_4px_0px_black]">
+        <span className="font-bold text-white drop-shadow-[4px_4px_0px_black]">
           NDERMERCH
         </span>
       </h1>
