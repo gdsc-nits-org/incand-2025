@@ -1,6 +1,252 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import styles from "~/styles/Gallery.module.css";
+import { motion, AnimatePresence } from "framer-motion";
+
+const PhotoGallery = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<"down" | "up">("up");
+  const [bgColor, setBgColor] = useState(colors[0]);
+  const [isScrolling, setIsScrolling] = useState(false); // Prevent multiple triggers
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setBgColor(colors[currentIndex % colors.length]);
+    }, 500);
+    return () => clearTimeout(timeout);
+  }, [currentIndex]);
+
+  const handleNext = () => {
+    setDirection("down");
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    setDirection("up");
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (isScrolling) return; // Prevent multiple triggers during animation
+    setIsScrolling(true);
+    if (e.deltaY > 0) {
+      handleNext();
+    } else if (e.deltaY < 0) {
+      handlePrevious();
+    }
+
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 1500); // Match the animation duration
+  };
+
+  const off = "80";
+  const imageVariants = {
+    enter: (dir: "down" | "up") =>
+      dir === "down"
+        ? { x: `${off}vw`, y: `${off}vh` }
+        : { x: `-${off}vw`, y: `-${off}vh` },
+    center: {
+      x: 0,
+      y: 0,
+      transition: { duration: 1, ease: "easeInOut" }, // Slower transition
+    },
+    exit: (dir: "down" | "up") =>
+      dir === "down"
+        ? {
+            x: `-${off}vw`,
+            y: `-${off}vh`,
+            transition: { duration: 1, ease: "easeInOut" },
+          }
+        : {
+            x: `${off}vw`,
+            y: `${off}vh`,
+            transition: { duration: 1, ease: "easeInOut" },
+          },
+  };
+
+  const textVariants = {
+    hidden: (dir: "left" | "right") =>
+      dir === "left"
+        ? {
+            x: "-10rem",
+            opacity: 0,
+            transition: { duration: 0.6, ease: "easeInOut" },
+          }
+        : {
+            x: "10rem",
+            opacity: 0,
+            transition: { duration: 0.6, ease: "easeInOut" },
+          },
+    visible: (dir: "left" | "right") => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: 0.4, duration: 0.8, ease: "easeInOut" },
+    }),
+  };
+
+  return (
+    <motion.section
+      onWheel={handleWheel}
+      className="min-w-screen relative flex h-screen items-center justify-center"
+      style={{
+        backgroundColor: bgColor,
+        transition: "background-color 0.8s linear",
+      }}
+    >
+      <button onClick={handlePrevious} className="absolute left-4 z-10">
+        Previous
+      </button>
+      <button onClick={handleNext} className="absolute right-4 z-10">
+        Next
+      </button>
+      <AnimatePresence custom={direction} mode="wait">
+        <motion.div
+          key={currentIndex}
+          className="absolute flex h-auto min-h-screen w-screen flex-col items-center justify-center gap-2 py-20"
+          custom={direction}
+          variants={imageVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+        >
+          {images[currentIndex] && (
+            <>
+              <motion.h1
+                className="absolute top-10 text-8xl font-bold text-white"
+                custom="left"
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+              >
+                {images[currentIndex].name1}
+              </motion.h1>
+
+              <ImageCard
+                src={images[currentIndex].src}
+                name1={images[currentIndex].name1}
+                name2={images[currentIndex].name2}
+                bg={images[currentIndex].bg}
+                scale={images[currentIndex].scale}
+              />
+
+              <motion.h1
+                className="absolute bottom-10 text-8xl font-bold text-white"
+                custom="right"
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+              >
+                {images[currentIndex].name2}
+              </motion.h1>
+            </>
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </motion.section>
+  );
+};
+
+export default PhotoGallery;
+
+interface ImageProps {
+  src?: string;
+  name1?: string;
+  name2?: string;
+  bg?: string;
+  scale?: string;
+}
+const ImageCard = (image: ImageProps) => {
+  const { src, name1, name2, bg, scale } = image;
+  return (
+    <img
+      className={`z-30 h-auto w-[30%] border-2 border-white ${styles["perforated-border"]}`}
+      src={src}
+      alt={name1}
+    ></img>
+  );
+};
+
+const colors = ["#EB6459", "#A9A6FF", "#62A073", "#FFDE70"];
+
+const images = [
+  {
+    src: "/assets/Gallery/bg1.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "/assets/Gallery/bg2.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "0.60",
+  },
+  {
+    src: "/assets/Gallery/bg3.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "/assets/Gallery/bg4.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "/assets/Gallery/bg1.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "/assets/Gallery/bg2.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "0.60",
+  },
+  {
+    src: "/assets/Gallery/bg3.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "/assets/Gallery/bg4.png",
+    name1: "PHOTO",
+    name2: "GALLERY",
+    bg: "",
+    scale: "",
+  },
+];
+
+/*
+"use client";
+import React, { useEffect, useState, useRef } from "react";
+import styles from "./Gallery.module.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,7 +256,9 @@ const PhotoGallery = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [aspectRatios, setAspectRatios] = useState<number[]>([]); // Default aspect ratio 1:1
   const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
-  const stampCardRef = useRef<HTMLDivElement>(null);
+  const stampCardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const masterTimeline = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -31,36 +279,80 @@ const PhotoGallery = () => {
     setAspectRatios(calculatedRatios);
   }, [imgRefs]);
 
-  // useEffect(() => {
-  //   if (stampCardRef.current) {
-  //     // GSAP ScrollTrigger animation
-  //     gsap.to(stampCardRef.current, {
-  //       x: "-100vw", // Move to the left
-  //       y: "-100vh", // Move to the top
-  //       scrollTrigger: {
-  //         trigger: stampCardRef.current, // Element to trigger the animation
-  //         start: "top 0%", // Start when the top of the element hits the center of the viewport
-  //         end: "top -100%", // End when the top of the element hits the top of the viewport
-  //         scrub: true, // Smooth scrolling effect
-  //         markers: true, // Enable markers to debug
-  //         pin:true,
-  //       },
-  //     });
-  //   }
-  // }, []);
-
+  
   const images = [
-    { src: "/assets/Gallery/bg1.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
-    { src: "/assets/Gallery/bg2.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "0.60" },
-    { src: "/assets/Gallery/bg3.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
-    { src: "/assets/Gallery/bg4.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
+    { src: "/bg1.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
+    { src: "/bg2.png", name1: "", name2: "GALLERY", bg: "", scale: "0.60" },
+    { src: "/bg3.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
+    { src: "/bg4.png", name1: "PHOTO", name2: "GALLERY", bg: "", scale: "" },
   ];
+  
+  const ANIMATION_CONFIG = {
+    duration: 2,
+    stagger: 0.1,
+    finalPosition: { x: "-200vw", y: "-240vh" },
+    ease: "sine.inOut"
+  };
+
+  useEffect(() => {
+    const setupAnimation = () => {
+      // Clear existing animations
+      masterTimeline.current?.clear().kill();
+      ScrollTrigger.getAll().forEach(st => st.kill());
+
+      // Create fresh timeline
+      masterTimeline.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=550%",
+          scrub: 1.5, // Optimal smooth scrubbing
+          pin: true,
+          anticipatePin: 1,
+          markers: true // Remove in production
+        }
+      });
+
+      // Create card animations with position tracking
+      stampCardRefs.current.forEach((card, index) => {
+        if (!card) return;
+
+        // Capture initial positions
+        const initialX = gsap.getProperty(card, "x") as number;
+        const initialY = gsap.getProperty(card, "y") as number;
+
+        // Create animation with relative movement
+        masterTimeline.current?.to(card, {
+          x: `+=${ANIMATION_CONFIG.finalPosition.x}`,
+          y: `+=${ANIMATION_CONFIG.finalPosition.y}`,
+          ease: ANIMATION_CONFIG.ease,
+          duration: ANIMATION_CONFIG.duration
+        }, index * ANIMATION_CONFIG.stagger);
+
+        // Maintain spacing relationship
+        if (index > 0) {
+          const prevCard = stampCardRefs.current[index - 1];
+          gsap.set(card, {
+            x: `+=${index * 50}`,
+            y: `+=${index * 60}`
+          });
+        }
+      });
+    };
+
+    setupAnimation();
+    window.addEventListener('resize', setupAnimation);
+    return () => {
+      window.removeEventListener('resize', setupAnimation);
+      masterTimeline.current?.kill();
+    };
+  }, []);
 
   return (
     <>
-      {images.map((image, index) => (
-        <React.Fragment key={index}>
-          <div className={`h-screen bg-[#EB6459] -inset-y-3 relative overflow-hidden flex justify-center items-center`}
+          <div 
+          ref={containerRef}
+          className={`h-screen bg-[#EB6459] -inset-y-3 relative flex justify-center items-center overflow-hidden`}
           >
             <div
               className={`absolute inset-0 transition-transform duration-1000 ease-out opacity-90 z-0`}
@@ -71,6 +363,8 @@ const PhotoGallery = () => {
               }}
             >
             </div>
+      {images.map((image, index) => (
+        <React.Fragment key={index}>
             <div className="absolute inset-0 flex flex-col justify-center items-center isolate"
             >
               <h1
@@ -85,31 +379,29 @@ const PhotoGallery = () => {
               </h1>
             </div>
 
-            { /* Header Section */}
             <div className="absolute top-4 right-4">
               <button className="bg-white px-4 py-2 text-red-500 font-bold rounded-full shadow-md hover:opacity-80">
                 VIEW ALL
               </button>
             </div>
 
-            {/* Stamp Section */}
             <div
-              ref={stampCardRef}
-              className={`relative flex justify-center items-center transition-all duration-500 ease-in`}
+              ref={el => { stampCardRefs.current[index] = el; }}
+              className={`absolute flex justify-center items-center transition-all duration-500 ease-in z-50`}
               style={{
-                transform: `scale(${image.scale})`,
+                left: `calc(50% + ${index * 53}%)`,
+                top: `calc(50% + ${index * 60}%)`, 
+                transform: `translate(-50%, -50%) scale(${image.scale || 1})`,
               }}>
               <div
                 className={`relative border-2 border-white w-max h-max ${styles["perforated-border"]}`}
               >
                 <div className="w-max h-max bg-white p-2">
-                  {/* Dynamically resized container */}
                   <div
                     className={`transition-all duration-500 ease-in relative overflow-hidden flex justify-center delay-[1200ms]`}
                     style={{
-                      aspectRatio: aspectRatios[index] ?? 1,
-                      height: isLoaded ? "" : "110vh",
-                      width: isLoaded ? "45vw" : "100vw", // Dynamically adjust width
+                      aspectRatio: aspectRatios[index] || 1,
+                      width: isLoaded ? "45vw" : "100vw",
                       maxWidth: "100%",
                       maxHeight: "100%",
                     }}
@@ -118,23 +410,23 @@ const PhotoGallery = () => {
                       key={index}
                       ref={(el) => {
                         if (el) {
-                          imgRefs.current[index] = el; // Assign only if el is not null
+                          imgRefs.current[index] = el;
                         }
                       }}
                       src={image.src}
                       alt="Gallery"
                       className="absolute w-full h-full object-cover"
-                    />;
+                    />
                     {index === 0 && (
                       <>
                         <img
-                          src="/assets/Gallery/photo.png"
+                          src="/photo.png"
                           alt="Gallery"
                           className={`absolute transition-transform duration-500 ease-in ${isLoaded ? "translate-y-0" : "-translate-y-full"
                             }`}
                         />
                         <img
-                          src="/assets/Gallery/gallery.png"
+                          src="/gallery.png"
                           alt="Gallery"
                           className={`absolute transition-transform duration-500 delay-300 ease-in ${isLoaded ? "translate-y-0" : "-translate-y-full"
                             }`}
@@ -144,11 +436,12 @@ const PhotoGallery = () => {
                 </div>
               </div>
             </div>
-          </div>
         </React.Fragment>
       ))}
+      </div>
     </>
   );
 };
 
 export default PhotoGallery;
+*/
