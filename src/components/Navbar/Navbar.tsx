@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isClient, setIsClient] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Ensures the code runs only on the client side
   useEffect(() => {
     setIsClient(true);
     setIsMobile(window.innerWidth < 768);
