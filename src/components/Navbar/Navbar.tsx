@@ -29,11 +29,7 @@ const Navbar = () => {
     return null;
   }
 
-  return (
-    <>
-      {isMobile ? <NavbarMobile /> : <NavbarDesktop />}
-    </>
-  );
+  return <>{isMobile ? <NavbarMobile /> : <NavbarDesktop />}</>;
 };
 
 export default Navbar;

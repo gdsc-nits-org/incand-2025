@@ -23,8 +23,8 @@ const CarpeDiem = () => {
 
       const width = window.innerWidth;
       setIsPhone(width >= 320 && width <= 900);
-      setIsIpad(width >= 901 && width <= 1024);
-      setIsLap(width >= 1025);
+      setIsIpad(width >= 901 && width < 1024);
+      setIsLap(width >= 1024);
     };
     resizeFunc();
     window.addEventListener("resize", resizeFunc);
@@ -42,8 +42,8 @@ const CarpeDiem = () => {
     <>
       {isLap && (
         <>
-          {" "}
-          <div className={styles.carped+"min-h-[100vh]"}>
+          
+          <div className={styles.carped + ""}>
             <Image
               src="/assets/CarpeDiem/background.png"
               fill={true}
@@ -396,7 +396,7 @@ const CarpeDiem = () => {
       )}
       {isPhone && (
         <>
-          <div className="h-screen bg-[#EE79BD] min-h-[100vh]">
+          <div className="h-screen min-h-[100vh] bg-[#EE79BD]">
             <div className="absolute left-[17%] top-[12%] h-[12px] w-[65vw]">
               <Image
                 src="/assets/CarpeDiem/MainBorder.png" // Path to your GIF
@@ -747,7 +747,7 @@ const CarpeDiem = () => {
       )}
       {isIpad && (
         <>
-          <div className={styles["carped-ipad"]+"min-h-[100vh]"}>
+          <div className={styles["carped-ipad"] + "min-h-[100vh]"}>
             <Image
               src="/assets/CarpeDiem/background.png"
               fill={true}

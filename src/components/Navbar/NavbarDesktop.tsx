@@ -279,11 +279,9 @@ const NavbarDesktop = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-             <Login />
+            <Login />
           </div>
         )}
-        
-       
       </div>
     </nav>
   );
