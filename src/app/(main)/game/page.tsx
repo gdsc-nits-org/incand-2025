@@ -1,5 +1,6 @@
 "use client";
 
+import { toast } from "sonner";
 import { env } from "~/env";
 import { ImCross } from "react-icons/im";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -46,9 +47,10 @@ const Game = () => {
   }
 
 
+
+
   useEffect(() => {
     const checkViewport = () => {
-
       if(window.innerWidth<1180 && window.innerWidth>=768){
         if(window.innerWidth>window.innerHeight){
            setIsTabView(false);
@@ -85,7 +87,7 @@ const Game = () => {
             setLettersHaving(userResponse.data.msg.letters);
           }
         } catch (error) {
-          console.error("Error checking if user exists:", error);
+          toast.error("Error fetching collections. Please try again.");
         }
       }
     };
@@ -102,7 +104,7 @@ const Game = () => {
         const top10 = users.sort((a, b) => b.level - a.level).slice(0, 10);
         setTop10Placers(top10);
       }catch(e){
-        console.error("Error checking if user exists:", e);
+        toast.error("Error fetching leaderboard");
       }
     }
     void checkLeaderboard();
@@ -114,26 +116,38 @@ const Game = () => {
   const handleImageUpload = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file) return;
-
+  
     setUploading(true);
-
+  
     const formData = new FormData();
-    formData.append('uploaded_file', file);
-
-    try {
-      const response = await axios.post(`${env.NEXT_PUBLIC_API_URL}/api/submissions/upload`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' , "Authorization": `Bearer ${await _user?.getIdToken()}`},
-      });
-      // setUploadedUrl(response.data.url);  // assuming the response contains the file URL
-    } catch (err) {
-      setUploading(false);
-      alert('Failed to upload image. Please try again later.');
-    } finally {
-      setUploading(false);
-      setUploadPopup(false);
-      setImageSelected(false);
-    }
+    formData.append("uploaded_file", file);
+  
+    await toast.promise(
+      (async () => {
+        const token = await _user?.getIdToken();
+        return axios.post(
+          `${env.NEXT_PUBLIC_API_URL}/api/submissions/upload`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+      })(),
+      {
+        loading: "Uploading image...",
+        success: "Image uploaded successfully!",
+        error: "Failed to upload image. Please try again.",
+      }
+    );
+  
+    setUploading(false);
+    setUploadPopup(false);
+    setImageSelected(false);
   };
+  
 
 
 
@@ -152,7 +166,7 @@ const Game = () => {
   const handleFile = (file: File) => {
     if (file?.type?.startsWith("image/")) {
       if (file.size > 5 * 1024 * 1024) {
-        alert("Please upload a file less than 5mb.");
+        toast.info("Please upload a file less than 5mb.");
         return;
       }
       setImageSelected(true);
@@ -160,7 +174,7 @@ const Game = () => {
       setFile(file);
 
     } else {
-      alert("Please upload a valid image file (jpg, jpeg, png).");
+      toast.error("Please upload a valid image file (jpg, jpeg, png).");
       return;
     }
   };
@@ -168,7 +182,7 @@ const Game = () => {
   const handleImageSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target?.files;
     if (!files?.[0]?.type.startsWith("image/")) {
-      alert("Please upload a valid image file.");
+      toast.warning("Please upload a valid image file.");
       return;
     }
     const file = files[0];
@@ -247,7 +261,6 @@ const Game = () => {
       </div>)}
       {isTabView?<GameMobileView level={level} lettersHaving={lettersHaving} top10Players={top10Players} setUploadPopup={setUploadPopup}/>:
       <GameTabView level={level} lettersHaving={lettersHaving} top10Players={top10Players} setUploadPopup={setUploadPopup}/>}
-      <Footer />
     </div>
   );
 };

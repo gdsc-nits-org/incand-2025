@@ -497,6 +497,7 @@ interface GameMobileViewProps {
           </p>
           <div className={`absolute bottom-[3.25vw] right-[14vw] w-[18.1vw] ipadair:bottom-[2.25vw] ipadair:right-[10vw] ipadair:w-[17.1vw]`}>
             <Image
+              className="animate-spinSlow"
               src="/assets/Game/logo_two.png"
               layout="responsive"
               width={100}
