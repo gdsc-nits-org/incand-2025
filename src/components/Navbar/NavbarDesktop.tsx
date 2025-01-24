@@ -42,106 +42,126 @@ const NavbarDesktop = () => {
               height={14}
             />
           </div>
-          <div className="flex items-center gap-20">
+          <div className="flex items-center lg:gap-20 md:gap-10 -mb-2">
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsTHovered(true)}
-              onMouseLeave={() => setIsTHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isTHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsEHovered(true)}
-              onMouseLeave={() => setIsEHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isEHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsPHovered(true)}
-              onMouseLeave={() => setIsPHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isPHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsUHovered(true)}
-              onMouseLeave={() => setIsUHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isUHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsWHovered(true)}
-              onMouseLeave={() => setIsWHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isWHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
           </div>
         </>
@@ -158,105 +178,125 @@ const NavbarDesktop = () => {
             />
           </div>
           <div className="flex items-center gap-20">
-            <Link
+          <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsTHovered(true)}
-              onMouseLeave={() => setIsTHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isTHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsEHovered(true)}
-              onMouseLeave={() => setIsEHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isEHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsPHovered(true)}
-              onMouseLeave={() => setIsPHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isPHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsUHovered(true)}
-              onMouseLeave={() => setIsUHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isUHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
             <Link
               href="/"
-              className="font-semibold text-black"
-              onMouseEnter={() => setIsWHovered(true)}
-              onMouseLeave={() => setIsWHovered(false)}
+              className="group font-semibold text-black hover:text-white transition-all duration-200"
             >
-              {!isWHovered ? (
-                <>Home</>
-              ) : (
-                <>
-                  Home
+             <div className="flex">
                   <Image
+                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
+                    src="/assets/NavbarDesktop/arrow.png"
+                    alt="arrow"
+                    width={10}
+                    height={10}
+                  />
+                  <div className="flex flex-col items-center justify-center">
+                  <p>Home</p>
+                  <Image
+                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                </>
-              )}
+                  </div>
+              </div>
             </Link>
           </div>
         </>

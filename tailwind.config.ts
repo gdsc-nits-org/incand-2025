@@ -35,6 +35,7 @@ export default {
         tablet2: "900px",
         ipadpro: "1000px",
         ipadair: "1180px",
+        fourK: "2000px",
       },
       keyframes: {
         grow: {
