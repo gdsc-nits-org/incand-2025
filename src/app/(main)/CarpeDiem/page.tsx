@@ -23,8 +23,8 @@ const CarpeDiem = () => {
 
       const width = window.innerWidth;
       setIsPhone(width >= 320 && width <= 900);
-      setIsIpad(width >= 901 && width <= 1024);
-      setIsLap(width >= 1025);
+      setIsIpad(width >= 901 && width < 1024);
+      setIsLap(width >= 1024);
     };
     resizeFunc();
     window.addEventListener("resize", resizeFunc);
@@ -42,8 +42,8 @@ const CarpeDiem = () => {
     <>
       {isLap && (
         <>
-          {" "}
-          <div className={styles.carped + "min-h-[100vh]"}>
+          
+          <div className={styles.carped + ""}>
             <Image
               src="/assets/CarpeDiem/background.png"
               fill={true}
