@@ -26,7 +26,7 @@ const NavbarDesktop = () => {
 
   return (
     <nav
-      className={`flex items-center justify-between bg-[#00A3FF] px-6 py-4 transition-colors duration-300 ${
+      className={`flex min-w-[100vw] items-center justify-between bg-[#00A3FF] px-6 py-4 transition-colors duration-300 ${
         isWhite ? "border-b-4 border-[#FFA6F6]" : ""
       }`}
     >
