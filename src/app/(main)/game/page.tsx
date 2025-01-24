@@ -184,7 +184,7 @@ const Game = () => {
   return (
     <div className={`flex flex-col overflow-hidden`}>
 
-      {uploadPopup && (<div className="fixed flex items-center justify-center bg-[#FAE00D] w-screen h-screen z-10">
+      {uploadPopup && (<div className="fixed top-0 flex items-center justify-center bg-[#FAE00D] w-screen h-screen z-10">
       <div className={`absolute h-full w-screen bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat md:inset-0 md:bg-cover`}></div>
       <div className="relative flex flex-col items-center bg-white border-black border-[4px] rounded-2xl fourK:rounded-3xl max-w-[800px] fourK:max-w-[1600px] w-[80%] sm:shadow-[30px_30px_0px_#FFA5D5E5] shadow-[20px_20px_0px_#FFA5D5E5] fourK:shadow-[60px_60px_0px_#FFA5D5E5]">
       <svg className="absolute z-10 left-0 sm:translate-x-[-40%] translate-x-[-30%] translate-y-[-40%] top-0 sm:w-40 w-28  fourK:w-56"viewBox="0 0 203 96" fill="none" xmlns="http://www.w3.org/2000/svg">
