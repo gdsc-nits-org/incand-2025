@@ -1,14 +1,16 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Ref } from "react";
 import styles from "~/styles/Gallery.module.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, delay, transform } from "framer-motion";
+import { SiCalendly } from "react-icons/si";
+import Image from "next/image";
 
 const PhotoGallery = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setIsLoaded(true);
+      setIsLoaded(false);
     }, 500);
     return () => clearTimeout(timeout);
   }, []);
@@ -17,6 +19,10 @@ const PhotoGallery = () => {
   const [direction, setDirection] = useState<"down" | "up">("up");
   const [bgColor, setBgColor] = useState(colors[0]);
   const [isScrolling, setIsScrolling] = useState(false); // Prevent multiple triggers
+  const [aspectRatios, setAspectRatios] = useState<number[]>([]);
+  const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
+
+  
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -54,69 +60,103 @@ const PhotoGallery = () => {
   };
 
   const off = "80";
+  const dur = 0.6;
   const imageVariants = {
     enter: (dir: "down" | "up") =>
-      dir === "down"
-        ? { x: `${off}vw`, y: `${off}vh` }
-        : { x: `-${off}vw`, y: `-${off}vh` },
+      isLoaded ?
+        { scaleX: 2.3,
+          scaleY:2.3,
+          y: 150,
+          transition: { delay: 0, duration: 0, ease: "easeIn" } }
+        : dir === "down"
+          ? { x: `${off}vw`, y: `${off}vh` }
+          : { x: `-${off}vw`, y: `-${off}vh` },
     center: {
       x: 0,
       y: 0,
-      transition: { duration: 1, ease: "easeInOut" }, // Slower transition
+      scaleX: 1,
+      scaleY: 1,
+      transition: { delay: isLoaded ? 2 : 0, duration: isLoaded? 1 : dur, ease: "easeInOut" }, // Slower transition
     },
     exit: (dir: "down" | "up") =>
       dir === "down"
         ? {
-            x: `-${off}vw`,
-            y: `-${off}vh`,
-            transition: { duration: 1, ease: "easeInOut" },
-          }
+          x: `-${off}vw`,
+          y: `-${off}vh`,
+          transition: { duration: dur, ease: "easeInOut" },
+        }
         : {
-            x: `${off}vw`,
-            y: `${off}vh`,
-            transition: { duration: 1, ease: "easeInOut" },
-          },
+          x: `${off}vw`,
+          y: `${off}vh`,
+          transition: { duration: dur, ease: "easeInOut" },
+        },
   };
 
   const textVariants = {
-    hidden: (dir: "left" | "right") =>
+    enter: (dir: "left" | "right") =>
       dir === "left"
-        ? {
-            x: "-10rem",
-            opacity: 0,
-            transition: { duration: 0.6, ease: "easeInOut" },
-          }
-        : {
-            x: "10rem",
-            opacity: 0,
-            transition: { duration: 0.6, ease: "easeInOut" },
-          },
-    visible: (dir: "left" | "right") => ({
+        ? { x: `${100}vw` }
+        : { x: `-${100}vw` },
+    center: {
       x: 0,
-      opacity: 1,
-      transition: { delay: 0.4, duration: 0.8, ease: "easeInOut" },
-    }),
+      transition: { delay: isLoaded ? 2.5 : 0.5, duration: 1.2, ease: "easeInOut", type: "spring", bounce: 0.25 }, // Slower transition
+    },
+    exit: {
+      x: 0,
+      opacity: 0,
+      transition: { duration: 0.8, ease: "easeInOut" }, // Slower transition
+
+    }
   };
 
   return (
     <motion.section
       onWheel={handleWheel}
-      className="min-w-screen relative flex h-screen items-center justify-center"
+      className="min-w-screen relative flex h-screen flex-col items-center justify-center overflow-hidden"
       style={{
         backgroundColor: bgColor,
         transition: "background-color 0.8s linear",
       }}
     >
-      <button onClick={handlePrevious} className="absolute left-4 z-10">
-        Previous
-      </button>
-      <button onClick={handleNext} className="absolute right-4 z-10">
-        Next
-      </button>
-      <AnimatePresence custom={direction} mode="wait">
+      <div className="absolute top-4 left-[50%] translate-x-[-50%] z-40">
+              <button className="bg-white px-4 py-2 font-bold rounded-full shadow-md hover:opacity-80"
+              style={{color: bgColor, opacity: isLoaded ? 0 : 1}}
+
+              >
+                VIEW ALL
+              </button>
+            </div>
+      <div
+              className={`absolute inset-0 transition-transform duration-1000 ease-out z-0`}
+              style={{
+                backgroundImage: "url('/cardboard-texture.png')",
+                backgroundSize: 'cover',
+                mixBlendMode: 'multiply',
+              }}
+            >
+            </div>
+      
+      <AnimatePresence
+        custom={direction} mode="wait">
+
+        (<motion.h1
+          key={currentIndex + (images[currentIndex]?.src ?? '') + currentIndex}
+
+          className="absolute top-0 text-[22.5vh] font-tusker opacity-75 drop-shadow-lg"
+          style={{
+            color: textcolors[currentIndex%textcolors.length]
+          }}
+          custom="left"
+          variants={textVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+        >
+          {images[currentIndex]?.name1}
+        </motion.h1>
         <motion.div
           key={currentIndex}
-          className="absolute flex h-auto min-h-screen w-screen flex-col items-center justify-center gap-2 py-20"
+          className="absolute flex  h-screen w-screen flex-col items-center  justify-center z-50"
           custom={direction}
           variants={imageVariants}
           initial="enter"
@@ -125,38 +165,37 @@ const PhotoGallery = () => {
         >
           {images[currentIndex] && (
             <>
-              <motion.h1
-                className="absolute top-10 text-8xl font-bold text-white"
-                custom="left"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-              >
-                {images[currentIndex].name1}
-              </motion.h1>
 
               <ImageCard
+                isLoaded={isLoaded}
+                index={currentIndex}
+                reff={(el) => (imgRefs.current[currentIndex] = el)}
                 src={images[currentIndex].src}
                 name1={images[currentIndex].name1}
                 name2={images[currentIndex].name2}
                 bg={images[currentIndex].bg}
-                scale={images[currentIndex].scale}
+                scale={parseFloat(images[currentIndex].scale)}
+                aspectRatio={aspectRatios[currentIndex]}
               />
 
-              <motion.h1
-                className="absolute bottom-10 text-8xl font-bold text-white"
-                custom="right"
-                variants={textVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-              >
-                {images[currentIndex].name2}
-              </motion.h1>
             </>
           )}
         </motion.div>
+
+        <motion.h1
+          key={currentIndex + (images[currentIndex]?.src ?? '')}
+          className="absolute text-[22.5vh] font-tusker opacity-75 drop-shadow-lg bottom-0 "
+          style={{
+            color: textcolors[currentIndex%textcolors.length]
+          }}
+          custom="right"
+          variants={textVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+        >
+          {images[currentIndex]?.name2}
+        </motion.h1>)
       </AnimatePresence>
     </motion.section>
   );
@@ -165,24 +204,76 @@ const PhotoGallery = () => {
 export default PhotoGallery;
 
 interface ImageProps {
+  isLoaded: boolean,
+  index: number,
+  aspectRatio?: number,
   src?: string;
   name1?: string;
   name2?: string;
   bg?: string;
-  scale?: string;
+  scale?: number;
+  reff: (el: HTMLImageElement | null) => void;
 }
 const ImageCard = (image: ImageProps) => {
-  const { src, name1, name2, bg, scale } = image;
+  const { src, name1, isLoaded, name2, bg, scale, aspectRatio, reff, index } = image;
   return (
-    <img
-      className={`z-30 h-auto w-[30%] border-2 border-white ${styles["perforated-border"]}`}
-      src={src}
-      alt={name1}
-    ></img>
+    <div
+      className={`relative border-2 z-50 border-white w-max h-max ${styles["perforated-border"]}`}
+      style={{
+        transform: `scale(${scale == 0 ? 1 : scale})`,
+      }}>
+      {/* // <img
+      //   className={`z-30 h-auto w-[30%] border-2 border-white ${styles["perforated-border"]}`}
+      //   src={src}
+      //   alt={name1}
+      // ></img>
+      > */}
+      <div className=" bg-white p-2 ">
+        <div
+          className={`relative overflow-hidden flex justify-center`}
+        >
+          <img ref={reff}
+            // key={index}
+            // ref={(el) => {
+            //   if (el) {
+            //     imgRefs.current[index] = el;
+            //   }
+            // }}
+            src={src}
+            alt="Gallery"
+            className=" max-w-[50vw] max-h-[60vh] object-contain
+            "
+          />
+          {index === 0 && (
+            <>
+              <Image
+                width={400}
+                height={100}
+                quality={100}
+                src="/assets/Gallery/photo.png"
+                alt="Gallery"
+                className={`absolute h-[15vh] w-[17vw] transition-transform duration-500 ease-in scale-90 ${!isLoaded ? "-translate-y-1" : "-translate-y-full"
+                  }`}
+              />
+              <Image
+              width={400}
+              height={100}
+              quality={100}
+                src="/assets/Gallery/gallery.png"
+                alt="Gallery"
+                className={`absolute transition-transform duration-500 delay-500 scale-90 ease-in ${!isLoaded ? "-translate-y-3" : "-translate-y-full"
+                  }`}
+              />
+            </>)}
+        </div>
+      </div>
+    </div>
+
   );
 };
 
 const colors = ["#EB6459", "#A9A6FF", "#62A073", "#FFDE70"];
+const textcolors = ["#FAE00D", "#FF83F2", "#F58279", "#00B661"];
 
 const images = [
   {
@@ -197,7 +288,7 @@ const images = [
     name1: "PHOTO",
     name2: "GALLERY",
     bg: "",
-    scale: "0.60",
+    scale: "",
   },
   {
     src: "/assets/Gallery/bg3.png",
@@ -208,10 +299,10 @@ const images = [
   },
   {
     src: "/assets/Gallery/bg4.png",
-    name1: "PHOTO",
-    name2: "GALLERY",
+    name1: "",
+    name2: "INSOMPADA",
     bg: "",
-    scale: "",
+    scale: "1.5",
   },
   {
     src: "/assets/Gallery/bg1.png",
@@ -225,7 +316,7 @@ const images = [
     name1: "PHOTO",
     name2: "GALLERY",
     bg: "",
-    scale: "0.60",
+    scale: "",
   },
   {
     src: "/assets/Gallery/bg3.png",
