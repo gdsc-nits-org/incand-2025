@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 const toastOps = {
   classNames: {
     title: "text-md md:text-lg font-mono",
-    success: "toast-theme-blue",
-    info: "toast-theme-blue",
+    success: "toast-theme-pink",
+    info: "toast-theme-pink",
     error: "toast-theme-red",
     warning: "toast-theme-red",
   },
