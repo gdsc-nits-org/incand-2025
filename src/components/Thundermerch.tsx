@@ -24,7 +24,7 @@ const Thundermerch = () => {
           alt="gif"
         ></Image>
       </div>
-      <h1 className="flex select-none items-center text-4xl ipadair:text-6xl 4k:text-[10rem]">
+      <h1 className="flex select-none items-center text-4xl ipadair:text-6xl 4k:text-[10rem] font-tusker2 tracking-widest">
         <span className="font-bold text-white drop-shadow-[4px_4px_0px_black]">
           TH
         </span>
