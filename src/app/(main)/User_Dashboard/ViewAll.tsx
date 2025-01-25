@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import UserDashboard from "./UserDashboard";
+import UserDashboard from "./page";
 
 const photos = [
   { id: 1, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
