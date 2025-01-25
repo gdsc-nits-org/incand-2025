@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import Footer from "~/components/Footer/Footer";
 import styles from "~/styles/User.module.css";
 import { useState, useRef } from "react";
-import PhotosStatus from "./ViewAll";
+import PhotosStatus from "../ViewAll";
 export const runtime = "edge";
 
 
