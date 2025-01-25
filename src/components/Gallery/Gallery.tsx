@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef, Ref } from "react";
 import styles from "~/styles/Gallery.module.css";
 import { motion, AnimatePresence, delay, transform } from "framer-motion";
 import { SiCalendly } from "react-icons/si";
+import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 
 const PhotoGallery = () => {
@@ -15,14 +16,35 @@ const PhotoGallery = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  
+  const [isButtonTopZIndex, setIsButtonTopZIndex] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<"down" | "up">("up");
   const [bgColor, setBgColor] = useState(colors[0]);
   const [isScrolling, setIsScrolling] = useState(false); // Prevent multiple triggers
   const [aspectRatios, setAspectRatios] = useState<number[]>([]);
   const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
-
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({query: "(max-width: 1024px)"});
   
+  useEffect(() => {
+    console.log("isLoaded:", isLoaded); // Debugging log
+    if (isLoaded) {
+      console.log("Setting timeout for z-index change...");
+      const timeout = setTimeout(() => {
+        console.log("Timeout triggered, updating z-index to z-[60]");
+        setIsButtonTopZIndex(true);
+      }, 2000);
+
+      return () => {
+        console.log("Clearing timeout");
+        clearTimeout(timeout);
+      };
+    } else {
+      console.log("Resetting z-index to z-40");
+      setIsButtonTopZIndex(false);
+    }
+  }, [isLoaded]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -30,7 +52,7 @@ const PhotoGallery = () => {
     }, 500);
     return () => clearTimeout(timeout);
   }, [currentIndex]);
-
+  
   const handleNext = () => {
     setDirection("down");
     if (currentIndex < images.length - 1) {
@@ -63,11 +85,13 @@ const PhotoGallery = () => {
   const dur = 0.6;
   const imageVariants = {
     enter: (dir: "down" | "up") =>
-      isLoaded ?
-        { scaleX: 2.3,
-          scaleY:2.3,
-          y: 150,
-          transition: { delay: 0, duration: 0, ease: "easeIn" } }
+      isLoaded
+        ? {
+            scaleX:isMobile? 4 : (isTablet? 3.5 : 2.3),
+            scaleY:isMobile? 4 : (isTablet? 3.5 : 2.3),
+            y:isMobile? 75 : (isTablet? 30 : 150),
+            transition: { delay: 0, duration: 0, ease: "easeIn" },
+          }
         : dir === "down"
           ? { x: `${off}vw`, y: `${off}vh` }
           : { x: `-${off}vw`, y: `-${off}vh` },
@@ -76,37 +100,44 @@ const PhotoGallery = () => {
       y: 0,
       scaleX: 1,
       scaleY: 1,
-      transition: { delay: isLoaded ? 2 : 0, duration: isLoaded? 1 : dur, ease: "easeInOut" }, // Slower transition
+      transition: {
+        delay: isLoaded ? 2 : 0,
+        duration: isLoaded ? 1 : dur,
+        ease: "easeInOut",
+      }, // Slower transition
     },
     exit: (dir: "down" | "up") =>
       dir === "down"
         ? {
-          x: `-${off}vw`,
-          y: `-${off}vh`,
-          transition: { duration: dur, ease: "easeInOut" },
-        }
+            x: `-${off}vw`,
+            y: `-${off}vh`,
+            transition: { duration: dur, ease: "easeInOut" },
+          }
         : {
-          x: `${off}vw`,
-          y: `${off}vh`,
-          transition: { duration: dur, ease: "easeInOut" },
-        },
+            x: `${off}vw`,
+            y: `${off}vh`,
+            transition: { duration: dur, ease: "easeInOut" },
+          },
   };
 
   const textVariants = {
     enter: (dir: "left" | "right") =>
-      dir === "left"
-        ? { x: `${100}vw` }
-        : { x: `-${100}vw` },
+      dir === "left" ? { x: `${100}vw` } : { x: `-${100}vw` },
     center: {
       x: 0,
-      transition: { delay: isLoaded ? 2.5 : 0.5, duration: 1.2, ease: "easeInOut", type: "spring", bounce: 0.25 }, // Slower transition
+      transition: {
+        delay: isLoaded ? 2.5 : 0.5,
+        duration: 1.2,
+        ease: "easeInOut",
+        type: "spring",
+        bounce: 0.25,
+      }, // Slower transition
     },
     exit: {
       x: 0,
       opacity: 0,
       transition: { duration: 0.8, ease: "easeInOut" }, // Slower transition
-
-    }
+    },
   };
 
   return (
@@ -118,33 +149,30 @@ const PhotoGallery = () => {
         transition: "background-color 0.8s linear",
       }}
     >
-      <div className="absolute top-4 left-[50%] translate-x-[-50%] z-40">
-              <button className="bg-white px-4 py-2 font-bold rounded-full shadow-md hover:opacity-80"
-              style={{color: bgColor, opacity: isLoaded ? 0 : 1}}
-
-              >
-                VIEW ALL
-              </button>
-            </div>
+      <div className={`absolute left-[50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:scale-100 4k:scale-[2.5] 4k:top-16 laptop:top-4 ${isButtonTopZIndex?"z-40":"z-[60]"} translate-x-[-50%]`}>
+        <button
+          className="rounded-full bg-white px-4 py-2 font-bold shadow-md hover:opacity-80"
+          style={{ color: bgColor}}
+        >
+          VIEW ALL
+        </button>
+      </div>
       <div
-              className={`absolute inset-0 transition-transform duration-1000 ease-out z-0`}
-              style={{
-                backgroundImage: "url('/cardboard-texture.png')",
-                backgroundSize: 'cover',
-                mixBlendMode: 'multiply',
-              }}
-            >
-            </div>
-      
-      <AnimatePresence
-        custom={direction} mode="wait">
+        className={`absolute inset-0 z-0 transition-transform duration-1000 ease-out`}
+        style={{
+          backgroundImage: "url('assets/Gallery/cardboard-texture.png')",
+          backgroundSize: "cover",
+          mixBlendMode: "multiply",
+        }}
+      ></div>
 
-        (<motion.h1
-          key={currentIndex + (images[currentIndex]?.src ?? '') + currentIndex}
-
-          className="absolute top-0 text-[22.5vh] font-tusker opacity-75 drop-shadow-lg"
+      <AnimatePresence custom={direction} mode="wait">
+        (
+        <motion.h1
+          key={currentIndex + (images[currentIndex]?.src ?? "") + currentIndex}
+          className="relative mobile:top-[18vh] tablet:top-[10vh] laptop:top-[13.5vh] font-tusker mobile:text-[7vh] laptop:text-[21vh] opacity-75 drop-shadow-xl"
           style={{
-            color: textcolors[currentIndex%textcolors.length]
+            color: textcolors[currentIndex % textcolors.length],
           }}
           custom="left"
           variants={textVariants}
@@ -156,7 +184,7 @@ const PhotoGallery = () => {
         </motion.h1>
         <motion.div
           key={currentIndex}
-          className="absolute flex  h-screen w-screen flex-col items-center  justify-center z-50"
+          className="relative z-50 flex h-screen w-screen flex-col items-center justify-center"
           custom={direction}
           variants={imageVariants}
           initial="enter"
@@ -165,8 +193,8 @@ const PhotoGallery = () => {
         >
           {images[currentIndex] && (
             <>
-
               <ImageCard
+                isMobile={isMobile}
                 isLoaded={isLoaded}
                 index={currentIndex}
                 reff={(el) => (imgRefs.current[currentIndex] = el)}
@@ -177,16 +205,14 @@ const PhotoGallery = () => {
                 scale={parseFloat(images[currentIndex].scale)}
                 aspectRatio={aspectRatios[currentIndex]}
               />
-
             </>
           )}
         </motion.div>
-
         <motion.h1
-          key={currentIndex + (images[currentIndex]?.src ?? '')}
-          className="absolute text-[22.5vh] font-tusker opacity-75 drop-shadow-lg bottom-0 "
+          key={currentIndex + (images[currentIndex]?.src ?? "")}
+          className="relative mobile:bottom-[18vh] tablet:bottom-[9.5vh] laptop:bottom-[13.5vh] font-tusker mobile:text-[7vh] laptop:text-[21vh] opacity-75 drop-shadow-xl"
           style={{
-            color: textcolors[currentIndex%textcolors.length]
+            color: textcolors[currentIndex % textcolors.length],
           }}
           custom="right"
           variants={textVariants}
@@ -195,7 +221,8 @@ const PhotoGallery = () => {
           exit="exit"
         >
           {images[currentIndex]?.name2}
-        </motion.h1>)
+        </motion.h1>
+        )
       </AnimatePresence>
     </motion.section>
   );
@@ -204,9 +231,10 @@ const PhotoGallery = () => {
 export default PhotoGallery;
 
 interface ImageProps {
-  isLoaded: boolean,
-  index: number,
-  aspectRatio?: number,
+  isLoaded: boolean;
+  isMobile: boolean;
+  index: number;
+  aspectRatio?: number;
   src?: string;
   name1?: string;
   name2?: string;
@@ -215,24 +243,25 @@ interface ImageProps {
   reff: (el: HTMLImageElement | null) => void;
 }
 const ImageCard = (image: ImageProps) => {
-  const { src, name1, isLoaded, name2, bg, scale, aspectRatio, reff, index } = image;
+  const { src, name1, isLoaded, isMobile, name2, bg, scale, aspectRatio, reff, index } =
+    image;
   return (
     <div
-      className={`relative border-2 z-50 border-white w-max h-max ${styles["perforated-border"]}`}
+      className={`relative z-50 h-max w-max border-2 mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 border-white ${styles["perforated-border"]}`}
       style={{
         transform: `scale(${scale == 0 ? 1 : scale})`,
-      }}>
+      }}
+    >
       {/* // <img
       //   className={`z-30 h-auto w-[30%] border-2 border-white ${styles["perforated-border"]}`}
       //   src={src}
       //   alt={name1}
       // ></img>
       > */}
-      <div className=" bg-white p-2 ">
-        <div
-          className={`relative overflow-hidden flex justify-center`}
-        >
-          <img ref={reff}
+      <div className="bg-white p-[1vh]">
+        <div className={`relative flex justify-center overflow-hidden`}>
+          <img
+            ref={reff}
             // key={index}
             // ref={(el) => {
             //   if (el) {
@@ -241,8 +270,7 @@ const ImageCard = (image: ImageProps) => {
             // }}
             src={src}
             alt="Gallery"
-            className=" max-w-[50vw] max-h-[60vh] object-contain
-            "
+            className="max-h-[60vh] max-w-[50vw] object-contain"
           />
           {index === 0 && (
             <>
@@ -252,23 +280,27 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/photo.png"
                 alt="Gallery"
-                className={`absolute h-[15vh] w-[17vw] transition-transform duration-500 ease-in scale-90 ${!isLoaded ? "-translate-y-1" : "-translate-y-full"
-                  }`}
+                className={`absolute mobile:h-[4vh] mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] scale-90 transition-transform duration-500 ease-in ${
+                  !isLoaded ? "-translate-y-1" : "-translate-y-full"
+                }`}
               />
               <Image
-              width={400}
-              height={100}
-              quality={100}
+                width={400}
+                height={100}
+                quality={100}
                 src="/assets/Gallery/gallery.png"
                 alt="Gallery"
-                className={`absolute transition-transform duration-500 delay-500 scale-90 ease-in ${!isLoaded ? "-translate-y-3" : "-translate-y-full"
-                  }`}
+                className={`absolute scale-90 transition-transform delay-500 duration-500 tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto ease-in ${
+                  isMobile ? "w-[30vw] h-[8vh]" : "w-auto h-auto"
+                } ${
+                  !isLoaded ? "-translate-y-3" : "-translate-y-full"
+                }`}
               />
-            </>)}
+            </>
+          )}
         </div>
       </div>
     </div>
-
   );
 };
 
@@ -302,7 +334,7 @@ const images = [
     name1: "",
     name2: "INSOMPADA",
     bg: "",
-    scale: "1.5",
+    scale: "1.8",
   },
   {
     src: "/assets/Gallery/bg1.png",
@@ -330,7 +362,7 @@ const images = [
     name1: "PHOTO",
     name2: "GALLERY",
     bg: "",
-    scale: "",
+    scale: "1.8",
   },
 ];
 

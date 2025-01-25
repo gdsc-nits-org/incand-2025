@@ -1,4 +1,4 @@
 .perforated-border {
-    border: 10px dashed white;
+    border: 1.5vh dashed white;
     pointer-events: none;
   }
