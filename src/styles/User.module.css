@@ -1,0 +1,43 @@
+.incandCont{
+    overflow: hidden;
+    position: relative;
+    top:0;
+    height:50px;
+    transition-duration: 500ms;
+    cursor: pointer;
+    }
+
+    .incandText{
+    
+    position: absolute;
+    top:40%;
+ 
+    
+    color: #FFFFFF; /* Equivalent to the fill attribute */
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; /* Mimics the stroke */
+    font-family: "Tusker2", sans-serif; /* Ensure this font is imported or replace it with an available font */
+    font-weight: 600; /* Matches font-weight="600" */
+    
+    transition-duration: 500ms;
+    
+    letter-spacing: 1px; /* Matches letterSpacing */
+    line-height: 1px; /* Adjust as needed for vertical alignment */
+    text-align: center; /* Centers text if in a block or container */
+    
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .footer {
+        position: relative;  /* Or absolute if you want it fixed to the bottom */
+        width: 100%;
+        bottom: 0;
+        left: 0;
+      }
+      

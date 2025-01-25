@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "~/styles/AboutUs.module.css";
 
-const AboutUs: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
+const AboutUs = () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-[url('/assets/images/maze.png')] bg-cover bg-no-repeat mobile:scale-[.85] mobile3:scale-100 md:w-screen lg:w-screen">
       <div className="relative">

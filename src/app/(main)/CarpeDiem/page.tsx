@@ -42,7 +42,6 @@ const CarpeDiem = () => {
     <>
       {isLap && (
         <>
-          
           <div className={styles.carped + ""}>
             <Image
               src="/assets/CarpeDiem/background.png"
