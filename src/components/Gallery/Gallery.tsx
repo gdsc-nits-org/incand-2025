@@ -5,10 +5,11 @@ import { motion, AnimatePresence, delay, transform } from "framer-motion";
 import { SiCalendly } from "react-icons/si";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
+import Link from "next/link";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const PhotoGallery = () => {
   const [isLoaded, setIsLoaded] = useState(true);
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoaded(false);
@@ -16,7 +17,6 @@ const PhotoGallery = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  
   const [isButtonTopZIndex, setIsButtonTopZIndex] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<"down" | "up">("up");
@@ -25,26 +25,36 @@ const PhotoGallery = () => {
   const [aspectRatios, setAspectRatios] = useState<number[]>([]);
   const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isTablet = useMediaQuery({query: "(max-width: 1024px)"});
-  
-  useEffect(() => {
-    console.log("isLoaded:", isLoaded); // Debugging log
-    if (isLoaded) {
-      console.log("Setting timeout for z-index change...");
-      const timeout = setTimeout(() => {
-        console.log("Timeout triggered, updating z-index to z-[60]");
-        setIsButtonTopZIndex(true);
-      }, 2000);
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+  const [isAnimate, setIsAnimate] = useState({
+    photo: false,
+    gallery: false,
+  });
 
-      return () => {
-        console.log("Clearing timeout");
-        clearTimeout(timeout);
-      };
-    } else {
-      console.log("Resetting z-index to z-40");
-      setIsButtonTopZIndex(false);
-    }
-  }, [isLoaded]);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsButtonTopZIndex(true);
+    }, 2500);
+    return () => clearTimeout(timeout);
+  }, []);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsAnimate({
+        photo: true,
+        gallery: true,
+      });
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsAnimate({
+        photo: false,
+        gallery: true,
+      });
+    }, 1500);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -52,7 +62,7 @@ const PhotoGallery = () => {
     }, 500);
     return () => clearTimeout(timeout);
   }, [currentIndex]);
-  
+
   const handleNext = () => {
     setDirection("down");
     if (currentIndex < images.length - 1) {
@@ -81,15 +91,17 @@ const PhotoGallery = () => {
     }, 1500); // Match the animation duration
   };
 
+  const mainContainer = useRef<HTMLElement>(null);
+  mainContainer.current?.addEventListener("wheel", () => handleWheel);
   const off = "80";
   const dur = 0.6;
   const imageVariants = {
     enter: (dir: "down" | "up") =>
       isLoaded
         ? {
-            scaleX:isMobile? 4 : (isTablet? 3.5 : 2.3),
-            scaleY:isMobile? 4 : (isTablet? 3.5 : 2.3),
-            y:isMobile? 75 : (isTablet? 30 : 150),
+            scaleX: isMobile ? 4 : isTablet ? 3.5 : 2.3,
+            scaleY: isMobile ? 4 : isTablet ? 3.5 : 2.3,
+            y: isMobile ? 75 : isTablet ? 30 : 150,
             transition: { delay: 0, duration: 0, ease: "easeIn" },
           }
         : dir === "down"
@@ -142,6 +154,7 @@ const PhotoGallery = () => {
 
   return (
     <motion.section
+      ref={mainContainer}
       onWheel={handleWheel}
       className="min-w-screen relative flex h-screen flex-col items-center justify-center overflow-hidden"
       style={{
@@ -149,13 +162,36 @@ const PhotoGallery = () => {
         transition: "background-color 0.8s linear",
       }}
     >
-      <div className={`absolute left-[50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:scale-100 4k:scale-[2.5] 4k:top-16 laptop:top-4 ${isButtonTopZIndex?"z-40":"z-[60]"} translate-x-[-50%]`}>
-        <button
-          className="rounded-full bg-white px-4 py-2 font-bold shadow-md hover:opacity-80"
-          style={{ color: bgColor}}
+      {isButtonTopZIndex && (
+        <div
+          className={`absolute bottom-20 z-[60] flex w-full justify-center gap-4 laptop:hidden`}
         >
-          VIEW ALL
-        </button>
+          {" "}
+          <button
+            onClick={handlePrevious}
+            className="rounded-full bg-white p-4"
+          >
+            {" "}
+            <FaArrowLeft style={{ color: bgColor }} className="scale-150" />
+          </button>
+          <button onClick={handleNext} className="rounded-full bg-white p-4">
+            {" "}
+            <FaArrowRight style={{ color: bgColor }} className="scale-150" />
+          </button>
+        </div>
+      )}
+      <div
+        className={`absolute left-[50%] z-[60] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
+      >
+        {isButtonTopZIndex && (
+          <Link
+            href="/gallery_page"
+            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            style={{ color: bgColor }}
+          >
+            VIEW ALL
+          </Link>
+        )}
       </div>
       <div
         className={`absolute inset-0 z-0 transition-transform duration-1000 ease-out`}
@@ -170,7 +206,7 @@ const PhotoGallery = () => {
         (
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "") + currentIndex}
-          className="relative mobile:top-[18vh] tablet:top-[10vh] laptop:top-[13.5vh] font-tusker mobile:text-[7vh] laptop:text-[21vh] opacity-75 drop-shadow-xl"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[7vh] tablet:top-[10vh] laptop:top-[13.5vh] laptop:text-[21vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -194,6 +230,7 @@ const PhotoGallery = () => {
           {images[currentIndex] && (
             <>
               <ImageCard
+                isAnimate={isAnimate}
                 isMobile={isMobile}
                 isLoaded={isLoaded}
                 index={currentIndex}
@@ -210,7 +247,7 @@ const PhotoGallery = () => {
         </motion.div>
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "")}
-          className="relative mobile:bottom-[18vh] tablet:bottom-[9.5vh] laptop:bottom-[13.5vh] font-tusker mobile:text-[7vh] laptop:text-[21vh] opacity-75 drop-shadow-xl"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[7vh] tablet:bottom-[9.5vh] laptop:bottom-[13.5vh] laptop:text-[21vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -240,14 +277,26 @@ interface ImageProps {
   name2?: string;
   bg?: string;
   scale?: number;
+  isAnimate: { photo: boolean; gallery: boolean };
   reff: (el: HTMLImageElement | null) => void;
 }
 const ImageCard = (image: ImageProps) => {
-  const { src, name1, isLoaded, isMobile, name2, bg, scale, aspectRatio, reff, index } =
-    image;
+  const {
+    src,
+    name1,
+    isLoaded,
+    isMobile,
+    name2,
+    bg,
+    scale,
+    aspectRatio,
+    reff,
+    index,
+    isAnimate,
+  } = image;
   return (
     <div
-      className={`relative z-50 h-max w-max border-2 mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 border-white ${styles["perforated-border"]}`}
+      className={`relative z-50 h-max w-max border-2 border-white mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 ${styles["perforated-border"]}`}
       style={{
         transform: `scale(${scale == 0 ? 1 : scale})`,
       }}
@@ -280,9 +329,9 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/photo.png"
                 alt="Gallery"
-                className={`absolute mobile:h-[4vh] mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] scale-90 transition-transform duration-500 ease-in ${
+                className={`absolute scale-50 transition-transform duration-500 ease-in mobile:h-[4vh] mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] laptop:scale-90 ${
                   !isLoaded ? "-translate-y-1" : "-translate-y-full"
-                }`}
+                } ${isAnimate.photo ? "scale-90" : "scale-50"}`}
               />
               <Image
                 width={400}
@@ -290,11 +339,9 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/gallery.png"
                 alt="Gallery"
-                className={`absolute scale-90 transition-transform delay-500 duration-500 tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto ease-in ${
-                  isMobile ? "w-[30vw] h-[8vh]" : "w-auto h-auto"
-                } ${
-                  !isLoaded ? "-translate-y-3" : "-translate-y-full"
-                }`}
+                className={`absolute scale-50 transition-transform delay-500 duration-500 ease-in tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto laptop:scale-90 ${
+                  isMobile ? "h-[8vh] w-[30vw]" : "h-auto w-auto"
+                } ${!isLoaded ? "-translate-y-3" : "-translate-y-full"} ${isAnimate.gallery ? "scale-90" : "scale-50"} `}
               />
             </>
           )}
