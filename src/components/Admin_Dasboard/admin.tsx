@@ -4,7 +4,7 @@ import Image from "next/image";
 export const runtime = "edge";
 import { useState, useRef } from "react";
 import { useEffect } from "react";
-import Footer from "../Footer/Footer";
+
 
 const AdminDashboard = () => {
   const [isPhone, setIsPhone] = useState(false);
@@ -105,9 +105,6 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
         </>
       )}
       {isPhone && (
@@ -168,9 +165,7 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
+
         </>
       )}
       {isAir && (
@@ -232,9 +227,7 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
+
         </>
       )}
       {isIpad && (
@@ -296,9 +289,7 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
+
         </>
       )}
     </>

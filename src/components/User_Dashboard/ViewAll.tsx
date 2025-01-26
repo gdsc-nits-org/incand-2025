@@ -1,39 +1,99 @@
 "use client";
 
-import React, { useState, useRef } from "react";
 import Image from "next/image";
 import UserDashboard from "./user";
-export const runtime = "edge";
-import { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import { env } from "~/env";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "~/app/utils/firebase";
 
-const photos = [
-  { id: 1, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 2, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 3, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 4, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 5, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 6, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 7, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 8, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 9, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 10, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 11, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 12, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 13, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 14, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 15, status: "VERIFIED", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 16, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 17, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-  { id: 18, status: "PENDING", imageUrl: "/assets/UserDashboard/user.jpg" },
-];
+
+
+
+
+interface UserResponse {
+  name: string;
+  email: string;
+  pic: string;
+  id: string;
+  letters: string;
+  level: number;
+  flag: Date;
+  role: string;
+}
+
+interface UserSubmissions {
+  id: string;
+  photo: string;
+  status: string;
+  instant: Date;
+}
+
+interface ApiResponse {
+  status: number;
+  msg: UserResponse;
+}
+
+interface UserSubmissionsResponse {
+  status: number;
+  msg: UserSubmissions[];
+}
+
 
 const PhotosStatus = () => {
-  const verifiedPhotos = photos.filter((photo) => photo.status === "VERIFIED");
-  const pendingPhotos = photos.filter((photo) => photo.status === "PENDING");
+
   const [showPhotoStatus, setShowPhotoStatus] = useState(false);
   const handleViewAllClick = () => {
     setShowPhotoStatus(true);
   };
+  const [_user] = useAuthState(auth);
+  const [user, setUser] = useState<UserResponse>()
+  const [userSubmissions, setUserSubmissions] = useState<UserSubmissions[]>([])
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (_user) {
+        try {
+          const token = await _user.getIdToken();
+          const userSubmissions = await axios.get<ApiResponse>(
+            `${env.NEXT_PUBLIC_API_URL}/api/user/me`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          setUser(userSubmissions.data.msg);
+         
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [_user]);
+
+  useEffect(() => {
+    const fetchUserSubmissions = async () => {
+      if (_user) {
+        try {
+          const UserSubmissions = await axios.get<UserSubmissionsResponse>(
+            `${env.NEXT_PUBLIC_API_URL}/api/user/submissions/${user?.id}`,
+          );
+          setUserSubmissions(UserSubmissions.data.msg);
+
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    };
+
+    fetchUserSubmissions();
+  }, [_user]);
+
+  const verifiedPhotos = userSubmissions.filter((photo) => photo.status === "ACCEPTED");
+  const pendingPhotos = userSubmissions.filter((photo) => photo.status === "PENDING");
 
   // Separate refs for each section
   const verifiedScrollRef = useRef<HTMLDivElement | null>(null);
@@ -242,7 +302,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}
@@ -301,7 +361,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}
@@ -460,7 +520,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}
@@ -521,7 +581,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}
@@ -680,7 +740,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}
@@ -741,7 +801,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}
@@ -898,7 +958,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}
@@ -957,7 +1017,7 @@ const PhotosStatus = () => {
                                 className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
                               >
                                 <Image
-                                  src={photo.imageUrl}
+                                  src={photo.photo}
                                   alt="Avatar"
                                   width={300}
                                   height={300}

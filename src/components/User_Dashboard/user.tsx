@@ -5,37 +5,101 @@ import { useEffect } from "react";
 import styles from "~/styles/User.module.css";
 import { useState, useRef } from "react";
 import PhotosStatus from "./ViewAll";
-import Footer from "../Footer/Footer";
-export const runtime = "edge";
+import Link from "next/link";
+import axios from "axios";
+import { env } from "~/env";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "~/app/utils/firebase";
 
-const cards = [
-  { id: 1, status: "VERIFIED", color: "bg-[#C4FFAE]" },
-  { id: 2, status: "VERIFIED", color: "bg-[#C4FFAE]" },
-  { id: 3, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 4, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 5, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 6, status: "VERIFIED", color: "bg-[#C4FFAE]" },
-  { id: 7, status: "VERIFIED", color: "bg-[#C4FFAE]" },
-  { id: 8, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 9, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 10, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 11, status: "VERIFIED", color: "bg-[#C4FFAE]" },
-  { id: 12, status: "VERIFIED", color: "bg-[#C4FFAE]" },
-  { id: 13, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 14, status: "PENDING", color: "bg-[#FC6C7B]" },
-  { id: 15, status: "PENDING", color: "bg-[#FC6C7B]" },
-];
 
 const incand = [
-  { src: "/assets/UserDashboard/I.svg", opacity: 1 },
-  { src: "/assets/UserDashboard/n.svg", opacity: 1 },
-  { src: "/assets/UserDashboard/c.svg", opacity: 1 },
-  { src: "/assets/UserDashboard/a.svg", opacity: 1 },
-  { src: "/assets/UserDashboard/n1.svg", opacity: 1 },
-  { src: "/assets/UserDashboard/d.svg", opacity: 1 },
+  { src: "/assets/UserDashboard/I.svg" },
+  { src: "/assets/UserDashboard/n.svg" },
+  { src: "/assets/UserDashboard/c.svg" },
+  { src: "/assets/UserDashboard/a.svg" },
+  { src: "/assets/UserDashboard/n1.svg" },
+  { src: "/assets/UserDashboard/d.svg" }
 ];
 
+interface UserResponse {
+  name: string;
+  email: string;
+  pic: string;
+  id: string;
+  letters: string;
+  level: number;
+  flag: Date;
+  role: string;
+}
+
+interface UserSubmissions {
+  id: string;
+  photo: string;
+  status: string;
+  instant: Date;
+}
+
+interface ApiResponse {
+  status: number;
+  msg: UserResponse;
+}
+
+interface UserSubmissionsResponse {
+  status: number;
+  msg: UserSubmissions[];
+}
+
+
+
 const UserDashboard = () => {
+  const [_user] = useAuthState(auth);
+  const [user, setUser] = useState<UserResponse>()
+  const [userSubmissions, setUserSubmissions] = useState<UserSubmissions[]>([])
+  const [letters, setLetters] = useState<string>("000000")
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (_user) {
+        try {
+          const token = await _user.getIdToken();
+          const userSubmissions = await axios.get<ApiResponse>(
+            `${env.NEXT_PUBLIC_API_URL}/api/user/me`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          setUser(userSubmissions.data.msg);
+          setLetters(userSubmissions.data.msg.letters);
+
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [_user]);
+
+  useEffect(() => {
+    const fetchUserSubmissions = async () => {
+      if (_user) {
+        try {
+          const UserSubmissions = await axios.get<UserSubmissionsResponse>(
+            `${env.NEXT_PUBLIC_API_URL}/api/user/submissions/${user?.id}`,
+          );
+          setUserSubmissions(UserSubmissions.data.msg);
+
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    };
+
+    fetchUserSubmissions();
+  }, [_user]);
+
+
   const scrollContainerRef = useRef<HTMLDivElement | null>(null); // Add proper type
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -79,6 +143,13 @@ const UserDashboard = () => {
   const [isAir, setIsAir] = useState(false);
   const [isLap, setIsLap] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const acceptedPhotos = userSubmissions.filter((photo) => photo.status === "ACCEPTED");
+  let lettersNeeded = 0;
+  for (const char of letters) {
+    if (char === "0"){
+      lettersNeeded++;
+    }
+  }
   useEffect(() => {
     setIsClient(true);
 
@@ -140,8 +211,8 @@ const UserDashboard = () => {
 
                         <div className="relative left-[3rem] flex flex-1 flex-col justify-evenly">
                           <div className="font-tusker">
-                            <p className="text-[2.5rem] text-white">@Newt</p>
-                            <h2>incand@incand</h2>
+                            <p className="text-[2.5rem] text-white">@{user?.name}</p>
+                            <h2>{user?.email}</h2>
                           </div>
                           <div className="flex flex-row items-center">
                             <div className="relative mx-1 ml-[0] h-[9rem] w-[9rem] overflow-hidden border border-black bg-[#FF7CD5]">
@@ -150,7 +221,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -161,7 +232,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -172,7 +243,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length - acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -203,8 +274,7 @@ const UserDashboard = () => {
                                 alt={`Image ${index + 1}`}
                                 layout="fill"
                                 objectFit="cover"
-                                style={{ opacity: image.opacity }}
-                                className="z-[1000]" // Set opacity dynamically
+                                className={`z-[1000] ${letters[index] === "1" ? "opacity-1" : "opacity-[0.16]"} `} // Set opacity dynamically
                               />
                             </div>
                           ))}
@@ -216,17 +286,18 @@ const UserDashboard = () => {
                             style={{ letterSpacing: "1.2px" }}
                             className={`text-center text-[24px]`}
                           >
-                            Collect 4 More To Win
+                            collect {lettersNeeded} to win
                           </span>
                         </span>
-
-                        <Image
-                          src={"/assets/UserDashboard/upload.svg"}
-                          alt="upload"
-                          height={10}
-                          width={10}
-                          className="relative left-[10rem] top-[-8.2rem] h-[12rem] w-[12rem]"
-                        ></Image>
+                        <Link href="/game">
+                          <Image
+                            src={"/assets/UserDashboard/upload.svg"}
+                            alt="upload"
+                            height={10}
+                            width={10}
+                            className="z-1 relative left-[10rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                          ></Image>
+                        </Link>
                       </div>
                     </div>
 
@@ -243,7 +314,7 @@ const UserDashboard = () => {
                         </p>
                       </div>
                       <div className="mr-[2rem] mt-4 flex items-center justify-center rounded-[18px] border-2 border-black bg-white pl-[1rem] pr-[1rem] font-tusker2 tracking-widest text-black shadow-custom-black">
-                        <button onClick={handleViewAllClick}>
+                        <button onClick={handleViewAllClick} className="z-[1000]">
                           <p className="text-[1.5rem]">VIEW ALL</p>
                         </button>
                       </div>
@@ -267,13 +338,13 @@ const UserDashboard = () => {
                         style={{ userSelect: "none" }}
                       >
                         <div className="flex gap-4">
-                          {cards.map((card) => (
+                          {userSubmissions.map((card) => (
                             <div
                               key={card.id}
-                              className={`flex flex-col items-center p-4 ${card.color} min-w-[150px] rounded-lg shadow-custom-black`}
+                              className={`flex flex-col items-center p-4 ${card.status === "PENDING" ? "bg-[#FC6C7B]" : "bg-[#C4FFAE]"} min-w-[150px] rounded-lg shadow-custom-black`}
                             >
                               <Image
-                                src="/assets/UserDashboard/user.jpg"
+                                src={card.photo}
                                 alt="Avatar"
                                 width={100}
                                 height={100}
@@ -302,9 +373,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
+
         </>
       )}
       {isPhone && (
@@ -348,7 +417,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -359,7 +428,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -370,7 +439,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length - acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -401,8 +470,7 @@ const UserDashboard = () => {
                                 alt={`Image ${index + 1}`}
                                 layout="fill"
                                 objectFit="cover"
-                                style={{ opacity: image.opacity }}
-                                className="z-[1000]"
+                                className={`z-[1000] ${letters[index] === "1" ? "opacity-1" : "opacity-[0.16]"} `}
                               />
                             </div>
                           ))}
@@ -417,14 +485,15 @@ const UserDashboard = () => {
                             Collect 4 More To Win
                           </span>
                         </span>
-
-                        <Image
-                          src={"/assets/UserDashboard/upload.svg"}
-                          alt="upload"
-                          height={10}
-                          width={10}
-                          className="relative left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
-                        ></Image>
+                        <Link href="/game">
+                          <Image
+                            src={"/assets/UserDashboard/upload.svg"}
+                            alt="upload"
+                            height={10}
+                            width={10}
+                            className="relative z-1 left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                          ></Image>
+                        </Link>
                       </div>
                     </div>
 
@@ -441,7 +510,7 @@ const UserDashboard = () => {
                         </p>
                       </div>
                       <div className="relative left-[6rem] mt-6 flex items-center justify-center rounded-[18px] border-2 border-black bg-white pl-[1rem] pr-[1rem] font-tusker2 tracking-widest text-black shadow-custom-black">
-                        <button onClick={handleViewAllClick}>
+                        <button onClick={handleViewAllClick} className="z-[1000]">
                           <p className="text-[1.5rem]">VIEW ALL</p>
                         </button>
                       </div>
@@ -457,13 +526,13 @@ const UserDashboard = () => {
                         style={{ userSelect: "none" }}
                       >
                         <div className="flex gap-4">
-                          {cards.map((card) => (
+                          {userSubmissions.map((card) => (
                             <div
                               key={card.id}
-                              className={`flex flex-col items-center p-4 ${card.color} min-w-[150px] rounded-lg shadow-custom-black`}
+                              className={`flex flex-col items-center p-4 ${card.status === "PENDING" ? "bg-[#FC6C7B]" : "bg-[#C4FFAE]"} min-w-[150px] rounded-lg shadow-custom-black`}
                             >
                               <Image
-                                src="/assets/UserDashboard/user.jpg"
+                                src={card.photo}
                                 alt="Avatar"
                                 width={100}
                                 height={100}
@@ -484,9 +553,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
+
         </>
       )}
       {isAir && (
@@ -530,7 +597,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -541,7 +608,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -552,7 +619,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length - acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -583,8 +650,7 @@ const UserDashboard = () => {
                                 alt={`Image ${index + 1}`}
                                 layout="fill"
                                 objectFit="cover"
-                                style={{ opacity: image.opacity }}
-                                className="z-[1000]" // Set opacity dynamically
+                                className={`z-[1000] ${letters[index] === "1" ? "opacity-1" : "opacity-[0.16]"} `}
                               />
                             </div>
                           ))}
@@ -599,14 +665,15 @@ const UserDashboard = () => {
                             Collect 4 More To Win
                           </span>
                         </span>
-
-                        <Image
-                          src={"/assets/UserDashboard/upload.svg"}
-                          alt="upload"
-                          height={10}
-                          width={10}
-                          className="relative left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
-                        ></Image>
+                        <Link href="/game">
+                          <Image
+                            src={"/assets/UserDashboard/upload.svg"}
+                            alt="upload"
+                            height={10}
+                            width={10}
+                            className="relative z-1 left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                          ></Image>
+                        </Link>
                       </div>
                     </div>
 
@@ -623,7 +690,7 @@ const UserDashboard = () => {
                         </p>
                       </div>
                       <div className="relative right-[-4rem] mt-6 flex items-center justify-center rounded-[18px] border-2 border-black bg-white pl-[1rem] pr-[1rem] font-tusker2 tracking-widest text-black shadow-custom-black">
-                        <button onClick={handleViewAllClick}>
+                        <button onClick={handleViewAllClick} className="z-[1000]">
                           <p className="text-[1.5rem]">VIEW ALL</p>
                         </button>
                       </div>
@@ -639,13 +706,13 @@ const UserDashboard = () => {
                         style={{ userSelect: "none" }}
                       >
                         <div className="flex gap-4">
-                          {cards.map((card) => (
+                          {userSubmissions.map((card) => (
                             <div
                               key={card.id}
-                              className={`flex flex-col items-center p-4 ${card.color} min-w-[150px] rounded-lg shadow-custom-black`}
+                              className={`flex flex-col items-center p-4 ${card.status === "PENDING" ? "bg-[#FC6C7B]" : "bg-[#C4FFAE]"} min-w-[150px] rounded-lg shadow-custom-black`}
                             >
                               <Image
-                                src="/assets/UserDashboard/user.jpg"
+                                src={card.photo}
                                 alt="Avatar"
                                 width={100}
                                 height={100}
@@ -666,9 +733,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
+
         </>
       )}
       {isIpad && (
@@ -712,7 +777,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -723,7 +788,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -734,7 +799,7 @@ const UserDashboard = () => {
                               </p>
                               <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
                                 <p className="text-center font-tusker2 text-[4rem]">
-                                  1
+                                  {userSubmissions.length - acceptedPhotos.length}
                                 </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
@@ -765,8 +830,7 @@ const UserDashboard = () => {
                                 alt={`Image ${index + 1}`}
                                 layout="fill"
                                 objectFit="cover"
-                                style={{ opacity: image.opacity }}
-                                className="z-[1000]" // Set opacity dynamically
+                                className={`z-[1000] ${letters[index] === "1" ? "opacity-1" : "opacity-[0.16]"} `}
                               />
                             </div>
                           ))}
@@ -781,14 +845,15 @@ const UserDashboard = () => {
                             Collect 4 More To Win
                           </span>
                         </span>
-
-                        <Image
-                          src={"/assets/UserDashboard/upload.svg"}
-                          alt="upload"
-                          height={10}
-                          width={10}
-                          className="relative left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
-                        ></Image>
+                        <Link href="/game">
+                          <Image
+                            src={"/assets/UserDashboard/upload.svg"}
+                            alt="upload"
+                            height={10}
+                            width={10}
+                            className="relative z-1 left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                          ></Image>
+                        </Link>
                       </div>
                     </div>
 
@@ -805,7 +870,7 @@ const UserDashboard = () => {
                         </p>
                       </div>
                       <div className="mr-[2rem] mt-4 flex items-center justify-center rounded-[18px] border-2 border-black bg-white pl-[1rem] pr-[1rem] font-tusker2 tracking-widest text-black shadow-custom-black">
-                        <button onClick={handleViewAllClick}>
+                        <button onClick={handleViewAllClick} className="z-[1000]">
                           <p className="text-[2.8rem]">VIEW ALL</p>
                         </button>
                       </div>
@@ -829,13 +894,13 @@ const UserDashboard = () => {
                         style={{ userSelect: "none" }}
                       >
                         <div className="flex gap-4">
-                          {cards.map((card) => (
+                          {userSubmissions.map((card) => (
                             <div
                               key={card.id}
-                              className={`flex flex-col items-center p-4 ${card.color} min-w-[150px] rounded-lg shadow-custom-black`}
+                              className={`flex flex-col items-center p-4 ${card.status === "PENDING" ? "bg-[#FC6C7B]" : "bg-[#C4FFAE]"} min-w-[150px] rounded-lg shadow-custom-black`}
                             >
                               <Image
-                                src="/assets/UserDashboard/user.jpg"
+                                src={card.photo}
                                 alt="Avatar"
                                 width={100}
                                 height={100}
@@ -864,9 +929,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          <div>
-            <Footer />
-          </div>
+
         </>
       )}
     </>
