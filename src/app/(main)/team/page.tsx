@@ -1,6 +1,8 @@
+'use client';
 import { useState, useEffect } from "react";
-import TeamMobile from "./TeamMobile";
-import TeamDesktop from "./TeamDesktop";
+import TeamMobile from "../../../components/Team/TeamMobile";
+import TeamDesktop from "../../../components/Team/TeamDesktop";
+export const runtime = "edge";
 
 const Team = () => {
   const [isMobile, setIsMobile] = useState(false);

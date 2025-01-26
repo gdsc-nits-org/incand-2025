@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const MAX_VISIBILITY = 2;
-const AUTOPLAY_INTERVAL = 3000;
+
 
 interface CarouselProps {
   children: React.ReactNode;
@@ -11,12 +11,6 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
   const [active, setActive] = useState(0);
   const count = React.Children.count(children);
 
-  useEffect(() => {
-    const autoplay = setInterval(() => {
-      setActive((prevActive) => (prevActive + 1) % count);
-    }, AUTOPLAY_INTERVAL);
-    return () => clearInterval(autoplay);
-  }, [count]);
 
   return (
     <div className="relative flex h-[25rem] w-full flex-col items-center justify-center overflow-hidden">
@@ -24,12 +18,12 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
       <div className="relative h-full w-full">
         {active > 0 && (
           <button
-            className="absolute left-8 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 hover:bg-gray-200"
+            className="absolute left-12 mobile2:left-16 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400"
             onClick={() => setActive((i) => i - 1)}
           >
             <img
               src="/assets/Team/leftArrow.png"
-              className="h-[100%] w-[100%]"
+              className="h-[100%] w-[100%] opacity-90"
               alt="Meet Our Team"
             />
           </button>
@@ -54,12 +48,12 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
         ))}
         {active < count - 1 && (
           <button
-            className="absolute right-8 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 hover:bg-gray-200"
+            className="absolute right-12 mobile2:right-16 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400"
             onClick={() => setActive((i) => i + 1)}
           >
             <img
               src="/assets/Team/rightArrow.png"
-              className="h-[100%] w-[100%]"
+              className="h-[100%] w-[100%] opacity-90"
               alt="Meet Our Team"
             />
           </button>

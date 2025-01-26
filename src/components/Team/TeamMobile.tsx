@@ -60,7 +60,7 @@ const TeamMobile: React.FC = () => {
           </p>
         </div>
 
-        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+        <div className="-mt-4 box-border h-[30rem] w-[90%] px-4">
           {/* <Slider {...settings}> */}
           <Carousel>
             {teamDataCore.map((member) => (
