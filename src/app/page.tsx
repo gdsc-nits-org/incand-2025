@@ -1,4 +1,6 @@
+// /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+
 import dynamic from "next/dynamic";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -17,7 +19,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 const FadeInSection = ({
   children,
