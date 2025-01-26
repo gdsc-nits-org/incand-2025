@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import TeamMobile from "./TeamMobile";
 import TeamDesktop from "./TeamDesktop";
 
-
-
 const Team = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -16,12 +14,7 @@ const Team = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return isMobile ? (
-    <TeamMobile/>
-  ) : (
-    <TeamDesktop/>
-  );
+  return isMobile ? <TeamMobile /> : <TeamDesktop />;
 };
 
 export default Team;
-

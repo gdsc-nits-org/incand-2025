@@ -109,8 +109,8 @@ const HomePage = () => {
       <main className="container h-[100vh]">
         <Navbar />
         {/* <Team/> */}
-         {/* <TeamMobile/> */}
-         <Team/>
+        {/* <TeamMobile/> */}
+        <Team />
         {/* <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">

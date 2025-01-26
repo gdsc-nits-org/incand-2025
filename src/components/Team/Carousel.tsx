@@ -19,22 +19,26 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
   }, [count]);
 
   return (
-    <div className="w-full h-[25rem] relative flex flex-col justify-center items-center overflow-hidden">
+    <div className="relative flex h-[25rem] w-full flex-col items-center justify-center overflow-hidden">
       {/* Carousel Wrapper */}
-      <div className="w-full h-full relative">
+      <div className="relative h-full w-full">
         {active > 0 && (
           <button
-            className="absolute left-8 top-1/2 transform -translate-y-1/2 text-yellow-400 text-3xl z-10 cursor-pointer p-2 rounded-full bg-transparent hover:bg-gray-200"
+            className="absolute left-8 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 hover:bg-gray-200"
             onClick={() => setActive((i) => i - 1)}
           >
-             <img src="/assets/Team/leftArrow.png" className="w-[100%] h-[100%]" alt="Meet Our Team" />
+            <img
+              src="/assets/Team/leftArrow.png"
+              className="h-[100%] w-[100%]"
+              alt="Meet Our Team"
+            />
           </button>
         )}
         {React.Children.map(children, (child, i) => (
           <div
-            className={`absolute flex flex-row justify-center items-center w-full h-full transition-all duration-300 ease-out ${
+            className={`absolute flex h-full w-full flex-row items-center justify-center transition-all duration-300 ease-out ${
               Math.abs(active - i) >= MAX_VISIBILITY
-                ? "opacity-0 pointer-events-none"
+                ? "pointer-events-none opacity-0"
                 : "opacity-100"
             }`}
             style={{
@@ -50,10 +54,14 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
         ))}
         {active < count - 1 && (
           <button
-            className="absolute right-8 top-1/2 transform -translate-y-1/2 text-yellow-400 text-3xl z-10 cursor-pointer p-2 rounded-full bg-transparent hover:bg-gray-200"
+            className="absolute right-8 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 hover:bg-gray-200"
             onClick={() => setActive((i) => i + 1)}
           >
-             <img src="/assets/Team/rightArrow.png" className="w-[100%] h-[100%]" alt="Meet Our Team" />
+            <img
+              src="/assets/Team/rightArrow.png"
+              className="h-[100%] w-[100%]"
+              alt="Meet Our Team"
+            />
           </button>
         )}
       </div>
@@ -62,7 +70,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
       <div className="absolute bottom-6 flex space-x-2">
         {React.Children.map(children, (_, i) => (
           <div
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`h-2 w-2 rounded-full transition-all duration-300 ${
               i === active ? "bg-white" : "bg-yellow-400"
             }`}
           ></div>
