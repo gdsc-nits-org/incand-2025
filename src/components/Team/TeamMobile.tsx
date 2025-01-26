@@ -54,15 +54,17 @@ const TeamMobile: React.FC = () => {
               key={member.id}
               className="transition-transform transform hover:scale-105 duration-300 ease-in-out"
             >
-              <TeamCard
-                name={member.name}
-                role={member.designation}
-                image={member.img}
-                fb={member.fb || ""}
-                linkedin={member.linkedin || ""}
-                git={member.git || ""}
-                ind={member.id}
-              />
+             <TeamCard
+  key={member.id}
+  name={member.name}
+  role={member.designation}
+  image={member.img}
+  fb={member.fb ?? ''}
+  linkedin={member.linkedin ?? ''}
+  git={member.git ?? ''}
+  ind={member.id}
+/>
+
             </div>
           ))}
       </Carousel>
@@ -90,14 +92,16 @@ const TeamMobile: React.FC = () => {
               className="transition-transform transform hover:scale-105 duration-300 ease-in-out"
             >
               <TeamCard
-                name={member.name}
-                role={member.designation}
-                image={member.img}
-                fb={member.fb || ""}
-                linkedin={member.linkedin || ""}
-                git={member.git || ""}
-                ind={member.id}
-              />
+  key={member.id}
+  name={member.name}
+  role={member.designation}
+  image={member.img}
+  fb={member.fb ?? ''}
+  linkedin={member.linkedin ?? ''}
+  git={member.git ?? ''}
+  ind={member.id}
+/>
+
             </div>
           ))}
       </Carousel>
@@ -122,15 +126,17 @@ const TeamMobile: React.FC = () => {
               key={member.id}
               className="transition-transform transform hover:scale-105 duration-300 ease-in-out"
             >
-              <TeamCard
-                name={member.name}
-                role={member.designation}
-                image={member.img}
-                fb={member.fb || ""}
-                linkedin={member.linkedin || ""}
-                git={member.git || ""}
-                ind={member.id}
-              />
+            <TeamCard
+  key={member.id}
+  name={member.name}
+  role={member.designation}
+  image={member.img}
+  fb={member.fb ?? ''}
+  linkedin={member.linkedin ?? ''}
+  git={member.git ?? ''}
+  ind={member.id}
+/>
+
             </div>
           ))}
       </Carousel>

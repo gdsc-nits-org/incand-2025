@@ -76,45 +76,48 @@ const TeamDesktop: React.FC = () => {
                     {isCore &&
                         teamDataCore.map((member) => (
                             <TeamCard
-                                key={member.id}
-                                name={member.name}
-                                role={member.designation}
-                                image={member.img}
-                                fb={member.fb || ''}
-                                linkedin={member.linkedin || ''}
-                                git={member.git || ''}
-                                ind={member.id}
-                            />
+                            key={member.id}
+                            name={member.name}
+                            role={member.designation}
+                            image={member.img}
+                            fb={member.fb ?? ''}
+                            linkedin={member.linkedin ?? ''}
+                            git={member.git ?? ''}
+                            ind={member.id}
+                          />
+                          
                         ))
                     }
 
                  {isTech && 
                  teamDataTech.map((member) => (
-                            <TeamCard
-                                key={member.id}
-                                name={member.name}
-                                role={member.designation}
-                                image={member.img}
-                                fb={member.fb || ''}
-                                linkedin={member.linkedin || ''}
-                                git={member.git || ''}
-                                ind={member.id}
-                            />
+                    <TeamCard
+                    key={member.id}
+                    name={member.name}
+                    role={member.designation}
+                    image={member.img}
+                    fb={member.fb ?? ''}
+                    linkedin={member.linkedin ?? ''}
+                    git={member.git ?? ''}
+                    ind={member.id}
+                  />
+                  
                         ))
                     }
 
                    {isModule &&
                         teamDataModule.map((member) => (
                             <TeamCard
-                                key={member.id}
-                                name={member.name}
-                                role={member.designation}
-                                image={member.img}
-                                fb={member.fb || ''}
-                                linkedin={member.linkedin || ''}
-                                git={member.git || ''}
-                                ind={member.id}
-                            />
+                            key={member.id}
+                            name={member.name}
+                            role={member.designation}
+                            image={member.img}
+                            fb={member.fb ?? ''}
+                            linkedin={member.linkedin ?? ''}
+                            git={member.git ?? ''}
+                            ind={member.id}
+                          />
+                          
                         ))
                     }
                 </div>
