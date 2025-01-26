@@ -17,6 +17,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 import Team from "~/components/Team/Team";
+import TeamMobile from "~/components/Team/TeamMobile";
 
 // export const runtime = "edge";
 
@@ -107,7 +108,9 @@ const HomePage = () => {
     <div className="overflow-x-hidden bg-white">
       <main className="container h-[100vh]">
         <Navbar />
-        <Team/>
+        {/* <Team/> */}
+         {/* <TeamMobile/> */}
+         <Team/>
         {/* <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
