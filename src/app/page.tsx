@@ -108,7 +108,7 @@ const HomePage = () => {
     <div className="overflow-x-hidden bg-white">
       <main className="container h-[100vh]">
         <Navbar />
-      
+
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
         <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">

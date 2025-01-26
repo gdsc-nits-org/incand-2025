@@ -7,7 +7,7 @@ export default {
     extend: {
       backgroundImage: {
         "maze-pattern": "url('/assets/navbar/maze.png')",
-        "evnet-pattern": "url('/assets/events/backgroundImg.png')",
+        "event-pattern": "url('/assets/events/backgroundImg.png')",
       },
       fontFamily: {
         neue: ["Neue"],

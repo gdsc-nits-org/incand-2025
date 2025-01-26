@@ -412,4 +412,3 @@ const images = [
     scale: "1.8",
   },
 ];
-
