@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import styles from "~/styles/User.module.css";
 import { useState, useRef } from "react";
 import PhotosStatus from "./ViewAll";
+import Footer from "../Footer/Footer";
 export const runtime = "edge";
 
 const cards = [
@@ -26,13 +27,13 @@ const cards = [
 ];
 
 const incand = [
-  { src: '/assets/UserDashboard/I.svg', opacity: 1 },
-  { src: '/assets/UserDashboard/n.svg', opacity: 1 },
-  { src: '/assets/UserDashboard/c.svg', opacity: 1 },
-  { src: '/assets/UserDashboard/a.svg', opacity: 1 },
-  { src: '/assets/UserDashboard/n1.svg', opacity: 1 },
-  { src: '/assets/UserDashboard/d.svg', opacity: 1 },
-]
+  { src: "/assets/UserDashboard/I.svg", opacity: 1 },
+  { src: "/assets/UserDashboard/n.svg", opacity: 1 },
+  { src: "/assets/UserDashboard/c.svg", opacity: 1 },
+  { src: "/assets/UserDashboard/a.svg", opacity: 1 },
+  { src: "/assets/UserDashboard/n1.svg", opacity: 1 },
+  { src: "/assets/UserDashboard/d.svg", opacity: 1 },
+];
 
 const UserDashboard = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null); // Add proper type
@@ -72,11 +73,7 @@ const UserDashboard = () => {
   };
 
   const [showPhotosStatus, setShowPhotosStatus] = useState(false);
-  const [lettersHaving, setLettersHaving] = useState(["I", "N1", "A", "D"]);
-  const [top10Players, setTop10Placers] = useState<
-    { userName: string; photo: string; lettersHaving: string[] }[]
-  >([]);
-  const [uploadedImage, setUploadedImage] = useState("");
+
 
   const [isPhone, setIsPhone] = useState(false);
   const [isIpad, setIsIpad] = useState(false);
@@ -91,7 +88,7 @@ const UserDashboard = () => {
 
       const width = window.innerWidth;
       setIsPhone(width >= 320 && width <= 500);
-      setIsAir(width >= 501 && width < 1000);
+      setIsAir(width >= 501 && width < 900);
       setIsIpad(width >= 901 && width < 1025);
       setIsLap(width >= 1026);
     };
@@ -115,13 +112,13 @@ const UserDashboard = () => {
     <>
       {isLap && (
         <>
-          <div className="min-h-screen w-screen bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen w-screen bg-[#FFEBC8] overflow-hidden md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
                   <PhotosStatus />
                 ) : (
-                  <div className="relative rounded-[18px] border-2 border-black bg-[#FFE5A1] bg-[url('/assets/UserDashboard/dino.png')] bg-cover bg-no-repeat ">
+                  <div className="relative rounded-[18px] border-2 border-black bg-[#FFE5A1] bg-[url('/assets/UserDashboard/dino.png')] bg-cover bg-no-repeat">
                     <div className="relative flex flex-row justify-center space-x-4 pl-[2rem] pr-[2rem] pt-[2rem]">
                       <div className="relative flex h-[20rem] w-[50rem] overflow-hidden rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] shadow-custom-black">
                         <div className="absolute bottom-[-9.8rem] right-[-9.8rem] h-[19.5rem] w-[19.5rem] rounded-full bg-[#A56FFF]"></div>
@@ -152,8 +149,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS UPLOADED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -161,18 +160,21 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS ACCEPTED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
-
                             </div>
                             <div className="relative mx-1 ml-3 h-[9rem] w-[9rem] overflow-hidden border border-black bg-[#EDFF7F]">
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS PENDING
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -180,9 +182,9 @@ const UserDashboard = () => {
                         </div>
                       </div>
 
-                      <div className="flex-col h-[20rem] w-[31rem] justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] bg-[url('/assets/UserDashboard/user.gif')] items-center bg-cover bg-center pt-[2rem] shadow-custom-black">
+                      <div className="h-[20rem] w-[31rem] flex-col items-center justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] bg-[url('/assets/UserDashboard/user.gif')] bg-cover bg-center pt-[2rem] shadow-custom-black">
                         <span
-                          className={`inline-block flex w-[8rem] left-[6rem] relative justify-center md:w-[10.2rem] lg:w-[10rem] xl:w-[20rem] ${styles.incandCont}`}
+                          className={`relative left-[6rem] inline-block flex w-[8rem] justify-center md:w-[10.2rem] lg:w-[10rem] xl:w-[20rem] ${styles.incandCont}`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
@@ -191,9 +193,12 @@ const UserDashboard = () => {
                             LETTERS COLLECTED
                           </span>
                         </span>
-                        <div className="flex w-[35rem] h-[12rem]">
+                        <div className="flex h-[12rem] w-[35rem]">
                           {incand.map((image, index) => (
-                            <div key={index} className=" scale-[0.73] relative w-[5rem] h-[6rem] z-[1000] ">
+                            <div
+                              key={index}
+                              className="relative z-[1000] h-[6rem] w-[5rem] scale-[0.73]"
+                            >
                               <Image
                                 src={image.src}
                                 alt={`Image ${index + 1}`}
@@ -206,25 +211,23 @@ const UserDashboard = () => {
                           ))}
                         </div>
                         <span
-                          className={`relative font-tusker2 flex w-[8rem] left-[6rem] relative justify-center top-[-5.4rem] md:w-[10.2rem] lg:w-[10rem] xl:w-[20rem] $`}
+                          className={`$ relative left-[6rem] top-[-5.4rem] flex w-[8rem] justify-center font-tusker2 md:w-[10.2rem] lg:w-[10rem] xl:w-[20rem]`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
-                            className={`text-center text-[24px]  `}
+                            className={`text-center text-[24px]`}
                           >
                             Collect 4 More To Win
                           </span>
                         </span>
-                      
-                          <Image
-                            src={"/assets/UserDashboard/upload.svg"}
-                            alt="upload"
-                            height={10}
-                            width={10}
-                            className="h-[12rem] w-[12rem] top-[-8.2rem] left-[10rem] relative ">
-                          </Image>
-                        
 
+                        <Image
+                          src={"/assets/UserDashboard/upload.svg"}
+                          alt="upload"
+                          height={10}
+                          width={10}
+                          className="relative left-[10rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                        ></Image>
                       </div>
                     </div>
 
@@ -300,11 +303,14 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
+          < div >
+            <Footer />
+          </div>
         </>
       )}
       {isPhone && (
         <>
-          <div className="min-h-screen w-screen bg-[#FFEBC8] md:w-screen lg:w-screen overflow-hidden">
+          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
             <div className="relative items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -341,8 +347,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS UPLOADED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -350,8 +358,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS ACCEPTED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -359,8 +369,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS PENDING
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -368,9 +380,9 @@ const UserDashboard = () => {
                         </div>
                       </div>
 
-                      <div className="relative left-[-0.7rem] top-[-4rem] flex-col h-[20rem] w-[31rem] scale-[0.75] justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] items-center bg-[url('/assets/UserDashboard/user.gif')] bg-cover bg-center pt-[2rem] shadow-custom-black">
+                      <div className="relative left-[-0.7rem] top-[-4rem] h-[20rem] w-[31rem] scale-[0.75] flex-col items-center justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] bg-[url('/assets/UserDashboard/user.gif')] bg-cover bg-center pt-[2rem] shadow-custom-black">
                         <span
-                          className={`inline-block flex w-[25rem] items-center left-[2rem]  relative justify-center ${styles.incandCont}`}
+                          className={`relative left-[2rem] inline-block flex w-[25rem] items-center justify-center ${styles.incandCont}`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
@@ -379,9 +391,12 @@ const UserDashboard = () => {
                             LETTERS COLLECTED
                           </span>
                         </span>
-                        <div className="flex w-[35rem] h-[12rem]">
+                        <div className="flex h-[12rem] w-[35rem]">
                           {incand.map((image, index) => (
-                            <div key={index} className=" scale-[0.73] relative w-[5rem] h-[6rem] z-[1000] ">
+                            <div
+                              key={index}
+                              className="relative z-[1000] h-[6rem] w-[5rem] scale-[0.73]"
+                            >
                               <Image
                                 src={image.src}
                                 alt={`Image ${index + 1}`}
@@ -394,24 +409,23 @@ const UserDashboard = () => {
                           ))}
                         </div>
                         <span
-                          className={`font-tusker2 flex w-[15rem] items-center left-[8rem] relative justify-center top-[-5.4rem] md:w-[10.2rem] lg:w-[10rem] xl:w-[20rem] `}
+                          className={`relative left-[8rem] top-[-5.4rem] flex w-[15rem] items-center justify-center font-tusker2 md:w-[10.2rem] lg:w-[10rem] xl:w-[20rem]`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
-                            className={`text-center text-[24px]  `}
+                            className={`text-center text-[24px]`}
                           >
                             Collect 4 More To Win
                           </span>
                         </span>
-                       
-                          <Image
-                            src={"/assets/UserDashboard/upload.svg"}
-                            alt="upload"
-                            height={10}
-                            width={10}
-                            className="h-[12rem] w-[12rem] top-[-8.2rem] left-[9.7rem] relative ">
-                          </Image>
-                      
+
+                        <Image
+                          src={"/assets/UserDashboard/upload.svg"}
+                          alt="upload"
+                          height={10}
+                          width={10}
+                          className="relative left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                        ></Image>
                       </div>
                     </div>
 
@@ -471,18 +485,21 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
+          < div >
+            <Footer />
+          </div>
         </>
       )}
       {isAir && (
         <>
           <div className="min-h-screen w-screen bg-[#FFEBC8] md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
-              <div className=" mb-[0.5rem] mt-[0.2rem]">
+              <div className="mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
                   <PhotosStatus />
                 ) : (
-                  <div className=" w-screen rounded-[18px] bg-[#FFE5A1]">
-                    <div className="flex flex-col items-center justify-center space-x-4  pt-[2rem]">
+                  <div className="w-screen rounded-[18px] bg-[#FFE5A1]">
+                    <div className="flex flex-col items-center justify-center space-x-4 pt-[2rem]">
                       <div className="relative flex h-[20rem] w-[50rem] scale-[0.9] overflow-hidden rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] shadow-custom-black">
                         <div className="absolute bottom-[-9.8rem] right-[-9.8rem] h-[19.5rem] w-[19.5rem] rounded-full bg-[#A56FFF]"></div>
                         <div className="absolute bottom-[-4.9rem] right-[-4.9rem] h-[9.75rem] w-[9.75rem] rounded-full bg-[#D0B4FF]"></div>
@@ -512,8 +529,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS UPLOADED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -521,8 +540,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS ACCEPTED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -530,8 +551,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS PENDING
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -539,9 +562,9 @@ const UserDashboard = () => {
                         </div>
                       </div>
 
-                      <div className="relative left-[-0.7rem] top-[2.1rem] flex-col h-[20rem] w-[31rem] scale-[1.1] justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] bg-[url('/assets/UserDashboard/user.gif')] bg-cover bg-center pt-[2rem] shadow-custom-black">
+                      <div className="relative left-[-0.7rem] top-[2.1rem] h-[20rem] w-[31rem] scale-[1.1] flex-col justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] bg-[url('/assets/UserDashboard/user.gif')] bg-cover bg-center pt-[2rem] shadow-custom-black">
                         <span
-                          className={`inline-block flex w-[25rem] left-[2.3rem] justify-center ${styles.incandCont}`}
+                          className={`left-[2.3rem] inline-block flex w-[25rem] justify-center ${styles.incandCont}`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
@@ -550,9 +573,12 @@ const UserDashboard = () => {
                             LETTERS COLLECTED
                           </span>
                         </span>
-                        <div className="flex w-[35rem] h-[12rem]">
+                        <div className="flex h-[12rem] w-[35rem]">
                           {incand.map((image, index) => (
-                            <div key={index} className=" scale-[0.73] relative w-[5rem] h-[6rem] z-[1000] ">
+                            <div
+                              key={index}
+                              className="relative z-[1000] h-[6rem] w-[5rem] scale-[0.73]"
+                            >
                               <Image
                                 src={image.src}
                                 alt={`Image ${index + 1}`}
@@ -565,24 +591,23 @@ const UserDashboard = () => {
                           ))}
                         </div>
                         <span
-                          className={`relative font-tusker2 flex w-[20rem] left-[6rem] justify-center top-[-5.4rem] `}
+                          className={`relative left-[6rem] top-[-5.4rem] flex w-[20rem] justify-center font-tusker2`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
-                            className={`text-center text-[24px]  `}
+                            className={`text-center text-[24px]`}
                           >
                             Collect 4 More To Win
                           </span>
                         </span>
-                    
-                          <Image
-                            src={"/assets/UserDashboard/upload.svg"}
-                            alt="upload"
-                            height={10}
-                            width={10}
-                            className="h-[12rem] w-[12rem] top-[-8.2rem] left-[9.7rem] relative ">
-                          </Image>
-           
+
+                        <Image
+                          src={"/assets/UserDashboard/upload.svg"}
+                          alt="upload"
+                          height={10}
+                          width={10}
+                          className="relative left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                        ></Image>
                       </div>
                     </div>
 
@@ -642,11 +667,14 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
+          < div >
+            <Footer />
+          </div>
         </>
       )}
       {isIpad && (
         <>
-          <div className="min-h-screen w-screen bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -683,8 +711,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS UPLOADED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -692,8 +722,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS ACCEPTED
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -701,8 +733,10 @@ const UserDashboard = () => {
                               <p className="pt-[0.6rem] text-center font-tusker2 text-[1.2rem]">
                                 PHOTOS PENDING
                               </p>
-                              <div className="relative z-[10] left-[2.5rem] top-[0.5rem]">
-                                <p className="text-center text-[4rem] font-tusker2 " >1</p>
+                              <div className="relative left-[2.5rem] top-[0.5rem] z-[10]">
+                                <p className="text-center font-tusker2 text-[4rem]">
+                                  1
+                                </p>
                               </div>
                               <div className="absolute bottom-[-3.4rem] right-[-3.4rem] h-[8.4rem] w-[8.4rem] rounded-full bg-white"></div>
                             </div>
@@ -710,9 +744,9 @@ const UserDashboard = () => {
                         </div>
                       </div>
 
-                      <div className="relative flex-col h-[20rem] w-[31rem] justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] bg-[url('/assets/UserDashboard/user.gif')] bg-cover bg-center pt-[2rem] shadow-custom-black">
+                      <div className="relative h-[20rem] w-[31rem] flex-col justify-center rounded-[18px] border-[1.6px] border-black bg-[#D0B4FF] bg-[url('/assets/UserDashboard/user.gif')] bg-cover bg-center pt-[2rem] shadow-custom-black">
                         <span
-                          className={`inline-block flex w-[45rem] left-[-7rem] relative justify-center  ${styles.incandCont}`}
+                          className={`relative left-[-7rem] inline-block flex w-[45rem] justify-center ${styles.incandCont}`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
@@ -721,9 +755,12 @@ const UserDashboard = () => {
                             LETTERS COLLECTED
                           </span>
                         </span>
-                        <div className="flex w-[35rem] h-[12rem]">
+                        <div className="flex h-[12rem] w-[35rem]">
                           {incand.map((image, index) => (
-                            <div key={index} className=" scale-[0.73] relative w-[5rem] h-[6rem] z-[1000] ">
+                            <div
+                              key={index}
+                              className="relative z-[1000] h-[6rem] w-[5rem] scale-[0.73]"
+                            >
                               <Image
                                 src={image.src}
                                 alt={`Image ${index + 1}`}
@@ -736,24 +773,23 @@ const UserDashboard = () => {
                           ))}
                         </div>
                         <span
-                          className={`relative font-tusker2 flex w-[19rem] left-[6rem] justify-center top-[-5.4rem] $`}
+                          className={`$ relative left-[6rem] top-[-5.4rem] flex w-[19rem] justify-center font-tusker2`}
                         >
                           <span
                             style={{ letterSpacing: "1.2px" }}
-                            className={`text-center text-[24px]  `}
+                            className={`text-center text-[24px]`}
                           >
                             Collect 4 More To Win
                           </span>
                         </span>
-                       
-                          <Image
-                            src={"/assets/UserDashboard/upload.svg"}
-                            alt="upload"
-                            height={10}
-                            width={10}
-                            className="h-[12rem] w-[12rem] top-[-8.2rem] left-[9.7rem] relative ">
-                          </Image>
-                  
+
+                        <Image
+                          src={"/assets/UserDashboard/upload.svg"}
+                          alt="upload"
+                          height={10}
+                          width={10}
+                          className="relative left-[9.7rem] top-[-8.2rem] h-[12rem] w-[12rem]"
+                        ></Image>
                       </div>
                     </div>
 
@@ -828,6 +864,9 @@ const UserDashboard = () => {
                 )}
               </div>
             </div>
+          </div>
+          < div >
+            <Footer />
           </div>
         </>
       )}

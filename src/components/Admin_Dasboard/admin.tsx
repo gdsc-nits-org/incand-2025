@@ -4,10 +4,9 @@ import Image from "next/image";
 export const runtime = "edge";
 import { useState, useRef } from "react";
 import { useEffect } from "react";
+import Footer from "../Footer/Footer";
 
 const AdminDashboard = () => {
-
-
   const [isPhone, setIsPhone] = useState(false);
   const [isIpad, setIsIpad] = useState(false);
   const [isAir, setIsAir] = useState(false);
@@ -21,7 +20,7 @@ const AdminDashboard = () => {
 
       const width = window.innerWidth;
       setIsPhone(width >= 320 && width <= 500);
-      setIsAir(width >= 501 && width < 1000);
+      setIsAir(width >= 501 && width < 900);
       setIsIpad(width >= 901 && width < 1025);
       setIsLap(width >= 1026);
     };
@@ -37,7 +36,6 @@ const AdminDashboard = () => {
     return null;
   }
 
-
   const handleAccept = (id: number) => {
     console.log(`Accepted person ${id}`);
   };
@@ -50,32 +48,37 @@ const AdminDashboard = () => {
     <>
       {isLap && (
         <>
-          <div className="bg-blue-100 min-h-screen p-8">
-
-            <header className="text-center mb-10">
-              <h1 className="text-[4rem] font-rocket text-[#FAE00D] "> <span className="text-shadow ">ADMIN DASHBOARD</span></h1>
-              <div className="flex flex-row mt-4 items-center">
+          <div className="min-h-screen overflow-hidden bg-blue-100 p-8">
+            <header className="mb-10 text-center">
+              <h1 className="font-rocket text-[4rem] text-[#FAE00D]">
+                {" "}
+                <span className="text-shadow">ADMIN DASHBOARD</span>
+              </h1>
+              <div className="mt-4 flex flex-row items-center">
                 <Image
                   src="/assets/About/dj.gif"
                   alt="Admin Avatar"
                   width={100}
                   height={100}
-                  className="rounded-full h-[10rem] w-[10rem] "
+                  className="h-[10rem] w-[10rem] rounded-full"
                 />
-                <div className="pl-[3rem] flex-col  relative ">
-                  <p className="text-[2rem] font-rocket text-start ">PIYUSH CHATTERJEE <br /><span className="text-[1.5rem] font-thin ">piyush.chatterjee64@gmail.com</span></p>
+                <div className="relative flex-col pl-[3rem]">
+                  <p className="text-start font-rocket text-[2rem]">
+                    PIYUSH CHATTERJEE <br />
+                    <span className="text-[1.5rem] font-thin">
+                      piyush.chatterjee64@gmail.com
+                    </span>
+                  </p>
                 </div>
               </div>
             </header>
-
 
             <div className="grid grid-cols-3 gap-6">
               {Array.from({ length: 9 }).map((_, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center border-2 border-black "
+                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
                 >
-
                   <Image
                     src="/assets/UserDashboard/user.jpg"
                     alt={`Person ${index + 1}`}
@@ -84,16 +87,16 @@ const AdminDashboard = () => {
                     className="rounded-md"
                   />
 
-                  <div className="flex justify-evenly mt-4 w-full">
+                  <div className="mt-4 flex w-full justify-evenly">
                     <button
                       onClick={() => handleAccept(index)}
-                      className="bg-green-500 text-white py-1 px-3 rounded-md hover:bg-green-600 transition"
+                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
                     </button>
                     <button
                       onClick={() => handleReject(index)}
-                      className="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition"
+                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
                     >
                       Reject
                     </button>
@@ -102,36 +105,43 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
+          < div >
+            <Footer />
+          </div>
         </>
       )}
-        {isPhone && (
+      {isPhone && (
         <>
-          <div className="bg-blue-100 scale-[1] min-h-screen p-8">
-
-            <header className="text-center mb-10">
-              <h1 className="text-[4rem] font-rocket text-[#FAE00D] "> <span className="text-shadow ">ADMIN DASHBOARD</span></h1>
-              <div className="flex flex-row mt-4 items-center">
+          <div className="min-h-screen scale-[1] bg-blue-100 p-8">
+            <header className="mb-10 text-center">
+              <h1 className="font-rocket flex items-center justify-center mobile:scale-[0.8] mobile2:scale-[1] text-center text-[4rem] text-[#FAE00D]">
+                <span className="text-shadow">ADMIN DASHBOARD</span>
+              </h1>
+              <div className="mt-4 flex flex-row items-center">
                 <Image
                   src="/assets/About/dj.gif"
                   alt="Admin Avatar"
                   width={100}
                   height={100}
-                  className="rounded-full h-[5.5rem] w-[5.5rem] "
+                  className="h-[5.5rem] w-[5.5rem] rounded-full"
                 />
-                <div className="pl-[2.5rem] flex-col  relative ">
-                  <p className="text-[1.5rem] font-rocket text-start ">PIYUSH CHATTERJEE <br /><span className="text-[1rem] font-thin ">piyush.chatterjee64@gmail.com</span></p>
+                <div className="relative mobile:scale-[0.8] mobile2:scale-[1] flex-col pl-[2.5rem]">
+                  <p className="text-start font-rocket text-[1.5rem]">
+                    PIYUSH CHATTERJEE <br />
+                    <span className="mobile2:text-[1rem] mobile:text-[0.9rem] font-thin">
+                      piyush.chatterjee64@gmail.com
+                    </span>
+                  </p>
                 </div>
               </div>
             </header>
-
 
             <div className="grid grid-cols-3 gap-6">
               {Array.from({ length: 9 }).map((_, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center border-2 border-black "
+                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
                 >
-
                   <Image
                     src="/assets/UserDashboard/user.jpg"
                     alt={`Person ${index + 1}`}
@@ -140,16 +150,16 @@ const AdminDashboard = () => {
                     className="rounded-md"
                   />
 
-                  <div className="flex justify-evenly relative left-[-1.57rem] top-[1rem] mt-4 w-full scale-[0.57]">
+                  <div className="relative left-[-1.57rem] top-[1rem] mt-4 flex w-full mobile:scale-[0.535] mobile2:space-x-2 scale-[0.57] justify-evenly">
                     <button
                       onClick={() => handleAccept(index)}
-                      className="bg-green-500 text-white py-1 px-3 rounded-md hover:bg-green-600 transition"
+                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
                     </button>
                     <button
                       onClick={() => handleReject(index)}
-                      className="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition"
+                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
                     >
                       Reject
                     </button>
@@ -158,36 +168,44 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
+          < div >
+            <Footer />
+          </div>
         </>
       )}
-          {isAir && (
+      {isAir && (
         <>
-          <div className="bg-blue-100 min-h-screen p-8">
-
-            <header className="text-center mb-10">
-              <h1 className="text-[4rem] font-rocket text-[#FAE00D] "> <span className="text-shadow ">ADMIN DASHBOARD</span></h1>
-              <div className="flex flex-row mt-4 items-center">
+          <div className="min-h-screen bg-blue-100 p-8">
+            <header className="mb-10 text-center">
+              <h1 className="font-rocket flex justify-center items-center  text-[4rem] text-[#FAE00D]">
+                {" "}
+                <span className="text-shadow">ADMIN DASHBOARD</span>
+              </h1>
+              <div className="mt-4 flex flex-row items-center">
                 <Image
                   src="/assets/About/dj.gif"
                   alt="Admin Avatar"
                   width={100}
                   height={100}
-                  className="rounded-full h-[10rem] w-[10rem] "
+                  className="h-[10rem] w-[10rem] rounded-full"
                 />
-                <div className="pl-[3rem] flex-col  relative ">
-                  <p className="text-[2rem] font-rocket text-start ">PIYUSH CHATTERJEE <br /><span className="text-[1.5rem] font-thin ">piyush.chatterjee64@gmail.com</span></p>
+                <div className="relative flex-col pl-[3rem]">
+                  <p className="text-start font-rocket mobile3:text-[1.7rem] tablet:text-[2rem]">
+                    PIYUSH CHATTERJEE <br />
+                    <span className="tablet:text-[1.5rem] mobile3:text-[1.2rem] font-thin">
+                      piyush.chatterjee64@gmail.com
+                    </span>
+                  </p>
                 </div>
               </div>
             </header>
-
 
             <div className="grid grid-cols-3 gap-6">
               {Array.from({ length: 9 }).map((_, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center border-2 border-black "
+                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
                 >
-
                   <Image
                     src="/assets/UserDashboard/user.jpg"
                     alt={`Person ${index + 1}`}
@@ -196,16 +214,16 @@ const AdminDashboard = () => {
                     className="rounded-md"
                   />
 
-                  <div className="flex justify-evenly mt-4 w-full">
+                  <div className="mt-4 tablet:scale-[1] mobile3:scale-[0.7] mobile3:justify-center mobile3:space-x-2 flex w-full tablet:justify-evenly">
                     <button
                       onClick={() => handleAccept(index)}
-                      className="bg-green-500 text-white py-1 px-3 rounded-md hover:bg-green-600 transition"
+                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
                     </button>
                     <button
                       onClick={() => handleReject(index)}
-                      className="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition"
+                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
                     >
                       Reject
                     </button>
@@ -214,36 +232,44 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
+          < div >
+            <Footer />
+          </div>
         </>
       )}
-            {isIpad && (
+      {isIpad && (
         <>
-          <div className="bg-blue-100 min-h-screen p-8">
-
-            <header className="text-center mb-10">
-              <h1 className="text-[4rem] font-rocket text-[#FAE00D] "> <span className="text-shadow ">ADMIN DASHBOARD</span></h1>
-              <div className="flex flex-row mt-4 items-center">
+          <div className="min-h-screen bg-blue-100 p-8">
+            <header className="mb-10 text-center">
+              <h1 className="font-rocket text-[4rem] text-[#FAE00D]">
+                {" "}
+                <span className="text-shadow">ADMIN DASHBOARD</span>
+              </h1>
+              <div className="mt-4 flex flex-row items-center">
                 <Image
                   src="/assets/About/dj.gif"
                   alt="Admin Avatar"
                   width={100}
                   height={100}
-                  className="rounded-full h-[10rem] w-[10rem] "
+                  className="h-[10rem] w-[10rem] rounded-full"
                 />
-                <div className="pl-[3rem] flex-col  relative ">
-                  <p className="text-[2rem] font-rocket text-start ">PIYUSH CHATTERJEE <br /><span className="text-[1.5rem] font-thin ">piyush.chatterjee64@gmail.com</span></p>
+                <div className="relative flex-col pl-[3rem]">
+                  <p className="text-start font-rocket text-[2rem]">
+                    PIYUSH CHATTERJEE <br />
+                    <span className="text-[1.5rem] font-thin">
+                      piyush.chatterjee64@gmail.com
+                    </span>
+                  </p>
                 </div>
               </div>
             </header>
-
 
             <div className="grid grid-cols-3 gap-6">
               {Array.from({ length: 9 }).map((_, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-md rounded-xl p-4 flex flex-col items-center border-2 border-black "
+                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
                 >
-
                   <Image
                     src="/assets/UserDashboard/user.jpg"
                     alt={`Person ${index + 1}`}
@@ -252,16 +278,16 @@ const AdminDashboard = () => {
                     className="rounded-md"
                   />
 
-                  <div className="flex justify-evenly scale-[1.2] mt-4 w-full">
+                  <div className="mt-4 flex w-full scale-[1.2] justify-evenly">
                     <button
                       onClick={() => handleAccept(index)}
-                      className="bg-green-500 text-white py-1 px-3 rounded-md hover:bg-green-600 transition"
+                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
                     </button>
                     <button
                       onClick={() => handleReject(index)}
-                      className="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600 transition"
+                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
                     >
                       Reject
                     </button>
@@ -269,6 +295,9 @@ const AdminDashboard = () => {
                 </div>
               ))}
             </div>
+          </div>
+          < div >
+            <Footer />
           </div>
         </>
       )}

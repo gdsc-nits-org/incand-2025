@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import UserDashboard from "./page";
+import UserDashboard from "./user";
 export const runtime = "edge";
 import { useEffect } from "react";
 
