@@ -30,7 +30,7 @@ const AllEvents = () => {
       ref={scrollContainerRef}
       className={
         styles.scrollBar +
-        " mt-4 flex h-[50%] w-full flex-wrap items-center justify-around gap-2 overflow-x-scroll scroll-smooth px-2 ipadair:mt-0 ipadair:flex-nowrap ipadair:gap-4 ipadair:pl-8 4k:gap-16"
+        " mt-4 flex h-full w-full flex-wrap items-center justify-around gap-2 overflow-x-scroll scroll-smooth px-2 ipadair:mt-0 ipadair:flex-nowrap ipadair:gap-4 ipadair:pl-8 4k:gap-16"
       }
     >
       {data.map((item, key) => (
@@ -68,7 +68,7 @@ const EventCard = ({
       onClick={() => router.push(`/event/${id}`)}
       className={
         className +
-        " relative flex h-[50%] w-[12rem] min-w-[10rem] items-end justify-center rounded-3xl ipadair:h-[80%] ipadair:w-[15rem] ipadair:min-w-[15rem] 4k:min-w-[42rem] 4k:rounded-[3rem]"
+        " relative flex h-[14rem] w-[12rem] min-w-[10rem] items-end justify-center rounded-3xl mobile3:h-[25rem] mobile3:min-w-[20rem] mobile3:max-w-[20rem] ipadair:h-[80%] ipadair:w-[15rem] ipadair:min-w-[15rem] 4k:min-w-[48rem] 4k:rounded-[3rem]"
       }
       style={{
         backgroundColor: bgColor,
@@ -80,19 +80,19 @@ const EventCard = ({
         className={`absolute flex h-full w-full items-center justify-center ${isHovered ? "opacity-100" : "opacity-0"}`}
       >
         <Link
-          className="text-2xl font-[900] uppercase text-white drop-shadow-[3px_3px_0px_black] 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]"
+          className="text-2xl font-[900] uppercase text-white drop-shadow-[3px_3px_0px_black] mobile3:text-4xl 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]"
           href="/events"
         >
           View More
         </Link>
       </div>
       <div
-        className={`z-10 flex h-full w-full flex-col justify-between p-4 pt-2 4k:p-8 4k:pt-4 ${isHovered ? "translate-x-1 translate-y-1 opacity-0" : ""} transition-all duration-300 ease-linear`}
+        className={`z-10 flex h-full w-full flex-col justify-between overflow-hidden p-4 pt-2 4k:p-8 4k:pt-4 ${isHovered ? "translate-x-1 translate-y-1 opacity-0" : ""} transition-all duration-300 ease-linear`}
       >
-        <h1 className="text-start text-2xl font-bold uppercase text-white 4k:text-6xl">
+        <h1 className="text-start text-2xl font-bold uppercase text-white mobile3:text-4xl 4k:text-6xl">
           {moduleName}
         </h1>
-        <div className="text-stroke-black flex items-center justify-between gap-2 text-2xl font-[900] uppercase drop-shadow-[3px_3px_0px_black] 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]">
+        <div className="text-stroke-black flex items-center justify-between gap-2 text-2xl font-[900] uppercase drop-shadow-[3px_3px_0px_black] mobile3:text-3xl 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]">
           <h1 className="" style={{ color: bgColor }}>
             {eventName}
           </h1>

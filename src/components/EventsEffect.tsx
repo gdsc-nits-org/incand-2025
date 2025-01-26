@@ -40,11 +40,8 @@ const fragmentShader = `
     }
 `;
 
-interface Props {
-  bigScreen: boolean;
-}
-
-const EventsDesktop = (props: { bigScreen: boolean }) => {
+const EventsDesktop = (props: { bigScreen: boolean; is4k: boolean }) => {
+  console.log("EventsDesktop", props.bigScreen, props.is4k);
   const initialized = useRef(false);
   const [isResize, setIsResize] = useState(false);
 
@@ -83,8 +80,9 @@ const EventsDesktop = (props: { bigScreen: boolean }) => {
         u_texture: { value: texture },
       };
 
+      const size = props.is4k ? 40 : 13;
       const planeMesh = new THREE.Mesh(
-        new THREE.PlaneGeometry(13, 13),
+        new THREE.PlaneGeometry(size, size),
         new THREE.ShaderMaterial({
           uniforms: shaderUniforms,
           vertexShader,
@@ -171,7 +169,7 @@ const EventsDesktop = (props: { bigScreen: boolean }) => {
       >
         <img
           draggable="false"
-          className="absolute inset-0 select-none object-cover object-center opacity-0 brightness-75 filter"
+          className="absolute inset-0 h-full w-full select-none object-cover object-center opacity-0 brightness-75 filter"
           id="myImage"
           src="/assets/events/eventseffect.png"
           alt=""
@@ -183,9 +181,9 @@ const EventsDesktop = (props: { bigScreen: boolean }) => {
 
 const EventsMobile = () => {
   return (
-    <div className="my-2 h-full w-full rounded-2xl bg-[#FFA6F6] bg-evnet-pattern bg-contain">
+    <div className="my-2 h-full w-full rounded-2xl bg-[#FFA6F6] bg-evnet-pattern bg-contain ipadpro:p-6">
       <span className="flex justify-between p-2 pb-0">
-        <span className="scale-110">
+        <span className="scale-110 mobile3:scale-150">
           <svg
             width="27"
             height="26"
@@ -237,7 +235,7 @@ const EventsMobile = () => {
             </defs>
           </svg>
         </span>
-        <span className="scale-110">
+        <span className="scale-110 mobile3:scale-150">
           <svg
             width="21"
             height="19"
@@ -330,7 +328,7 @@ const EventsMobile = () => {
             </defs>
           </svg>
         </span>
-        <span className="scale-110">
+        <span className="scale-110 mobile3:scale-150">
           <svg
             width="24"
             height="17"
@@ -429,10 +427,10 @@ const EventsMobile = () => {
           </svg>
         </span>
       </span>
-      <h1 className="scale-110 text-center font-ahsing text-7xl text-white drop-shadow-[4px_4px_0px_black]">
+      <h1 className="scale-110 text-center font-ahsing text-7xl text-white drop-shadow-[4px_4px_0px_black] mobile3:text-9xl">
         EVENTS
       </h1>
-      <span className="relative flex w-full translate-y-[-50%] justify-center">
+      <span className="relative flex w-full translate-y-[-50%] justify-center mobile3:scale-150">
         <svg
           width="14"
           height="14"
@@ -577,7 +575,8 @@ const EventsMobile = () => {
 
 const EventsEffect = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const bigScreen = useMediaQuery("(min-width: 768px)");
+  const bigScreen = useMediaQuery("(min-width: 1025px)");
+  const is4k = useMediaQuery("(min-width: 3839px)");
 
   useEffect(() => {
     setIsMounted(true);
@@ -588,7 +587,7 @@ const EventsEffect = () => {
   }
 
   // return <EventsDesktop />;
-  if (bigScreen) return <EventsDesktop bigScreen={bigScreen} />;
+  if (bigScreen) return <EventsDesktop bigScreen={bigScreen} is4k={is4k} />;
   return <EventsMobile />;
 };
 

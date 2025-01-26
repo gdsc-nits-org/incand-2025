@@ -10,7 +10,7 @@ const Thundermerch = () => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => setHover(!hover)}
-      className="relative flex h-full w-full items-center justify-center overflow-hidden"
+      className="relative flex h-full w-full items-center justify-center overflow-hidden mobile3:py-6"
     >
       <div
         style={{ transform: hover ? "translateY(0vh)" : "translateY(20vh)" }}
@@ -24,13 +24,13 @@ const Thundermerch = () => {
           alt="gif"
         ></Image>
       </div>
-      <h1 className="flex select-none items-center text-4xl ipadair:text-6xl 4k:text-[10rem] font-tusker2 tracking-widest">
+      <h1 className="flex select-none items-center font-tusker2 text-4xl tracking-widest mobile3:text-7xl ipadair:text-6xl 4k:text-[10rem]">
         <span className="font-bold text-white drop-shadow-[4px_4px_0px_black]">
           TH
         </span>
         <span>
           <svg
-            className="scale-50 ipadair:scale-75 4k:mx-8 4k:scale-[2]"
+            className="scale-50 mobile3:scale-90 ipadair:scale-75 4k:mx-8 4k:scale-[2]"
             width="40"
             height="104"
             viewBox="0 0 40 104"
