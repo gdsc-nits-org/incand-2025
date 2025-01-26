@@ -74,7 +74,6 @@ const UserDashboard = () => {
 
   const [showPhotosStatus, setShowPhotosStatus] = useState(false);
 
-
   const [isPhone, setIsPhone] = useState(false);
   const [isIpad, setIsIpad] = useState(false);
   const [isAir, setIsAir] = useState(false);
@@ -112,7 +111,7 @@ const UserDashboard = () => {
     <>
       {isLap && (
         <>
-          <div className="min-h-screen w-screen bg-[#FFEBC8] overflow-hidden md:w-screen lg:w-screen">
+          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -303,7 +302,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>
@@ -485,7 +484,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>
@@ -667,7 +666,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>
@@ -865,7 +864,7 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>

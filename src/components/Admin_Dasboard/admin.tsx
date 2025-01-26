@@ -105,7 +105,7 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>
@@ -114,7 +114,7 @@ const AdminDashboard = () => {
         <>
           <div className="min-h-screen scale-[1] bg-blue-100 p-8">
             <header className="mb-10 text-center">
-              <h1 className="font-rocket flex items-center justify-center mobile:scale-[0.8] mobile2:scale-[1] text-center text-[4rem] text-[#FAE00D]">
+              <h1 className="flex items-center justify-center text-center font-rocket text-[4rem] text-[#FAE00D] mobile:scale-[0.8] mobile2:scale-[1]">
                 <span className="text-shadow">ADMIN DASHBOARD</span>
               </h1>
               <div className="mt-4 flex flex-row items-center">
@@ -125,10 +125,10 @@ const AdminDashboard = () => {
                   height={100}
                   className="h-[5.5rem] w-[5.5rem] rounded-full"
                 />
-                <div className="relative mobile:scale-[0.8] mobile2:scale-[1] flex-col pl-[2.5rem]">
+                <div className="relative flex-col pl-[2.5rem] mobile:scale-[0.8] mobile2:scale-[1]">
                   <p className="text-start font-rocket text-[1.5rem]">
                     PIYUSH CHATTERJEE <br />
-                    <span className="mobile2:text-[1rem] mobile:text-[0.9rem] font-thin">
+                    <span className="font-thin mobile:text-[0.9rem] mobile2:text-[1rem]">
                       piyush.chatterjee64@gmail.com
                     </span>
                   </p>
@@ -150,7 +150,7 @@ const AdminDashboard = () => {
                     className="rounded-md"
                   />
 
-                  <div className="relative left-[-1.57rem] top-[1rem] mt-4 flex w-full mobile:scale-[0.535] mobile2:space-x-2 scale-[0.57] justify-evenly">
+                  <div className="relative left-[-1.57rem] top-[1rem] mt-4 flex w-full scale-[0.57] justify-evenly mobile:scale-[0.535] mobile2:space-x-2">
                     <button
                       onClick={() => handleAccept(index)}
                       className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
@@ -168,7 +168,7 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>
@@ -177,7 +177,7 @@ const AdminDashboard = () => {
         <>
           <div className="min-h-screen bg-blue-100 p-8">
             <header className="mb-10 text-center">
-              <h1 className="font-rocket flex justify-center items-center  text-[4rem] text-[#FAE00D]">
+              <h1 className="flex items-center justify-center font-rocket text-[4rem] text-[#FAE00D]">
                 {" "}
                 <span className="text-shadow">ADMIN DASHBOARD</span>
               </h1>
@@ -192,7 +192,7 @@ const AdminDashboard = () => {
                 <div className="relative flex-col pl-[3rem]">
                   <p className="text-start font-rocket mobile3:text-[1.7rem] tablet:text-[2rem]">
                     PIYUSH CHATTERJEE <br />
-                    <span className="tablet:text-[1.5rem] mobile3:text-[1.2rem] font-thin">
+                    <span className="font-thin mobile3:text-[1.2rem] tablet:text-[1.5rem]">
                       piyush.chatterjee64@gmail.com
                     </span>
                   </p>
@@ -214,7 +214,7 @@ const AdminDashboard = () => {
                     className="rounded-md"
                   />
 
-                  <div className="mt-4 tablet:scale-[1] mobile3:scale-[0.7] mobile3:justify-center mobile3:space-x-2 flex w-full tablet:justify-evenly">
+                  <div className="mt-4 flex w-full mobile3:scale-[0.7] mobile3:justify-center mobile3:space-x-2 tablet:scale-[1] tablet:justify-evenly">
                     <button
                       onClick={() => handleAccept(index)}
                       className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
@@ -232,7 +232,7 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>
@@ -296,7 +296,7 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-          < div >
+          <div>
             <Footer />
           </div>
         </>
