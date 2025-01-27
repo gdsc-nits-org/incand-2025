@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState, useEffect } from "react";
 import TeamMobile from "../../../components/Team/TeamMobile";
 import TeamDesktop from "../../../components/Team/TeamDesktop";

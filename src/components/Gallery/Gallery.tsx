@@ -201,7 +201,7 @@ const PhotoGallery = () => {
           mixBlendMode: "multiply",
         }}
       ></div>
-
+      {/* <div className="absolute flex flex-col items-center justify-center h-screen"> */}
       <AnimatePresence custom={direction} mode="wait">
         (
         <motion.h1
@@ -215,7 +215,7 @@ const PhotoGallery = () => {
           initial="enter"
           animate="center"
           exit="exit"
-        >
+          >
           {images[currentIndex]?.name1}
         </motion.h1>
         <motion.div
@@ -226,7 +226,7 @@ const PhotoGallery = () => {
           initial="enter"
           animate="center"
           exit="exit"
-        >
+          >
           {images[currentIndex] && (
             <>
               <ImageCard
@@ -241,7 +241,7 @@ const PhotoGallery = () => {
                 bg={images[currentIndex].bg}
                 scale={parseFloat(images[currentIndex].scale)}
                 aspectRatio={aspectRatios[currentIndex]}
-              />
+                />
             </>
           )}
         </motion.div>
@@ -256,11 +256,12 @@ const PhotoGallery = () => {
           initial="enter"
           animate="center"
           exit="exit"
-        >
+          >
           {images[currentIndex]?.name2}
         </motion.h1>
         )
       </AnimatePresence>
+          {/* </div> */}
     </motion.section>
   );
 };
@@ -363,53 +364,143 @@ const images = [
     scale: "",
   },
   {
-    src: "/assets/Gallery/bg2.png",
-    name1: "PHOTO",
-    name2: "GALLERY",
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737965116/lamp_cxfiru.jpg",
+    name1: "LAMP",
+    name2: "LIGHTING",
     bg: "",
     scale: "",
   },
   {
-    src: "/assets/Gallery/bg3.png",
-    name1: "PHOTO",
-    name2: "GALLERY",
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737964559/monali1_hr1pa2.jpg",
+    name1: "CARPE",
+    name2: "DIEM",
     bg: "",
     scale: "",
   },
   {
-    src: "/assets/Gallery/bg4.png",
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737965417/Glitteratti_bunp2d.jpg",
     name1: "",
-    name2: "INSOMPADA",
-    bg: "",
-    scale: "1.8",
-  },
-  {
-    src: "/assets/Gallery/bg1.png",
-    name1: "PHOTO",
-    name2: "GALLERY",
+    name2: "GLITTERATI",
     bg: "",
     scale: "",
   },
   {
-    src: "/assets/Gallery/bg2.png",
-    name1: "PHOTO",
-    name2: "GALLERY",
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737965882/DJ0_r767lz.jpg",
+    name1: "DAY 0",
+    name2: "DJ NIGHT",
     bg: "",
     scale: "",
   },
   {
-    src: "/assets/Gallery/bg3.png",
-    name1: "PHOTO",
-    name2: "GALLERY",
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
+    name1: "MR",
+    name2: "NIT",
     bg: "",
     scale: "",
   },
   {
-    src: "/assets/Gallery/bg4.png",
-    name1: "PHOTO",
-    name2: "GALLERY",
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737983583/Thunder_agsrn6.jpg",
+    name1: "THUNDER",
+    name2: "MARCH",
     bg: "",
-    scale: "1.8",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0496_zfqlp0.jpg",
+    name1: "GROUND",
+    name2: "ZERO",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737983335/Deprador_lv8lqf.jpg",
+    name1: "",
+    name2: "DEPRADOR",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/IMG_1047_pflyt4.jpg",
+    name1: "",
+    name2: "COSTOPIA",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990499/IMG_3144_bbimue.jpg",
+    name1: "BATTLE",
+    name2: "OF BANDS",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990499/IMG_1102_rr6bpf.jpg",
+    name1: "INDIE",
+    name2: "UNPLUGGED",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
+    name1: "",
+    name2: "SHRINANDYAM",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737991569/_DSC0058_mgg7n5.jpg",
+    name1: "PROM",
+    name2: "NIGHT",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737991607/IMG_0744_hopmyq.jpg",
+    name1: "",
+    name2: "SOKRATIC",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "",
+    name1: "KALA",
+    name2: "DARSHAN",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737991939/Flashmob_mf5cex.jpg",
+    name1: "",
+    name2: "FLASHMOB",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737991922/Nukkad_Naatak_mj7irh.jpg",
+    name1: "NUKKAD",
+    name2: "NAATAK",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737991941/ECSTACY_heuk3n.jpg",
+    name1: "",
+    name2: "NIRVANA",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737991952/NITSMUN_gn0sab.jpg",
+    name1: "",
+    name2: "NITSMUN",
+    bg: "",
+    scale: "",
+  },
+  {
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737984313/Ground0_pysuww.jpg",
+    name1: "PUMP",
+    name2: "IT UP",
+    bg: "",
+    scale: "",
   },
 ];
-

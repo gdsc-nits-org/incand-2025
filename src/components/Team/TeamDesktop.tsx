@@ -42,7 +42,7 @@ const TeamDesktop: React.FC = () => {
       >
         <div className="align-center mx-auto flex h-[4rem] w-[90%] flex-row justify-between tablet2:w-[78%]">
           <div
-            className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isCore ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex items-center justify-start gap-x-4 cursor-pointer`}
+            className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isCore ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
               setIsTech(false);
               setIsModule(false);
@@ -60,7 +60,7 @@ const TeamDesktop: React.FC = () => {
           </div>
 
           <div
-            className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isTech ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex items-center justify-start gap-x-4 cursor-pointer`}
+            className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isTech ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
               setIsCore(false);
               setIsModule(false);
@@ -78,7 +78,7 @@ const TeamDesktop: React.FC = () => {
           </div>
 
           <div
-            className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isModule ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex items-center justify-start gap-x-4 cursor-pointer`}
+            className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isModule ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
               setIsCore(false);
               setIsTech(false);
