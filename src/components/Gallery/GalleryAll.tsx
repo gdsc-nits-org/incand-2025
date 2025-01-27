@@ -6,10 +6,10 @@ import React from "react";
 const GalleryAll: React.FC = () => {
   return (
     <div
-      className="h-[2200px] p-8"
+      className="h-fit p-8"
       style={{
         backgroundImage: "url(/assets/Gallery/cardboard-texture.png)",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundColor: "rgba(201,52,29,0.8)",
         backgroundBlendMode: "multiply",
