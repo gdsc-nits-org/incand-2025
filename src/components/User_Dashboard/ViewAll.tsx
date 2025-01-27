@@ -8,7 +8,6 @@ import { env } from "~/env";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "~/app/utils/firebase";
 
-
 interface UserResponse {
   name: string;
   email: string;
@@ -37,16 +36,14 @@ interface UserSubmissionsResponse {
   msg: UserSubmissions[];
 }
 
-
 const PhotosStatus = () => {
-
   const [showPhotoStatus, setShowPhotoStatus] = useState(false);
   const handleViewAllClick = () => {
     setShowPhotoStatus(true);
   };
   const [_user] = useAuthState(auth);
-  const [user, setUser] = useState<UserResponse>()
-  const [userSubmissions, setUserSubmissions] = useState<UserSubmissions[]>([])
+  const [user, setUser] = useState<UserResponse>();
+  const [userSubmissions, setUserSubmissions] = useState<UserSubmissions[]>([]);
   useEffect(() => {
     const fetchUserData = async () => {
       if (_user) {
@@ -58,10 +55,9 @@ const PhotosStatus = () => {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
-            }
+            },
           );
           setUser(userSubmissions.data.msg);
-
         } catch (error) {
           console.error("Error fetching user data:", error);
         }
@@ -79,7 +75,6 @@ const PhotosStatus = () => {
             `${env.NEXT_PUBLIC_API_URL}/api/user/submissions/${user?.id}`,
           );
           setUserSubmissions(UserSubmissions.data.msg);
-
         } catch (error) {
           console.error("Error fetching user data:", error);
         }
@@ -89,8 +84,12 @@ const PhotosStatus = () => {
     void fetchUserSubmissions();
   }, [_user]);
 
-  const verifiedPhotos = userSubmissions.filter((photo) => photo.status === "ACCEPTED");
-  const pendingPhotos = userSubmissions.filter((photo) => photo.status === "PENDING");
+  const verifiedPhotos = userSubmissions.filter(
+    (photo) => photo.status === "ACCEPTED",
+  );
+  const pendingPhotos = userSubmissions.filter(
+    (photo) => photo.status === "PENDING",
+  );
 
   // Separate refs for each section
   const verifiedScrollRef = useRef<HTMLDivElement | null>(null);
@@ -177,7 +176,9 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className={`flex flex-col 4k:scale-[2.5] 4k:mt-[15rem] items-center ${userSubmissions.length === 0 && "w-[80rem]"} justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}>
+              <div
+                className={`flex flex-col items-center 4k:mt-[15rem] 4k:scale-[2.5] ${userSubmissions.length === 0 && "w-[80rem]"} justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}
+              >
                 <div
                   className="font-tusker2 text-[2.3rem] tracking-widest text-white"
                   style={{
@@ -264,9 +265,13 @@ const PhotosStatus = () => {
                 </div>
 
                 {userSubmissions.length === 0 ? (
-                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
-                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
-                  </div>) : (<div className="w-full flex-col justify-between">
+                  <div className="flex items-center justify-center pb-[2rem] pt-[2rem]">
+                    <p className="text-gray-500">
+                      No submissions available. Upload To Get INCAND{" "}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="w-full flex-col justify-between">
                     {/* Verified Photos Section */}
                     <div>
                       <div className="flex-col items-center justify-center">
@@ -384,7 +389,8 @@ const PhotosStatus = () => {
                         </div>
                       </div>
                     </div>
-                  </div>)}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -396,7 +402,9 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className={`flex scale-[1] ${userSubmissions.length === 0 && "pt-[5rem] scale-[0.9] "} flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}>
+              <div
+                className={`flex scale-[1] ${userSubmissions.length === 0 && "scale-[0.9] pt-[5rem]"} flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}
+              >
                 <div
                   className="font-tusker2 text-[2.8rem] tracking-widest text-white"
                   style={{
@@ -413,7 +421,7 @@ const PhotosStatus = () => {
                       height="73"
                       viewBox="0 0 72 73"
                       onClick={handleViewAllClick}
-                      className={`absolute right-[2rem] top-[7rem] ${userSubmissions.length === 0 && "mt-[5rem]  "} h-[2.5rem] `}
+                      className={`absolute right-[2rem] top-[7rem] ${userSubmissions.length === 0 && "mt-[5rem]"} h-[2.5rem]`}
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -483,9 +491,13 @@ const PhotosStatus = () => {
                 </div>
 
                 {userSubmissions.length === 0 ? (
-                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
-                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
-                  </div>) : (<div className="w-full flex-col justify-between">
+                  <div className="flex items-center justify-center pb-[2rem] pt-[2rem]">
+                    <p className="text-gray-500">
+                      No submissions available. Upload To Get INCAND{" "}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="w-full flex-col justify-between">
                     {/* Verified Photos Section */}
                     <div>
                       <div className="flex-col items-center justify-center">
@@ -607,7 +619,8 @@ const PhotosStatus = () => {
                         </div>
                       </div>
                     </div>
-                  </div>)}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -619,7 +632,9 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className={` ${userSubmissions.length === 0 && " mobile2:pt-[5rem] tablet:pt-0 "} flex flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}>
+              <div
+                className={` ${userSubmissions.length === 0 && "mobile2:pt-[5rem] tablet:pt-0"} flex flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}
+              >
                 <div
                   className="font-tusker2 text-[2.8rem] tracking-widest text-white"
                   style={{
@@ -635,7 +650,7 @@ const PhotosStatus = () => {
                       width="72"
                       height="73"
                       viewBox="0 0 72 73"
-                      className={`absolute ${userSubmissions.length === 0 && "mobile2:mt-[10rem] mobile2:pl-[2rem] tablet:pl-[0rem]  tablet:mt-0 "} right-[4rem] top-[2.5rem] h-[2.5rem]`}
+                      className={`absolute ${userSubmissions.length === 0 && "mobile2:mt-[10rem] mobile2:pl-[2rem] tablet:mt-0 tablet:pl-[0rem]"} right-[4rem] top-[2.5rem] h-[2.5rem]`}
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -705,9 +720,13 @@ const PhotosStatus = () => {
                 </div>
 
                 {userSubmissions.length === 0 ? (
-                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
-                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
-                  </div>) : (<div className="w-full flex-col justify-between">
+                  <div className="flex items-center justify-center pb-[2rem] pt-[2rem]">
+                    <p className="text-gray-500">
+                      No submissions available. Upload To Get INCAND{" "}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="w-full flex-col justify-between">
                     {/* Verified Photos Section */}
                     <div>
                       <div className="flex-col items-center justify-center">
@@ -829,7 +848,8 @@ const PhotosStatus = () => {
                         </div>
                       </div>
                     </div>
-                  </div>)}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -841,7 +861,9 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className={`flex ${userSubmissions.length === 0 && "w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem] "} scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}>
+              <div
+                className={`flex ${userSubmissions.length === 0 && "w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem]"} scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}
+              >
                 <div
                   className="font-tusker2 text-[2.3rem] tracking-widest text-white"
                   style={{
@@ -928,9 +950,13 @@ const PhotosStatus = () => {
                 </div>
 
                 {userSubmissions.length === 0 ? (
-                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
-                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
-                  </div>) : (<div className="w-full flex-col justify-between">
+                  <div className="flex items-center justify-center pb-[2rem] pt-[2rem]">
+                    <p className="text-gray-500">
+                      No submissions available. Upload To Get INCAND{" "}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="w-full flex-col justify-between">
                     {/* Verified Photos Section */}
                     <div>
                       <div className="flex-col items-center justify-center">
@@ -1048,7 +1074,8 @@ const PhotosStatus = () => {
                         </div>
                       </div>
                     </div>
-                  </div>)}
+                  </div>
+                )}
               </div>
             )}
           </div>
