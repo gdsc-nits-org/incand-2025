@@ -9,9 +9,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "~/app/utils/firebase";
 
 
-
-
-
 interface UserResponse {
   name: string;
   email: string;
@@ -64,19 +61,19 @@ const PhotosStatus = () => {
             }
           );
           setUser(userSubmissions.data.msg);
-         
+
         } catch (error) {
           console.error("Error fetching user data:", error);
         }
       }
     };
 
-  void fetchUserData();
+    void fetchUserData();
   }, [_user]);
 
   useEffect(() => {
     const fetchUserSubmissions = async () => {
-      if (user) {
+      if (_user) {
         try {
           const UserSubmissions = await axios.get<UserSubmissionsResponse>(
             `${env.NEXT_PUBLIC_API_URL}/api/user/submissions/${user?.id}`,
@@ -89,8 +86,8 @@ const PhotosStatus = () => {
       }
     };
 
-  void fetchUserSubmissions();
-  }, [user]);
+    void fetchUserSubmissions();
+  }, [_user]);
 
   const verifiedPhotos = userSubmissions.filter((photo) => photo.status === "ACCEPTED");
   const pendingPhotos = userSubmissions.filter((photo) => photo.status === "PENDING");
@@ -180,7 +177,7 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className="flex flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]">
+              <div className={`flex flex-col 4k:scale-[2.5] 4k:mt-[15rem] items-center ${userSubmissions.length === 0 && "w-[80rem]"} justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}>
                 <div
                   className="font-tusker2 text-[2.3rem] tracking-widest text-white"
                   style={{
@@ -266,125 +263,128 @@ const PhotosStatus = () => {
                   </button>
                 </div>
 
-                <div className="w-full flex-col justify-between">
-                  {/* Verified Photos Section */}
-                  <div>
-                    <div className="flex-col items-center justify-center">
-                      <h3 className="font-tusker2 text-[2.5rem]">Verified</h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", verifiedScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                {userSubmissions.length === 0 ? (
+                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
+                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
+                  </div>) : (<div className="w-full flex-col justify-between">
+                    {/* Verified Photos Section */}
+                    <div>
+                      <div className="flex-col items-center justify-center">
+                        <h3 className="font-tusker2 text-[2.5rem]">Verified</h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", verifiedScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={verifiedScrollRef}
-                          className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, verifiedScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, verifiedScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {verifiedPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={verifiedScrollRef}
+                            className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, verifiedScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, verifiedScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {verifiedPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", verifiedScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", verifiedScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Pending Photos Section */}
-                  <div className="w-full">
-                    <div className="flex-col items-center justify-center pt-[2rem]">
-                      <h3 className="font-tusker2 text-[2.5rem]">PENDING</h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", pendingScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                    {/* Pending Photos Section */}
+                    <div className="w-full">
+                      <div className="flex-col items-center justify-center pt-[2rem]">
+                        <h3 className="font-tusker2 text-[2.5rem]">PENDING</h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", pendingScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={pendingScrollRef}
-                          className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, pendingScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, pendingScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {pendingPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={pendingScrollRef}
+                            className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, pendingScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, pendingScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {pendingPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", pendingScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", pendingScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </div>)}
               </div>
             )}
           </div>
@@ -396,7 +396,7 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className="flex scale-[1] flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]">
+              <div className={`flex scale-[1] ${userSubmissions.length === 0 && "pt-[5rem] scale-[0.9] "} flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}>
                 <div
                   className="font-tusker2 text-[2.8rem] tracking-widest text-white"
                   style={{
@@ -413,7 +413,7 @@ const PhotosStatus = () => {
                       height="73"
                       viewBox="0 0 72 73"
                       onClick={handleViewAllClick}
-                      className="absolute right-[2rem] top-[7rem] h-[2.5rem]"
+                      className={`absolute right-[2rem] top-[7rem] ${userSubmissions.length === 0 && "mt-[5rem]  "} h-[2.5rem] `}
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -482,129 +482,132 @@ const PhotosStatus = () => {
                   </button>
                 </div>
 
-                <div className="w-full flex-col justify-between">
-                  {/* Verified Photos Section */}
-                  <div>
-                    <div className="flex-col items-center justify-center">
-                      <h3 className="relative left-[0.5rem] font-tusker2 text-[2.5rem]">
-                        Verified
-                      </h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", verifiedScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                {userSubmissions.length === 0 ? (
+                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
+                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
+                  </div>) : (<div className="w-full flex-col justify-between">
+                    {/* Verified Photos Section */}
+                    <div>
+                      <div className="flex-col items-center justify-center">
+                        <h3 className="relative left-[0.5rem] font-tusker2 text-[2.5rem]">
+                          Verified
+                        </h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", verifiedScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={verifiedScrollRef}
-                          className="max-w-[30rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, verifiedScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, verifiedScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {verifiedPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={verifiedScrollRef}
+                            className="max-w-[30rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, verifiedScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, verifiedScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {verifiedPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", verifiedScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", verifiedScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Pending Photos Section */}
-                  <div className="w-full">
-                    <div className="flex-col items-center justify-center pt-[2rem]">
-                      <h3 className="relative left-[0.5rem] font-tusker2 text-[2.5rem]">
-                        PENDING
-                      </h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", pendingScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                    {/* Pending Photos Section */}
+                    <div className="w-full">
+                      <div className="flex-col items-center justify-center pt-[2rem]">
+                        <h3 className="relative left-[0.5rem] font-tusker2 text-[2.5rem]">
+                          PENDING
+                        </h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", pendingScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={pendingScrollRef}
-                          className="max-w-[30rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, pendingScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, pendingScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {pendingPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={pendingScrollRef}
+                            className="max-w-[30rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, pendingScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, pendingScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {pendingPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", pendingScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", pendingScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </div>)}
               </div>
             )}
           </div>
@@ -616,7 +619,7 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className="flex flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]">
+              <div className={` ${userSubmissions.length === 0 && " mobile2:pt-[5rem] tablet:pt-0 "} flex flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}>
                 <div
                   className="font-tusker2 text-[2.8rem] tracking-widest text-white"
                   style={{
@@ -632,8 +635,7 @@ const PhotosStatus = () => {
                       width="72"
                       height="73"
                       viewBox="0 0 72 73"
-                      onClick={handleViewAllClick}
-                      className="absolute right-[4rem] top-[2.5rem] h-[2.5rem]"
+                      className={`absolute ${userSubmissions.length === 0 && "mobile2:mt-[10rem] mobile2:pl-[2rem] tablet:pl-[0rem]  tablet:mt-0 "} right-[4rem] top-[2.5rem] h-[2.5rem]`}
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -702,129 +704,132 @@ const PhotosStatus = () => {
                   </button>
                 </div>
 
-                <div className="w-full flex-col justify-between">
-                  {/* Verified Photos Section */}
-                  <div>
-                    <div className="flex-col items-center justify-center">
-                      <h3 className="relative left-[0rem] font-tusker2 text-[2.5rem]">
-                        Verified
-                      </h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", verifiedScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                {userSubmissions.length === 0 ? (
+                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
+                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
+                  </div>) : (<div className="w-full flex-col justify-between">
+                    {/* Verified Photos Section */}
+                    <div>
+                      <div className="flex-col items-center justify-center">
+                        <h3 className="relative left-[0rem] font-tusker2 text-[2.5rem]">
+                          Verified
+                        </h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", verifiedScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={verifiedScrollRef}
-                          className="max-w-[45rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, verifiedScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, verifiedScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {verifiedPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={verifiedScrollRef}
+                            className="max-w-[45rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, verifiedScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, verifiedScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {verifiedPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", verifiedScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", verifiedScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Pending Photos Section */}
-                  <div className="w-full">
-                    <div className="flex-col items-center justify-center pt-[2rem]">
-                      <h3 className="relative left-[0rem] font-tusker2 text-[2.5rem]">
-                        PENDING
-                      </h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", pendingScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                    {/* Pending Photos Section */}
+                    <div className="w-full">
+                      <div className="flex-col items-center justify-center pt-[2rem]">
+                        <h3 className="relative left-[0rem] font-tusker2 text-[2.5rem]">
+                          PENDING
+                        </h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", pendingScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={pendingScrollRef}
-                          className="max-w-[45rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, pendingScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, pendingScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {pendingPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={pendingScrollRef}
+                            className="max-w-[45rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, pendingScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, pendingScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {pendingPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", pendingScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", pendingScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </div>)}
               </div>
             )}
           </div>
@@ -836,7 +841,7 @@ const PhotosStatus = () => {
             {showPhotoStatus ? (
               <UserDashboard />
             ) : (
-              <div className="flex scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]">
+              <div className={`flex ${userSubmissions.length === 0 && "w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem] "} scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}>
                 <div
                   className="font-tusker2 text-[2.3rem] tracking-widest text-white"
                   style={{
@@ -922,125 +927,128 @@ const PhotosStatus = () => {
                   </button>
                 </div>
 
-                <div className="w-full flex-col justify-between">
-                  {/* Verified Photos Section */}
-                  <div>
-                    <div className="flex-col items-center justify-center">
-                      <h3 className="font-tusker2 text-[2.5rem]">Verified</h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", verifiedScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                {userSubmissions.length === 0 ? (
+                  <div className="flex items-center justify-center pt-[2rem] pb-[2rem]">
+                    <p className="text-gray-500">No submissions available. Upload To Get INCAND </p>
+                  </div>) : (<div className="w-full flex-col justify-between">
+                    {/* Verified Photos Section */}
+                    <div>
+                      <div className="flex-col items-center justify-center">
+                        <h3 className="font-tusker2 text-[2.5rem]">Verified</h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", verifiedScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={verifiedScrollRef}
-                          className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, verifiedScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, verifiedScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {verifiedPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={verifiedScrollRef}
+                            className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, verifiedScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, verifiedScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {verifiedPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#9793FF] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", verifiedScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", verifiedScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Pending Photos Section */}
-                  <div className="w-full">
-                    <div className="flex-col items-center justify-center pt-[2rem]">
-                      <h3 className="font-tusker2 text-[2.5rem]">PENDING</h3>
-                      <div className="flex items-center justify-center pt-[2rem]">
-                        <button
-                          onClick={() =>
-                            handleArrowClick("left", pendingScrollRef)
-                          }
-                          className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &lt;
-                        </button>
+                    {/* Pending Photos Section */}
+                    <div className="w-full">
+                      <div className="flex-col items-center justify-center pt-[2rem]">
+                        <h3 className="font-tusker2 text-[2.5rem]">PENDING</h3>
+                        <div className="flex items-center justify-center pt-[2rem]">
+                          <button
+                            onClick={() =>
+                              handleArrowClick("left", pendingScrollRef)
+                            }
+                            className="absolute left-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &lt;
+                          </button>
 
-                        <div
-                          ref={pendingScrollRef}
-                          className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
-                          onMouseDown={(e) =>
-                            handleMouseDown(e, pendingScrollRef)
-                          }
-                          onMouseMove={(e) =>
-                            handleMouseMove(e, pendingScrollRef)
-                          }
-                          onMouseUp={handleMouseUpOrLeave}
-                          onMouseLeave={handleMouseUpOrLeave}
-                          style={{ userSelect: "none" }}
-                        >
-                          <div className="flex gap-4">
-                            {pendingPhotos.map((photo) => (
-                              <div
-                                key={photo.id}
-                                className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
-                              >
-                                <Image
-                                  src={photo.photo}
-                                  alt="Avatar"
-                                  width={300}
-                                  height={300}
-                                  draggable={false}
-                                />
-                              </div>
-                            ))}
+                          <div
+                            ref={pendingScrollRef}
+                            className="max-w-[73rem] cursor-grab overflow-x-auto scroll-smooth pb-[2rem] scrollbar-hide"
+                            onMouseDown={(e) =>
+                              handleMouseDown(e, pendingScrollRef)
+                            }
+                            onMouseMove={(e) =>
+                              handleMouseMove(e, pendingScrollRef)
+                            }
+                            onMouseUp={handleMouseUpOrLeave}
+                            onMouseLeave={handleMouseUpOrLeave}
+                            style={{ userSelect: "none" }}
+                          >
+                            <div className="flex gap-4">
+                              {pendingPhotos.map((photo) => (
+                                <div
+                                  key={photo.id}
+                                  className={`flex min-w-[150px] flex-col items-center rounded-lg bg-[#E1067B] p-4 shadow-custom-black`}
+                                >
+                                  <Image
+                                    src={photo.photo}
+                                    alt="Avatar"
+                                    width={300}
+                                    height={300}
+                                    draggable={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
-                        </div>
 
-                        <button
-                          onClick={() =>
-                            handleArrowClick("right", pendingScrollRef)
-                          }
-                          className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
-                          style={{ zIndex: 10 }}
-                        >
-                          &gt;
-                        </button>
+                          <button
+                            onClick={() =>
+                              handleArrowClick("right", pendingScrollRef)
+                            }
+                            className="absolute right-[1rem] rounded-full bg-white p-2 opacity-50 hover:opacity-80"
+                            style={{ zIndex: 10 }}
+                          >
+                            &gt;
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </div>)}
               </div>
             )}
           </div>

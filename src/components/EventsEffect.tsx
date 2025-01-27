@@ -180,7 +180,7 @@ const EventsDesktop = (props: { bigScreen: boolean; is4k: boolean }) => {
 
 const EventsMobile = () => {
   return (
-    <div className="bg-event-pattern2 my-2 h-full w-full rounded-2xl bg-[#FFA6F6] bg-contain ipadpro:p-6">
+    <div className="my-2 h-full w-full rounded-2xl bg-[#FFA6F6] bg-event-pattern2 bg-contain ipadpro:p-6">
       <span className="flex justify-between p-2 pb-0">
         <span className="scale-110 mobile3:scale-150">
           <svg

@@ -7,8 +7,9 @@ await import("./src/env.js");
 /** @type {import("next").NextConfig} */
 const config = {
   images: {
-    domains: ['incand25-nits.s3.ap-south-1.amazonaws.com',
-      'lh3.googleusercontent.com'
+    domains: [
+      "incand25-nits.s3.ap-south-1.amazonaws.com",
+      "lh3.googleusercontent.com",
     ], // Add the hostname here
   },
 };

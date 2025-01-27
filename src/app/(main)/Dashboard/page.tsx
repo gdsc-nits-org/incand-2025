@@ -46,7 +46,7 @@ const Dashboard = () => {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
-            }
+            },
           );
           setIsAdmin(userResponse.data.msg.role === "MODERATOR");
         } catch (error) {
@@ -61,7 +61,7 @@ const Dashboard = () => {
     };
 
     if (!loading) {
-    void fetchUserData();
+      void fetchUserData();
     }
   }, [_user, loading]);
 
@@ -73,7 +73,11 @@ const Dashboard = () => {
   }, [_user, loading, router]);
 
   if (loading || !isAuthChecked) {
-    return <div><Loader /></div>; 
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   return <>{isAdmin ? <AdminDashboard /> : <UserDashboard />}</>;

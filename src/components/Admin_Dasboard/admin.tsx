@@ -36,7 +36,7 @@ interface UserSubmissions {
     additiveA: number;
     additiveE: number;
     additiveF: number;
-  }
+  };
 }
 
 interface ApiResponse {
@@ -49,10 +49,9 @@ interface SubmissionsResponse {
   msg: UserSubmissions[];
 }
 
-
 const AdminDashboard = () => {
   const [_user] = useAuthState(auth);
-  const [user, setUser] = useState<UserResponse>()
+  const [user, setUser] = useState<UserResponse>();
   const [allSubmissions, setAllSubmissions] = useState<UserSubmissions[]>([]);
   const [isPhone, setIsPhone] = useState(false);
   const [isIpad, setIsIpad] = useState(false);
@@ -71,17 +70,16 @@ const AdminDashboard = () => {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
-            }
+            },
           );
           setUser(userSubmissions.data.msg);
-
         } catch (error) {
           console.error("Error fetching user data:", error);
         }
       }
     };
 
-  void fetchUserData();
+    void fetchUserData();
   }, [_user]);
 
   useEffect(() => {
@@ -99,14 +97,13 @@ const AdminDashboard = () => {
           );
           console.log(Submissions.data.msg);
           setAllSubmissions(Submissions.data.msg);
-
         } catch (error) {
           console.error("Error fetching user data:", error);
         }
       }
     };
 
-  void fetchUserSubmissions();
+    void fetchUserSubmissions();
   }, [_user]);
 
   useEffect(() => {
@@ -133,54 +130,71 @@ const AdminDashboard = () => {
     return null;
   }
 
-  const handleAccept = async (id: string, userId: string, currAssigned: string, letters: string, factors: string, level: number, additiveA: number, additiveE: number, additiveF: number) => {
+  const handleAccept = async (
+    id: string,
+    userId: string,
+    currAssigned: string,
+    letters: string,
+    factors: string,
+    level: number,
+    additiveA: number,
+    additiveE: number,
+    additiveF: number,
+  ) => {
     try {
       const token = await _user?.getIdToken();
-      const accept = await axios.patch(`${env.NEXT_PUBLIC_API_URL}/api/submissions/${id}/accept`,
-        {}, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        }
-      });
+      const accept = await axios.patch(
+        `${env.NEXT_PUBLIC_API_URL}/api/submissions/${id}/accept`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
       if (accept) {
         toast.success("Submission Accepted Successfully!!");
-        const assign = await axios.patch(`${env.NEXT_PUBLIC_API_URL}/api/user/update`, {
-          id: userId,
-          lastAssigned: currAssigned,
-          letters: letters,
-          factors: factors,
-          level: level,
-          additiveA: additiveA,
-          additiveE: additiveE,
-          additiveF: additiveF
-        })
+        const assign = await axios.patch(
+          `${env.NEXT_PUBLIC_API_URL}/api/user/update`,
+          {
+            id: userId,
+            lastAssigned: currAssigned,
+            letters: letters,
+            factors: factors,
+            level: level,
+            additiveA: additiveA,
+            additiveE: additiveE,
+            additiveF: additiveF,
+          },
+        );
         if (assign) {
           toast.success("Letters Assigned Successfully!!");
         }
       }
       window.location.reload();
       window.scrollTo(0, 0);
-    }
-    catch (err) {
-     console.error("Error in accepting submission,", err);
+    } catch (err) {
+      console.error("Error in accepting submission,", err);
     }
   };
 
   const handleReject = async (id: string) => {
     try {
       const token = await _user?.getIdToken();
-      const reject = await axios.delete(`${env.NEXT_PUBLIC_API_URL}/api/submissions/${id}/delete`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        }
-      });
+      const reject = await axios.delete(
+        `${env.NEXT_PUBLIC_API_URL}/api/submissions/${id}/delete`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
       if (reject) {
         toast.success("Submission Rejected Successfully!!");
         window.location.reload();
         window.scrollTo(0, 0);
       }
-    }
-    catch (err) {
+    } catch (err) {
       console.error("Error in rejecting submission,", err);
     }
   };
@@ -230,7 +244,19 @@ const AdminDashboard = () => {
 
                   <div className="mt-4 flex w-full justify-evenly">
                     <button
-                      onClick={() => handleAccept(item.id, item.userId, item.User.currAssigned, item.User.letters, item.User.factors, item.User.level, item.User.additiveA, item.User.additiveE, item.User.additiveF)}
+                      onClick={() =>
+                        handleAccept(
+                          item.id,
+                          item.userId,
+                          item.User.currAssigned,
+                          item.User.letters,
+                          item.User.factors,
+                          item.User.level,
+                          item.User.additiveA,
+                          item.User.additiveE,
+                          item.User.additiveF,
+                        )
+                      }
                       className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
@@ -290,7 +316,19 @@ const AdminDashboard = () => {
 
                   <div className="relative left-[-1.57rem] top-[1rem] mt-4 flex w-full scale-[0.57] justify-evenly mobile:scale-[0.535] mobile2:space-x-2">
                     <button
-                      onClick={() => handleAccept(item.id, item.userId, item.User.currAssigned, item.User.letters, item.User.factors, item.User.level, item.User.additiveA, item.User.additiveE, item.User.additiveF)}
+                      onClick={() =>
+                        handleAccept(
+                          item.id,
+                          item.userId,
+                          item.User.currAssigned,
+                          item.User.letters,
+                          item.User.factors,
+                          item.User.level,
+                          item.User.additiveA,
+                          item.User.additiveE,
+                          item.User.additiveF,
+                        )
+                      }
                       className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
@@ -306,7 +344,6 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-
         </>
       )}
       {isAir && (
@@ -352,7 +389,19 @@ const AdminDashboard = () => {
 
                   <div className="mt-4 flex w-full mobile3:scale-[0.7] mobile3:justify-center mobile3:space-x-2 tablet:scale-[1] tablet:justify-evenly">
                     <button
-                      onClick={() => handleAccept(item.id, item.userId, item.User.currAssigned, item.User.letters, item.User.factors, item.User.level, item.User.additiveA, item.User.additiveE, item.User.additiveF)}
+                      onClick={() =>
+                        handleAccept(
+                          item.id,
+                          item.userId,
+                          item.User.currAssigned,
+                          item.User.letters,
+                          item.User.factors,
+                          item.User.level,
+                          item.User.additiveA,
+                          item.User.additiveE,
+                          item.User.additiveF,
+                        )
+                      }
                       className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
@@ -368,7 +417,6 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-
         </>
       )}
       {isIpad && (
@@ -414,7 +462,19 @@ const AdminDashboard = () => {
 
                   <div className="mt-4 flex w-full scale-[1.2] justify-evenly">
                     <button
-                      onClick={() => handleAccept(item.id, item.userId, item.User.currAssigned, item.User.letters, item.User.factors, item.User.level, item.User.additiveA, item.User.additiveE, item.User.additiveF)}
+                      onClick={() =>
+                        handleAccept(
+                          item.id,
+                          item.userId,
+                          item.User.currAssigned,
+                          item.User.letters,
+                          item.User.factors,
+                          item.User.level,
+                          item.User.additiveA,
+                          item.User.additiveE,
+                          item.User.additiveF,
+                        )
+                      }
                       className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
                     >
                       Accept
@@ -430,7 +490,6 @@ const AdminDashboard = () => {
               ))}
             </div>
           </div>
-
         </>
       )}
     </>
