@@ -156,7 +156,7 @@ const PhotoGallery = () => {
     <motion.section
       ref={mainContainer}
       onWheel={handleWheel}
-      className="min-w-screen pt-10 relative flex h-screen flex-col items-center justify-center overflow-hidden"
+      className="min-w-screen relative flex h-screen flex-col items-center justify-center overflow-hidden pt-10"
       style={{
         backgroundColor: bgColor,
         transition: "background-color 0.8s linear",
@@ -216,7 +216,7 @@ const PhotoGallery = () => {
       >
         {isButtonTopZIndex && (
           <Link
-            href="/gallery_page"
+            href="link_to_view_all"
             className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
