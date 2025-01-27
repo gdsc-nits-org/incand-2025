@@ -215,7 +215,7 @@ const PhotoGallery = () => {
           initial="enter"
           animate="center"
           exit="exit"
-          >
+        >
           {images[currentIndex]?.name1}
         </motion.h1>
         <motion.div
@@ -226,7 +226,7 @@ const PhotoGallery = () => {
           initial="enter"
           animate="center"
           exit="exit"
-          >
+        >
           {images[currentIndex] && (
             <>
               <ImageCard
@@ -241,7 +241,7 @@ const PhotoGallery = () => {
                 bg={images[currentIndex].bg}
                 scale={parseFloat(images[currentIndex].scale)}
                 aspectRatio={aspectRatios[currentIndex]}
-                />
+              />
             </>
           )}
         </motion.div>
@@ -256,12 +256,12 @@ const PhotoGallery = () => {
           initial="enter"
           animate="center"
           exit="exit"
-          >
+        >
           {images[currentIndex]?.name2}
         </motion.h1>
         )
       </AnimatePresence>
-          {/* </div> */}
+      {/* </div> */}
     </motion.section>
   );
 };
