@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
+
 const PhotoGallery = () => {
   const [isLoaded, setIsLoaded] = useState(true);
   useEffect(() => {
@@ -16,6 +17,7 @@ const PhotoGallery = () => {
     }, 500);
     return () => clearTimeout(timeout);
   }, []);
+
 
   const [isButtonTopZIndex, setIsButtonTopZIndex] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,6 +32,7 @@ const PhotoGallery = () => {
     photo: false,
     gallery: false,
   });
+
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -55,6 +58,7 @@ const PhotoGallery = () => {
     }, 1500);
     return () => clearTimeout(timeout);
   }, []);
+    
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -62,6 +66,7 @@ const PhotoGallery = () => {
     }, 500);
     return () => clearTimeout(timeout);
   }, [currentIndex]);
+
 
   const handleNext = () => {
     setDirection("down");
@@ -162,6 +167,37 @@ const PhotoGallery = () => {
         transition: "background-color 0.8s linear",
       }}
     >
+      {isButtonTopZIndex && (
+        <div
+          className={`absolute bottom-20 z-[60] flex w-full justify-center gap-4 laptop:hidden`}
+        >
+          {" "}
+          <button
+            onClick={handlePrevious}
+            className="rounded-full bg-white p-4"
+          >
+            {" "}
+            <FaArrowLeft style={{ color: bgColor }} className="scale-150" />
+          </button>
+          <button onClick={handleNext} className="rounded-full bg-white p-4">
+            {" "}
+            <FaArrowRight style={{ color: bgColor }} className="scale-150" />
+          </button>
+        </div>
+      )}
+      <div
+        className={`absolute left-[50%] z-[60] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
+      >
+        {isButtonTopZIndex && (
+          <Link
+            href="/gallery_page"
+            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            style={{ color: bgColor }}
+          >
+            VIEW ALL
+          </Link>
+        )}
+        </div>
       {isButtonTopZIndex && (
         <div
           className={`absolute bottom-20 z-[60] flex w-full justify-center gap-4 laptop:hidden`}
@@ -295,6 +331,7 @@ const ImageCard = (image: ImageProps) => {
     index,
     isAnimate,
   } = image;
+  
   return (
     <div
       className={`relative z-50 h-max w-max border-2 border-white mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 ${styles["perforated-border"]}`}
