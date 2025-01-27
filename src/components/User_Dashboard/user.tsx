@@ -397,7 +397,7 @@ const UserDashboard = () => {
                         <div className="flex items-center justify-center">
                           <div className="relative left-[1rem] h-[16.1rem] w-[15rem] items-center border-[1.6px] border-black bg-white">
                             <Image
-                              src="/assets/UserDashboard/user.jpg"
+                              src={user? user.pic:"/assets/About/dj.gif"}
                               alt="heart"
                               width={80}
                               height={100}
@@ -408,8 +408,8 @@ const UserDashboard = () => {
 
                         <div className="relative left-[3rem] flex flex-1 flex-col justify-evenly">
                           <div className="font-tusker">
-                            <p className="text-[2.5rem] text-white">@Newt</p>
-                            <h2>incand@incand</h2>
+                            <p className="text-[2.5rem] text-white">{user?.name}</p>
+                            <h2>{user?.email}</h2>
                           </div>
                           <div className="flex flex-row items-center">
                             <div className="relative mx-1 ml-[0] h-[9rem] w-[9rem] overflow-hidden border border-black bg-[#FF7CD5]">
@@ -483,7 +483,7 @@ const UserDashboard = () => {
                             style={{ letterSpacing: "1.2px" }}
                             className={`text-center text-[24px]`}
                           >
-                            Collect 4 More To Win
+                            collect {lettersNeeded} to win
                           </span>
                         </span>
                         <Link href="/game">
@@ -577,7 +577,7 @@ const UserDashboard = () => {
                         <div className="flex items-center justify-center">
                           <div className="relative left-[1rem] h-[16.1rem] w-[15rem] items-center border-[1.6px] border-black bg-white">
                             <Image
-                              src="/assets/UserDashboard/user.jpg"
+                              src={user? user.pic:"/assets/About/dj.gif"}
                               alt="heart"
                               width={80}
                               height={100}
@@ -588,8 +588,8 @@ const UserDashboard = () => {
 
                         <div className="relative left-[3rem] flex flex-1 flex-col justify-evenly">
                           <div className="font-tusker">
-                            <p className="text-[2.5rem] text-white">@Newt</p>
-                            <h2>incand@incand</h2>
+                            <p className="text-[2.5rem] text-white">{user?.name}</p>
+                            <h2>{user?.email}</h2>
                           </div>
                           <div className="flex flex-row items-center">
                             <div className="relative mx-1 ml-[0] h-[9rem] w-[9rem] overflow-hidden border border-black bg-[#FF7CD5]">
@@ -663,7 +663,7 @@ const UserDashboard = () => {
                             style={{ letterSpacing: "1.2px" }}
                             className={`text-center text-[24px]`}
                           >
-                            Collect 4 More To Win
+                             collect {lettersNeeded} to win
                           </span>
                         </span>
                         <Link href="/game">
@@ -757,7 +757,7 @@ const UserDashboard = () => {
                         <div className="flex items-center justify-center">
                           <div className="relative left-[1rem] h-[16.1rem] w-[15rem] items-center border-[1.6px] border-black bg-white">
                             <Image
-                              src="/assets/UserDashboard/user.jpg"
+                             src={user? user.pic:"/assets/About/dj.gif"}
                               alt="heart"
                               width={80}
                               height={100}
@@ -768,8 +768,8 @@ const UserDashboard = () => {
 
                         <div className="relative left-[3rem] flex flex-1 flex-col justify-evenly">
                           <div className="font-tusker">
-                            <p className="text-[2.5rem] text-white">@Newt</p>
-                            <h2>incand@incand</h2>
+                            <p className="text-[2.5rem] text-white">{user?.name}</p>
+                            <h2>{user?.email}</h2>
                           </div>
                           <div className="flex flex-row items-center">
                             <div className="relative mx-1 ml-[0] h-[9rem] w-[9rem] overflow-hidden border border-black bg-[#FF7CD5]">
@@ -843,7 +843,7 @@ const UserDashboard = () => {
                             style={{ letterSpacing: "1.2px" }}
                             className={`text-center text-[24px]`}
                           >
-                            Collect 4 More To Win
+                             collect {lettersNeeded} to win
                           </span>
                         </span>
                         <Link href="/game">
