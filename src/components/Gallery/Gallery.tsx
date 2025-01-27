@@ -8,7 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
-
 const PhotoGallery = () => {
   const [isLoaded, setIsLoaded] = useState(true);
   useEffect(() => {
@@ -17,7 +16,6 @@ const PhotoGallery = () => {
     }, 500);
     return () => clearTimeout(timeout);
   }, []);
-
 
   const [isButtonTopZIndex, setIsButtonTopZIndex] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +30,6 @@ const PhotoGallery = () => {
     photo: false,
     gallery: false,
   });
-
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -58,7 +55,6 @@ const PhotoGallery = () => {
     }, 1500);
     return () => clearTimeout(timeout);
   }, []);
-    
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -66,7 +62,6 @@ const PhotoGallery = () => {
     }, 500);
     return () => clearTimeout(timeout);
   }, [currentIndex]);
-
 
   const handleNext = () => {
     setDirection("down");
@@ -161,7 +156,7 @@ const PhotoGallery = () => {
     <motion.section
       ref={mainContainer}
       onWheel={handleWheel}
-      className="min-w-screen relative flex h-screen flex-col items-center justify-center overflow-hidden"
+      className="min-w-screen pt-10 relative flex h-screen flex-col items-center justify-center overflow-hidden"
       style={{
         backgroundColor: bgColor,
         transition: "background-color 0.8s linear",
@@ -197,7 +192,7 @@ const PhotoGallery = () => {
             VIEW ALL
           </Link>
         )}
-        </div>
+      </div>
       {isButtonTopZIndex && (
         <div
           className={`absolute bottom-20 z-[60] flex w-full justify-center gap-4 laptop:hidden`}
@@ -242,7 +237,7 @@ const PhotoGallery = () => {
         (
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "") + currentIndex}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[7vh] tablet:top-[10vh] laptop:top-[13.5vh] laptop:text-[21vh]"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[7vh] tablet:top-[10vh] laptop:top-[9.5vh] laptop:text-[18vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -283,7 +278,7 @@ const PhotoGallery = () => {
         </motion.div>
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "")}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[7vh] tablet:bottom-[9.5vh] laptop:bottom-[13.5vh] laptop:text-[21vh]"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[7vh] tablet:bottom-[9.5vh] laptop:bottom-[8vh] laptop:text-[18vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -331,7 +326,7 @@ const ImageCard = (image: ImageProps) => {
     index,
     isAnimate,
   } = image;
-  
+
   return (
     <div
       className={`relative z-50 h-max w-max border-2 border-white mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 ${styles["perforated-border"]}`}
@@ -499,9 +494,9 @@ const images = [
     scale: "",
   },
   {
-    src: "",
-    name1: "KALA",
-    name2: "DARSHAN",
+    src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1738003904/Bihu_q4o1jc.jpg",
+    name1: "",
+    name2: "BIHU",
     bg: "",
     scale: "",
   },
