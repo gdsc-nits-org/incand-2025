@@ -78,7 +78,7 @@ const UserDashboard = () => {
       }
     };
 
-    fetchUserData();
+  void fetchUserData();
   }, [_user]);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const UserDashboard = () => {
           const UserSubmissions = await axios.get<UserSubmissionsResponse>(
             `${env.NEXT_PUBLIC_API_URL}/api/user/submissions/${user?.id}`,
           );
-          console.log(UserSubmissions.data.msg);
+          // console.log(UserSubmissions.data.msg);
           setUserSubmissions(UserSubmissions.data.msg);
 
         } catch (error) {
@@ -97,7 +97,7 @@ const UserDashboard = () => {
       }
     };
 
-    fetchUserSubmissions();
+  void fetchUserSubmissions();
   }, [user]);
 
 

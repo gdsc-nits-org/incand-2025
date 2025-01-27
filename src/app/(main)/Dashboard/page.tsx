@@ -7,6 +7,11 @@ import AdminDashboard from "../../../components/Admin_Dasboard/admin";
 import { useAuthState } from "react-firebase-hooks/auth";
 import axios from "axios";
 import { auth } from "~/app/utils/firebase";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import Loader from "../loading";
+
+export const runtime = "edge";
 
 interface UserResponse {
   name: string;
@@ -25,8 +30,10 @@ interface ApiResponse {
 }
 
 const Dashboard = () => {
-  const [_user] = useAuthState(auth);
+  const [_user, loading] = useAuthState(auth);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isAuthChecked, setIsAuthChecked] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -44,17 +51,32 @@ const Dashboard = () => {
           setIsAdmin(userResponse.data.msg.role === "MODERATOR");
         } catch (error) {
           console.error("Error fetching user data:", error);
+          toast.error("Failed to fetch user data.");
+        } finally {
+          setIsAuthChecked(true);
         }
+      } else {
+        setIsAuthChecked(true);
       }
     };
 
-    fetchUserData();
-  }, [_user]);
-  if (!_user) {
-    return <div className="text-black">Login First</div>;
+    if (!loading) {
+    void fetchUserData();
+    }
+  }, [_user, loading]);
+
+  useEffect(() => {
+    if (!loading && !_user) {
+      toast.warning("Please Login!");
+      router.push("/");
+    }
+  }, [_user, loading, router]);
+
+  if (loading || !isAuthChecked) {
+    return <div><Loader /></div>; 
   }
-  return <>
-  {isAdmin ? <AdminDashboard /> : <UserDashboard />}</>;
+
+  return <>{isAdmin ? <AdminDashboard /> : <UserDashboard />}</>;
 };
 
 export default Dashboard;

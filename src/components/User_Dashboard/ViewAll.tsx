@@ -71,7 +71,7 @@ const PhotosStatus = () => {
       }
     };
 
-    fetchUserData();
+  void fetchUserData();
   }, [_user]);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const PhotosStatus = () => {
       }
     };
 
-    fetchUserSubmissions();
+  void fetchUserSubmissions();
   }, [user]);
 
   const verifiedPhotos = userSubmissions.filter((photo) => photo.status === "ACCEPTED");
