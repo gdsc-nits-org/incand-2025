@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 
 interface Card {
@@ -6,7 +7,7 @@ interface Card {
   className: string;
 }
 
-const GalleryAll: React.FC = () => {
+const Gallery: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 800);
 
   const cards: Card[] = [
@@ -31,6 +32,28 @@ const GalleryAll: React.FC = () => {
     { id: 19, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-4 row-start-22 rounded-[25px] flex justify-center items-center relative" },
     { id: 20, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-4 col-start-4 row-start-22 rounded-[25px] flex justify-center items-center relative" },
     { id: 21, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-2 row-span-4 col-start-7 row-start-22 rounded-[25px] flex justify-center items-center relative" },
+  ];
+
+  const mobileCards: Card[] = [
+    { id: 1, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-6 row-span -4 rounded-[25px] flex justify-center items-center relative" },
+    { id: 2, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-3 row-start-5 rounded-[25px] flex justify-center items-center relative" },
+    { id: 3, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-3 col-start-4 row-start-5 rounded-[25px] flex justify-center items-center relative" },
+    { id: 4, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-4 row-span-3 row-start-8 rounded-[25px] flex justify-center items-center relative" },
+    { id: 5, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-2 row-span-3 col-start-5 row-start-8 rounded-[25px] flex justify-center items-center relative" },
+    { id: 6, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-6 row-span-4 row-start-11 rounded-[25px] flex justify-center items-center relative" },
+    { id: 7, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-4 row-start-15 rounded-[25px] flex justify-center items-center relative" },
+    { id: 8, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-4 col-start-4 row-start-15 rounded-[25px] flex justify-center items-center relative" },
+    { id: 9, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-4 row-span-4 row-start-22 rounded-[25px] flex justify-center items-center relative" },
+    { id: 10, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-2 row-span-2 col-start-5 row-start-22 rounded-[25px] flex justify-center items-center relative" },
+    { id: 11, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-2 row-span-2 col-start-5 row-start-24 rounded-[25px] flex justify-center items-center relative" },
+    { id: 12, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-6 row-span-3 row-start-26 rounded-[25px] flex justify-center items-center relative" },
+    { id: 13, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-4 row-span-4 row-start-29 rounded-[25px] flex justify-center items-center relative" },
+    { id: 14, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-2 row-span-4 col-start-5 row-start-29 rounded-[25px] flex justify-center items-center relative" },
+    { id: 15, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-6 row-span-5 row-start-33 rounded-[25px] flex justify-center items-center relative" },
+    { id: 16, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-6 row-span-4 row-start-38 rounded-[25px] flex justify-center items-center relative" },
+    { id: 17, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-4 row-start-42 rounded-[25px] flex justify-center items-center relative" },
+    { id: 18, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-3 row-span-4 col-start-4 row-start-42 rounded-[25px] flex justify-center items-center relative" },
+    { id: 19, image: "https://res.cloudinary.com/dieef3h1w/image/upload/v1737309103/BACKGROUND_2_2_wcgagz.png", className: "bg-white col-span-6 row-span-5 row-start-46 rounded-[25px] flex justify-center items-center relative" },
   ];
 
   useEffect(() => {
@@ -97,4 +120,4 @@ const GalleryAll: React.FC = () => {
   );
 };
 
-export default GalleryAll;
+export default Gallery;
