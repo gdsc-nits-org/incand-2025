@@ -20,7 +20,7 @@ export default function Page({ params }: { params: { id: string } }) {
       className="flex h-auto min-h-screen w-screen flex-col items-center justify-center bg-[#FFEDFD] p-6 pt-[80px] font-tusker ipadair:p-10 ipadair:pt-[7.5rem] 4k:p-20 4k:pt-[10rem]"
       style={{ backgroundColor: colors[(id - 1) % 6] }}
     >
-      <section className="flex min-h-full w-full flex-col items-center justify-between gap-4 ipadair:flex-grow-0 ipadair:gap-0 mb-8">
+      <section className="mb-8 flex min-h-full w-full flex-col items-center justify-between gap-4 ipadair:flex-grow-0 ipadair:gap-0">
         <div className="flex w-full flex-grow flex-col items-center gap-6 ipadair:h-[80%] ipadair:flex-row ipadair:gap-0">
           <div
             style={
@@ -119,9 +119,9 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
           <Link
             href={`/event/${Math.min(TOTAL_EVENT, id + 1)}`}
-            className="flex h-full  w-[30%] items-center justify-center gap-2 bg-[#FF93EE] px-2 ipadair:w-[20%]"
+            className="flex h-full w-[30%] items-center justify-center gap-2 bg-[#FF93EE] px-2 ipadair:w-[20%]"
           >
-            <p className="text-[.5rem] mobile1:text-sm  text-[#FFDE70] drop-shadow-[3px_3px_0px_black]  mobile3:text-xl ipadair:text-3xl 4k:text-6xl">
+            <p className="text-[.5rem] text-[#FFDE70] drop-shadow-[3px_3px_0px_black] mobile1:text-sm mobile3:text-xl ipadair:text-3xl 4k:text-6xl">
               NEXT
             </p>
             <Image

@@ -19,10 +19,12 @@ export default {
         oxygen: ["Oxygen", "sans-serif"],
         tusker2: ["Tusker", "sans-serif"],
         DMSerif: ["DM Serif Display", "serif"],
+        rocket: ["rocket", "sans-serif"],
       },
       boxShadow: {
         "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",
         "text-shadow": "2.89px 2.89px 0px 0px #FFFFFF",
+        "custom-black": "5.7px 5.7px 0px 0px #000000 ",
       },
       screens: {
         xs: "450px",
@@ -54,5 +56,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 } satisfies Config;
