@@ -83,11 +83,12 @@ const UserDashboard = () => {
 
   useEffect(() => {
     const fetchUserSubmissions = async () => {
-      if (_user) {
+      if (user) {
         try {
           const UserSubmissions = await axios.get<UserSubmissionsResponse>(
             `${env.NEXT_PUBLIC_API_URL}/api/user/submissions/${user?.id}`,
           );
+          console.log(UserSubmissions.data.msg);
           setUserSubmissions(UserSubmissions.data.msg);
 
         } catch (error) {
@@ -97,7 +98,7 @@ const UserDashboard = () => {
     };
 
     fetchUserSubmissions();
-  }, [_user]);
+  }, [user]);
 
 
   const scrollContainerRef = useRef<HTMLDivElement | null>(null); // Add proper type
@@ -200,7 +201,7 @@ const UserDashboard = () => {
                         <div className="flex items-center justify-center">
                           <div className="relative left-[1rem] h-[16.1rem] w-[15rem] items-center border-[1.6px] border-black bg-white">
                             <Image
-                              src="/assets/UserDashboard/user.jpg"
+                              src={user?user.pic:"/assets/About/dj.gif"}
                               alt="heart"
                               width={80}
                               height={100}

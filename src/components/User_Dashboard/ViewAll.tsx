@@ -76,7 +76,7 @@ const PhotosStatus = () => {
 
   useEffect(() => {
     const fetchUserSubmissions = async () => {
-      if (_user) {
+      if (user) {
         try {
           const UserSubmissions = await axios.get<UserSubmissionsResponse>(
             `${env.NEXT_PUBLIC_API_URL}/api/user/submissions/${user?.id}`,
@@ -90,7 +90,7 @@ const PhotosStatus = () => {
     };
 
     fetchUserSubmissions();
-  }, [_user]);
+  }, [user]);
 
   const verifiedPhotos = userSubmissions.filter((photo) => photo.status === "ACCEPTED");
   const pendingPhotos = userSubmissions.filter((photo) => photo.status === "PENDING");
