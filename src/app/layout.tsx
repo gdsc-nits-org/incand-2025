@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 const toastOps = {
   classNames: {
-    title: "text-md md:text-lg font-mono",
-    success: "toast-theme-pink",
-    info: "toast-theme-pink",
+    title: "text-md md:text-lg font-semibold",
+    success: "toast-theme-blue",
+    info: "toast-theme-blue",
     error: "toast-theme-red",
     warning: "toast-theme-red",
   },
