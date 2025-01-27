@@ -16,7 +16,6 @@ const PhotoGallery = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  
   const [isButtonTopZIndex, setIsButtonTopZIndex] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<"down" | "up">("up");
@@ -25,8 +24,8 @@ const PhotoGallery = () => {
   const [aspectRatios, setAspectRatios] = useState<number[]>([]);
   const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isTablet = useMediaQuery({query: "(max-width: 1024px)"});
-  
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
+
   useEffect(() => {
     console.log("isLoaded:", isLoaded); // Debugging log
     if (isLoaded) {
@@ -52,7 +51,7 @@ const PhotoGallery = () => {
     }, 500);
     return () => clearTimeout(timeout);
   }, [currentIndex]);
-  
+
   const handleNext = () => {
     setDirection("down");
     if (currentIndex < images.length - 1) {
@@ -87,9 +86,9 @@ const PhotoGallery = () => {
     enter: (dir: "down" | "up") =>
       isLoaded
         ? {
-            scaleX:isMobile? 4 : (isTablet? 3.5 : 2.3),
-            scaleY:isMobile? 4 : (isTablet? 3.5 : 2.3),
-            y:isMobile? 75 : (isTablet? 30 : 150),
+            scaleX: isMobile ? 4 : isTablet ? 3.5 : 2.3,
+            scaleY: isMobile ? 4 : isTablet ? 3.5 : 2.3,
+            y: isMobile ? 75 : isTablet ? 30 : 150,
             transition: { delay: 0, duration: 0, ease: "easeIn" },
           }
         : dir === "down"
@@ -149,10 +148,12 @@ const PhotoGallery = () => {
         transition: "background-color 0.8s linear",
       }}
     >
-      <div className={`absolute left-[50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:scale-100 4k:scale-[2.5] 4k:top-16 laptop:top-4 ${isButtonTopZIndex?"z-40":"z-[60]"} translate-x-[-50%]`}>
+      <div
+        className={`absolute left-[50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5] ${isButtonTopZIndex ? "z-40" : "z-[60]"} translate-x-[-50%]`}
+      >
         <button
           className="rounded-full bg-white px-4 py-2 font-bold shadow-md hover:opacity-80"
-          style={{ color: bgColor}}
+          style={{ color: bgColor }}
         >
           VIEW ALL
         </button>
@@ -170,7 +171,7 @@ const PhotoGallery = () => {
         (
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "") + currentIndex}
-          className="relative mobile:top-[18vh] tablet:top-[10vh] laptop:top-[13.5vh] font-tusker mobile:text-[7vh] laptop:text-[21vh] opacity-75 drop-shadow-xl"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[7vh] tablet:top-[10vh] laptop:top-[13.5vh] laptop:text-[21vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -210,7 +211,7 @@ const PhotoGallery = () => {
         </motion.div>
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "")}
-          className="relative mobile:bottom-[18vh] tablet:bottom-[9.5vh] laptop:bottom-[13.5vh] font-tusker mobile:text-[7vh] laptop:text-[21vh] opacity-75 drop-shadow-xl"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[7vh] tablet:bottom-[9.5vh] laptop:bottom-[13.5vh] laptop:text-[21vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -243,11 +244,21 @@ interface ImageProps {
   reff: (el: HTMLImageElement | null) => void;
 }
 const ImageCard = (image: ImageProps) => {
-  const { src, name1, isLoaded, isMobile, name2, bg, scale, aspectRatio, reff, index } =
-    image;
+  const {
+    src,
+    name1,
+    isLoaded,
+    isMobile,
+    name2,
+    bg,
+    scale,
+    aspectRatio,
+    reff,
+    index,
+  } = image;
   return (
     <div
-      className={`relative z-50 h-max w-max border-2 mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 border-white ${styles["perforated-border"]}`}
+      className={`relative z-50 h-max w-max border-2 border-white mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 ${styles["perforated-border"]}`}
       style={{
         transform: `scale(${scale == 0 ? 1 : scale})`,
       }}
@@ -280,7 +291,7 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/photo.png"
                 alt="Gallery"
-                className={`absolute mobile:h-[4vh] mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] scale-90 transition-transform duration-500 ease-in ${
+                className={`absolute scale-90 transition-transform duration-500 ease-in mobile:h-[4vh] mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] ${
                   !isLoaded ? "-translate-y-1" : "-translate-y-full"
                 }`}
               />
@@ -290,11 +301,9 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/gallery.png"
                 alt="Gallery"
-                className={`absolute scale-90 transition-transform delay-500 duration-500 tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto ease-in ${
-                  isMobile ? "w-[30vw] h-[8vh]" : "w-auto h-auto"
-                } ${
-                  !isLoaded ? "-translate-y-3" : "-translate-y-full"
-                }`}
+                className={`absolute scale-90 transition-transform delay-500 duration-500 ease-in tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto ${
+                  isMobile ? "h-[8vh] w-[30vw]" : "h-auto w-auto"
+                } ${!isLoaded ? "-translate-y-3" : "-translate-y-full"}`}
               />
             </>
           )}
