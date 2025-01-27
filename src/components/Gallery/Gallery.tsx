@@ -186,7 +186,7 @@ const PhotoGallery = () => {
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80 "
             style={{ color: bgColor }}
           >
             VIEW ALL
@@ -232,12 +232,12 @@ const PhotoGallery = () => {
           mixBlendMode: "multiply",
         }}
       ></div>
-      {/* <div className="absolute flex flex-col items-center justify-center h-screen"> */}
+      <div className=" mt-4 flex flex-col items-center justify-center h-screen w-screen">
       <AnimatePresence custom={direction} mode="wait">
         (
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "") + currentIndex}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[7vh] tablet:top-[10vh] laptop:top-[9.5vh] laptop:text-[18vh]"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[7vh] tablet:top-[10vh] laptop:top-[7.5vh] laptop:text-[15vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -278,7 +278,7 @@ const PhotoGallery = () => {
         </motion.div>
         <motion.h1
           key={currentIndex + (images[currentIndex]?.src ?? "")}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[7vh] tablet:bottom-[9.5vh] laptop:bottom-[8vh] laptop:text-[18vh]"
+          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[7vh] tablet:bottom-[9.5vh] laptop:bottom-[8vh] laptop:text-[15vh]"
           style={{
             color: textcolors[currentIndex % textcolors.length],
           }}
@@ -292,6 +292,7 @@ const PhotoGallery = () => {
         </motion.h1>
         )
       </AnimatePresence>
+      </div>
       {/* </div> */}
     </motion.section>
   );
@@ -334,22 +335,10 @@ const ImageCard = (image: ImageProps) => {
         transform: `scale(${scale == 0 ? 1 : scale})`,
       }}
     >
-      {/* // <img
-      //   className={`z-30 h-auto w-[30%] border-2 border-white ${styles["perforated-border"]}`}
-      //   src={src}
-      //   alt={name1}
-      // ></img>
-      > */}
       <div className="bg-white p-[1vh]">
         <div className={`relative flex justify-center overflow-hidden`}>
           <img
             ref={reff}
-            // key={index}
-            // ref={(el) => {
-            //   if (el) {
-            //     imgRefs.current[index] = el;
-            //   }
-            // }}
             src={src}
             alt="Gallery"
             className="max-h-[60vh] max-w-[50vw] object-contain"
@@ -404,8 +393,8 @@ const images = [
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737964559/monali1_hr1pa2.jpg",
-    name1: "CARPE",
-    name2: "DIEM",
+    name1: "",
+    name2: "CARPEDIEM",
     bg: "",
     scale: "",
   },
@@ -425,15 +414,15 @@ const images = [
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
-    name1: "MR",
-    name2: "NIT",
+    name1: "",
+    name2: "MR NIT",
     bg: "",
     scale: "",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737983583/Thunder_agsrn6.jpg",
-    name1: "THUNDER",
-    name2: "MARCH",
+    name1: "",
+    name2: "THUNDERMARCH",
     bg: "",
     scale: "",
   },
