@@ -32,6 +32,37 @@
     
     }
 
+    @keyframes drawPath {
+        0% {
+          stroke-dashoffset: 3200;
+        }
+        30% {
+          stroke-dashoffset: 2000;
+        }
+        40% {
+          stroke-dashoffset: 2000;
+        }
+        60% {
+          stroke-dashoffset: 1200;
+        }
+        70% {
+          stroke-dashoffset: 1200;
+        }
+        80% {
+            stroke-dashoffset: 500;
+          }
+        90% {
+            stroke-dashoffset: 300;
+          }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+    
+      .animatedPath {
+        animation: drawPath 3s linear forwards;
+      }
+
 
 
 }

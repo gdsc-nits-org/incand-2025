@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image"
 import styles from "~/styles/Game.module.css";
 
@@ -15,14 +15,25 @@ interface GameMobileViewProps {
  const GameMobileView: React.FC<GameMobileViewProps> = ({ level, lettersHaving, top10Players, setUploadPopup }) => {
 
     const [maxCharsForUserID, setMaxCharsForUserID] = useState(20);
+    const [leaderboardStartsFrom, setLeaderBoardStartsFrom] = useState(4);
+     const heroRef = useRef(null);
+        const rulesRef = useRef<HTMLDivElement>(null);
+      
+        const scrollToRulesSection = () => {
+          if (rulesRef.current) {
+            rulesRef.current.scrollIntoView({ behavior: "smooth" });
+          }
+        };
 
      useEffect(() => {
         const checkViewport = () => {
     
           if (window.innerWidth > 1180) {
+            setLeaderBoardStartsFrom(4);
             setMaxCharsForUserID(20);
           }else{
-            setMaxCharsForUserID(8);
+            setLeaderBoardStartsFrom(3);
+            setMaxCharsForUserID(7);
           }
         }
         checkViewport();
@@ -35,6 +46,7 @@ interface GameMobileViewProps {
     return (
         <div>
          {/* Hero Section */}
+         <section ref={heroRef}>
         <div className={`relative grid h-screen bg-black ipadair:h-[46vw]`}>
           <div
             className={
@@ -71,7 +83,7 @@ interface GameMobileViewProps {
               weave another. Where, when and what you ask? Patience has always
               been key, just stay curious!
             </p>
-            <div className={`relative z-[1] mt-[-5vh] h-[20vh] w-[30vw] ipadair:mt-[-2vw] ipadair:h-[10vw] ipadair:w-[10vw]`}>
+            <button onClick={scrollToRulesSection} className={`relative z-[1] mt-[-5vh] h-[20vh] w-[30vw] ipadair:mt-[-2vw] ipadair:h-[10vw] ipadair:w-[10vw]`}>
               <Image
                 className={`object-contain`}
                 src="/assets/Game/arrow_anim.gif"
@@ -79,12 +91,14 @@ interface GameMobileViewProps {
                 alt="logo"
                 unoptimized
               />
-            </div>
+            </button>
           </div>
         </div>
+        </section>
         {/* Hero Section */}
   
         {/* Rules Section */}
+        <section ref={rulesRef}>
         <div
           id="rulesContainer"
           className={
@@ -93,14 +107,10 @@ interface GameMobileViewProps {
         >
           <div className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}></div>
           <div className={`absolute right-0 top-[8vw] hidden w-[95%] ipadair:block`}>
-            <Image
-              src="/assets/Game/rule_path.png"
-              layout="responsive"
-              width={100}
-              height={100}
-              alt="logo"
-              unoptimized
-            />
+          <svg viewBox="0 0 1808 483" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M752 34.5V34.5C747.846 8.65222 779.45 -7.16654 797.652 11.65L803.666 17.8675C809.305 23.6966 812.293 31.5913 811.927 39.6931L811.386 51.6705C810.038 81.5069 785.998 105.304 756.149 106.346L704.869 108.138C697.971 108.379 691.065 107.987 684.238 106.966L634.256 99.4945C609.786 95.8365 585.078 94 560.335 94H434L291.5 86L244.861 82.8717C221.597 81.3114 198.285 85.1043 176.715 93.9591V93.9591C166.932 97.9755 157.592 102.998 148.848 108.947L92.5618 147.234C81.9236 154.471 74.4482 165.494 71.6613 178.055L57.0908 243.724C51.5864 268.533 17.9184 272.569 6.70663 249.764V249.764C-5.07672 225.796 21.5052 201.167 44.5059 214.741L58.5 223V223C73.1885 232.466 90.2931 237.5 107.768 237.5H291.5L374.015 244.908C421.974 249.214 462.807 281.566 477.968 327.27L496.941 384.471C509.725 423.011 553.361 441.664 590.054 424.276L597.631 420.685C624.785 407.817 657.272 417.67 672.703 443.453V443.453C680.582 456.619 693.329 466.152 708.184 469.989L730.811 475.834C740.232 478.268 749.924 479.5 759.655 479.5H841.165C902.697 479.5 958.989 444.862 986.724 389.935L991.889 379.704C1022.53 319.026 1090.48 286.932 1156.81 301.818V301.818C1197.1 310.861 1239.34 302.701 1273.36 279.301L1349 227.281C1352.66 224.768 1356.58 222.675 1360.7 221.041L1364.57 219.507C1376.69 214.701 1390.22 214.917 1402.18 220.107V220.107C1407.35 222.352 1412.88 223.688 1418.51 224.056L1608.19 236.466C1618.71 237.154 1629.16 238.707 1639.43 241.108L1653.44 244.386C1674.82 249.386 1697.1 249.074 1718.33 243.477V243.477C1733.33 239.522 1747.53 233.001 1760.31 224.202L1779.71 210.844C1789.2 204.306 1797.86 196.634 1805.5 188V188" stroke="#E01A1A" stroke-width="6"/>
+</svg>
+
           </div>
           <div className={`relative right-[1vw] top-0 block w-full ipadair:top-[8vw] ipadair:hidden ipadair:w-[95%]`}>
             <Image
@@ -235,6 +245,7 @@ interface GameMobileViewProps {
           </div>
           {/* Step 03 */}
         </div>
+        </section>
         {/* Rules Section */}
   
         {/* Collections Section */}
@@ -687,14 +698,14 @@ interface GameMobileViewProps {
         {/* Leaderboard 1st 2nd 3rd Section */}
   
         {/* Leaderboard 4-10 Section */}
-        {top10Players.length > 3 && (
+        {top10Players.length > (leaderboardStartsFrom-1) && (
           <div
             className={
               `relative mt-[-5.1vw] flex flex-col items-center justify-center gap-[4vw] overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-gradient-to-b from-[#001E30] to-[#001E30] py-[12vw] ipadair:mt-[-3.1vw] ipadair:gap-[2vw] ipadair:rounded-t-[2vw] ipadair:border-[0.75vw] ipadair:py-[6vw]`
             }
           >
             <div className={`absolute inset-0 bg-[url('/assets/Game/maze_white.png')] bg-cover bg-center bg-no-repeat`}></div>
-            {top10Players.slice(3).map((player, index) => (
+            {top10Players.slice(leaderboardStartsFrom-1).map((player, index) => (
               <div
                 key={player.name.toString() + index.toString()}
                 className={`relative flex rounded-[1.8vw] border-[0.3vw] border-black bg-[#9C8FFE] shadow-[0.3vw_0.3vw_0px_#000000] ipadair:rounded-[1vw]`}
@@ -703,7 +714,7 @@ interface GameMobileViewProps {
                   className={`border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] ipadair:border-r-[0.3vw] ipadair:px-[3vw] ipadair:py-[0.2vw] ipadair:text-[2.5vw]`}
                   style={{ fontFamily: "Rocket Thunder" }}
                 >
-                  {index + 4 === 10 ? index + 4 : "\u00A0" + (index + 4)}
+                  {index + leaderboardStartsFrom === 10 ? index + leaderboardStartsFrom : "\u00A0" + (index + leaderboardStartsFrom)}
                 </p>
                 <p
                   className={`w-[45vw] border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] text-black ipadair:border-r-[0.3vw] ipadair:px-[3vw] ipadair:py-[0.2vw] ipadair:text-[2.5vw]`}

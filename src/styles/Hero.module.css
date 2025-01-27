@@ -1,6 +1,3 @@
-.hero {
-  background: radial-gradient(#AF78F6, #6831AF);
-}
 
 .cardOne {
   box-shadow: 0.526vw 0.526vw 0px #000000;
@@ -305,9 +302,6 @@
   /* Media Queries */ 
 
 @media (min-width: 768px) {
-.hero {
-  background: radial-gradient(#AF78F6, #6831AF);
-}
 
 .cardOne {
   box-shadow: 0.526vw 0.526vw 0px #000000;
