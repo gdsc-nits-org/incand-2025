@@ -57,10 +57,10 @@ const GalleryAll: React.FC = () => {
     {
       id: 6,
       image:
-        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
+        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
       className:
         "bg-white col-span-4 row-span-4 col-start-5 row-start-4 rounded-[25px] flex justify-center items-center relative shadow-[20px_20px_0px_rgba(0,0,0,0.3)]",
-      name: "MR NIT",
+      name: "SHRINANDYAM",
     },
     {
       id: 7,
@@ -112,11 +112,12 @@ const GalleryAll: React.FC = () => {
     },
     {
       id: 13,
-      image:
-        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
+      
+        image:
+        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
       className:
         "bg-white col-span-2 row-span-3 col-start-7 row-start-12 rounded-[25px] flex justify-center items-center relative shadow-[20px_20px_0px_rgba(0,0,0,0.3)]",
-      name: "SHRINANDYAM",
+      name: "MR NIT",
     },
     {
       id: 14,
@@ -229,9 +230,10 @@ const GalleryAll: React.FC = () => {
       id: 6,
       className:
         "bg-white col-span-6 row-span-4 row-start-11 rounded-[25px] flex justify-center items-center relative shadow-[12px_12px_0px_rgba(0,0,0,0.3)]",
-        image:
-        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
-      name: "MR NIT",
+        
+      image:
+        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
+      name: "SHRINANDYAM",
     },
     {
       id: 7,
@@ -269,10 +271,10 @@ const GalleryAll: React.FC = () => {
       id: 11,
       className:
         "bg-white col-span-2 row-span-2 col-start-5 row-start-22 rounded-[25px] flex justify-center items-center relative shadow-[12px_12px_0px_rgba(0,0,0,0.3)]",
+        image:
+        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
+      name: "MR NIT",
       
-      image:
-        "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
-      name: "SHRINANDYAM",
     },
     {
       id: 12,
