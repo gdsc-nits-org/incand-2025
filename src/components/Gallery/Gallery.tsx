@@ -313,7 +313,7 @@ const ImageCard = (image: ImageProps) => {
     <div
       className={`relative z-50 h-max w-max border-2 border-white mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 ${styles["perforated-border"]}`}
       style={{
-        transform: isMobile?`scale(${scale == 0 ? 1 : scale})`:"scale-100",
+        transform: isMobile ? `scale(${scale == 0 ? 1 : scale})` : "scale-100",
       }}
     >
       <div className="bg-white p-2">
