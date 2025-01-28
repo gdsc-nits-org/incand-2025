@@ -405,8 +405,8 @@ const images = [
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737983583/Thunder_agsrn6.jpg",
-    name1: "",
-    name2: "THUNDERMARCH",
+    name1: "THUNDER",
+    name2: "MARCH",
     bg: "",
     scale: "1.1",
   },
