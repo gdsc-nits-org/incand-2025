@@ -168,7 +168,7 @@ const PhotoGallery = () => {
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80 "
             style={{ color: bgColor }}
           >
             VIEW ALL
@@ -214,7 +214,7 @@ const PhotoGallery = () => {
           mixBlendMode: "multiply",
         }}
       ></div>
-      {/* <div className="absolute flex flex-col items-center justify-center h-screen"> */}
+      <div className=" mt-4 flex flex-col items-center justify-center h-screen w-screen">
       <AnimatePresence custom={direction} mode="wait">
         (
         <motion.h1
@@ -274,6 +274,7 @@ const PhotoGallery = () => {
         </motion.h1>
         )
       </AnimatePresence>
+      </div>
       {/* </div> */}
     </motion.section>
   );
@@ -374,8 +375,8 @@ const images = [
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737964559/monali1_hr1pa2.jpg",
-    name1: "CARPE",
-    name2: "DIEM",
+    name1: "",
+    name2: "CARPEDIEM",
     bg: "",
     scale: "",
   },
@@ -395,15 +396,15 @@ const images = [
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
-    name1: "MR",
-    name2: "NIT",
+    name1: "",
+    name2: "MR NIT",
     bg: "",
     scale: "1.1",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737983583/Thunder_agsrn6.jpg",
-    name1: "THUNDER",
-    name2: "MARCH",
+    name1: "",
+    name2: "THUNDERMARCH",
     bg: "",
     scale: "1.1",
   },

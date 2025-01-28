@@ -10,6 +10,13 @@
 }
 
 @font-face {
+  font-family: "rocket";
+  src: url("/assets/fonts/Rocket.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Tusker Grotes";
   src: url("/assets/fonts/TuskerGrotes.woff") format("woff");
   font-weight: normal;
@@ -36,7 +43,7 @@
 }
 @font-face {
   font-family: "DM Serif Display";
-  src: url("/assets/fonts/DMSerifDisplay.ttf") format("truetype");
+  src: url("/assets/fonts/DMSerifDisplay-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -46,4 +53,28 @@ html,body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+.text-shadow {
+  text-shadow: 5px 5px 1px rgba(0, 0, 0,1); /* Adjust values for the shadow effect */
+}
+@layer utilities {
+  .text-shadow-custom {
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+  }
+}
+@layer utilities {
+  .text-shadow {
+    text-shadow: 
+      -2px -2px 0 black, 
+      2px -2px 0 black, 
+      -2px 2px 0 black, 
+      2px 2px 0 black, 
+      5px 5px 1px rgba(0, 0, 0, 1); /* Combine both shadow effects */
+  }
+}
+
+@layer utilities {
+  .text-stroke-black {
+    -webkit-text-stroke: 1px black;
+  }
 }

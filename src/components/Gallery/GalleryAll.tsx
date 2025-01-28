@@ -356,7 +356,7 @@ const GalleryAll: React.FC = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundColor: "rgba(201,52,29,0.8)",
-        backgroundBlendMode: "multiply",
+        backgroundBlendMode: 'multiply',
       }}
     >
       <div
