@@ -168,7 +168,7 @@ const PhotoGallery = () => {
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80 "
+            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
             VIEW ALL
@@ -214,66 +214,68 @@ const PhotoGallery = () => {
           mixBlendMode: "multiply",
         }}
       ></div>
-      <div className=" mt-4 flex flex-col items-center justify-center h-screen w-screen">
-      <AnimatePresence custom={direction} mode="wait">
-        (
-        <motion.h1
-          key={currentIndex + (images[currentIndex]?.src ?? "") + currentIndex}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[6vh] tablet:top-[10vh] laptop:top-[9.5vh] laptop:text-[18vh]"
-          style={{
-            color: textcolors[currentIndex % textcolors.length],
-          }}
-          custom="left"
-          variants={textVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          {images[currentIndex]?.name1}
-        </motion.h1>
-        <motion.div
-          key={currentIndex}
-          className="relative z-50 flex h-screen w-screen flex-col items-center justify-center"
-          custom={direction}
-          variants={imageVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          {images[currentIndex] && (
-            <>
-              <ImageCard
-                isAnimate={isAnimate}
-                isMobile={isMobile}
-                isLoaded={isLoaded}
-                index={currentIndex}
-                reff={(el) => (imgRefs.current[currentIndex] = el)}
-                src={images[currentIndex].src}
-                name1={images[currentIndex].name1}
-                name2={images[currentIndex].name2}
-                bg={images[currentIndex].bg}
-                scale={parseFloat(images[currentIndex].scale)}
-                aspectRatio={aspectRatios[currentIndex]}
-              />
-            </>
-          )}
-        </motion.div>
-        <motion.h1
-          key={currentIndex + (images[currentIndex]?.src ?? "")}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[6vh] tablet:bottom-[9.5vh] laptop:bottom-[8vh] laptop:text-[18vh]"
-          style={{
-            color: textcolors[currentIndex % textcolors.length],
-          }}
-          custom="right"
-          variants={textVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          {images[currentIndex]?.name2}
-        </motion.h1>
-        )
-      </AnimatePresence>
+      <div className="mt-4 flex h-screen w-screen flex-col items-center justify-center">
+        <AnimatePresence custom={direction} mode="wait">
+          (
+          <motion.h1
+            key={
+              currentIndex + (images[currentIndex]?.src ?? "") + currentIndex
+            }
+            className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[6vh] tablet:top-[10vh] laptop:top-[9.5vh] laptop:text-[18vh]"
+            style={{
+              color: textcolors[currentIndex % textcolors.length],
+            }}
+            custom="left"
+            variants={textVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            {images[currentIndex]?.name1}
+          </motion.h1>
+          <motion.div
+            key={currentIndex}
+            className="relative z-50 flex h-screen w-screen flex-col items-center justify-center"
+            custom={direction}
+            variants={imageVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            {images[currentIndex] && (
+              <>
+                <ImageCard
+                  isAnimate={isAnimate}
+                  isMobile={isMobile}
+                  isLoaded={isLoaded}
+                  index={currentIndex}
+                  reff={(el) => (imgRefs.current[currentIndex] = el)}
+                  src={images[currentIndex].src}
+                  name1={images[currentIndex].name1}
+                  name2={images[currentIndex].name2}
+                  bg={images[currentIndex].bg}
+                  scale={parseFloat(images[currentIndex].scale)}
+                  aspectRatio={aspectRatios[currentIndex]}
+                />
+              </>
+            )}
+          </motion.div>
+          <motion.h1
+            key={currentIndex + (images[currentIndex]?.src ?? "")}
+            className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[6vh] tablet:bottom-[9.5vh] laptop:bottom-[8vh] laptop:text-[18vh]"
+            style={{
+              color: textcolors[currentIndex % textcolors.length],
+            }}
+            custom="right"
+            variants={textVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            {images[currentIndex]?.name2}
+          </motion.h1>
+          )
+        </AnimatePresence>
       </div>
       {/* </div> */}
     </motion.section>

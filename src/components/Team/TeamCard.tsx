@@ -131,7 +131,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
       ></div>
 
       {/* Card Content */}
-      <div className="relative z-10 h-[35%] w-[35%] lg:h-[40%] lg:w-[40%] xl:h-[45%] xl:w-[45%]  rounded-md border border-white">
+      <div className="relative z-10 h-[35%] w-[35%] rounded-md border border-white lg:h-[40%] lg:w-[40%] xl:h-[45%] xl:w-[45%]">
         <img src={image} alt={name} className="h-full w-full" />
       </div>
 
