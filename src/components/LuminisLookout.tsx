@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import styles from "../../../styles/Luminis.module.css";
-import butsty from "../../../styles/FooterButton.module.css";
+import styles from "../styles/Luminis.module.css";
+import butsty from "../styles/FooterButton.module.css";
 
 export const runtime = "edge";
 
@@ -37,8 +37,8 @@ const LuminisLookout = () => {
     <>
       {isLap && (
         <>
-          <div className={"h-screen bg-[#422FD1] " + styles.lumin}>
-            <div className="absolute left-[0%] top-[0%] h-[88vh] w-[100vw]">
+          <div className={"min-h-screen bg-[#422FD1] " + styles.lumin}>
+            <div className="absolute left-[0%] top-[0%] h-full w-[100vw]">
               <Image
                 src="/assets/Luminis/maze.png"
                 alt="main"
@@ -252,12 +252,11 @@ const LuminisLookout = () => {
               />
             </div>
             <div
-              className={`${butsty.container} mt-[30vh] translate-x-[26vw] scale-[1.2] mobile3:scale-100`}
+              className={`${butsty.container} mt-[30vh] translate-x-[26vw] translate-y-6 scale-[1.2] mobile3:scale-100`}
               style={{ zIndex: 4 }}
             >
               <a
                 href="/game"
-                target="_blank"
                 rel="noreferrer"
                 className={butsty.button}
               >
@@ -440,12 +439,11 @@ const LuminisLookout = () => {
               />
             </div>
             <div
-              className={`${butsty.container} mt-[29.5vh] translate-x-[10.5vw] scale-[1.2] mobile3:scale-100`}
+              className={`${butsty.container} bg-black mt-[29.5vh] translate-x-[10.5vw] scale-[1.2] mobile3:scale-100`}
               style={{ zIndex: 4 }}
             >
               <a
                 href="/game"
-                target="_blank"
                 rel="noreferrer"
                 className={butsty.button}
               >
@@ -456,7 +454,7 @@ const LuminisLookout = () => {
                     Enter
                   </span>
 
-                  <div className={butsty.button__reflection_1}></div>
+                  {/* <div className={butsty.button__reflection_1}></div> */}
                 </div>
 
                 <Image
@@ -517,7 +515,7 @@ const LuminisLookout = () => {
       )}
       {isIpad && (
         <>
-          <div className={"min-h-[100vh] bg-[#422FD1] " + styles.lumin}>
+          <div className={"min-h-[100vh] bg-[#422FD1] overflow-hidden " + styles.lumin}>
             <div className="absolute left-[0%] top-[0%] h-[100vh] w-[100vw]">
               <Image
                 src="/assets/Luminis/maze.png"
@@ -632,7 +630,6 @@ const LuminisLookout = () => {
             >
               <a
                 href="/game"
-                target="_blank"
                 rel="noreferrer"
                 className={butsty.button}
               >

@@ -16,6 +16,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 });
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
+import LuminisLookout from "~/components/LuminisLookout";
 
 // export const runtime = "edge";
 
@@ -121,7 +122,7 @@ const HomePage = () => {
           <Sponsors />
         </FadeInSection>
         <FadeInSection id="merch" bgColor="bg-[#3C0FD5]  min-h-screen ">
-          <Merch />
+        <LuminisLookout />
         </FadeInSection>
         <FadeInSection
           id="footer"
