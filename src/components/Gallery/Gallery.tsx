@@ -162,31 +162,13 @@ const PhotoGallery = () => {
         transition: "background-color 0.8s linear",
       }}
     >
-      {isButtonTopZIndex && (
-        <div
-          className={`absolute bottom-20 z-[60] flex w-full justify-center gap-4 laptop:hidden`}
-        >
-          {" "}
-          <button
-            onClick={handlePrevious}
-            className="rounded-full bg-white p-4"
-          >
-            {" "}
-            <FaArrowLeft style={{ color: bgColor }} className="scale-150" />
-          </button>
-          <button onClick={handleNext} className="rounded-full bg-white p-4">
-            {" "}
-            <FaArrowRight style={{ color: bgColor }} className="scale-150" />
-          </button>
-        </div>
-      )}
       <div
         className={`absolute left-[50%] z-[60] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
       >
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80 "
+            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
             VIEW ALL
@@ -195,7 +177,7 @@ const PhotoGallery = () => {
       </div>
       {isButtonTopZIndex && (
         <div
-          className={`absolute bottom-20 z-[60] flex w-full justify-center gap-4 laptop:hidden`}
+          className={`absolute bottom-10 z-[60] flex w-full justify-center gap-4 laptop:hidden`}
         >
           {" "}
           <button
@@ -216,7 +198,7 @@ const PhotoGallery = () => {
       >
         {isButtonTopZIndex && (
           <Link
-            href="link_to_view_all"
+            href="gallery_page"
             className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
@@ -232,66 +214,68 @@ const PhotoGallery = () => {
           mixBlendMode: "multiply",
         }}
       ></div>
-      <div className=" mt-4 flex flex-col items-center justify-center h-screen w-screen">
-      <AnimatePresence custom={direction} mode="wait">
-        (
-        <motion.h1
-          key={currentIndex + (images[currentIndex]?.src ?? "") + currentIndex}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[7vh] tablet:top-[10vh] laptop:top-[7.5vh] laptop:text-[15vh]"
-          style={{
-            color: textcolors[currentIndex % textcolors.length],
-          }}
-          custom="left"
-          variants={textVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          {images[currentIndex]?.name1}
-        </motion.h1>
-        <motion.div
-          key={currentIndex}
-          className="relative z-50 flex h-screen w-screen flex-col items-center justify-center"
-          custom={direction}
-          variants={imageVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          {images[currentIndex] && (
-            <>
-              <ImageCard
-                isAnimate={isAnimate}
-                isMobile={isMobile}
-                isLoaded={isLoaded}
-                index={currentIndex}
-                reff={(el) => (imgRefs.current[currentIndex] = el)}
-                src={images[currentIndex].src}
-                name1={images[currentIndex].name1}
-                name2={images[currentIndex].name2}
-                bg={images[currentIndex].bg}
-                scale={parseFloat(images[currentIndex].scale)}
-                aspectRatio={aspectRatios[currentIndex]}
-              />
-            </>
-          )}
-        </motion.div>
-        <motion.h1
-          key={currentIndex + (images[currentIndex]?.src ?? "")}
-          className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[7vh] tablet:bottom-[9.5vh] laptop:bottom-[8vh] laptop:text-[15vh]"
-          style={{
-            color: textcolors[currentIndex % textcolors.length],
-          }}
-          custom="right"
-          variants={textVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          {images[currentIndex]?.name2}
-        </motion.h1>
-        )
-      </AnimatePresence>
+      <div className="mt-4 flex h-screen w-screen flex-col items-center justify-center">
+        <AnimatePresence custom={direction} mode="wait">
+          (
+          <motion.h1
+            key={
+              currentIndex + (images[currentIndex]?.src ?? "") + currentIndex
+            }
+            className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[6vh] tablet:top-[10vh] laptop:top-[9.5vh] laptop:text-[18vh]"
+            style={{
+              color: textcolors[currentIndex % textcolors.length],
+            }}
+            custom="left"
+            variants={textVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            {images[currentIndex]?.name1}
+          </motion.h1>
+          <motion.div
+            key={currentIndex}
+            className="relative z-50 flex h-screen w-screen flex-col items-center justify-center"
+            custom={direction}
+            variants={imageVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            {images[currentIndex] && (
+              <>
+                <ImageCard
+                  isAnimate={isAnimate}
+                  isMobile={isMobile}
+                  isLoaded={isLoaded}
+                  index={currentIndex}
+                  reff={(el) => (imgRefs.current[currentIndex] = el)}
+                  src={images[currentIndex].src}
+                  name1={images[currentIndex].name1}
+                  name2={images[currentIndex].name2}
+                  bg={images[currentIndex].bg}
+                  scale={parseFloat(images[currentIndex].scale)}
+                  aspectRatio={aspectRatios[currentIndex]}
+                />
+              </>
+            )}
+          </motion.div>
+          <motion.h1
+            key={currentIndex + (images[currentIndex]?.src ?? "")}
+            className="relative font-tusker opacity-75 drop-shadow-xl mobile:bottom-[18vh] mobile:text-[6vh] tablet:bottom-[9.5vh] laptop:bottom-[8vh] laptop:text-[18vh]"
+            style={{
+              color: textcolors[currentIndex % textcolors.length],
+            }}
+            custom="right"
+            variants={textVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            {images[currentIndex]?.name2}
+          </motion.h1>
+          )
+        </AnimatePresence>
       </div>
       {/* </div> */}
     </motion.section>
@@ -332,10 +316,10 @@ const ImageCard = (image: ImageProps) => {
     <div
       className={`relative z-50 h-max w-max border-2 border-white mobile:scale-[1.5] md:scale-[1.2] laptop:scale-100 ${styles["perforated-border"]}`}
       style={{
-        transform: `scale(${scale == 0 ? 1 : scale})`,
+        transform: isMobile ? `scale(${scale == 0 ? 1 : scale})` : "scale-100",
       }}
     >
-      <div className="bg-white p-[1vh]">
+      <div className="bg-white p-2">
         <div className={`relative flex justify-center overflow-hidden`}>
           <img
             ref={reff}
@@ -410,28 +394,28 @@ const images = [
     name1: "DAY 0",
     name2: "DJ NIGHT",
     bg: "",
-    scale: "",
+    scale: "1.1",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737992871/IMG_1272_ss08me.jpg",
     name1: "",
     name2: "MR NIT",
     bg: "",
-    scale: "",
+    scale: "1.1",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737983583/Thunder_agsrn6.jpg",
-    name1: "",
-    name2: "THUNDERMARCH",
+    name1: "THUNDER",
+    name2: "MARCH",
     bg: "",
-    scale: "",
+    scale: "1.1",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0496_zfqlp0.jpg",
     name1: "GROUND",
     name2: "ZERO",
     bg: "",
-    scale: "",
+    scale: "1.1",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737983335/Deprador_lv8lqf.jpg",
@@ -452,19 +436,19 @@ const images = [
     name1: "BATTLE",
     name2: "OF BANDS",
     bg: "",
-    scale: "",
+    scale: "1.1",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990499/IMG_1102_rr6bpf.jpg",
     name1: "INDIE",
     name2: "UNPLUGGED",
     bg: "",
-    scale: "",
+    scale: "1.1",
   },
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
     name1: "",
-    name2: "SHRINANDYAM",
+    name2: "SHRINANDYA",
     bg: "",
     scale: "",
   },
@@ -478,7 +462,7 @@ const images = [
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737991607/IMG_0744_hopmyq.jpg",
     name1: "",
-    name2: "SOKRATIC",
+    name2: "SOKRATIK",
     bg: "",
     scale: "",
   },
@@ -522,6 +506,6 @@ const images = [
     name1: "PUMP",
     name2: "IT UP",
     bg: "",
-    scale: "",
+    scale: "1.1",
   },
 ];
