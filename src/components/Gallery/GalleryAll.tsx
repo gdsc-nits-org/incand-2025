@@ -363,7 +363,7 @@ const GalleryAll: React.FC = () => {
       }}
     >
       <div
-        className={`relative z-[60] flex justify-center pb-5 4k:scale-[2.5]`}
+        className={`relative z-[1000000] flex justify-center pb-5 4k:scale-[2.5]`}
       >
         <Link
           href="gallery"

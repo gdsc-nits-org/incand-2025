@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useState, useRef, Ref } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "~/styles/Gallery.module.css";
-import { motion, AnimatePresence, delay, transform } from "framer-motion";
-import { SiCalendly } from "react-icons/si";
+import { motion, AnimatePresence} from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
@@ -163,12 +162,12 @@ const PhotoGallery = () => {
       }}
     >
       <div
-        className={`absolute left-[50%] z-[60] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
+        className={`absolute left-[50%] z-[1000000] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
       >
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            className="rounded-full z-[100000] bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
             VIEW ALL
@@ -199,7 +198,7 @@ const PhotoGallery = () => {
         {isButtonTopZIndex && (
           <Link
             href="gallery_page"
-            className="rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            className="rounded-full z-[100000] bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
             VIEW ALL
