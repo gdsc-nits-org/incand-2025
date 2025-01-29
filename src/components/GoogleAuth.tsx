@@ -128,7 +128,7 @@ const Login = () => {
     return (
       <button
         onClick={() => {
-          router.push("/");
+          router.push("/Dashboard");
         }}
       >
         <div
