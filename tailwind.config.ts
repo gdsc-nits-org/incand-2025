@@ -1,5 +1,6 @@
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import tailwindScrollbarHide from "tailwind-scrollbar-hide";
 
 export default {
   content: [
@@ -68,5 +69,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [tailwindScrollbarHide],
 } satisfies Config;
