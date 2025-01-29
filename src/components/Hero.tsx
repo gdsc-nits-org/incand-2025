@@ -47,16 +47,16 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
     <div
       id="container"
       className={
-        "relative flex h-screen items-center justify-center text-white " +
+        "relative flex h-screen items-center justify-center bg-[#FFF06D] " +
         styles.hero
       }
     >
-      <div className="absolute inset-0 bg-[url('/assets/landing/maze.png')] bg-cover bg-center bg-no-repeat"></div>
+      <div className="absolute inset-0 bg-[url('/assets/landing/yellow_maze.png')] bg-cover bg-center bg-no-repeat"></div>
       <div
-        className="absolute inset-0 flex flex-col items-center md:justify-center md:py-[5.755vh]"
+        className="absolute inset-0 flex flex-col items-center md:justify-center md:py-[5.755vh] scale-y-125"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative z-20 mt-[25vw] flex flex-col items-center justify-center md:mt-[0] md:flex-row md:items-start md:gap-[0.789vw]">
+        <div className="relative top-[6vw] right-[-25vw] z-20 mt-[25vw] flex flex-col items-center justify-center md:mt-[0] md:flex-row md:items-start md:gap-[0.789vw]">
           <div className="relative top-[4.167vw] h-[15.115vw] w-[15.115vw] self-end md:hidden md:h-[10.526vw] md:w-[10.526vw]">
             <Image
               src="/assets/landing/spark.gif"
@@ -69,7 +69,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           </div>
           <div className="mt-[1.053vw] flex items-center justify-center gap-[0.755vw] md:gap-[0.526vw]">
             <div className="group relative w-fit">
-              <svg
+              {/* <svg
                 className="absolute left-[-8.385vw] top-[1.042vw] z-[10] w-[26.667vw] md:left-[-5.385vw] md:top-[0.042vw] md:w-[17.5vw]"
                 viewBox="0 0 360 219"
                 fill="none"
@@ -86,87 +86,10 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                     <mpath href="#motionPath" />
                   </animateMotion>
                 </circle>
-              </svg>
-              <p
-                className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 group-hover:text-[#FAE00D] md:text-[5.677vw]"
-                style={{ fontFamily: "Ahsing" }}
-              >
-                I
-              </p>
+              </svg> */}
             </div>
 
-            <p
-              className="z-10 text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              n
-            </p>
-            <p
-              className="z-10 text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              c
-            </p>
-            <p
-              className="z-10 text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              a
-            </p>
-            <p
-              className="z-10 text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              n
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              d
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              e
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              s
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              c
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              e
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              n
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              c
-            </p>
-            <p
-              className="text-[10.278vw] font-normal tracking-wide text-black transition-colors duration-200 hover:text-[#FAE00D] md:text-[5.677vw]"
-              style={{ fontFamily: "Ahsing" }}
-            >
-              e
-            </p>
+           
           </div>
           <div
             className={
@@ -208,7 +131,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
               </p>
             </div>
           </div>
-          <div className="ms-[1.842vw] hidden h-[15.115vw] w-[15.115vw] md:block md:h-[10.526vw] md:w-[10.526vw]">
+          <div className="relative ms-[1.842vw] hidden h-[15.115vw] w-[15.115vw] md:bottom-[6vw] md:block md:h-[6.526vw] md:w-[6.526vw]">
             <Image
               src="/assets/landing/spark.gif"
               alt="Spark"
@@ -220,7 +143,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           </div>
         </div>
 
-        <div className="relative left-[2.945vw] top-[0.658vw] h-[90.065vw] md:h-[31.026vw]">
+        <div className="relative left-[2.945vw] top-[-3.658vw] h-[90.065vw] md:h-[31.026vw]">
           {/* Card 1 */}
           <div
             className={
@@ -251,7 +174,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           {/* Card 2 */}
           <div
             className={
-              "absolute right-[10.724vw] top-[8.974vw] z-[2] h-[37.778vw] w-[37.778vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#008EFF] shadow-black md:right-[20.724vw] md:top-[1.974vw] md:z-[0] md:h-[18.75vw] md:w-[18.75vw] md:rounded-[1.053vw] " +
+              "absolute right-[10.724vw] top-[8.974vw] z-[2] h-[37.778vw] w-[37.778vw] rounded-[2.053vw] border border-black bg-[#008EFF] shadow-black md:right-[20.724vw] md:top-[1.974vw] md:z-[31] md:h-[18.75vw] md:w-[18.75vw] md:rounded-[1.053vw] " +
               styles.cardOne
             }
           >
@@ -294,7 +217,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                 </p>
               </div>
             </div>
-            <p
+            {/* <p
               className={
                 "absolute left-[2.368vw] top-[-9.211vw] w-[11.576vw] text-[17.197vw] font-normal leading-[15.261vw] tracking-wide text-white md:left-[3.368vw] md:top-[-10.211vw] md:w-[8.061vw] md:text-[9.197vw] " +
                 styles.cText
@@ -312,14 +235,14 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
               }
             >
               C
-            </p>
+            </p> */}
           </div>
           {/* Card 2 */}
 
           {/* Card 3 */}
           <div
             className={
-              "absolute right-[1.855vw] top-[-19.184vw] z-30 h-[33.889vw] w-[41.667vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#FAE00D] shadow-black md:right-[10.855vw] md:top-[-11.184vw] md:h-[18.75vw] md:w-[23.026vw] md:rounded-[1.053vw] " +
+              "absolute right-[1.855vw] top-[-19.184vw] z-30 h-[33.889vw] w-[41.667vw]  rounded-[2.053vw] border border-black bg-[#00FF88] shadow-black md:right-[10.855vw] md:top-[-11.184vw] md:h-[18.75vw] md:w-[23.026vw] md:rounded-[1.053vw] " +
               styles.cardOne
             }
           >
@@ -344,9 +267,9 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                 />
               </div>
             </div>
-            <p
+            {/* <p
               className={
-                "absolute bottom-[-0.592vw] left-[-3.158vw] w-[11.576vw] text-[17.197vw] font-normal leading-[15.261vw] tracking-wide text-white md:bottom-[0.392vw] md:left-[-2.158vw] md:w-[8.061vw] md:text-[9.197vw] " +
+                "absolute bottom-[-0.592vw] left-[-3.158vw] w-[11.576vw] text-[17.197vw] font-normal leading-[15.261vw] tracking-wide text-[#B572F9] md:top-[-1.392vw] md:left-[-0.158vw] md:w-[8.061vw] md:text-[9.197vw] " +
                 styles.cText
               }
               onMouseEnter={() => setIsCHovered(true)}
@@ -362,10 +285,10 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
               }
             >
               C
-            </p>
-            <p
+            </p> */}
+            {/* <p
               className={
-                "absolute bottom-[-0.947vw] right-[0.87vw] w-[11.576vw] text-[15.5vw] font-normal tracking-wide text-white md:bottom-[-2.947vw] md:right-[-0.87vw] md:w-[8.061vw] md:text-[8.197vw] " +
+                "absolute bottom-[-0.947vw] right-[0.87vw] w-[11.576vw] text-[15.5vw] font-normal tracking-wide text-[#B572F9] md:top-[-5.947vw] md:right-[-1.87vw] md:w-[8.061vw] md:text-[8.197vw] " +
                 styles.nText
               }
               onMouseEnter={() => setIsMHovered(true)}
@@ -381,15 +304,15 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                   : { fontFamily: "Ahsing" }
               }
             >
-              M
-            </p>
+              N
+            </p> */}
           </div>
           {/* Card 3 */}
 
           {/* Card 4 */}
           <div
             className={
-              "group absolute right-[-17.618vw] top-[-4.658vw] z-10 h-[41.389vw] w-[24.167vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#E1067B] shadow-[0.526vw_0.526vw_0px_#000000] shadow-black transition duration-300 hover:bg-black hover:shadow-[#E1067B] md:right-[3.618vw] md:top-[0.658vw] md:h-[19.737vw] md:w-[11.513vw] md:rounded-[1.053vw] " +
+              "group absolute right-[-17.618vw] top-[-4.658vw] z-10 h-[41.389vw] w-[24.167vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#E1067B] shadow-[0.526vw_0.526vw_0px_#000000] shadow-black transition duration-300 hover:bg-black hover:shadow-[#E1067B] md:right-[3.618vw] md:top-[0.658vw] md:z-[30] md:h-[19.737vw] md:w-[11.513vw] md:rounded-[1.053vw] " +
               styles.card4Container
             }
           >
@@ -414,7 +337,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
             </div>
 
             <div className="absolute left-[-3.005vw] top-[-1.974vw] flex gap-[2.937vw] overflow-visible md:gap-[2.045vw]">
-              <p
+              {/* <p
                 className={
                   "relative w-[10.858vw] text-[8.197vw] font-normal tracking-wide text-white md:w-[7.561vw] " +
                   styles.nText
@@ -433,15 +356,15 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                 }
               >
                 M
-              </p>
-              <p
+              </p> */}
+              {/* <p
                 className={
                   "relative left-[-1vw] top-[10.316vw] h-[23.618vw] w-fit text-[15.197vw] font-normal leading-[8.197vw] tracking-wide text-white hover:text-[11.197vw] md:left-[-0.5vw] md:top-[-1.316vw] md:h-[16.447vw] md:text-[8.197vw] md:hover:text-[7.197vw] " +
                   styles.gText
                 }
               >
                 I
-              </p>
+              </p> */}
             </div>
           </div>
           {/* Card 4 */}
@@ -449,17 +372,26 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           {/* Card 5 */}
           <div
             className={
-              "group absolute left-[10.921vw] top-[-12.566vw] z-10 h-[36.944vw] w-[28.056vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#00FF88] shadow-[0.526vw_0.526vw_0px_#000000] shadow-black transition duration-300 hover:bg-black hover:shadow-[#00FF88] md:left-[-5.921vw] md:top-[-7.566vw] md:h-[18.75vw] md:w-[14.474vw] md:rounded-[1.053vw]"
+              "group z-30 absolute left-[10.921vw] top-[25.566vw] w-[28.056vw] overflow-hidden rounded-[2.053vw] border border-black bg-[#00FF88] shadow-[0.526vw_0.526vw_0px_#000000] shadow-black transition duration-300 hover:bg-black md:left-[-5.921vw] md:top-[4.566vw] md:w-[14.474vw] md:rounded-[1.053vw]"
             }
           >
-            <div className="flex h-[3.75vw] w-full flex-row items-center gap-[0.755vw] rounded-t-[2.053vw] border-b-[0.132vw] border-t-[0px] border-black bg-white px-[1.526vw] transition-all duration-300 group-hover:border-white group-hover:bg-black md:h-[2.368vw] md:gap-[0.526vw] md:rounded-t-[1.053vw] md:border-t-[0.132vw] md:px-[0.526vw]">
-              <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black transition-[bg] duration-300 group-hover:bg-white md:h-[1.053vw] md:w-[1.053vw]"></div>
-              <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black transition-[bg] duration-300 group-hover:bg-white md:h-[1.053vw] md:w-[1.053vw]"></div>
-              <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black transition-[bg] duration-300 group-hover:bg-white md:h-[1.053vw] md:w-[1.053vw]"></div>
+            <div className="relative">
+            <Image
+                  src="/assets/landing/hero_eye_anim.gif"
+                  alt="Brutalist_Two"
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                />
             </div>
+            {/* <div className="flex h-[3.75vw] w-full flex-row items-center gap-[0.755vw] rounded-t-[2.053vw] border-b-[0.132vw] border-t-[0px] border-black bg-white px-[1.526vw] transition-all duration-300 group-hover:border-white group-hover:bg-black md:h-[2.368vw] md:gap-[0.526vw] md:rounded-t-[1.053vw] md:border-t-[0.132vw] md:px-[0.526vw]">
+              <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black transition-[bg] duration-300 group-hover:bg-white md:h-[1.053vw] md:w-[1.053vw]"></div>
+              <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black transition-[bg] duration-300 group-hover:bg-white md:h-[1.053vw] md:w-[1.053vw]"></div>
+              <div className="h-[1.512vw] w-[1.512vw] rounded-full bg-black transition-[bg] duration-300 group-hover:bg-white md:h-[1.053vw] md:w-[1.053vw]"></div>
+            </div> */}
             <div className="flex h-full flex-col justify-end">
               <div className="absolute top-[9vw] flex w-full overflow-visible md:top-[-1vw]">
-                <p
+                {/* <p
                   className={
                     "relative left-[2.587vw] top-[-5.316vw] w-[10.858vw] text-[15.5vw] font-normal leading-[none] tracking-wide text-white hover:text-[11.197vw] group-hover:text-[#00FF88] md:left-[1.587vw] md:top-[1.316vw] md:w-[7.561vw] md:text-[9.197vw] md:hover:text-[7.197vw] " +
                     styles.nText
@@ -474,7 +406,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                   }
                 >
                   G
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -594,14 +526,14 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
               </svg>
 
               <p
-                className="absolute bottom-[11.625vw] left-[10.316vw] z-10 text-[6.389vw] font-normal tracking-wide text-black md:bottom-0 md:left-[-1.316vw] md:text-[4.211vw]"
+                className="absolute  bottom-[11.625vw] left-[10.316vw] z-30 text-[6.389vw] font-normal tracking-wide text-black md:bottom-0 md:left-[-1.316vw] md:text-[4.211vw]"
                 style={{ fontFamily: "Ahsing" }}
               >
                 Cultural Fest
               </p>
             </div>
             <div className="absolute left-[5.645vw] top-0 flex h-[85%] w-full overflow-hidden md:left-[1.645vw]">
-              <p
+              {/* <p
                 className={
                   "relative left-[0] top-[-16.961vw] z-[2] w-[10.858vw] text-[18.197vw] font-normal leading-[38vw] tracking-wide text-white hover:top-[-13vw] hover:text-[14.197vw] md:left-[1vw] md:top-[-8.961vw] md:w-[7.561vw] md:text-[10.197vw] md:leading-[21vw] md:hover:top-[-6.961vw] md:hover:text-[7.197vw] " +
                   styles.comingSoonBorders
@@ -624,7 +556,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
                 }
               >
                 O
-              </p>
+              </p> */}
             </div>
           </div>
           {/* Card 7 */}
@@ -659,22 +591,24 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           </div>
           {/* Card 8 */}
 
-          <p
+          {/* <p
             className={
-              "absolute left-[30.508vw] top-[33.579vw] z-[2] w-[10.858vw] text-[18.197vw] font-normal leading-[21vw] tracking-wide text-white hover:top-[-12vw] hover:text-[14.197vw] md:left-[31.508vw] md:top-[-7vw] md:w-[7.561vw] md:text-[10.197vw] md:leading-[10vw] md:hover:top-[-6vw] md:hover:text-[7.197vw] " +
+              "absolute left-[30.508vw] top-[33.579vw] z-[2] w-[10.858vw] text-[18.197vw] font-normal leading-[21vw] tracking-wide text-[#B572F9] hover:top-[-12vw] hover:text-[14.197vw] md:left-[-47.508vw] md:top-[-18vw] md:w-[7.561vw] md:text-[10.197vw] md:leading-[10vw] md:hover:top-[-6vw] md:hover:text-[7.197vw] " +
               styles.comingSoonBorders
             }
           >
-            N
+            I
           </p>
           <p
             className={
-              "absolute right-[17.724vw] top-[2.974vw] z-30 w-fit text-[17.197vw] font-normal leading-[10vw] tracking-wide text-white hover:top-[0.974vw] hover:text-[12.197vw] md:right-[20.724vw] md:top-[-1.974vw] md:w-[7.561vw] md:text-[10.197vw] md:leading-[10vw] md:hover:text-[8.197vw] " +
+              "absolute right-[17.724vw] top-[2.974vw] z-30 w-fit text-[17.197vw] font-normal leading-[10vw] tracking-wide text-[#B572F9] hover:top-[0.974vw] hover:text-[12.197vw] md:right-[19.724vw] md:top-[-15.974vw] md:w-[7.561vw] md:text-[12.197vw] md:leading-[10vw] md:hover:text-[8.197vw] " +
               styles.comingSoonBorders
             }
           >
-            O
-          </p>
+            A
+          </p> */}
+
+         
 
           {/* Svg1 */}
           <svg
@@ -1654,9 +1588,127 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
 
           {/* Card 8 */}
         </div>
+        <div className="absolute md:top-[1vw] top-[65vw] flex md:flex-row flex-col items-centre justify-center gap-[0.5vw] z-[1000]">
+          <div className="flex md:gap-[0.5vw] gap-[1vw]">
+          <p
+            className={
+              "md:text-[10vw] text-[20vw] text-[#B572F9] md:w-[3vw] md:h-[12vw] w-[6vw] h-[24vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            I
+          </p>
+          <p
+            className={
+              "relative md:text-[10vw] text-[20vw] left-[1vw] top-[2vw] text-[#B572F9] md:h-[13vw] md:w-[6vw] h-[26vw] w-[12vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            N
+          </p>
+          <p
+            className={
+              "relative left-[1vw] top-[6vw] md:text-[8vw] text-[16vw] text-[#B572F9] md:h-[10vw] md:w-[6vw] h-[20vw] w-[12vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            C
+          </p>
+          <p
+            className={
+              "relative md:text-[12vw] text-[24vw] left-[0.5vw] top-[-2.5vw] text-[#B572F9] md:h-[15vw] md:w-[9vw] h-[30vw] w-[18vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            A
+          </p>
+          <p
+            className={
+              "relative md:text-[8vw] text-[16vw] md:top-[-1vw] top-[3vw] text-[#B572F9] md:h-[11vw] md:w-[5vw] h-[22vw] w-[10vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            N
+          </p>
+          <p
+            className={
+              "relative top-[2vw] md:text-[10vw] text-[20vw] text-[#B572F9] md:h-[13vw] md:w-[7vw] h-[26vw] w-[14vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            D
+          </p>
+          </div>
+          <div className="relative md:left-0 md:top-0 left-[20vw] top-[5vw] flex md:gap-[0.5vw] gap-[3vw]">
+          <p
+            className={
+              "relative md:text-[9vw] text-[14vw] top-[-1vw] text-[#B572F9] w-[6vw] h-[12vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            E
+          </p>
+          <p
+            className={
+              "relative md:text-[12vw] text-[17vw] top-[2vw] text-[#B572F9] w-[7vw] h-[15vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            S
+          </p>
+          <p
+            className={
+              "relative top-[2vw] md:text-[8vw] text-[13vw] text-[#B572F9] w-[6vw] h-[10vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            C
+          </p>
+          <p
+            className={
+              "md:text-[8vw] text-[13vw] text-[#B572F9] h-[10vw] w-[5vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            E
+          </p>
+          <p
+            className={
+              "md:text-[12vw] text-[17vw] text-[#B572F9] h-[15vw] w-[7vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            N
+          </p>
+          <p
+            className={
+              "relative top-[8vw] md:text-[8vw] text-[13vw] text-[#B572F9] h-[10vw] w-[6vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            C
+          </p>
+          <p
+            className={
+              "md:text-[12vw] text-[17vw] text-[#B572F9] h-[15vw] w-[7vw] " +
+              styles.comingSoonBorders
+            }
+          >
+            E
+          </p>
+          </div>
+          </div>
       </div>
-      <div className="absolute left-[20vw] top-[80%] mt-12 scale-105 mobile2:mt-0 mobile2:scale-110 sm:scale-100 lg:left-[63vw] lg:top-[83%] lg:scale-90">
-        <HiddenQuest isVisible={isVisible} setIsVisible={setIsVisible} />
+      <div className="absolute md:bottom-[1vw] md:left-[2vw] bottom-[2vw] left-[4vw] flex">
+        <p className="md:text-[2vw] text-[6vw]" style={{fontFamily: "Tusker Grotesk"}}>Scroll Down</p>
+        <div className="relative md:w-[1.5vw] w-[3vw] md:left-[1vw] left-[2vw]">
+        <Image
+              src="/assets/landing/scroll_arow.png"
+              alt="Spark"
+              fill
+              unoptimized
+            />
+        </div>
       </div>
     </div>
   );
