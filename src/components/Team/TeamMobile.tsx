@@ -15,6 +15,15 @@ const TeamMobile: React.FC = () => {
   //     nextArrow: <NextArrow />,
   //     prevArrow: <PrevArrow />,
   //   };
+  const techLead = teamDataTech.filter((member) => member.role === "techLead");
+  const techHead = teamDataTech.filter((member) => member.role === "webHead" ||  member.role === "UiHead");
+  const techCohead = teamDataTech.filter(
+    (member) => member.role === "webCohead" || member.role === "cloudCohead" || member.role === "uiuxCohead",
+  );
+
+  const developer = teamDataTech.filter(
+    (member) => member.role === "developer",
+  );
   return (
     <div
       className="box-border h-[100vh] w-[100vw] overflow-y-scroll bg-[#FAF8E0]"
@@ -94,14 +103,127 @@ const TeamMobile: React.FC = () => {
           <p
             className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
           >
-            TECH MEMBERS
+            TECH LEAD
           </p>
         </div>
 
         <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
           {/* <Slider {...settings}> */}
           <Carousel>
-            {teamDataTech.map((member) => (
+            {techLead.map((member) => (
+              <div
+                key={member.id}
+                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+              >
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              </div>
+            ))}
+          </Carousel>
+
+          {/* </Slider> */}
+        </div>
+
+        <div
+          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
+        >
+          <div
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+          ></div>
+          <p
+            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
+          >
+            TECH HEADS
+          </p>
+        </div>
+
+        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+          {/* <Slider {...settings}> */}
+          <Carousel>
+            {techHead.map((member) => (
+              <div
+                key={member.id}
+                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+              >
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              </div>
+            ))}
+          </Carousel>
+
+          {/* </Slider> */}
+        </div>
+
+        <div
+          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
+        >
+          <div
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+          ></div>
+          <p
+            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
+          >
+            TECH COHEADS
+          </p>
+        </div>
+
+        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+          {/* <Slider {...settings}> */}
+          <Carousel>
+            {techCohead.map((member) => (
+              <div
+                key={member.id}
+                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+              >
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              </div>
+            ))}
+          </Carousel>
+
+          {/* </Slider> */}
+        </div>
+        <div
+          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
+        >
+          <div
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+          ></div>
+          <p
+            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
+          >
+            JUNIOR MEMBERS
+          </p>
+        </div>
+
+        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+          {/* <Slider {...settings}> */}
+          <Carousel>
+            {developer.map((member) => (
               <div
                 key={member.id}
                 className="transform transition-transform duration-300 ease-in-out hover:scale-105"
