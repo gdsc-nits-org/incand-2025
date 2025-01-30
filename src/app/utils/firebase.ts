@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
-setPersistence(auth, browserLocalPersistence).catch((error:unknown) => {
+setPersistence(auth, browserLocalPersistence).catch((error: unknown) => {
   if (error instanceof Error) {
     console.error("Failed to set persistence:", error.message);
   } else {
