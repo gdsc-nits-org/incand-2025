@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import styles from "~/styles/Gallery.module.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
@@ -167,7 +167,7 @@ const PhotoGallery = () => {
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="z-[100000] rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            className="rounded-full z-[100000] bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
             VIEW ALL
@@ -198,7 +198,7 @@ const PhotoGallery = () => {
         {isButtonTopZIndex && (
           <Link
             href="gallery_page"
-            className="z-[100000] rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            className="rounded-full z-[100000] bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
             style={{ color: bgColor }}
           >
             VIEW ALL
