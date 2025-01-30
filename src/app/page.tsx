@@ -7,7 +7,9 @@ import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
 import Loader from "./loading";
 
-const Merch = dynamic(() => import("~/components/Merch/Merch"), { ssr: false });
+const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), {
+  ssr: false,
+});
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
@@ -72,7 +74,7 @@ const HomePage = () => {
         import("~/components/Sponsors"),
         import("~/components/AboutUs"),
         import("~/components/AboutNits"),
-        import("~/components/Merch/Merch"),
+        import("~/components/LuminisLookout"),
       ]);
     };
 
@@ -121,7 +123,7 @@ const HomePage = () => {
           <Sponsors />
         </FadeInSection>
         <FadeInSection id="merch" bgColor="bg-[#3C0FD5]  min-h-screen ">
-          <Merch />
+          <LuminisLookout />
         </FadeInSection>
         <FadeInSection
           id="footer"

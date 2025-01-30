@@ -1,5 +1,6 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { GeistSans } from "geist/font/sans";
+import { Toaster } from "sonner";
 import { type Metadata } from "next";
 import dynamic from "next/dynamic";
 import "~/styles/globals.css";
@@ -40,15 +41,28 @@ export const metadata: Metadata = {
     images: "https://incand.in/opengraph-image.png",
   },
 };
-
+const toastOps = {
+  classNames: {
+    title: "text-md md:text-lg font-semibold",
+    success: "toast-theme-pink",
+    info: "toast-theme-pink",
+    error: "toast-theme-red",
+    warning: "toast-theme-red",
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
-      {process.env.NODE_ENV === "production" && <OpenReplayNoSSR />}
-      <GoogleAnalytics gaId="G-54V3WCPLRE" />
+      <body>
+        {children}
+        <Toaster
+          toastOptions={toastOps}
+          visibleToasts={1}
+          position="bottom-center"
+        />
+      </body>
     </html>
   );
 }

@@ -227,7 +227,7 @@ export const HiddenQuestMobile: React.FC<PopupProps> = ({
         >
           {isVisible && (
             <div
-              className="scrollbar-hide fixed left-0 top-0 z-[10004] box-border h-screen w-full translate-y-4 scale-[.85] overflow-y-auto p-4"
+              className="fixed left-0 top-0 z-[10004] box-border h-screen w-full translate-y-4 scale-[.85] overflow-y-auto p-4 scrollbar-hide"
               onClick={(e) => e.stopPropagation()}
             >
               {/* <img  src="/assets/HiddenQuest&Button/Rectangle.png"className="absolute -left-4 -top-4 z-[4] h-14 w-14 "/> */}
@@ -239,7 +239,7 @@ export const HiddenQuestMobile: React.FC<PopupProps> = ({
 
               <div
                 id="container"
-                className="scrollbar-hide relative box-border h-[98%] w-[98%] overflow-y-auto"
+                className="relative box-border h-[98%] w-[98%] overflow-y-auto scrollbar-hide"
               >
                 <div
                   id="firstDiv"
