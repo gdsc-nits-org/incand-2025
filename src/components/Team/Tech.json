@@ -81,16 +81,6 @@
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232110/fdmfoyqowwyuudjjvcy2.webp"
 	  },
 	  {
-		"id": 9,
-		"name": "Dhiraj Das",
-		"linkedin": "https://www.linkedin.com/in/dhirajd2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"git": "http://github.com/dheeraj1922d",
-		"role": "webCohead",
-		"fb": "",
-		"designation": "Web Cohead",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232065/jtbsitclggqkxud1o1ut.webp"
-	  },
-	  {
 		"id": 10,
 		"name": "Bedanta Kataki ",
 		"linkedin": "https://www.linkedin.com/in/bedanta-kataki-0b5205257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -99,6 +89,16 @@
 		"fb": "https://m.facebook.com/bedanta.kataki.5/",
 		"designation": "Web Cohead",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232053/lc83zdd3rfqds7awkjsu.webp"
+	  },
+	  {
+		"id": 9,
+		"name": "Dhiraj Das",
+		"linkedin": "https://www.linkedin.com/in/dhirajd2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "http://github.com/dheeraj1922d",
+		"role": "webCohead",
+		"fb": "",
+		"designation": "Web Cohead",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232065/jtbsitclggqkxud1o1ut.webp"
 	  },
 	  {
 		"id": 11,
@@ -130,16 +130,35 @@
 		"role": "uiuxCohead",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232132/nafmhfp98jl0pjuyeewd.webp"
 	},
-	
 	{
-		"id": 15,
-		"name": "Anmol Swarup Sahoo  ",
-		"linkedin": "https://www.linkedin.com/in/anmol77?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"git": "https://github.com/newt-shadow",
-		"fb": "",
+		"id": 14,
+		"name": "Siddharth Ghosh",
+		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1693827576/GDSC%20images/WhatsApp_Image_2023-09-01_at_20.15.25_-_Siddharth_Ghosh_ofceqg.jpg",
+		"linkedin": "https://www.linkedin.com/in/siddharth-ghosh-18ba29251/",
+		"fb": "https://www.facebook.com/in/siddharth-ghosh-18ba29251/",
+		"git": "https://github.com/Z-Maniac-Sidd",
+		"designation": "Ui/Ux Cohead",
+		"role":"uiuxCohead"
+	},
+	{
+		"id": 18,
+		"name": "Hirak Rajbonshi",
+		"linkedin": "https://www.linkedin.com/in/hirak-rajbonshi-baa6a628a/",
+		"git": "https://github.com/hirakRajbonshi/",
+		"fb": "https://www.facebook.com/hirak.rajbonshi.7/",
 		"designation": "Web Developer",
 		"role": "developer",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232100/v63aoczknqjw2bimciln.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232127/juyfr0ef09zwudnkld9d.webp"
+	},
+	{
+		"id": 21,
+		"name": "Subrata Lodh ",
+		"linkedin": "https://www.linkedin.com/in/subrata-lodh-45541328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "https://github.com/Subrata-20",
+		"fb": "https://www.facebook.com/share/14wAFgXEznv/",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232119/mcjkrwdetdub0p44zdc3.webp"
 	},
 	{
 		"id": 16,
@@ -151,25 +170,16 @@
 		"role": "developer",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232085/o01ohffeoi6aewge2boo.webp"
 	},
+
 	{
-		"id": 17,
-		"name": "Deepanshu Sharma ",
-		"linkedin": "http://linkedin.com/in/deepanshu-sharma-b3a46828a",
-		"git": "http://github.com/deepanshu089",
-		"fb": "http://instagram.com/_dsharmaa",
+		"id": 15,
+		"name": "Anmol Swarup Sahoo  ",
+		"linkedin": "https://www.linkedin.com/in/anmol77?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "https://github.com/newt-shadow",
+		"fb": "",
 		"designation": "Web Developer",
 		"role": "developer",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738231922/rg5jczht8dafjxyfysjf.webp"
-	},
-	{
-		"id": 18,
-		"name": "Hirak Rajbonshi",
-		"linkedin": "https://www.linkedin.com/in/hirak-rajbonshi-baa6a628a/",
-		"git": "https://github.com/hirakRajbonshi/",
-		"fb": "https://www.facebook.com/hirak.rajbonshi.7/",
-		"designation": "Web Developer",
-		"role": "developer",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232127/juyfr0ef09zwudnkld9d.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232100/v63aoczknqjw2bimciln.webp"
 	},
 	{
 		"id": 19,
@@ -192,13 +202,13 @@
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232076/bklbxiwoqfo2mojrobqb.webp"
 	},
 	{
-		"id": 21,
-		"name": "Subrata Lodh ",
-		"linkedin": "https://www.linkedin.com/in/subrata-lodh-45541328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"git": "https://github.com/Subrata-20",
-		"fb": "https://www.facebook.com/share/14wAFgXEznv/",
+		"id": 17,
+		"name": "Deepanshu Sharma ",
+		"linkedin": "http://linkedin.com/in/deepanshu-sharma-b3a46828a",
+		"git": "http://github.com/deepanshu089",
+		"fb": "http://instagram.com/_dsharmaa",
 		"designation": "Web Developer",
 		"role": "developer",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232119/mcjkrwdetdub0p44zdc3.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738231922/rg5jczht8dafjxyfysjf.webp"
 	}
 ]
