@@ -153,6 +153,16 @@
 	},
 	{
 		"id": 17,
+		"name": "Deepanshu Sharma ",
+		"linkedin": "http://linkedin.com/in/deepanshu-sharma-b3a46828a",
+		"git": "http://github.com/deepanshu089",
+		"fb": "http://instagram.com/_dsharmaa",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738231922/rg5jczht8dafjxyfysjf.webp"
+	},
+	{
+		"id": 17,
 		"name": "Hirak Rajbonshi",
 		"linkedin": "https://www.linkedin.com/in/hirak-rajbonshi-baa6a628a/",
 		"git": "https://github.com/hirakRajbonshi/",
