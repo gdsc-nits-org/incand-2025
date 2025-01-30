@@ -47,7 +47,7 @@ const TeamMobile: React.FC = () => {
         id="section2"
         className="box-border flex w-[100%] flex-col items-center justify-center overflow-x-hidden"
       >
-        <div
+        {/* <div
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
@@ -62,7 +62,7 @@ const TeamMobile: React.FC = () => {
 
         <div className="-mt-4 box-border h-[30rem] w-[90%] px-4">
           {/* <Slider {...settings}> */}
-          <Carousel>
+          {/* <Carousel>
             {teamDataCore.map((member) => (
               <div
                 key={member.id}
@@ -83,7 +83,7 @@ const TeamMobile: React.FC = () => {
           </Carousel>
 
           {/* </Slider> */}
-        </div>
+        {/* </div> */} 
 
         <div
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
@@ -123,7 +123,7 @@ const TeamMobile: React.FC = () => {
           {/* </Slider> */}
         </div>
 
-        <div
+        {/* <div
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
@@ -138,7 +138,7 @@ const TeamMobile: React.FC = () => {
 
         <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
           {/* <Slider {...settings}> */}
-          <Carousel>
+          {/* <Carousel>
             {teamDataModule.map((member) => (
               <div
                 key={member.id}
@@ -156,10 +156,10 @@ const TeamMobile: React.FC = () => {
                 />
               </div>
             ))}
-          </Carousel>
+          </Carousel> */}
 
           {/* </Slider> */}
-        </div>
+        {/* </div> */} 
       </div>
     </div>
   );

@@ -50,15 +50,7 @@ const toastOps = {
     warning: "toast-theme-red",
   },
 };
-const toastOps = {
-  classNames: {
-    title: "text-md md:text-lg font-semibold",
-    success: "toast-theme-pink",
-    info: "toast-theme-pink",
-    error: "toast-theme-red",
-    warning: "toast-theme-red",
-  },
-};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
