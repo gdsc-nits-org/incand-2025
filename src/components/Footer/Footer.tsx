@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center ipadpro:-translate-y-16 xl:-translate-y-0">
         <div className="relative left-0 top-0 mt-5 flex w-[100vw] flex-col items-center justify-center xl:scale-x-150 xl:scale-y-110">
           <div>
             <Image
@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
         {/* Text Section with Lottie Animation */}
         <div
           className={
-            "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0 lg:flex-row"
+            "mb-[1rem] mt-[4rem] flex flex-col items-center justify-center gap-0 ipadpro:-translate-y-16 ipadpro:scale-x-110 lg:flex-row xl:-translate-y-0 xl:scale-x-100"
           }
         >
           <Link

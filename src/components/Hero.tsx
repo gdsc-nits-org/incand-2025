@@ -17,7 +17,6 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
   // const [isMHovered, setIsMHovered] = useState(false);
 
   useEffect(() => {
-
     const checkViewport = () => {
       setIsTabView(false);
       if (window.innerWidth < 1180 && window.innerWidth >= 768) {
@@ -27,7 +26,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
           setIsTabView(true);
         }
       }
-    }
+    };
     checkViewport();
 
     window.addEventListener("resize", checkViewport);
@@ -35,11 +34,7 @@ const Hero: React.FC<PopupProps> = ({ isVisible, setIsVisible }) => {
     return () => window.removeEventListener("resize", checkViewport);
   }, [isTabView]);
 
-
-  return (
-   <>{isTabView ? <HeroTabView/> : <HeroMobileView/>}</>
-
-  );
+  return <>{isTabView ? <HeroTabView /> : <HeroMobileView />}</>;
 };
 
 export default Hero;

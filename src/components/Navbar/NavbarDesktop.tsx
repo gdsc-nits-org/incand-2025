@@ -42,125 +42,125 @@ const NavbarDesktop = () => {
               height={14}
             />
           </div>
-          <div className="flex items-center lg:gap-20 md:gap-10 -mb-2">
+          <div className="-mb-2 flex items-center md:gap-10 lg:gap-20">
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
           </div>
@@ -178,124 +178,124 @@ const NavbarDesktop = () => {
             />
           </div>
           <div className="flex items-center gap-20">
-          <Link
+            <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
             <Link
               href="/"
-              className="group font-semibold text-black hover:text-white transition-all duration-200"
+              className="group font-semibold text-black transition-all duration-200 hover:text-white"
             >
-             <div className="flex">
-                  <Image
-                    className="group-hover:opacity-100 w-[10px] h-[10px] opacity-0 object-contain transition-all duration-200 me-2 mt-2"
-                    src="/assets/NavbarDesktop/arrow.png"
-                    alt="arrow"
-                    width={10}
-                    height={10}
-                  />
-                  <div className="flex flex-col items-center justify-center">
+              <div className="flex">
+                <Image
+                  className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
+                  src="/assets/NavbarDesktop/arrow.png"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+                <div className="flex flex-col items-center justify-center">
                   <p>Home</p>
                   <Image
-                    className="group-hover:opacity-100 opacity-0 transition-all duration-200"
+                    className="opacity-0 transition-all duration-200 group-hover:opacity-100"
                     src="/assets/NavbarDesktop/wave.gif"
                     alt="wave"
                     width={40}
                     height={60}
                   />
-                  </div>
+                </div>
               </div>
             </Link>
           </div>
