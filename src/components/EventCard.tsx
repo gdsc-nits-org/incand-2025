@@ -30,7 +30,7 @@ const AllEvents = () => {
       ref={scrollContainerRef}
       className={
         styles.scrollBar +
-        " mt-4 flex h-full w-full flex-wrap items-center justify-around gap-2 overflow-x-scroll scroll-smooth px-2 ipadair:mt-0 ipadair:flex-nowrap ipadair:gap-4 ipadair:pl-8 4k:gap-16"
+        " flex h-full w-full flex-wrap items-center justify-around gap-2 overflow-x-scroll scroll-smooth px-2 ipadair:mt-0 ipadair:flex-nowrap ipadair:gap-4 ipadair:pl-8 4k:gap-16"
       }
     >
       {data.map((item, key) => (

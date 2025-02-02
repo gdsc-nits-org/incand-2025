@@ -86,7 +86,7 @@ const Login = () => {
   if (!_user) {
     return (
       <button className="" onClick={() => signInWithGoogle()}>
-        <div className="h-[40px] w-full">
+        <div className="h-[40px] w-full 4k:h-[60px]">
           {/* Blue Layer */}
           <div
             className="absolute h-full w-full rounded-lg bg-blue-500"
@@ -128,7 +128,7 @@ const Login = () => {
     return (
       <button
         onClick={() => {
-          router.push("/");
+          router.push("/Dashboard");
         }}
       >
         <div
@@ -146,7 +146,7 @@ const Login = () => {
           )}
         </div>
         <span
-          className="ml-10 font-oxygen text-[0.5vw] font-semibold"
+          className="ml-10 font-oxygen text-sm font-semibold ipadair:text-[0.5vw]"
           style={{
             color: "#562828",
           }}

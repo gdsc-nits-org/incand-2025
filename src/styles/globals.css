@@ -10,6 +10,13 @@
 }
 
 @font-face {
+  font-family: "rocket";
+  src: url("/assets/fonts/Rocket.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Tusker Grotes";
   src: url("/assets/fonts/TuskerGrotes.woff") format("woff");
   font-weight: normal;
@@ -36,7 +43,25 @@
 }
 @font-face {
   font-family: "DM Serif Display";
-  src: url("/assets/fonts/DMSerifDisplay.ttf") format("truetype");
+  src: url("/assets/fonts/DMSerifDisplay-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rocket Thunder";
+  src: url("/assets/fonts/RocketThunderRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Mochiy Pop P One";
+  src: url("/assets/fonts/MochiyPopPOne-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -47,6 +72,78 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+@keyframes neon-red-glow {
+  0% {
+    box-shadow:
+      0 0 8px rgba(255, 64, 64, 0.5),
+      0 0 15px rgba(255, 64, 64, 0.3),
+      0 0 20px rgba(255, 64, 64, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 10px rgba(255, 64, 64, 0.7),
+      0 0 20px rgba(255, 64, 64, 0.5),
+      0 0 25px rgba(255, 64, 64, 0.3);
+  }
+  100% {
+    box-shadow:
+      0 0 8px rgba(255, 64, 64, 0.5),
+      0 0 15px rgba(255, 64, 64, 0.3),
+      0 0 20px rgba(255, 64, 64, 0.2);
+  }
+}
+@keyframes neon-glow-pink {
+  0% {
+    box-shadow:
+      0 0 8px rgba(255, 20, 147, 0.5), /* Pink color */
+      0 0 15px rgba(255, 20, 147, 0.3),
+      0 0 20px rgba(255, 20, 147, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 10px rgba(255, 20, 147, 0.7),
+      0 0 20px rgba(255, 20, 147, 0.5),
+      0 0 25px rgba(255, 20, 147, 0.3);
+  }
+  100% {
+    box-shadow:
+      0 0 8px rgba(255, 20, 147, 0.5),
+      0 0 15px rgba(255, 20, 147, 0.3),
+      0 0 20px rgba(255, 20, 147, 0.2);
+  }
+}
+
+.toast-theme-pink {
+  background-color: #1b1f23;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+  padding: 16px;
+  animation: neon-glow-blue 2s infinite alternate;
+}
+.toast-theme-red {
+  background-color: #1b1f23;
+  color: #ff4040;
+  border: 2px solid #ff4040;
+  padding: 16px;
+  animation: neon-red-glow 2s infinite alternate;
+}.text-shadow {
+  text-shadow: 5px 5px 1px rgba(0, 0, 0,1); /* Adjust values for the shadow effect */
+}
+@layer utilities {
+  .text-shadow-custom {
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+  }
+}
+@layer utilities {
+  .text-shadow {
+    text-shadow: 
+      -2px -2px 0 black, 
+      2px -2px 0 black, 
+      -2px 2px 0 black, 
+      2px 2px 0 black, 
+      5px 5px 1px rgba(0, 0, 0, 1); /* Combine both shadow effects */
+  }
 }
 
 @layer utilities {

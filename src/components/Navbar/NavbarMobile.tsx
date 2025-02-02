@@ -1,21 +1,16 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
+import Login from "../GoogleAuth";
 
 const NavbarMobile = () => {
-  const navColors = {
-    home: "#7139CE",
-    about1: "#FFA6F6",
-    about2: "#C4FDFF",
-    sponsors: "#9EC92C",
-    merch: "#3C0FD5",
-  };
   const [currentLink, setCurrentLink] = useState("");
   useEffect(() => {
     const link = window.location.pathname + window.location.hash;
     setCurrentLink(link);
+    updateColor();
     handleScroll();
   }, [window.location.pathname, window.location.hash]);
   const [navColor, setNavColor] = useState(navColors.home);
@@ -26,18 +21,26 @@ const NavbarMobile = () => {
     const documentHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight;
     const percentage = (scrollY / (documentHeight - windowHeight)) * 100;
-    if (percentage < 17) {
-      setNavColor(navColors.home);
-    } else if (percentage < 38) {
-      setNavColor(navColors.about1);
-    } else if (percentage < 60) {
-      setNavColor(navColors.about2);
-    } else if (percentage < 80) {
-      setNavColor(navColors.sponsors);
-    } else {
-      setNavColor(navColors.merch);
+    if (currentLink === "/" || currentLink === "/#home") {
+      if (percentage < 17) {
+        setNavColor(navColors.home);
+      } else if (percentage < 38) {
+        setNavColor(navColors.about1);
+      } else if (percentage < 60) {
+        setNavColor(navColors.about2);
+      } else if (percentage < 80) {
+        setNavColor(navColors.sponsors);
+      } else {
+        setNavColor(navColors.merch);
+      }
     }
   };
+
+  const updateColor = () => {
+    setTimeout(() => {}, 1000);
+    setNavColor(linkColors.get(currentLink) ?? "#F1D22B");
+  };
+  useEffect(updateColor, [currentLink]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -83,6 +86,16 @@ const NavbarMobile = () => {
       <div
         className={`flex w-screen flex-col items-center justify-start gap-10 py-10 ${isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"} overflow-scroll transition-all delay-100 duration-300 ease-linear`}
       >
+        <div
+          className={`ease-linaer relative mb-2 mt-2 flex scale-100 items-center rounded-lg bg-white shadow-md transition-transform duration-300 hover:-translate-x-2 hover:-translate-y-2 hover:scale-110`}
+          style={{
+            width: "125px",
+            height: "40px",
+            boxShadow: "4px 4px 0px black",
+          }}
+        >
+          <Login />
+        </div>
         {NavDetails.map((data) => {
           return (
             <Link
@@ -157,40 +170,69 @@ interface NavDetailsProps {
   smallTextColor: string;
   active: boolean;
 }
+
+// if possible keep the description short (5 or 6 words)
 const NavDetails = [
   {
     title: "Home",
-    link: "/#home",
+    link: "/",
     bgColor: "#FFA6F6",
     bigTextColor: "#E1067B",
     smallTextColor: "#F12390",
     desc: "Enter the maze where brilliance begins",
   },
   {
-    title: "About",
-    link: "/#about",
+    title: "Event",
+    link: "/events",
     bgColor: "#65C8FF",
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
     desc: "Trace the path of creativity and culture",
   },
   {
-    title: "Sponsors",
-    link: "/#sponsors",
+    title: "Gallery",
+    link: "/gallery",
     bgColor: "#FFF066",
     bigTextColor: "#EBB200",
     smallTextColor: "#E8B002",
     desc: "The guiding beacons in our labyrinth of dreams",
   },
   {
-    title: "Merch",
-    link: "/#merch",
+    title: "LuminisLookut",
+    link: "/game",
     bgColor: "#3C0FD5",
     bigTextColor: "#180569",
     smallTextColor: "#180569",
     desc: "Claim your keepsakes from the maze of memories",
   },
+  {
+    title: "Team",
+    link: "/team",
+    bgColor: "#FC7566",
+    bigTextColor: "#9b1203",
+    smallTextColor: "#9b1203",
+    desc: "Claim your keepsakes from the maze of memories",
+  },
 ];
+
+const navColors = {
+  home: "#F1D22B",
+  about1: "#FFA6F6",
+  about2: "#C4FDFF",
+  sponsors: "#9EC92C",
+  merch: "#3C0FD5",
+};
+
+const linkColors = new Map<string, string>([
+  ["/", "#F1D22B"],
+  ["/events", "#FFA6F6"],
+  ["/gallery", "transparent"],
+  ["/game", "#000E16"],
+  ["/team", "#FFF361"],
+  ["/CarpeDiem", "#00A3FF"],
+  ["/Dashboard", "#FFAB17"],
+  ["/gallery_page", "#FC7566"],
+]);
 
 const NavTab = (data: NavDetailsProps) => {
   return (

@@ -1,8 +1,15 @@
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import tailwindScrollbarHide from "tailwind-scrollbar-hide";
 
 export default {
-  content: ["./src/**/*.tsx"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
   theme: {
     extend: {
       backgroundImage: {
@@ -19,10 +26,12 @@ export default {
         oxygen: ["Oxygen", "sans-serif"],
         tusker2: ["Tusker", "sans-serif"],
         DMSerif: ["DM Serif Display", "serif"],
+        rocket: ["rocket", "sans-serif"],
       },
       boxShadow: {
         "custom-white": "5.31px 5.31px 0px 0px #FFFFFF",
         "text-shadow": "2.89px 2.89px 0px 0px #FFFFFF",
+        "custom-black": "5.7px 5.7px 0px 0px #000000 ",
       },
       screens: {
         xs: "450px",
@@ -37,8 +46,13 @@ export default {
         tablet2: "900px",
         ipadpro: "1000px",
         ipadair: "1180px",
+        fourK: "2000px",
       },
       keyframes: {
+        spinSlow:{
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
         grow: {
           "0%": { transform: "scale(0)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
@@ -51,8 +65,9 @@ export default {
       animation: {
         grow: "grow 0.4s ease-out",
         screw: "screw 0.4s ease-in",
+        spinSlow: "spinSlow 5s linear infinite",
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindScrollbarHide],
 } satisfies Config;
