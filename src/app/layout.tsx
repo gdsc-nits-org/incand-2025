@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 };
 const toastOps = {
   classNames: {
-    title: "text-md md:text-lg font-semibold",
-    success: "toast-theme-pink",
-    info: "toast-theme-pink",
-    error: "toast-theme-red",
-    warning: "toast-theme-red",
+    title: "text-md md:text-lg font-semibold text-center",
+    success: "toast-theme-pink flex items-center  justify-center",
+    info: "toast-theme-pink flex items-center  justify-center",
+    error: "toast-theme-red flex items-center  justify-center",
+    warning: "toast-theme-red flex items-center  justify-center",
   },
 };
 export default function RootLayout({

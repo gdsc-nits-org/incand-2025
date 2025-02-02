@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
-import LoadingScreen from "~/components/Loader/loader";
+import LoadingScreen from "~/components/Loader";
 
 const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), {
   ssr: false,
@@ -93,7 +93,7 @@ const HomePage = () => {
             : { opacity: 0, scale: 0.95 }
         }
         transition={{ duration: 1, ease: "easeOut" }}
-        className="container z-[1000] "
+        className="container z-[1000]"
       >
         <Navbar />
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />

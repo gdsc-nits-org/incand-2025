@@ -50,10 +50,9 @@ const LoadingScreen = () => {
   }, []);
 
   return (
-    <div className="fixed left-0 top-0 z-[1000] flex h-screen w-screen items-center justify-center">
-      <div></div>
-      <div className="counter fixed z-[10] flex h-full w-full items-center justify-center font-tusker text-[2.5rem] text-[#ffffff]">
-        <div className="z-[200] flex flex-col items-center gap-y-4 font-tusker">
+    <div className="fixed left-0 top-0 z-[1000] flex h-screen w-screen items-center justify-center ">
+      <div className="counter fixed z-[10] flex h-full w-full items-center justify-center font-tusker text-[2.5rem] text-[#ffffff] bg-[url('/assets/Loader/load.png')] bg-cover">
+        <div className="flex flex-col items-center gap-y-4 font-tusker">
           <DotLottieReact
             src="https://lottie.host/1ec34d07-86b0-4b73-a4f3-87048b85e8e0/afqLS8MlAd.lottie"
             className="w-[15rem]"
