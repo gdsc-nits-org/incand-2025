@@ -68,13 +68,10 @@ const HomePage = () => {
 
   return (
     <div className="overflow-x-hidden bg-black">
-      {!loadingFinished && <LoadingScreen />}
+      {<LoadingScreen />}
       <motion.main
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{
-          opacity: loadingFinished ? 1 : 0,
-          scale: loadingFinished ? 1 : 0.95,
-        }}
+        initial={loadingFinished ? { opacity: 1, scale: 1 } : {opacity: 0, scale: 0.95}}
+        animate={loadingFinished ? { opacity: 1, scale: 1 } : {opacity: 0, scale: 0.95}}
         transition={{ duration: 1, ease: "easeOut" }}
         className="container"
       >
