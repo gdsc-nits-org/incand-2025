@@ -1,73 +1,214 @@
 [
 	{
 		"id": 1,
-		"name": "Barnil Sarma",
-		"linkedin": "https://www.linkedin.com/in/barnil-sarma-34383a255?trk=contact-info",
-		"git": "https://github.com/barnilsarma",
-		"fb": "https://m.facebook.com/profile.php/?id=100056956539956",
-		"designation": "Developer",
-		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1693827561/GDSC%20images/my_photo_-_ECE_025_BARNIL_SARMA_txxw6i.webp"
+		"name": "Maharnav Deka",
+		"designation": "Tech Lead",
+		"role" : "techLead",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232769/nshiupmf6c28w7nkb85k.webp",
+		"fb": "https://www.facebook.com/profile.php?id=100076295825121",
+		"git": "http://github.com/mdekaa",
+		"linkedin": "https://www.linkedin.com/in/maharnav-deka-06742815a/"
 	},
 	{
-		"id": 2,
-		"name": "Rishi Raj Saha",
-		"linkedin": "https://www.linkedin.com/in/rishi-raj-saha-696b44257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"git": "https://github.com/rishinhk004",
-		"fb": "https://www.facebook.com/rishiraj.saha.353?mibextid=2JQ9oc",
-		"designation": "Developer",
-		"img": "https://res.cloudinary.com/dl19r276g/image/upload/v1705489864/IMG_20240116_200449_axmupn.webp"
+        "id": 2,
+		"name": "Adhiraj Dutta ",
+		"designation": "Web Head",
+		"role" : "webHead",
+		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1694017407/gdsc%20seniors/team_pics/AdhirajDutta_oe0c3l.webp",
+		"git": "https://home.byt3h3ad.workers.dev/github",
+		"linkedin": "https://home.byt3h3ad.workers.dev/linkedin",
+		"fb": "https://www.facebook.com/byt3h3ad/"
 	},
+	
 	{
-		"id": 3,
-		"name": "Swagatmitra Bhattacharya ",
-		"linkedin": "https://linkedin.com/in/swagatmitrab",
-		"git": "https://github.com/swagatmitra-b",
-		"designation": "Developer",
-		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1693827574/GDSC%20images/swagat_-_SWAGATMITRA_BHATTACHARYA_vzi9fv.webp"
+        "id": 3,
+		"name": "Bijay Jiwrajka ",
+		"designation": "Web Head",
+		"role" : "webHead",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232005/w1g7olgwnmd7tgtb8mbp.webp",
+		"git": "https://github.com/bj-jiwrajka",
+		"linkedin": "https://linkedin.com/in/bjiwrajka",
+		"fb": "https://www.facebook.com/bijay.jiwrajka.1"
 	},
 	{
 		"id": 4,
-		"name": "Rishav Bora",
-		"linkedin": "https://www.linkedin.com/in/rishav-bora-377157258/",
-		"git": "https://github.com/rishav3110",
-		"fb": "https://www.facebook.com/rishav.bora.31586",
-		"designation": "Developer",
-		"img": "https://res.cloudinary.com/dl19r276g/image/upload/v1705494482/newimgrishav2_gfjrgb.webp"
+		"img": "https://res.cloudinary.com/dmezugavw/image/upload/v1729590206/pragya_zg7bor.jpg",
+		"name": "Pragya Annesha Baruah",
+		"designation": "Ui/Ux Head",
+		"role": "UiHead",
+		"linkedin": "https://www.linkedin.com/in/pragya-annesha-baruah-34a043229",
+		"fb": "https://www.facebook.com/profile.php?id=100075204826742",
+		"git": "https://github.com/Prag03"
 	},
 	{
 		"id": 5,
-		"name": "Rishabh Ranjan",
-		"linkedin": "https://www.linkedin.com/in/rishabh-ranjan-581691213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"git": "https://github.com/zordican",
-		"fb": "https://www.facebook.com/rishabh.ranjan.0902?mibextid=kFxxJD",
-		"designation": "Developer",
-		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1693827568/GDSC%20images/Rishabh_Ranjan_-_EE_084_RishabhRanjan_cfnsb3.webp"
+		"name": "Jacinth Mahanta",
+		"designation": "Ui/Ux Head",
+		"role": "UiHead",
+		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1730210201/nits-hacks-7.0/WhatsApp_Image_2024-10-29_at_5.41.08_PM_mbmhkx.jpg",
+		"git": "http://github.com/gitsentinel",
+		"linkedin": "https://www.linkedin.com/in/gitsentinel/",
+		"fb": "https://www.facebook.com/jacinth.mahanta/"
 	},
 	{
 		"id": 6,
+		"name": "Tithi Jha",
+		"designation": "Ui/Ux Head",
+		"role": "UiHead",
+		"img": "https://res.cloudinary.com/dl19r276g/image/upload/v1705513971/imagegdsc1_fwwgdr.webp",
+		"git": "https://github.com/tithiii",
+		"linkedin": "https://www.linkedin.com/in/tithi-jha-3b43b5229/",
+		"fb": "https://www.facebook.com/tithi.jha.14?mibextid=LQQJ4d"
+	},
+	{
+		"id": 7,
+		"name": "Barnil Sarma",
+		"linkedin": "https://www.linkedin.com/in/barnil-sarma-34383a255",
+		"git": "https://github.com/barnilsarma",
+		"fb": "https://www.facebook.com/barnil.sarma.3/",
+		"designation": "Web Cohead",
+		"role": "webCohead",
+		"img": "https://res.cloudinary.com/dg361q5uv/image/upload/v1729014507/team_img/fwdhqjmmim1i709goqfx.webp"
+	  },
+	  {
+		"id": 8,
+		"name": "Rishi Raj Saha",
+		"linkedin": "https://www.linkedin.com/in/rishi-raj-saha-696b44257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "https://github.com/rishinhk004",
+		"role": "webCohead",
+		"fb": "https://www.facebook.com/rishiraj.saha.353?mibextid=2JQ9oc",
+		"designation": "Web Cohead",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232110/fdmfoyqowwyuudjjvcy2.webp"
+	  },
+	  {
+		"id": 9,
+		"name": "Bedanta Kataki ",
+		"linkedin": "https://www.linkedin.com/in/bedanta-kataki-0b5205257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "https://github.com/r4inr3aper",
+		"role": "webCohead",
+		"fb": "https://m.facebook.com/bedanta.kataki.5/",
+		"designation": "Web Cohead",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232053/lc83zdd3rfqds7awkjsu.webp"
+	  },
+	  {
+		"id": 10,
+		"name": "Dhiraj Das",
+		"linkedin": "https://www.linkedin.com/in/dhirajd2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "http://github.com/dheeraj1922d",
+		"role": "webCohead",
+		"fb": "",
+		"designation": "Web Cohead",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232065/jtbsitclggqkxud1o1ut.webp"
+	  },
+	  {
+		"id": 11,
+		"name": "Sahin Alam",
+		"designation": "Cloud Cohead",
+		"img": "https://res.cloudinary.com/dg361q5uv/image/upload/v1729014745/team_img/oyiknerd4lqrxgjw9opa.webp",
+		"git": "https://github.com/ruler45",
+		"role": "cloudCohead",
+		"linkedin": "https://www.linkedin.com/in/sahin-alam-96250324a/",
+		"fb": "https://www.facebook.com/sahin.alam.9216778?mibextid=ZbWKwL"
+	  },
+	  {
+		"id": 12,
 		"name": "Kaustav Dev",
 		"linkedin": "https://www.linkedin.com/in/kaustav-dev-429123248/",
 		"git": "https://github.com/Kaustav769",
 		"fb": "https://www.facebook.com/profile.php?id=100087939076312",
-		"designation": "UI/UX",
-		"img": "https://res.cloudinary.com/dnuhxx8aa/image/upload/f_auto,q_auto/ds8e3ch89sbdhrhvu15r"
+		"designation": "Ui/Ux Cohead",
+		"role": "uiuxCohead",
+		"img": "https://res.cloudinary.com/dnuhxx8aa/image/upload/f_auto,q_auto/ds8e3ch89sbdhrhvu15r.webp"
 	},
 	{
-		"id": 7,
-		"name": "Samarjit Roy",
-		"linkedin": "https://www.linkedin.com/in/samarjit-roy-368071257/",
-		"git": "https://github.com/Samarjit25",
-		"fb": "https://www.facebook.com/profile.php?id=100087733476599&mibextid=9R9pXO",
-		"designation": "UI/UX",
-		"img": "https://res.cloudinary.com/dnuhxx8aa/image/upload/f_auto,q_auto/o5qanisnluqchonxweg1"
+		"id": 13,
+		"name": "Rajdeep Sarkar ",
+		"linkedin": "https://www.linkedin.com/in/rajdeep-sarkar-00b80a244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "",
+		"fb": "",
+		"designation": "Ui/Ux Cohead",
+		"role": "uiuxCohead",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232132/nafmhfp98jl0pjuyeewd.webp"
 	},
 	{
-		"id": 8,
-		"name": "Gracie G Rabha",
-		"linkedin": "https://www.linkedin.com/in/gracie-g-rabha-4472621aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"git": "https://github.com/GracieRuth",
-		"fb": "https://www.facebook.com/profile.php?id=100087872117590&mibextid=ZbWKwL",
-		"designation": "UI/UX",
-		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1693827558/GDSC%20images/IMG-20230801-WA0017_-_CSE_012__Gracie_rvrw39.webp"
+		"id": 14,
+		"name": "Siddharth Ghosh",
+		"img": "https://res.cloudinary.com/dhry5xscm/image/upload/v1693827576/GDSC%20images/WhatsApp_Image_2023-09-01_at_20.15.25_-_Siddharth_Ghosh_ofceqg.jpg",
+		"linkedin": "https://www.linkedin.com/in/siddharth-ghosh-18ba29251/",
+		"fb": "https://www.facebook.com/in/siddharth-ghosh-18ba29251/",
+		"git": "https://github.com/Z-Maniac-Sidd",
+		"designation": "Ui/Ux Cohead",
+		"role":"uiuxCohead"
+	},
+	{
+		"id": 15,
+		"name": "Hirak Rajbonshi",
+		"linkedin": "https://www.linkedin.com/in/hirak-rajbonshi-baa6a628a/",
+		"git": "https://github.com/hirakRajbonshi/",
+		"fb": "https://www.facebook.com/hirak.rajbonshi.7/",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232127/juyfr0ef09zwudnkld9d.webp"
+	},
+	{
+		"id": 16,
+		"name": "Subrata Lodh ",
+		"linkedin": "https://www.linkedin.com/in/subrata-lodh-45541328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "https://github.com/Subrata-20",
+		"fb": "https://www.facebook.com/share/14wAFgXEznv/",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232119/mcjkrwdetdub0p44zdc3.webp"
+	},
+	{
+		"id": 17,
+		"name": "Bishal Das ",
+		"linkedin": "https://www.linkedin.com/in/bishal-das-babbb02a3",
+		"git": "https://github.com/Bishal-NITS-2003",
+		"fb": "https://www.facebook.com/profile.php?id=100051391303848&mibextid=ZbWKwL",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232085/o01ohffeoi6aewge2boo.webp"
+	},
+
+	{
+		"id": 18,
+		"name": "Anmol Swarup Sahoo  ",
+		"linkedin": "https://www.linkedin.com/in/anmol77?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "https://github.com/newt-shadow",
+		"fb": "",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232100/v63aoczknqjw2bimciln.webp"
+	},
+	{
+		"id": 19,
+		"name": "Manash Pratim Goswami",
+		"linkedin": "https://www.linkedin.com/in/manash-pratim-goswami-477352289/",
+		"git": "https://github.com/Manashgoswamii",
+		"fb": "https://www.facebook.com/profile.php?id=61550331861556",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232092/xmthkjuhxjnse5slofgu.webp"
+	},
+	{
+		"id": 20,
+		"name": "Priyanka Agarwal ",
+		"linkedin": "https://www.linkedin.com/in/priyanka-agarwal-89a6b0315/",
+		"git": "https://github.com/Prizag",
+		"fb": "https://www.facebook.com/profile.php?id=61550693885083",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232076/bklbxiwoqfo2mojrobqb.webp"
+	},
+	{
+		"id": 21,
+		"name": "Deepanshu Sharma ",
+		"linkedin": "http://linkedin.com/in/deepanshu-sharma-b3a46828a",
+		"git": "http://github.com/deepanshu089",
+		"fb": "http://instagram.com/_dsharmaa",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738231922/rg5jczht8dafjxyfysjf.webp"
 	}
 ]

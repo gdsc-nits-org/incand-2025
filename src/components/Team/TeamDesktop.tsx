@@ -1,13 +1,27 @@
 import React, { useState } from "react";
 
 import TeamCard from "./TeamCard";
-import teamDataCore from "./Core.json"; // Assuming the team data is stored here
+// import teamDataCore from "./Core.json"; // Assuming the team data is stored here
 import teamDataTech from "./Tech.json";
-import teamDataModule from "./Modules.json";
+// import teamDataModule from "./Modules.json";
 const TeamDesktop: React.FC = () => {
-  const [isCore, setIsCore] = useState(true);
-  const [isTech, setIsTech] = useState(false);
-  const [isModule, setIsModule] = useState(false);
+  const techLead = teamDataTech.filter((member) => member.role === "techLead");
+  const webHead = teamDataTech.filter((member) => member.role === "webHead");
+  const UiHead = teamDataTech.filter((member) => member.role === "UiHead");
+  const webCohead = teamDataTech.filter(
+    (member) => member.role === "webCohead" || member.role === "cloudCohead",
+  );
+  const uiuxCohead = teamDataTech.filter(
+    (member) => member.role === "uiuxCohead",
+  );
+  const developer = teamDataTech.filter(
+    (member) => member.role === "developer",
+  );
+
+  // const [isCore, setIsCore] = useState(true);
+  const [isTech, setIsTech] = useState(true);
+  // const [isModule, setIsModule] = useState(false);
+
   return (
     <div
       className="box-border h-[100vh] w-[100vw] overflow-y-scroll bg-[#FAF8E0]"
@@ -40,16 +54,16 @@ const TeamDesktop: React.FC = () => {
         id="section2"
         className="relative box-border w-[100%] overflow-x-hidden"
       >
-        <div className="align-center mx-auto flex h-[4rem] w-[90%] flex-row justify-between tablet2:w-[78%]">
-          <div
+        <div className="align-center mx-auto flex h-[4rem] w-[90%] flex-row justify-center tablet2:w-[78%]">
+          {/* <div
             className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isCore ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
               setIsTech(false);
               setIsModule(false);
               setIsCore(true);
             }}
-          >
-            <div
+          > */}
+            {/* <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isCore ? "bg-[url('/assets/Team/Handle.png')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
@@ -57,13 +71,13 @@ const TeamDesktop: React.FC = () => {
             >
               CORE MEMBERS
             </p>
-          </div>
+          </div> */}
 
           <div
             className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isTech ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
-              setIsCore(false);
-              setIsModule(false);
+              // setIsCore(false);
+              // setIsModule(false);
               setIsTech(true);
             }}
           >
@@ -77,28 +91,28 @@ const TeamDesktop: React.FC = () => {
             </p>
           </div>
 
-          <div
+          {/* <div
             className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isModule ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
               setIsCore(false);
               setIsTech(false);
               setIsModule(true);
             }}
-          >
-            <div
+          > */}
+            {/* <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isModule ? "bg-[url('/assets/Team/Handle.png')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
               className={`font-oxygen text-xs font-extrabold leading-[35.36px] tablet:text-sm ipadpro:text-base ipadair:text-lg ${isModule ? "text-[#FFD231]" : "text-black"} my-auto text-center tracking-[0.06em]`}
             >
               MODULE HEADS
-            </p>
-          </div>
+            </p> */}
+          {/* </div> */}
         </div>
 
         <div
           id="Member_container"
-          className="mx-auto mt-14 grid h-[85%] w-[85%] grid-cols-2 place-items-center gap-4 overflow-y-scroll pt-8 tablet2:grid-cols-3"
+          className="mx-auto mt-14 grid h-[85%] w-[85%] grid-cols-2 place-items-center gap-7 overflow-y-scroll pt-8 tablet2:grid-cols-3"
           style={{
             scrollbarWidth: "none" /* For Firefox */,
             msOverflowStyle: "none" /* For Internet Explorer and Edge */,
@@ -106,47 +120,148 @@ const TeamDesktop: React.FC = () => {
             WebkitOverflowScrolling: "touch" /* For smooth scrolling */,
           }}
         >
-          {isCore &&
-            teamDataCore.map((member) => (
-              <TeamCard
-                key={member.id}
-                name={member.name}
-                role={member.designation}
-                image={member.img}
-                fb={member.fb ?? ""}
-                linkedin={member.linkedin ?? ""}
-                git={member.git ?? ""}
-                ind={member.id}
-              />
-            ))}
+          {/* Core Team */}
+          {/* {isCore && (
+    <div className="col-span-2 tablet2:col-span-3 w-full flex justify-center flex-wrap gap-24">
+      {teamDataCore.map((member) => (
+        <TeamCard
+          key={member.id}
+          name={member.name}
+          role={member.designation}
+          image={member.img}
+          fb={member.fb ?? ""}
+          linkedin={member.linkedin ?? ""}
+          git={member.git ?? ""}
+          ind={member.id}
+        />
+      ))}
+    </div>
+  )} */}
 
-          {isTech &&
-            teamDataTech.map((member) => (
-              <TeamCard
-                key={member.id}
-                name={member.name}
-                role={member.designation}
-                image={member.img}
-                fb={member.fb ?? ""}
-                linkedin={member.linkedin ?? ""}
-                git={member.git ?? ""}
-                ind={member.id}
-              />
-            ))}
+          {/* Tech Lead */}
+          {isTech && (
+            <div className="col-span-2 mb-14 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {techLead.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
 
-          {isModule &&
-            teamDataModule.map((member) => (
-              <TeamCard
-                key={member.id}
-                name={member.name}
-                role={member.designation}
-                image={member.img}
-                fb={member.fb ?? ""}
-                linkedin={member.linkedin ?? ""}
-                git={member.git ?? ""}
-                ind={member.id}
-              />
-            ))}
+          {/* Web Head */}
+          {isTech && (
+            <div className="col-span-2 mb-14 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {webHead.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* UI Head */}
+          {isTech && (
+            <div className="col-span-2 mb-14 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {UiHead.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Web Cohead */}
+          {isTech && (
+            <div className="col-span-2 mb-14 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {webCohead.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
+          {/* UI/UX Cohead */}
+          {isTech && (
+            <div className="col-span-2 mb-14 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {uiuxCohead.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Developer */}
+          {isTech && (
+            <div className="col-span-2 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {developer.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Module Team */}
+          {/* {isModule && (
+    <div className="col-span-2 tablet2:col-span-3 w-full flex justify-center flex-wrap gap-24 ">
+      {teamDataModule.map((member) => (
+        <TeamCard
+          key={member.id}
+          name={member.name}
+          role={member.designation}
+          image={member.img}
+          fb={member.fb ?? ""}
+          linkedin={member.linkedin ?? ""}
+          git={member.git ?? ""}
+          ind={member.id}
+        />
+      ))}
+    </div>
+  )} */}
         </div>
       </div>
     </div>

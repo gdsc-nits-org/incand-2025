@@ -29,7 +29,7 @@ const StyledSection: React.FC = () => {
           zIndex: 0,
         }}
       ></div>
-      <div className="absolute -top-[2.9vw] left-[8.5vw] mobile:hidden laptop:block">
+      <div className="absolute -top-[2.9vw] left-[8.5vw] mobile:hidden ipadair:scale-50 laptop:block">
         <Image
           src="/assets/Merch/Brutalist89.png"
           alt="Brutalist 89"
@@ -99,7 +99,7 @@ const StyledSection: React.FC = () => {
           className="h-[7.8vw] w-[16vw]"
         />
       </div>
-      <div className="relative z-30 w-[80vw] border-4 border-white bg-[#2D0079] shadow-[-1.5vw_1.5vw_0px_rgba(255,255,255,1)] mobile:h-[70vh] mobile:-translate-y-[20vw] laptop:h-[60vh] laptop:transform-none">
+      <div className="relative z-30 w-[80vw] border-4 border-white bg-[#2D0079] shadow-[-1.5vw_1.5vw_0px_rgba(255,255,255,1)] mobile:h-[70vh] mobile:-translate-y-[20vw] ipadpro:-translate-y-[2vw] ipadpro:scale-x-75 laptop:transform-none xl:h-[60vh]">
         <div className="absolute -left-[2.1vw] top-[16vw] z-40 mobile:hidden laptop:block">
           <Image
             src="/assets/Merch/Ellipse1499.png"
@@ -222,14 +222,14 @@ const StyledSection: React.FC = () => {
             className="h-[9vh] w-[9vh]"
           />
         </div>
-        <div className="4k: absolute z-50 mobile:left-[8.5vw] mobile:top-[70vh] mobile:scale-[1.4] laptop:-left-[8vw] laptop:top-[20vw] laptop:scale-[.90]">
+        <div className="4k: absolute z-50 mobile:left-[8.5vw] mobile:top-[70vh] mobile:scale-[1.4] ipadpro:scale-75 laptop:-left-[8vw] laptop:top-[20vw] laptop:scale-[.90]">
           <FooterButton />
         </div>
         <h1 className="group relative z-[45] w-max -rotate-[5.44deg] bg-red-600 px-[0.5vw] font-tusker hover:shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] mobile:left-[25vw] mobile:top-[21vh] mobile:text-[1.5vh] laptop:left-[13vw] laptop:top-[19vw] laptop:text-[2vh]">
           <GiStarShuriken className="absolute -right-[0.85v] -top-[0.9vh] group-hover:block" />
           GRAB YOUR MERCH NOW!
         </h1>
-        <CgArrowTopLeft className="absolute z-[45] -rotate-[18deg] text-[#FAE00D] mobile:left-[62vw] mobile:top-[82vh] mobile:text-[6vh] laptop:left-[25vw] laptop:top-[25vw] laptop:text-[3.2vw]" />
+        <CgArrowTopLeft className="absolute z-[45] -rotate-[18deg] text-[#FAE00D] mobile:left-[62vw] mobile:top-[82vh] mobile:text-[6vh] ipadpro:left-[43vw] laptop:left-[25vw] laptop:top-[25vw] laptop:text-[3.2vw]" />
         <div className="absolute z-50 -rotate-[65deg] mobile:-top-[2.5vh] mobile:left-[54.5vw] laptop:left-[31vw] laptop:top-[1.5vw] 4k:left-[32.5vw] 4k:top-[3.4vw]">
           <Image
             src="/assets/Merch/FigmatoLottie.gif"
