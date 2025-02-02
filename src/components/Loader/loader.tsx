@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  motion,
   useMotionValue,
   useTransform,
   animate,
@@ -70,7 +69,7 @@ const LoadingScreen = () => {
         </div>
       </div>
       <div className="overlay z-2 fixed flex h-[100vh] w-[100vw]">
-        {Array(20)
+        {Array(30)
           .fill(0)
           .map((_, i) => (
             <div key={i} className="bar h-[105vh] w-[5vw] bg-[#1a1a1a]"></div>

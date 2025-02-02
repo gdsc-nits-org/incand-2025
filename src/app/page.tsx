@@ -19,7 +19,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 const FadeInSection = ({
   children,
