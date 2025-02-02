@@ -1,12 +1,12 @@
 // pages/index.tsx
-"use client"
+"use client";
 
 import { useState } from "react";
 import LoadingScreen from "~/components/Loader/loader";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="h-screen flex items-center justify-center bg-white text-black text-4xl font-bold">
+    <div className="flex h-screen items-center justify-center bg-white text-4xl font-bold text-black">
       Welcome to the Home Page!
     </div>
   );
@@ -17,7 +17,9 @@ const Home: React.FC = () => {
 
   return (
     <div className="relative">
-      {!loadingFinished && <LoadingScreen onFinish={() => setLoadingFinished(true)} />}
+      {!loadingFinished && (
+        <LoadingScreen onFinish={() => setLoadingFinished(true)} />
+      )}
       {loadingFinished && <HomePage />}
     </div>
   );
