@@ -60,6 +60,7 @@ const FadeInSection = ({
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [loadingFinished, setLoadingFinished] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -68,22 +69,31 @@ const HomePage = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(true);
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="overflow-x-hidden bg-black">
-      {!loadingFinished && <LoadingScreen />}
+    <div>
+    { !loading && <LoadingScreen />  }
+    <div className="overflow-x-hidden bg-black ">
+    
       <motion.main
         initial={
           loadingFinished
             ? { opacity: 1, scale: 1 }
-            : { opacity: 1, scale: 0.95 }
+            : { opacity: 0, scale: 0.95 }
         }
         animate={
           loadingFinished
-            ? { opacity: 1, scale: 1 }
+            ? { opacity: 1, scale: 1,}
             : { opacity: 0, scale: 0.95 }
         }
         transition={{ duration: 1, ease: "easeOut" }}
-        className="container"
+        className="container z-[1000] "
       >
         <Navbar />
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
@@ -111,6 +121,7 @@ const HomePage = () => {
           <Footer />
         </FadeInSection>
       </motion.main>
+    </div>
     </div>
   );
 };
