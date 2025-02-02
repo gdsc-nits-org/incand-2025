@@ -76,7 +76,9 @@ importers:
         version: 1.8.1(jquery@3.7.1)
       sonner:
         specifier: ^1.5.0
+
         version: 1.7.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+
       tailwind-scrollbar-hide:
         specifier: ^2.0.0
         version: 2.0.0(tailwindcss@3.4.17)
@@ -2224,8 +2226,10 @@ packages:
     peerDependencies:
       jquery: '>=1.8.0'
 
+
   sonner@1.7.4:
     resolution: {integrity: sha512-DIS8z4PfJRbIyfVFDVnK9rO3eYDtse4Omcm6bt0oEr5/jtLgysmjuBl1frJ9E/EQZrFmKx2A8m/s5s9CRXIzhw==}
+
     peerDependencies:
       react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
@@ -3185,7 +3189,10 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 9.0.5
       semver: 7.7.0
+
       ts-api-utils: 2.0.1(typescript@5.7.3)
+
+
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
@@ -4849,7 +4856,9 @@ snapshots:
     dependencies:
       jquery: 3.7.1
 
+
   sonner@1.7.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
