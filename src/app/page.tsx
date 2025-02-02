@@ -70,7 +70,7 @@ const HomePage = () => {
 
   return (
     <div className="overflow-x-hidden bg-black">
-      {!loadingFinished &&<LoadingScreen />}
+      {!loadingFinished && <LoadingScreen />}
       <motion.main
         initial={
           loadingFinished
@@ -115,4 +115,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage; 
+export default HomePage;
