@@ -5,21 +5,15 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
-import Loader from "./loading";
+import LoadingScreen from "~/components/Loader/loader"; 
 
-const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), {
-  ssr: false,
-});
+const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), { ssr: false });
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
-const AboutNits = dynamic(() => import("~/components/AboutNits"), {
-  ssr: false,
-});
+const AboutNits = dynamic(() => import("~/components/AboutNits"), { ssr: false });
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
-
-// export const runtime = "edge";
 
 const FadeInSection = ({
   children,
@@ -31,21 +25,11 @@ const FadeInSection = ({
   bgColor: string;
 }) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.3,
-  });
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.3 });
 
   useEffect(() => {
-    if (inView) {
-      void controls.start("visible");
-    }
+    if (inView) void controls.start("visible");
   }, [controls, inView]);
-
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
-  };
 
   return (
     <motion.section
@@ -54,7 +38,10 @@ const FadeInSection = ({
       className={`w-screen ${bgColor}`}
       initial="hidden"
       animate={controls}
-      variants={variants}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+      }}
     >
       {children}
     </motion.section>
@@ -63,50 +50,17 @@ const FadeInSection = ({
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const startTime = performance.now();
-
-    const preloadComponents = async () => {
-      await Promise.all([
-        import("~/components/Hero"),
-        import("~/components/Sponsors"),
-        import("~/components/AboutUs"),
-        import("~/components/AboutNits"),
-        import("~/components/LuminisLookout"),
-      ]);
-    };
-
-    void preloadComponents();
-    const handleLoad = () => {
-      const endTime = performance.now();
-      const loadTime = Math.max(3000, endTime - startTime);
-      setTimeout(() => setIsLoading(false), loadTime);
-    };
-
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="flex h-screen w-screen items-center justify-center bg-black">
-        <Loader />
-      </div>
-    );
-  }
+  const [loadingFinished, setLoadingFinished] = useState(false);
 
   return (
     <div className="overflow-x-hidden bg-black">
-      <main className="container">
+      {!loadingFinished && <LoadingScreen onFinish={() => setLoadingFinished(true)} />}
+      <motion.main
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: loadingFinished ? 1 : 0, scale: loadingFinished ? 1 : 0.95 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="container"
+      >
         <Navbar />
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
         <LandingProgressBar />
@@ -119,19 +73,16 @@ const HomePage = () => {
         <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
           <AboutNits />
         </FadeInSection>
-        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68]  h-fit">
+        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68] h-fit">
           <Sponsors />
         </FadeInSection>
-        <FadeInSection id="merch" bgColor="bg-[#3C0FD5]  min-h-screen ">
+        <FadeInSection id="merch" bgColor="bg-[#3C0FD5] min-h-screen">
           <LuminisLookout />
         </FadeInSection>
-        <FadeInSection
-          id="footer"
-          bgColor="bg-[#000000]  h-fit ipadpro:min-h-screen"
-        >
+        <FadeInSection id="footer" bgColor="bg-[#000000] h-fit ipadpro:min-h-screen">
           <Footer />
         </FadeInSection>
-      </main>
+      </motion.main>
     </div>
   );
 };
