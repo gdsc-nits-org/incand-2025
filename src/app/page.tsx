@@ -19,10 +19,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
-
-
 // export const runtime = "edge";
-
 
 const FadeInSection = ({
   children,
@@ -105,9 +102,6 @@ const HomePage = () => {
         </FadeInSection>
 
         <FadeInSection id="merch" bgColor="bg-[#3C0FD5] min-h-screen">
-
-        
-
           <LuminisLookout />
         </FadeInSection>
         <FadeInSection
