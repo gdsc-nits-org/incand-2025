@@ -70,12 +70,12 @@ const HomePage = () => {
 
   return (
     <div className="overflow-x-hidden bg-black">
-      {<LoadingScreen />}
+      {!loadingFinished &&<LoadingScreen />}
       <motion.main
         initial={
           loadingFinished
             ? { opacity: 1, scale: 1 }
-            : { opacity: 0, scale: 0.95 }
+            : { opacity: 1, scale: 0.95 }
         }
         animate={
           loadingFinished
@@ -115,4 +115,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomePage; 
