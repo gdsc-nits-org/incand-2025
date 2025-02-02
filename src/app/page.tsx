@@ -93,7 +93,7 @@ const HomePage = () => {
             : { opacity: 0, scale: 0.95 }
         }
         transition={{ duration: 1, ease: "easeOut" }}
-        className="container z-[1000] "
+        className="container z-[1000]"
       >
         <Navbar />
         <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
