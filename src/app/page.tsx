@@ -5,13 +5,17 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
-import LoadingScreen from "~/components/Loader/loader"; 
+import LoadingScreen from "~/components/Loader/loader";
 
-const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), { ssr: false });
+const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), {
+  ssr: false,
+});
 const Hero = dynamic(() => import("~/components/Hero"), { ssr: false });
 const Sponsors = dynamic(() => import("~/components/Sponsors"), { ssr: false });
 const AboutUs = dynamic(() => import("~/components/AboutUs"), { ssr: false });
-const AboutNits = dynamic(() => import("~/components/AboutNits"), { ssr: false });
+const AboutNits = dynamic(() => import("~/components/AboutNits"), {
+  ssr: false,
+});
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
@@ -40,7 +44,10 @@ const FadeInSection = ({
       animate={controls}
       variants={{
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+        visible: {
+          opacity: 1,
+          transition: { duration: 0.5, ease: "easeInOut" },
+        },
       }}
     >
       {children}
@@ -52,12 +59,22 @@ const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [loadingFinished, setLoadingFinished] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoadingFinished(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="overflow-x-hidden bg-black">
-      {!loadingFinished && <LoadingScreen onFinish={() => setLoadingFinished(true)} />}
+      {!loadingFinished && <LoadingScreen />}
       <motion.main
         initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: loadingFinished ? 1 : 0, scale: loadingFinished ? 1 : 0.95 }}
+        animate={{
+          opacity: loadingFinished ? 1 : 0,
+          scale: loadingFinished ? 1 : 0.95,
+        }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="container"
       >
@@ -79,7 +96,10 @@ const HomePage = () => {
         <FadeInSection id="merch" bgColor="bg-[#3C0FD5] min-h-screen">
           <LuminisLookout />
         </FadeInSection>
-        <FadeInSection id="footer" bgColor="bg-[#000000] h-fit ipadpro:min-h-screen">
+        <FadeInSection
+          id="footer"
+          bgColor="bg-[#000000] h-fit ipadpro:min-h-screen"
+        >
           <Footer />
         </FadeInSection>
       </motion.main>

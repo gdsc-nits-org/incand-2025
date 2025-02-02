@@ -7,21 +7,18 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import gsap from "gsap";
 
-interface LoadingScreenProps {
-  onFinish: () => void;
-}
-
-const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
-  const count = useMotionValue(100); // Start from 100
+const LoadingScreen = () => {
+  const count = useMotionValue(0);
   const rounded = useTransform(count, Math.round);
   const [progress, setProgress] = useState(100);
   const [isVisible, setIsVisible] = useState(true);
+  const [loadingFinished, setLoadingFinished] = useState(true);
 
   useEffect(() => {
-    const controls = animate(count, 0, {
+    const controls = animate(count, 100, {
       duration: 5,
-      ease: "easeInOut",
     });
 
     return () => controls.stop();
@@ -29,36 +26,57 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
 
   useMotionValueEvent(rounded, "change", (latest) => {
     setProgress(latest);
-    if (latest === 0) {
+    if (latest === 100) {
       setTimeout(() => {
         setIsVisible(false);
-        onFinish(); 
+        setLoadingFinished(false);
       }, 500);
     }
   });
 
+  useEffect(() => {
+    gsap.to(".counter", 0.25, {
+      delay: 5,
+      opacity: 0,
+    });
+
+    gsap.to(".bar", 1.5, {
+      delay: 4.5,
+      height: 0,
+      stagger: {
+        amount: 0.5,
+      },
+      ease: "power4.inOut",
+    });
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-[url('/assets/Loader/load.svg')] bg-cover bg-no-repeat text-4xl font-bold text-white"
-    >
-      <div className="flex flex-col items-center gap-y-4">
-        <DotLottieReact
-          src="https://lottie.host/1ec34d07-86b0-4b73-a4f3-87048b85e8e0/afqLS8MlAd.lottie"
-          className="w-[15rem]"
-          loop
-          autoplay
-        />
-        <img
-          src="/assets/Loader/flame-hold.svg"
-          className="relative top-[-2rem] h-[5rem]"
-          alt="flame"
-        />
-        <span>{progress}%</span>
+    <div className="fixed left-0 top-0 z-[1000] flex h-screen w-screen items-center justify-center">
+      <div></div>
+      <div className="counter fixed z-[10] flex h-full w-full items-center justify-center font-tusker text-[2.5rem] text-[#ffffff]">
+        <div className="z-[200] flex flex-col items-center gap-y-4 font-tusker">
+          <DotLottieReact
+            src="https://lottie.host/1ec34d07-86b0-4b73-a4f3-87048b85e8e0/afqLS8MlAd.lottie"
+            className="w-[15rem]"
+            loop
+            autoplay
+          />
+          <img
+            src="/assets/Loader/flame-hold.svg"
+            className="relative top-[-2rem] h-[5rem]"
+            alt="flame"
+          />
+          <span>{progress}%</span>
+        </div>
       </div>
-    </motion.div>
+      <div className="overlay z-2 fixed flex h-[100vh] w-[100vw]">
+        {Array(20)
+          .fill(0)
+          .map((_, i) => (
+            <div key={i} className="bar h-[105vh] w-[5vw] bg-[#1a1a1a]"></div>
+          ))}
+      </div>
+    </div>
   );
 };
 
