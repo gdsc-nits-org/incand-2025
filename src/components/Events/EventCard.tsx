@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import styles from "~/styles/Events.module.css";
-import data from "../../public/data/events.json";
+import data from "../../../public/assets/Data/events.json";
 
 const AllEvents = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);

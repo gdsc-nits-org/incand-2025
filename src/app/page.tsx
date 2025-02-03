@@ -97,7 +97,7 @@ const HomePage = () => {
           <Navbar />
           <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
           <LandingProgressBar />
-          <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
+          <FadeInSection id="home" bgColor="bg-[#9747ff] min-h-screen xl:pt-16">
             <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
           </FadeInSection>
           <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">

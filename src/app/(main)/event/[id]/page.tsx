@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import allEvents from "../../../../../public/data/events.json";
+import allEvents from "../../../../../public/assets/Data/events.json";
 
 export const runtime = "edge";
 export default function Page({ params }: { params: { id: string } }) {
