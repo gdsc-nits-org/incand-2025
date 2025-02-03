@@ -90,10 +90,10 @@ const EventCard = ({
       <div
         className={`z-10 flex h-full w-full flex-col justify-between overflow-hidden p-4 pt-2 4k:p-8 4k:pt-4 ${isHovered ? "translate-x-1 translate-y-1 opacity-0" : ""} transition-all duration-300 ease-linear`}
       >
-        <h1 className="text-start text-2xl font-bold uppercase text-white 4k:text-6xl">
+        <h1 className="text-start text-xl font-bold uppercase text-white 4k:text-6xl">
           {moduleName}
         </h1>
-        <div className="text-stroke-black flex items-center justify-between gap-2 text-2xl font-[900] uppercase drop-shadow-[3px_3px_0px_black] mobile3:text-3xl 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]">
+        <div className="text-stroke-black flex items-center justify-between gap-2 text-lg font-[900] uppercase drop-shadow-[3px_3px_0px_black] mobile3:text-3xl 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]">
           <h1 className="" style={{ color: bgColor }}>
             {header}
           </h1>

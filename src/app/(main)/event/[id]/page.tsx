@@ -37,7 +37,7 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
           <div className="flex h-fit w-full flex-grow flex-col gap-4 overflow-hidden bg-event-pattern bg-cover bg-center p-4 pt-10 ipadair:h-full ipadair:max-w-[70%] ipadair:flex-grow ipadair:gap-10 ipadair:p-20 4k:h-full 4k:p-[8rem] 4k:py-[10rem]">
             <h1
-              className="flex w-full items-center justify-between px-4 text-4xl uppercase mobile3:text-6xl ipadair:h-20 ipadair:text-6xl 4k:text-[14rem]"
+              className="flex w-full items-center justify-between px-4 text-3xl uppercase mobile3:text-6xl ipadair:h-20 ipadair:text-6xl 4k:text-[14rem]"
               style={{ color: textColors[(id - 1) % 6] }}
             >
               <span className="drop-shadow-[4px_4px_0px_black]">
