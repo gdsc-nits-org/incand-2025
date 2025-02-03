@@ -182,10 +182,10 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               </p>
             </div>
             <p
-              className={`w-[80vw] text-[5vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-[1.5vw] md:leading-[2vw]`}
+              className={`w-[80vw] text-[4vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Register in various events to get a letter from the word
+              Jump into the game by signing up! No signup, no play, so don&apos;t miss out!
             </p>
             <div className={`relative left-[-0.5vw] hidden w-[17vw] md:block`}>
               <Image
@@ -233,11 +233,10 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               </p>
             </div>
             <p
-              className={`w-[82vw] text-[5vw] font-extrabold leading-[6vw] md:w-[21vw] md:text-center md:text-[1.5vw] md:leading-[2vw]`}
+              className={`w-[82vw] text-[4vw] font-extrabold leading-[6vw] md:w-[21vw] md:text-center md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Share with your friends or request them to collect all six letters
-              of the fest!
+              Upload a cool pic & let the admin give it a thumbs-up! Once approved, you&apos;ll receive a mystery letter!
             </p>
           </div>
           {/* Step 02 */}
@@ -269,17 +268,81 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               </p>
             </div>
             <p
-              className={`w-[80vw] text-[5vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-end md:text-[1.5vw] md:leading-[2vw]`}
+              className={`w-[80vw] text-[4vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-end md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Win exciting gifts and be on the winning dashboard
+                  Collect all the correct letters, win amazing prizes, and enjoy the ultimate letter hunt adventure. Are you ready to play?
             </p>
           </div>
           {/* Step 03 */}
         </div>
       </section>
       {/* Rules Section */}
-
+      <div
+        id="uploadContainer"
+        className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] md:mt-[-2vw] md:flex-row md:rounded-t-[2vw] md:border-[0.75vw]`}
+      >
+        <div
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+        ></div>
+        <div className={`flex`}>
+          <p
+            className={`relative w-[42.5vw] text-[15.25vw] leading-[18.5vw] tracking-wider text-black md:text-[6.25vw] md:leading-[7.5vw]`}
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            UPL<span className={`text-[#E1067B]`}>O</span>AD<br></br>Y
+            <span className={`text-[#E1067B]`}>O</span>UR SH
+            <span className={`text-[#E1067B]`}>O</span>TS!
+          </p>
+          <svg
+            className={`me-[-15vw] ms-[5vw] w-[45vw] rotate-90 md:me-0 md:ms-0 md:w-[16vw] md:rotate-0`}
+            viewBox="0 0 323 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.666667 15C0.666667 22.3638 6.6362 28.3333 14 28.3333C21.3638 28.3333 27.3333 22.3638 27.3333 15C27.3333 7.6362 21.3638 1.66667 14 1.66667C6.6362 1.66667 0.666667 7.6362 0.666667 15ZM322.018 15L297.018 0.566243V29.4338L322.018 15ZM14 17.5H299.518V12.5H14V17.5Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setUploadPopup(true);
+          }}
+          className={`relative my-[8vw] ms-[3vw] rounded-[15vw] border-[0.6vw] border-black bg-[#F8DB59] px-[1.5vw] py-[1vw] shadow-[0px_1.2vw_0px_#E1067B] transition-all duration-200 hover:scale-[1.1] md:my-0 md:rounded-[3vw] md:border-[0.3vw] md:px-[1vw] md:py-[0.5vw] md:shadow-[0px_0.4vw_0px_#E1067B]`}
+        >
+          <div
+            className={`flex items-center justify-center gap-[4vw] md:gap-[2vw]`}
+          >
+            <svg
+              className={`w-[13.7vw] md:w-[4.7vw]`}
+              viewBox="0 0 93 94"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                width="92.6897"
+                height="92.6897"
+                rx="46.3448"
+                transform="matrix(1 0 0 -1 0.310547 93.5518)"
+                fill="black"
+              />
+              <path
+                d="M71.7567 50.5526C74.3314 49.0661 74.3314 45.3498 71.7567 43.8633L36.9981 23.7954C34.4234 22.3089 31.205 24.167 31.205 27.14V67.2758C31.205 70.2489 34.4234 72.107 36.9981 70.6205L71.7567 50.5526Z"
+                fill="#EEFCFE"
+              />
+            </svg>
+            <p
+              className={`hover me-[4vw] text-[6.135vw] text-black transition-all duration-200 md:me-[2vw] md:text-[2.135vw]`}
+              style={{ fontFamily: "Mochiy Pop P One" }}
+            >
+              UPLOAD
+            </p>
+          </div>
+        </button>
+      </div>
       {/* Collections Section */}
       <div
         className={`relative mt-[-5vw] flex h-[70vw] overflow-x-hidden rounded-t-[4vw] border-[1.5vw] border-black bg-[#001E30] md:mt-[-2vw] md:h-[50vw] md:rounded-t-[2vw] md:border-[0.75vw]`}
@@ -918,7 +981,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         </div>
       )}
 
-      <div
+      {/* <div
         id="uploadContainer"
         className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] md:mt-[-2vw] md:flex-row md:rounded-t-[2vw] md:border-[0.75vw]`}
       >
@@ -982,7 +1045,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
             </p>
           </div>
         </button>
-      </div>
+      </div> */}
 
       <div
         className={`relative mt-[-5vw] flex items-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#001E30] py-[8vw] md:mt-[-2vw] md:rounded-t-[2vw] md:border-[0.75vw] md:py-0`}
