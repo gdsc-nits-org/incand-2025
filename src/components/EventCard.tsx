@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import styles from "~/styles/Events.module.css";
+import data from "../../public/data/events.json";
 
 const AllEvents = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -33,11 +34,11 @@ const AllEvents = () => {
         " flex h-full w-full flex-wrap items-center justify-around gap-2 overflow-x-scroll scroll-smooth px-2 ipadair:mt-0 ipadair:flex-nowrap ipadair:gap-4 ipadair:pl-8 4k:gap-16"
       }
     >
-      {data.map((item, key) => (
+      {data.map((event, key) => (
         <EventCard
           key={key}
-          {...item}
-          id={key + 1}
+          {...event}
+          id={+event.id}
           bgColor={colors[key % 6] ?? "#FFC0F9"}
           className="w-[calc(50%-8px)] md:w-[calc(50%-16px)] ipadpro:w-auto"
         />
@@ -48,18 +49,18 @@ const AllEvents = () => {
 
 const EventCard = ({
   moduleName,
-  eventName,
-  eventNo,
+  header,
   bgColor,
   id,
   className,
+  thumbnail,
 }: {
-  moduleName: string;
-  eventName: string;
-  eventNo: number;
+  moduleName?: string;
+  header: string;
   bgColor: string;
   id: number;
   className?: string;
+  thumbnail?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
@@ -94,14 +95,14 @@ const EventCard = ({
         </h1>
         <div className="text-stroke-black flex items-center justify-between gap-2 text-2xl font-[900] uppercase drop-shadow-[3px_3px_0px_black] mobile3:text-3xl 4k:text-6xl 4k:drop-shadow-[6px_6px_0px_black]">
           <h1 className="" style={{ color: bgColor }}>
-            {eventName}
+            {header}
           </h1>
-          <p className="text-white">{eventNo < 10 ? `0${eventNo}` : eventNo}</p>
+          <p className="text-white">{id < 10 ? `0${id}` : id}</p>
         </div>
       </div>
       <Image
-        className={`transistion-all absolute h-[80%] w-[80%] duration-300 ease-linear hover:opacity-20 ${isHovered ? "opacity-20" : "opacity-100"}`}
-        src="/assets/events/statue.png"
+        className={`transistion-all absolute h-full w-full rounded-lg duration-300 ease-linear hover:opacity-20 ${isHovered ? "opacity-20" : "opacity-100"}`}
+        src={thumbnail ?? "/assets/eventse.pn/statug"}
         width={200}
         height={200}
         alt="statue"
@@ -120,55 +121,55 @@ const colors = [
   "#86CAFF",
 ];
 
-const data = [
-  {
-    moduleName: "Lorem",
-    eventName: "Ipsum",
-    eventNo: 1,
-  },
-  {
-    moduleName: "Dolor",
-    eventName: "Sit",
-    eventNo: 2,
-  },
-  {
-    moduleName: "Amet",
-    eventName: "Consectetur",
-    eventNo: 3,
-  },
-  {
-    moduleName: "Adipiscing",
-    eventName: "Elit",
-    eventNo: 4,
-  },
-  {
-    moduleName: "Sed",
-    eventName: "Do",
-    eventNo: 5,
-  },
-  {
-    moduleName: "Eiusmod",
-    eventName: "Tempor",
-    eventNo: 6,
-  },
-  {
-    moduleName: "Incididunt",
-    eventName: "Labore",
-    eventNo: 7,
-  },
-  {
-    moduleName: "Et",
-    eventName: "Dolore",
-    eventNo: 8,
-  },
-  {
-    moduleName: "Magna",
-    eventName: "Aliqua",
-    eventNo: 9,
-  },
-  {
-    moduleName: "Ut",
-    eventName: "Enim",
-    eventNo: 10,
-  },
-];
+// const data = [
+//   {
+//     moduleName: "Lorem",
+//     eventName: "Ipsum",
+//     eventNo: 1,
+//   },
+//   {
+//     moduleName: "Dolor",
+//     eventName: "Sit",
+//     eventNo: 2,
+//   },
+//   {
+//     moduleName: "Amet",
+//     eventName: "Consectetur",
+//     eventNo: 3,
+//   },
+//   {
+//     moduleName: "Adipiscing",
+//     eventName: "Elit",
+//     eventNo: 4,
+//   },
+//   {
+//     moduleName: "Sed",
+//     eventName: "Do",
+//     eventNo: 5,
+//   },
+//   {
+//     moduleName: "Eiusmod",
+//     eventName: "Tempor",
+//     eventNo: 6,
+//   },
+//   {
+//     moduleName: "Incididunt",
+//     eventName: "Labore",
+//     eventNo: 7,
+//   },
+//   {
+//     moduleName: "Et",
+//     eventName: "Dolore",
+//     eventNo: 8,
+//   },
+//   {
+//     moduleName: "Magna",
+//     eventName: "Aliqua",
+//     eventNo: 9,
+//   },
+//   {
+//     moduleName: "Ut",
+//     eventName: "Enim",
+//     eventNo: 10,
+//   },
+// ];

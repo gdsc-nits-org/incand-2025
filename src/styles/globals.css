@@ -120,6 +120,7 @@ body::-webkit-scrollbar {
   border: 2px solid palevioletred;
   padding: 16px;
   animation: neon-glow-blue 2s infinite alternate;
+  text-align: center;
 }
 .toast-theme-red {
   background-color: #1b1f23;
@@ -127,7 +128,9 @@ body::-webkit-scrollbar {
   border: 2px solid #ff4040;
   padding: 16px;
   animation: neon-red-glow 2s infinite alternate;
-}.text-shadow {
+  text-align: center;
+}
+.text-shadow {
   text-shadow: 5px 5px 1px rgba(0, 0, 0,1); /* Adjust values for the shadow effect */
 }
 @layer utilities {

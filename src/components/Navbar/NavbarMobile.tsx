@@ -4,15 +4,15 @@ import { use, useEffect, useState } from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import Login from "../GoogleAuth";
+import { usePathname } from "next/navigation";
+import path from "path";
 
 const NavbarMobile = () => {
-  const [currentLink, setCurrentLink] = useState("");
+  const pathname = usePathname();
   useEffect(() => {
-    const link = window.location.pathname + window.location.hash;
-    setCurrentLink(link);
     updateColor();
     handleScroll();
-  }, [window.location.pathname, window.location.hash]);
+  }, [pathname]);
   const [navColor, setNavColor] = useState(navColors.home);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,7 +21,7 @@ const NavbarMobile = () => {
     const documentHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight;
     const percentage = (scrollY / (documentHeight - windowHeight)) * 100;
-    if (currentLink === "/" || currentLink === "/#home") {
+    if (pathname === "/" || pathname === "/#home") {
       if (percentage < 17) {
         setNavColor(navColors.home);
       } else if (percentage < 38) {
@@ -37,10 +37,22 @@ const NavbarMobile = () => {
   };
 
   const updateColor = () => {
-    setTimeout(() => {}, 1000);
-    setNavColor(linkColors.get(currentLink) ?? "#F1D22B");
+    setTimeout(() => {
+      // idk
+    }, 1000);
+    setNavColor(linkColors.get(pathname) ?? "#F1D22B");
   };
-  useEffect(updateColor, [currentLink]);
+  useEffect(() => {
+    if (pathname.startsWith("/event/")) {
+      const eventId = pathname.split("/")[2] as unknown as number;
+      setNavColor(
+        eventPageNavColors[(eventId - 1) % eventPageNavColors.length] ??
+          "#F1D22B",
+      );
+    } else {
+      setNavColor(linkColors.get(pathname) ?? "#F1D22B");
+    }
+  }, [pathname]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -87,12 +99,7 @@ const NavbarMobile = () => {
         className={`flex w-screen flex-col items-center justify-start gap-10 py-10 ${isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"} overflow-scroll transition-all delay-100 duration-300 ease-linear`}
       >
         <div
-          className={`ease-linaer relative mb-2 mt-2 flex scale-100 items-center rounded-lg bg-white shadow-md transition-transform duration-300 hover:-translate-x-2 hover:-translate-y-2 hover:scale-110`}
-          style={{
-            width: "125px",
-            height: "40px",
-            boxShadow: "4px 4px 0px black",
-          }}
+          className={`ease-linaer flex h-auto min-h-10 w-auto min-w-32 scale-100 items-center rounded-lg bg-white shadow-[8px_8px_0px_black] transition-transform duration-300 hover:-translate-x-2 hover:-translate-y-2 hover:scale-110`}
         >
           <Login />
         </div>
@@ -104,7 +111,6 @@ const NavbarMobile = () => {
                 setTimeout(() => {
                   setIsMenuOpen(false);
                 }, 300);
-                setCurrentLink(data.link);
               }}
               key={data.title}
             >
@@ -115,7 +121,7 @@ const NavbarMobile = () => {
                 bgColor={data.bgColor}
                 bigTextColor={data.bigTextColor}
                 smallTextColor={data.smallTextColor}
-                active={data.link === currentLink}
+                active={data.link === pathname}
               />
             </Link>
           );
@@ -233,6 +239,15 @@ const linkColors = new Map<string, string>([
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
 ]);
+
+const eventPageNavColors = [
+  "#8CF9FC",
+  "#ABA8FF",
+  "#8BF965",
+  "#FFA4F6",
+  "#F6E659",
+  "#54B4FF",
+];
 
 const NavTab = (data: NavDetailsProps) => {
   return (

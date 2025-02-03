@@ -127,30 +127,21 @@ const Login = () => {
   } else {
     return (
       <button
+        className="flex h-full w-full items-center justify-center rounded-lg p-[1px]"
         onClick={() => {
           router.push("/Dashboard");
         }}
       >
-        <div
-          className="absolute ml-0.5 mt-[-7] h-9 w-9 overflow-hidden rounded-l-lg"
-          style={{ backgroundColor: "#FF676B" }}
-        >
-          {_user.photoURL && (
-            <Image
-              className="ml-1 mt-1.5"
-              src={_user.photoURL}
-              height={25}
-              width={25}
-              alt="avatar"
-            />
-          )}
-        </div>
-        <span
-          className="ml-10 font-oxygen text-sm font-semibold ipadair:text-[0.5vw]"
-          style={{
-            color: "#562828",
-          }}
-        >
+        {_user.photoURL && (
+          <Image
+            className="h-10 w-10 rounded-bl-lg rounded-tl-lg bg-[#FF676B] p-1 4k:h-20 4k:w-20"
+            src={_user.photoURL}
+            height={25}
+            width={25}
+            alt="avatar"
+          />
+        )}
+        <span className="w-auto text-nowrap px-4 font-oxygen text-sm font-semibold text-[#562828] ipadair:text-[0.8rem] 4k:text-2xl">
           @{_user.displayName}
         </span>
       </button>

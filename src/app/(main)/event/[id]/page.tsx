@@ -1,20 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "~/styles/Events.module.css";
-const TOTAL_EVENT = 30;
-const data = {
-  eventNo: 1,
-  eventName: "Costopia",
-  eventDesc:
-    "Espremiere is your platform to unleash your inner storyteller. Whether you're a seasoned performer or a budding talent, we welcome you to bring your unique voice and vision to life. From poignant social commentary to hilarious satire, from heartwarming tales to thrilling mysteries, Espremier is where your monologue takes center stage.",
-  eventDate: "19.02",
-  eventPhoto: "/assets/events/event-pic.png",
-};
+
+import allEvents from "../../../../../public/data/events.json";
 
 export const runtime = "edge";
-
 export default function Page({ params }: { params: { id: string } }) {
   const id = +params.id;
+  const TOTAL_EVENT = allEvents.length;
+  const data = allEvents[id - 1];
   return (
     <section
       className="flex h-auto min-h-screen w-screen flex-col items-center justify-center bg-[#FFEDFD] p-6 pt-[80px] font-tusker ipadair:p-10 ipadair:pt-[7.5rem] 4k:p-20 4k:pt-[10rem]"
@@ -32,7 +25,11 @@ export default function Page({ params }: { params: { id: string } }) {
           >
             <Image
               className="h-full w-full"
-              src={data.eventPhoto}
+              src={
+                data?.imgUrls[0] ??
+                data?.thumbnail ??
+                "/assets/events/default.jpg"
+              }
               height={320}
               width={240}
               alt="event-pic"
@@ -44,14 +41,14 @@ export default function Page({ params }: { params: { id: string } }) {
               style={{ color: textColors[(id - 1) % 6] }}
             >
               <span className="drop-shadow-[4px_4px_0px_black]">
-                {data.eventName}
+                {data?.header}
               </span>
               <span className="drop-shadow-[4px_4px_0px_black]">
-                {data.eventNo < 10 ? "0" + data.eventNo : data.eventNo}
+                {data?.id.length === 1 ? "0" + data?.id : data?.id}
               </span>
             </h1>
             <p className="text-wrap font-tusker2 text-sm leading-8 tracking-wider mobile3:text-2xl mobile3:leading-10 ipadair:text-3xl ipadair:leading-[3rem] ipadair:tracking-wider 4k:mt-[5rem] 4k:text-8xl 4k:leading-[8rem]">
-              {data.eventDesc}
+              {data?.text}
             </p>
           </div>
         </div>
@@ -79,7 +76,7 @@ export default function Page({ params }: { params: { id: string } }) {
               alt="fire-svg"
             ></Image>
             <h2 className="mb-2 hidden font-tusker2 font-bold uppercase tracking-widest text-white drop-shadow-[4px_4px_0px_black] tablet:block tablet:text-3xl ipadair:text-5xl 4k:text-6xl">
-              {data.eventName}
+              {data?.header}
             </h2>
             <Image
               className="hidden h-16 w-16 ipadair:block 4k:h-24 4k:w-24"
@@ -97,7 +94,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 alt="stars"
               ></Image>
               <span className="rounded-[50%] bg-black px-4 py-2 text-sm text-[#FFD23C] ipadair:px-8 ipadair:py-4 ipadair:text-2xl 4k:px-12 4k:py-8 4k:text-6xl">
-                {data.eventDate}
+                {/* {data.eventDate} */}
               </span>
               <Image
                 className="h-4 w-6 scale-x-[-1] mobile3:h-[20%] mobile3:w-[20%] 4k:w-32"

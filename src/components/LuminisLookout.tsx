@@ -255,11 +255,7 @@ const LuminisLookout = () => {
               className={`${butsty.container} mt-[30vh] translate-x-[26vw] translate-y-6 scale-[1.2] mobile3:scale-100`}
               style={{ zIndex: 4 }}
             >
-              <a
-                href="/game"
-                rel="noreferrer"
-                className={butsty.button}
-              >
+              <a href="/game" rel="noreferrer" className={butsty.button}>
                 <div className={butsty.button__content}>
                   <span
                     className={`${butsty.button__text} font-neue-haas-grotesk`}
@@ -439,14 +435,10 @@ const LuminisLookout = () => {
               />
             </div>
             <div
-              className={`${butsty.container} bg-black mt-[29.5vh] translate-x-[10.5vw] scale-[1.2] mobile3:scale-100`}
+              className={`${butsty.container} mt-[29.5vh] translate-x-[10.5vw] scale-[1.2] bg-black mobile3:scale-100`}
               style={{ zIndex: 4 }}
             >
-              <a
-                href="/game"
-                rel="noreferrer"
-                className={butsty.button}
-              >
+              <a href="/game" rel="noreferrer" className={butsty.button}>
                 <div className={butsty.button__content}>
                   <span
                     className={`${butsty.button__text} font-neue-haas-grotesk`}
@@ -515,7 +507,11 @@ const LuminisLookout = () => {
       )}
       {isIpad && (
         <>
-          <div className={"min-h-[100vh] bg-[#422FD1] overflow-hidden " + styles.lumin}>
+          <div
+            className={
+              "min-h-[100vh] overflow-hidden bg-[#422FD1] " + styles.lumin
+            }
+          >
             <div className="absolute left-[0%] top-[0%] h-[100vh] w-[100vw]">
               <Image
                 src="/assets/Luminis/maze.png"
@@ -628,11 +624,7 @@ const LuminisLookout = () => {
               className={`${butsty.container} mt-[26vh] translate-x-[19vw] scale-[1.2] mobile3:scale-100`}
               style={{ zIndex: 4 }}
             >
-              <a
-                href="/game"
-                rel="noreferrer"
-                className={butsty.button}
-              >
+              <a href="/game" rel="noreferrer" className={butsty.button}>
                 <div className={butsty.button__content}>
                   <span
                     className={`${butsty.button__text} font-neue-haas-grotesk`}

@@ -39,7 +39,7 @@ const CarpeDiem = () => {
   }
 
   return (
-    <>
+    <section className="relative h-screen max-h-screen overflow-hidden bg-[#EE79BD] pt-20 4k:pt-40">
       {isLap && (
         <>
           <div className={styles.carped + ""}>
@@ -1099,7 +1099,7 @@ const CarpeDiem = () => {
           </div>
         </>
       )}
-    </>
+    </section>
   );
 };
 

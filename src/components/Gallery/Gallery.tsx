@@ -169,7 +169,7 @@ const PhotoGallery = () => {
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="absolute top-2 z-[100] translate-x-[-50%] scale-75 text-nowrap rounded-full bg-white px-4 py-2 font-tusker text-sm font-bold shadow-md transition-all duration-500 hover:opacity-80 tablet:top-10 tablet:scale-100 ipadair:top-20 4k:top-10"
+            className="absolute top-2 z-[100] translate-x-[-50%] scale-75 text-nowrap rounded-full bg-white px-4 py-2 font-tusker text-sm font-bold shadow-md transition-all duration-500 hover:opacity-80 tablet:top-12 tablet:scale-100 ipadair:top-20 4k:top-10"
             style={{ color: bgColor }}
           >
             VIEW ALL

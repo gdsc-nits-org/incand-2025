@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Login from "../GoogleAuth";
 import { usePathname } from "next/navigation";
+import { set } from "zod";
 
 const NavbarDesktop = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -21,11 +22,13 @@ const NavbarDesktop = () => {
     }
     if (pathname === "/game") {
       setTextColor("#FFFFFF");
+    } else {
+      setTextColor("#000000");
     }
     setTimeout(() => {
       setIsLoaded(false);
-    }, 2000);
-  }, []);
+    }, 2300);
+  }, [pathname]);
 
   useEffect(() => {
     if (pathname === "/gallery") {
@@ -42,7 +45,9 @@ const NavbarDesktop = () => {
     }
   }, [pathname]);
   const updateColor = () => {
-    setTimeout(() => {}, 1000);
+    setTimeout(() => {
+      // idk
+    }, 1000);
     setCurrentColor(linkColors.get(pathname) ?? "#F1D22B");
   };
 
@@ -98,6 +103,7 @@ const NavbarDesktop = () => {
 
   return (
     <nav
+      key={pathname}
       className={`fixed z-[10000] flex min-w-[100vw] items-center justify-between px-6 py-4 4k:h-[10rem] 4k:px-8 4k:py-10 ${
         isWhite ? "border-b-4 border-[#FFA6F6]" : ""
       }`}
@@ -122,7 +128,10 @@ const NavbarDesktop = () => {
           <div className="-mb-2 flex items-center md:gap-10 lg:gap-20 4k:gap-40">
             {NavDetails.map((item, index) => (
               <Link
-                onClick={updateColor}
+                onClick={() => {
+                  setIsLoaded(true);
+                  updateColor();
+                }}
                 key={index}
                 href={item.link}
                 className="group font-semibold text-black transition-all duration-200 hover:text-white"
@@ -203,18 +212,7 @@ const NavbarDesktop = () => {
       <div className="mr-5 flex items-center">
         {isClient && (
           <div
-            className={`ease-linaer relative mb-2 mt-2 flex items-center rounded-lg bg-white shadow-md transition-transform duration-300 ${
-              isHovered
-                ? "-translate-x-2 -translate-y-2 scale-110"
-                : "scale-100"
-            }`}
-            style={{
-              width: "125px",
-              height: "40px",
-              boxShadow: "4px 4px 0px black",
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className={`flex h-auto min-h-10 w-auto min-w-32 scale-100 items-center rounded-lg bg-white shadow-[4px_4px_0px_black] transition-transform duration-300 hover:-translate-x-2 hover:-translate-y-2 hover:scale-110`}
           >
             <Login />
           </div>
