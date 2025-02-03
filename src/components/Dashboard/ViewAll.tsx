@@ -177,7 +177,7 @@ const PhotosStatus = () => {
               <UserDashboard />
             ) : (
               <div
-                className={`flex flex-col items-center 4k:mt-[15rem] 4k:scale-[2.5] ${userSubmissions.length === 0 && "w-[80rem]"} justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}
+                className={`flex flex-col items-center 4k:mt-[15rem] 4k:scale-[2.5] ${userSubmissions.length === 0 && "w-[80rem]"} w-[80rem] justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}
               >
                 <div
                   className="font-tusker2 text-[2.3rem] tracking-widest text-white"
@@ -862,7 +862,7 @@ const PhotosStatus = () => {
               <UserDashboard />
             ) : (
               <div
-                className={`flex ${userSubmissions.length === 0 && "w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem]"} scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}
+                className={`flex ${userSubmissions.length === 0 && "w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem]"}w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem] scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}
               >
                 <div
                   className="font-tusker2 text-[2.3rem] tracking-widest text-white"
