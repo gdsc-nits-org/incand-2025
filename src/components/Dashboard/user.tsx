@@ -179,7 +179,7 @@ const UserDashboard = () => {
     <>
       {isLap && (
         <>
-          <div className="min-h-screen pt-20 w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] pt-20 md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -583,7 +583,7 @@ const UserDashboard = () => {
       )}
       {isAir && (
         <>
-          <div className="min-h-screen pt-16 w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] pt-16 md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -777,7 +777,7 @@ const UserDashboard = () => {
       )}
       {isIpad && (
         <>
-          <div className="min-h-screen pt-16 w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] pt-16 md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
