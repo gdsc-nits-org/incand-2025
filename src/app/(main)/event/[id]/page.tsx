@@ -115,7 +115,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </span>
           </div>
           <Link
-            href={`/event/${Math.min(TOTAL_EVENT, id + 1)}`}
+            href={`/event/${id!==19?Math.min(TOTAL_EVENT, id + 1):1}`}
             className="flex h-full w-[30%] items-center justify-center gap-2 bg-[#FF93EE] px-2 ipadair:w-[20%]"
           >
             <p className="text-[.5rem] text-[#FFDE70] drop-shadow-[3px_3px_0px_black] mobile1:text-sm mobile3:text-xl ipadair:text-3xl 4k:text-6xl">
