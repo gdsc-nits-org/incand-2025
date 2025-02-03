@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import Login from "../GoogleAuth";
 import { usePathname } from "next/navigation";
 
-
 const NavbarDesktop = () => {
   const [isWhite, setIsWhite] = useState(false);
   const [isClient, setIsClient] = useState(false);

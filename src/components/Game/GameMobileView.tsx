@@ -185,7 +185,8 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`w-[80vw] text-[5vw] font-extrabold leading-[6vw] ipadair:w-[15vw] ipadair:text-[1.5vw] ipadair:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Jump into the game by signing up! No signup, no play, so don&apos;t miss out!
+              Jump into the game by signing up! No signup, no play, so
+              don&apos;t miss out!
             </p>
             <div
               className={`relative left-[-0.5vw] hidden w-[17vw] ipadair:block`}
@@ -238,7 +239,8 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`w-[82vw] text-[5vw] font-extrabold leading-[6vw] ipadair:w-[21vw] ipadair:text-center ipadair:text-[1.5vw] ipadair:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Upload a cool pic & let the admin give it a thumbs-up! Once approved, you&apos;ll receive a mystery letter!
+              Upload a cool pic & let the admin give it a thumbs-up! Once
+              approved, you&apos;ll receive a mystery letter!
             </p>
           </div>
           {/* Step 02 */}
@@ -273,7 +275,8 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`w-[80vw] text-[5vw] font-extrabold leading-[6vw] ipadair:w-[15vw] ipadair:text-end ipadair:text-[1.5vw] ipadair:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Collect all the correct letters, win amazing prizes, and enjoy the ultimate letter hunt adventure. Are you ready to play?
+              Collect all the correct letters, win amazing prizes, and enjoy the
+              ultimate letter hunt adventure. Are you ready to play?
             </p>
           </div>
           {/* Step 03 */}
