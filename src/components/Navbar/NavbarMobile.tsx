@@ -61,7 +61,7 @@ const NavbarMobile = () => {
 
   return (
     <nav
-      className={`fixed top-0 ${isMenuOpen ? "h-screen w-screen bg-[#121212] bg-maze-pattern" : "h-[76px] tablet:h-[100px]"} z-[10000] transition-all delay-100 duration-500 ease-linear ipadair:hidden`}
+      className={`fixed top-0 overflow-y-auto ${isMenuOpen ? "h-screen w-screen bg-[#121212] bg-maze-pattern" : "h-[76px] tablet:h-[100px]"} z-[10000] transition-all delay-100 duration-500 ease-linear ipadair:hidden`}
     >
       <div
         className={`z-50 flex h-[76px] w-full items-center justify-between px-6 transition-colors duration-500 ease-linear tablet:h-[100px]`}
@@ -96,13 +96,15 @@ const NavbarMobile = () => {
         className={`${isMenuOpen ? "mx-6 border-2 border-[#CFCFCFEB]" : "border-4 border-[#00000018]"}`}
       />
       <div
-        className={`flex w-screen flex-col items-center justify-start gap-10 py-10 ${isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"} overflow-scroll transition-all delay-100 duration-300 ease-linear`}
+        className={`flex w-screen flex-col items-center justify-between gap-10 pt-10 ${isMenuOpen ? "h-full opacity-100" : "h-0 opacity-0"} overflow-scroll transition-all delay-100 duration-300 ease-linear`}
       >
+        {/* Login */}
         <div
           className={`ease-linaer flex h-auto min-h-10 w-auto min-w-32 scale-100 items-center rounded-lg bg-white shadow-[8px_8px_0px_black] transition-transform duration-300 hover:-translate-x-2 hover:-translate-y-2 hover:scale-110`}
         >
           <Login />
         </div>
+        {/* Tabs */}
         {NavDetails.map((data) => {
           return (
             <Link
@@ -126,8 +128,9 @@ const NavbarMobile = () => {
             </Link>
           );
         })}
+        {/* Marquee */}
         <div
-          className={`absolute bottom-0 w-full ${isMenuOpen ? "opacity-100" : "opacity-0"} transition-opacity duration-500 ease-linear`}
+          className={`w-full ${isMenuOpen ? "opacity-100" : "opacity-0"} transition-opacity duration-500 ease-linear`}
         >
           <Marquee speed={100} direction="left" gradientColor="transparent">
             <Image
@@ -260,7 +263,7 @@ const NavTab = (data: NavDetailsProps) => {
             }
           : { backgroundColor: data.bgColor }
       }
-      className={`z-50 flex h-fit w-[80vw] items-center justify-center pb-2 pt-2 ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-200 ease-linear`}
+      className={`z-50 flex h-fit w-[80vw] items-center justify-center py-4 pb-2 pt-2 tablet:py-8 tablet:text-xl ${data.active ? "" : "shadow-[4px_4px_0px_black]"} rounded-xl px-6 shadow-lg transition-all duration-200 ease-linear`}
     >
       <div
         className={`flex w-full flex-col ${data.active && ""} transition-all duration-200 ease-linear`}
