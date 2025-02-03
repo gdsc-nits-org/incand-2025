@@ -9,9 +9,50 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ children }) => {
   const [active, setActive] = useState(0);
   const count = React.Children.count(children);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Minimum swipe distance to trigger movement
+  const SWIPE_THRESHOLD = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touchX = e.touches[0]?.clientX;
+    if (touchX !== undefined) {
+      setTouchStart(touchX);
+      setTouchEnd(null);
+    }
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+    const touchX = e.touches[0]?.clientX;
+    if (touchX !== undefined) {
+      setTouchEnd(touchX);
+    }
+  };
+  
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+
+    if (Math.abs(distance) > SWIPE_THRESHOLD) {
+      if (distance > 0 && active < count - 1) {
+        setActive((i) => i + 1);
+      } else if (distance < 0 && active > 0) {
+        setActive((i) => i - 1);
+      }
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
 
   return (
-    <div className="relative flex h-[25rem] w-full flex-col items-center justify-center overflow-hidden">
+    <div
+      className="relative flex h-[25rem] w-full flex-col items-center justify-center overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Carousel Wrapper */}
       <div className="relative h-full w-full">
         {active > 0 && (

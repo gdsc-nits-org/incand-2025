@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { env } from "~/env";
-import UserDashboard from "../../../components/User_Dashboard/user";
-import AdminDashboard from "../../../components/Admin_Dasboard/admin";
+import UserDashboard from "../../../components/Dashboard/user";
+import AdminDashboard from "../../../components/Dashboard/admin";
 import { useAuthState } from "react-firebase-hooks/auth";
 import axios from "axios";
 import { auth } from "~/app/utils/firebase";
