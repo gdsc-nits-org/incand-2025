@@ -63,7 +63,7 @@ const TeamDesktop: React.FC = () => {
               setIsCore(true);
             }}
           > */}
-            {/* <div
+          {/* <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isCore ? "bg-[url('/assets/Team/Handle.png')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
@@ -99,7 +99,7 @@ const TeamDesktop: React.FC = () => {
               setIsModule(true);
             }}
           > */}
-            {/* <div
+          {/* <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isModule ? "bg-[url('/assets/Team/Handle.png')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p

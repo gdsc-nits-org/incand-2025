@@ -16,9 +16,14 @@ const TeamMobile: React.FC = () => {
   //     prevArrow: <PrevArrow />,
   //   };
   const techLead = teamDataTech.filter((member) => member.role === "techLead");
-  const techHead = teamDataTech.filter((member) => member.role === "webHead" ||  member.role === "UiHead");
+  const techHead = teamDataTech.filter(
+    (member) => member.role === "webHead" || member.role === "UiHead",
+  );
   const techCohead = teamDataTech.filter(
-    (member) => member.role === "webCohead" || member.role === "cloudCohead" || member.role === "uiuxCohead",
+    (member) =>
+      member.role === "webCohead" ||
+      member.role === "cloudCohead" ||
+      member.role === "uiuxCohead",
   );
 
   const developer = teamDataTech.filter(
