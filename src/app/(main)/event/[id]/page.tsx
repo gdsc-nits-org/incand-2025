@@ -37,7 +37,7 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
           <div className="flex h-fit w-full flex-grow flex-col gap-4 overflow-hidden bg-event-pattern bg-cover bg-center p-4 pt-10 ipadair:h-full ipadair:max-w-[70%] ipadair:flex-grow ipadair:gap-10 ipadair:p-20 4k:h-full 4k:p-[8rem] 4k:py-[10rem]">
             <h1
-              className="flex w-full items-center justify-between px-4 text-4xl uppercase mobile3:text-6xl ipadair:h-20 ipadair:text-8xl 4k:text-[14rem]"
+              className="flex w-full items-center justify-between px-4 text-4xl uppercase mobile3:text-6xl ipadair:h-20 ipadair:text-6xl 4k:text-[14rem]"
               style={{ color: textColors[(id - 1) % 6] }}
             >
               <span className="drop-shadow-[4px_4px_0px_black]">
@@ -47,7 +47,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 {data?.id.length === 1 ? "0" + data?.id : data?.id}
               </span>
             </h1>
-            <p className="text-wrap font-tusker2 text-sm leading-8 tracking-wider mobile3:text-2xl mobile3:leading-10 ipadair:text-3xl ipadair:leading-[3rem] ipadair:tracking-wider 4k:mt-[5rem] 4k:text-8xl 4k:leading-[8rem]">
+            <p className="text-wrap font-tusker2 text-sm leading-8 tracking-wider mobile3:text-2xl mobile3:leading-10 ipadair:text-2xl ipadair:leading-[3rem] ipadair:tracking-wider 4k:mt-[5rem] 4k:text-8xl 4k:leading-[8rem]">
               {data?.text}
             </p>
           </div>

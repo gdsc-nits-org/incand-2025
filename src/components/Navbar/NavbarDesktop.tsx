@@ -6,10 +6,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Login from "../GoogleAuth";
 import { usePathname } from "next/navigation";
-import { set } from "zod";
+
 
 const NavbarDesktop = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const [isWhite, setIsWhite] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const [isLoaded, setIsLoaded] = useState(true);
