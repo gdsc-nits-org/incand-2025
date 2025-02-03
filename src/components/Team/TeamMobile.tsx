@@ -1,5 +1,5 @@
 import TeamCard from "./TeamCard";
-// import teamDataCore from "./Core.json"; 
+// import teamDataCore from "./Core.json";
 import teamDataTech from "../../../public/assets/Data/Tech.json";
 // import teamDataModule from "./Modules.json";
 import React from "react";
