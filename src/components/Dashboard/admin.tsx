@@ -203,7 +203,7 @@ const AdminDashboard = () => {
     <>
       {isLap && (
         <>
-          <div className="min-h-screen overflow-hidden bg-blue-100 p-8">
+          <div className="min-h-screen pt-20 overflow-hidden bg-[#FFC14D] p-8">
             <header className="mb-10 text-center">
               <h1 className="font-rocket text-[4rem] text-[#FAE00D]">
                 {" "}
@@ -276,7 +276,7 @@ const AdminDashboard = () => {
       )}
       {isPhone && (
         <>
-          <div className="min-h-screen scale-[1] bg-blue-100 p-8">
+          <div className="min-h-screen  scale-[1] bg-[#FFC14D] p-8">
             <header className="mb-10 text-center">
               <h1 className="flex items-center justify-center text-center font-rocket text-[4rem] text-[#FAE00D] mobile:scale-[0.8] mobile2:scale-[1]">
                 <span className="text-shadow">ADMIN DASHBOARD</span>
@@ -348,7 +348,7 @@ const AdminDashboard = () => {
       )}
       {isAir && (
         <>
-          <div className="min-h-screen bg-blue-100 p-8">
+          <div className="min-h-screen pt-16 bg-[#FFC14D] p-8">
             <header className="mb-10 text-center">
               <h1 className="flex items-center justify-center font-rocket text-[4rem] text-[#FAE00D]">
                 {" "}
@@ -421,7 +421,7 @@ const AdminDashboard = () => {
       )}
       {isIpad && (
         <>
-          <div className="min-h-screen bg-blue-100 p-8">
+          <div className="min-h-screen pt-16 bg-[#FFC14D] p-8">
             <header className="mb-10 text-center">
               <h1 className="font-rocket text-[4rem] text-[#FAE00D]">
                 {" "}

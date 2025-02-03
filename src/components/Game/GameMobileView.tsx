@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import styles from "~/styles/Game.module.css";
+import Link from "next/link";
 
 interface GameMobileViewProps {
   level: number;
@@ -184,7 +185,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`w-[80vw] text-[5vw] font-extrabold leading-[6vw] ipadair:w-[15vw] ipadair:text-[1.5vw] ipadair:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Register in various events to get a letter from the word
+              Jump into the game by signing up! No signup, no play, so don&apos;t miss out!
             </p>
             <div
               className={`relative left-[-0.5vw] hidden w-[17vw] ipadair:block`}
@@ -237,8 +238,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`w-[82vw] text-[5vw] font-extrabold leading-[6vw] ipadair:w-[21vw] ipadair:text-center ipadair:text-[1.5vw] ipadair:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Share with your friends or request them to collect all six letters
-              of the fest!
+              Upload a cool pic & let the admin give it a thumbs-up! Once approved, you&apos;ll receive a mystery letter!
             </p>
           </div>
           {/* Step 02 */}
@@ -273,13 +273,78 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`w-[80vw] text-[5vw] font-extrabold leading-[6vw] ipadair:w-[15vw] ipadair:text-end ipadair:text-[1.5vw] ipadair:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Win exciting gifts and be on the winning dashboard
+              Collect all the correct letters, win amazing prizes, and enjoy the ultimate letter hunt adventure. Are you ready to play?
             </p>
           </div>
           {/* Step 03 */}
         </div>
       </section>
       {/* Rules Section */}
+      <div
+        id="uploadContainer"
+        className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] ipadair:mt-[-2vw] ipadair:flex-row ipadair:rounded-t-[2vw] ipadair:border-[0.75vw]`}
+      >
+        <div
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+        ></div>
+        <div className={`flex`}>
+          <p
+            className={`relative w-[42.5vw] text-[15.25vw] leading-[18.5vw] tracking-wider text-black ipadair:text-[6.25vw] ipadair:leading-[7.5vw]`}
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            UPL<span className={`text-[#E1067B]`}>O</span>AD<br></br>Y
+            <span className={`text-[#E1067B]`}>O</span>UR SH
+            <span className={`text-[#E1067B]`}>O</span>TS!
+          </p>
+          <svg
+            className={`me-[-15vw] ms-[5vw] w-[45vw] rotate-90 ipadair:me-0 ipadair:ms-0 ipadair:w-[16vw] ipadair:rotate-0`}
+            viewBox="0 0 323 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.666667 15C0.666667 22.3638 6.6362 28.3333 14 28.3333C21.3638 28.3333 27.3333 22.3638 27.3333 15C27.3333 7.6362 21.3638 1.66667 14 1.66667C6.6362 1.66667 0.666667 7.6362 0.666667 15ZM322.018 15L297.018 0.566243V29.4338L322.018 15ZM14 17.5H299.518V12.5H14V17.5Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            setUploadPopup(true);
+          }}
+          className={`relative my-[8vw] ms-[3vw] rounded-[15vw] border-[0.6vw] border-black bg-[#F8DB59] px-[1.5vw] py-[1vw] shadow-[0px_1.2vw_0px_#E1067B] transition-all duration-200 hover:scale-[1.1] ipadair:my-0 ipadair:rounded-[3vw] ipadair:border-[0.3vw] ipadair:px-[1vw] ipadair:py-[0.5vw] ipadair:shadow-[0px_0.4vw_0px_#E1067B]`}
+        >
+          <div
+            className={`flex items-center justify-center gap-[4vw] ipadair:gap-[2vw]`}
+          >
+            <svg
+              className={`w-[13.7vw] ipadair:w-[4.7vw]`}
+              viewBox="0 0 93 94"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                width="92.6897"
+                height="92.6897"
+                rx="46.3448"
+                transform="matrix(1 0 0 -1 0.310547 93.5518)"
+                fill="black"
+              />
+              <path
+                d="M71.7567 50.5526C74.3314 49.0661 74.3314 45.3498 71.7567 43.8633L36.9981 23.7954C34.4234 22.3089 31.205 24.167 31.205 27.14V67.2758C31.205 70.2489 34.4234 72.107 36.9981 70.6205L71.7567 50.5526Z"
+                fill="#EEFCFE"
+              />
+            </svg>
+            <p
+              className={`hover me-[4vw] text-[6.135vw] text-black transition-all duration-200 ipadair:me-[2vw] ipadair:text-[2.135vw]`}
+              style={{ fontFamily: "Mochiy Pop P One" }}
+            >
+              UPLOAD
+            </p>
+          </div>
+        </button>
+      </div>
 
       {/* Collections Section */}
       <div
@@ -921,7 +986,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         </div>
       )}
 
-      <div
+      {/* <div
         id="uploadContainer"
         className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] ipadair:mt-[-2vw] ipadair:flex-row ipadair:rounded-t-[2vw] ipadair:border-[0.75vw]`}
       >
@@ -985,7 +1050,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
             </p>
           </div>
         </button>
-      </div>
+      </div> */}
 
       <div
         className={`relative mt-[-5vw] flex items-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#001E30] py-[8vw] ipadair:mt-[-2vw] ipadair:rounded-t-[2vw] ipadair:border-[0.75vw] ipadair:py-0`}
@@ -1009,25 +1074,27 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         >
           Go to user dashboard
         </p>
-        <button
-          className={`me-[4vw] rounded-full bg-[#FAE00D] px-[0.5vw] py-[2.5vw] ipadair:me-[10vw] ipadair:py-[1.5vw]`}
-        >
-          <svg
-            className={`w-[13vw] ipadair:w-[7vw]`}
-            viewBox="0 0 136 96"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <Link href="/Dashboard">
+          <button
+            className={`me-[4vw] rounded-full bg-[#FAE00D] px-[0.5vw] py-[2.5vw] ipadair:me-[10vw] ipadair:py-[1.5vw]`}
           >
-            <path
-              d="M132.895 45.9987C134.35 46.9363 134.35 49.0637 132.895 50.0013L75.1708 87.2035C73.5864 88.2246 71.5 87.0871 71.5 85.2021V10.7979C71.5 8.9129 73.5864 7.77541 75.1708 8.79654L132.895 45.9987Z"
-              fill="black"
-            />
-            <path
-              d="M96.2347 45.8333C97.8724 46.7395 97.8724 49.0939 96.2347 50L28.5336 87.4586C26.9467 88.3366 25 87.1889 25 85.3753V10.4581C25 8.64447 26.9467 7.49673 28.5336 8.37476L96.2347 45.8333Z"
-              fill="black"
-            />
-          </svg>
-        </button>
+            <svg
+              className={`w-[13vw] ipadair:w-[7vw]`}
+              viewBox="0 0 136 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M132.895 45.9987C134.35 46.9363 134.35 49.0637 132.895 50.0013L75.1708 87.2035C73.5864 88.2246 71.5 87.0871 71.5 85.2021V10.7979C71.5 8.9129 73.5864 7.77541 75.1708 8.79654L132.895 45.9987Z"
+                fill="black"
+              />
+              <path
+                d="M96.2347 45.8333C97.8724 46.7395 97.8724 49.0939 96.2347 50L28.5336 87.4586C26.9467 88.3366 25 87.1889 25 85.3753V10.4581C25 8.64447 26.9467 7.49673 28.5336 8.37476L96.2347 45.8333Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+        </Link>
       </div>
     </div>
   );

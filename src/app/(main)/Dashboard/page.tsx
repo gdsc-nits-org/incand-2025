@@ -9,7 +9,7 @@ import axios from "axios";
 import { auth } from "~/app/utils/firebase";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import Loader from "../loading";
+import Loader from "../loading"
 
 export const runtime = "edge";
 

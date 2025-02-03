@@ -212,7 +212,7 @@ const NavDetails = [
     bgColor: "#3C0FD5",
     bigTextColor: "#180569",
     smallTextColor: "#180569",
-    desc: "Claim your keepsakes from the maze of memories",
+    desc: "Unveil keepstakes from the maze of memories",
   },
   {
     title: "Team",
@@ -220,7 +220,7 @@ const NavDetails = [
     bgColor: "#FC7566",
     bigTextColor: "#9b1203",
     smallTextColor: "#9b1203",
-    desc: "Claim your keepsakes from the maze of memories",
+    desc: "Meet the minds shaping the journey through the Labyrinth",
   },
 ];
 

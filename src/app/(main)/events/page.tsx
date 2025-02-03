@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Thundermerch from "~/components/Thundermerch";
-import AllEvents from "~/components/EventCard";
-import EventsEffect from "~/components/EventsEffect";
+import AllEvents from "~/components/Events/EventCard";
+import EventsEffect from "~/components/Events/EventsEffect";
 import Link from "next/link";
 const Page = () => {
   return (
