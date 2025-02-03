@@ -78,50 +78,49 @@ const HomePage = () => {
 
   return (
     <div>
-    { !loading && <LoadingScreen />  }
-    <div className="overflow-x-hidden bg-black ">
-    
-      <motion.main
-        initial={
-          loadingFinished
-            ? { opacity: 1, scale: 1 }
-            : { opacity: 0, scale: 0.95 }
-        }
-        animate={
-          loadingFinished
-            ? { opacity: 1, scale: 1,}
-            : { opacity: 0, scale: 0.95 }
-        }
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="container z-[1000]"
-      >
-        <Navbar />
-        <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
-        <LandingProgressBar />
-        <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
-          <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
-        </FadeInSection>
-        <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
-          <AboutUs />
-        </FadeInSection>
-        <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
-          <AboutNits />
-        </FadeInSection>
-        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68] h-fit">
-          <Sponsors />
-        </FadeInSection>
-
-        <FadeInSection id="merch" bgColor="bg-[#3C0FD5] min-h-screen">
-          <LuminisLookout />
-        </FadeInSection>
-        <FadeInSection
-          id="footer"
-          bgColor="bg-[#000000] h-fit ipadpro:min-h-screen"
+      {!loading && <LoadingScreen />}
+      <div className="overflow-x-hidden bg-black">
+        <motion.main
+          initial={
+            loadingFinished
+              ? { opacity: 1, scale: 1 }
+              : { opacity: 0, scale: 0.95 }
+          }
+          animate={
+            loadingFinished
+              ? { opacity: 1, scale: 1 }
+              : { opacity: 0, scale: 0.95 }
+          }
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="container z-[1000]"
         >
-          <Footer />
-        </FadeInSection>
-      </motion.main>
-    </div>
+          <Navbar />
+          <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
+          <LandingProgressBar />
+          <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
+            <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
+          </FadeInSection>
+          <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
+            <AboutUs />
+          </FadeInSection>
+          <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
+            <AboutNits />
+          </FadeInSection>
+          <FadeInSection id="sponsors" bgColor="bg-[#b7dc68] h-fit">
+            <Sponsors />
+          </FadeInSection>
+
+          <FadeInSection id="merch" bgColor="bg-[#3C0FD5] min-h-screen">
+            <LuminisLookout />
+          </FadeInSection>
+          <FadeInSection
+            id="footer"
+            bgColor="bg-[#000000] h-fit ipadpro:min-h-screen"
+          >
+            <Footer />
+          </FadeInSection>
+        </motion.main>
+      </div>
     </div>
   );
 };
