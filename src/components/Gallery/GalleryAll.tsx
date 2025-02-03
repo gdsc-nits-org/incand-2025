@@ -362,7 +362,7 @@ const GalleryAll: React.FC = () => {
       }}
     >
       <div
-        className={`relative z-[1000000] flex justify-center pb-5 4k:scale-[2.5]`}
+        className={`relative top-6 z-[100] my-6 flex scale-90 justify-center pb-5 transition-transform duration-300 ease-linear hover:scale-100 4k:scale-[2.5]`}
       >
         <Link
           href="gallery"

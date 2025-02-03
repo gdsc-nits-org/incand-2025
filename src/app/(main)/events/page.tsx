@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Thundermerch from "~/components/Thundermerch";
-import AllEvents from "~/components/EventCard";
-import EventsEffect from "~/components/EventsEffect";
+import AllEvents from "~/components/Events/EventCard";
+import EventsEffect from "~/components/Events/EventsEffect";
 import Link from "next/link";
 const Page = () => {
   return (
     <section
       id="event-page"
-      className="flex h-auto min-h-screen w-screen flex-col gap-4 bg-[#FFEDFD] pt-20 ipadair:h-screen ipadair:gap-0 4k:pt-40"
+      className="flex h-auto min-h-screen w-screen flex-col gap-4 bg-[#FFEDFD] pt-20 tablet:pt-24 ipadair:h-screen ipadair:gap-0 laptop:pt-20 4k:pt-40"
     >
-      <div className="flex h-[70%] w-full flex-col ipadair:flex-row laptop:-translate-y-8 4k:gap-12">
+      <div className="flex h-[70%] w-full flex-col ipadair:flex-row 4k:gap-12">
         <div className="h-[50%] px-4 ipadair:h-full ipadair:flex-grow ipadair:py-4 ipadair:pl-8 ipadair:pr-0 4k:rounded-[4rem] 4k:pl-16">
           <EventsEffect />
         </div>

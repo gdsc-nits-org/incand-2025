@@ -1,8 +1,8 @@
 "use client";
-
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import styles from "~/styles/Game.module.css";
+import Link from "next/link";
 
 interface GameTabViewProps {
   level: number;
@@ -54,7 +54,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
   });
 
   return (
-    <div>
+    <div className="pt-10">
       {/* Hero Section */}
       <section ref={heroRef}>
         <div className={`relative grid h-screen bg-black md:h-[46vw]`}>
@@ -1006,25 +1006,27 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         >
           Go to user dashboard
         </p>
-        <button
-          className={`me-[4vw] rounded-full bg-[#FAE00D] px-[0.5vw] py-[2.5vw] md:me-[10vw] md:py-[1.5vw]`}
-        >
-          <svg
-            className={`w-[13vw] md:w-[7vw]`}
-            viewBox="0 0 136 96"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <Link href="/Dashboard">
+          <button
+            className={`me-[4vw] rounded-full bg-[#FAE00D] px-[0.5vw] py-[2.5vw] md:me-[10vw] md:py-[1.5vw]`}
           >
-            <path
-              d="M132.895 45.9987C134.35 46.9363 134.35 49.0637 132.895 50.0013L75.1708 87.2035C73.5864 88.2246 71.5 87.0871 71.5 85.2021V10.7979C71.5 8.9129 73.5864 7.77541 75.1708 8.79654L132.895 45.9987Z"
-              fill="black"
-            />
-            <path
-              d="M96.2347 45.8333C97.8724 46.7395 97.8724 49.0939 96.2347 50L28.5336 87.4586C26.9467 88.3366 25 87.1889 25 85.3753V10.4581C25 8.64447 26.9467 7.49673 28.5336 8.37476L96.2347 45.8333Z"
-              fill="black"
-            />
-          </svg>
-        </button>
+            <svg
+              className={`w-[13vw] md:w-[7vw]`}
+              viewBox="0 0 136 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M132.895 45.9987C134.35 46.9363 134.35 49.0637 132.895 50.0013L75.1708 87.2035C73.5864 88.2246 71.5 87.0871 71.5 85.2021V10.7979C71.5 8.9129 73.5864 7.77541 75.1708 8.79654L132.895 45.9987Z"
+                fill="black"
+              />
+              <path
+                d="M96.2347 45.8333C97.8724 46.7395 97.8724 49.0939 96.2347 50L28.5336 87.4586C26.9467 88.3366 25 87.1889 25 85.3753V10.4581C25 8.64447 26.9467 7.49673 28.5336 8.37476L96.2347 45.8333Z"
+                fill="black"
+              />
+            </svg>{" "}
+          </button>
+        </Link>
       </div>
     </div>
   );

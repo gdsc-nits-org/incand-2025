@@ -6,6 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { z } from "zod";
 
 const PhotoGallery = () => {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -93,14 +94,15 @@ const PhotoGallery = () => {
   const mainContainer = useRef<HTMLElement>(null);
   mainContainer.current?.addEventListener("wheel", () => handleWheel);
   const off = "80";
+
   const dur = 0.6;
   const imageVariants = {
     enter: (dir: "down" | "up") =>
       isLoaded
         ? {
-            scaleX: isMobile ? 4 : isTablet ? 3.5 : 2.3,
-            scaleY: isMobile ? 4 : isTablet ? 3.5 : 2.3,
-            y: isMobile ? 75 : isTablet ? 30 : 150,
+            scaleX: isMobile ? 5 : isTablet ? 3.5 : 3,
+            scaleY: isMobile ? 5 : isTablet ? 3.5 : 2.3,
+            y: isMobile ? 75 : isTablet ? 30 : 30,
             transition: { delay: 0, duration: 0, ease: "easeIn" },
           }
         : dir === "down"
@@ -162,12 +164,12 @@ const PhotoGallery = () => {
       }}
     >
       <div
-        className={`absolute left-[50%] z-[1000000] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
+        className={`absolute left-[50%] z-[1000] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
       >
         {isButtonTopZIndex && (
           <Link
             href="/gallery_page"
-            className="z-[100000] rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
+            className="absolute top-2 z-[100] translate-x-[-50%] scale-75 text-nowrap rounded-full bg-white px-4 py-2 font-tusker text-sm font-bold shadow-md transition-all duration-500 hover:opacity-80 tablet:top-12 tablet:scale-100 ipadair:top-20 4k:top-10"
             style={{ color: bgColor }}
           >
             VIEW ALL
@@ -192,19 +194,7 @@ const PhotoGallery = () => {
           </button>
         </div>
       )}
-      <div
-        className={`absolute left-[50%] z-[60] translate-x-[-50%] mobile:top-24 md:top-8 md:scale-[1.5] laptop:top-4 laptop:scale-100 4k:top-16 4k:scale-[2.5]`}
-      >
-        {isButtonTopZIndex && (
-          <Link
-            href="gallery_page"
-            className="z-[100000] rounded-full bg-white px-6 py-3 font-tusker font-bold shadow-md transition-all duration-500 hover:opacity-80"
-            style={{ color: bgColor }}
-          >
-            VIEW ALL
-          </Link>
-        )}
-      </div>
+
       <div
         className={`absolute inset-0 z-0 transition-transform duration-1000 ease-out`}
         style={{
@@ -213,7 +203,7 @@ const PhotoGallery = () => {
           mixBlendMode: "multiply",
         }}
       ></div>
-      <div className="mt-4 flex h-screen w-screen flex-col items-center justify-center">
+      <div className="mt-4 flex h-screen w-screen flex-col items-center justify-center laptop:scale-[0.8] 4k:scale-100">
         <AnimatePresence custom={direction} mode="wait">
           (
           <motion.h1
@@ -223,6 +213,8 @@ const PhotoGallery = () => {
             className="relative font-tusker opacity-75 drop-shadow-xl mobile:top-[18vh] mobile:text-[6vh] tablet:top-[10vh] laptop:top-[9.5vh] laptop:text-[18vh]"
             style={{
               color: textcolors[currentIndex % textcolors.length],
+              visibility:
+                images[currentIndex]?.name1 === "" ? "hidden" : "visible",
             }}
             custom="left"
             variants={textVariants}
@@ -230,7 +222,9 @@ const PhotoGallery = () => {
             animate="center"
             exit="exit"
           >
-            {images[currentIndex]?.name1}
+            {images[currentIndex]?.name1 === ""
+              ? "EMPTY"
+              : images[currentIndex]?.name1}
           </motion.h1>
           <motion.div
             key={currentIndex}
@@ -334,9 +328,9 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/photo.png"
                 alt="Gallery"
-                className={`absolute scale-50 transition-transform duration-500 ease-in mobile:h-[4vh] mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] laptop:scale-90 ${
-                  !isLoaded ? "-translate-y-1" : "-translate-y-full"
-                } ${isAnimate.photo ? "scale-90" : "scale-50"}`}
+                className={`absolute scale-50 transition-transform duration-500 ease-in mobile:h-[8vh] mobile2:h-[6vh]  mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] laptop:scale-90 ${
+                  !isLoaded ? "-translate-y-3" : "-translate-y-full"
+                } ${isAnimate.photo ? "scale-90" : "scale-x-[.4]"}`}
               />
               <Image
                 width={400}
@@ -344,9 +338,9 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/gallery.png"
                 alt="Gallery"
-                className={`absolute scale-50 transition-transform delay-500 duration-500 ease-in tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto laptop:scale-90 ${
+                className={`absolute scale-50 transition-transform delay-500 duration-500 ease-in  mobile:h-[12vh]  mobile2:h-[11vh] tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto laptop:scale-90 ${
                   isMobile ? "h-[8vh] w-[30vw]" : "h-auto w-auto"
-                } ${!isLoaded ? "-translate-y-3" : "-translate-y-full"} ${isAnimate.gallery ? "scale-90" : "scale-50"} `}
+                } ${!isLoaded ? "-translate-y-3" : "-translate-y-full"} ${isAnimate.gallery ? "scale-90" : "scale-x-[.4]"} `}
               />
             </>
           )}

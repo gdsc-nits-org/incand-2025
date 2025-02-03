@@ -65,7 +65,8 @@
   font-weight: normal;
   font-style: normal;
 }
-html,body {
+html,
+body {
   scrollbar-width: none;
 }
 
