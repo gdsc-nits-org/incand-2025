@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
-import LoadingScreen from "~/components/Loader/loader";
+import LoadingScreen from "~/components/Loader";
 
 const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), {
   ssr: false,
@@ -19,7 +19,7 @@ const AboutNits = dynamic(() => import("~/components/AboutNits"), {
 import Footer from "../components/Footer/Footer";
 import Navbar from "~/components/Navbar/Navbar";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 const FadeInSection = ({
   children,
@@ -78,37 +78,38 @@ const HomePage = () => {
 
   return (
     <div>
-      {!loading && <LoadingScreen />}
-      <div className="overflow-x-hidden bg-black">
-        <motion.main
-          initial={
-            loadingFinished
-              ? { opacity: 1, scale: 1 }
-              : { opacity: 0, scale: 0.95 }
-          }
-          animate={
-            loadingFinished
-              ? { opacity: 1, scale: 1 }
-              : { opacity: 0, scale: 0.95 }
-          }
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="container z-[1000]"
-        >
-          <Navbar />
-          <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
-          <LandingProgressBar />
-          <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
-            <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
-          </FadeInSection>
-          <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
-            <AboutUs />
-          </FadeInSection>
-          <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
-            <AboutNits />
-          </FadeInSection>
-          <FadeInSection id="sponsors" bgColor="bg-[#b7dc68] h-fit">
-            <Sponsors />
-          </FadeInSection>
+    { !loading && <LoadingScreen />  }
+    <div className="overflow-x-hidden bg-black ">
+    
+      <motion.main
+        initial={
+          loadingFinished
+            ? { opacity: 1, scale: 1 }
+            : { opacity: 0, scale: 0.95 }
+        }
+        animate={
+          loadingFinished
+            ? { opacity: 1, scale: 1,}
+            : { opacity: 0, scale: 0.95 }
+        }
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="container z-[1000]"
+      >
+        <Navbar />
+        <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
+        <LandingProgressBar />
+        <FadeInSection id="home" bgColor="bg-[#9747ff] h-screen">
+          <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
+        </FadeInSection>
+        <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
+          <AboutUs />
+        </FadeInSection>
+        <FadeInSection id="about-nits" bgColor="bg-[#c4f8fc] h-screen">
+          <AboutNits />
+        </FadeInSection>
+        <FadeInSection id="sponsors" bgColor="bg-[#b7dc68] h-fit">
+          <Sponsors />
+        </FadeInSection>
 
           <FadeInSection id="merch" bgColor="bg-[#3C0FD5] min-h-screen">
             <LuminisLookout />

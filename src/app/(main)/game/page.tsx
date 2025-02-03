@@ -9,12 +9,32 @@ import { auth } from "~/app/utils/firebase";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "~/styles/Game.module.css";
-import Footer from "~/components/Footer/Footer";
 import GameTabView from "~/components/Game/GameTabView";
 import GameMobileView from "~/components/Game/GameMobileView";
+import { useRouter } from "next/navigation";
+
+
+interface UserResponse {
+  name: string;
+  email: string;
+  pic: string;
+  id: string;
+  letters: string;
+  level: number;
+  flag: Date;
+}
+interface apiResponse {
+  status: number;
+  msg: UserResponse;
+}
+
+interface leaderBoardApiResponse {
+  status: number;
+  msg: UserResponse[];
+}
 
 const Game = () => {
-  const [_user] = useAuthState(auth);
+  const [_user, loading] = useAuthState(auth);
   const [uploadPopup, setUploadPopup] = useState(false);
   const [imageSelected, setImageSelected] = useState(false);
   const [fileName, setFileName] = useState("");
@@ -26,25 +46,14 @@ const Game = () => {
   const [top10Players, setTop10Placers] = useState<
     { name: string; pic: string; letters: string; level: number; flag: Date }[]
   >([]);
+  const router = useRouter();
 
-  interface UserResponse {
-    name: string;
-    email: string;
-    pic: string;
-    id: string;
-    letters: string;
-    level: number;
-    flag: Date;
-  }
-  interface apiResponse {
-    status: number;
-    msg: UserResponse;
-  }
-
-  interface leaderBoardApiResponse {
-    status: number;
-    msg: UserResponse[];
-  }
+  useEffect(() => {
+    if (!loading && !_user) {
+      toast.warning("Please Login!");
+      router.push("/");
+    }
+  }, [_user, loading, router]);
 
   useEffect(() => {
     const checkViewport = () => {
