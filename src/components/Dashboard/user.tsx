@@ -179,7 +179,7 @@ const UserDashboard = () => {
     <>
       {isLap && (
         <>
-          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen pt-20 w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -359,7 +359,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
-                                  className="h-[100px] w-[100px] "
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}
@@ -561,7 +561,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
-                                  className="h-[100px] w-[100px] "
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}
@@ -583,7 +583,7 @@ const UserDashboard = () => {
       )}
       {isAir && (
         <>
-          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen pt-16 w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -755,7 +755,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
-                                  className="h-[100px] w-[100px] "
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}
@@ -777,7 +777,7 @@ const UserDashboard = () => {
       )}
       {isIpad && (
         <>
-          <div className="min-h-screen w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
+          <div className="min-h-screen pt-16 w-screen overflow-hidden bg-[#FFEBC8] md:w-screen lg:w-screen">
             <div className="relative flex items-center justify-center">
               <div className="relative mb-[0.5rem] mt-[0.2rem]">
                 {showPhotosStatus ? (
@@ -957,7 +957,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
-                                  className="h-[100px] w-[100px] "
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}

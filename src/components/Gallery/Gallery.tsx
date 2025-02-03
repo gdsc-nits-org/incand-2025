@@ -328,7 +328,7 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/photo.png"
                 alt="Gallery"
-                className={`absolute scale-50 transition-transform duration-500 ease-in mobile:h-[8vh] mobile2:h-[6vh]  mobile:w-[19vw] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] laptop:scale-90 ${
+                className={`absolute scale-50 transition-transform duration-500 ease-in mobile:h-[8vh] mobile:w-[19vw] mobile2:h-[6vh] tablet:h-[6vh] tablet:w-[20vw] laptop:h-[15vh] laptop:w-[17vw] laptop:scale-90 ${
                   !isLoaded ? "-translate-y-3" : "-translate-y-full"
                 } ${isAnimate.photo ? "scale-90" : "scale-x-[.4]"}`}
               />
@@ -338,7 +338,7 @@ const ImageCard = (image: ImageProps) => {
                 quality={100}
                 src="/assets/Gallery/gallery.png"
                 alt="Gallery"
-                className={`absolute scale-50 transition-transform delay-500 duration-500 ease-in  mobile:h-[12vh]  mobile2:h-[11vh] tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto laptop:scale-90 ${
+                className={`absolute scale-50 transition-transform delay-500 duration-500 ease-in mobile:h-[12vh] mobile2:h-[11vh] tablet:h-[10.5vh] tablet:w-[32vw] laptop:h-auto laptop:scale-90 ${
                   isMobile ? "h-[8vh] w-[30vw]" : "h-auto w-auto"
                 } ${!isLoaded ? "-translate-y-3" : "-translate-y-full"} ${isAnimate.gallery ? "scale-90" : "scale-x-[.4]"} `}
               />

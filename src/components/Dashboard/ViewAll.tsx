@@ -403,10 +403,10 @@ const PhotosStatus = () => {
               <UserDashboard />
             ) : (
               <div
-                className={`flex scale-[1] ${userSubmissions.length === 0 && "scale-[0.9] pt-[5rem]"} flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}
+                className={`flex scale-[1] ${userSubmissions.length === 0 && "scale-[0.9] pt-[5rem]"}  flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}
               >
                 <div
-                  className="font-tusker2 text-[2.8rem] tracking-widest text-white"
+                  className="font-tusker2 pt-[3rem] text-[2.8rem] tracking-widest text-white"
                   style={{
                     textShadow:
                       "-2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black, 2px 2px 0px black",
@@ -421,7 +421,7 @@ const PhotosStatus = () => {
                       height="73"
                       viewBox="0 0 72 73"
                       onClick={handleViewAllClick}
-                      className={`absolute right-[2rem] top-[7rem] ${userSubmissions.length === 0 && "mt-[5rem]"} h-[2.5rem]`}
+                      className={`absolute right-[2rem] top-[7rem] ${userSubmissions.length === 0 && "mt-[5rem]"} mt-[2.5rem] h-[2.5rem]`}
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -633,7 +633,7 @@ const PhotosStatus = () => {
               <UserDashboard />
             ) : (
               <div
-                className={` ${userSubmissions.length === 0 && "mobile2:pt-[5rem] tablet:pt-0"} flex flex-col items-center justify-center rounded-[18px] pl-[3rem] pr-[3rem]`}
+                className={` ${userSubmissions.length === 0 && "mobile2:pt-[5rem] tablet:pt-0"} flex flex-col items-center justify-center rounded-[18px] pt-[2rem] pl-[3rem] pr-[3rem]`}
               >
                 <div
                   className="font-tusker2 text-[2.8rem] tracking-widest text-white"
@@ -650,7 +650,7 @@ const PhotosStatus = () => {
                       width="72"
                       height="73"
                       viewBox="0 0 72 73"
-                      className={`absolute ${userSubmissions.length === 0 && "mobile2:mt-[10rem] mobile2:pl-[2rem] tablet:mt-0 tablet:pl-[0rem]"} right-[4rem] top-[2.5rem] h-[2.5rem]`}
+                      className={`absolute ${userSubmissions.length === 0 && "mobile2:mt-[10rem] mobile2:pl-[2rem] tablet:mt-0 tablet:pl-[0rem]"} right-[4rem] mt-[2rem] top-[2.5rem] h-[2.5rem]`}
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -862,7 +862,7 @@ const PhotosStatus = () => {
               <UserDashboard />
             ) : (
               <div
-                className={`flex ${userSubmissions.length === 0 && "w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem]"}w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem] scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem]`}
+                className={`flex ${userSubmissions.length === 0 && "w-[78rem] tablet2:w-[70rem] ipadpro:w-[78rem]"}w-[78rem] scale-[0.79] flex-col items-center justify-center rounded-[18px] border-2 border-black bg-[#EFC453] pl-[3rem] pr-[3rem] tablet2:w-[70rem] ipadpro:w-[78rem]`}
               >
                 <div
                   className="font-tusker2 text-[2.3rem] tracking-widest text-white"
