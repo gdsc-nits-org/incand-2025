@@ -1,7 +1,7 @@
 import TeamCard from "./TeamCard";
-import teamDataCore from "./Core.json"; // Assuming the team data is stored here
-import teamDataTech from "./Tech.json";
-import teamDataModule from "./Modules.json";
+// import teamDataCore from "./Core.json"; 
+import teamDataTech from "../../../public/assets/Data/Tech.json";
+// import teamDataModule from "./Modules.json";
 import React from "react";
 import Carousel from "./Carousel";
 

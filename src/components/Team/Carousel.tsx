@@ -57,7 +57,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
       <div className="relative h-full w-full">
         {active > 0 && (
           <button
-            className="absolute left-12 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 mobile2:left-16"
+            className="absolute left-8 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 mobile2:left-16"
             onClick={() => setActive((i) => i - 1)}
           >
             <img
@@ -87,7 +87,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
         ))}
         {active < count - 1 && (
           <button
-            className="absolute right-12 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 mobile2:right-16"
+            className="absolute right-8 top-1/2 z-10 -translate-y-1/2 transform cursor-pointer rounded-full bg-transparent p-2 text-3xl text-yellow-400 mobile2:right-16"
             onClick={() => setActive((i) => i + 1)}
           >
             <img

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import TeamCard from "./TeamCard";
 // import teamDataCore from "./Core.json"; // Assuming the team data is stored here
-import teamDataTech from "./Tech.json";
+import teamDataTech from "../../../public/assets/Data/Tech.json";
 // import teamDataModule from "./Modules.json";
 const TeamDesktop: React.FC = () => {
   const techLead = teamDataTech.filter((member) => member.role === "techLead");
