@@ -62,7 +62,7 @@ const AboutUs2 = () => {
                 className={`relative w-[100%] scale-[.90] text-center font-tusker2 text-[22px] leading-[2.4rem] tracking-normal mobile3:scale-[.80] sm:text-[34px] sm:leading-[3.2rem] md:text-[30px] md:leading-[3.3rem] ipadpro:-translate-y-20 ipadpro:text-[1rem] lg:text-[38px] lg:leading-[3.8rem] xl:-translate-y-8 xl:text-[30px] xl:leading-[3.5rem] xl:tracking-wide`}
               >
                 One of the most premiere institutions in the country,
-                <span className={`${styles.incandText}`}>NITS</span>
+                <span className={`${styles.incandText} -translate-y-11 -translate-x-5 scale-[.80] mobile3:scale-100`}>NITS</span>
                 <br /> is not just a place which shelters some of the best
                 engineers of the future,
                 <Image
