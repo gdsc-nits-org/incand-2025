@@ -22,14 +22,14 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
       setTouchEnd(null);
     }
   };
-
+  
   const handleTouchMove = (e: React.TouchEvent) => {
     const touchX = e.touches[0]?.clientX;
     if (touchX !== undefined) {
       setTouchEnd(touchX);
     }
   };
-
+  
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;

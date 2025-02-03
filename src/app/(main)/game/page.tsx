@@ -13,6 +13,7 @@ import GameTabView from "~/components/Game/GameTabView";
 import GameMobileView from "~/components/Game/GameMobileView";
 import { useRouter } from "next/navigation";
 
+
 interface UserResponse {
   name: string;
   email: string;
