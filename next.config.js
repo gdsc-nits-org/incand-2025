@@ -10,6 +10,7 @@ const config = {
     domains: [
       "incand25-nits.s3.ap-south-1.amazonaws.com",
       "lh3.googleusercontent.com",
+      "res.cloudinary.com",
     ], // Add the hostname here
   },
 };

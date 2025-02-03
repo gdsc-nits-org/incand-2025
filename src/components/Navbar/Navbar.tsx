@@ -2,30 +2,21 @@
 import { useEffect, useState } from "react";
 import NavbarMobile from "./NavbarMobile";
 import NavbarDesktop from "./NavbarDesktop";
+import { useMediaQuery } from "usehooks-ts";
 
 const Navbar = () => {
-  const [isClient, setIsClient] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const bigScreen = useMediaQuery("(min-width: 1025px)");
 
-  // Ensures the code runs only on the client side
   useEffect(() => {
-    setIsClient(true);
-    setIsMobile(window.innerWidth < 768);
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    setIsMounted(true);
   }, []);
 
-  if (!isClient) {
+  if (!isMounted) {
     return null;
   }
 
-  return <>{isMobile ? <NavbarMobile /> : <NavbarDesktop />}</>;
+  return <>{bigScreen ? <NavbarDesktop /> : <NavbarMobile />}</>;
 };
 
 export default Navbar;
