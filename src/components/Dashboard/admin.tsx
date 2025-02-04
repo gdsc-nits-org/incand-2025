@@ -191,8 +191,10 @@ const AdminDashboard = () => {
       );
       if (reject) {
         toast.success("Submission Rejected Successfully!!");
-        window.location.reload();
-        window.scrollTo(0, 0);
+        setTimeout(() => {
+          window.location.reload();
+          window.scrollTo(0, 0);
+        }, 1000); 
       }
     } catch (err) {
       console.error("Error in rejecting submission,", err);
