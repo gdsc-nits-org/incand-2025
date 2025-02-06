@@ -1,16 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import Navbar from "~/components/Navbar/Navbar";
-import Footer from "~/components/Footer/Footer";
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+
+const LazyLoadedPage = dynamic(() => import("../../components/LazyLoading"), { ssr: false });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isGalleryPage = pathname.startsWith("/gallery");
+
   return (
     <div>
       <Navbar />
-      {children}
-      {/* <Footer /> */}
+      {isGalleryPage ? children : <LazyLoadedPage>{children}</LazyLoadedPage>}
     </div>
   );
 }

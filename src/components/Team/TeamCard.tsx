@@ -158,7 +158,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           <a href={fb} target="_blank" rel="noreferrer">
             <img
               className="h-6 w-6"
-              src="/assets/Team/newFacebook.png"
+              src="/assets/Team/newFacebook.webp"
               alt="facebook"
             />
           </a>
@@ -169,13 +169,13 @@ const TeamCard: React.FC<TeamCardProps> = ({
             {ind % 2 === 0 ? (
               <img
                 className="h-6 w-6"
-                src="/assets/Team/blueLinedin.png"
+                src="/assets/Team/blueLinedin.webp"
                 alt="linkedin"
               />
             ) : (
               <img
                 className="h-6 w-6"
-                src="/assets/Team/orangeLinkedin.png"
+                src="/assets/Team/orangeLinkedin.webp"
                 alt="linkedin"
               />
             )}
@@ -185,7 +185,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           <a href={git} target="_blank" rel="noreferrer">
             <img
               className="h-6 w-6"
-              src="/assets/Team/newGithub.png"
+              src="/assets/Team/newGithub.webp"
               alt="github"
             />
           </a>

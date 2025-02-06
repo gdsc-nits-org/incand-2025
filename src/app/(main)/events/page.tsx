@@ -3,6 +3,9 @@ import Thundermerch from "~/components/Thundermerch";
 import AllEvents from "~/components/Events/EventCard";
 import EventsEffect from "~/components/Events/EventsEffect";
 import Link from "next/link";
+
+export const runtime = "edge"
+
 const Page = () => {
   return (
     <section

@@ -13,6 +13,8 @@ import GameTabView from "~/components/Game/GameTabView";
 import GameMobileView from "~/components/Game/GameMobileView";
 import Login from "~/components/GoogleAuth";
 
+export const runtime = "edge";
+
 interface UserResponse {
   name: string;
   email: string;

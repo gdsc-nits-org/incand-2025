@@ -62,7 +62,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
             {" "}
           </div>
           <div
-            className={`absolute h-full w-screen bg-[url('/assets/landing/maze.png')] bg-cover bg-center bg-no-repeat ipadair:inset-0 ipadair:bg-contain`}
+            className={`absolute h-full w-screen bg-[url('/assets/landing/maze.webp')] bg-cover bg-center bg-no-repeat ipadair:inset-0 ipadair:bg-contain`}
           ></div>
 
           <div
@@ -70,7 +70,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           >
             <Image
               className={`object-contain`}
-              src="/assets/Game/logo.png"
+              src="/assets/Game/logo.webp"
               fill
               alt="logo"
             />
@@ -119,7 +119,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           className={`relative mt-[-5vw] flex h-[180vw] items-center justify-center rounded-t-[4vw] bg-[#FFC2F9] ipadair:mt-[-2vw] ipadair:h-[50vw] ipadair:rounded-t-[2vw]`}
         >
           <div
-            className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+            className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.webp')] bg-cover bg-center bg-no-repeat`}
           ></div>
           <div
             className={`absolute right-0 top-[8vw] hidden w-[95%] ipadair:block`}
@@ -141,7 +141,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           >
             <Image
               alt="rulePath"
-              src="/assets/Game/rule_path_mobile.png"
+              src="/assets/Game/rule_path_mobile.webp"
               layout="responsive"
               width={100}
               height={100}
@@ -192,7 +192,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`relative left-[-0.5vw] hidden w-[17vw] ipadair:block`}
             >
               <Image
-                src="/assets/Game/icon_rules.png"
+                src="/assets/Game/icon_rules.webp"
                 layout="responsive"
                 width={100}
                 height={100}
@@ -288,7 +288,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] ipadair:mt-[-2vw] ipadair:flex-row ipadair:rounded-t-[2vw] ipadair:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.webp')] bg-cover bg-center bg-no-repeat`}
         ></div>
         <div className={`flex`}>
           <p
@@ -354,7 +354,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         className={`relative mt-[-5vw] flex h-[70vw] overflow-x-hidden rounded-t-[4vw] border-[1.5vw] border-black bg-[#001E30] ipadair:mt-[-2vw] ipadair:h-[50vw] ipadair:rounded-t-[2vw] ipadair:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/Game/maze_white.png')] bg-cover bg-center bg-no-repeat`}
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white.webp')] bg-cover bg-center bg-no-repeat`}
         ></div>
         <svg
           className={`ms-[-10vw] w-[90vw] self-start ipadair:w-[50vw]`}
@@ -602,7 +602,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         className={`relative mt-[-5vw] flex h-[110vw] items-center justify-center rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] ipadair:mt-[-2vw] ipadair:h-[60vw] ipadair:rounded-t-[2vw] ipadair:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/landing/maze.png')] bg-cover bg-center bg-no-repeat opacity-40`}
+          className={`absolute inset-0 bg-[url('/assets/landing/maze.webp')] bg-cover bg-center bg-no-repeat opacity-40`}
         ></div>
         <p
           className={`absolute left-[6vw] top-[2vw] text-[13vw] leading-[15vw] tracking-widest ipadair:left-[3vw] ipadair:top-[1vw] ipadair:text-[9vw] ipadair:leading-[10vw]`}
@@ -616,7 +616,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         >
           <Image
             className="animate-spinSlow"
-            src="/assets/Game/logo_two.png"
+            src="/assets/Game/logo_two.webp"
             layout="responsive"
             width={100}
             height={100}
@@ -626,7 +626,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         </div>
         <div className={`absolute bottom-0 hidden w-[95%] ipadair:block`}>
           <Image
-            src="/assets/Game/leaderboard_ladder.png"
+            src="/assets/Game/leaderboard_ladder.webp"
             layout="responsive"
             width={100}
             height={100}
@@ -636,7 +636,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         </div>
         <div className={`absolute bottom-0 block w-[90%] ipadair:hidden`}>
           <Image
-            src="/assets/Game/leaderboard_ladder_mobile.png"
+            src="/assets/Game/leaderboard_ladder_mobile.webp"
             layout="responsive"
             width={100}
             height={100}
@@ -651,7 +651,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           <div className={`h-[10.5vw] w-[10.5vw] rotate-[17deg]`}>
             <Image
               className={`rounded-[0.5vw] object-cover`}
-              src={top10Players[2]?.pic ?? "/assets/Game/placeholder.png"}
+              src={top10Players[2]?.pic ?? "/assets/Game/placeholder.webp"}
               layout="responsive"
               width={100}
               height={100}
@@ -718,7 +718,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           >
             <Image
               className={`rounded-[0.5vw] object-cover`}
-              src={top10Players[1]?.pic ?? "/assets/Game/placeholder.png"}
+              src={top10Players[1]?.pic ?? "/assets/Game/placeholder.webp"}
               layout="responsive"
               width={100}
               height={100}
@@ -802,7 +802,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           >
             <Image
               className={`rounded-[0.5vw] object-cover`}
-              src={top10Players[0]?.pic ?? "/assets/Game/placeholder.png"}
+              src={top10Players[0]?.pic ?? "/assets/Game/placeholder.webp"}
               layout="responsive"
               width={100}
               height={100}
@@ -811,7 +811,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           </div>
           <div className={`w-[21vw] ipadair:w-[10.5vw]`}>
             <Image
-              src="/assets/Game/brutalist_svg.png"
+              src="/assets/Game/brutalist_svg.webp"
               layout="responsive"
               width={100}
               height={100}
@@ -847,7 +847,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           className={`relative mt-[-5.1vw] flex flex-col items-center justify-center gap-[4vw] overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-gradient-to-b from-[#001E30] to-[#001E30] py-[12vw] ipadair:mt-[-3.1vw] ipadair:gap-[2vw] ipadair:rounded-t-[2vw] ipadair:border-[0.75vw] ipadair:py-[6vw]`}
         >
           <div
-            className={`absolute inset-0 bg-[url('/assets/Game/maze_white.png')] bg-cover bg-center bg-no-repeat`}
+            className={`absolute inset-0 bg-[url('/assets/Game/maze_white.webp')] bg-cover bg-center bg-no-repeat`}
           ></div>
           {top10Players
             .slice(leaderboardStartsFrom - 1)
@@ -994,7 +994,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
         className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] ipadair:mt-[-2vw] ipadair:flex-row ipadair:rounded-t-[2vw] ipadair:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.webp')] bg-cover bg-center bg-no-repeat`}
         ></div>
         <div className={`flex`}>
           <p
@@ -1060,7 +1060,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
       >
         <div className={`relative w-[35vw] ipadair:w-[20vw]`}>
           <Image
-            src="/assets/Game/brutalist_three.png"
+            src="/assets/Game/brutalist_three.webp"
             layout="responsive"
             width={100}
             height={100}
