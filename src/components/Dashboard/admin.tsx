@@ -194,7 +194,7 @@ const AdminDashboard = () => {
         setTimeout(() => {
           window.location.reload();
           window.scrollTo(0, 0);
-        }, 1000); 
+        }, 1000);
       }
     } catch (err) {
       console.error("Error in rejecting submission,", err);
