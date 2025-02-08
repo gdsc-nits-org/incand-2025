@@ -66,8 +66,8 @@ const ApprovedPhotos = () => {
             <div className=" flex flex-wrap gap-10 w-[100%] xl:w-[90%] h-[fit] items-center justify-center xl:justify-between bg-white rounded-lg border-[6px] border-black p-8">
                 {
                     data.slice(0, 4).map((item, idx) => (
-                        <div key={idx}>
-                            <Card photo={item.photo} User={item.User} scale={75} />
+                        <div key={idx} className="scale-110 scale-x-125 lg:scale-100 lg:scale-x-100">
+                            <Card photo={item.photo} User={item.User}/>
                         </div>
                     ))
                 }

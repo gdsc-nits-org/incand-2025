@@ -241,6 +241,7 @@ const linkColors = new Map<string, string>([
   ["/CarpeDiem", "#00A3FF"],
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
+  ["/game/gallery", "#ffffff"],
 ]);
 
 const eventPageNavColors = [

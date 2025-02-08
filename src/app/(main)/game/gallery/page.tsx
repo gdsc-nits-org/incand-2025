@@ -11,6 +11,7 @@ interface luminisLookoutData {
     };
 }
 
+export const runtime = "edge";
 const Gallery = () => {
     const searchParams = useSearchParams();
     const dataString = searchParams.get("data");
@@ -27,7 +28,7 @@ const Gallery = () => {
         router.push(`/game`);
     };
     return (
-        <div className="relative flex flex-col items-center justify-center text-[#ffffff] gap-10 pt-32 p-10 bg-[#4D81F1] bg-no-repeat bg-fixed bg-[url('/assets/events/backgroundImg2.png')]">
+        <div className="relative flex flex-col items-center justify-center text-[#ffffff] min-h-[100vh] gap-10 pt-32 p-10 bg-[#4D81F1] bg-repeat  bg-contain bg-[url('/assets/events/backgroundImg2.png')]">
             <div className=" flex flex-col xl:flex-row-reverse items-center gap-10 justify-between w-[90%]">
                 <div className="relative w-full">
                     {/* Shadow Effect */}
@@ -54,10 +55,10 @@ const Gallery = () => {
                 </div>
 
             </div>
-            <div className="flex flex-wrap gap-6 w-full items-center justify-center p-4 xl:justify-between">
+            <div className="flex flex-wrap gap-6 xl:gap-16 w-full items-center justify-center p-4 xl:justify-center">
                 {data.map((item, idx) => (
                     <div key={idx}>
-                        <Card photo={item.photo} User={item.User} scale={50} />
+                        <Card photo={item.photo} User={item.User}/>
                     </div>
                 ))}
             </div>
