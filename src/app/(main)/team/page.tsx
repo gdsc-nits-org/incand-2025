@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import TeamMobile from "../../../components/Team/TeamMobile";
 import TeamDesktop from "../../../components/Team/TeamDesktop";
+
 export const runtime = "edge";
 
 const Team = () => {

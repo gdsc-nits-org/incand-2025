@@ -37,7 +37,7 @@ const TeamMobile: React.FC = () => {
         msOverflowStyle: "none" /* For Internet Explorer and Edge */,
         overflowY: "scroll",
         WebkitOverflowScrolling: "touch" /* For smooth scrolling */,
-        backgroundImage: `url('/assets/Team/Team.png')` /* Replace with your image path */,
+        backgroundImage: `url('/assets/Team/Team.webp')` /* Replace with your image path */,
         backgroundPosition: "bottom" /* Aligns the image to the bottom */,
         backgroundSize:
           "100% 40%" /* Sets the image width to 100% and height to 30% */,
@@ -65,7 +65,7 @@ const TeamMobile: React.FC = () => {
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
           ></div>
           <p
             className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
@@ -103,7 +103,7 @@ const TeamMobile: React.FC = () => {
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
           ></div>
           <p
             className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
@@ -141,7 +141,7 @@ const TeamMobile: React.FC = () => {
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
           ></div>
           <p
             className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
@@ -179,7 +179,7 @@ const TeamMobile: React.FC = () => {
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
           ></div>
           <p
             className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
@@ -216,7 +216,7 @@ const TeamMobile: React.FC = () => {
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
           ></div>
           <p
             className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
@@ -254,7 +254,7 @@ const TeamMobile: React.FC = () => {
           className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
         >
           <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.png')] bg-cover`}
+            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
           ></div>
           <p
             className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}

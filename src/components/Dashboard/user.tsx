@@ -359,6 +359,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}
@@ -560,6 +561,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}
@@ -753,6 +755,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}
@@ -954,6 +957,7 @@ const UserDashboard = () => {
                                   width={100}
                                   height={100}
                                   draggable={false}
+                                  className="h-[100px] w-[100px]"
                                 />
                                 <p
                                   className={`mt-2 font-bold ${card.status === "VERIFIED" ? "text-green-700" : "text-red-700"}`}

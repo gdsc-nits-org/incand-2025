@@ -61,7 +61,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
             onClick={() => setActive((i) => i - 1)}
           >
             <img
-              src="/assets/Team/leftArrow.png"
+              src="/assets/Team/leftArrow.webp"
               className="h-[100%] w-[100%] opacity-90"
               alt="Meet Our Team"
             />
@@ -91,7 +91,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
             onClick={() => setActive((i) => i + 1)}
           >
             <img
-              src="/assets/Team/rightArrow.png"
+              src="/assets/Team/rightArrow.webp"
               className="h-[100%] w-[100%] opacity-90"
               alt="Meet Our Team"
             />
