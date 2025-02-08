@@ -185,7 +185,8 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               className={`w-[80vw] text-[4vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Jump into the game by signing up! No signup, no play, so don&apos;t miss out!
+              Jump into the game by signing up! No signup, no play, so
+              don&apos;t miss out!
             </p>
             <div className={`relative left-[-0.5vw] hidden w-[17vw] md:block`}>
               <Image
@@ -236,7 +237,8 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               className={`w-[82vw] text-[4vw] font-extrabold leading-[6vw] md:w-[21vw] md:text-center md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Upload a cool pic & let the admin give it a thumbs-up! Once approved, you&apos;ll receive a mystery letter!
+              Upload a cool pic & let the admin give it a thumbs-up! Once
+              approved, you&apos;ll receive a mystery letter!
             </p>
           </div>
           {/* Step 02 */}
@@ -271,7 +273,8 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               className={`w-[80vw] text-[4vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-end md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-                  Collect all the correct letters, win amazing prizes, and enjoy the ultimate letter hunt adventure. Are you ready to play?
+              Collect all the correct letters, win amazing prizes, and enjoy the
+              ultimate letter hunt adventure. Are you ready to play?
             </p>
           </div>
           {/* Step 03 */}
