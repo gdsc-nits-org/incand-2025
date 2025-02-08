@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import styles from "~/styles/Game.module.css";
 import Link from "next/link";
+import ApprovedPhotos from "./ApprovedPhotos";
 
 interface GameTabViewProps {
   level: number;
@@ -1094,6 +1095,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           </button>
         </Link>
       </div>
+      <ApprovedPhotos/>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import styles from "~/styles/Game.module.css";
 import Link from "next/link";
+import ApprovedPhotos from "./ApprovedPhotos";
 
 interface GameMobileViewProps {
   level: number;
@@ -1099,6 +1100,12 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           </button>
         </Link>
       </div>
+      {/* <div className='flex flex-col items-center justify-center text-[#ffffff]'>
+        <div className="flex flex-row items-center justify-center">
+          <h1 className="text-md xl:text-2xl" style={{ fontFamily: "Rocket Thunder" }}>PHOTOS APPROVED</h1>
+        </div>
+      </div> */}
+      <ApprovedPhotos/>
     </div>
   );
 };
