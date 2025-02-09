@@ -1095,7 +1095,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           </button>
         </Link>
       </div>
-      <ApprovedPhotos/>
+      <ApprovedPhotos />
     </div>
   );
 };
