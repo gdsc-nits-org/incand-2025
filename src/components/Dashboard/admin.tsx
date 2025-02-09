@@ -243,7 +243,7 @@ const AdminDashboard = () => {
                     height={100}
                     className="rounded-md"
                   />
-
+                  <h3>{item.User.name}</h3>
                   <div className="mt-4 flex w-full justify-evenly">
                     <button
                       onClick={() =>

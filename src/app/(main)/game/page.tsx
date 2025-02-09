@@ -215,7 +215,7 @@ const Game = () => {
         {uploadPopup && (
           <div className="fixed top-0 z-10 flex h-screen w-screen items-center justify-center bg-[#FAE00D]">
             <div
-              className={`absolute h-full w-screen bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat md:inset-0 md:bg-cover`}
+              className={`absolute h-full w-screen bg-[url('/assets/Game/maze_white_one.webp')] bg-cover bg-center bg-no-repeat md:inset-0 md:bg-cover`}
             ></div>
             <div className="relative flex w-[80%] max-w-[800px] flex-col items-center rounded-2xl border-[4px] border-black bg-white shadow-[20px_20px_0px_#FFA5D5E5] sm:shadow-[30px_30px_0px_#FFA5D5E5] fourK:max-w-[1600px] fourK:rounded-3xl fourK:shadow-[60px_60px_0px_#FFA5D5E5]">
               <svg
@@ -283,7 +283,7 @@ const Game = () => {
                     <div className="relative z-[1] w-10 transition-all duration-200 hover:scale-[1.2] fourK:w-24">
                       <Image
                         className={`object-contain`}
-                        src="/assets/Game/imagePreview.png"
+                        src="/assets/Game/imagePreview.webp"
                         layout="responsive"
                         width={100}
                         height={100}
@@ -325,7 +325,7 @@ const Game = () => {
                     {}
                     <Image
                       className={`object-contain`}
-                      src="/assets/Game/camera_icon.png"
+                      src="/assets/Game/camera_icon.webp"
                       layout="responsive"
                       width={100}
                       height={100}
