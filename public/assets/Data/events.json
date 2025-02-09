@@ -137,20 +137,20 @@
     }
   },
   {
-    "id": "12",
+    "id": "11",
     "header": "MELODIES OF INCAND",
     "subheader": "",
     "text": "Your Spotify wrapped but live, sounds enchanting right? This module under Incandescence’24 will bring to you, an evening filled with music that strikes those chords embedded in your heart",
     "header2": "",
     "thumbnail": "https://res.cloudinary.com/dt2zy7sny/image/upload/v1708108077/samples/Incand23D-0/melodiesOfIncand_xpgp5a.webp",
-    "imgUrls": [""],
+    "imgUrls": ["https://res.cloudinary.com/dt2zy7sny/image/upload/v1708108077/samples/Incand23D-0/melodiesOfIncand_xpgp5a.webp"],
     "registrationLink": {
       "name": "Register",
       "link": ""
     }
   },
   {
-    "id": "13",
+    "id": "12",
     "header": "Battle of Bands",
     "subheader": "",
     "text": "This isn't your typical gig; it's a sonic expedition where bands break free from the mainstream and let their unique sounds resonate through the air.",
@@ -163,7 +163,7 @@
     }
   },
   {
-    "id": "14",
+    "id": "13",
     "header": "Indie Unplugged",
     "subheader": "",
     "text": "Under the twinkle of stars and the soft glow of fairy lights, in a mood oh-so-romantic,Indie Unplugged comes to you as an escape from the mainstream",
@@ -176,7 +176,7 @@
     }
   },
   {
-    "id": "15",
+    "id": "14",
     "header": "Mr. NIT",
     "subheader": "",
     "text": "Get Ready to witness the epitome of strength and sculpted physiques at 'Mr. NIT,' our premier bodybuilding competition that's set to redefine fitness and showcase the embodiment of dedication",
@@ -191,13 +191,26 @@
     }
   },
   {
-    "id": "16",
+    "id": "15",
     "header": "Nataraj",
     "subheader": "",
     "text": "Welcome to InfluenceFiesta: The Ultimate Influencer Extravaganza! Get ready for a night dedicated to the digital maestros shaping our online world",
     "header2": "",
     "thumbnail": "https://res.cloudinary.com/dt2zy7sny/image/upload/v1708108076/samples/Incand23D-0/Natraaj_uhbuxp.webp",
-    "imgUrls": [],
+    "imgUrls": ["https://res.cloudinary.com/dt2zy7sny/image/upload/v1708108076/samples/Incand23D-0/Natraaj_uhbuxp.webp"],
+    "registrationLink": {
+      "name": "Register",
+      "link": ""
+    }
+  },
+  {
+    "id": "16",
+    "header": "FRAMES",
+    "subheader": "",
+    "text": "In the heart of NIT Silchar beats a rhythm of creativity, where lenses are wielded like wands, conjuring tales from pixels and light. Obiettivo, the Photography Club, in association with Incandescence 2025, invites you to join the magical journey of FRAMES 2025.",
+    "header2": "",
+    "thumbnail": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1738580449/Inacnd/b94e7972-5e3e-4acb-aa6a-52716095473f.webp",
+    "imgUrls": ["https://res.cloudinary.com/dgnlmdkyq/image/upload/v1738580449/Inacnd/b94e7972-5e3e-4acb-aa6a-52716095473f.webp"],
     "registrationLink": {
       "name": "Register",
       "link": ""
@@ -205,19 +218,6 @@
   },
   {
     "id": "17",
-    "header": "FRAMES",
-    "subheader": "",
-    "text": "In the heart of NIT Silchar beats a rhythm of creativity, where lenses are wielded like wands, conjuring tales from pixels and light. Obiettivo, the Photography Club, in association with Incandescence 2025, invites you to join the magical journey of FRAMES 2025.",
-    "header2": "",
-    "thumbnail": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1738580449/Inacnd/b94e7972-5e3e-4acb-aa6a-52716095473f.webp",
-    "imgUrls": [],
-    "registrationLink": {
-      "name": "Register",
-      "link": ""
-    }
-  },
-  {
-    "id": "18",
     "header": "THUNDERMARCH",
     "subheader": "",
     "text": "Get ready to rock your socks off with Thundermarch – the ultimate fusion of electrifying energy and soulful melodies! Join us on a journey through the realms of music, where every note strikes like lightning and every beat thunders through your veins. Experience the raw power of our sound as we ignite the stage with passion and rhythm.",
@@ -232,7 +232,7 @@
     }
   },
   {
-    "id": "19",
+    "id": "18",
     "header": "NIRVANA",
     "subheader": "",
     "text": "Embark on a soul-stirring journey with Nirvana – the iconic band that revolutionized the music scene! Join us for an unforgettable evening as we pay homage to the legendary Kurt Cobain and his bandmates with a tribute concert like no other. From the haunting melodies of 'Smells Like Teen Spirit' to the raw emotion of 'Come As You Are,' experience the timeless magic of Nirvana's music live on stage.",
