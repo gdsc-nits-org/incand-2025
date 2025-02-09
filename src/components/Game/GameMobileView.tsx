@@ -240,8 +240,8 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
               className={`w-[82vw] text-[5vw] font-extrabold leading-[6vw] ipadair:w-[21vw] ipadair:text-center ipadair:text-[1.5vw] ipadair:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Upload a cool pic of our campus & let the admin give it a thumbs-up! Once
-              approved, you&apos;ll receive a mystery letter!
+              Upload a cool pic of our campus & let the admin give it a
+              thumbs-up! Once approved, you&apos;ll receive a mystery letter!
             </p>
           </div>
           {/* Step 02 */}
