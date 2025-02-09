@@ -207,7 +207,7 @@ const NavDetails = [
     desc: "The guiding beacons in our labyrinth of dreams",
   },
   {
-    title: "LuminisLookut",
+    title: "LuminisLookout",
     link: "/game",
     bgColor: "#3C0FD5",
     bigTextColor: "#180569",

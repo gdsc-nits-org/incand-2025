@@ -274,8 +274,12 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               className={`w-[80vw] text-[4vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-end md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-            Collect all the correct alphabets of the word <span className="font-extrabold font-bricolage">&quot;INCAND&quot;</span>, win amazing prizes, and enjoy the
-            ultimate alphabet hunt adventure. Are you ready to play?
+              Collect all the correct alphabets of the word{" "}
+              <span className="font-bricolage font-extrabold">
+                &quot;INCAND&quot;
+              </span>
+              , win amazing prizes, and enjoy the ultimate alphabet hunt
+              adventure. Are you ready to play?
             </p>
           </div>
           {/* Step 03 */}
