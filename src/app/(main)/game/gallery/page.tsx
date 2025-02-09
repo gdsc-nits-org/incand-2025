@@ -37,59 +37,69 @@ const Gallery = () => {
   };
 
   useEffect(() => {
-    gsap.utils.toArray<HTMLElement>(".animatable").forEach((layer: HTMLElement) => {
-      let lastVelocity = 0;
-      let scrollTimeout: NodeJS.Timeout | null = null;
+    gsap.utils
+      .toArray<HTMLElement>(".animatable")
+      .forEach((layer: HTMLElement) => {
+        let lastVelocity = 0;
+        let scrollTimeout: NodeJS.Timeout | null = null;
 
-      const trigger = ScrollTrigger.create({
-        trigger: layer,
-        start: "top 80%", // Start animation when 80% of element is in view
-        onUpdate: (self) => {
-          const velocity = self.getVelocity(); // Get scroll velocity
-          lastVelocity = gsap.utils.clamp(-50, 50, velocity / 500); // Limit rotation speed
+        const trigger = ScrollTrigger.create({
+          trigger: layer,
+          start: "top 80%", // Start animation when 80% of element is in view
+          onUpdate: (self) => {
+            const velocity = self.getVelocity(); // Get scroll velocity
+            lastVelocity = gsap.utils.clamp(-50, 50, velocity / 500); // Limit rotation speed
 
-          // Apply rotation while scrolling
-          gsap.to(layer, {
-            rotate: lastVelocity,
-            duration: 0.3,
-            ease: "power2.out",
-          });
+            // Apply rotation while scrolling
+            gsap.to(layer, {
+              rotate: lastVelocity,
+              duration: 0.3,
+              ease: "power2.out",
+            });
 
-          // Clear previous timeout and set a new one
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            resetRotation(layer);
-          }, 200); // Reset only if no scrolling happens for 200ms
-        },
-      });
-
-      function resetRotation(target: HTMLElement) {
-        gsap.to(target, {
-          rotate: 0,
-          duration: 0.6,
-          ease: "power3.out",
+            // Clear previous timeout and set a new one
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+              resetRotation(layer);
+            }, 200); // Reset only if no scrolling happens for 200ms
+          },
         });
-      }
 
-      return () => {
-        trigger.kill();
-        if (scrollTimeout) clearTimeout(scrollTimeout);
-      };
-    });
+        function resetRotation(target: HTMLElement) {
+          gsap.to(target, {
+            rotate: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          });
+        }
+
+        return () => {
+          trigger.kill();
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+        };
+      });
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-center text-[#ffffff] min-h-[100vh] gap-10 pt-32 p-10 bg-[#4D81F1] bg-repeat bg-contain bg-[url('/assets/events/backgroundImg2.png')]">
-      <div className="flex flex-col xl:flex-row-reverse items-center gap-10 justify-between w-[80%]">
+    <div className="relative flex min-h-[100vh] flex-col items-center justify-center gap-10 bg-[#4D81F1] bg-[url('/assets/events/backgroundImg2.png')] bg-contain bg-repeat p-10 pt-32 text-[#ffffff]">
+      <div className="flex w-[80%] flex-col items-center justify-between gap-10 xl:flex-row-reverse">
         <div className="relative w-full">
           {/* Shadow Effect */}
-          <h1 className="absolute top-[4px] left-[4px] font-extrabold text-5xl xl:text-8xl text-center w-[100%] text-black tracking-widest z-0" style={{ fontFamily: "Rocket Thunder" }}>
+          <h1
+            className="absolute left-[4px] top-[4px] z-0 w-[100%] text-center text-5xl font-extrabold tracking-widest text-black xl:text-8xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
             PHOTOS APPROVED
           </h1>
 
           {/* Main Text */}
-          <h1 className="relative z-10 w-[100%] text-center text-5xl tracking-widest text-white xl:text-8xl" style={{ fontFamily: "Rocket Thunder" }}>
-            PH<span className="text-[#FAE00D]">O</span>T<span className="text-[#FAE00D]">O</span>S APPR<span className="text-[#FAE00D]">O</span>VED
+          <h1
+            className="relative z-10 w-[100%] text-center text-5xl tracking-widest text-white xl:text-8xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            PH<span className="text-[#FAE00D]">O</span>T
+            <span className="text-[#FAE00D]">O</span>S APPR
+            <span className="text-[#FAE00D]">O</span>VED
           </h1>
         </div>
 
@@ -100,13 +110,14 @@ const Gallery = () => {
           {/* Main Button */}
           <button
             onClick={goToGame}
-            className="relative flex items-center justify-center gap-2 w-[3rem] h-[3rem] bg-[#F127CC] rounded-md border-black border-2 z-10">
-            <img src="/assets/Game/backArrow.png" className="w-6 h-6" />
+            className="relative z-10 flex h-[3rem] w-[3rem] items-center justify-center gap-2 rounded-md border-2 border-black bg-[#F127CC]"
+          >
+            <img src="/assets/Game/backArrow.png" className="h-6 w-6" />
           </button>
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-6 xl:gap-16 w-full items-center justify-center p-4 xl:justify-center">
+      <div className="flex w-full flex-wrap items-center justify-center gap-6 p-4 xl:justify-center xl:gap-16">
         {data.map((item, idx) => (
           <div className="animatable" key={idx}>
             <Card photo={item.photo} User={item.User} />

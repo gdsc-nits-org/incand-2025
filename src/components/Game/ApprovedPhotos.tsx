@@ -67,27 +67,27 @@ const ApprovedPhotos = () => {
             {/* Main Button */}
             <button
               onClick={goToGallery}
-              className="relative flex items-center justify-center gap-2 bg-[#F127CC] px-4 py-2 pl-12 pr-6 rounded-md border-black border-2 text-xl text-nowrap tracking-widest font-bold z-10"
-              style={{ fontFamily: "Rocket Thunder" }}>
+              className="relative z-10 flex items-center justify-center gap-2 text-nowrap rounded-md border-2 border-black bg-[#F127CC] px-4 py-2 pl-12 pr-6 text-xl font-bold tracking-widest"
+              style={{ fontFamily: "Rocket Thunder" }}
+            >
               <p>SEE ALL</p>
-              <img src="/assets/Game/Arrow.png" className="w-6 h-4" />
+              <img src="/assets/Game/Arrow.png" className="h-4 w-6" />
             </button>
           </div>
-
         </div>
-        <div className=" flex flex-wrap gap-10 w-[100%] xl:w-[90%] h-[fit] items-center justify-center xl:justify-between bg-white rounded-lg border-[6px] border-black p-8">
-          {
-            data.slice(0, 4).map((item, idx) => (
-              <div key={idx} className="scale-110 scale-x-125 lg:scale-100 lg:scale-x-100">
-                <Card photo={item.photo} User={item.User} />
-              </div>
-            ))
-          }
+        <div className="flex h-[fit] w-[100%] flex-wrap items-center justify-center gap-10 rounded-lg border-[6px] border-black bg-white p-8 xl:w-[90%] xl:justify-between">
+          {data.slice(0, 4).map((item, idx) => (
+            <div
+              key={idx}
+              className="scale-110 scale-x-125 lg:scale-100 lg:scale-x-100"
+            >
+              <Card photo={item.photo} User={item.User} />
+            </div>
+          ))}
         </div>
       </div>
     );
-  }
-  else{
+  } else {
     return null;
   }
 };

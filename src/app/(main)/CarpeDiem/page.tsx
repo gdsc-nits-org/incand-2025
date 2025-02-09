@@ -8,7 +8,7 @@ const CarpeDiem = () => {
   const [isOHovered, setIsOHovered] = useState(false);
   const [isTwHovered, setIsTwHovered] = useState(false);
   const [isFHovered, setIsFHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  // const [isClicked, setIsClicked] = useState(false);
   const [isPhone, setIsPhone] = useState(false);
   const [isIpad, setIsIpad] = useState(false);
   const [isLap, setIsLap] = useState(false);
@@ -299,7 +299,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[72%] top-[24%] h-[50vh] w-[20vw]">
               <Image
-                src="/assets/CarpeDiem/Singer.webp" // Path to your GIF
+                src="/assets/CarpeDiem/artist.png" // Path to your GIF
                 alt="Singer"
                 fill={true}
                 className={" "}
@@ -315,7 +315,7 @@ const CarpeDiem = () => {
                 style={{ zIndex: "2" }}
               />
             </div>
-            {!isClicked ? (
+            {/* {!isClicked ? (
               <>
                 <div
                   className="absolute left-[73.8%] top-[78%] h-[8vh] w-[4vw] cursor-pointer"
@@ -392,7 +392,7 @@ const CarpeDiem = () => {
                   />
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </>
       )}
@@ -655,7 +655,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[16%] top-[68%] h-[25vh] w-[76vw]">
               <Image
-                src="/assets/CarpeDiem/Singer.webp" // Path to your GIF
+                src="/assets/CarpeDiem/artist.png" // Path to your GIF
                 alt="Singer"
                 fill={true}
                 className={" "}
@@ -671,7 +671,7 @@ const CarpeDiem = () => {
                 style={{ zIndex: "2" }}
               />
             </div>
-            {!isClicked ? (
+            {/* {!isClicked ? (
               <>
                 <div
                   className="absolute left-[42%] top-[88%] h-[3vh] w-[4vw] cursor-pointer"
@@ -748,7 +748,7 @@ const CarpeDiem = () => {
                   />
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </>
       )}
@@ -1015,7 +1015,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[72%] top-[24%] h-[50vh] w-[20vw]">
               <Image
-                src="/assets/CarpeDiem/Singer.webp" // Path to your GIF
+                src="/assets/CarpeDiem/artist.png" // Path to your GIF
                 alt="Singer"
                 fill={true}
                 className={" "}
@@ -1031,7 +1031,7 @@ const CarpeDiem = () => {
                 style={{ zIndex: "2" }}
               />
             </div>
-            {!isClicked ? (
+            {/* {!isClicked ? (
               <>
                 <div
                   className="absolute left-[74%] top-[76%] h-[5vh] w-[4vw] cursor-pointer"
@@ -1108,7 +1108,7 @@ const CarpeDiem = () => {
                   />
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </>
       )}
