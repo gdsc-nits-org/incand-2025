@@ -238,7 +238,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               className={`w-[82vw] text-[4vw] font-extrabold leading-[6vw] md:w-[21vw] md:text-center md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Upload a cool pic & let the admin give it a thumbs-up! Once
+              Upload a cool pic of our campus & let the admin give it a thumbs-up! Once
               approved, you&apos;ll receive a mystery letter!
             </p>
           </div>
