@@ -1,21 +1,22 @@
 "use client";
 import { useEffect, useState } from "react";
 import NavbarMobile from "./NavbarMobile";
+import NavbarDesktop from "./NavbarDesktop";
+import { useMediaQuery } from "usehooks-ts";
+
 const Navbar = () => {
-  const [isClient, setIsClient] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const bigScreen = useMediaQuery("(min-width: 1025px)");
 
   useEffect(() => {
-    setIsClient(true);
+    setIsMounted(true);
   }, []);
 
-  if (!isClient) {
+  if (!isMounted) {
     return null;
   }
-  return (
-    <>
-      <NavbarMobile />
-    </>
-  );
+
+  return <>{bigScreen ? <NavbarDesktop /> : <NavbarMobile />}</>;
 };
 
 export default Navbar;

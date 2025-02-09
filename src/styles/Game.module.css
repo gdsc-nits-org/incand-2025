@@ -1,0 +1,73 @@
+.heroText{
+    text-shadow: 0.495vw 0.432vh 0px #E1067B;
+    -webkit-text-stroke: 0.15vh #000000;     
+}
+
+
+.dashboardText{
+    text-shadow: 0.895vw 0.832vw 0px #E1067B;
+    -webkit-text-stroke: 0.35vw #000000;     
+}
+
+
+.uploadText{
+    text-shadow:  2px 2px 0px #919191;   
+}
+
+
+@media (min-width: 1180px) {
+    .heroText{
+        text-shadow: 0.295vw 0.332vw 0px #E1067B;
+        -webkit-text-stroke: 0.15vw #000000;     
+    }
+    
+    
+    .dashboardText{
+        text-shadow: 0.295vw 0.332vw 0px #E1067B;
+        -webkit-text-stroke: 0.15vw #000000;     
+    }
+
+    .uploadText{
+        text-shadow: 2px 2px 0px #919191;
+    
+    }
+
+    @keyframes drawPath {
+        0% {
+          stroke-dashoffset: 3200;
+        }
+        30% {
+          stroke-dashoffset: 2000;
+        }
+        40% {
+          stroke-dashoffset: 2000;
+        }
+        60% {
+          stroke-dashoffset: 1200;
+        }
+        70% {
+          stroke-dashoffset: 1200;
+        }
+        80% {
+            stroke-dashoffset: 500;
+          }
+        90% {
+            stroke-dashoffset: 300;
+          }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+    
+      .animatedPath {
+        animation: drawPath 3s linear forwards;
+      }
+
+
+
+}
+
+
+
+
+

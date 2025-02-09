@@ -4,71 +4,71 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import styles from "~/styles/Sponsors.module.css";
 
 const sponsors = [
-  { id: 1, name: "ASUS", image: "/assets/sponsor/asus.png" },
-  { id: 2, name: "AMUL", image: "/assets/sponsor/Amul.png" },
-  { id: 3, name: "UNSTOP", image: "/assets/sponsor/unstop.png" },
-  { id: 4, name: "BAULI", image: "/assets/sponsor/Bauli.png" },
-  { id: 5, name: "LWT", image: "/assets/sponsor/LWT.png" },
-  { id: 6, name: "CAMPUS TIMES", image: "/assets/sponsor/campustimes.png" },
-  { id: 7, name: "CLOVIA", image: "/assets/sponsor/cloviaaa.jpg" },
-  { id: 8, name: "COCA-COLA", image: "/assets/sponsor/coca-cola.png" },
+  { id: 1, name: "ASUS", image: "/assets/sponsor/asus.webp" },
+  { id: 2, name: "AMUL", image: "/assets/sponsor/Amul.webp" },
+  { id: 3, name: "UNSTOP", image: "/assets/sponsor/unstop.webp" },
+  { id: 4, name: "BAULI", image: "/assets/sponsor/Bauli.webp" },
+  { id: 5, name: "LWT", image: "/assets/sponsor/LWT.webp" },
+  { id: 6, name: "CAMPUS TIMES", image: "/assets/sponsor/campustimes.webp" },
+  { id: 7, name: "CLOVIA", image: "/assets/sponsor/cloviaaa.webp" },
+  { id: 8, name: "COCA-COLA", image: "/assets/sponsor/coca-cola.webp" },
   {
     id: 9,
     name: "THE BISHAL",
-    image: "/assets/sponsor/bishalhotel.png",
+    image: "/assets/sponsor/bishalhotel.webp",
   },
-  { id: 10, name: "ED TIMES", image: "/assets/sponsor/ed.jpg" },
+  { id: 10, name: "ED TIMES", image: "/assets/sponsor/ed.webp" },
   {
     id: 11,
     name: "GPLUS",
-    image: "/assets/sponsor/Gplus.png",
+    image: "/assets/sponsor/Gplus.webp",
   },
   {
     id: 12,
     name: "THE SOULED STORE",
-    image: "/assets/sponsor/souled.png",
+    image: "/assets/sponsor/souled.webp",
   },
   {
     id: 13,
     name: "WILEY",
-    image: "/assets/sponsor/wiley.png",
+    image: "/assets/sponsor/wiley.webp",
   },
-  { id: 14, name: "WINKIES", image: "/assets/sponsor/winkies.png" },
-  { id: 15, name: "ZEBRONICS", image: "/assets/sponsor/zebronics.png" },
+  { id: 14, name: "WINKIES", image: "/assets/sponsor/winkies.webp" },
+  { id: 15, name: "ZEBRONICS", image: "/assets/sponsor/zebronics.webp" },
   {
     id: 16,
     name: "UNIBIC",
-    image: "/assets/sponsor/unibic.png",
+    image: "/assets/sponsor/unibic.webp",
   },
   {
     id: 17,
     name: "THE LONDON SHAKES",
-    image: "/assets/sponsor/london.png",
+    image: "/assets/sponsor/london.webp",
   },
   {
     id: 18,
     name: "MAMA'S HEARTH",
-    image: "/assets/sponsor/Mamasheart.png",
+    image: "/assets/sponsor/Mamasheart.webp",
   },
   {
     id: 19,
     name: "MUSIC TELEVISION",
-    image: "/assets/sponsor/mtv.png",
+    image: "/assets/sponsor/mtv.webp",
   },
   {
     id: 20,
     name: "SBI",
-    image: "/assets/sponsor/sbi.jpg",
+    image: "/assets/sponsor/sbi.webp",
   },
   {
     id: 21,
     name: "BORAIL VIEW",
-    image: "/assets/sponsor/borail.png",
+    image: "/assets/sponsor/borail.webp",
   },
   {
     id: 22,
     name: "THE CAMPUS MEDIA",
-    image: "/assets/sponsor/campusmedia.jpg",
+    image: "/assets/sponsor/campusmedia.webp",
   },
 ];
 
@@ -86,7 +86,7 @@ const Sponsors: React.FC = () => {
   return (
     <div className="relative h-screen overflow-hidden bg-[#D6FE6B] text-center xl:pb-10">
       <img
-        src="/assets/sponsor/sponsors.png"
+        src="/assets/sponsor/sponsors.webp"
         alt=""
         className="absolute z-0 mobile:min-w-[200vh] mobile:-translate-x-[70vh] laptop:top-8 laptop:w-screen laptop:transform-none"
       />
