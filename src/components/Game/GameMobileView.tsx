@@ -1105,7 +1105,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           <h1 className="text-md xl:text-2xl" style={{ fontFamily: "Rocket Thunder" }}>PHOTOS APPROVED</h1>
         </div>
       </div> */}
-      <ApprovedPhotos/>
+      <ApprovedPhotos />
     </div>
   );
 };

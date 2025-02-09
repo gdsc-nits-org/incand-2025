@@ -3,67 +3,74 @@ import { useSearchParams } from "next/navigation";
 import Card from "~/components/Game/Card";
 import { useRouter } from "next/navigation";
 interface luminisLookoutData {
-    id: string;
-    photo: string;
-    User: {
-        email: string;
-        name: string;
-    };
+  id: string;
+  photo: string;
+  User: {
+    email: string;
+    name: string;
+  };
 }
 
 const Gallery = () => {
-    const searchParams = useSearchParams();
-    const dataString = searchParams.get("data");
-    let data: luminisLookoutData[] = [];
-    if (dataString) {
-        try {
-            data = JSON.parse(decodeURIComponent(dataString)) as luminisLookoutData[];
-        } catch (error) {
-            console.error("Error parsing data:", error);
-        }
+  const searchParams = useSearchParams();
+  const dataString = searchParams.get("data");
+  let data: luminisLookoutData[] = [];
+  if (dataString) {
+    try {
+      data = JSON.parse(decodeURIComponent(dataString)) as luminisLookoutData[];
+    } catch (error) {
+      console.error("Error parsing data:", error);
     }
-    const router = useRouter();
-    const goToGame = () => {
-        router.push(`/game`);
-    };
-    return (
-        <div className="relative flex flex-col items-center justify-center text-[#ffffff] gap-10 pt-32 p-10 bg-[#4D81F1] bg-no-repeat bg-fixed bg-[url('/assets/events/backgroundImg2.png')]">
-            <div className=" flex flex-col xl:flex-row-reverse items-center gap-10 justify-between w-[90%]">
-                <div className="relative w-full">
-                    {/* Shadow Effect */}
-                    <h1 className="absolute top-[4px] left-[4px] font-extrabold text-5xl xl:text-7xl text-center w-[100%] text-black tracking-widest z-0" style={{ fontFamily: "Rocket Thunder" }}>
-                        PHOTOS APPROVED
-                    </h1>
+  }
+  const router = useRouter();
+  const goToGame = () => {
+    router.push(`/game`);
+  };
+  return (
+    <div className="relative flex flex-col items-center justify-center gap-10 bg-[#4D81F1] bg-[url('/assets/events/backgroundImg2.png')] bg-fixed bg-no-repeat p-10 pt-32 text-[#ffffff]">
+      <div className="flex w-[90%] flex-col items-center justify-between gap-10 xl:flex-row-reverse">
+        <div className="relative w-full">
+          {/* Shadow Effect */}
+          <h1
+            className="absolute left-[4px] top-[4px] z-0 w-[100%] text-center text-5xl font-extrabold tracking-widest text-black xl:text-7xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            PHOTOS APPROVED
+          </h1>
 
-                    {/* Main Text */}
-                    <h1 className="relative text-5xl xl:text-7xl  text-center w-[100%] text-white tracking-widest z-10" style={{ fontFamily: "Rocket Thunder" }}>
-                        PH<span className="text-[#FAE00D]">O</span>T<span className="text-[#FAE00D]">O</span>S APPR<span className="text-[#FAE00D]">O</span>VED
-                    </h1>
-                </div>
-
-                <div className="relative inline-block">
-                    {/* Shadow behind the button */}
-                    <div className="absolute top-[6px] left-[6px] bg-black rounded-md w-full h-full z-0"></div>
-
-                    {/* Main Button */}
-                    <button
-                        onClick={goToGame}
-                        className="relative flex items-center justify-center gap-2 w-[3rem] h-[3rem] bg-[#F127CC] rounded-md border-black border-2 z-10">
-                        <img src="/assets/Game/backArrow.png" className="w-6 h-6" />
-                    </button>
-                </div>
-
-            </div>
-            <div className="flex flex-wrap gap-6 w-full items-center justify-center p-4 xl:justify-between">
-                {data.map((item, idx) => (
-                    <div key={idx}>
-                        <Card photo={item.photo} User={item.User} scale={50} />
-                    </div>
-                ))}
-            </div>
-
+          {/* Main Text */}
+          <h1
+            className="relative z-10 w-[100%] text-center text-5xl tracking-widest text-white xl:text-7xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            PH<span className="text-[#FAE00D]">O</span>T
+            <span className="text-[#FAE00D]">O</span>S APPR
+            <span className="text-[#FAE00D]">O</span>VED
+          </h1>
         </div>
-    );
+
+        <div className="relative inline-block">
+          {/* Shadow behind the button */}
+          <div className="absolute left-[6px] top-[6px] z-0 h-full w-full rounded-md bg-black"></div>
+
+          {/* Main Button */}
+          <button
+            onClick={goToGame}
+            className="relative z-10 flex h-[3rem] w-[3rem] items-center justify-center gap-2 rounded-md border-2 border-black bg-[#F127CC]"
+          >
+            <img src="/assets/Game/backArrow.png" className="h-6 w-6" />
+          </button>
+        </div>
+      </div>
+      <div className="flex w-full flex-wrap items-center justify-center gap-6 p-4 xl:justify-between">
+        {data.map((item, idx) => (
+          <div key={idx}>
+            <Card photo={item.photo} User={item.User} scale={50} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Gallery;
