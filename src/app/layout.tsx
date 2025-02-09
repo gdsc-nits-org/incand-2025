@@ -1,4 +1,3 @@
-
 import "~/styles/globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { GeistSans } from "geist/font/sans";
@@ -63,7 +62,9 @@ export default function RootLayout({
           position="bottom-center"
         />
         {process.env.NODE_ENV === "production" && <OpenReplayNoSSR />}
-        {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId="G-54V3WCPLRE" />}
+        {process.env.NODE_ENV === "production" && (
+          <GoogleAnalytics gaId="G-54V3WCPLRE" />
+        )}
       </body>
     </html>
   );
