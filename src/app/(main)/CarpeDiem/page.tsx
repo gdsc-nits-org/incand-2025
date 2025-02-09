@@ -290,7 +290,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[93.2%] top-[8%] h-[63vh] w-[4.2vw]">
               <Image
-                src="/assets/CarpeDiem/SingerName.webp" // Path to your GIF
+                src="/assets/CarpeDiem/revealingsoon.png" // Path to your GIF
                 alt="Name"
                 fill={true}
                 className={" "}
@@ -458,14 +458,14 @@ const CarpeDiem = () => {
                 className={" "}
               />
             </div>
-            <div className="absolute left-[9%] top-[40%] h-[56vh] w-[83vw]">
+            {/* <div className="absolute left-[9%] top-[40%] h-[56vh] w-[83vw]">
               <Image
                 src="/assets/CarpeDiem/FramePhone.webp"
                 alt="frame"
                 fill={true}
                 className={" "}
               />
-            </div>
+            </div> */}
             <div className="absolute left-[9%] top-[40%] h-[32vh] w-[16vw]">
               <Image
                 src="/assets/CarpeDiem/BorderPhone.webp"
@@ -628,7 +628,7 @@ const CarpeDiem = () => {
                 style={{ zIndex: "2" }}
               />
             </div>
-            <div className="absolute left-[24.5%] top-[92.3%] h-[3.5vh] w-[65vw]">
+            {/* <div className="absolute left-[24.5%] top-[92.3%] h-[3.5vh] w-[65vw]">
               <Image
                 src="/assets/CarpeDiem/NamePhone.webp" // Path to your GIF
                 alt="Name"
@@ -636,7 +636,7 @@ const CarpeDiem = () => {
                 className={" "}
                 style={{ zIndex: "2" }}
               />
-            </div>
+            </div> */}
             <div className="absolute left-[84%] top-[74%] h-[21.7vh] w-[8vw]">
               <Image
                 src="/assets/CarpeDiem/GreenPhone.gif" // Path to your GIF
@@ -653,7 +653,7 @@ const CarpeDiem = () => {
                 }}
               />
             </div>
-            <div className="absolute left-[16%] top-[68%] h-[25vh] w-[76vw]">
+            <div className="absolute left-[9rem] top-[66%] h-[30vh] w-[50vw]">
               <Image
                 src="/assets/CarpeDiem/artist.png" // Path to your GIF
                 alt="Singer"
@@ -662,7 +662,7 @@ const CarpeDiem = () => {
                 style={{ zIndex: "2" }}
               />
             </div>
-            <div className="absolute left-[40%] top-[87%] h-[5vh] w-[27vw]">
+            <div className="absolute left-[40%] top-[90%] h-[5vh] w-[27vw]">
               <Image
                 src="/assets/CarpeDiem/Button.webp" // Path to your GIF
                 alt="Button"
@@ -1006,7 +1006,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[93.2%] top-[8%] h-[63vh] w-[4.2vw]">
               <Image
-                src="/assets/CarpeDiem/SingerName.webp" // Path to your GIF
+                src="/assets/CarpeDiem/revealingsoon.png" // Path to your GIF
                 alt="Name"
                 fill={true}
                 className={" "}
