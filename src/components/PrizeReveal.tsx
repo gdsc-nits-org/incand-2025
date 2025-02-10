@@ -84,7 +84,8 @@ const PrizeReveal = () => {
               alt="1st prize"
             ></Image>
           </div>
-          <h1 className="font-rocket text-3xl 4k:text-7xl">PRIZE 1</h1>
+          <h1 className="font-rocket text-3xl 4k:text-7xl">PRIZE 2
+          </h1>
         </div>
       </div>
     </section>
