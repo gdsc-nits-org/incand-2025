@@ -868,7 +868,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
                   className={`border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] ipadair:border-r-[0.3vw] ipadair:px-[3vw] ipadair:py-[0.2vw] ipadair:text-[2.5vw]`}
                   style={{ fontFamily: "Rocket Thunder" }}
                 >
-                   {index + 1}
+                  {index + 1}
                 </p>
                 <p
                   className={`w-[45vw] border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] text-black ipadair:border-r-[0.3vw] ipadair:px-[3vw] ipadair:py-[0.2vw] ipadair:text-[2.5vw]`}

@@ -133,11 +133,14 @@ const Gallery = () => {
       </div>
 
       <div className="flex w-full flex-wrap items-center justify-center gap-6 p-4 xl:justify-center xl:gap-16">
-        {data.slice().reverse().map((item, idx) => (
-          <div className="animatable" key={idx}>
-            <Card photo={item.photo} User={item.User} />
-          </div>
-        ))}
+        {data
+          .slice()
+          .reverse()
+          .map((item, idx) => (
+            <div className="animatable" key={idx}>
+              <Card photo={item.photo} User={item.User} />
+            </div>
+          ))}
       </div>
     </div>
   );
