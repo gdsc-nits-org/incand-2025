@@ -32,9 +32,7 @@ const ApprovedPhotos = () => {
   }, [setData]);
 
   const goToGallery = () => {
-    router.push(
-      `/game/gallery`,
-    );
+    router.push(`/game/gallery`);
   };
   if (data.length > 0) {
     return (
@@ -76,7 +74,7 @@ const ApprovedPhotos = () => {
           </div>
         </div>
         <div className="flex h-[fit] w-[100%] flex-wrap items-center justify-center gap-10 rounded-lg border-[6px] border-black bg-white p-8 xl:w-[90%] xl:justify-between">
-          {data.slice(0, 4).map((item, idx) => (
+          {data.slice().reverse().slice(0, 4).map((item, idx) => (
             <div
               key={idx}
               className="scale-110 scale-x-125 lg:scale-100 lg:scale-x-100"

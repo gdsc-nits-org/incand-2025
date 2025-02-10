@@ -315,7 +315,7 @@ const AdminDashboard = () => {
                     height={100}
                     className="rounded-md"
                   />
-                   <h3 className = "text-[. 5rem]">{item.User.name}</h3>
+                  <h3 className="text-[. 5rem]">{item.User.name}</h3>
                   <div className="relative left-[-1.57rem] top-[1rem] mt-4 flex w-full scale-[0.57] justify-evenly mobile:scale-[0.535] mobile2:space-x-2">
                     <button
                       onClick={() =>
@@ -388,7 +388,7 @@ const AdminDashboard = () => {
                     height={100}
                     className="rounded-md"
                   />
-                   <h3>{item.User.name}</h3>
+                  <h3>{item.User.name}</h3>
                   <div className="mt-4 flex w-full mobile3:scale-[0.7] mobile3:justify-center mobile3:space-x-2 tablet:scale-[1] tablet:justify-evenly">
                     <button
                       onClick={() =>

@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useSearchParams } from "next/navigation";
 import Card from "~/components/Game/Card";
 import { useRouter } from "next/navigation";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { env } from "~/env";
 interface LuminisLookoutData {
@@ -36,12 +36,12 @@ const Gallery = () => {
   //     console.error("Error parsing data:", error);
   //   }
   // }
-    const [data, setData] = useState<LuminisLookoutData[]>([]);
+  const [data, setData] = useState<LuminisLookoutData[]>([]);
   const router = useRouter();
   const goToGame = () => {
     router.push("/game");
   };
-  useEffect(()=>{
+  useEffect(() => {
     async function fetchData() {
       const res = await axios.get<luminisLookoutGalleryApiResponse>(
         `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted`,
@@ -49,7 +49,7 @@ const Gallery = () => {
       setData(res.data.msg);
     }
     void fetchData();
-  },[setData]);
+  }, [setData]);
 
   useEffect(() => {
     gsap.utils
@@ -133,7 +133,7 @@ const Gallery = () => {
       </div>
 
       <div className="flex w-full flex-wrap items-center justify-center gap-6 p-4 xl:justify-center xl:gap-16">
-        {data.map((item, idx) => (
+        {data.slice().reverse().map((item, idx) => (
           <div className="animatable" key={idx}>
             <Card photo={item.photo} User={item.User} />
           </div>
