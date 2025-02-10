@@ -72,7 +72,7 @@ const PrizeReveal = () => {
               alt="1st prize"
             ></Image>
           </div>
-          <h1 className="font-rocket text-3xl 4k:text-7xl">PRIZE 1</h1>
+          <h1 className="font-rocket text-sm xl:text-lg 4k:text-7xl">PHOTO WITH THE MAIN ARTIST</h1>
         </div>
         <div className="bg-dotted flex rotate-12 flex-col items-center gap-8 rounded-2xl bg-[#BFFF8E] p-10 transition-colors duration-200 ease-linear hover:bg-[#e1067b]">
           <div className="relative flex h-[10rem] w-[10rem] scale-125 items-center justify-center bg-[url('/assets/Game/imageBorder.png')] bg-cover bg-center laptop:h-[16rem] laptop:w-[16rem] laptop:scale-100 4k:h-[32rem] 4k:w-[32rem]">
@@ -84,7 +84,7 @@ const PrizeReveal = () => {
               alt="1st prize"
             ></Image>
           </div>
-          <h1 className="font-rocket text-3xl 4k:text-7xl">PRIZE 2
+          <h1 className="font-rocket text-sm xl:text-lg 4k:text-7xl">OFFICIAL INCAND MERCH
           </h1>
         </div>
       </div>

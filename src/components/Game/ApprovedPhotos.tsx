@@ -33,7 +33,7 @@ const ApprovedPhotos = () => {
 
   const goToGallery = () => {
     router.push(
-      `/game/gallery?data=${encodeURIComponent(JSON.stringify(data))}`,
+      `/game/gallery`,
     );
   };
   if (data.length > 0) {

@@ -4,8 +4,9 @@ import { ScrollTrigger } from "gsap/all";
 import { useSearchParams } from "next/navigation";
 import Card from "~/components/Game/Card";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
+import { useEffect,useState } from "react";
+import axios from "axios";
+import { env } from "~/env";
 interface LuminisLookoutData {
   id: string;
   photo: string;
@@ -15,26 +16,40 @@ interface LuminisLookoutData {
   };
 }
 
+interface luminisLookoutGalleryApiResponse {
+  status: number;
+  msg: LuminisLookoutData[];
+}
+
 gsap.registerPlugin(ScrollTrigger);
 export const runtime = "edge";
 
 const Gallery = () => {
-  const searchParams = useSearchParams();
-  const dataString = searchParams.get("data");
-  let data: LuminisLookoutData[] = [];
+  // const searchParams = useSearchParams();
+  // const dataString = searchParams.get("data");
+  // let data: LuminisLookoutData[] = [];
 
-  if (dataString) {
-    try {
-      data = JSON.parse(decodeURIComponent(dataString)) as LuminisLookoutData[];
-    } catch (error) {
-      console.error("Error parsing data:", error);
-    }
-  }
-
+  // if (dataString) {
+  //   try {
+  //     data = JSON.parse(decodeURIComponent(dataString)) as LuminisLookoutData[];
+  //   } catch (error) {
+  //     console.error("Error parsing data:", error);
+  //   }
+  // }
+    const [data, setData] = useState<LuminisLookoutData[]>([]);
   const router = useRouter();
   const goToGame = () => {
     router.push("/game");
   };
+  useEffect(()=>{
+    async function fetchData() {
+      const res = await axios.get<luminisLookoutGalleryApiResponse>(
+        `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted`,
+      );
+      setData(res.data.msg);
+    }
+    void fetchData();
+  },[setData]);
 
   useEffect(() => {
     gsap.utils
@@ -78,7 +93,7 @@ const Gallery = () => {
           if (scrollTimeout) clearTimeout(scrollTimeout);
         };
       });
-  }, []);
+  }, [data]);
 
   return (
     <div className="relative flex min-h-[100vh] flex-col items-center justify-center gap-10 bg-[#4D81F1] bg-[url('/assets/events/backgroundImg2.png')] bg-contain bg-repeat p-10 pt-32 text-[#ffffff]">
