@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Thundermerch from "~/components/Thundermerch";
+import Thundermarch from "~/components/Thundermarch";
 import AllEvents from "~/components/Events/EventCard";
 import EventsEffect from "~/components/Events/EventsEffect";
 import Link from "next/link";
@@ -18,7 +18,7 @@ const Page = () => {
         </div>
         <div className="flex h-full w-full flex-grow flex-col gap-4 px-4 py-4 ipadair:w-[42%] ipadair:flex-grow-0 ipadair:gap-6 ipadair:pr-8 4k:gap-12 4k:pr-16">
           <div className="h-[50%] w-full rounded-3xl bg-[#FFDD6A] drop-shadow-[8px_8px_0px_black] ipadair:h-[40%] 4k:rounded-[4rem] 4k:drop-shadow-[16px_16px_0px_black]">
-            <Thundermerch />
+            <Thundermarch />
           </div>
           <div className="flex h-[50%] w-full items-center justify-center gap-2 rounded-3xl bg-[#86CAFF] px-4 drop-shadow-[8px_8px_0px_black] ipadair:h-auto ipadair:flex-grow 4k:rounded-[4rem] 4k:drop-shadow-[16px_16px_0px_black]">
             <svg
