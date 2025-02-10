@@ -32,7 +32,7 @@ const Card = ({ photo, User }: luminisLookoutData) => {
             className="w-full text-center text-[.6rem] tracking-widest md:text-[1rem]"
             style={{ fontFamily: "Rocket Thunder" }}
           >
-            {User.name.length > 15 ? User.name.slice(0, 15) + "..." : User.name} 
+            {User.name.length > 15 ? User.name.slice(0, 15) + "..." : User.name}
           </p>
         </div>
       </div>
