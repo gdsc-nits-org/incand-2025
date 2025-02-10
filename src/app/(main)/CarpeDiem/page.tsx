@@ -62,7 +62,7 @@ const CarpeDiem = () => {
                 }}
               />
             </div>
-            <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
+            {/* <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
               <Image
                 src="/assets/CarpeDiem/Date.webp" // Path to your GIF
                 alt="date"
@@ -77,7 +77,7 @@ const CarpeDiem = () => {
                 fill={true}
                 className={" "}
               />
-            </div>
+            </div> */}
             <div className={"absolute left-[6%] top-[79%] h-[10vh] w-[4vw]"}>
               <Image
                 src="/assets/CarpeDiem/Shape.webp" // Path to your GIF
@@ -442,7 +442,7 @@ const CarpeDiem = () => {
                 }}
               />
             </div>
-            <div className="absolute left-[14%] top-[24%] h-[7vh] w-[29vw]">
+            {/* <div className="absolute left-[14%] top-[24%] h-[7vh] w-[29vw]">
               <Image
                 src="/assets/CarpeDiem/Date.webp" // Path to your GIF
                 alt="date"
@@ -457,7 +457,7 @@ const CarpeDiem = () => {
                 fill={true}
                 className={" "}
               />
-            </div>
+            </div> */}
             {/* <div className="absolute left-[9%] top-[40%] h-[56vh] w-[83vw]">
               <Image
                 src="/assets/CarpeDiem/FramePhone.webp"
@@ -778,7 +778,7 @@ const CarpeDiem = () => {
                 }}
               />
             </div>
-            <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
+            {/* <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
               <Image
                 src="/assets/CarpeDiem/Date.webp" // Path to your GIF
                 alt="date"
@@ -793,7 +793,7 @@ const CarpeDiem = () => {
                 fill={true}
                 className={" "}
               />
-            </div>
+            </div> */}
             <div className={"absolute left-[6%] top-[79%] h-[10vh] w-[4vw]"}>
               <Image
                 src="/assets/CarpeDiem/Shape.webp" // Path to your GIF

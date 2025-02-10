@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "~/styles/Game.module.css";
 import Link from "next/link";
 import ApprovedPhotos from "./ApprovedPhotos";
+import PrizeReveal from "../PrizeReveal";
 
 interface GameTabViewProps {
   level: number;
@@ -285,6 +286,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           {/* Step 03 */}
         </div>
       </section>
+      <PrizeReveal />
       {/* Rules Section */}
       <div
         id="uploadContainer"

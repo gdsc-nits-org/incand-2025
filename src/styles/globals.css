@@ -96,8 +96,8 @@ body::-webkit-scrollbar {
 @keyframes neon-glow-pink {
   0% {
     box-shadow:
-      0 0 8px rgba(255, 20, 147, 0.5), /* Pink color */
-      0 0 15px rgba(255, 20, 147, 0.3),
+      0 0 8px rgba(255, 20, 147, 0.5),
+      /* Pink color */ 0 0 15px rgba(255, 20, 147, 0.3),
       0 0 20px rgba(255, 20, 147, 0.2);
   }
   50% {
@@ -131,20 +131,24 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 .text-shadow {
-  text-shadow: 5px 5px 1px rgba(0, 0, 0,1); /* Adjust values for the shadow effect */
+  text-shadow: 5px 5px 1px rgba(0, 0, 0, 1); /* Adjust values for the shadow effect */
 }
 @layer utilities {
   .text-shadow-custom {
-    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+    text-shadow:
+      -2px -2px 0 black,
+      2px -2px 0 black,
+      -2px 2px 0 black,
+      2px 2px 0 black;
   }
 }
 @layer utilities {
   .text-shadow {
-    text-shadow: 
-      -2px -2px 0 black, 
-      2px -2px 0 black, 
-      -2px 2px 0 black, 
-      2px 2px 0 black, 
+    text-shadow:
+      -2px -2px 0 black,
+      2px -2px 0 black,
+      -2px 2px 0 black,
+      2px 2px 0 black,
       5px 5px 1px rgba(0, 0, 0, 1); /* Combine both shadow effects */
   }
 }
@@ -153,4 +157,9 @@ body::-webkit-scrollbar {
   .text-stroke-black {
     -webkit-text-stroke: 1px black;
   }
+}
+
+.bg-dotted {
+  background-image: radial-gradient(rgba(39, 50, 62, 0.7) 1px, transparent 2px);
+  background-size: 32px 32px;
 }
