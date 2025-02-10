@@ -233,7 +233,7 @@ const GalleryAll: React.FC = () => {
 
       image:
         "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
-      name: "SHRINANDYAM",
+      name: "SHREENANDYA",
     },
     {
       id: 7,

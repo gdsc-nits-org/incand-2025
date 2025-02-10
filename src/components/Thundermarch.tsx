@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const Thundermerch = () => {
+const Thundermarch = () => {
   const [hover, setHover] = useState(false);
   return (
     <div
@@ -96,10 +96,10 @@ const Thundermerch = () => {
           </svg>
         </span>
         <span className="font-bold text-white drop-shadow-[4px_4px_0px_black]">
-          NDERMERCH
+          NDERMARCH
         </span>
       </h1>
     </div>
   );
 };
-export default Thundermerch;
+export default Thundermarch;

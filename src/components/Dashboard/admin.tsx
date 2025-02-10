@@ -231,47 +231,50 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
-                >
-                  <Image
-                    src={item.photo}
-                    alt={`Person ${index + 1}`}
-                    width={100}
-                    height={100}
-                    className="rounded-md"
-                  />
-                  <h3>{item.User.name}</h3>
-                  <div className="mt-4 flex w-full justify-evenly">
-                    <button
-                      onClick={() =>
-                        handleAccept(
-                          item.id,
-                          item.userId,
-                          item.User.currAssigned,
-                          item.User.letters,
-                          item.User.factors,
-                          item.User.level,
-                          item.User.additiveA,
-                          item.User.additiveE,
-                          item.User.additiveF,
-                        )
-                      }
-                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
-                    >
-                      Accept
-                    </button>
-                    <button
-                      onClick={() => handleReject(item.id)}
-                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
-                    >
-                      Reject
-                    </button>
+              {allSubmissions
+                .slice()
+                .reverse()
+                .map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
+                  >
+                    <Image
+                      src={item.photo}
+                      alt={`Person ${index + 1}`}
+                      width={100}
+                      height={100}
+                      className="rounded-md"
+                    />
+                    <h3>{item.User.name}</h3>
+                    <div className="mt-4 flex w-full justify-evenly">
+                      <button
+                        onClick={() =>
+                          handleAccept(
+                            item.id,
+                            item.userId,
+                            item.User.currAssigned,
+                            item.User.letters,
+                            item.User.factors,
+                            item.User.level,
+                            item.User.additiveA,
+                            item.User.additiveE,
+                            item.User.additiveF,
+                          )
+                        }
+                        className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
+                      >
+                        Accept
+                      </button>
+                      <button
+                        onClick={() => handleReject(item.id)}
+                        className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
+                      >
+                        Reject
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </>
@@ -303,47 +306,50 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
-                >
-                  <Image
-                    src={item.photo}
-                    alt={`Person ${index + 1}`}
-                    width={100}
-                    height={100}
-                    className="rounded-md"
-                  />
-
-                  <div className="relative left-[-1.57rem] top-[1rem] mt-4 flex w-full scale-[0.57] justify-evenly mobile:scale-[0.535] mobile2:space-x-2">
-                    <button
-                      onClick={() =>
-                        handleAccept(
-                          item.id,
-                          item.userId,
-                          item.User.currAssigned,
-                          item.User.letters,
-                          item.User.factors,
-                          item.User.level,
-                          item.User.additiveA,
-                          item.User.additiveE,
-                          item.User.additiveF,
-                        )
-                      }
-                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
-                    >
-                      Accept
-                    </button>
-                    <button
-                      onClick={() => handleReject(item.id)}
-                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
-                    >
-                      Reject
-                    </button>
+              {allSubmissions
+                .slice()
+                .reverse()
+                .map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
+                  >
+                    <Image
+                      src={item.photo}
+                      alt={`Person ${index + 1}`}
+                      width={100}
+                      height={100}
+                      className="rounded-md"
+                    />
+                    <h3 className="text-[. 5rem]">{item.User.name}</h3>
+                    <div className="relative left-[-1.57rem] top-[1rem] mt-4 flex w-full scale-[0.57] justify-evenly mobile:scale-[0.535] mobile2:space-x-2">
+                      <button
+                        onClick={() =>
+                          handleAccept(
+                            item.id,
+                            item.userId,
+                            item.User.currAssigned,
+                            item.User.letters,
+                            item.User.factors,
+                            item.User.level,
+                            item.User.additiveA,
+                            item.User.additiveE,
+                            item.User.additiveF,
+                          )
+                        }
+                        className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
+                      >
+                        Accept
+                      </button>
+                      <button
+                        onClick={() => handleReject(item.id)}
+                        className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
+                      >
+                        Reject
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </>
@@ -376,47 +382,50 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
-                >
-                  <Image
-                    src={item.photo}
-                    alt={`Person ${index + 1}`}
-                    width={100}
-                    height={100}
-                    className="rounded-md"
-                  />
-
-                  <div className="mt-4 flex w-full mobile3:scale-[0.7] mobile3:justify-center mobile3:space-x-2 tablet:scale-[1] tablet:justify-evenly">
-                    <button
-                      onClick={() =>
-                        handleAccept(
-                          item.id,
-                          item.userId,
-                          item.User.currAssigned,
-                          item.User.letters,
-                          item.User.factors,
-                          item.User.level,
-                          item.User.additiveA,
-                          item.User.additiveE,
-                          item.User.additiveF,
-                        )
-                      }
-                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
-                    >
-                      Accept
-                    </button>
-                    <button
-                      onClick={() => handleReject(item.id)}
-                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
-                    >
-                      Reject
-                    </button>
+              {allSubmissions
+                .slice()
+                .reverse()
+                .map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
+                  >
+                    <Image
+                      src={item.photo}
+                      alt={`Person ${index + 1}`}
+                      width={100}
+                      height={100}
+                      className="rounded-md"
+                    />
+                    <h3>{item.User.name}</h3>
+                    <div className="mt-4 flex w-full mobile3:scale-[0.7] mobile3:justify-center mobile3:space-x-2 tablet:scale-[1] tablet:justify-evenly">
+                      <button
+                        onClick={() =>
+                          handleAccept(
+                            item.id,
+                            item.userId,
+                            item.User.currAssigned,
+                            item.User.letters,
+                            item.User.factors,
+                            item.User.level,
+                            item.User.additiveA,
+                            item.User.additiveE,
+                            item.User.additiveF,
+                          )
+                        }
+                        className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
+                      >
+                        Accept
+                      </button>
+                      <button
+                        onClick={() => handleReject(item.id)}
+                        className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
+                      >
+                        Reject
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </>
@@ -449,47 +458,50 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
-                >
-                  <Image
-                    src={item.photo}
-                    alt={`Person ${index + 1}`}
-                    width={100}
-                    height={100}
-                    className="rounded-md"
-                  />
+              {allSubmissions
+                .slice()
+                .reverse()
+                .map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
+                  >
+                    <Image
+                      src={item.photo}
+                      alt={`Person ${index + 1}`}
+                      width={100}
+                      height={100}
+                      className="rounded-md"
+                    />
 
-                  <div className="mt-4 flex w-full scale-[1.2] justify-evenly">
-                    <button
-                      onClick={() =>
-                        handleAccept(
-                          item.id,
-                          item.userId,
-                          item.User.currAssigned,
-                          item.User.letters,
-                          item.User.factors,
-                          item.User.level,
-                          item.User.additiveA,
-                          item.User.additiveE,
-                          item.User.additiveF,
-                        )
-                      }
-                      className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
-                    >
-                      Accept
-                    </button>
-                    <button
-                      onClick={() => handleReject(item.id)}
-                      className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
-                    >
-                      Reject
-                    </button>
+                    <div className="mt-4 flex w-full scale-[1.2] justify-evenly">
+                      <button
+                        onClick={() =>
+                          handleAccept(
+                            item.id,
+                            item.userId,
+                            item.User.currAssigned,
+                            item.User.letters,
+                            item.User.factors,
+                            item.User.level,
+                            item.User.additiveA,
+                            item.User.additiveE,
+                            item.User.additiveF,
+                          )
+                        }
+                        className="rounded-md bg-green-500 px-3 py-1 text-white transition hover:bg-green-600"
+                      >
+                        Accept
+                      </button>
+                      <button
+                        onClick={() => handleReject(item.id)}
+                        className="rounded-md bg-red-500 px-3 py-1 text-white transition hover:bg-red-600"
+                      >
+                        Reject
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </>
