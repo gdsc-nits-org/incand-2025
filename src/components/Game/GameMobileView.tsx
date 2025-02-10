@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "~/styles/Game.module.css";
 import Link from "next/link";
 import ApprovedPhotos from "./ApprovedPhotos";
+import PrizeReveal from "../PrizeReveal";
 
 interface GameMobileViewProps {
   level: number;
@@ -114,7 +115,7 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
       {/* Hero Section */}
 
       {/* Rules Section */}
-      <section ref={rulesRef}>
+      <section ref={rulesRef} className="bg-[#FFC2F9] pb-16">
         <div
           id="rulesContainer"
           className={`relative mt-[-5vw] flex h-[180vw] items-center justify-center rounded-t-[4vw] bg-[#FFC2F9] ipadair:mt-[-2vw] ipadair:h-[50vw] ipadair:rounded-t-[2vw]`}
@@ -287,6 +288,8 @@ const GameMobileView: React.FC<GameMobileViewProps> = ({
           {/* Step 03 */}
         </div>
       </section>
+      <PrizeReveal />
+
       {/* Rules Section */}
       <div
         id="uploadContainer"
