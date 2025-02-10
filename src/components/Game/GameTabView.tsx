@@ -852,7 +852,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
             className={`absolute inset-0 bg-[url('/assets/Game/maze_white.webp')] bg-cover bg-center bg-no-repeat`}
           ></div>
           {top10Players
-            .slice(leaderboardStartsFrom - 1)
+            // .slice(leaderboardStartsFrom - 1)
             .map((player, index) => (
               <div
                 key={player.name.toString() + index.toString()}
@@ -862,9 +862,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
                   className={`border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] md:border-r-[0.3vw] md:px-[3vw] md:py-[0.2vw] md:text-[2.5vw]`}
                   style={{ fontFamily: "Rocket Thunder" }}
                 >
-                  {index + leaderboardStartsFrom === 10
-                    ? index + leaderboardStartsFrom
-                    : "\u00A0" + (index + leaderboardStartsFrom)}
+                  {index + 1}
                 </p>
                 <p
                   className={`w-[45vw] border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] text-black md:border-r-[0.3vw] md:px-[3vw] md:py-[0.2vw] md:text-[2.5vw]`}

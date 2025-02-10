@@ -231,7 +231,7 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
+              {allSubmissions.slice().reverse().map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
@@ -303,7 +303,7 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
+              {allSubmissions.slice().reverse().map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
@@ -376,7 +376,7 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
+              {allSubmissions.slice().reverse().map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
@@ -449,7 +449,7 @@ const AdminDashboard = () => {
             </header>
 
             <div className="grid grid-cols-3 gap-6">
-              {allSubmissions.map((item, index) => (
+              {allSubmissions.slice().reverse().map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center rounded-xl border-2 border-black bg-white p-4 shadow-md"
