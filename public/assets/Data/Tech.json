@@ -152,16 +152,6 @@
 	},
 	{
 		"id": 16,
-		"name": "Subrata Lodh ",
-		"linkedin": "https://www.linkedin.com/in/subrata-lodh-45541328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"git": "https://github.com/Subrata-20",
-		"fb": "https://www.facebook.com/share/14wAFgXEznv/",
-		"designation": "Web Developer",
-		"role": "developer",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232119/mcjkrwdetdub0p44zdc3.webp"
-	},
-	{
-		"id": 17,
 		"name": "Bishal Das ",
 		"linkedin": "https://www.linkedin.com/in/bishal-das-babbb02a3",
 		"git": "https://github.com/Bishal-NITS-2003",
@@ -170,9 +160,8 @@
 		"role": "developer",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232085/o01ohffeoi6aewge2boo.webp"
 	},
-
 	{
-		"id": 18,
+		"id": 17,
 		"name": "Anmol Swarup Sahoo  ",
 		"linkedin": "https://www.linkedin.com/in/anmol77?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
 		"git": "https://github.com/newt-shadow",
@@ -181,6 +170,17 @@
 		"role": "developer",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232100/v63aoczknqjw2bimciln.webp"
 	},
+	{
+		"id": 18,
+		"name": "Subrata Lodh ",
+		"linkedin": "https://www.linkedin.com/in/subrata-lodh-45541328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"git": "https://github.com/Subrata-20",
+		"fb": "https://www.facebook.com/share/14wAFgXEznv/",
+		"designation": "Web Developer",
+		"role": "developer",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738232119/mcjkrwdetdub0p44zdc3.webp"
+	},
+	
 	{
 		"id": 19,
 		"name": "Manash Pratim Goswami",
@@ -210,5 +210,46 @@
 		"designation": "Web Developer",
 		"role": "developer",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1738231922/rg5jczht8dafjxyfysjf.webp"
+	},
+	{
+		"id": 22,
+		"name": "Jitamanyu Phukan ",
+		"designation": "UI/UX",
+		"role" : "developer",
+		"img": "https://res.cloudinary.com/dglcwreea/image/upload/f_jpg/v1739283829/IMG20241031192828_-_Jitamanyu_Phukan_r9mg3k.jpg",
+		"fb": "",
+		"git": "",
+		"linkedin": "https://www.linkedin.com/in/jitamanyu-phukan-562728280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+	},
+    {
+		"id": 23,
+		"name": "Manisha Saloi",
+		"designation": "UI/UX",
+		"role" : "developer",
+		"img": "https://res.cloudinary.com/dglcwreea/image/upload/v1739284012/IMG_20250205_164545_-_MANISHA_SALOI_g8pomt.jpg",
+		"fb": "https://www.facebook.com/profile.php?id=61550675969308&mibextid=ZbWKwL",
+		"git": "https://github.com/manisha999404",
+		"linkedin": "https://www.linkedin.com/in/manisha-saloi-aa564228a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+	},
+    {
+		"id": 24,
+		"name": "Piyush Chatterjee",
+		"designation": "UI/UX",
+		"role" : "developer",
+		"img": "https://res.cloudinary.com/dglcwreea/image/upload/v1739284101/WhatsApp_Image_2025-02-05_at_23.57.14_5f5d4126_-_Piyush_Chatterjee_vxy58s.jpg",
+		"fb": "",
+		"git": "https://github.com/Piyush-Chatterjee",
+		"linkedin": "https://www.linkedin.com/in/piyush-chatterjee-1b501928b/"
+	},
+    {
+		"id": 25,
+		"name": "Ujjwal Bhuyan",
+		"designation": "UI/UX",
+		"role" : "developer",
+		"img": "https://res.cloudinary.com/dglcwreea/image/upload/v1739284198/me_-_ME_026_UJJWAL_BHUYAN_ccsf4u.jpg",
+		"fb": "https://www.facebook.com/share/164euck7NS/",
+		"git": "",
+		"linkedin": "https://www.linkedin.com/in/ujjwal-bhuyan-654475285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
 	}
+
 ]
