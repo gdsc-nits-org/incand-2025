@@ -154,14 +154,13 @@ const Game = () => {
         loading: "Uploading image...",
         success: "Image uploaded successfully!",
         error: (err: Error) => err.message, // Strongly typed error message
-      }
+      },
     );
 
     setUploading(false);
     setUploadPopup(false);
     setImageSelected(false);
   };
-
 
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -220,10 +219,10 @@ const Game = () => {
           _user || loading
             ? {}
             : {
-              height: "100vh",
-              overflow: "hidden",
-              filter: "blur(10px)",
-            }
+                height: "100vh",
+                overflow: "hidden",
+                filter: "blur(10px)",
+              }
         }
       >
         {uploadPopup && (
@@ -264,7 +263,7 @@ const Game = () => {
                   className="absolute right-4 rounded-xl border-[3px] border-black px-3 py-2 transition-all duration-200 hover:scale-[1.1]"
                 >
                   <ImCross className="fourK:h-8 fourK:w-8" />
-                  { }
+                  {}
                 </button>
               </div>
               <input
@@ -336,7 +335,7 @@ const Game = () => {
                     }
                     className="relative z-[1] w-28 transition-all duration-200 hover:scale-[1.2] fourK:w-56"
                   >
-                    { }
+                    {}
                     <Image
                       className={`object-contain`}
                       src="/assets/Game/camera_icon.webp"
@@ -361,7 +360,8 @@ const Game = () => {
                     style={{ fontFamily: "Oxygen" }}
                   >
                     <strong>Note:</strong> Only (jpg, jpeg, png) format
-                    supported. Max size: 5mb. You can only upload 8 images in a day.
+                    supported. Max size: 5mb. You can only upload 8 images in a
+                    day.
                   </p>
                 </div>
               )}

@@ -1,10 +1,8 @@
-import React from 'react'
-import MainEvent from '~/components/MainEvent/MainEvent'
+import React from "react";
+import MainEvent from "~/components/MainEvent/MainEvent";
 
 const Page = () => {
-  return (
-    <MainEvent />
-  )
-}
+  return <MainEvent />;
+};
 
-export default Page
+export default Page;
