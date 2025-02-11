@@ -116,7 +116,7 @@ const Login = () => {
           >
             <span
               className="font-semibold text-black"
-              style={{ fontFamily: "'Oxygen', sans-serif" }}
+              style={{ fontFamily: "Rocket Thunder" }}
             >
               Sign-Up
             </span>
