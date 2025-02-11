@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import styles from "~/styles/Game.module.css";
 import Link from "next/link";
+import ApprovedPhotos from "./ApprovedPhotos";
+import PrizeReveal from "../PrizeReveal";
 
 interface GameTabViewProps {
   level: number;
@@ -64,7 +66,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
             {" "}
           </div>
           <div
-            className={`absolute h-full w-screen bg-[url('/assets/landing/maze.png')] bg-cover bg-center bg-no-repeat md:inset-0 md:bg-contain`}
+            className={`absolute h-full w-screen bg-[url('/assets/landing/maze.webp')] bg-cover bg-center bg-no-repeat md:inset-0 md:bg-contain`}
           ></div>
 
           <div
@@ -72,7 +74,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           >
             <Image
               className={`object-contain`}
-              src="/assets/Game/logo.png"
+              src="/assets/Game/logo.webp"
               fill
               alt="logo"
             />
@@ -121,7 +123,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           className={`relative mt-[-5vw] flex h-[180vw] items-center justify-center rounded-t-[4vw] bg-[#FFC2F9] md:mt-[-2vw] md:h-[50vw] md:rounded-t-[2vw]`}
         >
           <div
-            className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+            className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.webp')] bg-cover bg-center bg-no-repeat`}
           ></div>
           <div className={`absolute right-0 top-[8vw] hidden w-[95%] md:block`}>
             <svg
@@ -141,7 +143,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           >
             <Image
               alt="rulePath"
-              src="/assets/Game/rule_path_mobile.png"
+              src="/assets/Game/rule_path_mobile.webp"
               layout="responsive"
               width={100}
               height={100}
@@ -190,7 +192,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
             </p>
             <div className={`relative left-[-0.5vw] hidden w-[17vw] md:block`}>
               <Image
-                src="/assets/Game/icon_rules.png"
+                src="/assets/Game/icon_rules.webp"
                 layout="responsive"
                 width={100}
                 height={100}
@@ -237,8 +239,8 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               className={`w-[82vw] text-[4vw] font-extrabold leading-[6vw] md:w-[21vw] md:text-center md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Upload a cool pic & let the admin give it a thumbs-up! Once
-              approved, you&apos;ll receive a mystery letter!
+              Upload a cool pic of our campus & let the admin give it a
+              thumbs-up! Once approved, you&apos;ll receive a mystery alphabet!
             </p>
           </div>
           {/* Step 02 */}
@@ -273,20 +275,25 @@ const GameTabView: React.FC<GameTabViewProps> = ({
               className={`w-[80vw] text-[4vw] font-extrabold leading-[6vw] md:w-[15vw] md:text-end md:text-[1.5vw] md:leading-[2vw]`}
               style={{ fontFamily: "Bricolage Grotesque" }}
             >
-              Collect all the correct letters, win amazing prizes, and enjoy the
-              ultimate letter hunt adventure. Are you ready to play?
+              Collect all the correct alphabets of the word{" "}
+              <span className="font-bricolage font-extrabold">
+                &quot;INCAND&quot;
+              </span>
+              , win amazing prizes, and enjoy the ultimate alphabet hunt
+              adventure. Are you ready to play?
             </p>
           </div>
           {/* Step 03 */}
         </div>
       </section>
+      <PrizeReveal />
       {/* Rules Section */}
       <div
         id="uploadContainer"
         className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] md:mt-[-2vw] md:flex-row md:rounded-t-[2vw] md:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.webp')] bg-cover bg-center bg-no-repeat`}
         ></div>
         <div className={`flex`}>
           <p
@@ -351,7 +358,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         className={`relative mt-[-5vw] flex h-[70vw] overflow-x-hidden rounded-t-[4vw] border-[1.5vw] border-black bg-[#001E30] md:mt-[-2vw] md:h-[50vw] md:rounded-t-[2vw] md:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/Game/maze_white.png')] bg-cover bg-center bg-no-repeat`}
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white.webp')] bg-cover bg-center bg-no-repeat`}
         ></div>
         <svg
           className={`ms-[-10vw] w-[90vw] self-start md:w-[50vw]`}
@@ -599,7 +606,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         className={`relative mt-[-5vw] flex h-[110vw] items-center justify-center rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] md:mt-[-2vw] md:h-[60vw] md:rounded-t-[2vw] md:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/landing/maze.png')] bg-cover bg-center bg-no-repeat opacity-40`}
+          className={`absolute inset-0 bg-[url('/assets/landing/maze.webp')] bg-cover bg-center bg-no-repeat opacity-40`}
         ></div>
         <p
           className={`absolute left-[6vw] top-[2vw] text-[13vw] leading-[15vw] tracking-widest md:left-[3vw] md:top-[1vw] md:text-[9vw] md:leading-[10vw]`}
@@ -613,7 +620,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         >
           <Image
             className="animate-spinSlow"
-            src="/assets/Game/logo_two.png"
+            src="/assets/Game/logo_two.webp"
             layout="responsive"
             width={100}
             height={100}
@@ -623,7 +630,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         </div>
         <div className={`absolute bottom-0 hidden w-[95%] md:block`}>
           <Image
-            src="/assets/Game/leaderboard_ladder.png"
+            src="/assets/Game/leaderboard_ladder.webp"
             layout="responsive"
             width={100}
             height={100}
@@ -633,7 +640,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         </div>
         <div className={`absolute bottom-0 block w-[90%] md:hidden`}>
           <Image
-            src="/assets/Game/leaderboard_ladder_mobile.png"
+            src="/assets/Game/leaderboard_ladder_mobile.webp"
             layout="responsive"
             width={100}
             height={100}
@@ -648,7 +655,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           <div className={`h-[10.5vw] w-[10.5vw] rotate-[17deg]`}>
             <Image
               className={`rounded-[0.5vw] object-cover`}
-              src={top10Players[2]?.pic ?? "/assets/Game/placeholder.png"}
+              src={top10Players[2]?.pic ?? "/assets/Game/placeholder.webp"}
               layout="responsive"
               width={100}
               height={100}
@@ -713,7 +720,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           <div className={`h-[26vw] w-[26vw] md:h-[13vw] md:w-[13vw]`}>
             <Image
               className={`rounded-[0.5vw] object-cover`}
-              src={top10Players[1]?.pic ?? "/assets/Game/placeholder.png"}
+              src={top10Players[1]?.pic ?? "/assets/Game/placeholder.webp"}
               layout="responsive"
               width={100}
               height={100}
@@ -797,7 +804,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           >
             <Image
               className={`rounded-[0.5vw] object-cover`}
-              src={top10Players[0]?.pic ?? "/assets/Game/placeholder.png"}
+              src={top10Players[0]?.pic ?? "/assets/Game/placeholder.webp"}
               layout="responsive"
               width={100}
               height={100}
@@ -806,7 +813,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           </div>
           <div className={`w-[21vw] md:w-[10.5vw]`}>
             <Image
-              src="/assets/Game/brutalist_svg.png"
+              src="/assets/Game/brutalist_svg.webp"
               layout="responsive"
               width={100}
               height={100}
@@ -842,10 +849,10 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           className={`relative mt-[-5.1vw] flex flex-col items-center justify-center gap-[4vw] overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-gradient-to-b from-[#001E30] to-[#001E30] py-[12vw] md:mt-[-3.1vw] md:gap-[2vw] md:rounded-t-[2vw] md:border-[0.75vw] md:py-[6vw]`}
         >
           <div
-            className={`absolute inset-0 bg-[url('/assets/Game/maze_white.png')] bg-cover bg-center bg-no-repeat`}
+            className={`absolute inset-0 bg-[url('/assets/Game/maze_white.webp')] bg-cover bg-center bg-no-repeat`}
           ></div>
           {top10Players
-            .slice(leaderboardStartsFrom - 1)
+            // .slice(leaderboardStartsFrom - 1)
             .map((player, index) => (
               <div
                 key={player.name.toString() + index.toString()}
@@ -855,9 +862,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
                   className={`border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] md:border-r-[0.3vw] md:px-[3vw] md:py-[0.2vw] md:text-[2.5vw]`}
                   style={{ fontFamily: "Rocket Thunder" }}
                 >
-                  {index + leaderboardStartsFrom === 10
-                    ? index + leaderboardStartsFrom
-                    : "\u00A0" + (index + leaderboardStartsFrom)}
+                  {index + 1}
                 </p>
                 <p
                   className={`w-[45vw] border-r-[0.5vw] border-black px-[4vw] py-[3vw] text-[6vw] text-black md:border-r-[0.3vw] md:px-[3vw] md:py-[0.2vw] md:text-[2.5vw]`}
@@ -989,7 +994,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
         className={`relative mt-[-5vw] flex flex-col items-center justify-center overflow-x-hidden rounded-t-[4vw] border-[1.75vw] border-black bg-[#FAE00D] pb-[5vw] pt-[3vw] md:mt-[-2vw] md:flex-row md:rounded-t-[2vw] md:border-[0.75vw]`}
       >
         <div
-          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.png')] bg-cover bg-center bg-no-repeat`}
+          className={`absolute inset-0 bg-[url('/assets/Game/maze_white_one.webp')] bg-cover bg-center bg-no-repeat`}
         ></div>
         <div className={`flex`}>
           <p
@@ -1055,7 +1060,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
       >
         <div className={`relative w-[35vw] md:w-[20vw]`}>
           <Image
-            src="/assets/Game/brutalist_three.png"
+            src="/assets/Game/brutalist_three.webp"
             layout="responsive"
             width={100}
             height={100}
@@ -1094,6 +1099,7 @@ const GameTabView: React.FC<GameTabViewProps> = ({
           </button>
         </Link>
       </div>
+      <ApprovedPhotos />
     </div>
   );
 };

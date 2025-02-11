@@ -3,14 +3,12 @@ import { useState, useEffect } from "react";
 import styles from "../../../styles/CarpeDiem.module.css";
 import Image from "next/image";
 
-export const runtime = "edge";
-
 const CarpeDiem = () => {
   const [isTHovered, setIsTHovered] = useState(false);
   const [isOHovered, setIsOHovered] = useState(false);
   const [isTwHovered, setIsTwHovered] = useState(false);
   const [isFHovered, setIsFHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  // const [isClicked, setIsClicked] = useState(false);
   const [isPhone, setIsPhone] = useState(false);
   const [isIpad, setIsIpad] = useState(false);
   const [isLap, setIsLap] = useState(false);
@@ -44,7 +42,7 @@ const CarpeDiem = () => {
         <>
           <div className={styles.carped + ""}>
             <Image
-              src="/assets/CarpeDiem/background.png"
+              src="/assets/CarpeDiem/background.webp"
               fill={true}
               alt="background"
               className="absolute inset-0 max-h-screen"
@@ -57,15 +55,16 @@ const CarpeDiem = () => {
                 src="/assets/CarpeDiem/disc.gif" // Path to your GIF
                 alt="overlay gif"
                 fill={true}
+                unoptimized={true}
                 className={"object contain rounded-lg" + styles.disc}
                 style={{
                   clipPath: "inset(0% round 24px)", // Custom clip for rounded corners
                 }}
               />
             </div>
-            <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
+            {/* <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
               <Image
-                src="/assets/CarpeDiem/Date.png" // Path to your GIF
+                src="/assets/CarpeDiem/Date.webp" // Path to your GIF
                 alt="date"
                 fill={true}
                 className={" "}
@@ -73,15 +72,15 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[12%] top-[69%] h-[10vh] w-[9vw]">
               <Image
-                src="/assets/CarpeDiem/Time.png" // Path to your GIF
+                src="/assets/CarpeDiem/Time.webp" // Path to your GIF
                 alt="time"
                 fill={true}
                 className={" "}
               />
-            </div>
+            </div> */}
             <div className={"absolute left-[6%] top-[79%] h-[10vh] w-[4vw]"}>
               <Image
-                src="/assets/CarpeDiem/Shape.png" // Path to your GIF
+                src="/assets/CarpeDiem/Shape.webp" // Path to your GIF
                 alt="shape"
                 fill={true}
                 className={" "}
@@ -89,7 +88,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[22%] top-[79%] h-[10vh] w-[4vw]">
               <Image
-                src="/assets/CarpeDiem/Shape.png" // Path to your GIF
+                src="/assets/CarpeDiem/Shape.webp" // Path to your GIF
                 alt="shape"
                 fill={true}
                 className={" "}
@@ -97,7 +96,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[28.3%] top-[10%] h-[70vh] w-[0.3vw]">
               <Image
-                src="/assets/CarpeDiem/Line.png" // Path to your GIF
+                src="/assets/CarpeDiem/Line.webp" // Path to your GIF
                 alt="line"
                 fill={true}
                 className={" "}
@@ -105,7 +104,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[28.5%] top-[6%] h-[77vh] w-[69vw]">
               <Image
-                src="/assets/CarpeDiem/Main.png" // Path to your GIF
+                src="/assets/CarpeDiem/Main.webp" // Path to your GIF
                 alt="main"
                 fill={true}
                 className={" "}
@@ -117,6 +116,7 @@ const CarpeDiem = () => {
                 alt="geometric"
                 fill={true}
                 className={" "}
+                unoptimized={true}
                 style={{
                   borderTopLeftRadius: "30px", // Rounding the top-left corner
                   borderTopRightRadius: "0px",
@@ -128,7 +128,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[31%] top-[14%] h-[43vh] w-[37.5vw]">
               <Image
-                src="/assets/CarpeDiem/Rectangle.png" // Path to your GIF
+                src="/assets/CarpeDiem/Rectangle.webp" // Path to your GIF
                 alt="rectangle"
                 fill={true}
                 className={" "}
@@ -137,7 +137,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[34%] top-[17%] h-[30vh] w-[33vw]">
               <Image
-                src="/assets/CarpeDiem/CarpeText.png" // Path to your GIF
+                src="/assets/CarpeDiem/CarpeText.webp" // Path to your GIF
                 alt="text"
                 fill={true}
                 className={" "}
@@ -146,7 +146,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[55.5%] top-[18%] h-[13vh] w-[6vw]">
               <Image
-                src="/assets/CarpeDiem/ELetter.png" // Path to your GIF
+                src="/assets/CarpeDiem/ELetter.webp" // Path to your GIF
                 alt="text"
                 fill={true}
                 className={" "}
@@ -231,7 +231,7 @@ const CarpeDiem = () => {
             </p>
             <div className="absolute left-[28.5%] top-[76%] h-[15vh] w-[38vw]">
               <Image
-                src="/assets/CarpeDiem/Down.png" // Path to your GIF
+                src="/assets/CarpeDiem/Down.webp" // Path to your GIF
                 alt="Border"
                 fill={true}
                 className={" "}
@@ -240,7 +240,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[36%] top-[36%] h-[50vh] w-[43vw]">
               <Image
-                src="/assets/CarpeDiem/Radio.png" // Path to your GIF
+                src="/assets/CarpeDiem/Radio.webp" // Path to your GIF
                 alt="radio"
                 fill={true}
                 className={" "}
@@ -253,6 +253,7 @@ const CarpeDiem = () => {
                 alt="border"
                 fill={true}
                 className={" "}
+                unoptimized={true}
                 style={{
                   borderTopLeftRadius: "10px", // Rounding the top-left corner
                   borderTopRightRadius: "30px",
@@ -268,6 +269,7 @@ const CarpeDiem = () => {
                 alt="checks"
                 fill={true}
                 className={" "}
+                unoptimized={true}
                 style={{
                   borderTopLeftRadius: "10px", // Rounding the top-left corner
                   borderTopRightRadius: "0px",
@@ -279,7 +281,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[68.5%] top-[15%] h-[57vh] w-[29vw]">
               <Image
-                src="/assets/CarpeDiem/SingerBackg.png" // Path to your GIF
+                src="/assets/CarpeDiem/SingerBackg.webp" // Path to your GIF
                 alt="backgrond"
                 fill={true}
                 className={" "}
@@ -288,7 +290,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[93.2%] top-[8%] h-[63vh] w-[4.2vw]">
               <Image
-                src="/assets/CarpeDiem/SingerName.png" // Path to your GIF
+                src="/assets/CarpeDiem/revealingsoon.png" // Path to your GIF
                 alt="Name"
                 fill={true}
                 className={" "}
@@ -297,7 +299,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[72%] top-[24%] h-[50vh] w-[20vw]">
               <Image
-                src="/assets/CarpeDiem/Singer.png" // Path to your GIF
+                src="/assets/CarpeDiem/artist.png" // Path to your GIF
                 alt="Singer"
                 fill={true}
                 className={" "}
@@ -306,21 +308,21 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[73%] top-[77%] h-[12vh] w-[19vw]">
               <Image
-                src="/assets/CarpeDiem/Button.png" // Path to your GIF
+                src="/assets/CarpeDiem/Button.webp" // Path to your GIF
                 alt="Button"
                 fill={true}
                 className={" "}
                 style={{ zIndex: "2" }}
               />
             </div>
-            {!isClicked ? (
+            {/* {!isClicked ? (
               <>
                 <div
                   className="absolute left-[73.8%] top-[78%] h-[8vh] w-[4vw] cursor-pointer"
                   onClick={() => setIsClicked(true)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Circle.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Circle.webp" // Path to your GIF
                     alt="Circle"
                     fill={true}
                     className={"cursor-pointer"}
@@ -333,7 +335,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(true)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Play.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Play.webp" // Path to your GIF
                     alt="PLay"
                     fill={true}
                     className={"cursor-pointer"}
@@ -343,7 +345,7 @@ const CarpeDiem = () => {
                 </div>
                 <div className="absolute left-[79%] top-[80.5%] h-[4vh] w-[11vw]">
                   <Image
-                    src="/assets/CarpeDiem/SongName.png" // Path to your GIF
+                    src="/assets/CarpeDiem/SongName.webp" // Path to your GIF
                     alt="Song"
                     fill={true}
                     className={" "}
@@ -358,7 +360,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(false)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Circle.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Circle.webp" // Path to your GIF
                     alt="Circle"
                     fill={true}
                     className={" "}
@@ -371,7 +373,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(false)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Pause.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Pause.webp" // Path to your GIF
                     alt="Pause"
                     fill={true}
                     className={" "}
@@ -384,12 +386,13 @@ const CarpeDiem = () => {
                     src="/assets/CarpeDiem/PlayState.gif" // Path to your GIF
                     alt="Music Play"
                     fill={true}
+                    unoptimized={true}
                     className={" "}
                     style={{ zIndex: "3" }}
                   />
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </>
       )}
@@ -398,7 +401,7 @@ const CarpeDiem = () => {
           <div className="h-screen min-h-[100vh] bg-[#EE79BD]">
             <div className="absolute left-[17%] top-[12%] h-[12px] w-[65vw]">
               <Image
-                src="/assets/CarpeDiem/MainBorder.png" // Path to your GIF
+                src="/assets/CarpeDiem/MainBorder.webp" // Path to your GIF
                 alt="main"
                 fill={true}
                 className={" "}
@@ -406,7 +409,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[17%] top-[97%] h-[12px] w-[65vw]">
               <Image
-                src="/assets/CarpeDiem/MainBorder.png" // Path to your GIF
+                src="/assets/CarpeDiem/MainBorder.webp" // Path to your GIF
                 alt="main"
                 fill={true}
                 className={" "}
@@ -414,7 +417,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[9%] top-[15%] h-[25vh] w-[83vw]">
               <Image
-                src="/assets/CarpeDiem/DiscMobile.png"
+                src="/assets/CarpeDiem/DiscMobile.webp"
                 alt="main"
                 fill={true}
                 className={" "}
@@ -433,14 +436,15 @@ const CarpeDiem = () => {
                 alt="anim"
                 fill={true}
                 className={" "}
+                unoptimized={true}
                 style={{
                   clipPath: "inset(0% round 24px)",
                 }}
               />
             </div>
-            <div className="absolute left-[14%] top-[24%] h-[7vh] w-[29vw]">
+            {/* <div className="absolute left-[14%] top-[24%] h-[7vh] w-[29vw]">
               <Image
-                src="/assets/CarpeDiem/Date.png" // Path to your GIF
+                src="/assets/CarpeDiem/Date.webp" // Path to your GIF
                 alt="date"
                 fill={true}
                 className={" "}
@@ -448,23 +452,23 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[17%] top-[31%] h-[5vh] w-[19vw]">
               <Image
-                src="/assets/CarpeDiem/Time.png" // Path to your GIF
+                src="/assets/CarpeDiem/Time.webp" // Path to your GIF
                 alt="time"
                 fill={true}
                 className={" "}
               />
-            </div>
-            <div className="absolute left-[9%] top-[40%] h-[56vh] w-[83vw]">
+            </div> */}
+            {/* <div className="absolute left-[9%] top-[40%] h-[56vh] w-[83vw]">
               <Image
-                src="/assets/CarpeDiem/FramePhone.png"
+                src="/assets/CarpeDiem/FramePhone.webp"
                 alt="frame"
                 fill={true}
                 className={" "}
               />
-            </div>
+            </div> */}
             <div className="absolute left-[9%] top-[40%] h-[32vh] w-[16vw]">
               <Image
-                src="/assets/CarpeDiem/BorderPhone.png"
+                src="/assets/CarpeDiem/BorderPhone.webp"
                 alt="border"
                 fill={true}
                 className={" "}
@@ -477,6 +481,7 @@ const CarpeDiem = () => {
                 alt="checks"
                 fill={true}
                 className={" "}
+                unoptimized={true}
                 style={{
                   borderTopLeftRadius: "0px", // Rounding the top-left corner
                   borderTopRightRadius: "0px",
@@ -492,6 +497,7 @@ const CarpeDiem = () => {
                 alt="anim"
                 fill={true}
                 className={" "}
+                unoptimized={true}
                 style={{
                   zIndex: "2",
                   borderTopLeftRadius: "0px",
@@ -503,7 +509,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[16%] top-[45%] h-[20vh] w-[72vw]">
               <Image
-                src="/assets/CarpeDiem/Rectangle.png" // Path to your GIF
+                src="/assets/CarpeDiem/Rectangle.webp" // Path to your GIF
                 alt="rectangle"
                 fill={true}
                 className={" "}
@@ -512,7 +518,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[20%] top-[46%] h-[15vh] w-[62vw]">
               <Image
-                src="/assets/CarpeDiem/CarpeText.png" // Path to your GIF
+                src="/assets/CarpeDiem/CarpeText.webp" // Path to your GIF
                 alt="text"
                 fill={true}
                 className={" "}
@@ -521,7 +527,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[60%] top-[46.5%] h-[7vh] w-[15vw]">
               <Image
-                src="/assets/CarpeDiem/ELetter.png" // Path to your GIF
+                src="/assets/CarpeDiem/ELetter.webp" // Path to your GIF
                 alt="text"
                 fill={true}
                 className={" "}
@@ -606,7 +612,7 @@ const CarpeDiem = () => {
             </p>
             <div className="absolute left-[35%] top-[52%] h-[20vh] w-[67vw]">
               <Image
-                src="/assets/CarpeDiem/Radio.png" // Path to your GIF
+                src="/assets/CarpeDiem/Radio.webp" // Path to your GIF
                 alt="radio"
                 fill={true}
                 className={" "}
@@ -615,28 +621,29 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[24.5%] top-[74%] h-[18.5vh] w-[59vw]">
               <Image
-                src="/assets/CarpeDiem/BackPhone.png" // Path to your GIF
+                src="/assets/CarpeDiem/BackPhone.webp" // Path to your GIF
                 alt="Background"
                 fill={true}
                 className={" "}
                 style={{ zIndex: "2" }}
               />
             </div>
-            <div className="absolute left-[24.5%] top-[92.3%] h-[3.5vh] w-[65vw]">
+            {/* <div className="absolute left-[24.5%] top-[92.3%] h-[3.5vh] w-[65vw]">
               <Image
-                src="/assets/CarpeDiem/NamePhone.png" // Path to your GIF
+                src="/assets/CarpeDiem/NamePhone.webp" // Path to your GIF
                 alt="Name"
                 fill={true}
                 className={" "}
                 style={{ zIndex: "2" }}
               />
-            </div>
+            </div> */}
             <div className="absolute left-[84%] top-[74%] h-[21.7vh] w-[8vw]">
               <Image
                 src="/assets/CarpeDiem/GreenPhone.gif" // Path to your GIF
                 alt="Border"
                 fill={true}
                 className={" "}
+                unoptimized={true}
                 style={{
                   zIndex: "2",
                   borderTopLeftRadius: "0px",
@@ -646,32 +653,32 @@ const CarpeDiem = () => {
                 }}
               />
             </div>
-            <div className="absolute left-[16%] top-[68%] h-[25vh] w-[76vw]">
+            <div className="absolute left-[9rem] top-[66%] h-[30vh] w-[50vw]">
               <Image
-                src="/assets/CarpeDiem/Singer.png" // Path to your GIF
+                src="/assets/CarpeDiem/artist.png" // Path to your GIF
                 alt="Singer"
                 fill={true}
                 className={" "}
                 style={{ zIndex: "2" }}
               />
             </div>
-            <div className="absolute left-[40%] top-[87%] h-[5vh] w-[27vw]">
+            <div className="absolute left-[40%] top-[90%] h-[5vh] w-[27vw]">
               <Image
-                src="/assets/CarpeDiem/Button.png" // Path to your GIF
+                src="/assets/CarpeDiem/Button.webp" // Path to your GIF
                 alt="Button"
                 fill={true}
                 className={" "}
                 style={{ zIndex: "2" }}
               />
             </div>
-            {!isClicked ? (
+            {/* {!isClicked ? (
               <>
                 <div
                   className="absolute left-[42%] top-[88%] h-[3vh] w-[4vw] cursor-pointer"
                   onClick={() => setIsClicked(true)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Circle.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Circle.webp" // Path to your GIF
                     alt="Circle"
                     fill={true}
                     className={"cursor-pointer"}
@@ -684,7 +691,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(true)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Play.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Play.webp" // Path to your GIF
                     alt="PLay"
                     fill={true}
                     className={"cursor-pointer"}
@@ -694,7 +701,7 @@ const CarpeDiem = () => {
                 </div>
                 <div className="absolute left-[48%] top-[88.3%] h-[2vh] w-[17vw]">
                   <Image
-                    src="/assets/CarpeDiem/SongName.png" // Path to your GIF
+                    src="/assets/CarpeDiem/SongName.webp" // Path to your GIF
                     alt="Song"
                     fill={true}
                     className={" "}
@@ -709,7 +716,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(false)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Circle.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Circle.webp" // Path to your GIF
                     alt="Circle"
                     fill={true}
                     className={" "}
@@ -722,7 +729,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(false)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Pause.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Pause.webp" // Path to your GIF
                     alt="Pause"
                     fill={true}
                     className={" "}
@@ -735,12 +742,13 @@ const CarpeDiem = () => {
                     src="/assets/CarpeDiem/PlayState.gif" // Path to your GIF
                     alt="Music Play"
                     fill={true}
+                    unoptimized={true}
                     className={" "}
                     style={{ zIndex: "3" }}
                   />
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </>
       )}
@@ -748,7 +756,7 @@ const CarpeDiem = () => {
         <>
           <div className={styles["carped-ipad"] + "min-h-[100vh]"}>
             <Image
-              src="/assets/CarpeDiem/background.png"
+              src="/assets/CarpeDiem/background.webp"
               fill={true}
               alt="background"
               className="absolute inset-0"
@@ -763,15 +771,16 @@ const CarpeDiem = () => {
                 src="/assets/CarpeDiem/disc.gif" // Path to your GIF
                 alt="overlay gif"
                 fill={true}
+                unoptimized={true}
                 className={"object contain rounded-lg" + styles.disc}
                 style={{
                   clipPath: "inset(0% round 24px)", // Custom clip for rounded corners
                 }}
               />
             </div>
-            <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
+            {/* <div className="absolute left-[10%] top-[57%] h-[11vh] w-[13vw]">
               <Image
-                src="/assets/CarpeDiem/Date.png" // Path to your GIF
+                src="/assets/CarpeDiem/Date.webp" // Path to your GIF
                 alt="date"
                 fill={true}
                 className={" "}
@@ -779,15 +788,15 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[12%] top-[69%] h-[10vh] w-[9vw]">
               <Image
-                src="/assets/CarpeDiem/Time.png" // Path to your GIF
+                src="/assets/CarpeDiem/Time.webp" // Path to your GIF
                 alt="time"
                 fill={true}
                 className={" "}
               />
-            </div>
+            </div> */}
             <div className={"absolute left-[6%] top-[79%] h-[10vh] w-[4vw]"}>
               <Image
-                src="/assets/CarpeDiem/Shape.png" // Path to your GIF
+                src="/assets/CarpeDiem/Shape.webp" // Path to your GIF
                 alt="shape"
                 fill={true}
                 className={" "}
@@ -795,7 +804,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[22%] top-[79%] h-[10vh] w-[4vw]">
               <Image
-                src="/assets/CarpeDiem/Shape.png" // Path to your GIF
+                src="/assets/CarpeDiem/Shape.webp" // Path to your GIF
                 alt="shape"
                 fill={true}
                 className={" "}
@@ -803,7 +812,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[28.3%] top-[10%] h-[70vh] w-[0.3vw]">
               <Image
-                src="/assets/CarpeDiem/Line.png" // Path to your GIF
+                src="/assets/CarpeDiem/Line.webp" // Path to your GIF
                 alt="line"
                 fill={true}
                 className={" "}
@@ -811,7 +820,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[28.5%] top-[6%] h-[80.5vh] w-[69vw]">
               <Image
-                src="/assets/CarpeDiem/Main.png" // Path to your GIF
+                src="/assets/CarpeDiem/Main.webp" // Path to your GIF
                 alt="main"
                 fill={true}
                 className={" "}
@@ -822,6 +831,7 @@ const CarpeDiem = () => {
                 src="/assets/CarpeDiem/Geometric.gif" // Path to your GIF
                 alt="geometric"
                 fill={true}
+                unoptimized={true}
                 className={" "}
                 style={{
                   borderTopLeftRadius: "30px", // Rounding the top-left corner
@@ -834,7 +844,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[31%] top-[14%] h-[43vh] w-[37.5vw]">
               <Image
-                src="/assets/CarpeDiem/Rectangle.png" // Path to your GIF
+                src="/assets/CarpeDiem/Rectangle.webp" // Path to your GIF
                 alt="rectangle"
                 fill={true}
                 className={" "}
@@ -843,7 +853,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[34%] top-[17%] h-[30vh] w-[33vw]">
               <Image
-                src="/assets/CarpeDiem/CarpeText.png" // Path to your GIF
+                src="/assets/CarpeDiem/CarpeText.webp" // Path to your GIF
                 alt="text"
                 fill={true}
                 className={" "}
@@ -852,7 +862,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[55.5%] top-[18%] h-[13vh] w-[6vw]">
               <Image
-                src="/assets/CarpeDiem/ELetter.png" // Path to your GIF
+                src="/assets/CarpeDiem/ELetter.webp" // Path to your GIF
                 alt="text"
                 fill={true}
                 className={" "}
@@ -937,7 +947,7 @@ const CarpeDiem = () => {
             </p>
             <div className="absolute left-[28.5%] top-[73%] h-[19vh] w-[38vw]">
               <Image
-                src="/assets/CarpeDiem/Down.png" // Path to your GIF
+                src="/assets/CarpeDiem/Down.webp" // Path to your GIF
                 alt="Border"
                 fill={true}
                 className={" "}
@@ -946,7 +956,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[36%] top-[36%] h-[52vh] w-[43vw]">
               <Image
-                src="/assets/CarpeDiem/Radio.png" // Path to your GIF
+                src="/assets/CarpeDiem/Radio.webp" // Path to your GIF
                 alt="radio"
                 fill={true}
                 className={" "}
@@ -958,6 +968,7 @@ const CarpeDiem = () => {
                 src="/assets/CarpeDiem/Border.gif" // Path to your GIF
                 alt="border"
                 fill={true}
+                unoptimized={true}
                 className={" "}
                 style={{
                   borderTopLeftRadius: "10px", // Rounding the top-left corner
@@ -973,6 +984,7 @@ const CarpeDiem = () => {
                 src="/assets/CarpeDiem/Checks.gif" // Path to your GIF
                 alt="checks"
                 fill={true}
+                unoptimized={true}
                 className={" "}
                 style={{
                   borderTopLeftRadius: "10px", // Rounding the top-left corner
@@ -985,7 +997,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[68.5%] top-[15%] h-[57vh] w-[29vw]">
               <Image
-                src="/assets/CarpeDiem/SingerBackg.png" // Path to your GIF
+                src="/assets/CarpeDiem/SingerBackg.webp" // Path to your GIF
                 alt="backgrond"
                 fill={true}
                 className={" "}
@@ -994,7 +1006,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[93.2%] top-[8%] h-[63vh] w-[4.2vw]">
               <Image
-                src="/assets/CarpeDiem/SingerName.png" // Path to your GIF
+                src="/assets/CarpeDiem/revealingsoon.png" // Path to your GIF
                 alt="Name"
                 fill={true}
                 className={" "}
@@ -1003,7 +1015,7 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[72%] top-[24%] h-[50vh] w-[20vw]">
               <Image
-                src="/assets/CarpeDiem/Singer.png" // Path to your GIF
+                src="/assets/CarpeDiem/artist.png" // Path to your GIF
                 alt="Singer"
                 fill={true}
                 className={" "}
@@ -1012,21 +1024,21 @@ const CarpeDiem = () => {
             </div>
             <div className="absolute left-[73%] top-[75%] h-[8vh] w-[22vw]">
               <Image
-                src="/assets/CarpeDiem/Button.png" // Path to your GIF
+                src="/assets/CarpeDiem/Button.webp" // Path to your GIF
                 alt="Button"
                 fill={true}
                 className={" "}
                 style={{ zIndex: "2" }}
               />
             </div>
-            {!isClicked ? (
+            {/* {!isClicked ? (
               <>
                 <div
                   className="absolute left-[74%] top-[76%] h-[5vh] w-[4vw] cursor-pointer"
                   onClick={() => setIsClicked(true)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Circle.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Circle.webp" // Path to your GIF
                     alt="Circle"
                     fill={true}
                     className={"cursor-pointer"}
@@ -1039,7 +1051,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(true)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Play.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Play.webp" // Path to your GIF
                     alt="PLay"
                     fill={true}
                     className={"cursor-pointer"}
@@ -1049,7 +1061,7 @@ const CarpeDiem = () => {
                 </div>
                 <div className="absolute left-[79%] top-[77%] h-[4vh] w-[14vw]">
                   <Image
-                    src="/assets/CarpeDiem/SongName.png" // Path to your GIF
+                    src="/assets/CarpeDiem/SongName.webp" // Path to your GIF
                     alt="Song"
                     fill={true}
                     className={" "}
@@ -1064,7 +1076,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(false)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Circle.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Circle.webp" // Path to your GIF
                     alt="Circle"
                     fill={true}
                     className={" "}
@@ -1077,7 +1089,7 @@ const CarpeDiem = () => {
                   onClick={() => setIsClicked(false)}
                 >
                   <Image
-                    src="/assets/CarpeDiem/Pause.png" // Path to your GIF
+                    src="/assets/CarpeDiem/Pause.webp" // Path to your GIF
                     alt="Pause"
                     fill={true}
                     className={" "}
@@ -1090,12 +1102,13 @@ const CarpeDiem = () => {
                     src="/assets/CarpeDiem/PlayState.gif" // Path to your GIF
                     alt="Music Play"
                     fill={true}
+                    unoptimized={true}
                     className={" "}
                     style={{ zIndex: "3" }}
                   />
                 </div>
               </>
-            )}
+            )} */}
           </div>
         </>
       )}

@@ -30,7 +30,7 @@ const TeamDesktop: React.FC = () => {
         msOverflowStyle: "none" /* For Internet Explorer and Edge */,
         overflowY: "scroll",
         WebkitOverflowScrolling: "touch" /* For smooth scrolling */,
-        backgroundImage: `url('/assets/Team/Team.png')` /* Replace with your image path */,
+        backgroundImage: `url('/assets/Team/Team.webp')` /* Replace with your image path */,
         backgroundPosition: "bottom" /* Aligns the image to the bottom */,
         backgroundSize:
           "100% 40%" /* Sets the image width to 100% and height to 30% */,
@@ -64,7 +64,7 @@ const TeamDesktop: React.FC = () => {
             }}
           > */}
           {/* <div
-              className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isCore ? "bg-[url('/assets/Team/Handle.png')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
+              className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isCore ? "bg-[url('/assets/Team/Handle.webp')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
               className={`font-oxygen text-xs font-extrabold leading-[35.36px] tablet:text-sm ipadpro:text-base ipadair:text-lg ${isCore ? "text-[#FFD231]" : "text-black"} my-auto text-center tracking-[0.06em]`}
@@ -82,7 +82,7 @@ const TeamDesktop: React.FC = () => {
             }}
           >
             <div
-              className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isTech ? "bg-[url('/assets/Team/Handle.png')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
+              className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isTech ? "bg-[url('/assets/Team/Handle.webp')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
               className={`font-oxygen text-xs font-extrabold leading-[35.36px] tablet:text-sm ipadpro:text-base ipadair:text-lg ${isTech ? "text-[#FFD231]" : "text-black"} my-auto text-center tracking-[0.06em]`}
@@ -100,7 +100,7 @@ const TeamDesktop: React.FC = () => {
             }}
           > */}
           {/* <div
-              className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isModule ? "bg-[url('/assets/Team/Handle.png')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
+              className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isModule ? "bg-[url('/assets/Team/Handle.webp')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
               className={`font-oxygen text-xs font-extrabold leading-[35.36px] tablet:text-sm ipadpro:text-base ipadair:text-lg ${isModule ? "text-[#FFD231]" : "text-black"} my-auto text-center tracking-[0.06em]`}

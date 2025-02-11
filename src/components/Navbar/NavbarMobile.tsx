@@ -207,7 +207,7 @@ const NavDetails = [
     desc: "The guiding beacons in our labyrinth of dreams",
   },
   {
-    title: "LuminisLookut",
+    title: "LuminisLookout",
     link: "/game",
     bgColor: "#3C0FD5",
     bigTextColor: "#180569",
@@ -241,6 +241,7 @@ const linkColors = new Map<string, string>([
   ["/CarpeDiem", "#00A3FF"],
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
+  ["/game/gallery", "#FAE00D"],
 ]);
 
 const eventPageNavColors = [

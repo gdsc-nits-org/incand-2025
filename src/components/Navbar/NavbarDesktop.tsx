@@ -1,5 +1,3 @@
-// TODO:   GALLERY PAGE NAVBAR COLOR FIX
-
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -101,7 +99,6 @@ const NavbarDesktop = () => {
 
   return (
     <nav
-      key={pathname}
       className={`fixed z-[10000] flex min-w-[100vw] items-center justify-between px-6 py-4 4k:h-[10rem] 4k:px-8 4k:py-10 ${
         isWhite ? "border-b-4 border-[#FFA6F6]" : ""
       }`}
@@ -125,9 +122,8 @@ const NavbarDesktop = () => {
           </div>
           <div className="-mb-2 flex items-center md:gap-10 lg:gap-20 4k:gap-40">
             {NavDetails.map((item, index) => (
-              <Link
+              <a
                 onClick={() => {
-                  setIsLoaded(true);
                   updateColor();
                 }}
                 key={index}
@@ -159,7 +155,7 @@ const NavbarDesktop = () => {
                     />
                   </div>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </>
@@ -252,6 +248,7 @@ const linkColors = new Map<string, string>([
   ["/CarpeDiem", "#00A3FF"],
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
+  ["/game/gallery", "#FAE00D"],
 ]);
 
 const eventPageNavColors = [
@@ -262,5 +259,4 @@ const eventPageNavColors = [
   "#F6E659",
   "#54B4FF",
 ];
-// const galleryColors = ["#FC7566", "#BEBCFF", "#6DBB83", "#FEE89F"];
 export default NavbarDesktop;

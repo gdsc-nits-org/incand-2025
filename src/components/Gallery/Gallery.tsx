@@ -441,7 +441,7 @@ const images = [
   {
     src: "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
     name1: "",
-    name2: "SHRINANDYA",
+    name2: "SHREENANDYA",
     bg: "",
     scale: "",
   },

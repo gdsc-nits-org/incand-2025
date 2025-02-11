@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
-
-const PhotoGallery = dynamic(() => import("~/components/Gallery/Gallery"), {
-  ssr: false,
-});
-
+import PhotoGallery from "~/components/Gallery/Gallery";
+export const runtime = "edge";
 const Page = () => {
   return <PhotoGallery />;
 };
