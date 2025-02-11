@@ -17,7 +17,7 @@ const TeamDesktop: React.FC = () => {
   const developer = teamDataTech.filter(
     (member) => member.role === "developer",
   );
-
+  const uiux = teamDataTech.filter((member) => member.role === 'Ui/Ux')
   // const [isCore, setIsCore] = useState(true);
   const [isTech, setIsTech] = useState(true);
   // const [isModule, setIsModule] = useState(false);
@@ -231,6 +231,22 @@ const TeamDesktop: React.FC = () => {
           {isTech && (
             <div className="col-span-2 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
               {developer.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  git={member.git ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
+             {isTech && (
+            <div className="col-span-2 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {uiux.map((member) => (
                 <TeamCard
                   key={member.id}
                   name={member.name}
