@@ -27,7 +27,7 @@ const TeamMobile: React.FC = () => {
   );
 
   const developer = teamDataTech.filter(
-    (member) => member.role === "developer",
+    (member) => member.role === "developer" || member.role === "Ui/Ux",
   );
   return (
     <div

@@ -1,12 +1,12 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useSearchParams } from "next/navigation";
 import Card from "~/components/Game/Card";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { env } from "~/env";
+
 interface LuminisLookoutData {
   id: string;
   photo: string;
@@ -18,38 +18,52 @@ interface LuminisLookoutData {
 
 interface luminisLookoutGalleryApiResponse {
   status: number;
-  msg: LuminisLookoutData[];
+  msg: {
+    submissions: LuminisLookoutData[];
+    totalPages: number;
+    currentPage: number;
+    totalItems: number;
+  };
 }
 
 gsap.registerPlugin(ScrollTrigger);
-export const runtime = "edge";
 
 const Gallery = () => {
-  // const searchParams = useSearchParams();
-  // const dataString = searchParams.get("data");
-  // let data: LuminisLookoutData[] = [];
-
-  // if (dataString) {
-  //   try {
-  //     data = JSON.parse(decodeURIComponent(dataString)) as LuminisLookoutData[];
-  //   } catch (error) {
-  //     console.error("Error parsing data:", error);
-  //   }
-  // }
   const [data, setData] = useState<LuminisLookoutData[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [cache, setCache] = useState<Record<number, LuminisLookoutData[]>>({});
+
   const router = useRouter();
-  const goToGame = () => {
-    router.push("/game");
-  };
+  const goToGame = () => router.push("/game");
+
   useEffect(() => {
     async function fetchData() {
-      const res = await axios.get<luminisLookoutGalleryApiResponse>(
-        `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted`,
-      );
-      setData(res.data.msg);
+      if (cache[page]) {
+        setData(cache[page] ?? []);
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const res = await axios.get<luminisLookoutGalleryApiResponse>(
+          `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted?page=${page}&limit=40`,
+        );
+
+        const submissions = res.data?.msg?.submissions ?? []; // Ensure it's an array
+        setCache((prevCache) => ({ ...prevCache, [page]: submissions }));
+        setData(submissions);
+        setTotalPages(res.data?.msg?.totalPages ?? 1);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setData([]); // Ensure data is always an array
+      }
+      setLoading(false);
     }
+
     void fetchData();
-  }, [setData]);
+  }, [page, cache]);
 
   useEffect(() => {
     gsap.utils
@@ -60,33 +74,23 @@ const Gallery = () => {
 
         const trigger = ScrollTrigger.create({
           trigger: layer,
-          start: "top 80%", // Start animation when 80% of element is in view
+          start: "top 80%",
           onUpdate: (self) => {
-            const velocity = self.getVelocity(); // Get scroll velocity
-            lastVelocity = gsap.utils.clamp(-50, 50, velocity / 500); // Limit rotation speed
+            const velocity = self.getVelocity();
+            lastVelocity = gsap.utils.clamp(-50, 50, velocity / 500);
 
-            // Apply rotation while scrolling
             gsap.to(layer, {
               rotate: lastVelocity,
               duration: 0.3,
               ease: "power2.out",
             });
 
-            // Clear previous timeout and set a new one
             if (scrollTimeout) clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
-              resetRotation(layer);
-            }, 200); // Reset only if no scrolling happens for 200ms
+              gsap.to(layer, { rotate: 0, duration: 0.6, ease: "power3.out" });
+            }, 200);
           },
         });
-
-        function resetRotation(target: HTMLElement) {
-          gsap.to(target, {
-            rotate: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          });
-        }
 
         return () => {
           trigger.kill();
@@ -96,20 +100,18 @@ const Gallery = () => {
   }, [data]);
 
   return (
-    <div className="relative flex min-h-[100vh] flex-col items-center justify-center gap-10 bg-[#4D81F1] bg-[url('/assets/events/backgroundImg2.png')] bg-contain bg-repeat p-10 pt-32 text-[#ffffff]">
+    <div className="relative flex min-h-[100vh] flex-col items-center justify-center gap-10 bg-[#4D81F1] bg-[url('/assets/events/backgroundImg2.png')] bg-cover bg-fixed p-10 pt-32 text-[#ffffff]">
+      {/* Title */}
       <div className="flex w-[80%] flex-col items-center justify-between gap-10 xl:flex-row-reverse">
         <div className="relative w-full">
-          {/* Shadow Effect */}
           <h1
-            className="absolute left-[4px] top-[4px] z-0 w-[100%] text-center text-5xl font-extrabold tracking-widest text-black xl:text-8xl"
+            className="absolute left-[4px] top-[4px] z-0 w-full text-center text-5xl font-extrabold tracking-widest text-black xl:text-8xl"
             style={{ fontFamily: "Rocket Thunder" }}
           >
             PHOTOS APPROVED
           </h1>
-
-          {/* Main Text */}
           <h1
-            className="relative z-10 w-[100%] text-center text-5xl tracking-widest text-white xl:text-8xl"
+            className="relative z-10 w-full text-center text-5xl tracking-widest text-white xl:text-8xl"
             style={{ fontFamily: "Rocket Thunder" }}
           >
             PH<span className="text-[#FAE00D]">O</span>T
@@ -118,11 +120,9 @@ const Gallery = () => {
           </h1>
         </div>
 
+        {/* Back Button */}
         <div className="relative inline-block">
-          {/* Shadow behind the button */}
           <div className="absolute left-[6px] top-[6px] z-0 h-full w-full rounded-md bg-black"></div>
-
-          {/* Main Button */}
           <button
             onClick={goToGame}
             className="relative z-10 flex h-[3rem] w-[3rem] items-center justify-center gap-2 rounded-md border-2 border-black bg-[#F127CC]"
@@ -132,15 +132,64 @@ const Gallery = () => {
         </div>
       </div>
 
+      {/* Gallery */}
       <div className="flex w-full flex-wrap items-center justify-center gap-6 p-4 xl:justify-center xl:gap-16">
-        {data
-          .slice()
-          .reverse()
-          .map((item, idx) => (
+        {loading ? (
+          <p
+            className="lg:4xl text-blackfont-bold text-2xl tracking-wider"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            Loading...
+          </p>
+        ) : data.length > 0 ? (
+          data.map((item, idx) => (
             <div className="animatable" key={idx}>
               <Card photo={item.photo} User={item.User} />
             </div>
-          ))}
+          ))
+        ) : (
+          <p
+            className="text-xl font-bold tracking-wider text-white"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            No photos available.
+          </p>
+        )}
+      </div>
+
+      {/* Pagination Controls */}
+      <div className="mt-4 flex w-[100%] items-center justify-center gap-4 md:gap-8">
+        <div className="relative inline-block">
+          <div className="absolute left-[6px] top-[6px] z-0 h-full w-full rounded-md bg-black"></div>
+
+          <button
+            onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+            disabled={page === 1}
+            className="relative z-10 rounded border-2 border-black bg-white px-4 py-2 text-sm font-bold tracking-wider text-black disabled:opacity-50 md:text-xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            Previous
+          </button>
+        </div>
+
+        <span
+          className="text-sm font-bold tracking-wider text-white md:text-xl"
+          style={{ fontFamily: "Rocket Thunder" }}
+        >
+          Page {page} of {totalPages}
+        </span>
+        <div className="relative inline-block">
+          <div className="absolute left-[6px] top-[6px] z-0 h-full w-full rounded-md bg-black"></div>
+
+          <button
+            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={page === totalPages}
+            className="relative z-10 rounded border-2 border-black bg-white px-4 py-2 text-sm font-bold tracking-wider text-black disabled:opacity-50 md:text-xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );

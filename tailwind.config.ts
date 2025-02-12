@@ -68,16 +68,16 @@ export default {
         spinSlow: "spinSlow 5s linear infinite",
       },
       perspective: {
-        '1000': '1000px',
+        "1000": "1000px",
       },
       transformStyle: {
-        '3d': 'preserve-3d',
+        "3d": "preserve-3d",
       },
       backfaceVisibility: {
-        hidden: 'hidden',
+        hidden: "hidden",
       },
       rotate: {
-        'y-180': 'rotateY(180deg)',
+        "y-180": "rotateY(180deg)",
       },
     },
   },

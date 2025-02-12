@@ -33,7 +33,7 @@ const EventCard = ({
         {name}
       </h2>
       <h2
-        className={`absolute mobile:hidden laptop:block -bottom-[4.5vh] left-[6vh] z-30 font-ahsing text-white transition-all duration-500 mobile:p-[2vw] mobile:text-[4.5vh] mobile:leading-[5vh] tablet:text-[6vh] tablet:leading-[6vh] laptop:p-7 laptop:text-[4.5vh] laptop:leading-[10vh] 4k:p-12 ${isHover?"translate-y-0":"translate-y-[100%]"}`}
+        className={`absolute -bottom-[4.5vh] left-[6vh] z-30 font-ahsing text-white transition-all duration-500 mobile:hidden mobile:p-[2vw] mobile:text-[4.5vh] mobile:leading-[5vh] tablet:text-[6vh] tablet:leading-[6vh] laptop:block laptop:p-7 laptop:text-[4.5vh] laptop:leading-[10vh] 4k:p-12 ${isHover ? "translate-y-0" : "translate-y-[100%]"}`}
         style={{
           textShadow: "0.35vh 0.35vh 0vh black",
         }}
@@ -99,32 +99,38 @@ export default function MainEvent() {
       ></div>
 
       <div className="flex transition-all duration-1000 ease-linear mobile:gap-5 tablet:gap-7 laptop:flex-col laptop:gap-8 4k:gap-20">
-        <EventCard
-          name="EDM Night"
-          date="21st-23rd Feb"
-          className="absolute bottom-0 right-0 hover:scale-105 mobile:origin-bottom-right tablet:origin-bottom-right"
-          color="bg-[#8BF965]"
-          width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
-          height="laptop:h-[37.8vh] mobile:h-[21vh]"
-        />
-        <EventCard
-          name="Komedy Night"
-          date="21st Feb"
-          className="absolute top-0 right-0 hover:scale-105 mobile:origin-bottom-right tablet:origin-top-left laptop:origin-top-right"
-          color="bg-[#FFADF6]"
-          width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
-          height="laptop:h-[37.8vh] mobile:h-[21vh]"
-        />
+        <Link href="/event/20">
+          <EventCard
+            name="EDM Night"
+            date="21st-23rd Feb"
+            className="absolute bottom-0 right-0 hover:scale-105 mobile:origin-bottom-right tablet:origin-bottom-right"
+            color="bg-[#8BF965]"
+            width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
+            height="laptop:h-[37.8vh] mobile:h-[21vh]"
+          />
+        </Link>
+        <Link href="/event/19">
+          <EventCard
+            name="Comedy Night"
+            date="21st Feb"
+            className="absolute right-0 top-0 hover:scale-105 mobile:origin-bottom-right tablet:origin-top-left laptop:origin-top-right"
+            color="bg-[#FFADF6]"
+            width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
+            height="laptop:h-[37.8vh] mobile:h-[21vh]"
+          />
+        </Link>
       </div>
       {/*Subrata's Flip effect*/}
       <div
-        className="relative flex [perspective:1000px] laptop:w-[30vw] mobile:w-[90vw] tablet:w-[80vw] laptop:h-[80vh] mobile:h-[27.5vh]"
+        className="relative flex [perspective:1000px] mobile:h-[27.5vh] mobile:w-[90vw] tablet:w-[80vw] laptop:h-[80vh] laptop:w-[30vw]"
         onClick={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
         {/* Card's Front Side */}
-        <div className={`relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] ${isHover ? '[transform:rotateY(180deg)]' : ''}`}>
-          <div className="absolute w-full h-full [backface-visibility:hidden]">
+        <div
+          className={`relative h-full w-full transition-all  duration-700 ease-in [transform-style:preserve-3d] ${isHover ? "[transform:rotateY(180deg)]" : ""}`}
+        >
+          <div className="absolute h-full w-full [backface-visibility:hidden]">
             <EventCard
               name="Carpe Diem"
               date="23rd Feb"
@@ -135,43 +141,51 @@ export default function MainEvent() {
             />
           </div>
           {/* Card's Back Side */}
-          <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] transition-all duration-1000">
+          <div className="absolute h-full w-full transition-all duration-1000  ease-in [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <div className="flex transition-all duration-1000 ease-linear mobile:gap-5 tablet:gap-7 laptop:flex-col laptop:gap-8 4k:gap-20">
-              <EventCard
-                name="Artist 1"
-                className="absolute left-0 top-0 hover:scale-105 origin-center"
-                color="bg-[#FF8D8D]"
-                width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
-                height="laptop:h-[37.8vh] mobile:h-[27.5vh]"
-              />
-              <EventCard
-                name="Artist 2"
-                className="absolute bottom-0 left-0 hover:scale-105 origin-center"
-                color="bg-[#B5FCFF]"
-                width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
-                height="laptop:h-[37.8vh] mobile:h-[27.5vh]"
-              />
+              <Link href="/CarpeDiem1">
+                <EventCard
+                  name="Artist 1"
+                  className="absolute left-0 top-0 origin-center hover:scale-105"
+                  color="bg-[#FF8D8D]"
+                  width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
+                  height="laptop:h-[37.8vh] mobile:h-[27.5vh]"
+                />
+              </Link>
+              <Link href="/CarpeDiem2">
+                <EventCard
+                  name="Artist 2"
+                  className="absolute bottom-0 left-0 origin-center hover:scale-105"
+                  color="bg-[#B5FCFF]"
+                  width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
+                  height="laptop:h-[37.8vh] mobile:h-[27.5vh]"
+                />
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className="flex transition-all duration-1000 ease-linear mobile:gap-5 tablet:gap-7 laptop:flex-col laptop:gap-8 4k:gap-20">
-        <EventCard
-          name="Thunder March"
-          date="21st Feb"
-          className="absolute left-0 top-0 hover:scale-105 mobile:origin-bottom-right laptop:origin-bottom-left"
-          color="bg-[#ABA8FF]"
-          width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
-          height="laptop:h-[37.8vh] mobile:h-[21vh]"
-        />
-        <EventCard
-          name="Nirvana"
-          date="22nd Feb"
-          className="absolute bottom-0 left-0 hover:scale-105 mobile:origin-bottom-right tablet:origin-top-left"
-          color="bg-[#F6E659]"
-          width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
-          height="laptop:h-[37.8vh] mobile:h-[21vh]"
-        />
+        <Link href="/event/17">
+          <EventCard
+            name="Thunder March"
+            date="21st Feb"
+            className="absolute left-0 top-0 hover:scale-105 mobile:origin-bottom-right laptop:origin-bottom-left"
+            color="bg-[#ABA8FF]"
+            width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
+            height="laptop:h-[37.8vh] mobile:h-[21vh]"
+          />
+        </Link>
+        <Link href="/event/18">
+          <EventCard
+            name="Nirvana"
+            date="22nd Feb"
+            className="absolute bottom-0 left-0 hover:scale-105 mobile:origin-bottom-right tablet:origin-top-left"
+            color="bg-[#F6E659]"
+            width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
+            height="laptop:h-[37.8vh] mobile:h-[21vh]"
+          />
+        </Link>
       </div>
     </div>
   );
