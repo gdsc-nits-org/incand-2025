@@ -163,3 +163,18 @@ body::-webkit-scrollbar {
   background-image: radial-gradient(rgba(39, 50, 62, 0.7) 1px, transparent 2px);
   background-size: 32px 32px;
 }
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}

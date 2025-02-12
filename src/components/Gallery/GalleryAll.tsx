@@ -60,7 +60,7 @@ const GalleryAll: React.FC = () => {
         "https://res.cloudinary.com/dsj9gr1o3/image/upload/v1737990498/DSC_0242_uh31as.jpg",
       className:
         "bg-white col-span-4 row-span-4 col-start-5 row-start-4 rounded-[25px] flex justify-center items-center relative shadow-[20px_20px_0px_rgba(0,0,0,0.3)]",
-      name: "SHRINANDYAM",
+      name: "SHREENANDYA",
     },
     {
       id: 7,
