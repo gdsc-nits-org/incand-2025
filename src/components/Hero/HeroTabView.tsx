@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "~/styles/HeroTabView.module.css";
 
+
 const HeroTabView = () => {
   const [scale, setScale] = useState(1);
   const [isScaled, setIsScaled] = useState(false);
@@ -44,6 +45,7 @@ const HeroTabView = () => {
       }
     >
       <div className="absolute inset-0 bg-[url('/assets/landing/yellow_maze.png')] bg-cover bg-center bg-no-repeat"></div>
+     
       <div
         className="absolute inset-0 flex flex-col items-center ipadair:justify-center ipadair:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}

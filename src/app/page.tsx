@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import Popup from "~/components/HiddenQuest/Popup";
 import LandingProgressBar from "~/components/LandingProgressBar";
 import LoadingScreen from "~/components/Loader";
+const Slider = dynamic(() => import("~/components/Slider"), { ssr: false });
 
 const LuminisLookout = dynamic(() => import("~/components/LuminisLookout"), {
   ssr: false,
@@ -95,9 +96,10 @@ const HomePage = () => {
           className="container z-[1000]"
         >
           <Navbar />
+          <Slider />
           <Popup isVisible={isVisible} setIsVisible={setIsVisible} />
           <LandingProgressBar />
-          <FadeInSection id="home" bgColor="bg-[#9747ff] min-h-screen xl:pt-16">
+          <FadeInSection id="home" bgColor="min-h-screen">
             <Hero isVisible={isVisible} setIsVisible={setIsVisible} />
           </FadeInSection>
           <FadeInSection id="about" bgColor="bg-[#FFA6F6] h-screen">
