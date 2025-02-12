@@ -5,7 +5,6 @@ import { env } from "~/env";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "~/app/utils/firebase";
 import { toast } from "sonner";
-import Link from "next/link";
 import { Heart, Lock } from "lucide-react";
 
 interface ApiResponse {
@@ -48,7 +47,7 @@ const EventCard = ({
 }) => {
   const [isHover, setIsHover] = useState(false);
   return (
-    <div className="relative top-0 left-0 inline-block bg-black h-fit w-fit rounded-lg">
+    <div className={`relative top-0 left-0 inline-block  h-fit w-fit ${likes >= minLikes ? "bg-transparent": "bg-black"} rounded-lg`}>
       <div
         onMouseEnter={() => {
           if (likes >= minLikes && href) {
@@ -170,7 +169,7 @@ export default function MainEvent() {
     toast.promise(handlePostRequest, {
       loading: "Adding Like...Please wait.",
       success: "Added your like!!",
-      error: "Network error!!"
+      error: "Error in adding like..."
     });
   }
   useEffect(() => {
@@ -208,16 +207,23 @@ export default function MainEvent() {
 
   return (
 
-    <div className="flex flex-col items-center justify-center min-h-screen pt-28 bg-[#FFEDFD] ">
-      <div className="flex flex-row items-center text-[0.5rem] mobile2:text-[0.65rem] md:text-lg justify-between gap-5 border-[3px] border-black rounded-md bg-[#ffffff] font-tusker z-[5000] h-[4rem] w-[80%] md:w-[60%] xl:w-[30%] p-5" style={{ boxShadow: "5px 5px 1px 1px #000000" }}>
+    <div className="flex flex-col items-center justify-center min-h-screen pt-28 bg-[#FFEDFD] " style={{
+      backgroundImage:
+        "url('https://res.cloudinary.com/dsj9gr1o3/image/upload/v1739220438/Vector_1_cz77nw.png')",
+      backgroundSize: "contain",
+      backgroundRepeat: "repeat",
+      mixBlendMode: "multiply",
+      backgroundAttachment: "fixed"
+    }}>
+      <div className="flex flex-row items-center text-[0.5rem] mobile2:text-[0.65rem] md:text-lg justify-between gap-5 border-[3px] border-black rounded-md bg-[#ffffff] font-tusker z-[5000] h-fit w-[80%] md:w-[60%] xl:w-[30%] p-5" style={{ boxShadow: "5px 5px 1px 1px #000000" }}>
         <div className="relative inline-block">
           <div className="absolute bg-black border-2 border-black rounded-md -bottom-1 -right-1 w-full h-full"></div>
-          <button className="relative bg-[#FD4F1C] border-2 border-black font-tusker rounded-md py-2 px-6 text-center tracking-wider text-[0.5rem] mobile2:text-[0.65rem] md:text-lg">
+          <button className="relative bg-[#FD4F1C] border-2 border-black font-tusker rounded-md py-2 px-6 text-center tracking-wider text-[0.5rem] mobile2:text-[0.65rem] md:text-lg text-nowrap">
             {likes.msg} {likes.msg === 1 ? "LIKE" : "LIKES"}
           </button>
         </div>
 
-        <div className="flex flex-row justify-center items-center gap-4">
+        <div className="flex flex-row justify-center items-center gap-4 text-nowrap">
           <div>
             CLICK HERE TO LIKE
           </div>
@@ -231,14 +237,6 @@ export default function MainEvent() {
       <div className="top-20 flex min-h-screen w-full flex-wrap justify-center pt-[5vh] mobile:gap-0 mobile:px-4 tablet:px-16 laptop:gap-8 laptop:px-4 4k:gap-20 4k:px-10">
         <div
           className={`absolute min-h-screen inset-0 z-0 transition-transform duration-1000 ease-out`}
-          style={{
-            backgroundImage:
-              "url('https://res.cloudinary.com/dsj9gr1o3/image/upload/v1739220438/Vector_1_cz77nw.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "repeat",
-            mixBlendMode: "multiply",
-            backgroundAttachment: "fixed"
-          }}
         ></div>
 
         <div className="flex transition-all duration-1000 ease-linear mobile:gap-5 tablet:gap-7 laptop:flex-col laptop:gap-8 4k:gap-20">
