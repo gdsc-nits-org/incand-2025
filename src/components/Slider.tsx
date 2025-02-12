@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const InfiniteTextSlider = () => {
   const [direction, setDirection] = useState<1 | -1>(1);
@@ -12,6 +13,7 @@ const InfiniteTextSlider = () => {
   }, []);
 
   return (
+    <Link href="/main_events">
     <div className="relative overflow-hidden w-full bg-black py-2 pt-20">
       <motion.div
         className="flex whitespace-nowrap text-white text-lg font-bold"
@@ -23,6 +25,7 @@ const InfiniteTextSlider = () => {
         ))}
       </motion.div>
     </div>
+    </Link>
   );
 };
 
