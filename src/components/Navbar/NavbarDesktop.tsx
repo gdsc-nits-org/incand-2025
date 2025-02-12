@@ -199,7 +199,8 @@ const NavbarDesktop = () => {
 
 const NavDetails = [
   { name: "Home", link: "/" },
-  { name: "Events", link: "/events" },
+  // { name: "Events", link: "/events" },
+  {name: "ArtistLineup", link: "/lineup_reveal"},
   { name: "Gallery", link: "/gallery" },
   { name: "LuminisLookout", link: "/game" },
   { name: "Team", link: "/team" },
@@ -216,7 +217,7 @@ const linkColors = new Map<string, string>([
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
   ["/game/gallery", "#FAE00D"],
-  ["/main_events", "#FFEDFD"]
+  ["/lineup_reveal", "#FFEDFD"],
 ]);
 
 const eventPageNavColors = [

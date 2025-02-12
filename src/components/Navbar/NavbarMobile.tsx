@@ -189,13 +189,22 @@ const NavDetails = [
     smallTextColor: "#F12390",
     desc: "Enter the maze where brilliance begins",
   },
+  // {
+  //   title: "Event",
+  //   link: "/events",
+  //   bgColor: "#65C8FF",
+  //   bigTextColor: "#068AC2",
+  //   smallTextColor: "#0893CF",
+  //   desc: "Trace the path of creativity and culture",
+  // },
   {
-    title: "Event",
-    link: "/events",
+    title: "ArtistLineup",
+    link: "/lineup_reveal",
     bgColor: "#65C8FF",
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
     desc: "Trace the path of creativity and culture",
+
   },
   {
     title: "Gallery",
@@ -242,7 +251,7 @@ const linkColors = new Map<string, string>([
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
   ["/game/gallery", "#FAE00D"],
-  ["/main_events", "#FFEDFD"]
+  ["/lineup_reveal", "#FFEDFD"],
 ]);
 
 const eventPageNavColors = [
