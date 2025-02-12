@@ -26,11 +26,10 @@ const ApprovedPhotos = () => {
   const [data, setData] = useState<luminisLookoutData[]>([]);
   const router = useRouter();
 
-
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get<luminisLookoutGalleryApiResponse>(
-        `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted?page=1&limit=10`
+        `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted?page=1&limit=10`,
       );
       setData(res.data.msg.submissions);
     }
@@ -42,7 +41,7 @@ const ApprovedPhotos = () => {
   };
   if (data.length > 0) {
     return (
-      <div className="relative flex flex-col items-center justify-center gap-10 bg-[#4D81F1] bg-[url('/assets/events/backgroundImg2.png')] p-10 text-[#ffffff] h-fit bg-cover  bg-no-repeat">
+      <div className="relative flex h-fit flex-col items-center justify-center gap-10 bg-[#4D81F1] bg-[url('/assets/events/backgroundImg2.png')] bg-cover bg-no-repeat p-10 text-[#ffffff]">
         <div className="flex w-[90%] flex-col items-center justify-between gap-10 xl:flex-row">
           <div className="relative w-full">
             {/* Shadow Effect */}
@@ -80,16 +79,14 @@ const ApprovedPhotos = () => {
           </div>
         </div>
         <div className="flex h-[fit] w-[100%] flex-wrap items-center justify-center gap-10 rounded-lg border-[6px] border-black bg-white p-8 xl:w-[90%] xl:justify-between">
-          {data
-            .slice(0, 4)
-            .map((item, idx) => (
-              <div
-                key={idx}
-                className="scale-110 scale-x-125 lg:scale-100 lg:scale-x-100"
-              >
-                <Card photo={item.photo} User={item.User} />
-              </div>
-            ))}
+          {data.slice(0, 4).map((item, idx) => (
+            <div
+              key={idx}
+              className="scale-110 scale-x-125 lg:scale-100 lg:scale-x-100"
+            >
+              <Card photo={item.photo} User={item.User} />
+            </div>
+          ))}
         </div>
       </div>
     );

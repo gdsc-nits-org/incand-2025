@@ -14,17 +14,19 @@ const InfiniteTextSlider = () => {
 
   return (
     <Link href="/main_events">
-    <div className="relative overflow-hidden w-full bg-black py-2 pt-20">
-      <motion.div
-        className="flex whitespace-nowrap text-white text-lg font-bold"
-        animate={{ x: direction === 1 ? ["-100%", "0%"] : ["0%", "-100%"] }}
-        transition={{ ease: "linear", duration: 5, repeat: Infinity }}
-      >
-        {Array.from({ length: 10 }, (_, index) => (
-          <span key={index} className="mx-4">CLICK HERE TO CHECK  ! ✳</span>
-        ))}
-      </motion.div>
-    </div>
+      <div className="relative w-full overflow-hidden bg-black py-2 pt-20">
+        <motion.div
+          className="flex whitespace-nowrap text-lg font-bold text-white"
+          animate={{ x: direction === 1 ? ["-100%", "0%"] : ["0%", "-100%"] }}
+          transition={{ ease: "linear", duration: 5, repeat: Infinity }}
+        >
+          {Array.from({ length: 10 }, (_, index) => (
+            <span key={index} className="mx-4">
+              CLICK HERE TO CHECK ! ✳
+            </span>
+          ))}
+        </motion.div>
+      </div>
     </Link>
   );
 };

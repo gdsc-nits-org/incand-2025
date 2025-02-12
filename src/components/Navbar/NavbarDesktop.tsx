@@ -41,7 +41,7 @@ const NavbarDesktop = () => {
         if (!isNaN(eventId)) {
           setCurrentColor(
             eventPageNavColors[(eventId - 1) % eventPageNavColors.length] ??
-              "#F1D22B"
+              "#F1D22B",
           );
         }
       } else {
@@ -117,7 +117,11 @@ const NavbarDesktop = () => {
           </div>
           <div className="-mb-2 flex items-center md:gap-10 lg:gap-20 4k:gap-40">
             {NavDetails.map((item, index) => (
-              <Link key={index} href={item.link} className="group font-semibold text-black transition-all duration-200 hover:text-white">
+              <Link
+                key={index}
+                href={item.link}
+                className="group font-semibold text-black transition-all duration-200 hover:text-white"
+              >
                 <div className="flex">
                   <Image
                     className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100 4k:h-10 4k:w-10"
@@ -153,7 +157,11 @@ const NavbarDesktop = () => {
           </div>
           <div className="flex items-center gap-20">
             {NavDetails.map((item, index) => (
-              <Link key={index} href={item.link} className="group font-semibold text-black transition-all duration-200 hover:text-white">
+              <Link
+                key={index}
+                href={item.link}
+                className="group font-semibold text-black transition-all duration-200 hover:text-white"
+              >
                 <div className="flex">
                   <Image
                     className="me-2 mt-2 h-[10px] w-[10px] object-contain opacity-0 transition-all duration-200 group-hover:opacity-100"
@@ -208,9 +216,16 @@ const linkColors = new Map<string, string>([
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
   ["/game/gallery", "#FAE00D"],
+  ["/main_events", "#FFEDFD"]
 ]);
 
-
-const eventPageNavColors = ["#8CF9FC", "#ABA8FF", "#8BF965", "#FFA4F6", "#F6E659", "#54B4FF"];
+const eventPageNavColors = [
+  "#8CF9FC",
+  "#ABA8FF",
+  "#8BF965",
+  "#FFA4F6",
+  "#F6E659",
+  "#54B4FF",
+];
 
 export default NavbarDesktop;

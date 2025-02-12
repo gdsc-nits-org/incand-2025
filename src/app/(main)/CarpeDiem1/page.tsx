@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "../../../styles/CarpeDiem.module.css";
 import Image from "next/image";
 
@@ -37,7 +37,7 @@ const CarpeDiem = () => {
 
   useEffect(() => {
     // Initialize audio but don't auto-play
-    audioRef.current = new Audio('/assets/audio/bhulbhulaiya.mp3');
+    audioRef.current = new Audio("/assets/audio/bhulbhulaiya.mp3");
     audioRef.current.volume = 0.3;
     audioRef.current.loop = true;
 
@@ -58,8 +58,6 @@ const CarpeDiem = () => {
     }
     setIsPlaying(!isPlaying);
   };
-
-
 
   if (!isClient) {
     return null;
@@ -191,11 +189,11 @@ const CarpeDiem = () => {
               style={
                 isTHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
-                    animation: "",
+                      fontFamily: "Tusker Grotes",
+                      animation: "",
 
-                    zIndex: "3",
-                  }
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "4" }
               }
             >
@@ -210,11 +208,11 @@ const CarpeDiem = () => {
               style={
                 isOHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
+                      fontFamily: "Tusker Grotes",
 
-                    scale: "0.8",
-                    zIndex: "3",
-                  }
+                      scale: "0.8",
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
               }
             >
@@ -229,11 +227,11 @@ const CarpeDiem = () => {
               style={
                 isTwHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
+                      fontFamily: "Tusker Grotes",
 
-                    scale: "0.8",
-                    zIndex: "3",
-                  }
+                      scale: "0.8",
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
               }
             >
@@ -248,11 +246,11 @@ const CarpeDiem = () => {
               style={
                 isFHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
+                      fontFamily: "Tusker Grotes",
 
-                    scale: "0.8",
-                    zIndex: "3",
-                  }
+                      scale: "0.8",
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
               }
             >
@@ -346,8 +344,10 @@ const CarpeDiem = () => {
             </div>
             {isPlaying ? (
               <>
-                <div className="absolute left-[73.8%] top-[78%] h-[8vh] w-[4vw] cursor-pointer"
-                  onClick={togglePlayPause}>
+                <div
+                  className="absolute left-[73.8%] top-[78%] h-[8vh] w-[4vw] cursor-pointer"
+                  onClick={togglePlayPause}
+                >
                   <Image
                     src="/assets/CarpeDiem/Circle.webp"
                     alt="Circle"
@@ -355,8 +355,10 @@ const CarpeDiem = () => {
                     style={{ zIndex: "3" }}
                   />
                 </div>
-                <div className="absolute left-[74.8%] top-[79%] h-[7vh] w-[2vw] cursor-pointer"
-                  onClick={togglePlayPause}>
+                <div
+                  className="absolute left-[74.8%] top-[79%] h-[7vh] w-[2vw] cursor-pointer"
+                  onClick={togglePlayPause}
+                >
                   <Image
                     src="/assets/CarpeDiem/Pause.webp"
                     alt="Pause"
@@ -364,8 +366,10 @@ const CarpeDiem = () => {
                     style={{ zIndex: "3" }}
                   />
                 </div>
-                <div className="absolute left-[75%] top-[77.5%] h-[5rem] w-[15rem] cursor-pointer "
-                  onClick={togglePlayPause}>
+                <div
+                  className="absolute left-[75%] top-[77.5%] h-[5rem] w-[15rem] cursor-pointer"
+                  onClick={togglePlayPause}
+                >
                   <Image
                     src="/assets/CarpeDiem/PlayState.gif"
                     alt="Music Play"
@@ -376,8 +380,10 @@ const CarpeDiem = () => {
               </>
             ) : (
               <>
-                <div className="absolute left-[73.8%] top-[78%] h-[8vh] w-[4vw] cursor-pointer"
-                  onClick={togglePlayPause}>
+                <div
+                  className="absolute left-[73.8%] top-[78%] h-[8vh] w-[4vw] cursor-pointer"
+                  onClick={togglePlayPause}
+                >
                   <Image
                     src="/assets/CarpeDiem/Circle.webp"
                     alt="Circle"
@@ -385,8 +391,10 @@ const CarpeDiem = () => {
                     style={{ zIndex: "3" }}
                   />
                 </div>
-                <div className="absolute left-[75%] top-[80%] h-[5vh] w-[2vw] cursor-pointer"
-                  onClick={togglePlayPause}>
+                <div
+                  className="absolute left-[75%] top-[80%] h-[5vh] w-[2vw] cursor-pointer"
+                  onClick={togglePlayPause}
+                >
                   <Image
                     src="/assets/CarpeDiem/Play.webp"
                     alt="Play"
@@ -394,8 +402,10 @@ const CarpeDiem = () => {
                     style={{ zIndex: "3" }}
                   />
                 </div>
-                <div className="absolute left-[79%] top-[80.5%] h-[4vh] w-[11vw] cursor-pointer"
-                  onClick={togglePlayPause}>
+                <div
+                  className="absolute left-[79%] top-[80.5%] h-[4vh] w-[11vw] cursor-pointer"
+                  onClick={togglePlayPause}
+                >
                   <Image
                     src="/assets/CarpeDiem/SongName.png"
                     alt="Song"
@@ -555,11 +565,11 @@ const CarpeDiem = () => {
               style={
                 isTHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
-                    animation: "",
+                      fontFamily: "Tusker Grotes",
+                      animation: "",
 
-                    zIndex: "3",
-                  }
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "4" }
               }
             >
@@ -574,11 +584,11 @@ const CarpeDiem = () => {
               style={
                 isOHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
+                      fontFamily: "Tusker Grotes",
 
-                    scale: "0.8",
-                    zIndex: "3",
-                  }
+                      scale: "0.8",
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
               }
             >
@@ -593,11 +603,11 @@ const CarpeDiem = () => {
               style={
                 isTwHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
+                      fontFamily: "Tusker Grotes",
 
-                    scale: "0.8",
-                    zIndex: "3",
-                  }
+                      scale: "0.8",
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
               }
             >
@@ -612,11 +622,11 @@ const CarpeDiem = () => {
               style={
                 isFHovered
                   ? {
-                    fontFamily: "Tusker Grotes",
+                      fontFamily: "Tusker Grotes",
 
-                    scale: "0.8",
-                    zIndex: "3",
-                  }
+                      scale: "0.8",
+                      zIndex: "3",
+                    }
                   : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
               }
             >
@@ -640,7 +650,7 @@ const CarpeDiem = () => {
                 style={{ zIndex: "2" }}
               />
             </div>
-            <div className="absolute left-[43%] top-[93%] md:top-[91.5%] h-[1.5rem] md:w-[22rem] md:h-[3rem] w-[10rem]">
+            <div className="absolute left-[43%] top-[93%] h-[1.5rem] w-[10rem] md:top-[91.5%] md:h-[3rem] md:w-[22rem]">
               <Image
                 src="/assets/CarpeDiem/revealingsoonH.png" // Path to your GIF
                 alt="Name"
@@ -686,7 +696,6 @@ const CarpeDiem = () => {
           </div>
         </>
       )}
-      
     </section>
   );
 };
