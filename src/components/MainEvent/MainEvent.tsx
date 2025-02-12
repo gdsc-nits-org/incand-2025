@@ -72,7 +72,7 @@ const EventCard = ({
       />
 
       <div
-        className={`absolute h-[140%] w-[140%] ${isHover ? "-translate-x-[30%] -translate-y-[25%]" : ""} inset-0 z-0 transition-all duration-1000 ease-out`}
+        className={`absolute h-[140%] w-[140%] ${isHover ? "-translate-x-[25%] -translate-y-[25%]" : ""} inset-0 z-0 transition-all duration-1000 ease-out`}
         style={{
           backgroundImage:
             "url('https://res.cloudinary.com/dsj9gr1o3/image/upload/v1739221713/Vector_2_suoiox.png')",
@@ -135,7 +135,7 @@ export default function MainEvent() {
               name="Carpe Diem"
               date="23rd Feb"
               className="hover:flex-grow"
-              color="bg-[#B5FCFF]"
+              color="bg-[#00FFFF]"
               width="laptop:w-[30vw] mobile:w-[90vw] tablet:w-[80vw]"
               height="laptop:h-[80vh] mobile:h-[27.5vh]"
             />
@@ -156,7 +156,7 @@ export default function MainEvent() {
                 <EventCard
                   name="Artist 2"
                   className="absolute bottom-0 left-0 origin-center hover:scale-105"
-                  color="bg-[#B5FCFF]"
+                  color="bg-[#00FFFF]"
                   width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
                   height="laptop:h-[37.8vh] mobile:h-[27.5vh]"
                 />
