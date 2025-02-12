@@ -1,18 +1,18 @@
 "use client";
 import Image from "next/image";
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import Login from "../GoogleAuth";
 import { usePathname } from "next/navigation";
-import path from "path";
+
 
 const NavbarMobile = () => {
   const pathname = usePathname();
   useEffect(() => {
     updateColor();
     handleScroll();
-  }, [pathname]);
+  }, [pathname,]);
   const [navColor, setNavColor] = useState(navColors.home);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -238,7 +238,8 @@ const linkColors = new Map<string, string>([
   ["/gallery", "transparent"],
   ["/game", "#000E16"],
   ["/team", "#FFF361"],
-  ["/CarpeDiem", "#00A3FF"],
+  ["/CarpeDiem1", "#00A3FF"],
+  ["/CarpeDiem2", "#00A3FF"],
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
   ["/game/gallery", "#FAE00D"],

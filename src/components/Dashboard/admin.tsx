@@ -95,7 +95,6 @@ const AdminDashboard = () => {
               },
             },
           );
-          console.log(Submissions.data.msg);
           setAllSubmissions(Submissions.data.msg);
         } catch (error) {
           console.error("Error fetching user data:", error);

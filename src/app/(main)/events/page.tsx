@@ -44,7 +44,7 @@ const Page = () => {
               </circle>
             </svg>
             <Link
-              href="/CarpeDiem"
+              href="/CarpeDiem1"
               className="flex h-full w-full items-center justify-center gap-2"
             >
               <div className="flex flex-col gap-2 font-tusker mobile3:py-6 ipadair:font-tusker2">

@@ -245,5 +245,35 @@
       "name": "Register",
       "link": ""
     }
+  },
+  {
+    "id": "19",
+    "header": "COMEDY NIGHT",
+    "subheader": "",
+    "text": "Get ready to laugh your heart out with Comedy Night – the ultimate comedy extravaganza! Join us for a night of side-splitting humor and rib-tickling jokes as we bring together the best comedians in the business for a laughter-filled evening. From stand-up comedy to hilarious skits, prepare to be entertained like never before!",
+    "header2": "",
+    "thumbnail": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739347874/Madhur-Virli-Special_otyoln.webp",
+    "imgUrls": [
+    "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739347874/Madhur-Virli-Special_otyoln.webp"
+    ],
+    "registrationLink": {
+      "name": "Register",
+      "link": ""
+    }
+  },
+  {
+    "id": "20",
+    "header": "EDM NIGHT",
+    "subheader": "",
+    "text": "Get ready to dance the night away with EDM Night – the ultimate electronic dance music extravaganza! Join us for a night of pulsating beats, electrifying rhythms, and non-stop energy as we bring together the best DJs and artists for an unforgettable night of music and dance. From house to techno, trance to dubstep, prepare to lose yourself in the music and let the rhythm take control!",
+    "header2": "",
+    "thumbnail": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739347874/Madhur-Virli-Special_otyoln.webp",
+    "imgUrls": [
+    "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739347874/Madhur-Virli-Special_otyoln.webp"
+    ],
+    "registrationLink": {
+      "name": "Register",
+      "link": ""
+    }
   }
 ]
