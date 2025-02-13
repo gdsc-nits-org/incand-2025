@@ -13,13 +13,13 @@ interface ApiResponse {
 }
 
 interface ApiResponseUser {
-  status: number,
-  msg: userResponse
+  status: number;
+  msg: userResponse;
 }
 interface userResponse {
   Like: {
-    id: string,
-  }
+    id: string;
+  };
 }
 
 const EventCard = ({
@@ -32,7 +32,7 @@ const EventCard = ({
   date,
   likes,
   href,
-  minLikes
+  minLikes,
 }: {
   className?: string;
   name: string;
@@ -43,11 +43,13 @@ const EventCard = ({
   date?: string;
   href?: string;
   likes: number;
-  minLikes: number
+  minLikes: number;
 }) => {
   const [isHover, setIsHover] = useState(false);
   return (
-    <div className={`relative top-0 left-0 inline-block  h-fit w-fit ${likes >= minLikes ? "bg-transparent": "bg-black"} rounded-lg`}>
+    <div
+      className={`relative left-0 top-0 inline-block h-fit w-fit ${likes >= minLikes ? "bg-transparent" : "bg-black"} rounded-lg`}
+    >
       <div
         onMouseEnter={() => {
           if (likes >= minLikes && href) {
@@ -58,11 +60,14 @@ const EventCard = ({
         onClick={(e) => {
           e.preventDefault();
           if (likes >= minLikes && href) window.location.href = href;
-
-          else toast.warning(`Atleast ${minLikes} likes are required to unlock!!`);
+          else
+            toast.warning(`Atleast ${minLikes} likes are required to unlock!!`);
         }}
         className={`${likes >= minLikes ? color : passive} ${likes >= minLikes ? "opacity-100" : "opacity-80"} relative flex items-center rounded-3xl border-black shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] transition-all duration-1000 ease-out hover:border-[3px] ${width} ${height} transform-gpu cursor-pointer overflow-hidden ${className}`}
-        style={{ filter: `blur(${likes >= minLikes ? "0px" : "8px"})`, backgroundBlendMode: `${likes >= minLikes ? "none" : "darken"}` }}
+        style={{
+          filter: `blur(${likes >= minLikes ? "0px" : "8px"})`,
+          backgroundBlendMode: `${likes >= minLikes ? "none" : "darken"}`,
+        }}
       >
         <h2
           className="z-30 font-ahsing text-white mobile:p-[2vw] mobile:text-[4.5vh] mobile:leading-[5vh] tablet:text-[6vh] tablet:leading-[6vh] laptop:p-7 laptop:text-[9vh] laptop:leading-[10vh] 4k:p-12"
@@ -120,58 +125,74 @@ const EventCard = ({
           }}
         ></div>
       </div>
-      {likes < minLikes ? <h3 className="absolute bottom-10 left-0 text-center w-[100%] text-white"><Lock className="inline" />This event needs atleast <span className="font-bold">{minLikes} likes</span> to get unlocked</h3> : null}
+      {likes < minLikes ? (
+        <h3 className="absolute bottom-10 left-0 w-[100%] text-center text-white">
+          <Lock className="inline" />
+          This event needs atleast{" "}
+          <span className="font-bold">{minLikes} likes</span> to get unlocked
+        </h3>
+      ) : null}
     </div>
   );
 };
 
 export default function MainEvent() {
   const [isHover, setIsHover] = useState(false);
-  const [isAuthChecked, setIsAuthChecked] = useState(false);
   const [likes, setLikes] = useState<ApiResponse>({
     status: 401,
-    msg: 0
+    msg: 0,
   });
   const [myprof, setMyprof] = useState<ApiResponseUser>({
     status: 401,
     msg: {
       Like: {
-        id: ""
-      }
-    }
+        id: "",
+      },
+    },
   });
   const [user, loading] = useAuthState(auth);
   useEffect(() => {
     const fetchLikes = async () => {
-      const res = await axios.get<ApiResponse>(`${env.NEXT_PUBLIC_API_URL}/api/like`);
+      const res = await axios.get<ApiResponse>(
+        `${env.NEXT_PUBLIC_API_URL}/api/like`,
+      );
       setLikes(res.data);
-    }
+    };
     toast.promise(fetchLikes, {
       loading: "Fetching Number of Likes...",
       success: "Likes Fetched!!",
-      error: "Error in fetching likes..."
+      error: "Error in fetching likes...",
     });
-
   }, []);
-  const handleClickLike = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClickLike = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
     e.preventDefault();
+    if (!user) {
+      toast.error("You must be logged in to like!");
+      return;
+    }
     const handlePostRequest = async () => {
       const token = await user?.getIdToken();
-      const res = await axios.post(`${env.NEXT_PUBLIC_API_URL}/api/like/create`, {}, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+      const res = await axios.post(
+        `${env.NEXT_PUBLIC_API_URL}/api/like/create`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
       if (res) {
         window.location.reload();
       }
-    }
+    };
     toast.promise(handlePostRequest, {
       loading: "Adding Like...Please wait.",
       success: "Added your like!!",
-      error: "Error in adding like..."
+      error: "Error in adding like...",
     });
-  }
+  };
   useEffect(() => {
     const fetchUserData = async () => {
       if (user) {
@@ -183,60 +204,64 @@ export default function MainEvent() {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
-            }
+            },
           );
-
-          // Set the state with the data from the response
           setMyprof(userResponse.data);
-          console.log(userResponse.data);
         } catch (error) {
           console.error("Error fetching user data:", error);
           toast.error("Failed to fetch user data.");
-        } finally {
-          setIsAuthChecked(true);
-        }
+        } 
       } else {
-        setIsAuthChecked(true);
+        toast.error("Please Login!");
       }
     };
-
     if (!loading) {
       void fetchUserData();
     }
   }, [user, loading]);
 
   return (
-
-    <div className="flex flex-col items-center justify-center min-h-screen pt-28 bg-[#FFEDFD] " style={{
-      backgroundImage:
-        "url('https://res.cloudinary.com/dsj9gr1o3/image/upload/v1739220438/Vector_1_cz77nw.png')",
-      backgroundSize: "contain",
-      backgroundRepeat: "repeat",
-      mixBlendMode: "multiply",
-      backgroundAttachment: "fixed"
-    }}>
-      <div className="flex flex-row items-center text-[0.5rem] mobile2:text-[0.65rem] md:text-lg justify-between gap-5 border-[3px] border-black rounded-md bg-[#ffffff] font-tusker z-[5000] h-fit w-[80%] md:w-[60%] xl:w-[30%] p-5" style={{ boxShadow: "5px 5px 1px 1px #000000" }}>
+    <div
+      className="flex min-h-screen flex-col items-center justify-center bg-[#FFEDFD] pt-28"
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/dsj9gr1o3/image/upload/v1739220438/Vector_1_cz77nw.png')",
+        backgroundSize: "contain",
+        backgroundRepeat: "repeat",
+        mixBlendMode: "multiply",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div
+        className="z-[5000] flex h-fit w-[80%] flex-row items-center justify-between gap-5 rounded-md border-[3px] border-black bg-[#ffffff] p-5 font-tusker text-[0.5rem] mobile2:text-[0.65rem] md:w-[60%] md:text-lg xl:w-[30%]"
+        style={{ boxShadow: "5px 5px 1px 1px #000000" }}
+      >
         <div className="relative inline-block">
-          <div className="absolute bg-black border-2 border-black rounded-md -bottom-1 -right-1 w-full h-full"></div>
-          <button className="relative bg-[#FD4F1C] border-2 border-black font-tusker rounded-md py-2 px-6 text-center tracking-wider text-[0.5rem] mobile2:text-[0.65rem] md:text-lg text-nowrap">
+          <div className="absolute -bottom-1 -right-1 h-full w-full rounded-md border-2 border-black bg-black"></div>
+          <button className="relative text-nowrap rounded-md border-2 border-black bg-[#FD4F1C] px-6 py-2 text-center font-tusker text-[0.5rem] tracking-wider mobile2:text-[0.65rem] md:text-lg">
             {likes.msg} {likes.msg === 1 ? "LIKE" : "LIKES"}
           </button>
         </div>
 
-        <div className="flex flex-row justify-center items-center gap-4 text-nowrap">
-          <div>
-            CLICK HERE TO LIKE
-          </div>
+        <div className="flex flex-row items-center justify-center gap-4 text-nowrap">
+          <div>CLICK HERE TO LIKE</div>
           <div className="flex items-center justify-center">
-            <button className="flex items-center justify-center" onClick={handleClickLike} disabled={!!myprof.msg.Like}>
-              <Heart fill={myprof.msg.Like ? "red" : "none"} stroke={myprof.msg.Like ? "none" : "black"} />
+            <button
+              className="flex items-center justify-center"
+              onClick={handleClickLike}
+              disabled={!!myprof.msg.Like}
+            >
+              <Heart
+                fill={myprof.msg.Like ? "red" : "none"}
+                stroke={myprof.msg.Like ? "none" : "black"}
+              />
             </button>
           </div>
         </div>
       </div>
       <div className="top-20 flex min-h-screen w-full flex-wrap justify-center pt-[5vh] mobile:gap-0 mobile:px-4 tablet:px-16 laptop:gap-8 laptop:px-4 4k:gap-20 4k:px-10">
         <div
-          className={`absolute min-h-screen inset-0 z-0 transition-transform duration-1000 ease-out`}
+          className={`absolute inset-0 z-0 min-h-screen transition-transform duration-1000 ease-out`}
         ></div>
 
         <div className="flex transition-all duration-1000 ease-linear mobile:gap-5 tablet:gap-7 laptop:flex-col laptop:gap-8 4k:gap-20">

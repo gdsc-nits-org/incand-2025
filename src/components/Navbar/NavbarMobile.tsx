@@ -204,7 +204,6 @@ const NavDetails = [
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
     desc: "Trace the path of creativity and culture",
-
   },
   {
     title: "Gallery",
