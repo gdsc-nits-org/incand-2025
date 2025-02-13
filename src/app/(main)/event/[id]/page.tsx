@@ -29,7 +29,12 @@ export default function Page({ params }: { params: { id: string } }) {
         `${env.NEXT_PUBLIC_API_URL}/api/like`,
       );
       setLikes(res.data);
-      if ((res.data.msg<200 && id===17) || (res.data.msg<600 && id===18) || (res.data.msg<400 && id===19) || (res.data.msg<100 && id===20)) {
+      if (
+        (res.data.msg < 200 && id === 17) ||
+        (res.data.msg < 600 && id === 18) ||
+        (res.data.msg < 400 && id === 19) ||
+        (res.data.msg < 100 && id === 20)
+      ) {
         toast.warning("Can't reveal without adequate likes");
         setTimeout(() => {
           window.location.href = "/";
@@ -41,14 +46,26 @@ export default function Page({ params }: { params: { id: string } }) {
       success: "Likes Fetched!!",
       error: "Error in fetching likes...",
     });
-    if ((likes.msg < 200 && id === 17) || (likes.msg<600 && id===18) || (likes.msg<400 && id===19) || (likes.msg<100 && id===20)) {
+    if (
+      (likes.msg < 200 && id === 17) ||
+      (likes.msg < 600 && id === 18) ||
+      (likes.msg < 400 && id === 19) ||
+      (likes.msg < 100 && id === 20)
+    ) {
       toast.warning("Can't reveal without adequate likes");
       setTimeout(() => {
         window.location.href = "/";
       }, 500);
     }
   }, []);
-  if (!((likes.msg < 200 && id === 17) || (likes.msg<600 && id===18) || (likes.msg<400 && id===19) || (likes.msg<100 && id===20))) {
+  if (
+    !(
+      (likes.msg < 200 && id === 17) ||
+      (likes.msg < 600 && id === 18) ||
+      (likes.msg < 400 && id === 19) ||
+      (likes.msg < 100 && id === 20)
+    )
+  ) {
     return (
       <section
         className="flex h-auto min-h-screen w-screen flex-col items-center justify-center bg-[#FFEDFD] p-6 pt-[80px] font-tusker ipadair:p-10 ipadair:pt-[7.5rem] 4k:p-20 4k:pt-[10rem]"
@@ -99,7 +116,7 @@ export default function Page({ params }: { params: { id: string } }) {
               href={id > 1 ? `/event/${id - 1}` : "/events"}
               className="flex h-full w-[18%] items-center justify-center bg-[#FAE00D] ipadair:w-[15%]"
             >
-              { }
+              {}
               <Image
                 className="h-8 w-12 mobile3:h-[60%] mobile3:w-[60%] ipadair:h-[65%] ipadair:w-auto"
                 src="/assets/events/prev_triangles.svg"
@@ -175,11 +192,8 @@ export default function Page({ params }: { params: { id: string } }) {
         <Toaster />
       </section>
     );
-  }
-  else {
-    return (
-      <>Can&apos;t reveal without adequate number of likes</>
-    );
+  } else {
+    return <>Can&apos;t reveal without adequate number of likes</>;
   }
 }
 

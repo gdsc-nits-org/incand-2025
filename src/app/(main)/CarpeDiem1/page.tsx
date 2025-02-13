@@ -113,7 +113,9 @@ const CarpeDiem = () => {
               />
               {/* Overlayed GIF */}
               <div
-                className={"absolute left-12 top-10 h-[77vh] w-[25vw] rounded-lg"}
+                className={
+                  "absolute left-12 top-10 h-[77vh] w-[25vw] rounded-lg"
+                }
               >
                 <Image
                   src="/assets/CarpeDiem/disc.gif" // Path to your GIF
@@ -226,11 +228,11 @@ const CarpeDiem = () => {
                 style={
                   isTHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
-                      animation: "",
+                        fontFamily: "Tusker Grotes",
+                        animation: "",
 
-                      zIndex: "3",
-                    }
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "4" }
                 }
               >
@@ -245,11 +247,11 @@ const CarpeDiem = () => {
                 style={
                   isOHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
+                        fontFamily: "Tusker Grotes",
 
-                      scale: "0.8",
-                      zIndex: "3",
-                    }
+                        scale: "0.8",
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
                 }
               >
@@ -264,11 +266,11 @@ const CarpeDiem = () => {
                 style={
                   isTwHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
+                        fontFamily: "Tusker Grotes",
 
-                      scale: "0.8",
-                      zIndex: "3",
-                    }
+                        scale: "0.8",
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
                 }
               >
@@ -283,11 +285,11 @@ const CarpeDiem = () => {
                 style={
                   isFHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
+                        fontFamily: "Tusker Grotes",
 
-                      scale: "0.8",
-                      zIndex: "3",
-                    }
+                        scale: "0.8",
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
                 }
               >
@@ -602,11 +604,11 @@ const CarpeDiem = () => {
                 style={
                   isTHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
-                      animation: "",
+                        fontFamily: "Tusker Grotes",
+                        animation: "",
 
-                      zIndex: "3",
-                    }
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "4" }
                 }
               >
@@ -621,11 +623,11 @@ const CarpeDiem = () => {
                 style={
                   isOHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
+                        fontFamily: "Tusker Grotes",
 
-                      scale: "0.8",
-                      zIndex: "3",
-                    }
+                        scale: "0.8",
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
                 }
               >
@@ -640,11 +642,11 @@ const CarpeDiem = () => {
                 style={
                   isTwHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
+                        fontFamily: "Tusker Grotes",
 
-                      scale: "0.8",
-                      zIndex: "3",
-                    }
+                        scale: "0.8",
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
                 }
               >
@@ -659,11 +661,11 @@ const CarpeDiem = () => {
                 style={
                   isFHovered
                     ? {
-                      fontFamily: "Tusker Grotes",
+                        fontFamily: "Tusker Grotes",
 
-                      scale: "0.8",
-                      zIndex: "3",
-                    }
+                        scale: "0.8",
+                        zIndex: "3",
+                      }
                     : { fontFamily: "Ahsing", animation: "none", zIndex: "3" }
                 }
               >
@@ -736,11 +738,8 @@ const CarpeDiem = () => {
         <Toaster />
       </section>
     );
-  }
-  else {
-    return (
-      <>Can&apos;t Reveal Without 800 likes</>
-    );
+  } else {
+    return <>Can&apos;t Reveal Without 800 likes</>;
   }
 };
 

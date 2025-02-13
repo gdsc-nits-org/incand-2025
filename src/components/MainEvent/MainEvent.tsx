@@ -5,7 +5,6 @@ import { env } from "~/env";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "~/app/utils/firebase";
 import { toast } from "sonner";
-import Link from "next/link";
 import { Heart, Lock } from "lucide-react";
 
 interface ApiResponse {
@@ -48,7 +47,9 @@ const EventCard = ({
 }) => {
   const [isHover, setIsHover] = useState(false);
   return (
-    <div className="relative left-0 top-0 inline-block h-fit w-fit rounded-lg bg-black">
+    <div
+      className={`relative left-0 top-0 inline-block h-fit w-fit ${likes >= minLikes ? "bg-transparent" : "bg-black"} rounded-lg`}
+    >
       <div
         onMouseEnter={() => {
           if (likes >= minLikes && href) {
@@ -137,7 +138,6 @@ const EventCard = ({
 
 export default function MainEvent() {
   const [isHover, setIsHover] = useState(false);
-  const [isAuthChecked, setIsAuthChecked] = useState(false);
   const [likes, setLikes] = useState<ApiResponse>({
     status: 401,
     msg: 0,
@@ -168,6 +168,10 @@ export default function MainEvent() {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     e.preventDefault();
+    if (!user) {
+      toast.error("You must be logged in to like!");
+      return;
+    }
     const handlePostRequest = async () => {
       const token = await user?.getIdToken();
       const res = await axios.post(
@@ -186,7 +190,7 @@ export default function MainEvent() {
     toast.promise(handlePostRequest, {
       loading: "Adding Like...Please wait.",
       success: "Added your like!!",
-      error: "Network error!!",
+      error: "Error in adding like...",
     });
   };
   useEffect(() => {
@@ -202,40 +206,44 @@ export default function MainEvent() {
               },
             },
           );
-
-          // Set the state with the data from the response
           setMyprof(userResponse.data);
-          console.log(userResponse.data);
         } catch (error) {
           console.error("Error fetching user data:", error);
           toast.error("Failed to fetch user data.");
-        } finally {
-          setIsAuthChecked(true);
-        }
+        } 
       } else {
-        setIsAuthChecked(true);
+        toast.error("Please Login!");
       }
     };
-
     if (!loading) {
       void fetchUserData();
     }
   }, [user, loading]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[#FFEDFD] pt-28">
+    <div
+      className="flex min-h-screen flex-col items-center justify-center bg-[#FFEDFD] pt-28"
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/dsj9gr1o3/image/upload/v1739220438/Vector_1_cz77nw.png')",
+        backgroundSize: "contain",
+        backgroundRepeat: "repeat",
+        mixBlendMode: "multiply",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div
-        className="z-[5000] flex h-[4rem] w-[80%] flex-row items-center justify-between gap-5 rounded-md border-[3px] border-black bg-[#ffffff] p-5 font-tusker text-[0.5rem] mobile2:text-[0.65rem] md:w-[60%] md:text-lg xl:w-[30%]"
+        className="z-[5000] flex h-fit w-[80%] flex-row items-center justify-between gap-5 rounded-md border-[3px] border-black bg-[#ffffff] p-5 font-tusker text-[0.5rem] mobile2:text-[0.65rem] md:w-[60%] md:text-lg xl:w-[30%]"
         style={{ boxShadow: "5px 5px 1px 1px #000000" }}
       >
         <div className="relative inline-block">
           <div className="absolute -bottom-1 -right-1 h-full w-full rounded-md border-2 border-black bg-black"></div>
-          <button className="relative rounded-md border-2 border-black bg-[#FD4F1C] px-6 py-2 text-center font-tusker text-[0.5rem] tracking-wider mobile2:text-[0.65rem] md:text-lg">
+          <button className="relative text-nowrap rounded-md border-2 border-black bg-[#FD4F1C] px-6 py-2 text-center font-tusker text-[0.5rem] tracking-wider mobile2:text-[0.65rem] md:text-lg">
             {likes.msg} {likes.msg === 1 ? "LIKE" : "LIKES"}
           </button>
         </div>
 
-        <div className="flex flex-row items-center justify-center gap-4">
+        <div className="flex flex-row items-center justify-center gap-4 text-nowrap">
           <div>CLICK HERE TO LIKE</div>
           <div className="flex items-center justify-center">
             <button
@@ -254,14 +262,6 @@ export default function MainEvent() {
       <div className="top-20 flex min-h-screen w-full flex-wrap justify-center pt-[5vh] mobile:gap-0 mobile:px-4 tablet:px-16 laptop:gap-8 laptop:px-4 4k:gap-20 4k:px-10">
         <div
           className={`absolute inset-0 z-0 min-h-screen transition-transform duration-1000 ease-out`}
-          style={{
-            backgroundImage:
-              "url('https://res.cloudinary.com/dsj9gr1o3/image/upload/v1739220438/Vector_1_cz77nw.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "repeat",
-            mixBlendMode: "multiply",
-            backgroundAttachment: "fixed",
-          }}
         ></div>
 
         <div className="flex transition-all duration-1000 ease-linear mobile:gap-5 tablet:gap-7 laptop:flex-col laptop:gap-8 4k:gap-20">
