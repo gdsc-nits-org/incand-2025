@@ -13,7 +13,7 @@ const InfiniteTextSlider = () => {
   }, []);
 
   return (
-    <Link href="/lineup_reveal">
+    <Link href="/lineup">
       <div className="relative w-full overflow-hidden bg-black py-2 pt-20">
         <motion.div
           className="flex whitespace-nowrap text-lg font-bold text-white"

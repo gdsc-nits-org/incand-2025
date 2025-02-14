@@ -199,7 +199,7 @@ const NavDetails = [
   // },
   {
     title: "ArtistLineup",
-    link: "/lineup_reveal",
+    link: "/lineup",
     bgColor: "#65C8FF",
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
