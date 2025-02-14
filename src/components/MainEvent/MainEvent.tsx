@@ -63,9 +63,10 @@ const EventCard = ({
           else
             toast.warning(`Atleast ${minLikes} likes are required to unlock!!`);
         }}
-        className={`${likes >= minLikes ? color : passive} ${likes >= minLikes ? "opacity-100" : "opacity-80"} relative flex items-center rounded-3xl border-black shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] transition-all duration-1000 ease-out hover:border-[3px] ${width} ${height} transform-gpu cursor-pointer overflow-hidden ${className}`}
+        className={`${likes >= minLikes ? color : passive} ${likes >= minLikes ? "opacity-100" : "opacity-80"} relative flex items-center rounded-3xl border-black shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] transition-all duration-1000 ease-out hover:border-[3px] ${width} ${height} transform-gpu cursor-pointer overflow-hidden ${className} filter ${likes >= minLikes ? "blur-0 lg:blur-0" : "blur-[2px] lg:blur-[5px]"
+          }`}
         style={{
-          filter: `blur(${likes >= minLikes ? "0px" : "8px"})`,
+          // filter: `blur(${likes >= minLikes ? "0px" : "2px"})`,
           backgroundBlendMode: `${likes >= minLikes ? "none" : "darken"}`,
         }}
       >
@@ -126,11 +127,11 @@ const EventCard = ({
         ></div>
       </div>
       {likes < minLikes ? (
-        <h3 className="absolute bottom-10 left-0 w-[100%] text-center text-white">
+        <h6 className="absolute bottom-1 lg:bottom-8 left-0 w-[100%] text-center text-white text-[.6rem] lg:text-[1rem]">
           <Lock className="inline" />
           This event needs atleast{" "}
           <span className="font-bold">{minLikes} likes</span> to get unlocked
-        </h3>
+        </h6>
       ) : null}
     </div>
   );
@@ -210,7 +211,7 @@ export default function MainEvent() {
         } catch (error) {
           console.error("Error fetching user data:", error);
           toast.error("Failed to fetch user data.");
-        } 
+        }
       } else {
         toast.error("Please Login!");
       }
