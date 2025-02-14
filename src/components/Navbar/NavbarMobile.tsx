@@ -250,7 +250,7 @@ const linkColors = new Map<string, string>([
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
   ["/game/gallery", "#FAE00D"],
-  ["/lineup_reveal", "#FFEDFD"],
+  ["/lineup", "#FFEDFD"],
 ]);
 
 const eventPageNavColors = [
