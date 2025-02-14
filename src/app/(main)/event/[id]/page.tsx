@@ -5,9 +5,11 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
-import { toast, Toaster } from "sonner";
+import { toast,} from "sonner";
 import { env } from "~/env";
 import allEvents from "../../../../../public/assets/Data/events.json";
+
+export const runtime = "edge";
 
 export default function Page({ params }: { params: { id: string } }) {
   const router = useRouter();
@@ -26,13 +28,16 @@ export default function Page({ params }: { params: { id: string } }) {
     const fetchLikes = async () => {
       try {
         const res = await axios.get<{ status: number; msg: number }>(
-          `${env.NEXT_PUBLIC_API_URL}/api/like`
+          `${env.NEXT_PUBLIC_API_URL}/api/like`,
         );
         const likes = res.data.msg ?? 0;
 
-        if (minLikesRequired[id] !== undefined && likes < minLikesRequired[id]) {
+        if (
+          minLikesRequired[id] !== undefined &&
+          likes < minLikesRequired[id]
+        ) {
           router.replace("/");
-          toast.warning("Not Adequate likes!!") // Redirect before rendering the event page
+          toast.warning("Not Adequate likes!!"); // Redirect before rendering the event page
         } else {
           setIsAllowed(true);
         }
@@ -44,15 +49,20 @@ export default function Page({ params }: { params: { id: string } }) {
       }
     };
 
-   void fetchLikes();
-  }, [id, router,minLikesRequired]);
+    void fetchLikes();
+  }, [id, router, minLikesRequired]);
 
-  if (loading) return <div className="h-screen w-screen flex items-center justify-center">Loading...</div>;
+  if (loading)
+    return (
+      <div className="flex h-screen w-screen items-center justify-center">
+        Loading...
+      </div>
+    );
   if (!isAllowed) return null; // Prevent rendering if not allowed
 
   const TOTAL_EVENT = allEvents.length;
   const data = allEvents[id - 1];
-  
+
   return (
     <section
       className="flex h-auto min-h-screen w-screen flex-col items-center justify-center bg-[#FFEDFD] p-6 pt-[80px] font-tusker ipadair:p-10 ipadair:pt-[7.5rem] 4k:p-20 4k:pt-[10rem]"
@@ -103,7 +113,7 @@ export default function Page({ params }: { params: { id: string } }) {
             href={id > 1 ? `/event/${id - 1}` : "/events"}
             className="flex h-full w-[18%] items-center justify-center bg-[#FAE00D] ipadair:w-[15%]"
           >
-            { }
+            {}
             <Image
               className="h-8 w-12 mobile3:h-[60%] mobile3:w-[60%] ipadair:h-[65%] ipadair:w-auto"
               src="/assets/events/prev_triangles.svg"
@@ -176,7 +186,6 @@ export default function Page({ params }: { params: { id: string } }) {
           </Link>
         </div>
       </section>
-      <Toaster />
     </section>
   );
 }
