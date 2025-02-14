@@ -37,16 +37,10 @@ const CarpeDiem = () => {
       }
     };
     toast.promise(fetchLikes, {
-      loading: "Fetching Number of Likes...",
-      success: "Likes Fetched!!",
+      // loading: "Fetching Number of Likes...",
+      // success: "Likes Fetched!!",
       error: "Error in fetching likes...",
     });
-    if (likes.msg < 800) {
-      toast.warning("Can't reveal without 800 likes");
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 500);
-    }
   }, []);
   useEffect(() => {
     setIsClient(true);

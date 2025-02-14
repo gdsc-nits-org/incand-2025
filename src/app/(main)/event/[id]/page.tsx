@@ -1,53 +1,57 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-
-import allEvents from "../../../../../public/assets/Data/events.json";
 import axios from "axios";
 import { toast, Toaster } from "sonner";
 import { env } from "~/env";
-import { useState, useEffect } from "react";
+import allEvents from "../../../../../public/assets/Data/events.json";
 
-interface ApiResponse {
-  status: number;
-  msg: number;
-}
-
-export const runtime = "edge";
 export default function Page({ params }: { params: { id: string } }) {
-  const id = +params.id;
-  const TOTAL_EVENT = allEvents.length;
-  const data = allEvents[id - 1];
-  const [likes, setLikes] = useState<ApiResponse>({
-    status: 401,
-    msg: 0,
-  });
+  const router = useRouter();
+  const id = Number(params.id);
+  const [isAllowed, setIsAllowed] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const minLikesRequired: Record<number, number> = {
+    17: 200,
+    18: 600,
+    19: 400,
+    20: 100,
+  };
+
   useEffect(() => {
-    const minLikesRequired: Record<number, number> = {
-      17: 200,
-      18: 600,
-      19: 400,
-      20: 100,
-    };
-  
     const fetchLikes = async () => {
       try {
-        const res = await axios.get<ApiResponse>(`${env.NEXT_PUBLIC_API_URL}/api/like`);
-        setLikes(res.data);
-  
-        if (minLikesRequired[id] !== undefined && (res.data?.msg ?? 0) < minLikesRequired[id]) {
-          window.location.href = "/";
-          toast.warning("Can't reveal without adequate likes");
+        const res = await axios.get<{ status: number; msg: number }>(
+          `${env.NEXT_PUBLIC_API_URL}/api/like`
+        );
+        const likes = res.data.msg ?? 0;
+
+        if (minLikesRequired[id] !== undefined && likes < minLikesRequired[id]) {
+          router.replace("/");
+          toast.warning("Not Adequate likes!!") // Redirect before rendering the event page
+        } else {
+          setIsAllowed(true);
         }
       } catch (err) {
-        console.log(err);
-        toast.error("Error fetching likes.");
+        console.error("Error fetching likes:", err);
+        router.replace("/");
+      } finally {
+        setLoading(false);
       }
     };
-  
-    void fetchLikes();
-  }, [id]);
+
+   void fetchLikes();
+  }, [id, router,minLikesRequired]);
+
+  if (loading) return <div className="h-screen w-screen flex items-center justify-center">Loading...</div>;
+  if (!isAllowed) return null; // Prevent rendering if not allowed
+
+  const TOTAL_EVENT = allEvents.length;
+  const data = allEvents[id - 1];
   
   return (
     <section
