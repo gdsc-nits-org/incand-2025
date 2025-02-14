@@ -141,8 +141,10 @@ const Login = () => {
             alt="avatar"
           />
         )}
-        <span className="w-auto text-nowrap px-4  text-sm font-semibold text-black ipadair:text-[1.2rem] 4k:text-2xl"
-          style={{ fontFamily: "Rocket Thunder" }}>
+        <span
+          className="w-auto text-nowrap px-4 text-sm font-semibold text-black ipadair:text-[1.2rem] 4k:text-2xl"
+          style={{ fontFamily: "Rocket Thunder" }}
+        >
           {_user.displayName}
         </span>
       </button>

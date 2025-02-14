@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import Login from "../GoogleAuth";
 import { usePathname } from "next/navigation";
-import path from "path";
 
 const NavbarMobile = () => {
   const pathname = usePathname();
@@ -190,9 +189,17 @@ const NavDetails = [
     smallTextColor: "#F12390",
     desc: "Enter the maze where brilliance begins",
   },
+  // {
+  //   title: "Event",
+  //   link: "/events",
+  //   bgColor: "#65C8FF",
+  //   bigTextColor: "#068AC2",
+  //   smallTextColor: "#0893CF",
+  //   desc: "Trace the path of creativity and culture",
+  // },
   {
-    title: "Event",
-    link: "/events",
+    title: "ArtistLineup",
+    link: "/lineup",
     bgColor: "#65C8FF",
     bigTextColor: "#068AC2",
     smallTextColor: "#0893CF",
@@ -238,10 +245,12 @@ const linkColors = new Map<string, string>([
   ["/gallery", "transparent"],
   ["/game", "#000E16"],
   ["/team", "#FFF361"],
-  ["/CarpeDiem", "#00A3FF"],
+  ["/CarpeDiem1", "#00A3FF"],
+  ["/CarpeDiem2", "#00A3FF"],
   ["/Dashboard", "#FFAB17"],
   ["/gallery_page", "#FC7566"],
   ["/game/gallery", "#FAE00D"],
+  ["/lineup_reveal", "#FFEDFD"],
 ]);
 
 const eventPageNavColors = [

@@ -44,13 +44,13 @@ const Gallery = () => {
         setData(cache[page] ?? []);
         return;
       }
-  
+
       setLoading(true);
       try {
         const res = await axios.get<luminisLookoutGalleryApiResponse>(
-          `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted?page=${page}&limit=40`
+          `${env.NEXT_PUBLIC_API_URL}/api/submissions/accepted?page=${page}&limit=40`,
         );
-  
+
         const submissions = res.data?.msg?.submissions ?? []; // Ensure it's an array
         setCache((prevCache) => ({ ...prevCache, [page]: submissions }));
         setData(submissions);
@@ -61,41 +61,42 @@ const Gallery = () => {
       }
       setLoading(false);
     }
-  
+
     void fetchData();
   }, [page, cache]);
-  
 
   useEffect(() => {
-    gsap.utils.toArray<HTMLElement>(".animatable").forEach((layer: HTMLElement) => {
-      let lastVelocity = 0;
-      let scrollTimeout: NodeJS.Timeout | null = null;
+    gsap.utils
+      .toArray<HTMLElement>(".animatable")
+      .forEach((layer: HTMLElement) => {
+        let lastVelocity = 0;
+        let scrollTimeout: NodeJS.Timeout | null = null;
 
-      const trigger = ScrollTrigger.create({
-        trigger: layer,
-        start: "top 80%",
-        onUpdate: (self) => {
-          const velocity = self.getVelocity();
-          lastVelocity = gsap.utils.clamp(-50, 50, velocity / 500);
+        const trigger = ScrollTrigger.create({
+          trigger: layer,
+          start: "top 80%",
+          onUpdate: (self) => {
+            const velocity = self.getVelocity();
+            lastVelocity = gsap.utils.clamp(-50, 50, velocity / 500);
 
-          gsap.to(layer, {
-            rotate: lastVelocity,
-            duration: 0.3,
-            ease: "power2.out",
-          });
+            gsap.to(layer, {
+              rotate: lastVelocity,
+              duration: 0.3,
+              ease: "power2.out",
+            });
 
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+              gsap.to(layer, { rotate: 0, duration: 0.6, ease: "power3.out" });
+            }, 200);
+          },
+        });
+
+        return () => {
+          trigger.kill();
           if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            gsap.to(layer, { rotate: 0, duration: 0.6, ease: "power3.out" });
-          }, 200);
-        },
+        };
       });
-
-      return () => {
-        trigger.kill();
-        if (scrollTimeout) clearTimeout(scrollTimeout);
-      };
-    });
   }, [data]);
 
   return (
@@ -103,10 +104,16 @@ const Gallery = () => {
       {/* Title */}
       <div className="flex w-[80%] flex-col items-center justify-between gap-10 xl:flex-row-reverse">
         <div className="relative w-full">
-          <h1 className="absolute left-[4px] top-[4px] z-0 w-full text-center text-5xl font-extrabold tracking-widest text-black xl:text-8xl" style={{ fontFamily: "Rocket Thunder" }}>
+          <h1
+            className="absolute left-[4px] top-[4px] z-0 w-full text-center text-5xl font-extrabold tracking-widest text-black xl:text-8xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
             PHOTOS APPROVED
           </h1>
-          <h1 className="relative z-10 w-full text-center text-5xl tracking-widest text-white xl:text-8xl" style={{ fontFamily: "Rocket Thunder" }}>
+          <h1
+            className="relative z-10 w-full text-center text-5xl tracking-widest text-white xl:text-8xl"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
             PH<span className="text-[#FAE00D]">O</span>T
             <span className="text-[#FAE00D]">O</span>S APPR
             <span className="text-[#FAE00D]">O</span>VED
@@ -128,36 +135,47 @@ const Gallery = () => {
       {/* Gallery */}
       <div className="flex w-full flex-wrap items-center justify-center gap-6 p-4 xl:justify-center xl:gap-16">
         {loading ? (
-          <p className="text-2xl lg:4xl text-blackfont-bold tracking-wider" style={{ fontFamily: "Rocket Thunder" }}>Loading...</p>
+          <p
+            className="lg:4xl text-blackfont-bold text-2xl tracking-wider"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            Loading...
+          </p>
         ) : data.length > 0 ? (
-          data
-            .map((item, idx) => (
-              <div className="animatable" key={idx}>
-                <Card photo={item.photo} User={item.User} />
-              </div>
-            ))
+          data.map((item, idx) => (
+            <div className="animatable" key={idx}>
+              <Card photo={item.photo} User={item.User} />
+            </div>
+          ))
         ) : (
-          <p className="text-xl text-white font-bold tracking-wider" style={{ fontFamily: "Rocket Thunder" }}>No photos available.</p>
+          <p
+            className="text-xl font-bold tracking-wider text-white"
+            style={{ fontFamily: "Rocket Thunder" }}
+          >
+            No photos available.
+          </p>
         )}
       </div>
 
       {/* Pagination Controls */}
-      <div className="mt-4 flex justify-center gap-4 md:gap-8 items-center w-[100%]">
+      <div className="mt-4 flex w-[100%] items-center justify-center gap-4 md:gap-8">
         <div className="relative inline-block">
           <div className="absolute left-[6px] top-[6px] z-0 h-full w-full rounded-md bg-black"></div>
 
           <button
             onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
             disabled={page === 1}
-            className="relative z-10 rounded bg-white px-4 py-2 text-black font-bold text-sm md:text-xl tracking-wider border-2 border-black disabled:opacity-50"
+            className="relative z-10 rounded border-2 border-black bg-white px-4 py-2 text-sm font-bold tracking-wider text-black disabled:opacity-50 md:text-xl"
             style={{ fontFamily: "Rocket Thunder" }}
           >
             Previous
           </button>
         </div>
 
-        <span className="text-white tracking-wider text-sm font-bold md:text-xl"
-          style={{ fontFamily: "Rocket Thunder" }}>
+        <span
+          className="text-sm font-bold tracking-wider text-white md:text-xl"
+          style={{ fontFamily: "Rocket Thunder" }}
+        >
           Page {page} of {totalPages}
         </span>
         <div className="relative inline-block">
@@ -166,13 +184,12 @@ const Gallery = () => {
           <button
             onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={page === totalPages}
-            className="relative z-10 rounded bg-white px-4 py-2 text-black font-bold tracking-wider text-sm md:text-xl border-2 border-black disabled:opacity-50"
+            className="relative z-10 rounded border-2 border-black bg-white px-4 py-2 text-sm font-bold tracking-wider text-black disabled:opacity-50 md:text-xl"
             style={{ fontFamily: "Rocket Thunder" }}
           >
             Next
           </button>
         </div>
-
       </div>
     </div>
   );
