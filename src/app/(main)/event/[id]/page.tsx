@@ -41,11 +41,11 @@ export default function Page({ params }: { params: { id: string } }) {
         }, 500);
       }
     };
-    toast.promise(fetchLikes, {
-      loading: "Fetching Number of Likes...",
-      success: "Likes Fetched!!",
-      error: "Error in fetching likes...",
-    });
+    // toast.promise(fetchLikes, {
+    //   loading: "Fetching Number of Likes...",
+    //   success: "Likes Fetched!!",
+    //   error: "Error in fetching likes...",
+    // });
     if (
       (likes.msg < 200 && id === 17) ||
       (likes.msg < 600 && id === 18) ||

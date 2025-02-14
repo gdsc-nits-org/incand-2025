@@ -282,7 +282,7 @@ export default function MainEvent() {
           {/* <Link href="/event/19"> */}
           <EventCard
             name="Comedy Night"
-            date="21st Feb"
+            date="22nd Feb"
             className={`absolute right-0 top-0 ${likes.msg >= 400 ? "hover:scale-105" : null} mobile:origin-bottom-right tablet:origin-top-left laptop:origin-top-right`}
             color="bg-[#FFADF6]"
             passive="bg-[#111D16]"
