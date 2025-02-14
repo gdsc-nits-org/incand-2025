@@ -6,6 +6,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "~/app/utils/firebase";
 import { toast } from "sonner";
 import { Heart, Lock } from "lucide-react";
+import Login from "~/components/GoogleAuth";
+
 
 interface ApiResponse {
   status: number;
@@ -222,6 +224,31 @@ export default function MainEvent() {
   }, [user, loading]);
 
   return (
+    <>
+    {!user && !loading && (
+        <section className="l absolute z-50 flex h-screen w-screen flex-col items-center justify-center gap-4">
+          <h1 className="font-tusker text-sm text-white tablet:text-xl">
+            You Need to Login to view the page!!
+          </h1>
+          <div
+            className={`ease-linaer flex h-auto min-h-10 w-auto min-w-32 scale-100 items-center rounded-lg bg-white shadow-[8px_8px_0px_black] transition-transform duration-300 hover:-translate-x-2 hover:-translate-y-2 hover:scale-110`}
+          >
+            <Login />
+          </div>
+        </section>
+      )}
+      <div
+        className={`flex flex-col overflow-hidden bg-black`}
+        style={
+          user || loading
+            ? {}
+            : {
+                height: "100vh",
+                overflow: "hidden",
+                filter: "blur(5px)",
+              }
+        }
+      ></div>
     <div
       className="flex min-h-screen flex-col items-center justify-center bg-[#FFEDFD] pt-28"
       style={{
@@ -377,5 +404,6 @@ export default function MainEvent() {
         </div>
       </div>
     </div>
+    </>
   );
 }
