@@ -199,7 +199,7 @@ const NavbarDesktop = () => {
 
 const NavDetails = [
   { name: "Home", link: "/" },
-  // { name: "Events", link: "/events" },
+  { name: "Events", link: "/events" },
   { name: "ArtistLineup", link: "/lineup" },
   { name: "Gallery", link: "/gallery" },
   { name: "LuminisLookout", link: "/game" },
