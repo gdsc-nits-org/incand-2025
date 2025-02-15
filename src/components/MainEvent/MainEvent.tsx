@@ -64,9 +64,8 @@ const EventCard = ({
           // else
           //   toast.warning(`Atleast ${minLikes} likes are required to unlock!!`);
         }}
-        className={`${likes >= minLikes ? color : passive} ${likes >= minLikes ? "opacity-100" : "opacity-80"} relative flex items-center rounded-3xl border-black shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] transition-all duration-1000 ease-out hover:border-[3px] ${width} ${height} transform-gpu cursor-pointer overflow-hidden ${className} filter ${
-          likes >= minLikes ? "blur-0 lg:blur-0" : "blur-[2px] lg:blur-[5px]"
-        }`}
+        className={`${likes >= minLikes ? color : passive} ${likes >= minLikes ? "opacity-100" : "opacity-80"} relative flex items-center rounded-3xl border-black shadow-[0.8vh_0.8vh_0px_rgba(0,0,0,1)] transition-all duration-1000 ease-out hover:border-[3px] ${width} ${height} transform-gpu cursor-pointer overflow-hidden ${className} filter ${likes >= minLikes ? "blur-0 lg:blur-0" : "blur-[2px] lg:blur-[5px]"
+          }`}
         style={{
           // filter: `blur(${likes >= minLikes ? "0px" : "2px"})`,
           backgroundBlendMode: `${likes >= minLikes ? "none" : "darken"}`,
@@ -243,10 +242,10 @@ export default function MainEvent() {
           user || loading
             ? {}
             : {
-                height: "100vh",
-                overflow: "hidden",
-                filter: "blur(5px)",
-              }
+              height: "100vh",
+              overflow: "hidden",
+              filter: "blur(5px)",
+            }
         }
       ></div>
       <div
@@ -383,13 +382,13 @@ export default function MainEvent() {
               color="bg-[#ABA8FF]"
               passive="bg-[#1B181F]"
               href="/event/17"
-              width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
-              height="laptop:h-[37.8vh] mobile:h-[21vh]"
+              width="laptop:w-[30vw] mobile:w-[90vw] tablet:w-[80vw]"
+              height="laptop:h-[80vh] mobile:h-[27.5vh]"
               likes={likes.msg}
               minLikes={200}
             />
             {/* <Link href="/event/18"> */}
-            <EventCard
+            {/* <EventCard
               name="Nirvana"
               date="22nd Feb"
               className={`absolute bottom-0 left-0 ${likes.msg >= 600 ? "hover:scale-105" : null} mobile:origin-bottom-right tablet:origin-top-left`}
@@ -400,7 +399,7 @@ export default function MainEvent() {
               height="laptop:h-[37.8vh] mobile:h-[21vh]"
               likes={likes.msg}
               minLikes={600}
-            />
+            /> */}
           </div>
         </div>
       </div>

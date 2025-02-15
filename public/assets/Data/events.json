@@ -256,21 +256,6 @@
   },
   {
     "id": "18",
-    "header": "NIRVANA",
-    "subheader": "",
-    "text": "Get ready for Nirvana under Incandescence'25, featuring the Bollywood band ft. Arjun Kanungo! This electrifying night promises to be a blend of Arjun’s biggest hits and high-energy Bollywood tunes, creating an unforgettable experience.\n\n\nArjun Kanungo is a powerhouse in the Indian music industry, known for delivering hit after hit. From the party anthem \"Baaki Baatein Peene Baad\" to the soulful \"Fursat\" and the playful \"Gallan Tipsiyaan,\" his music covers every mood.\n\nBut these are just a glimpse of his diverse repertoire. A multi-talented singer, composer, and performer, Arjun's ability to blend heartfelt lyrics with infectious beats has cemented his place as one of the most dynamic artists in the scene today.",
-    "header2": "",
-    "thumbnail": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739359968/arjun_kanungo_818-orig1545814300_yowwbg.webp",
-    "imgUrls": [
-      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739428942/Frame_1171279658_lml9lu.png   "
-    ],
-    "registrationLink": {
-      "name": "Register",
-      "link": ""
-    }
-  },
-  {
-    "id": "19",
     "header": "COMEDY NIGHT",
     "subheader": "",
     "text": "A night where books take a break, deadlines don’t exist, and the only assignment is to laugh till your stomach hurts—Comedy Knight is back,and this time, it’s bigger, bolder, and funnier than ever! And who better to own the stage than the man who doesn’t just tell jokes—he rewrites reality with punchlines?Hands down to the only man with humor that hits with “ Did he really kust say that?”Madhur Virli, the IIT Delhi graduate who swapped circuits for sarcasm and equations for epic comebacks. Surviving IIT is one thing, surviving cancer is another, but doing both and then choosing to roast life on stage? That’s next-level audacity. With humor sharper than a CAT percentile and an ability to make even the darkest realities feel light, he’s set to turn your evening into a full-blown laughter riot.",
@@ -285,7 +270,7 @@
     }
   },
   {
-    "id": "20",
+    "id": "19",
     "header": "EDM NIGHT",
     "subheader": "",
     "text": "Step into the lucid labyrinth of music and memories as Incandescence’25 NIT Silchar presents : EDM Night! Lose yourself in a maze of electrifying beats, dazzling lights, and high-energy drops that pulse through the night. As the music builds, let the bass shake your soul, the rhythm take control, and the euphoria consume you. This isn’t just a concert—it’s your path to a night where chaos transforms into harmony, and every drop ignites pure exhilaration. Seize the night, dance through the labyrinth, and let the DJs take over!Bringing the house down with an explosive lineup,  EDM Night  features three electrifying maestros behind the deck—DJ Tracer, DJ Suit Up, and DJ Voila! Get ready for DJ Tracer, known for his high-voltage drops and seamless transitions that keep the energy soaring. DJ Suit Up will take you on a sonic journey with his signature blend of bass-heavy beats and euphoric melodies. And to top it all off, DJ Voila will set the stage ablaze with her electrifying mixes, turning every heartbeat into a rhythm. Together, they promise a night of pulse-pounding music, insane visuals, and an atmosphere that’ll leave you breathless.",
@@ -300,3 +285,4 @@
     }
   }
 ]
+
