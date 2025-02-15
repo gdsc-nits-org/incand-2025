@@ -611,7 +611,7 @@ const CarpeDiem = () => {
                   alt="Singer"
                   fill={true}
                   className={" "}
-                  style={{ zIndex: "10" }}
+                  style={{ zIndex: "8" }}
                 />
               </div>
               {/* <div className="absolute left-[40%] top-[87%] h-[5vh] w-[27vw]">
