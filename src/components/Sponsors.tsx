@@ -4,72 +4,10 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import styles from "~/styles/Sponsors.module.css";
 
 const sponsors = [
-  { id: 1, name: "ASUS", image: "/assets/sponsor/asus.webp" },
-  { id: 2, name: "AMUL", image: "/assets/sponsor/Amul.webp" },
-  { id: 3, name: "UNSTOP", image: "/assets/sponsor/unstop.webp" },
-  { id: 4, name: "BAULI", image: "/assets/sponsor/Bauli.webp" },
-  { id: 5, name: "LWT", image: "/assets/sponsor/LWT.webp" },
-  { id: 6, name: "CAMPUS TIMES", image: "/assets/sponsor/campustimes.webp" },
-  { id: 7, name: "CLOVIA", image: "/assets/sponsor/cloviaaa.webp" },
-  { id: 8, name: "COCA-COLA", image: "/assets/sponsor/coca-cola.webp" },
-  {
-    id: 9,
-    name: "THE BISHAL",
-    image: "/assets/sponsor/bishalhotel.webp",
-  },
-  { id: 10, name: "ED TIMES", image: "/assets/sponsor/ed.webp" },
-  {
-    id: 11,
-    name: "GPLUS",
-    image: "/assets/sponsor/Gplus.webp",
-  },
-  {
-    id: 12,
-    name: "THE SOULED STORE",
-    image: "/assets/sponsor/souled.webp",
-  },
-  {
-    id: 13,
-    name: "WILEY",
-    image: "/assets/sponsor/wiley.webp",
-  },
-  { id: 14, name: "WINKIES", image: "/assets/sponsor/winkies.webp" },
-  { id: 15, name: "ZEBRONICS", image: "/assets/sponsor/zebronics.webp" },
-  {
-    id: 16,
-    name: "UNIBIC",
-    image: "/assets/sponsor/unibic.webp",
-  },
-  {
-    id: 17,
-    name: "THE LONDON SHAKES",
-    image: "/assets/sponsor/london.webp",
-  },
-  {
-    id: 18,
-    name: "MAMA'S HEARTH",
-    image: "/assets/sponsor/Mamasheart.webp",
-  },
-  {
-    id: 19,
-    name: "MUSIC TELEVISION",
-    image: "/assets/sponsor/mtv.webp",
-  },
-  {
-    id: 20,
-    name: "SBI",
-    image: "/assets/sponsor/sbi.webp",
-  },
-  {
-    id: 21,
-    name: "BORAIL VIEW",
-    image: "/assets/sponsor/borail.webp",
-  },
-  {
-    id: 22,
-    name: "THE CAMPUS MEDIA",
-    image: "/assets/sponsor/campusmedia.webp",
-  },
+  { id: 1, name: "Title Sponsor", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777411/1200px-Coca-Cola_logo.svg_jsdidi.webp" },
+  { id: 2, name: "Music Partner", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777391/1024px-JioSaavn_Logo.svg_wbpj6d.webp" },
+  { id: 3, name: "Food Sponsor", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777425/2177px-Pizza_Hut_logo.svg_fy5lys.webp" },
+  { id: 4, name: "Food Sponsor", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777437/640px-KFC_logo-image.svg_jxdn3y.webp" }, 
 ];
 
 const Sponsors: React.FC = () => {
@@ -93,7 +31,7 @@ const Sponsors: React.FC = () => {
       <h1
         className={`mx-auto max-w-[90%] translate-y-12 font-tusker mobile:!text-[40px] tablet:!text-[6vh] laptop:!text-[11vh] ${styles["text-stroke"]}`}
       >
-        PREVIOUS SPONSORS
+        OUR SPONSORS
       </h1>
 
       <div className="relative flex h-[400px] scale-100 items-center justify-center ipadair:scale-50 xl:scale-100 4k:h-[1200px]">
