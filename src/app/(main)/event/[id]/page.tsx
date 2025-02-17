@@ -54,7 +54,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   if (loading)
     return (
-      <div className="flex h-screen w-screen items-center justify-center">
+      <div className="flex h-screen w-screen items-center justify-center font-tusker ipadair:p-10 ipadair:pt-[7.5rem] 4k:p-20 4k:pt-[10rem]">
         Loading...
       </div>
     );
@@ -102,7 +102,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 {data?.id.length === 1 ? "0" + data?.id : data?.id}
               </span>
             </h1>
-            <p className="text-wrap font-tusker2 text-sm leading-8 tracking-wider mobile3:text-2xl mobile3:leading-10 ipadair:text-2xl ipadair:leading-[3rem] ipadair:tracking-wider 4k:mt-[5rem] 4k:text-8xl 4k:leading-[8rem]">
+            <p className="text-wrap font-tusker2 text-sm leading-8 tracking-wider mobile3:text-2xl mobile3:leading-10 ipadair:text-2xl ipadair:leading-[3rem] ipadair:tracking-wider 4k:mt-[5rem] 4k:text-8xl 4k:leading-[8rem]" style={{ whiteSpace: "pre-line" }}>
               {data?.text}
             </p>
           </div>
@@ -170,7 +170,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </span>
           </div>
           <Link
-            href={`/event/${id !== 19 ? Math.min(TOTAL_EVENT, id + 1) : 1}`}
+            href={`/event/${id !== 20 ? Math.min(TOTAL_EVENT, id + 1) : 1}`}
             className="flex h-full w-[30%] items-center justify-center gap-2 bg-[#FF93EE] px-2 ipadair:w-[20%]"
           >
             <p className="text-[.5rem] text-[#FFDE70] drop-shadow-[3px_3px_0px_black] mobile1:text-sm mobile3:text-xl ipadair:text-3xl 4k:text-6xl">
