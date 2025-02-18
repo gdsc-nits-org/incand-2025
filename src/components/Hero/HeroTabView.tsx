@@ -49,6 +49,17 @@ const HeroTabView = () => {
         className="absolute inset-0 flex flex-col items-center ipadair:justify-center ipadair:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
+        <div className="relative top-[10vw] ipadair:top-[0vw] flex ipadair:w-[5vw] ipadair:h-[5vw] w-[10vw] h-[10vw] bg-white border rounded-full items-center justify-center z-50 shadow-[0.2vw_0.2vw_0px_#000000] shadow-black">
+                              <Image
+                                src="/assets/landing/title_sponsor_logo.png"
+                                alt="Title Sponsor: Coca Cola"
+                                layout="responsive"
+                                width={100}
+                                height={100}
+                                unoptimized
+                              />
+                            </div>
+                            <p className="relative top-[10vw] ipadair:top-0 ipadair:text-[1.2vw] text-[3vw]" style={{fontFamily: "Ahsing"}}>Presents</p>
         <div className="relative right-[-35vw] top-[6vw] z-[31] mt-[-7vw] flex flex-col items-center justify-center ipadair:right-[-23vw] ipadair:z-20 ipadair:mt-[0] ipadair:flex-row ipadair:items-start ipadair:gap-[0.789vw]">
           <div className="relative top-[4.167vw] mb-[5vw] h-[12.115vw] w-[12.115vw] self-end ipadair:hidden ipadair:h-[10.526vw] ipadair:w-[10.526vw]">
             <Image
@@ -1590,7 +1601,7 @@ const HeroTabView = () => {
 
           {/* Card 8 */}
         </div>
-        <div className="items-centre absolute top-[18vw] z-[1000] flex flex-col justify-center gap-[0.5vw] ipadair:top-[0] ipadair:flex-row">
+        <div className="items-centre absolute top-[30vw] z-[1000] flex flex-col justify-center gap-[0.5vw] ipadair:top-[6vw] ipadair:flex-row">
           <div className="relative left-[-8vw] flex gap-[1vw] ipadair:left-0 ipadair:gap-[0.5vw]">
             <svg
               className="absolute left-[-1vw] top-[-15vw] w-[30vw] overflow-visible ipadair:left-[-4vw] ipadair:top-[2vw] ipadair:w-[20vw]"
