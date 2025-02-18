@@ -48,17 +48,17 @@ const HeroMobileView = () => {
         className="absolute inset-0 flex flex-col items-center md:justify-center md:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative top-[35vw] md:top-[0vw] flex md:w-[5vw] md:h-[5vw] w-[10vw] h-[10vw] bg-white border rounded-full items-center justify-center z-50 shadow-[0.2vw_0.2vw_0px_#000000] shadow-black">
-                      <Image
-                        src="/assets/landing/title_sponsor_logo.png"
-                        alt="Title Sponsor: Coca Cola"
-                        layout="responsive"
-                        width={100}
-                        height={100}
-                        unoptimized
-                      />
-                    </div>
-                    <p className="relative top-[35vw] md:top-0 md:text-[1.2vw] text-[3vw]" style={{fontFamily: "Ahsing"}}>Presents</p>
+        <div className="relative top-[35vw] md:top-[0vw] flex md:w-[9vw] md:h-[7vw] w-[23vw] h-[14vw] bg-white border rounded-full items-center justify-center z-50 shadow-[0.2vw_0.2vw_0px_#000000] shadow-black">
+          <Image
+            src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
+            alt="Title Sponsor: Coca Cola"
+            layout="responsive"
+            width={90}
+            height={90}
+            unoptimized
+          />
+        </div>
+        <p className="relative top-[35vw] md:top-0 md:text-[1.2vw] text-[3vw]" style={{ fontFamily: "Ahsing" }}>Presents</p>
         <div className="relative right-[-35vw] top-[6vw] z-[31] mt-[25vw] flex flex-col items-center justify-center md:right-[-23vw] md:z-20 md:mt-[0] md:flex-row md:items-start md:gap-[0.789vw]">
           <div className="relative top-[4.167vw] mb-[5vw] h-[12.115vw] w-[12.115vw] self-end md:hidden md:h-[10.526vw] md:w-[10.526vw]">
             <Image
@@ -91,7 +91,7 @@ const HeroMobileView = () => {
               </circle>
             </svg> */}
             </div>
-          </div>      
+          </div>
           <div
             className={
               "mx-[0.789vw] h-[29.444vw] w-[13.888vw] self-end rounded-[2.053vw] border border-black bg-[#E1067B] md:h-[20.0vw] md:w-[9.671vw] md:rounded-[1.053vw] " +
