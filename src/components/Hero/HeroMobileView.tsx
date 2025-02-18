@@ -49,7 +49,7 @@ const HeroMobileView = () => {
         className="absolute inset-0 flex flex-col items-center md:justify-center md:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative top-[35vw] z-50 flex h-[14vw] w-[23vw] items-center justify-center scale-[1.35]   md:top-[-1.4vw] md:h-[7vw] md:w-[9vw]">
+        <div className="relative top-[35vw] z-50 flex h-[14vw] w-[23vw] items-center justify-center scale-[1.8]   md:top-[0vw] md:h-[7vw] md:w-[9vw]">
         <Link href="https://www.coca-colacompany.com/" target="_blank" rel="noreferrer">
           <Image
             src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
@@ -62,7 +62,7 @@ const HeroMobileView = () => {
           </Link>
         </div>
         <p
-          className="relative top-[35vw] text-[3vw] md:top-[-2vw] md:text-[1.2vw]"
+          className="relative top-[35vw] text-[3vw] md:top-[-0vw] md:text-[1.2vw]"
           style={{ fontFamily: "Ahsing" }}
         >
           Presents
@@ -1608,7 +1608,7 @@ const HeroMobileView = () => {
 
           {/* Card 8 */}
         </div>
-        <div className="items-centre absolute top-[65vw] z-[1000] flex flex-col justify-center gap-[0.5vw] md:top-[6vw] md:flex-row">
+        <div className="items-centre absolute top-[65vw] z-[1000] flex flex-col justify-center gap-[0.5vw] md:top-[8vw] md:flex-row">
           <div className="relative left-[-8vw] flex gap-[1vw] md:left-0 md:gap-[0.5vw]">
             <svg
               className="absolute left-[-1vw] top-[-15vw] w-[30vw] overflow-visible md:left-[-4vw] md:top-[2vw] md:w-[20vw]"
