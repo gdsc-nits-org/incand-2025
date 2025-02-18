@@ -49,7 +49,7 @@ const HeroTabView = () => {
         className="absolute inset-0 flex flex-col items-center ipadair:justify-center ipadair:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative top-[10vw] z-50 flex h-[10vw] w-[20vw] items-center justify-center rounded-full border bg-white shadow-[0.2vw_0.2vw_0px_#000000] shadow-black ipadair:top-[0vw] ipadair:h-[5vw] ipadair:w-[10vw]">
+        <div className="relative top-[10vw] z-50 flex h-[10vw] w-[20vw] items-center justify-center rounded-full  shadow-[0.2vw_0.2vw_0px_#000000] shadow-black ipadair:top-[0vw] ipadair:h-[5vw] ipadair:w-[10vw]">
           <Image
             src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
             alt="Title Sponsor: Coca Cola"

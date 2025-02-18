@@ -48,7 +48,7 @@ const HeroMobileView = () => {
         className="absolute inset-0 flex flex-col items-center md:justify-center md:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative top-[35vw] z-50 flex h-[14vw] w-[23vw] items-center justify-center rounded-full border bg-white shadow-[0.2vw_0.2vw_0px_#000000] shadow-black md:top-[0vw] md:h-[7vw] md:w-[9vw]">
+        <div className="relative top-[35vw] z-50 flex h-[14vw] w-[23vw] items-center justify-center    md:top-[-1.8vw] md:h-[7vw] md:w-[9vw]">
           <Image
             src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
             alt="Title Sponsor: Coca Cola"
@@ -59,7 +59,7 @@ const HeroMobileView = () => {
           />
         </div>
         <p
-          className="relative top-[35vw] text-[3vw] md:top-0 md:text-[1.2vw]"
+          className="relative top-[35vw] text-[3vw] md:top-[-3vw] md:text-[1.2vw]"
           style={{ fontFamily: "Ahsing" }}
         >
           Presents
