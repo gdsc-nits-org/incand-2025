@@ -205,7 +205,7 @@ const NavDetails = [
     smallTextColor: "#E8B002",
     desc: "Trace the path of creativity and culture",
   },
- 
+
   {
     title: "Gallery",
     link: "/gallery",

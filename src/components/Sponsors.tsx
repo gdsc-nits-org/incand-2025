@@ -4,10 +4,30 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import styles from "~/styles/Sponsors.module.css";
 
 const sponsors = [
-  { id: 1, name: "Title Sponsor", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777411/1200px-Coca-Cola_logo.svg_jsdidi.webp" },
-  { id: 2, name: "Music Partner", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777391/1024px-JioSaavn_Logo.svg_wbpj6d.webp" },
-  { id: 3, name: "Food Sponsor", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777425/2177px-Pizza_Hut_logo.svg_fy5lys.webp" },
-  { id: 4, name: "Food Sponsor", image: "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777437/640px-KFC_logo-image.svg_jxdn3y.webp" }, 
+  {
+    id: 1,
+    name: "Title Sponsor",
+    image:
+      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777411/1200px-Coca-Cola_logo.svg_jsdidi.webp",
+  },
+  {
+    id: 2,
+    name: "Music Partner",
+    image:
+      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777391/1024px-JioSaavn_Logo.svg_wbpj6d.webp",
+  },
+  {
+    id: 3,
+    name: "Food Sponsor",
+    image:
+      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777425/2177px-Pizza_Hut_logo.svg_fy5lys.webp",
+  },
+  {
+    id: 4,
+    name: "Food Sponsor",
+    image:
+      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777437/640px-KFC_logo-image.svg_jxdn3y.webp",
+  },
 ];
 
 const Sponsors: React.FC = () => {

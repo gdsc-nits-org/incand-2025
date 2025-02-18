@@ -48,7 +48,7 @@ const HeroMobileView = () => {
         className="absolute inset-0 flex flex-col items-center md:justify-center md:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative top-[35vw] md:top-[0vw] flex md:w-[9vw] md:h-[7vw] w-[23vw] h-[14vw] bg-white border rounded-full items-center justify-center z-50 shadow-[0.2vw_0.2vw_0px_#000000] shadow-black">
+        <div className="relative top-[35vw] z-50 flex h-[14vw] w-[23vw] items-center justify-center rounded-full border bg-white shadow-[0.2vw_0.2vw_0px_#000000] shadow-black md:top-[0vw] md:h-[7vw] md:w-[9vw]">
           <Image
             src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
             alt="Title Sponsor: Coca Cola"
@@ -58,7 +58,12 @@ const HeroMobileView = () => {
             unoptimized
           />
         </div>
-        <p className="relative top-[35vw] md:top-0 md:text-[1.2vw] text-[3vw]" style={{ fontFamily: "Ahsing" }}>Presents</p>
+        <p
+          className="relative top-[35vw] text-[3vw] md:top-0 md:text-[1.2vw]"
+          style={{ fontFamily: "Ahsing" }}
+        >
+          Presents
+        </p>
         <div className="relative right-[-35vw] top-[6vw] z-[31] mt-[25vw] flex flex-col items-center justify-center md:right-[-23vw] md:z-20 md:mt-[0] md:flex-row md:items-start md:gap-[0.789vw]">
           <div className="relative top-[4.167vw] mb-[5vw] h-[12.115vw] w-[12.115vw] self-end md:hidden md:h-[10.526vw] md:w-[10.526vw]">
             <Image

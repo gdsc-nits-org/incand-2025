@@ -49,7 +49,7 @@ const HeroTabView = () => {
         className="absolute inset-0 flex flex-col items-center ipadair:justify-center ipadair:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative top-[10vw] ipadair:top-[0vw] flex ipadair:w-[10vw] ipadair:h-[5vw] w-[20vw] h-[10vw] bg-white border rounded-full items-center justify-center z-50 shadow-[0.2vw_0.2vw_0px_#000000] shadow-black">
+        <div className="relative top-[10vw] z-50 flex h-[10vw] w-[20vw] items-center justify-center rounded-full border bg-white shadow-[0.2vw_0.2vw_0px_#000000] shadow-black ipadair:top-[0vw] ipadair:h-[5vw] ipadair:w-[10vw]">
           <Image
             src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
             alt="Title Sponsor: Coca Cola"
@@ -59,7 +59,12 @@ const HeroTabView = () => {
             unoptimized
           />
         </div>
-        <p className="relative top-[10vw] ipadair:top-0 ipadair:text-[1.2vw] text-[3vw]" style={{ fontFamily: "Ahsing" }}>Presents</p>
+        <p
+          className="relative top-[10vw] text-[3vw] ipadair:top-0 ipadair:text-[1.2vw]"
+          style={{ fontFamily: "Ahsing" }}
+        >
+          Presents
+        </p>
         <div className="relative right-[-35vw] top-[6vw] z-[31] mt-[-7vw] flex flex-col items-center justify-center ipadair:right-[-23vw] ipadair:z-20 ipadair:mt-[0] ipadair:flex-row ipadair:items-start ipadair:gap-[0.789vw]">
           <div className="relative top-[4.167vw] mb-[5vw] h-[12.115vw] w-[12.115vw] self-end ipadair:hidden ipadair:h-[10.526vw] ipadair:w-[10.526vw]">
             <Image

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
-import { toast,} from "sonner";
+import { toast } from "sonner";
 import { env } from "~/env";
 import allEvents from "../../../../../public/assets/Data/events.json";
 
@@ -102,7 +102,10 @@ export default function Page({ params }: { params: { id: string } }) {
                 {data?.id.length === 1 ? "0" + data?.id : data?.id}
               </span>
             </h1>
-            <p className="text-wrap font-tusker2 text-sm leading-8 tracking-wider mobile3:text-2xl mobile3:leading-10 ipadair:text-2xl ipadair:leading-[3rem] ipadair:tracking-wider 4k:mt-[5rem] 4k:text-8xl 4k:leading-[8rem]" style={{ whiteSpace: "pre-line" }}>
+            <p
+              className="text-wrap font-tusker2 text-sm leading-8 tracking-wider mobile3:text-2xl mobile3:leading-10 ipadair:text-2xl ipadair:leading-[3rem] ipadair:tracking-wider 4k:mt-[5rem] 4k:text-8xl 4k:leading-[8rem]"
+              style={{ whiteSpace: "pre-line" }}
+            >
               {data?.text}
             </p>
           </div>
