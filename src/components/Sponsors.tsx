@@ -28,6 +28,12 @@ const sponsors = [
     image:
       "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739777437/640px-KFC_logo-image.svg_jxdn3y.webp",
   },
+  {
+    id: 5,
+    name: "Ice Cream Partner",
+    image:
+      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739974180/1200px-Amul_official_logo.svg_eccepq.png"
+  }
 ];
 
 const Sponsors: React.FC = () => {

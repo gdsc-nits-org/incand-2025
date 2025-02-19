@@ -300,7 +300,7 @@ export default function MainEvent() {
               className={`absolute bottom-0 right-0 ${likes.msg >= 100 ? "hover:scale-105" : null} mobile:origin-bottom-right tablet:origin-bottom-right`}
               color="bg-[#8BF965]"
               passive="bg-[#1B2965]"
-              href="/event/19"
+              href="/event/20"
               width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
               height="laptop:h-[37.8vh] mobile:h-[21vh]"
               likes={likes.msg}
@@ -313,7 +313,7 @@ export default function MainEvent() {
               className={`absolute right-0 top-0 ${likes.msg >= 400 ? "hover:scale-105" : null} mobile:origin-bottom-right tablet:origin-top-left laptop:origin-top-right`}
               color="bg-[#FFADF6]"
               passive="bg-[#111D16]"
-              href="/event/18"
+              href="/event/19"
               width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
               height="laptop:h-[37.8vh] mobile:h-[21vh]"
               likes={likes.msg}
@@ -382,7 +382,7 @@ export default function MainEvent() {
               className={`absolute left-0 top-0 ${likes.msg >= 200 ? "hover:scale-105" : null} mobile:origin-bottom-right laptop:origin-bottom-left`}
               color="bg-[#ABA8FF]"
               passive="bg-[#1B181F]"
-              href="/event/17"
+              href="/event/18"
               width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
               height="laptop:h-[37.8vh] mobile:h-[21vh]"
               likes={likes.msg}
@@ -395,7 +395,7 @@ export default function MainEvent() {
               className={`absolute bottom-0 left-0 ${likes.msg >= 600 ? "hover:scale-105" : null} mobile:origin-bottom-right tablet:origin-top-left`}
               color="bg-[#F6E659]"
               passive="bg-[#161619]"
-              href="/event/20"
+              href="/event/21"
               width="laptop:w-[30vw] mobile:w-[44vw] tablet:w-[38vw]"
               height="laptop:h-[37.8vh] mobile:h-[21vh]"
               likes={likes.msg}

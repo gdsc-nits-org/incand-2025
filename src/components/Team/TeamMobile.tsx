@@ -1,7 +1,8 @@
+import { useState } from "react";
 import TeamCard from "./TeamCard";
-// import teamDataCore from "./Core.json";
+import teamDataCore from "../../../public/assets/Data/Core.json";
 import teamDataTech from "../../../public/assets/Data/Tech.json";
-// import teamDataModule from "./Modules.json";
+import teamDataModule from "../../../public/assets/Data/Modules.json";
 import React from "react";
 import Carousel from "./Carousel";
 
@@ -29,6 +30,7 @@ const TeamMobile: React.FC = () => {
   const developer = teamDataTech.filter(
     (member) => member.role === "developer" || member.role === "Ui/Ux",
   );
+  const [team, setTeam] = useState<1 | 2 | 3>(2);
   return (
     <div
       className="box-border h-[100vh] w-[100vw] overflow-y-scroll bg-[#FAF8E0]"
@@ -61,232 +63,164 @@ const TeamMobile: React.FC = () => {
         id="section2"
         className="box-border flex w-[100%] flex-col items-center justify-center overflow-x-hidden"
       >
-        {/* <div
-          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
-        >
-          <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
-          ></div>
-          <p
-            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
-          >
-            CORE MEMBERS
-          </p>
+        <div className="flex flex-row items-center justify-center font-tusker text-sm mb-16">
+          <button onClick={() => setTeam(1)} style={{ padding: "0.5rem", border: "1px solid #ff0000", borderTopLeftRadius: "1rem", borderBottomLeftRadius: "1rem", backgroundColor: `${team === 1 ? "#FF0000" : "#FFff17"}`, color: `${team === 1 ? "#FFff17" : "#FF0000"}` }}>CORE TEAM</button>
+          <button onClick={() => setTeam(2)} style={{ padding: "0.5rem", border: "1px solid #ff0000", backgroundColor: `${team === 2 ? "#FF0000" : "#FFff17"}`, color: `${team === 2 ? "#FFff17" : "#FF0000"}` }}>TECH TEAM</button>
+          <button onClick={() => setTeam(3)} style={{ padding: "0.5rem", border: "1px solid #ff0000", backgroundColor: `${team === 3 ? "#FF0000" : "#FFff17"}`, borderTopRightRadius: "1rem", borderBottomRightRadius: "1rem", color: `${team === 3 ? "#FFff17" : "#FF0000"}` }}>MODULE HEADS</button>
         </div>
-
-        <div className="-mt-4 box-border h-[30rem] w-[90%] px-4">
-          {/* <Slider {...settings}> */}
-        {/* <Carousel>
+        {team === 1 && (
+          <div className="flex items-center justify-center flex-wrap gap-4">
             {teamDataCore.map((member) => (
-              <div
+              <TeamCard
                 key={member.id}
-                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
-              >
-                <TeamCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.designation}
-                  image={member.img}
-                  fb={member.fb ?? ""}
-                  linkedin={member.linkedin ?? ""}
-                  git={member.git ?? ""}
-                  ind={member.id}
-                />
-              </div>
+                name={member.name}
+                role={member.designation}
+                image={member.img}
+                fb={member.fb ?? ""}
+                linkedin={member.linkedin ?? ""}
+                ind={member.id}
+              />
             ))}
-          </Carousel>
-
-          {/* </Slider> */}
-        {/* </div> */}
-
-        <div
-          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
-        >
-          <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
-          ></div>
-          <p
-            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
-          >
-            TECH LEAD
-          </p>
-        </div>
-
-        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
-          {/* <Slider {...settings}> */}
-          <Carousel>
-            {techLead.map((member) => (
+          </div>)}
+        {team === 2 && (
+          <>
+            <div
+              className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
+            >
               <div
-                key={member.id}
-                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+                className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
+              ></div>
+              <p
+                className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
               >
-                <TeamCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.designation}
-                  image={member.img}
-                  fb={member.fb ?? ""}
-                  linkedin={member.linkedin ?? ""}
-                  git={member.git ?? ""}
-                  ind={member.id}
-                />
-              </div>
-            ))}
-          </Carousel>
+                TECH LEAD
+              </p>
+            </div>
 
-          {/* </Slider> */}
-        </div>
+            {/* TECH LEADS */}
+            <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+              <Carousel>
+                {techLead.map((member) => (
+                  <div
+                    key={member.id}
+                    className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+                  >
+                    <TeamCard
+                      name={member.name}
+                      role={member.designation}
+                      image={member.img}
+                      fb={member.fb ?? ""}
+                      linkedin={member.linkedin ?? ""}
+                      git={member.git ?? ""}
+                      ind={member.id}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
 
-        <div
-          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
-        >
-          <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
-          ></div>
-          <p
-            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
-          >
-            TECH HEADS
-          </p>
-        </div>
+            <div className="flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]">
+              <div className="z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover"></div>
+              <p className="my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]">
+                TECH HEADS
+              </p>
+            </div>
 
-        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
-          {/* <Slider {...settings}> */}
-          <Carousel>
-            {techHead.map((member) => (
-              <div
-                key={member.id}
-                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
-              >
-                <TeamCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.designation}
-                  image={member.img}
-                  fb={member.fb ?? ""}
-                  linkedin={member.linkedin ?? ""}
-                  git={member.git ?? ""}
-                  ind={member.id}
-                />
-              </div>
-            ))}
-          </Carousel>
+            {/* TECH HEADS */}
+            <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+              <Carousel>
+                {techHead.map((member) => (
+                  <div
+                    key={member.id}
+                    className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+                  >
+                    <TeamCard
+                      name={member.name}
+                      role={member.designation}
+                      image={member.img}
+                      fb={member.fb ?? ""}
+                      linkedin={member.linkedin ?? ""}
+                      git={member.git ?? ""}
+                      ind={member.id}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
 
-          {/* </Slider> */}
-        </div>
+            <div className="flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]">
+              <div className="z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover"></div>
+              <p className="my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]">
+                TECH COHEADS
+              </p>
+            </div>
 
-        <div
-          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
-        >
-          <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
-          ></div>
-          <p
-            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
-          >
-            TECH COHEADS
-          </p>
-        </div>
+            {/* TECH COHEADS */}
+            <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+              <Carousel>
+                {techCohead.map((member) => (
+                  <div
+                    key={member.id}
+                    className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+                  >
+                    <TeamCard
+                      name={member.name}
+                      role={member.designation}
+                      image={member.img}
+                      fb={member.fb ?? ""}
+                      linkedin={member.linkedin ?? ""}
+                      git={member.git ?? ""}
+                      ind={member.id}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
 
-        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
-          {/* <Slider {...settings}> */}
-          <Carousel>
-            {techCohead.map((member) => (
-              <div
-                key={member.id}
-                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
-              >
-                <TeamCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.designation}
-                  image={member.img}
-                  fb={member.fb ?? ""}
-                  linkedin={member.linkedin ?? ""}
-                  git={member.git ?? ""}
-                  ind={member.id}
-                />
-              </div>
-            ))}
-          </Carousel>
+            <div className="flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]">
+              <div className="z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover"></div>
+              <p className="my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]">
+                JUNIOR MEMBERS
+              </p>
+            </div>
 
-          {/* </Slider> */}
-        </div>
-        <div
-          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
-        >
-          <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
-          ></div>
-          <p
-            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
-          >
-            JUNIOR MEMBERS
-          </p>
-        </div>
+            {/* JUNIOR MEMBERS */}
+            <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
+              <Carousel>
+                {developer.map((member) => (
+                  <div
+                    key={member.id}
+                    className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+                  >
+                    <TeamCard
+                      name={member.name}
+                      role={member.designation}
+                      image={member.img}
+                      fb={member.fb ?? ""}
+                      linkedin={member.linkedin ?? ""}
+                      git={member.git ?? ""}
+                      ind={member.id}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+          </>
+        )}
 
-        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
-          {/* <Slider {...settings}> */}
-          <Carousel>
-            {developer.map((member) => (
-              <div
-                key={member.id}
-                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
-              >
-                <TeamCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.designation}
-                  image={member.img}
-                  fb={member.fb ?? ""}
-                  linkedin={member.linkedin ?? ""}
-                  git={member.git ?? ""}
-                  ind={member.id}
-                />
-              </div>
-            ))}
-          </Carousel>
-
-          {/* </Slider> */}
-        </div>
-
-        {/* <div
-          className={`flex h-[4rem] w-[16rem] items-center justify-start gap-x-4 rounded-full bg-[#E1067B]`}
-        >
-          <div
-            className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full bg-[url('/assets/Team/Handle.webp')] bg-cover`}
-          ></div>
-          <p
-            className={`my-auto text-center font-oxygen text-lg font-extrabold leading-[35.36px] tracking-[0.06em] text-[#FFD231]`}
-          >
-            MODULE HEADS
-          </p>
-        </div>
-
-        <div className="-mt-4 box-border h-[30rem] w-[80%] px-4">
-          {/* <Slider {...settings}> */}
-        {/* <Carousel>
+        {team === 3 && (
+          <div className="flex items-center justify-center flex-wrap gap-4">
             {teamDataModule.map((member) => (
-              <div
+              <TeamCard
                 key={member.id}
-                className="transform transition-transform duration-300 ease-in-out hover:scale-105"
-              >
-                <TeamCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.designation}
-                  image={member.img}
-                  fb={member.fb ?? ""}
-                  linkedin={member.linkedin ?? ""}
-                  git={member.git ?? ""}
-                  ind={member.id}
-                />
-              </div>
+                name={member.name}
+                role={member.designation}
+                image={member.img}
+                ind={member.id}
+                module={member.module}
+              />
             ))}
-          </Carousel> */}
-
-        {/* </Slider> */}
-        {/* </div> */}
+          </div>)}
       </div>
     </div>
   );

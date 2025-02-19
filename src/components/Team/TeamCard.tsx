@@ -4,9 +4,10 @@ interface TeamCardProps {
   name: string;
   role: string;
   image: string;
-  fb: string;
-  linkedin: string;
-  git: string;
+  fb?: string;
+  linkedin?: string;
+  git?: string;
+  module?:string;
   ind: number; // for alternating background colors in team grid
 }
 
@@ -17,6 +18,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
   fb,
   linkedin,
   git,
+  module,
   ind,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -97,7 +99,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className="group relative flex h-[18rem] w-[14rem] scale-100 flex-col items-center justify-end overflow-hidden bg-[#FAF8E0] bg-transparent pb-8 tablet:scale-100 ipadpro:h-[20rem] ipadpro:w-[16rem] ipadair:h-[22rem] ipadair:w-[18rem] xl:h-[22rem] xl:w-[20rem] xl:pb-6"
+      className="group relative flex h-[16.5rem] w-[14rem] scale-100 flex-col items-center justify-end overflow-hidden bg-[#FAF8E0] bg-transparent pb-8 tablet:scale-100 ipadpro:h-[20rem] ipadpro:w-[16rem] ipadair:h-[22rem] ipadair:w-[18rem] xl:h-[22rem] xl:w-[20rem] xl:pb-6"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "100% 103%",
@@ -143,16 +145,22 @@ const TeamCard: React.FC<TeamCardProps> = ({
 
       <div className="relative z-10 flex h-[2.25rem] w-[80%] items-center justify-center pb-4 text-center">
         <p
-          className={`font-oxygen ${ind % 2 === 0 ? "text-[#EF7BE3]" : "text-[#FFD231]"} font-bold tracking-normal`}
+          className={`font-oxygen ${ind % 2 === 0 ? "text-[#EF7BE3]" : "text-[#FFD231]"} text-[1.2rem] font-bold tracking-normal`}
         >
           {role}
         </p>
       </div>
-
+      {module && <div className="relative z-10 flex h-[2.25rem] w-[80%] items-center justify-center pb-4 text-center">
+        <p
+          className={`font-oxygen ${ind % 2 === 0 ? "text-[#EF7BE3]" : "text-[#FFD231]"} text-[0.8rem] font-bold tracking-normal`}
+        >
+          {module}
+        </p>
+      </div>}
       {/* Social Media Icons */}
       <div
         id="icons"
-        className="relative z-10 flex h-[2.5rem] w-[60%] justify-evenly overflow-hidden text-center opacity-100"
+        className="relative z-10 flex h-fit w-[60%] justify-evenly overflow-hidden text-center opacity-100"
       >
         {fb && (
           <a href={fb} target="_blank" rel="noreferrer">

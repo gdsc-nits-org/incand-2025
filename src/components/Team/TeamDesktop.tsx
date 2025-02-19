@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import TeamCard from "./TeamCard";
-// import teamDataCore from "./Core.json"; // Assuming the team data is stored here
+import teamDataCore from "../../../public/assets/Data/Core.json"; 
 import teamDataTech from "../../../public/assets/Data/Tech.json";
-// import teamDataModule from "./Modules.json";
+import teamDataModule from "../../../public/assets/Data/Modules.json";
 const TeamDesktop: React.FC = () => {
   const techLead = teamDataTech.filter((member) => member.role === "techLead");
   const webHead = teamDataTech.filter((member) => member.role === "webHead");
@@ -18,9 +18,9 @@ const TeamDesktop: React.FC = () => {
     (member) => member.role === "developer",
   );
   const uiux = teamDataTech.filter((member) => member.role === "Ui/Ux");
-  // const [isCore, setIsCore] = useState(true);
+  const [isCore, setIsCore] = useState(false);
   const [isTech, setIsTech] = useState(true);
-  // const [isModule, setIsModule] = useState(false);
+  const [isModule, setIsModule] = useState(false);
 
   return (
     <div
@@ -54,16 +54,16 @@ const TeamDesktop: React.FC = () => {
         id="section2"
         className="relative box-border w-[100%] overflow-x-hidden"
       >
-        <div className="align-center mx-auto flex h-[4rem] w-[90%] flex-row justify-center tablet2:w-[78%]">
-          {/* <div
+        <div className="align-center mx-auto flex h-[4rem] w-[90%] flex-row justify-between tablet2:w-[78%]">
+          <div
             className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isCore ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
               setIsTech(false);
               setIsModule(false);
               setIsCore(true);
             }}
-          > */}
-          {/* <div
+          >
+          <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isCore ? "bg-[url('/assets/Team/Handle.webp')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
@@ -71,13 +71,13 @@ const TeamDesktop: React.FC = () => {
             >
               CORE MEMBERS
             </p>
-          </div> */}
+          </div>
 
           <div
             className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isTech ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
-              // setIsCore(false);
-              // setIsModule(false);
+              setIsCore(false);
+              setIsModule(false);
               setIsTech(true);
             }}
           >
@@ -91,23 +91,23 @@ const TeamDesktop: React.FC = () => {
             </p>
           </div>
 
-          {/* <div
+          <div
             className={`h-[100%] w-[32%] rounded-full xL:w-[20rem] ${isModule ? "bg-[#E1067B]" : "border-2 border-black bg-transparent"} flex cursor-pointer items-center justify-start gap-x-4`}
             onClick={() => {
               setIsCore(false);
               setIsTech(false);
               setIsModule(true);
             }}
-          > */}
-          {/* <div
+          >
+          <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isModule ? "bg-[url('/assets/Team/Handle.webp')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
               className={`font-oxygen text-xs font-extrabold leading-[35.36px] tablet:text-sm ipadpro:text-base ipadair:text-lg ${isModule ? "text-[#FFD231]" : "text-black"} my-auto text-center tracking-[0.06em]`}
             >
               MODULE HEADS
-            </p> */}
-          {/* </div> */}
+            </p>
+          </div>
         </div>
 
         <div
@@ -121,7 +121,7 @@ const TeamDesktop: React.FC = () => {
           }}
         >
           {/* Core Team */}
-          {/* {isCore && (
+          {isCore && (
     <div className="col-span-2 tablet2:col-span-3 w-full flex justify-center flex-wrap gap-24">
       {teamDataCore.map((member) => (
         <TeamCard
@@ -131,12 +131,11 @@ const TeamDesktop: React.FC = () => {
           image={member.img}
           fb={member.fb ?? ""}
           linkedin={member.linkedin ?? ""}
-          git={member.git ?? ""}
           ind={member.id}
         />
       ))}
     </div>
-  )} */}
+  )}
 
           {/* Tech Lead */}
           {isTech && (
@@ -262,7 +261,7 @@ const TeamDesktop: React.FC = () => {
           )}
 
           {/* Module Team */}
-          {/* {isModule && (
+          {isModule && (
     <div className="col-span-2 tablet2:col-span-3 w-full flex justify-center flex-wrap gap-24 ">
       {teamDataModule.map((member) => (
         <TeamCard
@@ -270,14 +269,12 @@ const TeamDesktop: React.FC = () => {
           name={member.name}
           role={member.designation}
           image={member.img}
-          fb={member.fb ?? ""}
-          linkedin={member.linkedin ?? ""}
-          git={member.git ?? ""}
           ind={member.id}
+          module={member.module}
         />
       ))}
     </div>
-  )} */}
+  )}
         </div>
       </div>
     </div>
