@@ -62,7 +62,7 @@ const HeroMobileView = () => {
           </Link>
         </div>
         <p
-          className="relative top-[35vw] text-[3vw] md:top-[-0vw] md:text-[1.2vw]"
+          className="relative top-[37vw] text-[3vw] md:top-[-0vw] md:text-[1.2vw]"
           style={{ fontFamily: "Ahsing" }}
         >
           Presents
