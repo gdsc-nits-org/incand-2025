@@ -11,36 +11,6 @@
 	},
 	{
 		"id": 2,
-		"name": "Bhaswar Agnivesh ",
-		"module":"NITSMUN ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936042/IMG-20240706-WA0048_-_ME_064_BHASWAR_AGNIVESH_s75ho3.webp"
-		
-		
-		
-	},
-	{
-		"id": 3,
-		"name": "Bhawna Bharti",
-		"module":"Deprador ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936043/IMG-20250112-WA0007_-_EIE_033_Bhawna_Bharti_b0msfx.webp"
-		
-		
-		
-	},
-	{
-		"id": 4,
-		"name": "Pratap Sing ",
-		"module":"Prom Night ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936043/IMG_20240326_001930_459_-_ECE_153_Pratap_Sing_bxfwei.webp"
-		
-		
-		
-	},
-	{
-		"id": 5,
 		"name": "Aditi Archita Khataniar ",
 		"module":"NITSMUN",
 		"designation": "Head",
@@ -50,57 +20,27 @@
 		
 	},
 	{
-		"id": 6,
-		"name": "Sayanrup Barman ",
-		"module":"Glitterati ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936043/IMG_20250218_013143_-_EIE_060_Sayanrup_Barman_xkm1zk.webp"
-		
-		
-		
-	},
-	{
-		"id": 7,
-		"name": "Devansh Awasthi",
-		"module":"Glitterati ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936041/IMG_0840_-_DEVANSH_AWASTHI_azmsqj.webp"
-		
-		
-		
-	},
-	{
-		"id": 8,
-		"name": "Srijon Bordoloi ",
-		"module":"Indie Unplugged ",
+		"id": 3,
+		"name": "Ronak Jain ",
+		"module":"NITSMUN ",
 		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936081/IMG-20250215-WA0033_2_-_EE_016_Srijon_x5zrqp.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/IMG-20220505-WA0089_2_-_012_Ronak_Jain_oau12i.webp"
 		
 		
 		
 	},
 	{
-		"id": 9,
-		"name": "Rajdeep Bezbaruah ",
-		"module":"Indie Unplugged ",
+		"id": 4,
+		"name": "Bhaswar Agnivesh ",
+		"module":"NITSMUN ",
 		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/IMG-20250126-WA0129_2_-_RAJDEEP_BEZBARUAH_ammzw0.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936042/IMG-20240706-WA0048_-_ME_064_BHASWAR_AGNIVESH_s75ho3.webp"
 		
 		
 		
 	},
-	{
-		"id": 10,
-		"name": "Bishal Das",
-		"module":"Mr NIT",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/IMG_20240714_234154_175_-_ECE_080__Bishal_Das_akzc3g.webp"
-		
-		
-		
-	},
-	{
-		"id": 11,
+    {
+		"id": 5,
 		"name": "Shri Harsh",
 		"module":"NITSMUN",
 		"designation": "Co-Head",
@@ -110,9 +50,9 @@
 		
 	},
 	{
-		"id": 12,
+		"id": 6,
 		"name": "Mayurakhi Khaund ",
-		"module":"NITSMUN Annual Conference ",
+		"module":"NITSMUN",
 		"designation": "Co-Head",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/IMG-20250126-WA0009_2_-_MAYURAKHI_KHAUND_dokojs.webp"
 		
@@ -120,41 +60,103 @@
 		
 	},
 	{
-		"id": 13,
-		"name": "Sandeep Kherkatary ",
-		"module":"DARPAN",
+		"id": 7,
+		"name": "Lakshay Prakash ",
+		"module":"Deprador ",
 		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/fufglk_-_040_Sandeep_Kherkatary_z4g8g1.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936143/IMG-20250218-WA0001_-_EIE_033_Bhawna_Bharti_ihlp3l.webp"
+		
+		
+		
+	}, 
+	{
+		"id": 8,
+		"name": "Bhawna Bharti",
+		"module":"Deprador ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936043/IMG-20250112-WA0007_-_EIE_033_Bhawna_Bharti_b0msfx.webp"
+		
+		
+		
+	},
+	{
+		"id": 9,
+		"name": "Ashmita Sutradhar ",
+		"module":"Glitterati ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739948157/IMG_5172_-_EEB_135_Ashmita_tiystx.webp"
+		
+		
+		
+	},
+	{
+		"id": 10,
+		"name": "Vishnu Padmakumar  ",
+		"module":"Glitterati ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG_20250218_120951_-_ECE_036_Vishnu_Padmakumar_kycoav.webp"
+		
+		
+		
+	},
+	
+	{
+		"id": 11,
+		"name": "Sayanrup Barman ",
+		"module":"Glitterati ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936043/IMG_20250218_013143_-_EIE_060_Sayanrup_Barman_xkm1zk.webp"
+		
+		
+		
+	},
+	{
+		"id": 12,
+		"name": "Devansh Awasthi",
+		"module":"Glitterati ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936041/IMG_0840_-_DEVANSH_AWASTHI_azmsqj.webp"
+		
+		
+		
+	},
+	{
+		"id": 13,
+		"name": "Pratyashi Nath  ",
+		"module":"Glitterati ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG-20240318-WA0037_-_EE_130_Pratyashi_Nath_u32qbe.webp"
 		
 		
 		
 	},
 	{
 		"id": 14,
-		"name": "Tamanna Nandy ",
-		"module":"Prom",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/IMG-20241109-WA0035_-_CE_122_Tamanna_Nandy_dhahtn.webp"
+		"name": "Priyam Sogani  ",
+		"module":"Glitterati  ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/1000122158-removebg-preview_-_ECE_103_PRIYAM_SOGANI_mm1kin.webp"
 		
 		
 		
 	},
+	
 	{
 		"id": 15,
-		"name": "Alton Kumar Das",
-		"module":"Battle of Bands",
+		"name": "Srijon Bordoloi ",
+		"module":"Indie Unplugged ",
 		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936115/IMG_4434_-_EE_023_Alton_wtsgw0.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936081/IMG-20250215-WA0033_2_-_EE_016_Srijon_x5zrqp.webp"
 		
 		
 		
 	},
 	{
 		"id": 16,
-		"name": "Ronak Jain ",
-		"module":"NITSMUN ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/IMG-20220505-WA0089_2_-_012_Ronak_Jain_oau12i.webp"
+		"name": "Rajdeep Bezbaruah ",
+		"module":"Indie Unplugged ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/IMG-20250126-WA0129_2_-_RAJDEEP_BEZBARUAH_ammzw0.webp"
 		
 		
 		
@@ -169,287 +171,9 @@
 		
 		
 	},
+	
 	{
 		"id": 18,
-		"name": "Akash barua",
-		"module":"Darpan",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/IMG-20230405-WA0015_-_ME_032_Akash_barua_audqrw.webp"
-		
-		
-		
-	},
-	{
-		"id": 19,
-		"name": "Chikku Shiva Gnyanesh",
-		"module":"Darpan",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936115/20241031_004649_-_EE_107_Shiva_Gnyanesh_tvxsl7.webp"
-		
-		
-		
-	},
-	{
-		"id": 20,
-		"name": "Latika",
-		"module":"Darpan ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/IMG-20240613-WA0010_3_-_CE_152_LATIKA_g7nroi.webp"
-		
-		
-		
-	},
-	{
-		"id": 21,
-		"name": "Sandipan Sarma",
-		"module":"Darpan",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/1737224733846_-_EE_119_SANDIPAN_SARMA_vvtniq.webp"
-		
-		
-		
-	},
-	{
-		"id": 22,
-		"name": "Manjit kr Poddar",
-		"module":"Darpan",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/px_copy_-_ME_134__Manjit_i5irgm.webp"
-		
-		
-		
-	},
-	{
-		"id": 23,
-		"name": "Sudeshna Mozumder ",
-		"module":"DARPAN ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/20250218_101740_-_EE_046_Sudeshna_Mozumder_vgeidr.webp"
-		
-		
-		
-	},
-	{
-		"id": 24,
-		"name": "Aditya Sah ",
-		"module":"Darpan ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936145/IMG_20250218_092826_-_EE_104__Aditya_Sah_cou6ao.webp"
-		
-		
-		
-	},
-	{
-		"id": 25,
-		"name": "Sagar Baruah ",
-		"module":"Darpan ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/DSC07291_-_EE_006_Sagar_gcfmye.webp"
-		
-		
-		
-	},
-	{
-		"id": 26,
-		"name": "Lakshay Prakash ",
-		"module":"Deprador ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936143/IMG-20250218-WA0001_-_EIE_033_Bhawna_Bharti_ihlp3l.webp"
-		
-		
-		
-	},
-	{
-		"id": 27,
-		"name": "Rishi Raj Saha ",
-		"module":"Battle of Bands",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/IMG20230407073013_-_ECE_135_RISHIRAJ_kly5l9.webp"
-		
-		
-		
-	},	{
-		"id": 28,
-		"name": "Devjyoti Sharma",
-		"module":"DARPAN",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/Devjyoti_-_EEB_163_Devjyoti_g26c9v.webp"
-		
-		
-		
-	},
-	{
-		"id": 29,
-		"name": "Padmanav Kakati  ",
-		"module":"Sokratik ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936177/IMG_20250218_115856_-_Padmanav_Kakati_f3bung.webp"
-		
-		
-		
-	},
-	{
-		"id": 30,
-		"name": "Pratyashi Nath  ",
-		"module":"Glitterati ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG-20240318-WA0037_-_EE_130_Pratyashi_Nath_u32qbe.webp"
-		
-		
-		
-	},
-	{
-		"id": 31,
-		"name": "Srinjoy Chowdhury  ",
-		"module":"SOKRATIK",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG_20250218_120348_-_EE_038__SRINJOY_CHOWDHURY_qu4abp.webp"
-		
-		
-		
-	},
-	{
-		"id": 32,
-		"name": "Ranjini Chakrabarty ",
-		"module":"Razzmatazz ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG-20241110-WA0043_-_EI022_Ranjini_Chakrabarty_wec64s.webp"
-		
-		
-		
-	},
-	{
-		"id": 33,
-		"name": "Vishnu Padmakumar  ",
-		"module":"Glitterati ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG_20250218_120951_-_ECE_036_Vishnu_Padmakumar_kycoav.webp"
-		
-		
-		
-	},
-	{
-		"id": 34,
-		"name": "Turin Teron ",
-		"module":"Darpan ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG_20240830_121503_468_-_CSE_113_Turin_Teron_tsivwy.webp"
-		
-		
-		
-	},
-	{
-		"id": 35,
-		"name": "Samriti",
-		"module":"Kala Darshan ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936175/IMG_20250218_121253_-_CSE_169_Samriti_ywndrw.webp"
-		
-		
-		
-	},
-	{
-		"id": 36,
-		"name": "Keshav Kumar ",
-		"module":"",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/B-4822_photo_-_KESHAV_KUMAR_ldmgkg.webp"
-		
-		
-		
-	},
-	{
-		"id": 37,
-		"name": "Samir Kumar Thakur",
-		"module":"SOKRATIK",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/IMG_20240410_214012_-_CSE_136_SAMIR_du5do5.webp"
-		
-		
-		
-	},
-	{
-		"id": 38,
-		"name": "Anurag Tamuli ",
-		"module":"Sokratic",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/IMG_20240715_190853_-_EE_081_AnuragTamuli_pouiyq.webp"
-		
-		
-		
-	},
-	{
-		"id": 39,
-		"name": "Sri harshitha",
-		"module":"PROM NIGHT",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/img1718085280823_polarr_-_Ece_160_harshitha_N_fr0uat.webp"
-		
-		
-		
-	},
-	{
-		"id": 40,
-		"name": "Utkarsh Tiwari ",
-		"module":"Panchayat  ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/Screenshot_20250218-124448_-_UTKARSH_TIWARI_kd9964.webp"
-		
-		
-		
-	},
-	{
-		"id": 41,
-		"name": "Angkit Deka ",
-		"module":"Prom Night",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/_angkit_deka__-_R_Download_-_CE052_Angkit_Deka_w3zajr.webp"
-		
-		
-		
-	},
-	{
-		"id": 42,
-		"name": "Dipan Patgiri  ",
-		"module":"Darpan ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/IMG20250202170701_-_171_Dipan_Patgiri_funmsj.webp"
-		
-		
-		
-	},
-	{
-		"id": 43,
-		"name": "Bhargav Nath",
-		"module":"Prom Night ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936237/IMG_5506_-_ME_017_Bhargab_nath_z5jk6l.webp"
-		
-		
-		
-	},
-	{
-		"id": 44,
-		"name": "Rajababu Das  ",
-		"module":"Prom night ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936236/IMG_20241102_203749_779_-_Ece_097_Rajababu_Das_pfmtn2.webp"
-		
-		
-		
-	},
-	{
-		"id": 45,
-		"name": "HOMAN BIKRAM SARMA  ",
-		"module":"PROM NIGHT",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936236/IMG_3651_-_ECE_046_HomanBikramSarma_ynxoyz.webp"
-		
-		
-		
-	},
-	{
-		"id": 46,
 		"name": "Aditi  Goel ",
 		"module":"Indie Unplugged ",
 		"designation": "Co-Head",
@@ -459,7 +183,68 @@
 		
 	},
 	{
-		"id": 47,
+		"id": 19,
+		"name": "Bishal Das",
+		"module":"Mr NIT",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/IMG_20240714_234154_175_-_ECE_080__Bishal_Das_akzc3g.webp"
+		
+		
+		
+	},
+	{
+		"id": 20,
+		"name": "Parv Bhandari ",
+		"module":"Mr NIT",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739970248/3d1207ea-23d4-458a-bb16-5c587c64f33f.webp"
+		
+		
+		
+	},
+	
+	{
+		"id": 21,
+		"name": "Sandeep Kherkatary ",
+		"module":"DARPAN",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/fufglk_-_040_Sandeep_Kherkatary_z4g8g1.webp"
+		
+		
+		
+	},
+	{
+		"id": 22,
+		"name": "Dipan Patgiri  ",
+		"module":"Darpan ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/IMG20250202170701_-_171_Dipan_Patgiri_funmsj.webp"
+		
+		
+		
+	},
+	{
+		"id": 23,
+		"name": "Devjyoti Sharma",
+		"module":"DARPAN",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/Devjyoti_-_EEB_163_Devjyoti_g26c9v.webp"
+		
+		
+		
+	},
+	{
+		"id": 24,
+		"name": "Sudeshna Mozumder ",
+		"module":"DARPAN ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/20250218_101740_-_EE_046_Sudeshna_Mozumder_vgeidr.webp"
+		
+		
+		
+	},
+	{
+		"id": 25,
 		"name": "Nunna Siri  ",
 		"module":"Darpan ",
 		"designation": "Head",
@@ -469,7 +254,7 @@
 		
 	},
 	{
-		"id": 48,
+		"id": 26,
 		"name": "Suman Das",
 		"module":"DARPAN ",
 		"designation": "Head",
@@ -479,7 +264,7 @@
 		
 	},
 	{
-		"id": 49,
+		"id": 27,
 		"name": "Saluja Kataria ",
 		"module":"Darpan ",
 		"designation": "Head",
@@ -489,7 +274,7 @@
 		
 	},
 	{
-		"id": 50,
+		"id": 28,
 		"name": "Upasana Behera ",
 		"module":"DARPAN ",
 		"designation": "Co-Head",
@@ -499,27 +284,122 @@
 		
 	},
 	{
-		"id": 51,
-		"name": "Prachurjya Deka",
-		"module":"VALORANT",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936254/incand_-_ME_A_069_Prachurjya_Deka_lexs2f.webp"
+		"id": 29,
+		"name": "Akash barua",
+		"module":"Darpan",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/IMG-20230405-WA0015_-_ME_032_Akash_barua_audqrw.webp"
 		
 		
 		
 	},
 	{
-		"id": 52,
-		"name": "Ayaz Rahman",
-		"module":"Valorant",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936254/IMG_5326_-_ME_A_058_Ayaz_Rahman_bfaagy.webp"
+		"id": 30,
+		"name": "Chikku Shiva Gnyanesh",
+		"module":"Darpan",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936115/20241031_004649_-_EE_107_Shiva_Gnyanesh_tvxsl7.webp"
 		
 		
 		
 	},
 	{
-		"id": 53,
+		"id": 31,
+		"name": "Latika",
+		"module":"Darpan ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/IMG-20240613-WA0010_3_-_CE_152_LATIKA_g7nroi.webp"
+		
+		
+		
+	},
+	{
+		"id": 32,
+		"name": "Sandipan Sarma",
+		"module":"Darpan",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936114/1737224733846_-_EE_119_SANDIPAN_SARMA_vvtniq.webp"
+		
+		
+		
+	},
+	{
+		"id": 33,
+		"name": "Manjit kr Poddar",
+		"module":"Darpan",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/px_copy_-_ME_134__Manjit_i5irgm.webp"
+		
+		
+		
+	},
+	
+	{
+		"id": 34,
+		"name": "Aditya Sah ",
+		"module":"Darpan ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936145/IMG_20250218_092826_-_EE_104__Aditya_Sah_cou6ao.webp"
+		
+		
+		
+	},
+	{
+		"id": 35,
+		"name": "Sagar Baruah ",
+		"module":"Darpan ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/DSC07291_-_EE_006_Sagar_gcfmye.webp"
+		
+		
+		
+	},
+	
+	{
+		"id": 36,
+		"name": "Turin Teron ",
+		"module":"Darpan ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG_20240830_121503_468_-_CSE_113_Turin_Teron_tsivwy.webp"
+		
+		
+		
+	},
+	{
+		"id": 37,
+		"name": "Alton Kumar Das",
+		"module":"Battle of Bands",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936115/IMG_4434_-_EE_023_Alton_wtsgw0.webp"
+		
+		
+		
+	},
+	
+	
+	
+	{
+		"id": 38,
+		"name": "Rishi Raj Saha ",
+		"module":"Battle of Bands",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936144/IMG20230407073013_-_ECE_135_RISHIRAJ_kly5l9.webp"
+		
+		
+		
+	},	
+	{
+		"id": 39,
+		"name": "Ayush Dutta",
+		"module":"Battle of Bands",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739970464/b4e5872e-cb9a-4d8f-823a-fff0b689ea78.webp"
+		
+		
+		
+	},
+	{
+		"id": 40,
 		"name": "Samiran Saikia",
 		"module":"Sokratik",
 		"designation": "Head",
@@ -529,57 +409,101 @@
 		
 	},
 	{
-		"id": 54,
-		"name": "Bharti Kumari ",
-		"module":"Espremiere",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936273/20250202_152137_-_BHARTI_KUMARI_n34brl.webp"
-		
-		
-		
-	},
-	{
-		"id": 55,
-		"name": "Anurag Borgohain ",
-		"module":"Valorant   ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936272/IMG_0221_-_ANURAG_BARGOHAIN_gddev0.webp"
-		
-		
-		
-	},
-	{
-		"id": 56,
-		"name": "Aryagyan Das ",
-		"module":"Valorant",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936294/IMG_6977_-_ECE_105_Aryagyan_Das_dysqby.webp"
-		
-		
-		
-	},
-	{
-		"id": 57,
-		"name": "Aman Kalita ",
-		"module":"V Warz ",
+		"id": 41,
+		"name": "Padmanav Kakati  ",
+		"module":"Sokratik ",
 		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936293/IMG-20250102-WA0006_2_-_Aman_Kalita_p0pveq.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936177/IMG_20250218_115856_-_Padmanav_Kakati_f3bung.webp"
 		
 		
 		
 	},
+	
 	{
-		"id": 58,
-		"name": "Abesh Singha",
-		"module":"Valorant ",
+		"id": 42,
+		"name": "Srinjoy Chowdhury  ",
+		"module":"SOKRATIK",
 		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936293/20250217_201320_-_ABESH_KUMAR_SINGHA_pfsysi.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG_20250218_120348_-_EE_038__SRINJOY_CHOWDHURY_qu4abp.webp"
 		
 		
 		
 	},
 	{
-		"id": 59,
+		"id": 43,
+		"name": "Samir Kumar Thakur",
+		"module":"SOKRATIK",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/IMG_20240410_214012_-_CSE_136_SAMIR_du5do5.webp"
+		
+		
+		
+	},
+	{
+		"id": 44,
+		"name": "Anurag Tamuli ",
+		"module":"Sokratic",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/IMG_20240715_190853_-_EE_081_AnuragTamuli_pouiyq.webp"
+		
+		
+		
+	},
+	{
+		"id": 45,
+		"name": "Ranjini Chakrabarty ",
+		"module":"Razzmatazz ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936176/IMG-20241110-WA0043_-_EI022_Ranjini_Chakrabarty_wec64s.webp"
+		
+		
+		
+	},
+	
+	{
+		"id": 46,
+		"name": "Harsh Yadav",
+		"module":"Razzmatazz ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/WhatsApp_Image_2025-02-19_at_02.06.00_677bb31c_-_EE_038_Harsh_Yadav_trur1s.webp"
+		
+		
+		
+	},
+	
+	{
+		"id": 47,
+		"name": "Samriti",
+		"module":"Kala Darshan ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936175/IMG_20250218_121253_-_CSE_169_Samriti_ywndrw.webp"
+		
+		
+		
+	},
+	{
+		"id": 48,
+		"name": "Keshav Kumar ",
+		"module":"",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/B-4822_photo_-_KESHAV_KUMAR_ldmgkg.webp"
+		
+		
+		
+	},
+	
+	{
+		"id": 49,
+		"name": "Tamanna Nandy ",
+		"module":"Prom night",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936080/IMG-20241109-WA0035_-_CE_122_Tamanna_Nandy_dhahtn.webp"
+		
+		
+		
+	},
+	{
+		"id": 50,
 		"name": "Dipankar Deori ",
 		"module":"Prom night ",
 		"designation": "Head",
@@ -589,47 +513,69 @@
 		
 	},
 	{
-		"id": 60,
-		"name": "Priyam Sogani  ",
-		"module":"Glitterati  ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/1000122158-removebg-preview_-_ECE_103_PRIYAM_SOGANI_mm1kin.webp"
-		
-		
-		
-	},
-	{
-		"id": 61,
-		"name": "Harsh Yadav",
-		"module":"Razzmatazz ",
+		"id": 51,
+		"name": "Pratap Sing ",
+		"module":"Prom Night ",
 		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/WhatsApp_Image_2025-02-19_at_02.06.00_677bb31c_-_EE_038_Harsh_Yadav_trur1s.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936043/IMG_20240326_001930_459_-_ECE_153_Pratap_Sing_bxfwei.webp"
 		
 		
 		
 	},
 	{
-		"id": 62,
-		"name": "Mriganka Baishya ",
-		"module":"Valorant ",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/IMG_5032_-_Mriganka_Baishya_zqaee0.webp"
-		
-		
-		
-	},
-	{
-		"id": 63,
-		"name": "Ashmita Sutradhar ",
-		"module":"Glitterati ",
+		"id": 52,
+		"name": "Angkit Deka ",
+		"module":"Prom Night",
 		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739948157/IMG_5172_-_EEB_135_Ashmita_tiystx.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/_angkit_deka__-_R_Download_-_CE052_Angkit_Deka_w3zajr.webp"
 		
 		
 		
 	},
 	{
-		"id": 64,
+		"id": 53,
+		"name": "Sri harshitha",
+		"module":"PROM NIGHT",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/img1718085280823_polarr_-_Ece_160_harshitha_N_fr0uat.webp"
+		
+		
+		
+	},
+	
+	
+	{
+		"id": 54,
+		"name": "Bhargav Nath",
+		"module":"Prom Night ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936237/IMG_5506_-_ME_017_Bhargab_nath_z5jk6l.webp"
+		
+		
+		
+	},
+	{
+		"id": 55,
+		"name": "Rajababu Das  ",
+		"module":"Prom night ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936236/IMG_20241102_203749_779_-_Ece_097_Rajababu_Das_pfmtn2.webp"
+		
+		
+		
+	},
+	{
+		"id": 56,
+		"name": "HOMAN BIKRAM SARMA  ",
+		"module":"PROM NIGHT",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936236/IMG_3651_-_ECE_046_HomanBikramSarma_ynxoyz.webp"
+		
+		
+		
+	},
+	{
+		"id": 57,
 		"name": "Sharmila Rapeti",
 		"module":"Prom Night",
 		"designation": "Co-Head",
@@ -639,7 +585,7 @@
 		
 	},
 	{
-		"id": 65,
+		"id": 58,
 		"name": "Sahiti Tsama",
 		"module":"Prom Night",
 		"designation": "Co-Head",
@@ -649,7 +595,7 @@
 		
 	},
 	{
-		"id": 66,
+		"id": 59,
 		"name": "Sandy Borgohain",
 		"module":"Prom Night",
 		"designation": "Co-Head",
@@ -659,7 +605,7 @@
 		
 	},
 	{
-		"id": 67,
+		"id": 60,
 		"name": "Shivanshu Rai",
 		"module":"Prom Night",
 		"designation": "Co-Head",
@@ -668,18 +614,9 @@
 		
 		
 	},
+
 	{
-		"id": 68,
-		"name": "Parv Bhandari ",
-		"module":"Mr NIT",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739970248/3d1207ea-23d4-458a-bb16-5c587c64f33f.webp"
-		
-		
-		
-	},
-	{
-		"id": 69,
+		"id": 691,
 		"name": "Sri Harshitha ",
 		"module":"Prom Night",
 		"designation": "Co-Head",
@@ -689,7 +626,7 @@
 		
 	},
 	{
-		"id": 70,
+		"id": 62,
 		"name": "Rajababu Das",
 		"module":"Prom Night",
 		"designation": "Co-Head",
@@ -698,15 +635,106 @@
 		
 		
 	},
+	
+	{
+		"id": 63,
+		"name": "Utkarsh Tiwari ",
+		"module":"Panchayat  ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/Screenshot_20250218-124448_-_UTKARSH_TIWARI_kd9964.webp"
+		
+		
+		
+	},
+	
+	
+	{
+		"id": 64,
+		"name": "Prachurjya Deka",
+		"module":"VALORANT",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936254/incand_-_ME_A_069_Prachurjya_Deka_lexs2f.webp"
+		
+		
+		
+	},
+	{
+		"id": 65,
+		"name": "Ayaz Rahman",
+		"module":"Valorant",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936254/IMG_5326_-_ME_A_058_Ayaz_Rahman_bfaagy.webp"
+		
+		
+		
+	},
+	{
+		"id": 66,
+		"name": "Aman Kalita ",
+		"module":"V Warz ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936293/IMG-20250102-WA0006_2_-_Aman_Kalita_p0pveq.webp"
+		
+		
+		
+	},
+
+
+	{
+		"id": 67,
+		"name": "Anurag Borgohain ",
+		"module":"Valorant   ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936272/IMG_0221_-_ANURAG_BARGOHAIN_gddev0.webp"
+		
+		
+		
+	},
+	{
+		"id": 68,
+		"name": "Aryagyan Das ",
+		"module":"Valorant",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936294/IMG_6977_-_ECE_105_Aryagyan_Das_dysqby.webp"
+		
+		
+		
+	},
+
+	
+	{
+		"id": 69,
+		"name": "Mriganka Baishya ",
+		"module":"Valorant ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/IMG_5032_-_Mriganka_Baishya_zqaee0.webp"
+		
+		
+		
+	},
+	{
+		"id": 70,
+		"name": "Abesh Singha",
+		"module":"Valorant ",
+		"designation": "Co-Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936293/20250217_201320_-_ABESH_KUMAR_SINGHA_pfsysi.webp"
+		
+		
+		
+	},
 	{
 		"id": 71,
-		"name": "Ayush Dutta",
-		"module":"Battle of Bands",
+		"name": "Bharti Kumari ",
+		"module":"Espremiere",
 		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739970464/b4e5872e-cb9a-4d8f-823a-fff0b689ea78.webp"
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936273/20250202_152137_-_BHARTI_KUMARI_n34brl.webp"
 		
 		
 		
 	}
+	
+	
+
+	
 
 ]

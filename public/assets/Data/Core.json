@@ -1,6 +1,31 @@
 [
+	
 	{
 		"id": 1,
+		"name": "Partha Protim Lahkar",
+		"linkedin": "https://www.linkedin.com/in/partha-p-lahkar/",
+		"inst": "https://www.instagram.com/mr.lahkar/",
+		"fb": "https://www.facebook.com/partha.lahkar.16/",
+		"designation": "Convenor ",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526972/IMG_0688_-_Partha_Lahkar_fn54bj.webp"
+	},{
+		"id": 2,
+		"name": "Yash Kumar meena ",
+		"fb": "https://www.facebook.com/yash.meena.71697",
+		"inst": "https://www.instagram.com/m.yashveer_?igsh=OGdyc210eXRjZ2d1&utm_source=qr",
+		"linkedin": "https://www.linkedin.com/in/yash-kumar-meena-49947926b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+		"designation": "Executive head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526908/IMG_7441_-_Yash_kumar_meena_et3hh0.webp"
+	},	{
+		"id": 3,
+		"name": "Nilotpal Sarma ",
+		"linkedin": "https://www.linkedin.com/in/nilotpal-sarma-24a250237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"inst": "https://www.instagram.com/nilotpal__29?igsh=am93Mm9kYjFkcXFk",
+		"fb": "https://www.facebook.com/profile.php?id=100076340676636&mibextid=ZbWKwL",
+		"designation": "Executive Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739531001/IMG_20250212_033843_-_Nilotpal_Sarma_xijwzg.webp"
+	},{
+		"id": 4,
 		"name": "Maharnav Deka",
 		"designation": "Tech Lead",
 		"role" : "techLead",
@@ -9,211 +34,185 @@
 		"git": "http://github.com/mdekaa",
 		"linkedin": "https://www.linkedin.com/in/maharnav-deka-06742815a/"
 	},
-	{
-		"id": 1,
-		"name": "Bijay Jiwrajka ",
-		"linkedin": "https://linkedin.com/in/bjiwrajka",
-		"inst": "https://www.instagram.com/bj_jiwrajka",
-		"fb": "https://www.facebook.com/share/1A1FgTKwUA/",
-		"designation": "Tech",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527022/IMG_20241219_205116_-_Bijay_Jiwrajka_1_eyy481.webp"
-	},
-	{
-		"id": 2,
-		"name": "Adhiraj Dutta ",
-		"linkedin": "https://linkedin.com/in/byt3h3ad",
-		"inst": "https://www.instagram.com/textually.active/",
-		"fb": "https://www.facebook.com/share/1A1FgTKwUA/",
-		"designation": "Tech",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526883/AdhirajDutta_-_Adhiraj_Dutta_lpnck7.webp"
-	},
-	{
-		"id": 3,
-		"name": "Yash Kumar meena ",
-		"fb": "https://www.facebook.com/yash.meena.71697",
-		"inst": "https://www.instagram.com/m.yashveer_?igsh=OGdyc210eXRjZ2d1&utm_source=qr",
-		"linkedin": "https://www.linkedin.com/in/yash-kumar-meena-49947926b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-		"designation": "Executive head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526908/IMG_7441_-_Yash_kumar_meena_et3hh0.webp"
-	},
-	{
-		"id": 4,
-		"name": "Partha Protim Lahkar",
-		"linkedin": "https://www.linkedin.com/in/partha-p-lahkar/",
-		"inst": "https://www.instagram.com/mr.lahkar/",
-		"fb": "https://www.facebook.com/partha.lahkar.16/",
-		"designation": "Convenor ",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526972/IMG_0688_-_Partha_Lahkar_fn54bj.webp"
-	},
-	{
-		"id": 5,
-		"name": "Suman Das",
-		"linkedin": "https://www.linkedin.com/in/suman-das-82480a224/",
-		"inst": "https://www.instagram.com/suman_png/",
-		"fb": "https://www.facebook.com/profile.php?id=100075867442618",
-		"designation": "Production (Videography & Photography)",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526986/WhatsApp_Image_2025-01-27_at_01.31.38_-_Sumon_Das_enpbyu.webp"
-	},
-	{
-		"id": 6,
-		"name": "Soumyarup Deb",
-		"linkedin": "https://www.linkedin.com/in/soumyarup-deb-70b0a3200?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/soumyarup__?igsh=eHA2OXJiZDR5d2Nr",
-		"fb": "https://www.facebook.com/share/19oEFmvd34/",
-		"designation": "Event Management",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526911/IMG-20250126-WA0083_-_Soumyarup_Deb_uojjs3.jpg"
-	},
-	{
-		"id": 7,
-		"name": "Aryan Singh ",
-		"linkedin": "https://www.linkedin.com/in/aryan-singh-41613a256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/aryansingh2964?igsh=OXltZWRrdjNmY290",
-		"fb": "https://www.facebook.com/profile.php?id=100033375191535",
-		"designation": "Hospitality",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526931/IMG-20241005-WA0002_-_ECE_124_Aryan_ydtauq.webp"
-	},
-	{
-		"id": 8,
-		"name": "Pranjal Chakraborty ",
-		"linkedin": "https://www.linkedin.com/in/pranjal-chakraborty-3b6547136?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/pranjal_p.c/profilecard/?igsh=MWR1ZTh5bm90cmMydg==",
-		"fb": "https://www.facebook.com/profile.php?id=100073358617671",
-		"designation": "Publicity",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527004/IMG_20241117_150111126_2_-_Pranjal_Chakraborty_xkrwcb.webp"
-	}
-	,	{
-		"id": 9,
-		"name": "Susmit Gupta  ",
-		"linkedin": "https://www.linkedin.com/in/susmit-gupta-b3bb07163?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-		"inst": "https://www.instagram.com/p/DBRhiCmyTrqVb_anFZiPmbZStuyUJTxobLNNa00/?igsh=MTRueHoxdTQ4ZnZ2Mg==",
-		"fb": "https://www.facebook.com/share/157vPx935a/?mibextid=wwXIfr",
-		"designation": "Marketing",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527216/IMG_1232_-_ME_A_054_Susmit_Gupta_dwfihr.webp"
-	},	{
-		"id": 10,
-		"name": "Hangmasar Basumatary ",
-		"linkedin": "https://www.linkedin.com/in/hangmasar-basumatary-5709a1243",
-		"inst": "",
-		"fb": "https://www.facebook.com/share/1EEJFwdeWB/",
-		"designation": "Infra",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526774/20230323_170400_-_ME_A_055_HANGMASAR_BASUMATARY_1_mqxtwi.webp"
-	},	{
-		"id": 11,
-		"name": "Priyanuj Baruah ",
-		"linkedin": "https://www.linkedin.com/in/priyanuj-baruah-58279b223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/__priyanuj_?igsh=cWdvNmJvd2h6cWpo",
-		"fb": "https://www.facebook.com/share/1c24zcZNAS/",
-		"designation": "Publicity",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527029/Screenshot_2024-09-21-01-49-49-41_99c04817c0de5652397fc8b56c3b3817_-_Priyanuj_Baruah_gq4ls8.jpg"
-	},	{
-		"id": 12,
-		"name": " Aditi Archita Khataniar ",
-		"linkedin": "https://www.linkedin.com/in/aditi-archita-khataniar-2189a3226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/_.kabhi.kabhi.aditiii._?igsh=NThsYnA1NzAxamcz",
-		"fb": "",
-		"designation": "Content",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527121/IMG-20250203-WA0052_-_aditi_archita_khataniar_jlpat4.webp"
-	},	{
-		"id": 13,
-		"name": "Himangshu Sarma  ",
-		"linkedin": "https://www.linkedin.com/in/himangshu-sarma-?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/_himangshu_.sarma_?igsh=ZGdqb3htdDk3ZXlz",
-		"fb": "https://www.facebook.com/himangshu.sarma.54379236?mibextid=ZbWKwL",
-		"designation": "Decoration",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527039/IMG-20230105-WA0017_-_Himangshu_Sarma_pmrpni.webp"
-	},	{
-		"id": 14,
-		"name": "Prateeksha Majumdar ",
-		"linkedin": "https://in.linkedin.com/in/prateeksha-majumdar-20106a230",
-		"inst": "https://www.instagram.com/prateekshaaaaaa_?igsh=MWM0czZ5bTd0NGd2cw%3D%3D&utm_source=qr",
-		"fb": "",
-		"designation": "Content",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527067/IMG_7692_-_Prateeksha_Majumdar_ropjpb.webp"
-	},	{
-		"id": 15,
-		"name": "Priyambada Hazarika",
-		"linkedin": "https://www.linkedin.com/in/priyambada-hazarika-423237241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "",
-		"fb": "",
-		"designation": "Design",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527091/Screenshot_20250210-113025_-_Priyambada_Hazarika_fnvzfz.webp"
-	},	{
-		"id": 16,
-		"name": "Rimlee Ghosh",
-		"linkedin": "https://www.linkedin.com/in/rimlee-ghosh-678b65237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/rimlee13?igsh=MWQ3cHdheXNrZWJ5cg==",
-		"fb": "https://www.facebook.com/share/18dsLnfoTc/",
-		"designation": "Design",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527185/IMG_20250210_105101_enhanced.jpg_-_EE_020__Rimlee_Ghosh_ts4i5n.webp"
-	},	{
-		"id": 17,
-		"name": "Aman Gupta",
-		"linkedin": "https://www.linkedin.com/in/aman-gupta-928284229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/00_the_aman_00?igsh=MTRyejhxZmQ4emp6bA==",
-		"fb": "https://www.facebook.com/profile.php?id=100076422633897",
-		"designation": "Event Management",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739531013/20240413_182209_-_ME_A_032_Aman_Gupta_ltbcfn.webp"
-	},	{
-		"id": 18,
-		"name": "Bhargabi Nath",
-		"linkedin": "https://www.linkedin.com/in/bhargavi-nath-9a8a81223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-		"inst": "",
-		"fb": "",
-		"designation": "Content",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530895/Photo_Post_-_155__Bhargabi_Nath_yilrol.webp"
-	}
-	,	{
-		"id": 19,
-		"name": "Arbind Prasad Acharya",
-		"linkedin": "https://www.linkedin.com/in/arbind-prasad-acharya-84a3aa22a",
-		"inst": "https://www.instagram.com/_subtleacharya_?igsh=anJxaGxnZ2psenZh",
-		"fb": "",
-		"designation": "Event Management",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530977/IMG_20250211_171815_-_Arbind_Prasad_Acharya_mdlc7h.webp"
-	}
-	,	{
-		"id": 20,
-		"name": "Nilotpal Sarma ",
-		"linkedin": "https://www.linkedin.com/in/nilotpal-sarma-24a250237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "https://www.instagram.com/nilotpal__29?igsh=am93Mm9kYjFkcXFk",
-		"fb": "https://www.facebook.com/profile.php?id=100076340676636&mibextid=ZbWKwL",
-		"designation": "Executive Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739531001/IMG_20250212_033843_-_Nilotpal_Sarma_xijwzg.webp"
-	}
-	,	{
-		"id": 21,
-		"name": "Uttirna Talukdar ",
-		"linkedin": "https://www.linkedin.com/in/uttirna-talukdar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "",
-		"fb": "",
-		"designation": "Decoration ",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530987/IMG-20241003-WA0100_-_Uttirna_Talukdar_ad8sgk.webp"
-	}
-	,	{
-		"id": 22,
-		"name": "Hrishikesh Duarah  ",
-		"linkedin": "https://www.linkedin.com/in/hrishikesh-duarah-8838a824b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-		"inst": "",
-		"fb": "",
-		"designation": "Hospitality ",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739531026/IMG_20250202_114651_615_-_Hrishikesh_Duarah_mcx4ys.webp"
-	}
-	,	{
-		"id": 23,
-		"name": "Anurag Borgohain  ",
-		"linkedin": "https://www.linkedin.com/in/anuragborgohain?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-		"inst": "",
-		"fb": "",
-		"designation": "Hospitality",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530968/81CB335E-A7C6-47EF-936B-AC6930A6679C_-_Anurag_Borgohain_gyoeva.webp"
-	},
-	{
-		"id": 24,
-		"name": "Tejaswin Goswami",
-		"linkedin": "",
-		"inst": "",
-		"fb": "",
-		"designation": "Event Management",
-		"img": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739969580/Inacnd/31a40c59-83c2-4a23-a0a0-a474ff64fb92.webp"
-	}
+		{
+			"id": 5,
+			"name": "Bijay Jiwrajka ",
+			"linkedin": "https://linkedin.com/in/bjiwrajka",
+			"inst": "https://www.instagram.com/bj_jiwrajka",
+			"fb": "https://www.facebook.com/share/1A1FgTKwUA/",
+			"designation": "Tech",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527022/IMG_20241219_205116_-_Bijay_Jiwrajka_1_eyy481.webp"
+		},
+		{
+			"id": 6,
+			"name": "Adhiraj Dutta ",
+			"linkedin": "https://linkedin.com/in/byt3h3ad",
+			"inst": "https://www.instagram.com/textually.active/",
+			"fb": "https://www.facebook.com/share/1A1FgTKwUA/",
+			"designation": "Tech",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526883/AdhirajDutta_-_Adhiraj_Dutta_lpnck7.webp"
+		},
+		
+	
+		{
+			"id": 7,
+			"name": "Suman Das",
+			"linkedin": "https://www.linkedin.com/in/suman-das-82480a224/",
+			"inst": "https://www.instagram.com/suman_png/",
+			"fb": "https://www.facebook.com/profile.php?id=100075867442618",
+			"designation": "Production (Videography & Photography)",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526986/WhatsApp_Image_2025-01-27_at_01.31.38_-_Sumon_Das_enpbyu.webp"
+		},
+		{
+			"id": 8,
+			"name": "Soumyarup Deb",
+			"linkedin": "https://www.linkedin.com/in/soumyarup-deb-70b0a3200?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/soumyarup__?igsh=eHA2OXJiZDR5d2Nr",
+			"fb": "https://www.facebook.com/share/19oEFmvd34/",
+			"designation": "Event Management",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526911/IMG-20250126-WA0083_-_Soumyarup_Deb_uojjs3.jpg"
+		},
+		{
+			"id": 9,
+			"name": "Aman Gupta",
+			"linkedin": "https://www.linkedin.com/in/aman-gupta-928284229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/00_the_aman_00?igsh=MTRyejhxZmQ4emp6bA==",
+			"fb": "https://www.facebook.com/profile.php?id=100076422633897",
+			"designation": "Event Management",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739531013/20240413_182209_-_ME_A_032_Aman_Gupta_ltbcfn.webp"
+		},
+		{
+			"id": 10,
+			"name": "Arbind Prasad Acharya",
+			"linkedin": "https://www.linkedin.com/in/arbind-prasad-acharya-84a3aa22a",
+			"inst": "https://www.instagram.com/_subtleacharya_?igsh=anJxaGxnZ2psenZh",
+			"fb": "",
+			"designation": "Event Management",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530977/IMG_20250211_171815_-_Arbind_Prasad_Acharya_mdlc7h.webp"
+		}
+		
+		,	
+		
+		{
+			"id": 11,
+			"name": "Pranjal Chakraborty ",
+			"linkedin": "https://www.linkedin.com/in/pranjal-chakraborty-3b6547136?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/pranjal_p.c/profilecard/?igsh=MWR1ZTh5bm90cmMydg==",
+			"fb": "https://www.facebook.com/profile.php?id=100073358617671",
+			"designation": "Publicity",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527004/IMG_20241117_150111126_2_-_Pranjal_Chakraborty_xkrwcb.webp"
+		}
+		,	
+		{
+			"id": 12,
+			"name": "Priyanuj Baruah ",
+			"linkedin": "https://www.linkedin.com/in/priyanuj-baruah-58279b223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/__priyanuj_?igsh=cWdvNmJvd2h6cWpo",
+			"fb": "https://www.facebook.com/share/1c24zcZNAS/",
+			"designation": "Publicity",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527029/Screenshot_2024-09-21-01-49-49-41_99c04817c0de5652397fc8b56c3b3817_-_Priyanuj_Baruah_gq4ls8.jpg"
+		},	{
+			"id": 13,
+			"name": "Susmit Gupta  ",
+			"linkedin": "https://www.linkedin.com/in/susmit-gupta-b3bb07163?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+			"inst": "https://www.instagram.com/p/DBRhiCmyTrqVb_anFZiPmbZStuyUJTxobLNNa00/?igsh=MTRueHoxdTQ4ZnZ2Mg==",
+			"fb": "https://www.facebook.com/share/157vPx935a/?mibextid=wwXIfr",
+			"designation": "Marketing",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527216/IMG_1232_-_ME_A_054_Susmit_Gupta_dwfihr.webp"
+		},	{
+			"id": 14,
+			"name": "Hangmasar Basumatary ",
+			"linkedin": "https://www.linkedin.com/in/hangmasar-basumatary-5709a1243",
+			"inst": "",
+			"fb": "https://www.facebook.com/share/1EEJFwdeWB/",
+			"designation": "Infra",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526774/20230323_170400_-_ME_A_055_HANGMASAR_BASUMATARY_1_mqxtwi.webp"
+		},{
+			"id": 15,
+			"name": " Aditi Archita Khataniar ",
+			"linkedin": "https://www.linkedin.com/in/aditi-archita-khataniar-2189a3226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/_.kabhi.kabhi.aditiii._?igsh=NThsYnA1NzAxamcz",
+			"fb": "",
+			"designation": "Content",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527121/IMG-20250203-WA0052_-_aditi_archita_khataniar_jlpat4.webp"
+		},	
+		{
+			"id": 16,
+			"name": "Prateeksha Majumdar ",
+			"linkedin": "https://in.linkedin.com/in/prateeksha-majumdar-20106a230",
+			"inst": "https://www.instagram.com/prateekshaaaaaa_?igsh=MWM0czZ5bTd0NGd2cw%3D%3D&utm_source=qr",
+			"fb": "",
+			"designation": "Content",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527067/IMG_7692_-_Prateeksha_Majumdar_ropjpb.webp"
+		},
+		{
+			"id": 17,
+			"name": "Bhargabi Nath",
+			"linkedin": "https://www.linkedin.com/in/bhargavi-nath-9a8a81223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+			"inst": "",
+			"fb": "",
+			"designation": "Content",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530895/Photo_Post_-_155__Bhargabi_Nath_yilrol.webp"
+		}
+		,{
+			"id": 18,
+			"name": "Himangshu Sarma  ",
+			"linkedin": "https://www.linkedin.com/in/himangshu-sarma-?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/_himangshu_.sarma_?igsh=ZGdqb3htdDk3ZXlz",
+			"fb": "https://www.facebook.com/himangshu.sarma.54379236?mibextid=ZbWKwL",
+			"designation": "Decoration",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527039/IMG-20230105-WA0017_-_Himangshu_Sarma_pmrpni.webp"
+		},	
+		{
+			"id": 19,
+			"name": "Uttirna Talukdar ",
+			"linkedin": "https://www.linkedin.com/in/uttirna-talukdar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "",
+			"fb": "",
+			"designation": "Decoration ",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530987/IMG-20241003-WA0100_-_Uttirna_Talukdar_ad8sgk.webp"
+		}
+		,	
+		{
+			"id": 20,
+			"name": "Priyambada Hazarika",
+			"linkedin": "https://www.linkedin.com/in/priyambada-hazarika-423237241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "",
+			"fb": "",
+			"designation": "Design",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527091/Screenshot_20250210-113025_-_Priyambada_Hazarika_fnvzfz.webp"
+		},	{
+			"id": 21,
+			"name": "Rimlee Ghosh",
+			"linkedin": "https://www.linkedin.com/in/rimlee-ghosh-678b65237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/rimlee13?igsh=MWQ3cHdheXNrZWJ5cg==",
+			"fb": "https://www.facebook.com/share/18dsLnfoTc/",
+			"designation": "Design",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527185/IMG_20250210_105101_enhanced.jpg_-_EE_020__Rimlee_Ghosh_ts4i5n.webp"
+		},{
+			"id": 22,
+			"name": "Hrishikesh Duarah  ",
+			"linkedin": "https://www.linkedin.com/in/hrishikesh-duarah-8838a824b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "",
+			"fb": "",
+			"designation": "Hospitality ",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739531026/IMG_20250202_114651_615_-_Hrishikesh_Duarah_mcx4ys.webp"
+		}
+		,	{
+			"id": 23,
+			"name": "Anurag Borgohain  ",
+			"linkedin": "https://www.linkedin.com/in/anuragborgohain?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+			"inst": "",
+			"fb": "",
+			"designation": "Hospitality",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739530968/81CB335E-A7C6-47EF-936B-AC6930A6679C_-_Anurag_Borgohain_gyoeva.webp"
+		},{
+			"id": 24,
+			"name": "Aryan Singh ",
+			"linkedin": "https://www.linkedin.com/in/aryan-singh-41613a256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			"inst": "https://www.instagram.com/aryansingh2964?igsh=OXltZWRrdjNmY290",
+			"fb": "https://www.facebook.com/profile.php?id=100033375191535",
+			"designation": "Hospitality",
+			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739526931/IMG-20241005-WA0002_-_ECE_124_Aryan_ydtauq.webp"
+		}
 ]
