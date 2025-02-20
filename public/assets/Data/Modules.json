@@ -198,9 +198,53 @@
 		"module":"Mr NIT",
 		"designation": "Co-Head",
 		"img": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739970248/3d1207ea-23d4-458a-bb16-5c587c64f33f.webp"
-		
-		
-		
+
+	},{
+		"id": 73,
+		"name": "Sahin Alam ",
+		"module":"Costopia",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/sahincloudinary/image/upload/f_auto,q_auto/v1/Ecell/Junior%20Developer/Sahin"
+
+	},
+	{
+		"id": 75,
+		"name": "Aayush Sharma",
+		"module":"Costopia",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/sahincloudinary/image/upload/f_auto,q_auto/v1/Advay/dhwcu0tqzebfl5txoxlo"
+	
+	},
+	{
+		"id": 48,
+		"name": "Keshav Kumar ",
+		"module":"Espremiere",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/B-4822_photo_-_KESHAV_KUMAR_ldmgkg.webp"
+
+	},
+	{
+		"id": 71,
+		"name": "Bharti Kumari ",
+		"module":"Espremiere",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936273/20250202_152137_-_BHARTI_KUMARI_n34brl.webp"
+	
+	},
+	{
+		"id": 63,
+		"name": "Utkarsh Tiwari ",
+		"module":"Panchayat  ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/Screenshot_20250218-124448_-_UTKARSH_TIWARI_kd9964.webp"
+	},
+	{
+		"id": 76,
+		"name": "Deepshikha Malakar",
+		"module":"Panchayat",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/sahincloudinary/image/upload/f_auto,q_auto/v1/Advay/e4vpohpmpeyloluatgf5"
+	
 	},
 	
 	{
@@ -481,16 +525,7 @@
 		
 		
 	},
-	{
-		"id": 48,
-		"name": "Keshav Kumar ",
-		"module":"",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936204/B-4822_photo_-_KESHAV_KUMAR_ldmgkg.webp"
-		
-		
-		
-	},
+	
 	
 	{
 		"id": 49,
@@ -631,23 +666,7 @@
 		"module":"Prom Night",
 		"designation": "Co-Head",
 		"img": "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739970386/76d3d8d2-02c9-43f5-bc1c-c700b748946e.webp"
-		
-		
-		
 	},
-	
-	{
-		"id": 63,
-		"name": "Utkarsh Tiwari ",
-		"module":"Panchayat  ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936203/Screenshot_20250218-124448_-_UTKARSH_TIWARI_kd9964.webp"
-		
-		
-		
-	},
-	
-	
 	{
 		"id": 64,
 		"name": "Prachurjya Deka",
@@ -718,16 +737,6 @@
 		"module":"Valorant ",
 		"designation": "Co-Head",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936293/20250217_201320_-_ABESH_KUMAR_SINGHA_pfsysi.webp"
-		
-		
-		
-	},
-	{
-		"id": 71,
-		"name": "Bharti Kumari ",
-		"module":"Espremiere",
-		"designation": "Co-Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936273/20250202_152137_-_BHARTI_KUMARI_n34brl.webp"
 		
 		
 		
