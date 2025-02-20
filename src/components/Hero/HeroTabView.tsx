@@ -50,16 +50,20 @@ const HeroTabView = () => {
         className="absolute inset-0 flex flex-col items-center ipadair:justify-center ipadair:py-[5.755vh]"
         style={{ transform: `scale(${scale})`, transformOrigin: "top" }}
       >
-        <div className="relative top-[10vw] z-50 flex h-[10vw] w-[20vw] items-center justify-center scale-[1.35] ipadair:top-[0vw] ipadair:h-[5vw] ipadair:w-[10vw]">
-          <Link href="https://www.coca-colacompany.com/" target="_blank" rel="noreferrer">
-          <Image
-            src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
-            alt="Title Sponsor: Coca Cola"
-            layout="responsive"
-            width={100}
-            height={100}
-            unoptimized
-          />
+        <div className="relative top-[10vw] z-50 flex h-[10vw] w-[20vw] scale-[1.35] items-center justify-center ipadair:top-[0vw] ipadair:h-[5vw] ipadair:w-[10vw]">
+          <Link
+            href="https://www.coca-colacompany.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              src="https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739866931/wallpaperflare.com_wallpaper__1_-removebg-preview_3_ynh5ns.png"
+              alt="Title Sponsor: Coca Cola"
+              layout="responsive"
+              width={100}
+              height={100}
+              unoptimized
+            />
           </Link>
         </div>
         <p

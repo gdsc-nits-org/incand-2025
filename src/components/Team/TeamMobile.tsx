@@ -63,13 +63,47 @@ const TeamMobile: React.FC = () => {
         id="section2"
         className="box-border flex w-[100%] flex-col items-center justify-center overflow-x-hidden"
       >
-        <div className="flex flex-row items-center justify-center font-tusker text-sm mb-16">
-          <button onClick={() => setTeam(1)} style={{ padding: "0.5rem", border: "1px solid #ff0000", borderTopLeftRadius: "1rem", borderBottomLeftRadius: "1rem", backgroundColor: `${team === 1 ? "#FF0000" : "#FFff17"}`, color: `${team === 1 ? "#FFff17" : "#FF0000"}` }}>CORE TEAM</button>
-          <button onClick={() => setTeam(2)} style={{ padding: "0.5rem", border: "1px solid #ff0000", backgroundColor: `${team === 2 ? "#FF0000" : "#FFff17"}`, color: `${team === 2 ? "#FFff17" : "#FF0000"}` }}>TECH TEAM</button>
-          <button onClick={() => setTeam(3)} style={{ padding: "0.5rem", border: "1px solid #ff0000", backgroundColor: `${team === 3 ? "#FF0000" : "#FFff17"}`, borderTopRightRadius: "1rem", borderBottomRightRadius: "1rem", color: `${team === 3 ? "#FFff17" : "#FF0000"}` }}>MODULE HEADS</button>
+        <div className="mb-16 flex flex-row items-center justify-center font-tusker text-sm">
+          <button
+            onClick={() => setTeam(1)}
+            style={{
+              padding: "0.5rem",
+              border: "1px solid #ff0000",
+              borderTopLeftRadius: "1rem",
+              borderBottomLeftRadius: "1rem",
+              backgroundColor: `${team === 1 ? "#FF0000" : "#FFff17"}`,
+              color: `${team === 1 ? "#FFff17" : "#FF0000"}`,
+            }}
+          >
+            CORE TEAM
+          </button>
+          <button
+            onClick={() => setTeam(2)}
+            style={{
+              padding: "0.5rem",
+              border: "1px solid #ff0000",
+              backgroundColor: `${team === 2 ? "#FF0000" : "#FFff17"}`,
+              color: `${team === 2 ? "#FFff17" : "#FF0000"}`,
+            }}
+          >
+            TECH TEAM
+          </button>
+          <button
+            onClick={() => setTeam(3)}
+            style={{
+              padding: "0.5rem",
+              border: "1px solid #ff0000",
+              backgroundColor: `${team === 3 ? "#FF0000" : "#FFff17"}`,
+              borderTopRightRadius: "1rem",
+              borderBottomRightRadius: "1rem",
+              color: `${team === 3 ? "#FFff17" : "#FF0000"}`,
+            }}
+          >
+            MODULE HEADS
+          </button>
         </div>
         {team === 1 && (
-          <div className="flex items-center justify-center flex-wrap gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             {teamDataCore.map((member) => (
               <TeamCard
                 key={member.id}
@@ -81,7 +115,8 @@ const TeamMobile: React.FC = () => {
                 ind={member.id}
               />
             ))}
-          </div>)}
+          </div>
+        )}
         {team === 2 && (
           <>
             <div
@@ -209,7 +244,7 @@ const TeamMobile: React.FC = () => {
         )}
 
         {team === 3 && (
-          <div className="flex items-center justify-center flex-wrap gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             {teamDataModule.map((member) => (
               <TeamCard
                 key={member.id}
@@ -220,7 +255,8 @@ const TeamMobile: React.FC = () => {
                 module={member.module}
               />
             ))}
-          </div>)}
+          </div>
+        )}
       </div>
     </div>
   );

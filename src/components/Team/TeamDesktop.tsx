@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import TeamCard from "./TeamCard";
-import teamDataCore from "../../../public/assets/Data/Core.json"; 
+import teamDataCore from "../../../public/assets/Data/Core.json";
 import teamDataTech from "../../../public/assets/Data/Tech.json";
 import teamDataModule from "../../../public/assets/Data/Modules.json";
 const TeamDesktop: React.FC = () => {
@@ -63,7 +63,7 @@ const TeamDesktop: React.FC = () => {
               setIsCore(true);
             }}
           >
-          <div
+            <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isCore ? "bg-[url('/assets/Team/Handle.webp')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
@@ -99,7 +99,7 @@ const TeamDesktop: React.FC = () => {
               setIsModule(true);
             }}
           >
-          <div
+            <div
               className={`z-10 ml-2 h-[3rem] w-[3rem] rounded-full ${isModule ? "bg-[url('/assets/Team/Handle.webp')] bg-cover" : "border-8 border-yellow-500 bg-black"}`}
             ></div>
             <p
@@ -122,20 +122,20 @@ const TeamDesktop: React.FC = () => {
         >
           {/* Core Team */}
           {isCore && (
-    <div className="col-span-2 tablet2:col-span-3 w-full flex justify-center flex-wrap gap-24">
-      {teamDataCore.map((member) => (
-        <TeamCard
-          key={member.id}
-          name={member.name}
-          role={member.designation}
-          image={member.img}
-          fb={member.fb ?? ""}
-          linkedin={member.linkedin ?? ""}
-          ind={member.id}
-        />
-      ))}
-    </div>
-  )}
+            <div className="col-span-2 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {teamDataCore.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  fb={member.fb ?? ""}
+                  linkedin={member.linkedin ?? ""}
+                  ind={member.id}
+                />
+              ))}
+            </div>
+          )}
 
           {/* Tech Lead */}
           {isTech && (
@@ -262,19 +262,19 @@ const TeamDesktop: React.FC = () => {
 
           {/* Module Team */}
           {isModule && (
-    <div className="col-span-2 tablet2:col-span-3 w-full flex justify-center flex-wrap gap-24 ">
-      {teamDataModule.map((member) => (
-        <TeamCard
-          key={member.id}
-          name={member.name}
-          role={member.designation}
-          image={member.img}
-          ind={member.id}
-          module={member.module}
-        />
-      ))}
-    </div>
-  )}
+            <div className="col-span-2 flex w-full flex-wrap justify-center gap-24 tablet2:col-span-3">
+              {teamDataModule.map((member) => (
+                <TeamCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.designation}
+                  image={member.img}
+                  ind={member.id}
+                  module={member.module}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

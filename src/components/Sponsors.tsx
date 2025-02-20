@@ -32,8 +32,8 @@ const sponsors = [
     id: 5,
     name: "Ice Cream Partner",
     image:
-      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739974180/1200px-Amul_official_logo.svg_eccepq.png"
-  }
+      "https://res.cloudinary.com/dgnlmdkyq/image/upload/v1739974180/1200px-Amul_official_logo.svg_eccepq.png",
+  },
 ];
 
 const Sponsors: React.FC = () => {

@@ -7,7 +7,7 @@ interface TeamCardProps {
   fb?: string;
   linkedin?: string;
   git?: string;
-  module?:string;
+  module?: string;
   ind: number; // for alternating background colors in team grid
 }
 
@@ -150,13 +150,15 @@ const TeamCard: React.FC<TeamCardProps> = ({
           {role}
         </p>
       </div>
-      {module && <div className="relative z-10 flex h-[2.25rem] w-[80%] items-center justify-center pb-4 text-center">
-        <p
-          className={`font-oxygen ${ind % 2 === 0 ? "text-[#EF7BE3]" : "text-[#FFD231]"} text-[0.8rem] font-bold tracking-normal`}
-        >
-          {module}
-        </p>
-      </div>}
+      {module && (
+        <div className="relative z-10 flex h-[2.25rem] w-[80%] items-center justify-center pb-4 text-center">
+          <p
+            className={`font-oxygen ${ind % 2 === 0 ? "text-[#EF7BE3]" : "text-[#FFD231]"} text-[0.8rem] font-bold tracking-normal`}
+          >
+            {module}
+          </p>
+        </div>
+      )}
       {/* Social Media Icons */}
       <div
         id="icons"
