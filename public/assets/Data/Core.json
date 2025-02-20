@@ -60,7 +60,17 @@
 		"fb": "",
 		"designation": "Executive Head",
 		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1740039221/IMG_6756_-_Alton_Kumar_Das_qpggpv.webp"
-	},{
+	},
+	{
+		"id": 20,
+		"name": "Priyanuj Baruah ",
+		"linkedin": "https://www.linkedin.com/in/priyanuj-baruah-58279b223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		"inst": "https://www.instagram.com/__priyanuj_?igsh=cWdvNmJvd2h6cWpo",
+		"fb": "https://www.facebook.com/share/1c24zcZNAS/",
+		"designation": "Executive Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527029/Screenshot_2024-09-21-01-49-49-41_99c04817c0de5652397fc8b56c3b3817_-_Priyanuj_Baruah_gq4ls8.jpg"
+	},
+	{
 		"id": 7,
 		"name": "Maharnav Deka",
 		"designation": "Tech Lead",
@@ -193,14 +203,6 @@
 		}
 		,	
 		{
-			"id": 20,
-			"name": "Priyanuj Baruah ",
-			"linkedin": "https://www.linkedin.com/in/priyanuj-baruah-58279b223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-			"inst": "https://www.instagram.com/__priyanuj_?igsh=cWdvNmJvd2h6cWpo",
-			"fb": "https://www.facebook.com/share/1c24zcZNAS/",
-			"designation": "Publicity",
-			"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739527029/Screenshot_2024-09-21-01-49-49-41_99c04817c0de5652397fc8b56c3b3817_-_Priyanuj_Baruah_gq4ls8.jpg"
-		},	{
 			"id": 21,
 			"name": "Susmit Gupta  ",
 			"linkedin": "https://www.linkedin.com/in/susmit-gupta-b3bb07163?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
