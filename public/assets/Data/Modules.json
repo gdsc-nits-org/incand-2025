@@ -1,5 +1,15 @@
 [
 	{
+		"id": 46,
+		"name": "Harsh Yadav",
+		"module":"Razzmatazz ",
+		"designation": "Head",
+		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/WhatsApp_Image_2025-02-19_at_02.06.00_677bb31c_-_EE_038_Harsh_Yadav_trur1s.webp"
+		
+		
+		
+	},
+	{
 		"id": 1,
 		"name": "Debagyan Bordoloi",
 		"module":"NATRAAJ",
@@ -504,16 +514,7 @@
 		
 	},
 	
-	{
-		"id": 46,
-		"name": "Harsh Yadav",
-		"module":"Razzmatazz ",
-		"designation": "Head",
-		"img": "https://res.cloudinary.com/dybzo3xly/image/upload/v1739936291/WhatsApp_Image_2025-02-19_at_02.06.00_677bb31c_-_EE_038_Harsh_Yadav_trur1s.webp"
-		
-		
-		
-	},
+	
 	
 	{
 		"id": 47,
